@@ -1,8 +1,35 @@
 # Wire message mapping implementation tasks
 
+**Latest local Docker checkpoint (2026-11-11):** [results and remaining gates](review/x64-acceptance/docker-remaining/README.md)
+supersede the earlier next-run queue below. Expanded ASB acceptance has 745 passes,
+12 failures and four existing skips per target; original recovery remains unstable
+on both runtimes. Pub/Sub passes 459 cases on .NET 9 and 458 on .NET 10, with one
+original async shutdown failure and 55 existing skips per target. Both passive Kafka
+full suites abort in native consumer close after 223 passes; separate remainder
+coverage is recorded in the latest report. Actual failing GCP traces and complete
+Kafka cores are now available. Source remains on the fork at the verified HEAD;
+no production changes, Redis rerun, paid services, commits or pushes. Production
+readiness remains blocked; continue from the latest report, not the historical queue.
+
 Execution order and release exit criteria: [full completion plan](completion-plan.md).
 
 ## Active completion queue — 2026-11-11
+
+The [native x64 continuation](review/x64-acceptance/README.md) completes the
+requested host/source verification, SQL Server 2022 execution and bounded ASB
+comparison at `2db6bcc9b53bdb1d388b667d8f8bbe6c05c0be33`. SQL passes 396/four skips
+per target with exact parity between the new framework runs; historical SQL Edge
+identity reconciliation lacks transferred raw inventories. ASB still reproduces
+the SDK-only topic fault on native x64 (.NET 9: four topic failures/four queue
+passes; .NET 10: eight passes). The combined external-acceptance and release rows
+remain open; hosted ASB, Brighter mutations/native acceptance, lifecycle findings
+and final-source CI are not completed by this checkpoint.
+
+The later [local Docker reader-recovery run](review/x64-acceptance/asb-recovery-isolated/README.md)
+executes all eight original cases on fresh entities per case: six passes/two
+duplicate-sequence-correlated DLQ failures on .NET 9 and eight passes on .NET 10.
+All four owned fixtures are stopped. The recovery batch remains open pending a
+healthy fixture and the required mutations; no production or test source changed.
 
 Follow the [five-step completion plan](completion-plan.md#active-completion-plan--2026-11-11).
 It supersedes earlier execution queues while preserving their evidence and release gates.

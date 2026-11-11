@@ -1,0 +1,25 @@
+gcr.io/google.com/cloudsdktool/cloud-sdk@sha256:3797a874fae6b75aa25260b5bd40fa0397c2f1102f18ae3ac7dc887732fbe449: Pulling from google.com/cloudsdktool/cloud-sdk
+561456dc8e53: Pulling fs layer
+4f4fb700ef54: Pulling fs layer
+a89ad65d2f8a: Pulling fs layer
+ad2833e5b6a7: Pulling fs layer
+c3c7c28c455f: Pulling fs layer
+ecc510c1e359: Pulling fs layer
+a04797841876: Pulling fs layer
+4f4fb700ef54: Already exists
+a89ad65d2f8a: Download complete
+c3c7c28c455f: Download complete
+a04797841876: Download complete
+ad2833e5b6a7: Download complete
+ecc510c1e359: Download complete
+ecc510c1e359: Pull complete
+c3c7c28c455f: Pull complete
+a04797841876: Pull complete
+ad2833e5b6a7: Pull complete
+4f4fb700ef54: Pull complete
+a89ad65d2f8a: Pull complete
+561456dc8e53: Download complete
+561456dc8e53: Pull complete
+Digest: sha256:3797a874fae6b75aa25260b5bd40fa0397c2f1102f18ae3ac7dc887732fbe449
+Status: Downloaded newer image for gcr.io/google.com/cloudsdktool/cloud-sdk@sha256:3797a874fae6b75aa25260b5bd40fa0397c2f1102f18ae3ac7dc887732fbe449
+gcr.io/google.com/cloudsdktool/cloud-sdk@sha256:3797a874fae6b75aa25260b5bd40fa0397c2f1102f18ae3ac7dc887732fbe449

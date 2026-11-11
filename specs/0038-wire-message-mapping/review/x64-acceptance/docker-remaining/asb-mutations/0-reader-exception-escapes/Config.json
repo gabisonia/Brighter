@@ -1,0 +1,672 @@
+﻿{
+    "UserConfig":  {
+                       "Namespaces":  [
+                                          {
+                                              "Name":  "local",
+                                              "Queues":  [
+                                                             {
+                                                                 "Name":  "b-q-0",
+                                                                 "Properties":  {
+                                                                                    "DeadLetteringOnMessageExpiration":  false,
+                                                                                    "DefaultMessageTimeToLive":  "PT1H",
+                                                                                    "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                    "ForwardDeadLetteredMessagesTo":  "",
+                                                                                    "ForwardTo":  "",
+                                                                                    "LockDuration":  "PT1M",
+                                                                                    "MaxDeliveryCount":  3,
+                                                                                    "RequiresDuplicateDetection":  false,
+                                                                                    "RequiresSession":  false
+                                                                                }
+                                                             },
+                                                             {
+                                                                 "Name":  "b-q-1",
+                                                                 "Properties":  {
+                                                                                    "DeadLetteringOnMessageExpiration":  false,
+                                                                                    "DefaultMessageTimeToLive":  "PT1H",
+                                                                                    "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                    "ForwardDeadLetteredMessagesTo":  "",
+                                                                                    "ForwardTo":  "",
+                                                                                    "LockDuration":  "PT1M",
+                                                                                    "MaxDeliveryCount":  3,
+                                                                                    "RequiresDuplicateDetection":  false,
+                                                                                    "RequiresSession":  false
+                                                                                }
+                                                             },
+                                                             {
+                                                                 "Name":  "b-q-2",
+                                                                 "Properties":  {
+                                                                                    "DeadLetteringOnMessageExpiration":  false,
+                                                                                    "DefaultMessageTimeToLive":  "PT1H",
+                                                                                    "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                    "ForwardDeadLetteredMessagesTo":  "",
+                                                                                    "ForwardTo":  "",
+                                                                                    "LockDuration":  "PT1M",
+                                                                                    "MaxDeliveryCount":  3,
+                                                                                    "RequiresDuplicateDetection":  false,
+                                                                                    "RequiresSession":  false
+                                                                                }
+                                                             },
+                                                             {
+                                                                 "Name":  "b-q-3",
+                                                                 "Properties":  {
+                                                                                    "DeadLetteringOnMessageExpiration":  false,
+                                                                                    "DefaultMessageTimeToLive":  "PT1H",
+                                                                                    "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                    "ForwardDeadLetteredMessagesTo":  "",
+                                                                                    "ForwardTo":  "",
+                                                                                    "LockDuration":  "PT1M",
+                                                                                    "MaxDeliveryCount":  3,
+                                                                                    "RequiresDuplicateDetection":  false,
+                                                                                    "RequiresSession":  false
+                                                                                }
+                                                             },
+                                                             {
+                                                                 "Name":  "b-q-4",
+                                                                 "Properties":  {
+                                                                                    "DeadLetteringOnMessageExpiration":  false,
+                                                                                    "DefaultMessageTimeToLive":  "PT1H",
+                                                                                    "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                    "ForwardDeadLetteredMessagesTo":  "",
+                                                                                    "ForwardTo":  "",
+                                                                                    "LockDuration":  "PT1M",
+                                                                                    "MaxDeliveryCount":  3,
+                                                                                    "RequiresDuplicateDetection":  false,
+                                                                                    "RequiresSession":  false
+                                                                                }
+                                                             },
+                                                             {
+                                                                 "Name":  "b-q-5",
+                                                                 "Properties":  {
+                                                                                    "DeadLetteringOnMessageExpiration":  false,
+                                                                                    "DefaultMessageTimeToLive":  "PT1H",
+                                                                                    "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                    "ForwardDeadLetteredMessagesTo":  "",
+                                                                                    "ForwardTo":  "",
+                                                                                    "LockDuration":  "PT1M",
+                                                                                    "MaxDeliveryCount":  3,
+                                                                                    "RequiresDuplicateDetection":  false,
+                                                                                    "RequiresSession":  false
+                                                                                }
+                                                             },
+                                                             {
+                                                                 "Name":  "b-q-6",
+                                                                 "Properties":  {
+                                                                                    "DeadLetteringOnMessageExpiration":  false,
+                                                                                    "DefaultMessageTimeToLive":  "PT1H",
+                                                                                    "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                    "ForwardDeadLetteredMessagesTo":  "",
+                                                                                    "ForwardTo":  "",
+                                                                                    "LockDuration":  "PT1M",
+                                                                                    "MaxDeliveryCount":  3,
+                                                                                    "RequiresDuplicateDetection":  false,
+                                                                                    "RequiresSession":  false
+                                                                                }
+                                                             },
+                                                             {
+                                                                 "Name":  "b-q-7",
+                                                                 "Properties":  {
+                                                                                    "DeadLetteringOnMessageExpiration":  false,
+                                                                                    "DefaultMessageTimeToLive":  "PT1H",
+                                                                                    "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                    "ForwardDeadLetteredMessagesTo":  "",
+                                                                                    "ForwardTo":  "",
+                                                                                    "LockDuration":  "PT1M",
+                                                                                    "MaxDeliveryCount":  3,
+                                                                                    "RequiresDuplicateDetection":  false,
+                                                                                    "RequiresSession":  false
+                                                                                }
+                                                             },
+                                                             {
+                                                                 "Name":  "m-q-0",
+                                                                 "Properties":  {
+                                                                                    "DeadLetteringOnMessageExpiration":  false,
+                                                                                    "DefaultMessageTimeToLive":  "PT1H",
+                                                                                    "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                    "ForwardDeadLetteredMessagesTo":  "",
+                                                                                    "ForwardTo":  "",
+                                                                                    "LockDuration":  "PT1M",
+                                                                                    "MaxDeliveryCount":  3,
+                                                                                    "RequiresDuplicateDetection":  false,
+                                                                                    "RequiresSession":  false
+                                                                                }
+                                                             },
+                                                             {
+                                                                 "Name":  "m-q-1",
+                                                                 "Properties":  {
+                                                                                    "DeadLetteringOnMessageExpiration":  false,
+                                                                                    "DefaultMessageTimeToLive":  "PT1H",
+                                                                                    "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                    "ForwardDeadLetteredMessagesTo":  "",
+                                                                                    "ForwardTo":  "",
+                                                                                    "LockDuration":  "PT1M",
+                                                                                    "MaxDeliveryCount":  3,
+                                                                                    "RequiresDuplicateDetection":  false,
+                                                                                    "RequiresSession":  false
+                                                                                }
+                                                             },
+                                                             {
+                                                                 "Name":  "m-q-2",
+                                                                 "Properties":  {
+                                                                                    "DeadLetteringOnMessageExpiration":  false,
+                                                                                    "DefaultMessageTimeToLive":  "PT1H",
+                                                                                    "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                    "ForwardDeadLetteredMessagesTo":  "",
+                                                                                    "ForwardTo":  "",
+                                                                                    "LockDuration":  "PT1M",
+                                                                                    "MaxDeliveryCount":  3,
+                                                                                    "RequiresDuplicateDetection":  false,
+                                                                                    "RequiresSession":  false
+                                                                                }
+                                                             },
+                                                             {
+                                                                 "Name":  "m-q-3",
+                                                                 "Properties":  {
+                                                                                    "DeadLetteringOnMessageExpiration":  false,
+                                                                                    "DefaultMessageTimeToLive":  "PT1H",
+                                                                                    "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                    "ForwardDeadLetteredMessagesTo":  "",
+                                                                                    "ForwardTo":  "",
+                                                                                    "LockDuration":  "PT1M",
+                                                                                    "MaxDeliveryCount":  3,
+                                                                                    "RequiresDuplicateDetection":  false,
+                                                                                    "RequiresSession":  false
+                                                                                }
+                                                             },
+                                                             {
+                                                                 "Name":  "m-q-4",
+                                                                 "Properties":  {
+                                                                                    "DeadLetteringOnMessageExpiration":  false,
+                                                                                    "DefaultMessageTimeToLive":  "PT1H",
+                                                                                    "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                    "ForwardDeadLetteredMessagesTo":  "",
+                                                                                    "ForwardTo":  "",
+                                                                                    "LockDuration":  "PT1M",
+                                                                                    "MaxDeliveryCount":  3,
+                                                                                    "RequiresDuplicateDetection":  false,
+                                                                                    "RequiresSession":  false
+                                                                                }
+                                                             },
+                                                             {
+                                                                 "Name":  "m-q-5",
+                                                                 "Properties":  {
+                                                                                    "DeadLetteringOnMessageExpiration":  false,
+                                                                                    "DefaultMessageTimeToLive":  "PT1H",
+                                                                                    "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                    "ForwardDeadLetteredMessagesTo":  "",
+                                                                                    "ForwardTo":  "",
+                                                                                    "LockDuration":  "PT1M",
+                                                                                    "MaxDeliveryCount":  3,
+                                                                                    "RequiresDuplicateDetection":  false,
+                                                                                    "RequiresSession":  false
+                                                                                }
+                                                             },
+                                                             {
+                                                                 "Name":  "m-q-6",
+                                                                 "Properties":  {
+                                                                                    "DeadLetteringOnMessageExpiration":  false,
+                                                                                    "DefaultMessageTimeToLive":  "PT1H",
+                                                                                    "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                    "ForwardDeadLetteredMessagesTo":  "",
+                                                                                    "ForwardTo":  "",
+                                                                                    "LockDuration":  "PT1M",
+                                                                                    "MaxDeliveryCount":  3,
+                                                                                    "RequiresDuplicateDetection":  false,
+                                                                                    "RequiresSession":  false
+                                                                                }
+                                                             },
+                                                             {
+                                                                 "Name":  "m-q-7",
+                                                                 "Properties":  {
+                                                                                    "DeadLetteringOnMessageExpiration":  false,
+                                                                                    "DefaultMessageTimeToLive":  "PT1H",
+                                                                                    "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                    "ForwardDeadLetteredMessagesTo":  "",
+                                                                                    "ForwardTo":  "",
+                                                                                    "LockDuration":  "PT1M",
+                                                                                    "MaxDeliveryCount":  3,
+                                                                                    "RequiresDuplicateDetection":  false,
+                                                                                    "RequiresSession":  false
+                                                                                }
+                                                             }
+                                                         ],
+                                              "Topics":  [
+                                                             {
+                                                                 "Name":  "b-t-0",
+                                                                 "Properties":  {
+                                                                                    "DefaultMessageTimeToLive":  "PT1H",
+                                                                                    "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                    "RequiresDuplicateDetection":  false
+                                                                                },
+                                                                 "Subscriptions":  [
+                                                                                       {
+                                                                                           "Name":  "wire-observer",
+                                                                                           "Properties":  {
+                                                                                                              "DeadLetteringOnMessageExpiration":  false,
+                                                                                                              "DefaultMessageTimeToLive":  "PT1H",
+                                                                                                              "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                                              "ForwardDeadLetteredMessagesTo":  "",
+                                                                                                              "ForwardTo":  "",
+                                                                                                              "LockDuration":  "PT1M",
+                                                                                                              "MaxDeliveryCount":  3,
+                                                                                                              "RequiresDuplicateDetection":  false,
+                                                                                                              "RequiresSession":  false
+                                                                                                          },
+                                                                                           "Rules":  [
+
+                                                                                                     ]
+                                                                                       }
+                                                                                   ]
+                                                             },
+                                                             {
+                                                                 "Name":  "b-t-1",
+                                                                 "Properties":  {
+                                                                                    "DefaultMessageTimeToLive":  "PT1H",
+                                                                                    "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                    "RequiresDuplicateDetection":  false
+                                                                                },
+                                                                 "Subscriptions":  [
+                                                                                       {
+                                                                                           "Name":  "wire-observer",
+                                                                                           "Properties":  {
+                                                                                                              "DeadLetteringOnMessageExpiration":  false,
+                                                                                                              "DefaultMessageTimeToLive":  "PT1H",
+                                                                                                              "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                                              "ForwardDeadLetteredMessagesTo":  "",
+                                                                                                              "ForwardTo":  "",
+                                                                                                              "LockDuration":  "PT1M",
+                                                                                                              "MaxDeliveryCount":  3,
+                                                                                                              "RequiresDuplicateDetection":  false,
+                                                                                                              "RequiresSession":  false
+                                                                                                          },
+                                                                                           "Rules":  [
+
+                                                                                                     ]
+                                                                                       }
+                                                                                   ]
+                                                             },
+                                                             {
+                                                                 "Name":  "b-t-2",
+                                                                 "Properties":  {
+                                                                                    "DefaultMessageTimeToLive":  "PT1H",
+                                                                                    "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                    "RequiresDuplicateDetection":  false
+                                                                                },
+                                                                 "Subscriptions":  [
+                                                                                       {
+                                                                                           "Name":  "wire-observer",
+                                                                                           "Properties":  {
+                                                                                                              "DeadLetteringOnMessageExpiration":  false,
+                                                                                                              "DefaultMessageTimeToLive":  "PT1H",
+                                                                                                              "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                                              "ForwardDeadLetteredMessagesTo":  "",
+                                                                                                              "ForwardTo":  "",
+                                                                                                              "LockDuration":  "PT1M",
+                                                                                                              "MaxDeliveryCount":  3,
+                                                                                                              "RequiresDuplicateDetection":  false,
+                                                                                                              "RequiresSession":  false
+                                                                                                          },
+                                                                                           "Rules":  [
+
+                                                                                                     ]
+                                                                                       }
+                                                                                   ]
+                                                             },
+                                                             {
+                                                                 "Name":  "b-t-3",
+                                                                 "Properties":  {
+                                                                                    "DefaultMessageTimeToLive":  "PT1H",
+                                                                                    "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                    "RequiresDuplicateDetection":  false
+                                                                                },
+                                                                 "Subscriptions":  [
+                                                                                       {
+                                                                                           "Name":  "wire-observer",
+                                                                                           "Properties":  {
+                                                                                                              "DeadLetteringOnMessageExpiration":  false,
+                                                                                                              "DefaultMessageTimeToLive":  "PT1H",
+                                                                                                              "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                                              "ForwardDeadLetteredMessagesTo":  "",
+                                                                                                              "ForwardTo":  "",
+                                                                                                              "LockDuration":  "PT1M",
+                                                                                                              "MaxDeliveryCount":  3,
+                                                                                                              "RequiresDuplicateDetection":  false,
+                                                                                                              "RequiresSession":  false
+                                                                                                          },
+                                                                                           "Rules":  [
+
+                                                                                                     ]
+                                                                                       }
+                                                                                   ]
+                                                             },
+                                                             {
+                                                                 "Name":  "b-t-4",
+                                                                 "Properties":  {
+                                                                                    "DefaultMessageTimeToLive":  "PT1H",
+                                                                                    "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                    "RequiresDuplicateDetection":  false
+                                                                                },
+                                                                 "Subscriptions":  [
+                                                                                       {
+                                                                                           "Name":  "wire-observer",
+                                                                                           "Properties":  {
+                                                                                                              "DeadLetteringOnMessageExpiration":  false,
+                                                                                                              "DefaultMessageTimeToLive":  "PT1H",
+                                                                                                              "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                                              "ForwardDeadLetteredMessagesTo":  "",
+                                                                                                              "ForwardTo":  "",
+                                                                                                              "LockDuration":  "PT1M",
+                                                                                                              "MaxDeliveryCount":  3,
+                                                                                                              "RequiresDuplicateDetection":  false,
+                                                                                                              "RequiresSession":  false
+                                                                                                          },
+                                                                                           "Rules":  [
+
+                                                                                                     ]
+                                                                                       }
+                                                                                   ]
+                                                             },
+                                                             {
+                                                                 "Name":  "b-t-5",
+                                                                 "Properties":  {
+                                                                                    "DefaultMessageTimeToLive":  "PT1H",
+                                                                                    "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                    "RequiresDuplicateDetection":  false
+                                                                                },
+                                                                 "Subscriptions":  [
+                                                                                       {
+                                                                                           "Name":  "wire-observer",
+                                                                                           "Properties":  {
+                                                                                                              "DeadLetteringOnMessageExpiration":  false,
+                                                                                                              "DefaultMessageTimeToLive":  "PT1H",
+                                                                                                              "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                                              "ForwardDeadLetteredMessagesTo":  "",
+                                                                                                              "ForwardTo":  "",
+                                                                                                              "LockDuration":  "PT1M",
+                                                                                                              "MaxDeliveryCount":  3,
+                                                                                                              "RequiresDuplicateDetection":  false,
+                                                                                                              "RequiresSession":  false
+                                                                                                          },
+                                                                                           "Rules":  [
+
+                                                                                                     ]
+                                                                                       }
+                                                                                   ]
+                                                             },
+                                                             {
+                                                                 "Name":  "b-t-6",
+                                                                 "Properties":  {
+                                                                                    "DefaultMessageTimeToLive":  "PT1H",
+                                                                                    "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                    "RequiresDuplicateDetection":  false
+                                                                                },
+                                                                 "Subscriptions":  [
+                                                                                       {
+                                                                                           "Name":  "wire-observer",
+                                                                                           "Properties":  {
+                                                                                                              "DeadLetteringOnMessageExpiration":  false,
+                                                                                                              "DefaultMessageTimeToLive":  "PT1H",
+                                                                                                              "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                                              "ForwardDeadLetteredMessagesTo":  "",
+                                                                                                              "ForwardTo":  "",
+                                                                                                              "LockDuration":  "PT1M",
+                                                                                                              "MaxDeliveryCount":  3,
+                                                                                                              "RequiresDuplicateDetection":  false,
+                                                                                                              "RequiresSession":  false
+                                                                                                          },
+                                                                                           "Rules":  [
+
+                                                                                                     ]
+                                                                                       }
+                                                                                   ]
+                                                             },
+                                                             {
+                                                                 "Name":  "b-t-7",
+                                                                 "Properties":  {
+                                                                                    "DefaultMessageTimeToLive":  "PT1H",
+                                                                                    "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                    "RequiresDuplicateDetection":  false
+                                                                                },
+                                                                 "Subscriptions":  [
+                                                                                       {
+                                                                                           "Name":  "wire-observer",
+                                                                                           "Properties":  {
+                                                                                                              "DeadLetteringOnMessageExpiration":  false,
+                                                                                                              "DefaultMessageTimeToLive":  "PT1H",
+                                                                                                              "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                                              "ForwardDeadLetteredMessagesTo":  "",
+                                                                                                              "ForwardTo":  "",
+                                                                                                              "LockDuration":  "PT1M",
+                                                                                                              "MaxDeliveryCount":  3,
+                                                                                                              "RequiresDuplicateDetection":  false,
+                                                                                                              "RequiresSession":  false
+                                                                                                          },
+                                                                                           "Rules":  [
+
+                                                                                                     ]
+                                                                                       }
+                                                                                   ]
+                                                             },
+                                                             {
+                                                                 "Name":  "m-t-0",
+                                                                 "Properties":  {
+                                                                                    "DefaultMessageTimeToLive":  "PT1H",
+                                                                                    "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                    "RequiresDuplicateDetection":  false
+                                                                                },
+                                                                 "Subscriptions":  [
+                                                                                       {
+                                                                                           "Name":  "wire-observer",
+                                                                                           "Properties":  {
+                                                                                                              "DeadLetteringOnMessageExpiration":  false,
+                                                                                                              "DefaultMessageTimeToLive":  "PT1H",
+                                                                                                              "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                                              "ForwardDeadLetteredMessagesTo":  "",
+                                                                                                              "ForwardTo":  "",
+                                                                                                              "LockDuration":  "PT1M",
+                                                                                                              "MaxDeliveryCount":  3,
+                                                                                                              "RequiresDuplicateDetection":  false,
+                                                                                                              "RequiresSession":  false
+                                                                                                          },
+                                                                                           "Rules":  [
+
+                                                                                                     ]
+                                                                                       }
+                                                                                   ]
+                                                             },
+                                                             {
+                                                                 "Name":  "m-t-1",
+                                                                 "Properties":  {
+                                                                                    "DefaultMessageTimeToLive":  "PT1H",
+                                                                                    "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                    "RequiresDuplicateDetection":  false
+                                                                                },
+                                                                 "Subscriptions":  [
+                                                                                       {
+                                                                                           "Name":  "wire-observer",
+                                                                                           "Properties":  {
+                                                                                                              "DeadLetteringOnMessageExpiration":  false,
+                                                                                                              "DefaultMessageTimeToLive":  "PT1H",
+                                                                                                              "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                                              "ForwardDeadLetteredMessagesTo":  "",
+                                                                                                              "ForwardTo":  "",
+                                                                                                              "LockDuration":  "PT1M",
+                                                                                                              "MaxDeliveryCount":  3,
+                                                                                                              "RequiresDuplicateDetection":  false,
+                                                                                                              "RequiresSession":  false
+                                                                                                          },
+                                                                                           "Rules":  [
+
+                                                                                                     ]
+                                                                                       }
+                                                                                   ]
+                                                             },
+                                                             {
+                                                                 "Name":  "m-t-2",
+                                                                 "Properties":  {
+                                                                                    "DefaultMessageTimeToLive":  "PT1H",
+                                                                                    "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                    "RequiresDuplicateDetection":  false
+                                                                                },
+                                                                 "Subscriptions":  [
+                                                                                       {
+                                                                                           "Name":  "wire-observer",
+                                                                                           "Properties":  {
+                                                                                                              "DeadLetteringOnMessageExpiration":  false,
+                                                                                                              "DefaultMessageTimeToLive":  "PT1H",
+                                                                                                              "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                                              "ForwardDeadLetteredMessagesTo":  "",
+                                                                                                              "ForwardTo":  "",
+                                                                                                              "LockDuration":  "PT1M",
+                                                                                                              "MaxDeliveryCount":  3,
+                                                                                                              "RequiresDuplicateDetection":  false,
+                                                                                                              "RequiresSession":  false
+                                                                                                          },
+                                                                                           "Rules":  [
+
+                                                                                                     ]
+                                                                                       }
+                                                                                   ]
+                                                             },
+                                                             {
+                                                                 "Name":  "m-t-3",
+                                                                 "Properties":  {
+                                                                                    "DefaultMessageTimeToLive":  "PT1H",
+                                                                                    "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                    "RequiresDuplicateDetection":  false
+                                                                                },
+                                                                 "Subscriptions":  [
+                                                                                       {
+                                                                                           "Name":  "wire-observer",
+                                                                                           "Properties":  {
+                                                                                                              "DeadLetteringOnMessageExpiration":  false,
+                                                                                                              "DefaultMessageTimeToLive":  "PT1H",
+                                                                                                              "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                                              "ForwardDeadLetteredMessagesTo":  "",
+                                                                                                              "ForwardTo":  "",
+                                                                                                              "LockDuration":  "PT1M",
+                                                                                                              "MaxDeliveryCount":  3,
+                                                                                                              "RequiresDuplicateDetection":  false,
+                                                                                                              "RequiresSession":  false
+                                                                                                          },
+                                                                                           "Rules":  [
+
+                                                                                                     ]
+                                                                                       }
+                                                                                   ]
+                                                             },
+                                                             {
+                                                                 "Name":  "m-t-4",
+                                                                 "Properties":  {
+                                                                                    "DefaultMessageTimeToLive":  "PT1H",
+                                                                                    "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                    "RequiresDuplicateDetection":  false
+                                                                                },
+                                                                 "Subscriptions":  [
+                                                                                       {
+                                                                                           "Name":  "wire-observer",
+                                                                                           "Properties":  {
+                                                                                                              "DeadLetteringOnMessageExpiration":  false,
+                                                                                                              "DefaultMessageTimeToLive":  "PT1H",
+                                                                                                              "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                                              "ForwardDeadLetteredMessagesTo":  "",
+                                                                                                              "ForwardTo":  "",
+                                                                                                              "LockDuration":  "PT1M",
+                                                                                                              "MaxDeliveryCount":  3,
+                                                                                                              "RequiresDuplicateDetection":  false,
+                                                                                                              "RequiresSession":  false
+                                                                                                          },
+                                                                                           "Rules":  [
+
+                                                                                                     ]
+                                                                                       }
+                                                                                   ]
+                                                             },
+                                                             {
+                                                                 "Name":  "m-t-5",
+                                                                 "Properties":  {
+                                                                                    "DefaultMessageTimeToLive":  "PT1H",
+                                                                                    "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                    "RequiresDuplicateDetection":  false
+                                                                                },
+                                                                 "Subscriptions":  [
+                                                                                       {
+                                                                                           "Name":  "wire-observer",
+                                                                                           "Properties":  {
+                                                                                                              "DeadLetteringOnMessageExpiration":  false,
+                                                                                                              "DefaultMessageTimeToLive":  "PT1H",
+                                                                                                              "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                                              "ForwardDeadLetteredMessagesTo":  "",
+                                                                                                              "ForwardTo":  "",
+                                                                                                              "LockDuration":  "PT1M",
+                                                                                                              "MaxDeliveryCount":  3,
+                                                                                                              "RequiresDuplicateDetection":  false,
+                                                                                                              "RequiresSession":  false
+                                                                                                          },
+                                                                                           "Rules":  [
+
+                                                                                                     ]
+                                                                                       }
+                                                                                   ]
+                                                             },
+                                                             {
+                                                                 "Name":  "m-t-6",
+                                                                 "Properties":  {
+                                                                                    "DefaultMessageTimeToLive":  "PT1H",
+                                                                                    "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                    "RequiresDuplicateDetection":  false
+                                                                                },
+                                                                 "Subscriptions":  [
+                                                                                       {
+                                                                                           "Name":  "wire-observer",
+                                                                                           "Properties":  {
+                                                                                                              "DeadLetteringOnMessageExpiration":  false,
+                                                                                                              "DefaultMessageTimeToLive":  "PT1H",
+                                                                                                              "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                                              "ForwardDeadLetteredMessagesTo":  "",
+                                                                                                              "ForwardTo":  "",
+                                                                                                              "LockDuration":  "PT1M",
+                                                                                                              "MaxDeliveryCount":  3,
+                                                                                                              "RequiresDuplicateDetection":  false,
+                                                                                                              "RequiresSession":  false
+                                                                                                          },
+                                                                                           "Rules":  [
+
+                                                                                                     ]
+                                                                                       }
+                                                                                   ]
+                                                             },
+                                                             {
+                                                                 "Name":  "m-t-7",
+                                                                 "Properties":  {
+                                                                                    "DefaultMessageTimeToLive":  "PT1H",
+                                                                                    "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                    "RequiresDuplicateDetection":  false
+                                                                                },
+                                                                 "Subscriptions":  [
+                                                                                       {
+                                                                                           "Name":  "wire-observer",
+                                                                                           "Properties":  {
+                                                                                                              "DeadLetteringOnMessageExpiration":  false,
+                                                                                                              "DefaultMessageTimeToLive":  "PT1H",
+                                                                                                              "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                                              "ForwardDeadLetteredMessagesTo":  "",
+                                                                                                              "ForwardTo":  "",
+                                                                                                              "LockDuration":  "PT1M",
+                                                                                                              "MaxDeliveryCount":  3,
+                                                                                                              "RequiresDuplicateDetection":  false,
+                                                                                                              "RequiresSession":  false
+                                                                                                          },
+                                                                                           "Rules":  [
+
+                                                                                                     ]
+                                                                                       }
+                                                                                   ]
+                                                             }
+                                                         ]
+                                          }
+                                      ],
+                       "Logging":  {
+                                       "Type":  "Console"
+                                   }
+                   }
+}

@@ -1,0 +1,7351 @@
+{
+  "library": "/workspace/tests/Paramore.Brighter.Kafka.Tests/bin/Release/net9.0/runtimes/linux-x64/native/centos8-librdkafka.so",
+  "library_sha256": "3c35306d1908ce8fae70b16e1165be6628fa72699424f2b6de83a894084cb30a",
+  "containing_function_symbols": 19069,
+  "resolved_frames": 701,
+  "unresolved_frames": 0,
+  "threads": [
+    {
+      "thread_id": "0x5e",
+      "native_frames": [
+        {
+          "image_offset": "0xfa0de",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_poll",
+              "offset": 30
+            }
+          ]
+        },
+        {
+          "image_offset": "0xfbbfe",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_io_serve",
+              "offset": 78
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1bac",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 236
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe22a1",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_consumer_serve",
+              "offset": 369
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2608",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 280
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x5f",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100914",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve0.localalias",
+              "offset": 452
+            },
+            {
+              "function": "rd_kafka_q_serve0",
+              "offset": 452
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100eeb",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0xcb589",
+          "symbols": [
+            {
+              "function": "rd_kafka_thread_main",
+              "offset": 473
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x66",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0xffab1",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve0",
+              "offset": 1153
+            }
+          ]
+        },
+        {
+          "image_offset": "0x10070b",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1c20",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 352
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2e4f",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 2399
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x6d",
+      "native_frames": [
+        {
+          "image_offset": "0xfa0de",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_poll",
+              "offset": 30
+            }
+          ]
+        },
+        {
+          "image_offset": "0xfbbfe",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_io_serve",
+              "offset": 78
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1bac",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 236
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe22a1",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_consumer_serve",
+              "offset": 369
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2608",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 280
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x6e",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100914",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve0.localalias",
+              "offset": 452
+            },
+            {
+              "function": "rd_kafka_q_serve0",
+              "offset": 452
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100eeb",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0xcb589",
+          "symbols": [
+            {
+              "function": "rd_kafka_thread_main",
+              "offset": 473
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x70",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0xffab1",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve0",
+              "offset": 1153
+            }
+          ]
+        },
+        {
+          "image_offset": "0x10070b",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1c20",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 352
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2e4f",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 2399
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x7a",
+      "native_frames": [
+        {
+          "image_offset": "0xfa0de",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_poll",
+              "offset": 30
+            }
+          ]
+        },
+        {
+          "image_offset": "0xfbbfe",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_io_serve",
+              "offset": 78
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1bac",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 236
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe22a1",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_consumer_serve",
+              "offset": 369
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2608",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 280
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x7f",
+      "native_frames": [
+        {
+          "image_offset": "0xfa0de",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_poll",
+              "offset": 30
+            }
+          ]
+        },
+        {
+          "image_offset": "0xfbbfe",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_io_serve",
+              "offset": 78
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1bac",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 236
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe22a1",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_consumer_serve",
+              "offset": 369
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2608",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 280
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x81",
+      "native_frames": [
+        {
+          "image_offset": "0xfa0de",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_poll",
+              "offset": 30
+            }
+          ]
+        },
+        {
+          "image_offset": "0xfbbfe",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_io_serve",
+              "offset": 78
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1bac",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 236
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe22a1",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_consumer_serve",
+              "offset": 369
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2608",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 280
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x82",
+      "native_frames": [
+        {
+          "image_offset": "0xfa0de",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_poll",
+              "offset": 30
+            }
+          ]
+        },
+        {
+          "image_offset": "0xfbbfe",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_io_serve",
+              "offset": 78
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1bac",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 236
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe22a1",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_consumer_serve",
+              "offset": 369
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2608",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 280
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x83",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100914",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve0.localalias",
+              "offset": 452
+            },
+            {
+              "function": "rd_kafka_q_serve0",
+              "offset": 452
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100eeb",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0xcb589",
+          "symbols": [
+            {
+              "function": "rd_kafka_thread_main",
+              "offset": 473
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x84",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100914",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve0.localalias",
+              "offset": 452
+            },
+            {
+              "function": "rd_kafka_q_serve0",
+              "offset": 452
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100eeb",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0xcb589",
+          "symbols": [
+            {
+              "function": "rd_kafka_thread_main",
+              "offset": 473
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x85",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0xffab1",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve0",
+              "offset": 1153
+            }
+          ]
+        },
+        {
+          "image_offset": "0x10070b",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1c20",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 352
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2e4f",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 2399
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x86",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0xffab1",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve0",
+              "offset": 1153
+            }
+          ]
+        },
+        {
+          "image_offset": "0x10070b",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1c20",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 352
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2e4f",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 2399
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x89",
+      "native_frames": [
+        {
+          "image_offset": "0xfa0de",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_poll",
+              "offset": 30
+            }
+          ]
+        },
+        {
+          "image_offset": "0xfbbfe",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_io_serve",
+              "offset": 78
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1bac",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 236
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe22a1",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_consumer_serve",
+              "offset": 369
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2608",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 280
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x8a",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100914",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve0.localalias",
+              "offset": 452
+            },
+            {
+              "function": "rd_kafka_q_serve0",
+              "offset": 452
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100eeb",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0xcb589",
+          "symbols": [
+            {
+              "function": "rd_kafka_thread_main",
+              "offset": 473
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x8f",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0xffab1",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve0",
+              "offset": 1153
+            }
+          ]
+        },
+        {
+          "image_offset": "0x10070b",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1c20",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 352
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2e4f",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 2399
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x90",
+      "native_frames": [
+        {
+          "image_offset": "0xfa0de",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_poll",
+              "offset": 30
+            }
+          ]
+        },
+        {
+          "image_offset": "0xfbbfe",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_io_serve",
+              "offset": 78
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1bac",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 236
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe22a1",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_consumer_serve",
+              "offset": 369
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2608",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 280
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x91",
+      "native_frames": [
+        {
+          "image_offset": "0xfa0de",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_poll",
+              "offset": 30
+            }
+          ]
+        },
+        {
+          "image_offset": "0xfbbfe",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_io_serve",
+              "offset": 78
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1bac",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 236
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe22a1",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_consumer_serve",
+              "offset": 369
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2608",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 280
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x92",
+      "native_frames": [
+        {
+          "image_offset": "0xfa0de",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_poll",
+              "offset": 30
+            }
+          ]
+        },
+        {
+          "image_offset": "0xfbbfe",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_io_serve",
+              "offset": 78
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1bac",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 236
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe22a1",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_consumer_serve",
+              "offset": 369
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2608",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 280
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x93",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100914",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve0.localalias",
+              "offset": 452
+            },
+            {
+              "function": "rd_kafka_q_serve0",
+              "offset": 452
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100eeb",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0xcb589",
+          "symbols": [
+            {
+              "function": "rd_kafka_thread_main",
+              "offset": 473
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x94",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0xffab1",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve0",
+              "offset": 1153
+            }
+          ]
+        },
+        {
+          "image_offset": "0x10070b",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1c20",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 352
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2e4f",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 2399
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x9b",
+      "native_frames": [
+        {
+          "image_offset": "0xfa0de",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_poll",
+              "offset": 30
+            }
+          ]
+        },
+        {
+          "image_offset": "0xfbbfe",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_io_serve",
+              "offset": 78
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1bac",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 236
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe22a1",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_consumer_serve",
+              "offset": 369
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2608",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 280
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x9c",
+      "native_frames": [
+        {
+          "image_offset": "0xfa0de",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_poll",
+              "offset": 30
+            }
+          ]
+        },
+        {
+          "image_offset": "0xfbbfe",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_io_serve",
+              "offset": 78
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1bac",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 236
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe22a1",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_consumer_serve",
+              "offset": 369
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2608",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 280
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0xbc",
+      "native_frames": [
+        {
+          "image_offset": "0xfa0de",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_poll",
+              "offset": 30
+            }
+          ]
+        },
+        {
+          "image_offset": "0xfbbfe",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_io_serve",
+              "offset": 78
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1bac",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 236
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe22a1",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_consumer_serve",
+              "offset": 369
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2608",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 280
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0xbe",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100914",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve0.localalias",
+              "offset": 452
+            },
+            {
+              "function": "rd_kafka_q_serve0",
+              "offset": 452
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100eeb",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0xcb589",
+          "symbols": [
+            {
+              "function": "rd_kafka_thread_main",
+              "offset": 473
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0xc0",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0xffab1",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve0",
+              "offset": 1153
+            }
+          ]
+        },
+        {
+          "image_offset": "0x10070b",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1c20",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 352
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2e4f",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 2399
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0xc4",
+      "native_frames": [
+        {
+          "image_offset": "0xfa0de",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_poll",
+              "offset": 30
+            }
+          ]
+        },
+        {
+          "image_offset": "0xfbbfe",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_io_serve",
+              "offset": 78
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1bac",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 236
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe22a1",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_consumer_serve",
+              "offset": 369
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2608",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 280
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x473",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100914",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve0.localalias",
+              "offset": 452
+            },
+            {
+              "function": "rd_kafka_q_serve0",
+              "offset": 452
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100eeb",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0xcb589",
+          "symbols": [
+            {
+              "function": "rd_kafka_thread_main",
+              "offset": 473
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x474",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0xffab1",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve0",
+              "offset": 1153
+            }
+          ]
+        },
+        {
+          "image_offset": "0x10070b",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1c20",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 352
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2cc2",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 2002
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x476",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100914",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve0.localalias",
+              "offset": 452
+            },
+            {
+              "function": "rd_kafka_q_serve0",
+              "offset": 452
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100f0e",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve_maybe_consume",
+              "offset": 30
+            }
+          ]
+        }
+      ],
+      "managed_frames": [
+        "Confluent.Kafka.Producer`2+<>c__DisplayClass25_0[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]].<StartPollTask>b__0()",
+        "System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object)",
+        "System.Threading.Tasks.Task.ExecuteWithThreadLocal(System.Threading.Tasks.Task ByRef, System.Threading.Thread)"
+      ]
+    },
+    {
+      "thread_id": "0x47c",
+      "native_frames": [
+        {
+          "image_offset": "0xfa0de",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_poll",
+              "offset": 30
+            }
+          ]
+        },
+        {
+          "image_offset": "0xfbbfe",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_io_serve",
+              "offset": 78
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1bac",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 236
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2931",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 1089
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x47e",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100914",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve0.localalias",
+              "offset": 452
+            },
+            {
+              "function": "rd_kafka_q_serve0",
+              "offset": 452
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100eeb",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0xcb589",
+          "symbols": [
+            {
+              "function": "rd_kafka_thread_main",
+              "offset": 473
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x47f",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0xffab1",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve0",
+              "offset": 1153
+            }
+          ]
+        },
+        {
+          "image_offset": "0x10070b",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1c20",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 352
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2cc2",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 2002
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x481",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100914",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve0.localalias",
+              "offset": 452
+            },
+            {
+              "function": "rd_kafka_q_serve0",
+              "offset": 452
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100f0e",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve_maybe_consume",
+              "offset": 30
+            }
+          ]
+        }
+      ],
+      "managed_frames": [
+        "Confluent.Kafka.Producer`2+<>c__DisplayClass25_0[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]].<StartPollTask>b__0()",
+        "System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object)",
+        "System.Threading.Tasks.Task.ExecuteWithThreadLocal(System.Threading.Tasks.Task ByRef, System.Threading.Thread)"
+      ]
+    },
+    {
+      "thread_id": "0x482",
+      "native_frames": [
+        {
+          "image_offset": "0xfa0de",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_poll",
+              "offset": 30
+            }
+          ]
+        },
+        {
+          "image_offset": "0xfbbfe",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_io_serve",
+              "offset": 78
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1bac",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 236
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe22a1",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_consumer_serve",
+              "offset": 369
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2608",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 280
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x483",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100914",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve0.localalias",
+              "offset": 452
+            },
+            {
+              "function": "rd_kafka_q_serve0",
+              "offset": 452
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100eeb",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0xcb589",
+          "symbols": [
+            {
+              "function": "rd_kafka_thread_main",
+              "offset": 473
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x484",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0xffab1",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve0",
+              "offset": 1153
+            }
+          ]
+        },
+        {
+          "image_offset": "0x10070b",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1c20",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 352
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2e4f",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 2399
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x486",
+      "native_frames": [
+        {
+          "image_offset": "0xfa0de",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_poll",
+              "offset": 30
+            }
+          ]
+        },
+        {
+          "image_offset": "0xfbbfe",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_io_serve",
+              "offset": 78
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1bac",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 236
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2931",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 1089
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x487",
+      "native_frames": [
+        {
+          "image_offset": "0xfa0de",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_poll",
+              "offset": 30
+            }
+          ]
+        },
+        {
+          "image_offset": "0xfbbfe",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_io_serve",
+              "offset": 78
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1bac",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 236
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe22a1",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_consumer_serve",
+              "offset": 369
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2608",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 280
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x83a",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100914",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve0.localalias",
+              "offset": 452
+            },
+            {
+              "function": "rd_kafka_q_serve0",
+              "offset": 452
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100eeb",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0xcb589",
+          "symbols": [
+            {
+              "function": "rd_kafka_thread_main",
+              "offset": 473
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x83b",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0xffab1",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve0",
+              "offset": 1153
+            }
+          ]
+        },
+        {
+          "image_offset": "0x10070b",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1c20",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 352
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2cc2",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 2002
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x83d",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100914",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve0.localalias",
+              "offset": 452
+            },
+            {
+              "function": "rd_kafka_q_serve0",
+              "offset": 452
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100f0e",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve_maybe_consume",
+              "offset": 30
+            }
+          ]
+        }
+      ],
+      "managed_frames": [
+        "Confluent.Kafka.Producer`2+<>c__DisplayClass25_0[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]].<StartPollTask>b__0()",
+        "System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object)",
+        "System.Threading.Tasks.Task.ExecuteWithThreadLocal(System.Threading.Tasks.Task ByRef, System.Threading.Thread)"
+      ]
+    },
+    {
+      "thread_id": "0x843",
+      "native_frames": [
+        {
+          "image_offset": "0xfa0de",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_poll",
+              "offset": 30
+            }
+          ]
+        },
+        {
+          "image_offset": "0xfbbfe",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_io_serve",
+              "offset": 78
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1bac",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 236
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2931",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 1089
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x845",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100914",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve0.localalias",
+              "offset": 452
+            },
+            {
+              "function": "rd_kafka_q_serve0",
+              "offset": 452
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100eeb",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0xcb589",
+          "symbols": [
+            {
+              "function": "rd_kafka_thread_main",
+              "offset": 473
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x846",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0xffab1",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve0",
+              "offset": 1153
+            }
+          ]
+        },
+        {
+          "image_offset": "0x10070b",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1c20",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 352
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2cc2",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 2002
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x848",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100914",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve0.localalias",
+              "offset": 452
+            },
+            {
+              "function": "rd_kafka_q_serve0",
+              "offset": 452
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100f0e",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve_maybe_consume",
+              "offset": 30
+            }
+          ]
+        }
+      ],
+      "managed_frames": [
+        "Confluent.Kafka.Producer`2+<>c__DisplayClass25_0[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]].<StartPollTask>b__0()",
+        "System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object)",
+        "System.Threading.Tasks.Task.ExecuteWithThreadLocal(System.Threading.Tasks.Task ByRef, System.Threading.Thread)"
+      ]
+    },
+    {
+      "thread_id": "0x84a",
+      "native_frames": [
+        {
+          "image_offset": "0xfa0de",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_poll",
+              "offset": 30
+            }
+          ]
+        },
+        {
+          "image_offset": "0xfbbfe",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_io_serve",
+              "offset": 78
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1bac",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 236
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe22a1",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_consumer_serve",
+              "offset": 369
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2608",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 280
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x84b",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100914",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve0.localalias",
+              "offset": 452
+            },
+            {
+              "function": "rd_kafka_q_serve0",
+              "offset": 452
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100eeb",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0xcb589",
+          "symbols": [
+            {
+              "function": "rd_kafka_thread_main",
+              "offset": 473
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x84c",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0xffab1",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve0",
+              "offset": 1153
+            }
+          ]
+        },
+        {
+          "image_offset": "0x10070b",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1c20",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 352
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2e4f",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 2399
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x84e",
+      "native_frames": [
+        {
+          "image_offset": "0xfa0de",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_poll",
+              "offset": 30
+            }
+          ]
+        },
+        {
+          "image_offset": "0xfbbfe",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_io_serve",
+              "offset": 78
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1bac",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 236
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2931",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 1089
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x84f",
+      "native_frames": [
+        {
+          "image_offset": "0xfa0de",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_poll",
+              "offset": 30
+            }
+          ]
+        },
+        {
+          "image_offset": "0xfbbfe",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_io_serve",
+              "offset": 78
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1bac",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 236
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe22a1",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_consumer_serve",
+              "offset": 369
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2608",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 280
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0xc5d",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100914",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve0.localalias",
+              "offset": 452
+            },
+            {
+              "function": "rd_kafka_q_serve0",
+              "offset": 452
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100eeb",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0xcb589",
+          "symbols": [
+            {
+              "function": "rd_kafka_thread_main",
+              "offset": 473
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0xc5e",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0xffab1",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve0",
+              "offset": 1153
+            }
+          ]
+        },
+        {
+          "image_offset": "0x10070b",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1c20",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 352
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2cc2",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 2002
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0xc60",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100914",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve0.localalias",
+              "offset": 452
+            },
+            {
+              "function": "rd_kafka_q_serve0",
+              "offset": 452
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100f0e",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve_maybe_consume",
+              "offset": 30
+            }
+          ]
+        }
+      ],
+      "managed_frames": [
+        "Confluent.Kafka.Producer`2+<>c__DisplayClass25_0[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]].<StartPollTask>b__0()",
+        "System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object)",
+        "System.Threading.Tasks.Task.ExecuteWithThreadLocal(System.Threading.Tasks.Task ByRef, System.Threading.Thread)"
+      ]
+    },
+    {
+      "thread_id": "0xc66",
+      "native_frames": [
+        {
+          "image_offset": "0xfa0de",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_poll",
+              "offset": 30
+            }
+          ]
+        },
+        {
+          "image_offset": "0xfbbfe",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_io_serve",
+              "offset": 78
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1bac",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 236
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2931",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 1089
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x1009",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100914",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve0.localalias",
+              "offset": 452
+            },
+            {
+              "function": "rd_kafka_q_serve0",
+              "offset": 452
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100eeb",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0xcb589",
+          "symbols": [
+            {
+              "function": "rd_kafka_thread_main",
+              "offset": 473
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x100a",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0xffab1",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve0",
+              "offset": 1153
+            }
+          ]
+        },
+        {
+          "image_offset": "0x10070b",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1c20",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 352
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2cc2",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 2002
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x100c",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100914",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve0.localalias",
+              "offset": 452
+            },
+            {
+              "function": "rd_kafka_q_serve0",
+              "offset": 452
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100f0e",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve_maybe_consume",
+              "offset": 30
+            }
+          ]
+        }
+      ],
+      "managed_frames": [
+        "Confluent.Kafka.Producer`2+<>c__DisplayClass25_0[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]].<StartPollTask>b__0()",
+        "System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object)",
+        "System.Threading.Tasks.Task.ExecuteWithThreadLocal(System.Threading.Tasks.Task ByRef, System.Threading.Thread)"
+      ]
+    },
+    {
+      "thread_id": "0x1012",
+      "native_frames": [
+        {
+          "image_offset": "0xfa0de",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_poll",
+              "offset": 30
+            }
+          ]
+        },
+        {
+          "image_offset": "0xfbbfe",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_io_serve",
+              "offset": 78
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1bac",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 236
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2931",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 1089
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x1420",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100914",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve0.localalias",
+              "offset": 452
+            },
+            {
+              "function": "rd_kafka_q_serve0",
+              "offset": 452
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100eeb",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0xcb589",
+          "symbols": [
+            {
+              "function": "rd_kafka_thread_main",
+              "offset": 473
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x1421",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0xffab1",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve0",
+              "offset": 1153
+            }
+          ]
+        },
+        {
+          "image_offset": "0x10070b",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1c20",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 352
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2cc2",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 2002
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x1423",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100914",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve0.localalias",
+              "offset": 452
+            },
+            {
+              "function": "rd_kafka_q_serve0",
+              "offset": 452
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100f0e",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve_maybe_consume",
+              "offset": 30
+            }
+          ]
+        }
+      ],
+      "managed_frames": [
+        "Confluent.Kafka.Producer`2+<>c__DisplayClass25_0[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]].<StartPollTask>b__0()",
+        "System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object)",
+        "System.Threading.Tasks.Task.ExecuteWithThreadLocal(System.Threading.Tasks.Task ByRef, System.Threading.Thread)"
+      ]
+    },
+    {
+      "thread_id": "0x1429",
+      "native_frames": [
+        {
+          "image_offset": "0xfa0de",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_poll",
+              "offset": 30
+            }
+          ]
+        },
+        {
+          "image_offset": "0xfbbfe",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_io_serve",
+              "offset": 78
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1bac",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 236
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2931",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 1089
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x142b",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100914",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve0.localalias",
+              "offset": 452
+            },
+            {
+              "function": "rd_kafka_q_serve0",
+              "offset": 452
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100eeb",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0xcb589",
+          "symbols": [
+            {
+              "function": "rd_kafka_thread_main",
+              "offset": 473
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x142c",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0xffab1",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve0",
+              "offset": 1153
+            }
+          ]
+        },
+        {
+          "image_offset": "0x10070b",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1c20",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 352
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2cc2",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 2002
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x142e",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100914",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve0.localalias",
+              "offset": 452
+            },
+            {
+              "function": "rd_kafka_q_serve0",
+              "offset": 452
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100f0e",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve_maybe_consume",
+              "offset": 30
+            }
+          ]
+        }
+      ],
+      "managed_frames": [
+        "Confluent.Kafka.Producer`2+<>c__DisplayClass25_0[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]].<StartPollTask>b__0()",
+        "System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object)",
+        "System.Threading.Tasks.Task.ExecuteWithThreadLocal(System.Threading.Tasks.Task ByRef, System.Threading.Thread)"
+      ]
+    },
+    {
+      "thread_id": "0x142f",
+      "native_frames": [
+        {
+          "image_offset": "0xfa0de",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_poll",
+              "offset": 30
+            }
+          ]
+        },
+        {
+          "image_offset": "0xfbbfe",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_io_serve",
+              "offset": 78
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1bac",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 236
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe22a1",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_consumer_serve",
+              "offset": 369
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2608",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 280
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x1430",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100914",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve0.localalias",
+              "offset": 452
+            },
+            {
+              "function": "rd_kafka_q_serve0",
+              "offset": 452
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100eeb",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0xcb589",
+          "symbols": [
+            {
+              "function": "rd_kafka_thread_main",
+              "offset": 473
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x1431",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0xffab1",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve0",
+              "offset": 1153
+            }
+          ]
+        },
+        {
+          "image_offset": "0x10070b",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1c20",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 352
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2e4f",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 2399
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x1433",
+      "native_frames": [
+        {
+          "image_offset": "0xfa0de",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_poll",
+              "offset": 30
+            }
+          ]
+        },
+        {
+          "image_offset": "0xfbbfe",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_io_serve",
+              "offset": 78
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1bac",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 236
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2931",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 1089
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x1434",
+      "native_frames": [
+        {
+          "image_offset": "0xfa0de",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_poll",
+              "offset": 30
+            }
+          ]
+        },
+        {
+          "image_offset": "0xfbbfe",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_io_serve",
+              "offset": 78
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1bac",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 236
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe22a1",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_consumer_serve",
+              "offset": 369
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2608",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 280
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x17e4",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100914",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve0.localalias",
+              "offset": 452
+            },
+            {
+              "function": "rd_kafka_q_serve0",
+              "offset": 452
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100eeb",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0xcb589",
+          "symbols": [
+            {
+              "function": "rd_kafka_thread_main",
+              "offset": 473
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x17e5",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0xffab1",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve0",
+              "offset": 1153
+            }
+          ]
+        },
+        {
+          "image_offset": "0x10070b",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1c20",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 352
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2cc2",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 2002
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x17e7",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100914",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve0.localalias",
+              "offset": 452
+            },
+            {
+              "function": "rd_kafka_q_serve0",
+              "offset": 452
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100f0e",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve_maybe_consume",
+              "offset": 30
+            }
+          ]
+        }
+      ],
+      "managed_frames": [
+        "Confluent.Kafka.Producer`2+<>c__DisplayClass25_0[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]].<StartPollTask>b__0()",
+        "System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object)",
+        "System.Threading.Tasks.Task.ExecuteWithThreadLocal(System.Threading.Tasks.Task ByRef, System.Threading.Thread)"
+      ]
+    },
+    {
+      "thread_id": "0x17ed",
+      "native_frames": [
+        {
+          "image_offset": "0xfa0de",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_poll",
+              "offset": 30
+            }
+          ]
+        },
+        {
+          "image_offset": "0xfbbfe",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_io_serve",
+              "offset": 78
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1bac",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 236
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2931",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 1089
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x17ef",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100914",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve0.localalias",
+              "offset": 452
+            },
+            {
+              "function": "rd_kafka_q_serve0",
+              "offset": 452
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100eeb",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0xcb589",
+          "symbols": [
+            {
+              "function": "rd_kafka_thread_main",
+              "offset": 473
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x17f0",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0xffab1",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve0",
+              "offset": 1153
+            }
+          ]
+        },
+        {
+          "image_offset": "0x10070b",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1c20",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 352
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2cc2",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 2002
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x17f2",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100914",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve0.localalias",
+              "offset": 452
+            },
+            {
+              "function": "rd_kafka_q_serve0",
+              "offset": 452
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100f0e",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve_maybe_consume",
+              "offset": 30
+            }
+          ]
+        }
+      ],
+      "managed_frames": [
+        "Confluent.Kafka.Producer`2+<>c__DisplayClass25_0[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]].<StartPollTask>b__0()",
+        "System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object)",
+        "System.Threading.Tasks.Task.ExecuteWithThreadLocal(System.Threading.Tasks.Task ByRef, System.Threading.Thread)"
+      ]
+    },
+    {
+      "thread_id": "0x17f3",
+      "native_frames": [
+        {
+          "image_offset": "0xfa0de",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_poll",
+              "offset": 30
+            }
+          ]
+        },
+        {
+          "image_offset": "0xfbbfe",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_io_serve",
+              "offset": 78
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1bac",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 236
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe22a1",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_consumer_serve",
+              "offset": 369
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2608",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 280
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x17f4",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100914",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve0.localalias",
+              "offset": 452
+            },
+            {
+              "function": "rd_kafka_q_serve0",
+              "offset": 452
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100eeb",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0xcb589",
+          "symbols": [
+            {
+              "function": "rd_kafka_thread_main",
+              "offset": 473
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x17f5",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0xffab1",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve0",
+              "offset": 1153
+            }
+          ]
+        },
+        {
+          "image_offset": "0x10070b",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1c20",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 352
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2e4f",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 2399
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x17f7",
+      "native_frames": [
+        {
+          "image_offset": "0xfa0de",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_poll",
+              "offset": 30
+            }
+          ]
+        },
+        {
+          "image_offset": "0xfbbfe",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_io_serve",
+              "offset": 78
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1bac",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 236
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2931",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 1089
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x17f8",
+      "native_frames": [
+        {
+          "image_offset": "0xfa0de",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_poll",
+              "offset": 30
+            }
+          ]
+        },
+        {
+          "image_offset": "0xfbbfe",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_io_serve",
+              "offset": 78
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1bac",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 236
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe22a1",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_consumer_serve",
+              "offset": 369
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2608",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 280
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x1865",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100914",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve0.localalias",
+              "offset": 452
+            },
+            {
+              "function": "rd_kafka_q_serve0",
+              "offset": 452
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100eeb",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0xcb589",
+          "symbols": [
+            {
+              "function": "rd_kafka_thread_main",
+              "offset": 473
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x1866",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0xffab1",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve0",
+              "offset": 1153
+            }
+          ]
+        },
+        {
+          "image_offset": "0x10070b",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1c20",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 352
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2cc2",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 2002
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x1868",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100914",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve0.localalias",
+              "offset": 452
+            },
+            {
+              "function": "rd_kafka_q_serve0",
+              "offset": 452
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100f0e",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve_maybe_consume",
+              "offset": 30
+            }
+          ]
+        }
+      ],
+      "managed_frames": [
+        "Confluent.Kafka.Producer`2+<>c__DisplayClass25_0[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]].<StartPollTask>b__0()",
+        "System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object)",
+        "System.Threading.Tasks.Task.ExecuteWithThreadLocal(System.Threading.Tasks.Task ByRef, System.Threading.Thread)"
+      ]
+    },
+    {
+      "thread_id": "0x186e",
+      "native_frames": [
+        {
+          "image_offset": "0xfa0de",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_poll",
+              "offset": 30
+            }
+          ]
+        },
+        {
+          "image_offset": "0xfbbfe",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_io_serve",
+              "offset": 78
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1bac",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 236
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2931",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 1089
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x18a5",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100914",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve0.localalias",
+              "offset": 452
+            },
+            {
+              "function": "rd_kafka_q_serve0",
+              "offset": 452
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100eeb",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0xcb589",
+          "symbols": [
+            {
+              "function": "rd_kafka_thread_main",
+              "offset": 473
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x18a6",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0xffab1",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve0",
+              "offset": 1153
+            }
+          ]
+        },
+        {
+          "image_offset": "0x10070b",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1c20",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 352
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2cc2",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 2002
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x18a8",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100914",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve0.localalias",
+              "offset": 452
+            },
+            {
+              "function": "rd_kafka_q_serve0",
+              "offset": 452
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100f0e",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve_maybe_consume",
+              "offset": 30
+            }
+          ]
+        }
+      ],
+      "managed_frames": [
+        "Confluent.Kafka.Producer`2+<>c__DisplayClass25_0[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]].<StartPollTask>b__0()",
+        "System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object)",
+        "System.Threading.Tasks.Task.ExecuteWithThreadLocal(System.Threading.Tasks.Task ByRef, System.Threading.Thread)"
+      ]
+    },
+    {
+      "thread_id": "0x18ae",
+      "native_frames": [
+        {
+          "image_offset": "0xfa0de",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_poll",
+              "offset": 30
+            }
+          ]
+        },
+        {
+          "image_offset": "0xfbbfe",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_io_serve",
+              "offset": 78
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1bac",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 236
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2931",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 1089
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x18e7",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100914",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve0.localalias",
+              "offset": 452
+            },
+            {
+              "function": "rd_kafka_q_serve0",
+              "offset": 452
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100eeb",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0xcb589",
+          "symbols": [
+            {
+              "function": "rd_kafka_thread_main",
+              "offset": 473
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x18e8",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0xffab1",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve0",
+              "offset": 1153
+            }
+          ]
+        },
+        {
+          "image_offset": "0x10070b",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1c20",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 352
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2cc2",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 2002
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x18ea",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100914",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve0.localalias",
+              "offset": 452
+            },
+            {
+              "function": "rd_kafka_q_serve0",
+              "offset": 452
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100f0e",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve_maybe_consume",
+              "offset": 30
+            }
+          ]
+        }
+      ],
+      "managed_frames": [
+        "Confluent.Kafka.Producer`2+<>c__DisplayClass25_0[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]].<StartPollTask>b__0()",
+        "System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object)",
+        "System.Threading.Tasks.Task.ExecuteWithThreadLocal(System.Threading.Tasks.Task ByRef, System.Threading.Thread)"
+      ]
+    },
+    {
+      "thread_id": "0x18f0",
+      "native_frames": [
+        {
+          "image_offset": "0xfa0de",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_poll",
+              "offset": 30
+            }
+          ]
+        },
+        {
+          "image_offset": "0xfbbfe",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_io_serve",
+              "offset": 78
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1bac",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 236
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2931",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 1089
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x1928",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100914",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve0.localalias",
+              "offset": 452
+            },
+            {
+              "function": "rd_kafka_q_serve0",
+              "offset": 452
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100eeb",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0xcb589",
+          "symbols": [
+            {
+              "function": "rd_kafka_thread_main",
+              "offset": 473
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x1929",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0xffab1",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve0",
+              "offset": 1153
+            }
+          ]
+        },
+        {
+          "image_offset": "0x10070b",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1c20",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 352
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2cc2",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 2002
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x192b",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100914",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve0.localalias",
+              "offset": 452
+            },
+            {
+              "function": "rd_kafka_q_serve0",
+              "offset": 452
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100f0e",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve_maybe_consume",
+              "offset": 30
+            }
+          ]
+        }
+      ],
+      "managed_frames": [
+        "Confluent.Kafka.Producer`2+<>c__DisplayClass25_0[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]].<StartPollTask>b__0()",
+        "System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object)",
+        "System.Threading.Tasks.Task.ExecuteWithThreadLocal(System.Threading.Tasks.Task ByRef, System.Threading.Thread)"
+      ]
+    },
+    {
+      "thread_id": "0x1931",
+      "native_frames": [
+        {
+          "image_offset": "0xfa0de",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_poll",
+              "offset": 30
+            }
+          ]
+        },
+        {
+          "image_offset": "0xfbbfe",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_io_serve",
+              "offset": 78
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1bac",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 236
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2931",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 1089
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x194d",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100914",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve0.localalias",
+              "offset": 452
+            },
+            {
+              "function": "rd_kafka_q_serve0",
+              "offset": 452
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100eeb",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0xcb589",
+          "symbols": [
+            {
+              "function": "rd_kafka_thread_main",
+              "offset": 473
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x194e",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0xffab1",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve0",
+              "offset": 1153
+            }
+          ]
+        },
+        {
+          "image_offset": "0x10070b",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1c20",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 352
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2cc2",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 2002
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x1950",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100914",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve0.localalias",
+              "offset": 452
+            },
+            {
+              "function": "rd_kafka_q_serve0",
+              "offset": 452
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100f0e",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve_maybe_consume",
+              "offset": 30
+            }
+          ]
+        }
+      ],
+      "managed_frames": [
+        "Confluent.Kafka.Producer`2+<>c__DisplayClass25_0[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]].<StartPollTask>b__0()",
+        "System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object)",
+        "System.Threading.Tasks.Task.ExecuteWithThreadLocal(System.Threading.Tasks.Task ByRef, System.Threading.Thread)"
+      ]
+    },
+    {
+      "thread_id": "0x1956",
+      "native_frames": [
+        {
+          "image_offset": "0xfa0de",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_poll",
+              "offset": 30
+            }
+          ]
+        },
+        {
+          "image_offset": "0xfbbfe",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_io_serve",
+              "offset": 78
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1bac",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 236
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2931",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 1089
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x198e",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100914",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve0.localalias",
+              "offset": 452
+            },
+            {
+              "function": "rd_kafka_q_serve0",
+              "offset": 452
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100eeb",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0xcb589",
+          "symbols": [
+            {
+              "function": "rd_kafka_thread_main",
+              "offset": 473
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x198f",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0xffab1",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve0",
+              "offset": 1153
+            }
+          ]
+        },
+        {
+          "image_offset": "0x10070b",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1c20",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 352
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2cc2",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 2002
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x1991",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100914",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve0.localalias",
+              "offset": 452
+            },
+            {
+              "function": "rd_kafka_q_serve0",
+              "offset": 452
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100f0e",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve_maybe_consume",
+              "offset": 30
+            }
+          ]
+        }
+      ],
+      "managed_frames": [
+        "Confluent.Kafka.Producer`2+<>c__DisplayClass25_0[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]].<StartPollTask>b__0()",
+        "System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object)",
+        "System.Threading.Tasks.Task.ExecuteWithThreadLocal(System.Threading.Tasks.Task ByRef, System.Threading.Thread)"
+      ]
+    },
+    {
+      "thread_id": "0x1997",
+      "native_frames": [
+        {
+          "image_offset": "0xfa0de",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_poll",
+              "offset": 30
+            }
+          ]
+        },
+        {
+          "image_offset": "0xfbbfe",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_io_serve",
+              "offset": 78
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1bac",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 236
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2931",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 1089
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x199f",
+      "native_frames": [
+        {
+          "image_offset": "0xfa0de",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_poll",
+              "offset": 30
+            }
+          ]
+        },
+        {
+          "image_offset": "0xfbbfe",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_io_serve",
+              "offset": 78
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1bac",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 236
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe22a1",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_consumer_serve",
+              "offset": 369
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2608",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 280
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x19a0",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100914",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve0.localalias",
+              "offset": 452
+            },
+            {
+              "function": "rd_kafka_q_serve0",
+              "offset": 452
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100eeb",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0xcb589",
+          "symbols": [
+            {
+              "function": "rd_kafka_thread_main",
+              "offset": 473
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x19a1",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0xffab1",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve0",
+              "offset": 1153
+            }
+          ]
+        },
+        {
+          "image_offset": "0x10070b",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1c20",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 352
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2e4f",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 2399
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x19a3",
+      "native_frames": [
+        {
+          "image_offset": "0xfa0de",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_poll",
+              "offset": 30
+            }
+          ]
+        },
+        {
+          "image_offset": "0xfbbfe",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_io_serve",
+              "offset": 78
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1bac",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 236
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe22a1",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_consumer_serve",
+              "offset": 369
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2608",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 280
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x1d11",
+      "native_frames": [
+        {
+          "image_offset": "0xffab1",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve0",
+              "offset": 1153
+            }
+          ]
+        },
+        {
+          "image_offset": "0x10070b",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0x104551",
+          "symbols": [
+            {
+              "function": "rd_kafka_op_req",
+              "offset": 65
+            }
+          ]
+        },
+        {
+          "image_offset": "0x162e1b",
+          "symbols": [
+            {
+              "function": "rd_kafka_rebalance_protocol",
+              "offset": 27
+            }
+          ]
+        },
+        {
+          "image_offset": "0xc8ef7",
+          "symbols": [
+            {
+              "function": "rd_kafka_consumer_close0",
+              "offset": 487
+            }
+          ]
+        },
+        {
+          "image_offset": "0xc906d",
+          "symbols": [
+            {
+              "function": "rd_kafka_consumer_close",
+              "offset": 13
+            }
+          ]
+        }
+      ],
+      "managed_frames": [
+        "Confluent.Kafka.Consumer`2[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]].RebalanceCallback(IntPtr, Confluent.Kafka.ErrorCode, IntPtr, IntPtr)",
+        "ILStubClass.IL_STUB_ReversePInvoke(Int64, Int32, Int64, Int64)",
+        "Paramore.Brighter.MessagingGateway.Kafka.KafkaMessageConsumer.Close()",
+        "Paramore.Brighter.MessagingGateway.Kafka.KafkaMessageConsumer.Close()",
+        "Paramore.Brighter.MessagingGateway.Kafka.KafkaResourceCleanup.Try(System.Action)",
+        "Paramore.Brighter.MessagingGateway.Kafka.KafkaMessageConsumer+<DisposeAsyncCore>d__97.MoveNext()",
+        "System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[[Paramore.Brighter.MessagingGateway.Kafka.KafkaMessageConsumer+<DisposeAsyncCore>d__97, Paramore.Brighter.MessagingGateway.Kafka]](<DisposeAsyncCore>d__97 ByRef)",
+        "Paramore.Brighter.MessagingGateway.Kafka.KafkaMessageConsumer.Dispose()",
+        "Paramore.Brighter.Kafka.Tests.MessagingGateway.Reactor.KafkaMessageConsumerCommitRevokeConcurrency+<When_committing_offsets_during_revoke_should_not_race_with_background_commit>d__6.MoveNext()",
+        "Paramore.Brighter.Kafka.Tests.MessagingGateway.Reactor.KafkaMessageConsumerCommitRevokeConcurrency+<When_committing_offsets_during_revoke_should_not_race_with_background_commit>d__6.MoveNext()",
+        "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[[System.Threading.Tasks.VoidTaskResult, System.Private.CoreLib],[Paramore.Brighter.Kafka.Tests.MessagingGateway.Reactor.KafkaMessageConsumerCommitRevokeConcurrency+<When_committing_offsets_during_revoke_should_not_race_with_background_commit>d__6, Paramore.Brighter.Kafka.Tests]].ExecutionContextCallback(System.Object)",
+        "System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object)",
+        "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[[System.Threading.Tasks.VoidTaskResult, System.Private.CoreLib],[Paramore.Brighter.Kafka.Tests.MessagingGateway.Reactor.KafkaMessageConsumerCommitRevokeConcurrency+<When_committing_offsets_during_revoke_should_not_race_with_background_commit>d__6, Paramore.Brighter.Kafka.Tests]].MoveNext(System.Threading.Thread)",
+        "System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[[System.Threading.Tasks.VoidTaskResult, System.Private.CoreLib],[Paramore.Brighter.Kafka.Tests.MessagingGateway.Reactor.KafkaMessageConsumerCommitRevokeConcurrency+<When_committing_offsets_during_revoke_should_not_race_with_background_commit>d__6, Paramore.Brighter.Kafka.Tests]].MoveNext()",
+        "System.Threading.Tasks.AwaitTaskContinuation.RunOrScheduleAction(System.Runtime.CompilerServices.IAsyncStateMachineBox, Boolean)",
+        "System.Threading.Tasks.Task.RunContinuations(System.Object)",
+        "System.Threading.Tasks.Task+DelayPromise.CompleteTimedOut()",
+        "System.Threading.TimerQueueTimer.Fire(Boolean)",
+        "System.Threading.TimerQueue.FireNextTimers()",
+        "System.Threading.ThreadPoolWorkQueue.Dispatch()",
+        "System.Threading.PortableThreadPool+WorkerThread.WorkerThreadStart()"
+      ]
+    },
+    {
+      "thread_id": "0x1f02",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100914",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve0.localalias",
+              "offset": 452
+            },
+            {
+              "function": "rd_kafka_q_serve0",
+              "offset": 452
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100eeb",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0xcb589",
+          "symbols": [
+            {
+              "function": "rd_kafka_thread_main",
+              "offset": 473
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x1f03",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0xffab1",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve0",
+              "offset": 1153
+            }
+          ]
+        },
+        {
+          "image_offset": "0x10070b",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1c20",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 352
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2cc2",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 2002
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x1f05",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100914",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve0.localalias",
+              "offset": 452
+            },
+            {
+              "function": "rd_kafka_q_serve0",
+              "offset": 452
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100f0e",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve_maybe_consume",
+              "offset": 30
+            }
+          ]
+        }
+      ],
+      "managed_frames": [
+        "Confluent.Kafka.Producer`2+<>c__DisplayClass25_0[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]].<StartPollTask>b__0()",
+        "System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object)",
+        "System.Threading.Tasks.Task.ExecuteWithThreadLocal(System.Threading.Tasks.Task ByRef, System.Threading.Thread)"
+      ]
+    },
+    {
+      "thread_id": "0x1f0b",
+      "native_frames": [
+        {
+          "image_offset": "0xfa0de",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_poll",
+              "offset": 30
+            }
+          ]
+        },
+        {
+          "image_offset": "0xfbbfe",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_io_serve",
+              "offset": 78
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1bac",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 236
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2931",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 1089
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x1f1b",
+      "native_frames": [
+        {
+          "image_offset": "0xfa0de",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_poll",
+              "offset": 30
+            }
+          ]
+        },
+        {
+          "image_offset": "0xfbbfe",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_io_serve",
+              "offset": 78
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1bac",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 236
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe22a1",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_consumer_serve",
+              "offset": 369
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2608",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 280
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x1f1c",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100914",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve0.localalias",
+              "offset": 452
+            },
+            {
+              "function": "rd_kafka_q_serve0",
+              "offset": 452
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100eeb",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0xcb589",
+          "symbols": [
+            {
+              "function": "rd_kafka_thread_main",
+              "offset": 473
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x1f1d",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0xffab1",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve0",
+              "offset": 1153
+            }
+          ]
+        },
+        {
+          "image_offset": "0x10070b",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1c20",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 352
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2e4f",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 2399
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x1f1f",
+      "native_frames": [
+        {
+          "image_offset": "0xfa0de",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_poll",
+              "offset": 30
+            }
+          ]
+        },
+        {
+          "image_offset": "0xfbbfe",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_io_serve",
+              "offset": 78
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1bac",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 236
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe22a1",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_consumer_serve",
+              "offset": 369
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2608",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 280
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x1f26",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0xffab1",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve0",
+              "offset": 1153
+            }
+          ]
+        },
+        {
+          "image_offset": "0x10070b",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1c20",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 352
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe22a1",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_consumer_serve",
+              "offset": 369
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2608",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 280
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x1f27",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100914",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve0.localalias",
+              "offset": 452
+            },
+            {
+              "function": "rd_kafka_q_serve0",
+              "offset": 452
+            }
+          ]
+        },
+        {
+          "image_offset": "0x100eeb",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0xcb589",
+          "symbols": [
+            {
+              "function": "rd_kafka_thread_main",
+              "offset": 473
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x1f28",
+      "native_frames": [
+        {
+          "image_offset": "0x18500d",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_ms",
+              "offset": 253
+            }
+          ]
+        },
+        {
+          "image_offset": "0x1851fc",
+          "symbols": [
+            {
+              "function": "cnd_timedwait_abs",
+              "offset": 92
+            }
+          ]
+        },
+        {
+          "image_offset": "0xffab1",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve0",
+              "offset": 1153
+            }
+          ]
+        },
+        {
+          "image_offset": "0x10070b",
+          "symbols": [
+            {
+              "function": "rd_kafka_q_pop_serve",
+              "offset": 11
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1c20",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 352
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2e4f",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 2399
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    },
+    {
+      "thread_id": "0x1f2a",
+      "native_frames": [
+        {
+          "image_offset": "0xfa0de",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_poll",
+              "offset": 30
+            }
+          ]
+        },
+        {
+          "image_offset": "0xfbbfe",
+          "symbols": [
+            {
+              "function": "rd_kafka_transport_io_serve",
+              "offset": 78
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe1bac",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_ops_io_serve",
+              "offset": 236
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe22a1",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_consumer_serve",
+              "offset": 369
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2608",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_serve",
+              "offset": 280
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe32bd",
+          "symbols": [
+            {
+              "function": "rd_kafka_broker_thread_main",
+              "offset": 781
+            }
+          ]
+        }
+      ],
+      "managed_frames": []
+    }
+  ],
+  "limitation": "Exact containing function ranges only. No DWARF variables or queue ownership claim. Passive full-suite failure preceded diagnostic capture; full core provenance recorded separately."
+}

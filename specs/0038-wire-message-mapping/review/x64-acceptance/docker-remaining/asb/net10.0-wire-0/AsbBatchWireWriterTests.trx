@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="b8ed3077-e1d8-4dd7-b7f8-7b4b91c8262e" name="IrakliGabisonia@HCI-PF6GVL2D 2026-11-11 19:37:02" runUser="AzureAD\IrakliGabisonia" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-11-11T19:37:02.6171515+01:00" queuing="2026-11-11T19:37:02.6171527+01:00" start="2026-11-11T19:36:53.6853766+01:00" finish="2026-11-11T19:37:05.2304727+01:00" />
+  <TestSettings name="default" id="425df8b6-da91-4101-ac0f-424f4893af59">
+    <Deployment runDeploymentRoot="IrakliGabisonia_HCI-PF6GVL2D_2026-11-11_19_37_02" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="9978fcb1-11cc-4c5a-b3e1-32b3200bde1d" testId="01aa4dd6-a530-635c-9b7a-7e198c010d54" testName="Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbBatchWireWriterTests.When_an_asb_batch_selects_a_wire_writer_should_preserve_native_mapping_and_source_ids(useQueue: True, writerSelection: 2)" computerName="HCI-PF6GVL2D" duration="00:00:02.0633208" startTime="2026-11-11T19:37:00.5531283+01:00" endTime="2026-11-11T19:37:02.2983078+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9978fcb1-11cc-4c5a-b3e1-32b3200bde1d" />
+    <UnitTestResult executionId="405652e4-a95c-4c54-ac1a-e516fc29bb60" testId="00787d38-2550-bdc1-8679-09788fb6aa99" testName="Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbBatchWireWriterTests.When_an_asb_batch_selects_a_wire_writer_should_preserve_native_mapping_and_source_ids(useQueue: True, writerSelection: 0)" computerName="HCI-PF6GVL2D" duration="00:00:00.5691798" startTime="2026-11-11T19:37:03.7701658+01:00" endTime="2026-11-11T19:37:04.3343686+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="405652e4-a95c-4c54-ac1a-e516fc29bb60" />
+    <UnitTestResult executionId="3ee8f1fd-38eb-4835-9989-2e1a03e495c7" testId="b8767c92-8246-2b40-fb5a-0bd57dd80088" testName="Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbBatchWireWriterTests.When_an_asb_batch_selects_a_wire_writer_should_preserve_native_mapping_and_source_ids(useQueue: False, writerSelection: 0)" computerName="HCI-PF6GVL2D" duration="00:00:00.4432016" startTime="2026-11-11T19:37:03.3244464+01:00" endTime="2026-11-11T19:37:03.7628569+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3ee8f1fd-38eb-4835-9989-2e1a03e495c7" />
+    <UnitTestResult executionId="5b65ada8-3eae-413d-92cb-6d7781cab6a2" testId="b06ed40c-5c5f-02c8-38e6-d87ce6444045" testName="Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbBatchWireWriterTests.When_an_asb_batch_selects_a_wire_writer_should_preserve_native_mapping_and_source_ids(useQueue: False, writerSelection: 1)" computerName="HCI-PF6GVL2D" duration="00:00:00.4677650" startTime="2026-11-11T19:37:04.3402626+01:00" endTime="2026-11-11T19:37:04.8044310+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5b65ada8-3eae-413d-92cb-6d7781cab6a2" />
+    <UnitTestResult executionId="ede57ddb-1f23-4eae-bb6a-cfcd9dd3387b" testId="a27b4e89-53db-b2f7-35f1-3050b57fa58e" testName="Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbBatchWireWriterTests.When_an_asb_batch_selects_a_wire_writer_should_preserve_native_mapping_and_source_ids(useQueue: True, writerSelection: 1)" computerName="HCI-PF6GVL2D" duration="00:00:00.5442201" startTime="2026-11-11T19:37:02.5115084+01:00" endTime="2026-11-11T19:37:02.8464397+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ede57ddb-1f23-4eae-bb6a-cfcd9dd3387b" />
+    <UnitTestResult executionId="723a7be9-7e5f-4789-aad5-c1250c877fcb" testId="451beb5b-77fd-9491-c372-0de2f986a633" testName="Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbBatchWireWriterTests.When_an_asb_batch_selects_a_wire_writer_should_preserve_native_mapping_and_source_ids(useQueue: False, writerSelection: 2)" computerName="HCI-PF6GVL2D" duration="00:00:00.4427590" startTime="2026-11-11T19:37:02.8604564+01:00" endTime="2026-11-11T19:37:03.3179751+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="723a7be9-7e5f-4789-aad5-c1250c877fcb" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbBatchWireWriterTests.When_an_asb_batch_selects_a_wire_writer_should_preserve_native_mapping_and_source_ids(useQueue: False, writerSelection: 1)" storage="c:\users\irakligabisonia\appdata\local\temp\brighter-4170-docker-remaining\tests\paramore.brighter.azureservicebus.tests\bin\release\net10.0\paramore.brighter.azureservicebus.tests.dll" id="b06ed40c-5c5f-02c8-38e6-d87ce6444045">
+      <Execution id="5b65ada8-3eae-413d-92cb-6d7781cab6a2" />
+      <TestMethod codeBase="C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\tests\Paramore.Brighter.AzureServiceBus.Tests\bin\Release\net10.0\Paramore.Brighter.AzureServiceBus.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbBatchWireWriterTests" name="When_an_asb_batch_selects_a_wire_writer_should_preserve_native_mapping_and_source_ids" />
+    </UnitTest>
+    <UnitTest name="Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbBatchWireWriterTests.When_an_asb_batch_selects_a_wire_writer_should_preserve_native_mapping_and_source_ids(useQueue: True, writerSelection: 1)" storage="c:\users\irakligabisonia\appdata\local\temp\brighter-4170-docker-remaining\tests\paramore.brighter.azureservicebus.tests\bin\release\net10.0\paramore.brighter.azureservicebus.tests.dll" id="a27b4e89-53db-b2f7-35f1-3050b57fa58e">
+      <Execution id="ede57ddb-1f23-4eae-bb6a-cfcd9dd3387b" />
+      <TestMethod codeBase="C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\tests\Paramore.Brighter.AzureServiceBus.Tests\bin\Release\net10.0\Paramore.Brighter.AzureServiceBus.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbBatchWireWriterTests" name="When_an_asb_batch_selects_a_wire_writer_should_preserve_native_mapping_and_source_ids" />
+    </UnitTest>
+    <UnitTest name="Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbBatchWireWriterTests.When_an_asb_batch_selects_a_wire_writer_should_preserve_native_mapping_and_source_ids(useQueue: True, writerSelection: 0)" storage="c:\users\irakligabisonia\appdata\local\temp\brighter-4170-docker-remaining\tests\paramore.brighter.azureservicebus.tests\bin\release\net10.0\paramore.brighter.azureservicebus.tests.dll" id="00787d38-2550-bdc1-8679-09788fb6aa99">
+      <Execution id="405652e4-a95c-4c54-ac1a-e516fc29bb60" />
+      <TestMethod codeBase="C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\tests\Paramore.Brighter.AzureServiceBus.Tests\bin\Release\net10.0\Paramore.Brighter.AzureServiceBus.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbBatchWireWriterTests" name="When_an_asb_batch_selects_a_wire_writer_should_preserve_native_mapping_and_source_ids" />
+    </UnitTest>
+    <UnitTest name="Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbBatchWireWriterTests.When_an_asb_batch_selects_a_wire_writer_should_preserve_native_mapping_and_source_ids(useQueue: True, writerSelection: 2)" storage="c:\users\irakligabisonia\appdata\local\temp\brighter-4170-docker-remaining\tests\paramore.brighter.azureservicebus.tests\bin\release\net10.0\paramore.brighter.azureservicebus.tests.dll" id="01aa4dd6-a530-635c-9b7a-7e198c010d54">
+      <Execution id="9978fcb1-11cc-4c5a-b3e1-32b3200bde1d" />
+      <TestMethod codeBase="C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\tests\Paramore.Brighter.AzureServiceBus.Tests\bin\Release\net10.0\Paramore.Brighter.AzureServiceBus.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbBatchWireWriterTests" name="When_an_asb_batch_selects_a_wire_writer_should_preserve_native_mapping_and_source_ids" />
+    </UnitTest>
+    <UnitTest name="Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbBatchWireWriterTests.When_an_asb_batch_selects_a_wire_writer_should_preserve_native_mapping_and_source_ids(useQueue: False, writerSelection: 0)" storage="c:\users\irakligabisonia\appdata\local\temp\brighter-4170-docker-remaining\tests\paramore.brighter.azureservicebus.tests\bin\release\net10.0\paramore.brighter.azureservicebus.tests.dll" id="b8767c92-8246-2b40-fb5a-0bd57dd80088">
+      <Execution id="3ee8f1fd-38eb-4835-9989-2e1a03e495c7" />
+      <TestMethod codeBase="C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\tests\Paramore.Brighter.AzureServiceBus.Tests\bin\Release\net10.0\Paramore.Brighter.AzureServiceBus.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbBatchWireWriterTests" name="When_an_asb_batch_selects_a_wire_writer_should_preserve_native_mapping_and_source_ids" />
+    </UnitTest>
+    <UnitTest name="Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbBatchWireWriterTests.When_an_asb_batch_selects_a_wire_writer_should_preserve_native_mapping_and_source_ids(useQueue: False, writerSelection: 2)" storage="c:\users\irakligabisonia\appdata\local\temp\brighter-4170-docker-remaining\tests\paramore.brighter.azureservicebus.tests\bin\release\net10.0\paramore.brighter.azureservicebus.tests.dll" id="451beb5b-77fd-9491-c372-0de2f986a633">
+      <Execution id="723a7be9-7e5f-4789-aad5-c1250c877fcb" />
+      <TestMethod codeBase="C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\tests\Paramore.Brighter.AzureServiceBus.Tests\bin\Release\net10.0\Paramore.Brighter.AzureServiceBus.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbBatchWireWriterTests" name="When_an_asb_batch_selects_a_wire_writer_should_preserve_native_mapping_and_source_ids" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="01aa4dd6-a530-635c-9b7a-7e198c010d54" executionId="9978fcb1-11cc-4c5a-b3e1-32b3200bde1d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="00787d38-2550-bdc1-8679-09788fb6aa99" executionId="405652e4-a95c-4c54-ac1a-e516fc29bb60" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b8767c92-8246-2b40-fb5a-0bd57dd80088" executionId="3ee8f1fd-38eb-4835-9989-2e1a03e495c7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b06ed40c-5c5f-02c8-38e6-d87ce6444045" executionId="5b65ada8-3eae-413d-92cb-6d7781cab6a2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a27b4e89-53db-b2f7-35f1-3050b57fa58e" executionId="ede57ddb-1f23-4eae-bb6a-cfcd9dd3387b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="451beb5b-77fd-9491-c372-0de2f986a633" executionId="723a7be9-7e5f-4789-aad5-c1250c877fcb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="6" executed="6" passed="6" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.03] xUnit.net VSTest Adapter v4.0.0+05679a7ab5 (64-bit .NET 10.0.12)&#xD;
+[xUnit.net 00:00:00.59]   Discovering: Paramore.Brighter.AzureServiceBus.Tests&#xD;
+[xUnit.net 00:00:01.81]   Discovered:  Paramore.Brighter.AzureServiceBus.Tests&#xD;
+[xUnit.net 00:00:01.96]   Starting:    Paramore.Brighter.AzureServiceBus.Tests&#xD;
+[xUnit.net 00:00:06.70]   Finished:    Paramore.Brighter.AzureServiceBus.Tests&#xD;
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="HCI-PF6GVL2D" outcome="Warning" timestamp="2026-11-11T19:37:05.0489984+01:00">
+        <Text>Data collector 'Blame' message: All tests finished running, Sequence file will not be generated.</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

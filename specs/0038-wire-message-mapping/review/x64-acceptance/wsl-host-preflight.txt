@@ -1,0 +1,19 @@
+
+Host operating system and architecture
+Linux x86_64
+
+Available filesystem space
+Filesystem                Size      Used Available Use% Mounted on
+C:\                     951.5G    357.7G    593.8G  38% /mnt/host/c
+
+Host memory
+              total        used        free      shared  buff/cache   available
+Mem:          19.4G        8.3G        8.4G       87.5M        2.6G       10.7G
+Swap:          5.0G        1.5G        3.5G
+
+Docker client/server
+
+Existing containers and published ports
+
+Installed .NET SDKs
+.NET command is unavailable.

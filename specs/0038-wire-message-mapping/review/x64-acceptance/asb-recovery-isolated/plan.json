@@ -1,0 +1,54 @@
+﻿{
+    "scenarios":  [
+                      {
+                          "index":  0,
+                          "useQueue":  false,
+                          "useAsync":  false,
+                          "returnNull":  false
+                      },
+                      {
+                          "index":  1,
+                          "useQueue":  false,
+                          "useAsync":  false,
+                          "returnNull":  true
+                      },
+                      {
+                          "index":  2,
+                          "useQueue":  false,
+                          "useAsync":  true,
+                          "returnNull":  false
+                      },
+                      {
+                          "index":  3,
+                          "useQueue":  false,
+                          "useAsync":  true,
+                          "returnNull":  true
+                      },
+                      {
+                          "index":  4,
+                          "useQueue":  true,
+                          "useAsync":  false,
+                          "returnNull":  false
+                      },
+                      {
+                          "index":  5,
+                          "useQueue":  true,
+                          "useAsync":  false,
+                          "returnNull":  true
+                      },
+                      {
+                          "index":  6,
+                          "useQueue":  true,
+                          "useAsync":  true,
+                          "returnNull":  false
+                      },
+                      {
+                          "index":  7,
+                          "useQueue":  true,
+                          "useAsync":  true,
+                          "returnNull":  true
+                      }
+                  ],
+    "experiment":  "Original approved Brighter reader-recovery cases, one process and fresh entities per theory row. Distinguish Brighter-path failure and cross-case entity contamination; no production/test edits or weakened assertions.",
+    "head":  "2db6bcc9b53bdb1d388b667d8f8bbe6c05c0be33"
+}

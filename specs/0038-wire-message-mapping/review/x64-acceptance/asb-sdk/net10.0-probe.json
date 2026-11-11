@@ -1,0 +1,95 @@
+{
+  "framework": ".NET 10.0.12",
+  "sdk": "7.21.0.0",
+  "failures": 0,
+  "results": [
+    {
+      "queue": false,
+      "iteration": 0,
+      "phase": "complete",
+      "expectedId": "8dfc5a55-5304-46b2-a902-62fd886af17a",
+      "observedId": "8dfc5a55-5304-46b2-a902-62fd886af17a",
+      "sequence": 1,
+      "deadSequence": 1,
+      "error": null,
+      "elapsedMs": 1116
+    },
+    {
+      "queue": false,
+      "iteration": 1,
+      "phase": "complete",
+      "expectedId": "4ded116a-4413-46e1-9b78-41a5d45bc421",
+      "observedId": "4ded116a-4413-46e1-9b78-41a5d45bc421",
+      "sequence": 3,
+      "deadSequence": 3,
+      "error": null,
+      "elapsedMs": 183
+    },
+    {
+      "queue": false,
+      "iteration": 2,
+      "phase": "complete",
+      "expectedId": "cfd6bbcc-620c-463f-ba4d-08fb325e80ba",
+      "observedId": "cfd6bbcc-620c-463f-ba4d-08fb325e80ba",
+      "sequence": 5,
+      "deadSequence": 5,
+      "error": null,
+      "elapsedMs": 148
+    },
+    {
+      "queue": false,
+      "iteration": 3,
+      "phase": "complete",
+      "expectedId": "aa0cf02d-3a65-4da3-83fb-c45fda3d98c6",
+      "observedId": "aa0cf02d-3a65-4da3-83fb-c45fda3d98c6",
+      "sequence": 7,
+      "deadSequence": 7,
+      "error": null,
+      "elapsedMs": 160
+    },
+    {
+      "queue": true,
+      "iteration": 0,
+      "phase": "complete",
+      "expectedId": "f3fbd073-a52b-437f-8862-84e339d4136b",
+      "observedId": "f3fbd073-a52b-437f-8862-84e339d4136b",
+      "sequence": 1,
+      "deadSequence": 1,
+      "error": null,
+      "elapsedMs": 260
+    },
+    {
+      "queue": true,
+      "iteration": 1,
+      "phase": "complete",
+      "expectedId": "e5b4ae21-0918-4366-a18b-1535c84aebca",
+      "observedId": "e5b4ae21-0918-4366-a18b-1535c84aebca",
+      "sequence": 3,
+      "deadSequence": 3,
+      "error": null,
+      "elapsedMs": 139
+    },
+    {
+      "queue": true,
+      "iteration": 2,
+      "phase": "complete",
+      "expectedId": "2a6faafc-f220-4590-b93d-f88de736a492",
+      "observedId": "2a6faafc-f220-4590-b93d-f88de736a492",
+      "sequence": 5,
+      "deadSequence": 5,
+      "error": null,
+      "elapsedMs": 126
+    },
+    {
+      "queue": true,
+      "iteration": 3,
+      "phase": "complete",
+      "expectedId": "a420dc19-8ff5-4861-8143-bcacd6ec3ca0",
+      "observedId": "a420dc19-8ff5-4861-8143-bcacd6ec3ca0",
+      "sequence": 7,
+      "deadSequence": 7,
+      "error": null,
+      "elapsedMs": 125
+    }
+  ]
+}

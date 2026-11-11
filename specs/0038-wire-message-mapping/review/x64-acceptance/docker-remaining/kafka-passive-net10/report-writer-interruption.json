@@ -1,0 +1,4 @@
+{
+    "reason":  "Final PowerShell JSON serialization consumed several GB after all three owned fixtures were stopped. Raw TRX, native logs and complete core remain authoritative; summary reconstructed by analyze-results.py.",
+    "pid":  501088
+}

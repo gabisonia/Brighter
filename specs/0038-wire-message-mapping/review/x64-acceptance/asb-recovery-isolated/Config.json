@@ -1,0 +1,344 @@
+﻿{
+    "UserConfig":  {
+                       "Namespaces":  [
+                                          {
+                                              "Name":  "local",
+                                              "Queues":  [
+                                                             {
+                                                                 "Name":  "recovery-queue-0",
+                                                                 "Properties":  {
+                                                                                    "DeadLetteringOnMessageExpiration":  false,
+                                                                                    "DefaultMessageTimeToLive":  "PT1H",
+                                                                                    "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                    "ForwardDeadLetteredMessagesTo":  "",
+                                                                                    "ForwardTo":  "",
+                                                                                    "LockDuration":  "PT1M",
+                                                                                    "MaxDeliveryCount":  3,
+                                                                                    "RequiresDuplicateDetection":  false,
+                                                                                    "RequiresSession":  false
+                                                                                }
+                                                             },
+                                                             {
+                                                                 "Name":  "recovery-queue-1",
+                                                                 "Properties":  {
+                                                                                    "DeadLetteringOnMessageExpiration":  false,
+                                                                                    "DefaultMessageTimeToLive":  "PT1H",
+                                                                                    "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                    "ForwardDeadLetteredMessagesTo":  "",
+                                                                                    "ForwardTo":  "",
+                                                                                    "LockDuration":  "PT1M",
+                                                                                    "MaxDeliveryCount":  3,
+                                                                                    "RequiresDuplicateDetection":  false,
+                                                                                    "RequiresSession":  false
+                                                                                }
+                                                             },
+                                                             {
+                                                                 "Name":  "recovery-queue-2",
+                                                                 "Properties":  {
+                                                                                    "DeadLetteringOnMessageExpiration":  false,
+                                                                                    "DefaultMessageTimeToLive":  "PT1H",
+                                                                                    "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                    "ForwardDeadLetteredMessagesTo":  "",
+                                                                                    "ForwardTo":  "",
+                                                                                    "LockDuration":  "PT1M",
+                                                                                    "MaxDeliveryCount":  3,
+                                                                                    "RequiresDuplicateDetection":  false,
+                                                                                    "RequiresSession":  false
+                                                                                }
+                                                             },
+                                                             {
+                                                                 "Name":  "recovery-queue-3",
+                                                                 "Properties":  {
+                                                                                    "DeadLetteringOnMessageExpiration":  false,
+                                                                                    "DefaultMessageTimeToLive":  "PT1H",
+                                                                                    "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                    "ForwardDeadLetteredMessagesTo":  "",
+                                                                                    "ForwardTo":  "",
+                                                                                    "LockDuration":  "PT1M",
+                                                                                    "MaxDeliveryCount":  3,
+                                                                                    "RequiresDuplicateDetection":  false,
+                                                                                    "RequiresSession":  false
+                                                                                }
+                                                             },
+                                                             {
+                                                                 "Name":  "recovery-queue-4",
+                                                                 "Properties":  {
+                                                                                    "DeadLetteringOnMessageExpiration":  false,
+                                                                                    "DefaultMessageTimeToLive":  "PT1H",
+                                                                                    "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                    "ForwardDeadLetteredMessagesTo":  "",
+                                                                                    "ForwardTo":  "",
+                                                                                    "LockDuration":  "PT1M",
+                                                                                    "MaxDeliveryCount":  3,
+                                                                                    "RequiresDuplicateDetection":  false,
+                                                                                    "RequiresSession":  false
+                                                                                }
+                                                             },
+                                                             {
+                                                                 "Name":  "recovery-queue-5",
+                                                                 "Properties":  {
+                                                                                    "DeadLetteringOnMessageExpiration":  false,
+                                                                                    "DefaultMessageTimeToLive":  "PT1H",
+                                                                                    "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                    "ForwardDeadLetteredMessagesTo":  "",
+                                                                                    "ForwardTo":  "",
+                                                                                    "LockDuration":  "PT1M",
+                                                                                    "MaxDeliveryCount":  3,
+                                                                                    "RequiresDuplicateDetection":  false,
+                                                                                    "RequiresSession":  false
+                                                                                }
+                                                             },
+                                                             {
+                                                                 "Name":  "recovery-queue-6",
+                                                                 "Properties":  {
+                                                                                    "DeadLetteringOnMessageExpiration":  false,
+                                                                                    "DefaultMessageTimeToLive":  "PT1H",
+                                                                                    "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                    "ForwardDeadLetteredMessagesTo":  "",
+                                                                                    "ForwardTo":  "",
+                                                                                    "LockDuration":  "PT1M",
+                                                                                    "MaxDeliveryCount":  3,
+                                                                                    "RequiresDuplicateDetection":  false,
+                                                                                    "RequiresSession":  false
+                                                                                }
+                                                             },
+                                                             {
+                                                                 "Name":  "recovery-queue-7",
+                                                                 "Properties":  {
+                                                                                    "DeadLetteringOnMessageExpiration":  false,
+                                                                                    "DefaultMessageTimeToLive":  "PT1H",
+                                                                                    "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                    "ForwardDeadLetteredMessagesTo":  "",
+                                                                                    "ForwardTo":  "",
+                                                                                    "LockDuration":  "PT1M",
+                                                                                    "MaxDeliveryCount":  3,
+                                                                                    "RequiresDuplicateDetection":  false,
+                                                                                    "RequiresSession":  false
+                                                                                }
+                                                             }
+                                                         ],
+                                              "Topics":  [
+                                                             {
+                                                                 "Name":  "recovery-topic-0",
+                                                                 "Properties":  {
+                                                                                    "DefaultMessageTimeToLive":  "PT1H",
+                                                                                    "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                    "RequiresDuplicateDetection":  false
+                                                                                },
+                                                                 "Subscriptions":  [
+                                                                                       {
+                                                                                           "Name":  "wire-observer",
+                                                                                           "Properties":  {
+                                                                                                              "DeadLetteringOnMessageExpiration":  false,
+                                                                                                              "DefaultMessageTimeToLive":  "PT1H",
+                                                                                                              "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                                              "ForwardDeadLetteredMessagesTo":  "",
+                                                                                                              "ForwardTo":  "",
+                                                                                                              "LockDuration":  "PT1M",
+                                                                                                              "MaxDeliveryCount":  3,
+                                                                                                              "RequiresDuplicateDetection":  false,
+                                                                                                              "RequiresSession":  false
+                                                                                                          },
+                                                                                           "Rules":  [
+
+                                                                                                     ]
+                                                                                       }
+                                                                                   ]
+                                                             },
+                                                             {
+                                                                 "Name":  "recovery-topic-1",
+                                                                 "Properties":  {
+                                                                                    "DefaultMessageTimeToLive":  "PT1H",
+                                                                                    "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                    "RequiresDuplicateDetection":  false
+                                                                                },
+                                                                 "Subscriptions":  [
+                                                                                       {
+                                                                                           "Name":  "wire-observer",
+                                                                                           "Properties":  {
+                                                                                                              "DeadLetteringOnMessageExpiration":  false,
+                                                                                                              "DefaultMessageTimeToLive":  "PT1H",
+                                                                                                              "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                                              "ForwardDeadLetteredMessagesTo":  "",
+                                                                                                              "ForwardTo":  "",
+                                                                                                              "LockDuration":  "PT1M",
+                                                                                                              "MaxDeliveryCount":  3,
+                                                                                                              "RequiresDuplicateDetection":  false,
+                                                                                                              "RequiresSession":  false
+                                                                                                          },
+                                                                                           "Rules":  [
+
+                                                                                                     ]
+                                                                                       }
+                                                                                   ]
+                                                             },
+                                                             {
+                                                                 "Name":  "recovery-topic-2",
+                                                                 "Properties":  {
+                                                                                    "DefaultMessageTimeToLive":  "PT1H",
+                                                                                    "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                    "RequiresDuplicateDetection":  false
+                                                                                },
+                                                                 "Subscriptions":  [
+                                                                                       {
+                                                                                           "Name":  "wire-observer",
+                                                                                           "Properties":  {
+                                                                                                              "DeadLetteringOnMessageExpiration":  false,
+                                                                                                              "DefaultMessageTimeToLive":  "PT1H",
+                                                                                                              "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                                              "ForwardDeadLetteredMessagesTo":  "",
+                                                                                                              "ForwardTo":  "",
+                                                                                                              "LockDuration":  "PT1M",
+                                                                                                              "MaxDeliveryCount":  3,
+                                                                                                              "RequiresDuplicateDetection":  false,
+                                                                                                              "RequiresSession":  false
+                                                                                                          },
+                                                                                           "Rules":  [
+
+                                                                                                     ]
+                                                                                       }
+                                                                                   ]
+                                                             },
+                                                             {
+                                                                 "Name":  "recovery-topic-3",
+                                                                 "Properties":  {
+                                                                                    "DefaultMessageTimeToLive":  "PT1H",
+                                                                                    "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                    "RequiresDuplicateDetection":  false
+                                                                                },
+                                                                 "Subscriptions":  [
+                                                                                       {
+                                                                                           "Name":  "wire-observer",
+                                                                                           "Properties":  {
+                                                                                                              "DeadLetteringOnMessageExpiration":  false,
+                                                                                                              "DefaultMessageTimeToLive":  "PT1H",
+                                                                                                              "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                                              "ForwardDeadLetteredMessagesTo":  "",
+                                                                                                              "ForwardTo":  "",
+                                                                                                              "LockDuration":  "PT1M",
+                                                                                                              "MaxDeliveryCount":  3,
+                                                                                                              "RequiresDuplicateDetection":  false,
+                                                                                                              "RequiresSession":  false
+                                                                                                          },
+                                                                                           "Rules":  [
+
+                                                                                                     ]
+                                                                                       }
+                                                                                   ]
+                                                             },
+                                                             {
+                                                                 "Name":  "recovery-topic-4",
+                                                                 "Properties":  {
+                                                                                    "DefaultMessageTimeToLive":  "PT1H",
+                                                                                    "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                    "RequiresDuplicateDetection":  false
+                                                                                },
+                                                                 "Subscriptions":  [
+                                                                                       {
+                                                                                           "Name":  "wire-observer",
+                                                                                           "Properties":  {
+                                                                                                              "DeadLetteringOnMessageExpiration":  false,
+                                                                                                              "DefaultMessageTimeToLive":  "PT1H",
+                                                                                                              "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                                              "ForwardDeadLetteredMessagesTo":  "",
+                                                                                                              "ForwardTo":  "",
+                                                                                                              "LockDuration":  "PT1M",
+                                                                                                              "MaxDeliveryCount":  3,
+                                                                                                              "RequiresDuplicateDetection":  false,
+                                                                                                              "RequiresSession":  false
+                                                                                                          },
+                                                                                           "Rules":  [
+
+                                                                                                     ]
+                                                                                       }
+                                                                                   ]
+                                                             },
+                                                             {
+                                                                 "Name":  "recovery-topic-5",
+                                                                 "Properties":  {
+                                                                                    "DefaultMessageTimeToLive":  "PT1H",
+                                                                                    "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                    "RequiresDuplicateDetection":  false
+                                                                                },
+                                                                 "Subscriptions":  [
+                                                                                       {
+                                                                                           "Name":  "wire-observer",
+                                                                                           "Properties":  {
+                                                                                                              "DeadLetteringOnMessageExpiration":  false,
+                                                                                                              "DefaultMessageTimeToLive":  "PT1H",
+                                                                                                              "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                                              "ForwardDeadLetteredMessagesTo":  "",
+                                                                                                              "ForwardTo":  "",
+                                                                                                              "LockDuration":  "PT1M",
+                                                                                                              "MaxDeliveryCount":  3,
+                                                                                                              "RequiresDuplicateDetection":  false,
+                                                                                                              "RequiresSession":  false
+                                                                                                          },
+                                                                                           "Rules":  [
+
+                                                                                                     ]
+                                                                                       }
+                                                                                   ]
+                                                             },
+                                                             {
+                                                                 "Name":  "recovery-topic-6",
+                                                                 "Properties":  {
+                                                                                    "DefaultMessageTimeToLive":  "PT1H",
+                                                                                    "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                    "RequiresDuplicateDetection":  false
+                                                                                },
+                                                                 "Subscriptions":  [
+                                                                                       {
+                                                                                           "Name":  "wire-observer",
+                                                                                           "Properties":  {
+                                                                                                              "DeadLetteringOnMessageExpiration":  false,
+                                                                                                              "DefaultMessageTimeToLive":  "PT1H",
+                                                                                                              "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                                              "ForwardDeadLetteredMessagesTo":  "",
+                                                                                                              "ForwardTo":  "",
+                                                                                                              "LockDuration":  "PT1M",
+                                                                                                              "MaxDeliveryCount":  3,
+                                                                                                              "RequiresDuplicateDetection":  false,
+                                                                                                              "RequiresSession":  false
+                                                                                                          },
+                                                                                           "Rules":  [
+
+                                                                                                     ]
+                                                                                       }
+                                                                                   ]
+                                                             },
+                                                             {
+                                                                 "Name":  "recovery-topic-7",
+                                                                 "Properties":  {
+                                                                                    "DefaultMessageTimeToLive":  "PT1H",
+                                                                                    "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                    "RequiresDuplicateDetection":  false
+                                                                                },
+                                                                 "Subscriptions":  [
+                                                                                       {
+                                                                                           "Name":  "wire-observer",
+                                                                                           "Properties":  {
+                                                                                                              "DeadLetteringOnMessageExpiration":  false,
+                                                                                                              "DefaultMessageTimeToLive":  "PT1H",
+                                                                                                              "DuplicateDetectionHistoryTimeWindow":  "PT20S",
+                                                                                                              "ForwardDeadLetteredMessagesTo":  "",
+                                                                                                              "ForwardTo":  "",
+                                                                                                              "LockDuration":  "PT1M",
+                                                                                                              "MaxDeliveryCount":  3,
+                                                                                                              "RequiresDuplicateDetection":  false,
+                                                                                                              "RequiresSession":  false
+                                                                                                          },
+                                                                                           "Rules":  [
+
+                                                                                                     ]
+                                                                                       }
+                                                                                   ]
+                                                             }
+                                                         ]
+                                          }
+                                      ],
+                       "Logging":  {
+                                       "Type":  "Console"
+                                   }
+                   }
+}

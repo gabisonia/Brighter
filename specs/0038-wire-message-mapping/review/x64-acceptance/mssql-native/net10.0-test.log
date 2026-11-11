@@ -1,0 +1,15 @@
+VSTest version 18.7.0 (x64)
+
+Starting test execution, please wait...
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:24.14]     Paramore.Brighter.MSSQL.Tests.MessagingGateway.Proactor.WhenNackingAMessageItShouldBeRedeliveredAsync.When_nacking_first_of_two_messages_should_redeliver_nacked_then_receive_second_async [SKIP]
+  Skipped Paramore.Brighter.MSSQL.Tests.MessagingGateway.Proactor.WhenNackingAMessageItShouldBeRedeliveredAsync.When_nacking_first_of_two_messages_should_redeliver_nacked_then_receive_second_async [1 ms]
+[xUnit.net 00:00:24.14]     Paramore.Brighter.MSSQL.Tests.MessagingGateway.Proactor.WhenNackingAMessageItShouldBeRedeliveredAsync.When_nacking_a_message_it_should_be_redelivered_async [SKIP]
+  Skipped Paramore.Brighter.MSSQL.Tests.MessagingGateway.Proactor.WhenNackingAMessageItShouldBeRedeliveredAsync.When_nacking_a_message_it_should_be_redelivered_async [1 ms]
+[xUnit.net 00:00:47.11]     Paramore.Brighter.MSSQL.Tests.MessagingGateway.Reactor.WhenNackingAMessageItShouldBeRedelivered.When_nacking_first_of_two_messages_should_redeliver_nacked_then_receive_second [SKIP]
+[xUnit.net 00:00:47.11]     Paramore.Brighter.MSSQL.Tests.MessagingGateway.Reactor.WhenNackingAMessageItShouldBeRedelivered.When_nacking_a_message_it_should_be_redelivered [SKIP]
+  Skipped Paramore.Brighter.MSSQL.Tests.MessagingGateway.Reactor.WhenNackingAMessageItShouldBeRedelivered.When_nacking_first_of_two_messages_should_redeliver_nacked_then_receive_second [1 ms]
+  Skipped Paramore.Brighter.MSSQL.Tests.MessagingGateway.Reactor.WhenNackingAMessageItShouldBeRedelivered.When_nacking_a_message_it_should_be_redelivered [1 ms]
+Results File: C:\Users\IrakliGabisonia\source\repos\Personal\Brighter\specs\0038-wire-message-mapping\review\x64-acceptance/mssql-native\net10.0.trx
+
+Passed!  - Failed:     0, Passed:   396, Skipped:     4, Total:   400, Duration: 1 m 15 s - Paramore.Brighter.MSSQL.Tests.dll (net10.0)

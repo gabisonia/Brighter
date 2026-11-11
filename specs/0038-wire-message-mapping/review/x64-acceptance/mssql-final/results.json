@@ -1,0 +1,54 @@
+﻿{
+    "head":  "2db6bcc9b53bdb1d388b667d8f8bbe6c05c0be33",
+    "utc":  "2026-11-11T17:26:09.3521837Z",
+    "image":  "mcr.microsoft.com/mssql/server@sha256:cf8f0ab2ebe61feec2eed2629061a07d247f791c2a8ddda74a4ac9f06a291718",
+    "frameworks":  [
+                       {
+                           "run":  {
+                                       "exitCode":  1,
+                                       "seconds":  2.7577336999999997,
+                                       "log":  "C:\\Users\\IrakliGabisonia\\source\\repos\\Personal\\Brighter\\specs\\0038-wire-message-mapping\\review\\x64-acceptance/mssql-final/net9.0-test.log"
+                                   },
+                           "build":  {
+                                         "exitCode":  0,
+                                         "seconds":  13.8663779,
+                                         "log":  "C:\\Users\\IrakliGabisonia\\source\\repos\\Personal\\Brighter\\specs\\0038-wire-message-mapping\\review\\x64-acceptance/mssql-final/net9.0-build.log"
+                                     },
+                           "head":  "2db6bcc9b53bdb1d388b667d8f8bbe6c05c0be33",
+                           "framework":  "net9.0"
+                       },
+                       {
+                           "run":  {
+                                       "exitCode":  1,
+                                       "seconds":  1.0929976,
+                                       "log":  "C:\\Users\\IrakliGabisonia\\source\\repos\\Personal\\Brighter\\specs\\0038-wire-message-mapping\\review\\x64-acceptance/mssql-final/net10.0-test.log"
+                                   },
+                           "build":  {
+                                         "exitCode":  0,
+                                         "seconds":  22.0040457,
+                                         "log":  "C:\\Users\\IrakliGabisonia\\source\\repos\\Personal\\Brighter\\specs\\0038-wire-message-mapping\\review\\x64-acceptance/mssql-final/net10.0-build.log"
+                                     },
+                           "head":  "2db6bcc9b53bdb1d388b667d8f8bbe6c05c0be33",
+                           "framework":  "net10.0"
+                       }
+                   ],
+    "host":  "AMD64",
+    "port":  "56594",
+    "container":  {
+                      "runningAfterStop":  "false",
+                      "name":  "brighter-4170-x64-mssql-20261111-final",
+                      "stateBeforeStop":  {
+                                              "Status":  "running",
+                                              "Running":  true,
+                                              "Paused":  false,
+                                              "Restarting":  false,
+                                              "OOMKilled":  false,
+                                              "Dead":  false,
+                                              "Pid":  68039,
+                                              "ExitCode":  0,
+                                              "Error":  "",
+                                              "StartedAt":  "2026-11-11T17:26:11.385761434Z",
+                                              "FinishedAt":  "0001-01-01T00:00:00Z"
+                                          }
+                  }
+}

@@ -1,0 +1,5 @@
+brighter-4170-rem-net10-0-managed-broker|3.74%|198.2MiB / 19.36GiB
+brighter-4170-rem-net10-0-managed-sql|13.98%|1023MiB / 19.36GiB
+brighter-4170-rem-kafka-net9-0-tests|5.61%|314.9MiB / 19.36GiB
+brighter-4170-rem-kafka-net9-0-schema|1.12%|290.5MiB / 19.36GiB
+brighter-4170-rem-kafka-net9-0-broker|8.44%|628.5MiB / 19.36GiB

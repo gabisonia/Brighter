@@ -1,5 +1,43 @@
 # Wire mapping release review
 
+**Latest local Docker checkpoint (2026-11-11):** [results and remaining gates](review/x64-acceptance/docker-remaining/README.md)
+supersede the earlier next-run queue below. Expanded ASB acceptance has 745 passes,
+12 failures and four existing skips per target; original recovery remains unstable
+on both runtimes. Pub/Sub passes 459 cases on .NET 9 and 458 on .NET 10, with one
+original async shutdown failure and 55 existing skips per target. Both passive Kafka
+full suites abort in native consumer close after 223 passes; separate remainder
+coverage is recorded in the latest report. Actual failing GCP traces and complete
+Kafka cores are now available. Source remains on the fork at the verified HEAD;
+no production changes, Redis rerun, paid services, commits or pushes. Production
+readiness remains blocked; continue from the latest report, not the historical queue.
+
+## Native x64 continuation — 2026-11-11
+
+**Release decision remains blocked.** The [x64 acceptance record](review/x64-acceptance/README.md)
+verifies the fork branch and all 7,252 inputs at
+`2db6bcc9b53bdb1d388b667d8f8bbe6c05c0be33`. Native x64 SQL Server 2022 executes both
+full suites successfully: 396 passes/four existing skips each and exact equality
+of all 400 current identities/outcomes. The historical SQL Edge per-case artifacts
+are absent from this transfer, so historical identity parity remains unverified.
+
+The bounded SDK-only comparison on native amd64 emulator/native amd64 SQL still
+fails all four topic scenarios on .NET 9, with four queue controls passing. The
+.NET 10 sample passes all eight. The same broker duplicate-sequence fault on
+native x64 shows that ARM64/emulated SQL is not necessary for this reproduction;
+it does not identify the exact component cause or justify a Brighter change.
+Original recovery/mutation, retry/scheduler, lost-lock, historical lifecycle,
+hosted ASB and final-source CI gates remain open. All eight owned containers are
+stopped. No production/test source, Redis execution, paid service, commit, push
+or history rewrite was involved.
+
+The subsequent [isolated local Docker Brighter run](review/x64-acceptance/asb-recovery-isolated/README.md)
+adds six passes/two failures on .NET 9 and eight passes on .NET 10 for the original
+reader-recovery identities. Both .NET 9 synchronous throwing-reader failures reach
+native DLQ observation after earlier metadata/rejection assertions pass; the broker
+faults their distinct topic and queue entities with duplicate sequence numbers.
+All four additional containers are stopped. Passing .NET 10 cases do not close the
+two-framework batch or its ten mutation requirements. The release decision is unchanged.
+
 ## Completion checkpoint — 2026-11-11
 
 **Release decision: blocked.** Implementation and the local requirement review are

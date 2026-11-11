@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="ab8714c5-16a0-4430-86df-2c7b51ab12ed" name="IrakliGabisonia@HCI-PF6GVL2D 2026-11-11 19:17:16" runUser="AzureAD\IrakliGabisonia" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-11-11T19:17:16.2657028+01:00" queuing="2026-11-11T19:17:16.2657039+01:00" start="2026-11-11T19:17:13.2381914+01:00" finish="2026-11-11T19:17:16.2800047+01:00" />
+  <TestSettings name="default" id="578a74a8-52f2-42ec-95bb-86c3d3239aed">
+    <Deployment runDeploymentRoot="IrakliGabisonia_HCI-PF6GVL2D_2026-11-11_19_17_16" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="a03b2288-0f3d-48df-8c3c-84c85d211950" testId="1da4fa53-76f6-9566-b63b-704e150e63b6" testName="Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReceiveCancellationRecoveryTests.When_an_asb_receive_is_cancelled_before_entry_should_preserve_delivery_and_recover(useQueue: False)" computerName="HCI-PF6GVL2D" duration="00:00:00.5162713" startTime="2026-11-11T19:17:15.4842228+01:00" endTime="2026-11-11T19:17:15.9605841+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a03b2288-0f3d-48df-8c3c-84c85d211950" />
+    <UnitTestResult executionId="6daf8131-b17d-4d30-b110-359a4c1d8b25" testId="928012ea-5969-d5ae-fdfb-085908119097" testName="Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReceiveCancellationRecoveryTests.When_an_asb_receive_is_cancelled_before_entry_should_preserve_delivery_and_recover(useQueue: True)" computerName="HCI-PF6GVL2D" duration="00:00:00.1023431" startTime="2026-11-11T19:17:15.9936882+01:00" endTime="2026-11-11T19:17:16.0646525+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6daf8131-b17d-4d30-b110-359a4c1d8b25" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReceiveCancellationRecoveryTests.When_an_asb_receive_is_cancelled_before_entry_should_preserve_delivery_and_recover(useQueue: False)" storage="c:\users\irakligabisonia\appdata\local\temp\brighter-4170-docker-remaining\tests\paramore.brighter.azureservicebus.tests\bin\release\net9.0\paramore.brighter.azureservicebus.tests.dll" id="1da4fa53-76f6-9566-b63b-704e150e63b6">
+      <Execution id="a03b2288-0f3d-48df-8c3c-84c85d211950" />
+      <TestMethod codeBase="C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\tests\Paramore.Brighter.AzureServiceBus.Tests\bin\Release\net9.0\Paramore.Brighter.AzureServiceBus.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReceiveCancellationRecoveryTests" name="When_an_asb_receive_is_cancelled_before_entry_should_preserve_delivery_and_recover" />
+    </UnitTest>
+    <UnitTest name="Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReceiveCancellationRecoveryTests.When_an_asb_receive_is_cancelled_before_entry_should_preserve_delivery_and_recover(useQueue: True)" storage="c:\users\irakligabisonia\appdata\local\temp\brighter-4170-docker-remaining\tests\paramore.brighter.azureservicebus.tests\bin\release\net9.0\paramore.brighter.azureservicebus.tests.dll" id="928012ea-5969-d5ae-fdfb-085908119097">
+      <Execution id="6daf8131-b17d-4d30-b110-359a4c1d8b25" />
+      <TestMethod codeBase="C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\tests\Paramore.Brighter.AzureServiceBus.Tests\bin\Release\net9.0\Paramore.Brighter.AzureServiceBus.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReceiveCancellationRecoveryTests" name="When_an_asb_receive_is_cancelled_before_entry_should_preserve_delivery_and_recover" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="1da4fa53-76f6-9566-b63b-704e150e63b6" executionId="a03b2288-0f3d-48df-8c3c-84c85d211950" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="928012ea-5969-d5ae-fdfb-085908119097" executionId="6daf8131-b17d-4d30-b110-359a4c1d8b25" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="2" executed="2" passed="2" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v4.0.0+05679a7ab5 (64-bit .NET 9.0.17)&#xD;
+[xUnit.net 00:00:00.17]   Discovering: Paramore.Brighter.AzureServiceBus.Tests&#xD;
+[xUnit.net 00:00:00.41]   Discovered:  Paramore.Brighter.AzureServiceBus.Tests&#xD;
+[xUnit.net 00:00:00.45]   Starting:    Paramore.Brighter.AzureServiceBus.Tests&#xD;
+[xUnit.net 00:00:01.13]   Finished:    Paramore.Brighter.AzureServiceBus.Tests&#xD;
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="HCI-PF6GVL2D" outcome="Warning" timestamp="2026-11-11T19:17:16.1434760+01:00">
+        <Text>Data collector 'Blame' message: All tests finished running, Sequence file will not be generated.</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

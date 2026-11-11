@@ -1,5 +1,17 @@
 # Azure Service Bus reader failure recovery — validation blocked
 
+## Native x64 isolated Docker follow-up — 2026-11-11
+
+The [local Docker acceptance record](../x64-acceptance/asb-recovery-isolated/README.md)
+runs each original case on unused entities, one process per theory row. All eight
+historical test identities are retained on both targets. .NET 9 passes six and
+fails the synchronous throwing-reader topic and queue cases at the native DLQ
+receive assertion, with duplicate `S.SP-SequenceNumber:1` faults on both entities.
+.NET 10 passes all eight cases. Fresh entities eliminate inherited wrong-ID
+observations without reliably eliminating the underlying fault. All four owned
+containers are stopped. Source/assertions are unchanged; the ten mutations and
+remaining acceptance gates stay open. This is not a production-readiness sign-off.
+
 ## Docker retry — 2026-11-10
 
 A bounded retry of the unchanged eight cases used fresh, isolated Docker fixtures

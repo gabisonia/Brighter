@@ -1,0 +1,28 @@
+﻿{
+    "head":  "2db6bcc9b53bdb1d388b667d8f8bbe6c05c0be33",
+    "utc":  "2026-11-11T17:25:13.8803969Z",
+    "image":  "mcr.microsoft.com/mssql/server@sha256:cf8f0ab2ebe61feec2eed2629061a07d247f791c2a8ddda74a4ac9f06a291718",
+    "frameworks":  [
+
+                   ],
+    "host":  "AMD64",
+    "port":  "56583",
+    "error":  "Docker command failed (1): Msg 2812, Level 16, State 62, Server 964678d0abc3, Line 1\nCould not find stored procedure \u0027SELECT@@VERSION\u0027.",
+    "container":  {
+                      "runningAfterStop":  "false",
+                      "name":  "brighter-4170-x64-mssql-20261111-acceptance",
+                      "stateBeforeStop":  {
+                                              "Status":  "running",
+                                              "Running":  true,
+                                              "Paused":  false,
+                                              "Restarting":  false,
+                                              "OOMKilled":  false,
+                                              "Dead":  false,
+                                              "Pid":  65782,
+                                              "ExitCode":  0,
+                                              "Error":  "",
+                                              "StartedAt":  "2026-11-11T17:25:15.613916069Z",
+                                              "FinishedAt":  "0001-01-01T00:00:00Z"
+                                          }
+                  }
+}

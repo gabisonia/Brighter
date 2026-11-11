@@ -1,0 +1,61 @@
+﻿{
+    "framework":  "net10.0",
+    "rawTrx":  "C:\\Users\\IrakliGabisonia\\source\\repos\\Personal\\Brighter\\specs\\0038-wire-message-mapping\\review\\x64-acceptance/docker-remaining/kafka-remainder-net10/net10.0/results.trx",
+    "exitCode":  0,
+    "containers":  [
+                       {
+                           "runningAfterStop":  "false",
+                           "name":  "brighter-4170-rem-kafka-remainder-net10-net10-0-tests",
+                           "stateBeforeStop":  {
+                                                   "Status":  "exited",
+                                                   "Running":  false,
+                                                   "Paused":  false,
+                                                   "Restarting":  false,
+                                                   "OOMKilled":  false,
+                                                   "Dead":  false,
+                                                   "Pid":  0,
+                                                   "ExitCode":  0,
+                                                   "Error":  "",
+                                                   "StartedAt":  "2026-11-11T19:27:36.92748609Z",
+                                                   "FinishedAt":  "2026-11-11T19:32:58.508338633Z"
+                                               }
+                       },
+                       {
+                           "runningAfterStop":  "false",
+                           "name":  "brighter-4170-rem-kafka-remainder-net10-net10-0-schema",
+                           "stateBeforeStop":  {
+                                                   "Status":  "running",
+                                                   "Running":  true,
+                                                   "Paused":  false,
+                                                   "Restarting":  false,
+                                                   "OOMKilled":  false,
+                                                   "Dead":  false,
+                                                   "Pid":  67090,
+                                                   "ExitCode":  0,
+                                                   "Error":  "",
+                                                   "StartedAt":  "2026-11-11T19:27:23.832101787Z",
+                                                   "FinishedAt":  "0001-01-01T00:00:00Z"
+                                               }
+                       },
+                       {
+                           "runningAfterStop":  "false",
+                           "name":  "brighter-4170-rem-kafka-remainder-net10-net10-0-broker",
+                           "stateBeforeStop":  {
+                                                   "Status":  "running",
+                                                   "Running":  true,
+                                                   "Paused":  false,
+                                                   "Restarting":  false,
+                                                   "OOMKilled":  false,
+                                                   "Dead":  false,
+                                                   "Pid":  65423,
+                                                   "ExitCode":  0,
+                                                   "Error":  "",
+                                                   "StartedAt":  "2026-11-11T19:27:18.629493837Z",
+                                                   "FinishedAt":  "0001-01-01T00:00:00Z"
+                                               }
+                       }
+                   ],
+    "error":  null,
+    "completedCases":  187,
+    "seconds":  327.273195
+}

@@ -1,0 +1,15 @@
+NAMES                                            IMAGE                                        PORTS
+hciggzepdcustomeronboardingportal-web-1          hciggzepdcustomeronboardingportal-web        0.0.0.0:5080->8080/tcp, [::]:5080->8080/tcp
+hciggzepdcustomeronboardingportal-embed-host-1   nginx:alpine                                 0.0.0.0:5081->80/tcp, [::]:5081->80/tcp
+hciggzepdcustomeronboardingportal-sql-1          mcr.microsoft.com/mssql/server:2022-latest   1433/tcp
+vtt-worker-1                                     vtt-worker                                   8080/tcp
+vtt-api-1                                        vtt-api                                      0.0.0.0:8080->8080/tcp, [::]:8080->8080/tcp
+vtt-postgres-1                                   postgres:16-alpine                           5432/tcp
+vtt-redis-1                                      redis:7-alpine                               6379/tcp
+vtt-s3-1                                         chrislusf/seaweedfs:4.53                     0.0.0.0:8333->8333/tcp, [::]:8333->8333/tcp
+ollama-7f70a475                                  ollama/ollama:0.34.4                         127.0.0.1:23024->11434/tcp
+whisper-7f70a475                                 536e7cca76e0                                 127.0.0.1:32231->8080/tcp
+sql-7f70a475                                     mcr.microsoft.com/mssql/server:2025-latest   127.0.0.1:20097->1433/tcp
+sql-2e01b0e7                                     mcr.microsoft.com/mssql/server:2022-latest   127.0.0.1:13536->1433/tcp
+sql-fefd6f93                                     mcr.microsoft.com/mssql/server:2025-latest   127.0.0.1:23129->1433/tcp
+ollama-fefd6f93                                  ollama/ollama:0.34.4                         127.0.0.1:31708->11434/tcp

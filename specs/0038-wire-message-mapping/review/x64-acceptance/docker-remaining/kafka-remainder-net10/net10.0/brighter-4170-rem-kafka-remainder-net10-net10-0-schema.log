@@ -1,0 +1,856 @@
+﻿===> User
+uid=1000(appuser) gid=1000(appuser) groups=1000(appuser)
+===> Configuring ...
+===> Running preflight checks ... 
+===> Check if Kafka is healthy ...
+Using log4j config /etc/schema-registry/log4j2.yaml
+===> Launching ... 
+===> Launching schema-registry ... 
+[2026-11-11 19:27:29,040] INFO SchemaRegistryConfig values: 
+	access.control.allow.headers = 
+	access.control.allow.methods = 
+	access.control.allow.origin = 
+	access.control.expose.headers = 
+	access.control.skip.options = true
+	associations.enable = true
+	authentication.method = NONE
+	authentication.realm = 
+	authentication.roles = [*]
+	authentication.skip.paths = []
+2026-11-11T19:27:25.709146182Z main ERROR Loggers contains an invalid element or attribute "Logger"
+	avro.compatibility.level = 
+SLF4J: Class path contains multiple SLF4J bindings.
+	compression.enable = true
+	connector.connection.limit = 0
+	context.search.default.limit = 2147483647
+SLF4J: Found binding in [jar:file:/usr/share/java/cp-base-new/slf4j-reload4j-1.7.36.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/share/java/cp-base-new/log4j-slf4j-impl-2.25.4.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Reload4jLoggerFactory]
+2026-11-11T19:27:28.977806548Z main ERROR Loggers contains an invalid element or attribute "Logger"
+	context.search.max.limit = 2147483647
+	csrf.prevention.enable = false
+	csrf.prevention.token.endpoint = /csrf
+	csrf.prevention.token.expiration.minutes = 30
+	csrf.prevention.token.max.entries = 10000
+	debug = false
+	disable.response.size.metrics.collection = false
+	dos.filter.delay.ms = 100
+	dos.filter.enabled = false
+	dos.filter.insert.headers = true
+	dos.filter.ip.whitelist = []
+	dos.filter.managed.attr = false
+	dos.filter.max.idle.tracker.ms = 30000
+	dos.filter.max.requests.ms = 30000
+	dos.filter.max.requests.per.connection.per.sec = 25
+	dos.filter.max.requests.per.sec = 25
+	dos.filter.max.wait.ms = 50
+	dos.filter.throttle.ms = 30000
+	dos.filter.throttled.requests = 5
+	enable.fips = false
+	enable.store.health.check = false
+	expected.sni.headers = []
+	host.name = localhost
+	host.port = 8081
+	hsts.header.enable = false
+	http2.enabled = true
+	idle.timeout.ms = 30000
+	init.resource.extension.class = []
+	inter.instance.headers.whitelist = []
+	inter.instance.listener.name = 
+	inter.instance.protocol = http
+	jetty.legacy.uri.compliance = false
+	kafkagroup.heartbeat.interval.ms = 3000
+	kafkagroup.rebalance.timeout.ms = 300000
+	kafkagroup.session.timeout.ms = 10000
+	kafkastore.bootstrap.servers = [PLAINTEXT://localhost:9092]
+	kafkastore.checkpoint.dir = /tmp
+	kafkastore.checkpoint.version = 0
+	kafkastore.connection.url = 
+	kafkastore.group.id = 
+	kafkastore.init.timeout.ms = 60000
+	kafkastore.init.wait.for.reader = true
+	kafkastore.sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	kafkastore.sasl.kerberos.min.time.before.relogin = 60000
+	kafkastore.sasl.kerberos.service.name = 
+	kafkastore.sasl.kerberos.ticket.renew.jitter = 0.05
+	kafkastore.sasl.kerberos.ticket.renew.window.factor = 0.8
+	kafkastore.sasl.mechanism = GSSAPI
+	kafkastore.security.protocol = PLAINTEXT
+	kafkastore.ssl.cipher.suites = 
+	kafkastore.ssl.enabled.protocols = TLSv1.2,TLSv1.1,TLSv1
+	kafkastore.ssl.endpoint.identification.algorithm = 
+	kafkastore.ssl.key.password = [hidden]
+	kafkastore.ssl.keymanager.algorithm = SunX509
+	kafkastore.ssl.keystore.location = 
+	kafkastore.ssl.keystore.password = [hidden]
+	kafkastore.ssl.keystore.type = JKS
+	kafkastore.ssl.protocol = TLS
+	kafkastore.ssl.provider = 
+	kafkastore.ssl.trustmanager.algorithm = PKIX
+	kafkastore.ssl.truststore.location = 
+	kafkastore.ssl.truststore.password = [hidden]
+	kafkastore.ssl.truststore.type = JKS
+	kafkastore.timeout.ms = 500
+	kafkastore.topic = _schemas
+	kafkastore.topic.replication.factor = 3
+	kafkastore.topic.skip.validation = false
+	kafkastore.update.handlers = []
+	kafkastore.write.max.retries = 5
+	leader.connect.timeout.ms = 60000
+	leader.election.delay = false
+	leader.election.sticky = false
+	leader.eligibility = true
+	leader.read.timeout.ms = 60000
+	listener.protocol.map = []
+	listeners = [http://0.0.0.0:8081]
+	master.eligibility = null
+	max.request.header.size = 8192
+	max.response.header.size = 8192
+	metadata.encoder.old.secret = null
+	metadata.encoder.secret = null
+	metadata.encoder.secret.strict.validation = false
+	metadata.encoder.topic = _schema_encoders
+	metric.reporters = []
+	metrics.global.stats.request.tags.enable = false
+	metrics.jmx.prefix = kafka.schema.registry
+	metrics.latency.sla.ms = 50
+	metrics.latency.slo.ms = 5
+	metrics.latency.slo.sla.enable = false
+	metrics.num.samples = 2
+	metrics.sample.window.ms = 30000
+	metrics.tag.map = []
+	mode.mutability = true
+	network.forwarded.request.customizer.enable = false
+	network.traffic.rate.limit.backend = guava
+	network.traffic.rate.limit.bytes.per.sec = 20971520
+	network.traffic.rate.limit.enable = false
+	nosniff.prevention.enable = false
+	percentile.max.latency.ms = 10000.0
+	port = 8081
+	prefix.sni.check.enabled = false
+	prefix.sni.prefix = 
+	proxy.protocol.enabled = false
+	reject.options.request = false
+	request.logger.name = io.confluent.rest-utils.requests
+	request.queue.capacity = 2147483647
+	request.queue.capacity.growby = 64
+	request.queue.capacity.init = 128
+	resource.extension.class = []
+	resource.extension.classes = []
+	resource.static.locations = []
+	response.http.headers.config = 
+	response.mediatype.default = application/vnd.schemaregistry.v1+json
+	response.mediatype.preferred = [application/vnd.schemaregistry.v1+json, application/vnd.schemaregistry+json, application/json]
+	rest.servlet.initializor.classes = []
+	return.429.instead.of.500.for.jetty.response.errors = false
+	schema.cache.expiry.secs = 300
+	schema.cache.size = 1000
+	schema.canonicalize.on.consume = []
+	schema.compatibility.level = backward
+	schema.providers = []
+	schema.registry.group.id = schema-registry
+	schema.registry.inter.instance.protocol = 
+	schema.registry.resource.extension.class = []
+	schema.reject.empty.subject = false
+	schema.search.default.limit = 1000
+	schema.search.max.limit = 1000
+	schema.validate.fields = false
+	schema.validate.new.schemas = true
+	server.connection.limit = 0
+	shutdown.graceful.ms = 5000
+	size.limit.filter.enabled = false
+	size.limit.filter.max.request.body.size = 1048576
+	sni.check.enabled = false
+	sni.host.check.enabled = true
+	ssl.cipher.suites = []
+	ssl.client.auth = false
+	ssl.client.authentication = NONE
+	ssl.enabled.protocols = []
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = [hidden]
+	ssl.keymanager.algorithm = 
+	ssl.keystore.location = 
+	ssl.keystore.password = [hidden]
+	ssl.keystore.reload = false
+	ssl.keystore.type = JKS
+	ssl.keystore.watch.location = 
+	ssl.protocol = TLS
+	ssl.provider = 
+	ssl.spire.enabled = false
+	ssl.trustmanager.algorithm = 
+	ssl.truststore.location = 
+	ssl.truststore.password = [hidden]
+	ssl.truststore.type = JKS
+	subject.search.default.limit = 2147483647
+	subject.search.max.limit = 2147483647
+	subject.version.search.default.limit = 2147483647
+	subject.version.search.max.limit = 2147483647
+	suppress.stack.trace.response = true
+	thread.pool.max = 200
+	thread.pool.min = 8
+	websocket.path.prefix = /ws
+	websocket.servlet.initializor.classes = []
+ (org.apache.kafka.common.config.AbstractConfig)
+[2026-11-11 19:27:29,106] INFO Initial capacity 128, increased by 64, maximum capacity 2147483647. (io.confluent.rest.ApplicationServer)
+[2026-11-11 19:27:29,293] INFO Adding listener with HTTP/2: NamedURI{uri=http://0.0.0.0:8081, name='null'} (io.confluent.rest.ApplicationServer)
+[2026-11-11 19:27:29,316] INFO Registered CombinedNetworkTrafficListener to network connector null of listener: null (io.confluent.rest.ApplicationServer)
+[2026-11-11 19:27:29,409] INFO AdminClientConfig values: 
+	bootstrap.controllers = []
+	bootstrap.servers = [PLAINTEXT://localhost:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	confluent.admin.client.describe.topic.partitions.enabled = true
+	confluent.client.switchover.disable = false
+	confluent.lkc.id = null
+	confluent.metrics.reporter.bootstrap.servers = kafka-0:9071
+	confluent.proxy.protocol.client.address = null
+	confluent.proxy.protocol.client.mode = PROXY
+	confluent.proxy.protocol.client.port = null
+	confluent.proxy.protocol.client.version = NONE
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	enable.metrics.push = false
+	host.resolver.class = class org.apache.kafka.clients.DefaultHostResolver
+	metadata.max.age.ms = 300000
+	metadata.recovery.rebootstrap.trigger.ms = 300000
+	metadata.recovery.strategy = rebootstrap
+	metric.reporters = [org.apache.kafka.common.metrics.JmxReporter]
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.jaas.config.jndi.allowlist = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.assertion.claim.aud = null
+	sasl.oauthbearer.assertion.claim.exp.minutes = 5
+	sasl.oauthbearer.assertion.claim.iss = null
+	sasl.oauthbearer.assertion.claim.jti.include = false
+	sasl.oauthbearer.assertion.claim.nbf.include = false
+	sasl.oauthbearer.assertion.claim.sub = null
+	sasl.oauthbearer.assertion.file = null
+	sasl.oauthbearer.assertion.private.key.file = null
+	sasl.oauthbearer.assertion.private.key.passphrase = null
+	sasl.oauthbearer.assertion.template.file = null
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.iat.validation.enabled = false
+	sasl.oauthbearer.jti.validation.enabled = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+ (org.apache.kafka.common.config.AbstractConfig)
+[2026-11-11 19:27:29,478] INFO Kafka version: 8.0.6-ce (org.apache.kafka.common.utils.AppInfoParser)
+[2026-11-11 19:27:29,478] INFO Kafka commitId: 3ef83ed663e0b705 (org.apache.kafka.common.utils.AppInfoParser)
+[2026-11-11 19:27:29,478] INFO Kafka startTimeMs: 1794425249476 (org.apache.kafka.common.utils.AppInfoParser)
+[2026-11-11 19:27:29,769] INFO App info kafka.admin.client for adminclient-1 unregistered (org.apache.kafka.common.utils.AppInfoParser)
+[2026-11-11 19:27:29,781] INFO Registering schema provider for AVRO: io.confluent.kafka.schemaregistry.avro.AvroSchemaProvider (io.confluent.kafka.schemaregistry.storage.AbstractSchemaRegistry)
+[2026-11-11 19:27:29,781] INFO Registering schema provider for JSON: io.confluent.kafka.schemaregistry.json.JsonSchemaProvider (io.confluent.kafka.schemaregistry.storage.AbstractSchemaRegistry)
+[2026-11-11 19:27:29,781] INFO Registering schema provider for PROTOBUF: io.confluent.kafka.schemaregistry.protobuf.ProtobufSchemaProvider (io.confluent.kafka.schemaregistry.storage.AbstractSchemaRegistry)
+[2026-11-11 19:27:29,889] INFO Found internal listener: NamedURI{uri=http://0.0.0.0:8081, name='null'} (io.confluent.kafka.schemaregistry.storage.KafkaSchemaRegistry)
+[2026-11-11 19:27:29,890] INFO Setting my identity to version=1,host=localhost,port=8081,scheme=http,leaderEligibility=true,isLeader=false (io.confluent.kafka.schemaregistry.storage.KafkaSchemaRegistry)
+[2026-11-11 19:27:29,891] INFO AdminClientConfig values: 
+	bootstrap.controllers = []
+	bootstrap.servers = [PLAINTEXT://localhost:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	confluent.admin.client.describe.topic.partitions.enabled = true
+	confluent.client.switchover.disable = false
+	confluent.lkc.id = null
+	confluent.metrics.reporter.bootstrap.servers = kafka-0:9071
+	confluent.proxy.protocol.client.address = null
+	confluent.proxy.protocol.client.mode = PROXY
+	confluent.proxy.protocol.client.port = null
+	confluent.proxy.protocol.client.version = NONE
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	enable.metrics.push = false
+	host.resolver.class = class org.apache.kafka.clients.DefaultHostResolver
+	metadata.max.age.ms = 300000
+	metadata.recovery.rebootstrap.trigger.ms = 300000
+	metadata.recovery.strategy = rebootstrap
+	metric.reporters = [org.apache.kafka.common.metrics.JmxReporter]
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.jaas.config.jndi.allowlist = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.assertion.claim.aud = null
+	sasl.oauthbearer.assertion.claim.exp.minutes = 5
+	sasl.oauthbearer.assertion.claim.iss = null
+	sasl.oauthbearer.assertion.claim.jti.include = false
+	sasl.oauthbearer.assertion.claim.nbf.include = false
+	sasl.oauthbearer.assertion.claim.sub = null
+	sasl.oauthbearer.assertion.file = null
+	sasl.oauthbearer.assertion.private.key.file = null
+	sasl.oauthbearer.assertion.private.key.passphrase = null
+	sasl.oauthbearer.assertion.template.file = null
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.iat.validation.enabled = false
+	sasl.oauthbearer.jti.validation.enabled = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+ (org.apache.kafka.common.config.AbstractConfig)
+[2026-11-11 19:27:29,898] INFO Kafka version: 8.0.6-ce (org.apache.kafka.common.utils.AppInfoParser)
+[2026-11-11 19:27:29,899] INFO Kafka commitId: 3ef83ed663e0b705 (org.apache.kafka.common.utils.AppInfoParser)
+[2026-11-11 19:27:29,899] INFO Kafka startTimeMs: 1794425249898 (org.apache.kafka.common.utils.AppInfoParser)
+[2026-11-11 19:27:29,912] INFO App info kafka.admin.client for adminclient-2 unregistered (org.apache.kafka.common.utils.AppInfoParser)
+[2026-11-11 19:27:29,919] INFO Initializing KafkaStore with broker endpoints: PLAINTEXT://localhost:9092 (io.confluent.kafka.schemaregistry.storage.KafkaStore)
+[2026-11-11 19:27:30,012] INFO Loaded METADATA_ENCODER_SECRET from env (io.confluent.kafka.schemaregistry.storage.encoder.MetadataEncoderService)
+[2026-11-11 19:27:30,013] WARN Encoder secret is null or empty (io.confluent.kafka.schemaregistry.storage.encoder.MetadataEncoderService)
+[2026-11-11 19:27:30,013] WARN No value specified for metadata.encoder.secret, sensitive metadata will not be encoded (io.confluent.kafka.schemaregistry.storage.encoder.MetadataEncoderService)
+[2026-11-11 19:27:30,013] INFO AdminClientConfig values: 
+	bootstrap.controllers = []
+	bootstrap.servers = [PLAINTEXT://localhost:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	confluent.admin.client.describe.topic.partitions.enabled = true
+	confluent.client.switchover.disable = false
+	confluent.lkc.id = null
+	confluent.metrics.reporter.bootstrap.servers = kafka-0:9071
+	confluent.proxy.protocol.client.address = null
+	confluent.proxy.protocol.client.mode = PROXY
+	confluent.proxy.protocol.client.port = null
+	confluent.proxy.protocol.client.version = NONE
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	enable.metrics.push = false
+	host.resolver.class = class org.apache.kafka.clients.DefaultHostResolver
+	metadata.max.age.ms = 300000
+	metadata.recovery.rebootstrap.trigger.ms = 300000
+	metadata.recovery.strategy = rebootstrap
+	metric.reporters = [org.apache.kafka.common.metrics.JmxReporter]
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.jaas.config.jndi.allowlist = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.assertion.claim.aud = null
+	sasl.oauthbearer.assertion.claim.exp.minutes = 5
+	sasl.oauthbearer.assertion.claim.iss = null
+	sasl.oauthbearer.assertion.claim.jti.include = false
+	sasl.oauthbearer.assertion.claim.nbf.include = false
+	sasl.oauthbearer.assertion.claim.sub = null
+	sasl.oauthbearer.assertion.file = null
+	sasl.oauthbearer.assertion.private.key.file = null
+	sasl.oauthbearer.assertion.private.key.passphrase = null
+	sasl.oauthbearer.assertion.template.file = null
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.iat.validation.enabled = false
+	sasl.oauthbearer.jti.validation.enabled = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+ (org.apache.kafka.common.config.AbstractConfig)
+[2026-11-11 19:27:30,018] INFO Kafka version: 8.0.6-ce (org.apache.kafka.common.utils.AppInfoParser)
+[2026-11-11 19:27:30,018] INFO Kafka commitId: 3ef83ed663e0b705 (org.apache.kafka.common.utils.AppInfoParser)
+[2026-11-11 19:27:30,018] INFO Kafka startTimeMs: 1794425250018 (org.apache.kafka.common.utils.AppInfoParser)
+[2026-11-11 19:27:30,031] INFO Creating schemas topic _schemas (io.confluent.kafka.schemaregistry.storage.KafkaStore)
+[2026-11-11 19:27:30,037] WARN Creating the schema topic _schemas using a replication factor of 1, which is less than the desired one of 3. If this is a production environment, it's crucial to add more brokers and increase the replication factor of the topic. (io.confluent.kafka.schemaregistry.storage.KafkaStore)
+[2026-11-11 19:27:30,089] INFO App info kafka.admin.client for adminclient-3 unregistered (org.apache.kafka.common.utils.AppInfoParser)
+[2026-11-11 19:27:30,099] INFO ProducerConfig values: 
+	acks = -1
+	batch.size = 16384
+	bootstrap.servers = [PLAINTEXT://localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-1
+	compression.gzip.level = -1
+	compression.lz4.level = 9
+	compression.type = none
+	compression.zstd.level = 3
+	confluent.client.switchover.disable = false
+	confluent.lkc.id = null
+	confluent.proxy.protocol.client.address = null
+	confluent.proxy.protocol.client.mode = PROXY
+	confluent.proxy.protocol.client.port = null
+	confluent.proxy.protocol.client.version = NONE
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	enable.metrics.push = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+	linger.ms = 5
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metadata.recovery.rebootstrap.trigger.ms = 300000
+	metadata.recovery.strategy = rebootstrap
+	metric.reporters = [org.apache.kafka.common.metrics.JmxReporter]
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.jaas.config.jndi.allowlist = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.assertion.claim.aud = null
+	sasl.oauthbearer.assertion.claim.exp.minutes = 5
+	sasl.oauthbearer.assertion.claim.iss = null
+	sasl.oauthbearer.assertion.claim.jti.include = false
+	sasl.oauthbearer.assertion.claim.nbf.include = false
+	sasl.oauthbearer.assertion.claim.sub = null
+	sasl.oauthbearer.assertion.file = null
+	sasl.oauthbearer.assertion.private.key.file = null
+	sasl.oauthbearer.assertion.private.key.passphrase = null
+	sasl.oauthbearer.assertion.template.file = null
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.iat.validation.enabled = false
+	sasl.oauthbearer.jti.validation.enabled = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+ (org.apache.kafka.common.config.AbstractConfig)
+[2026-11-11 19:27:30,120] INFO initializing Kafka metrics collector (org.apache.kafka.common.telemetry.internals.KafkaMetricsCollector)
+[2026-11-11 19:27:30,129] INFO [Producer clientId=producer-1] Instantiated an idempotent producer. (org.apache.kafka.clients.producer.KafkaProducer)
+[2026-11-11 19:27:30,147] INFO Kafka version: 8.0.6-ce (org.apache.kafka.common.utils.AppInfoParser)
+[2026-11-11 19:27:30,147] INFO Kafka commitId: 3ef83ed663e0b705 (org.apache.kafka.common.utils.AppInfoParser)
+[2026-11-11 19:27:30,147] INFO Kafka startTimeMs: 1794425250146 (org.apache.kafka.common.utils.AppInfoParser)
+[2026-11-11 19:27:30,149] INFO Kafka store reader thread starting consumer (io.confluent.kafka.schemaregistry.storage.KafkaStoreReaderThread)
+[2026-11-11 19:27:30,155] INFO ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [PLAINTEXT://localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = KafkaStore-reader-_schemas
+	client.rack = 
+	confluent.client.switchover.disable = false
+	confluent.lkc.id = null
+	confluent.proxy.protocol.client.address = null
+	confluent.proxy.protocol.client.mode = PROXY
+	confluent.proxy.protocol.client.port = null
+	confluent.proxy.protocol.client.version = NONE
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = schema-registry-localhost-8081
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.rebootstrap.trigger.ms = 300000
+	metadata.recovery.strategy = rebootstrap
+	metric.reporters = [org.apache.kafka.common.metrics.JmxReporter]
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.jaas.config.jndi.allowlist = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.assertion.claim.aud = null
+	sasl.oauthbearer.assertion.claim.exp.minutes = 5
+	sasl.oauthbearer.assertion.claim.iss = null
+	sasl.oauthbearer.assertion.claim.jti.include = false
+	sasl.oauthbearer.assertion.claim.nbf.include = false
+	sasl.oauthbearer.assertion.claim.sub = null
+	sasl.oauthbearer.assertion.file = null
+	sasl.oauthbearer.assertion.private.key.file = null
+	sasl.oauthbearer.assertion.private.key.passphrase = null
+	sasl.oauthbearer.assertion.template.file = null
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.iat.validation.enabled = false
+	sasl.oauthbearer.jti.validation.enabled = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+ (org.apache.kafka.common.config.AbstractConfig)
+[2026-11-11 19:27:30,158] INFO [Producer clientId=producer-1] Cluster ID: MkU3OEVBNTcwNTJENDM2Qk (org.apache.kafka.clients.Metadata)
+[2026-11-11 19:27:30,163] INFO initializing Kafka metrics collector (org.apache.kafka.common.telemetry.internals.KafkaMetricsCollector)
+[2026-11-11 19:27:30,200] INFO Kafka version: 8.0.6-ce (org.apache.kafka.common.utils.AppInfoParser)
+[2026-11-11 19:27:30,200] INFO Kafka commitId: 3ef83ed663e0b705 (org.apache.kafka.common.utils.AppInfoParser)
+[2026-11-11 19:27:30,200] INFO Kafka startTimeMs: 1794425250200 (org.apache.kafka.common.utils.AppInfoParser)
+[2026-11-11 19:27:30,210] INFO [Consumer clientId=KafkaStore-reader-_schemas, groupId=schema-registry-localhost-8081] Cluster ID: MkU3OEVBNTcwNTJENDM2Qk (org.apache.kafka.clients.Metadata)
+[2026-11-11 19:27:30,220] INFO [Consumer clientId=KafkaStore-reader-_schemas, groupId=schema-registry-localhost-8081] Assigned to partition(s): _schemas-0 (org.apache.kafka.clients.consumer.internals.ClassicKafkaConsumer)
+[2026-11-11 19:27:30,222] INFO Seeking to beginning for all partitions (io.confluent.kafka.schemaregistry.storage.KafkaStoreReaderThread)
+[2026-11-11 19:27:30,223] INFO [Consumer clientId=KafkaStore-reader-_schemas, groupId=schema-registry-localhost-8081] Seeking to AutoOffsetResetStrategy{type=earliest} offset of partition _schemas-0 (org.apache.kafka.clients.consumer.internals.SubscriptionState)
+[2026-11-11 19:27:30,223] INFO Initialized last consumed offset to -1 (io.confluent.kafka.schemaregistry.storage.KafkaStoreReaderThread)
+[2026-11-11 19:27:30,224] INFO [kafka-store-reader-thread-_schemas]: Starting (io.confluent.kafka.schemaregistry.storage.KafkaStoreReaderThread)
+[2026-11-11 19:27:30,268] INFO [Producer clientId=producer-1] ProducerId set to 0 with epoch 0 (org.apache.kafka.clients.producer.internals.TransactionManager)
+[2026-11-11 19:27:30,328] INFO Wait to catch up until the offset at 0 (io.confluent.kafka.schemaregistry.storage.KafkaStore)
+[2026-11-11 19:27:30,371] INFO Reached offset at 0 (io.confluent.kafka.schemaregistry.storage.KafkaStore)
+[2026-11-11 19:27:30,372] INFO Joining schema registry with Kafka-based coordination (io.confluent.kafka.schemaregistry.storage.KafkaSchemaRegistry)
+[2026-11-11 19:27:30,379] INFO Kafka version: 8.0.6-ce (org.apache.kafka.common.utils.AppInfoParser)
+[2026-11-11 19:27:30,379] INFO Kafka commitId: 3ef83ed663e0b705 (org.apache.kafka.common.utils.AppInfoParser)
+[2026-11-11 19:27:30,379] INFO Kafka startTimeMs: 1794425250379 (org.apache.kafka.common.utils.AppInfoParser)
+[2026-11-11 19:27:30,394] INFO [Schema registry clientId=sr-1, groupId=schema-registry] Cluster ID: MkU3OEVBNTcwNTJENDM2Qk (org.apache.kafka.clients.Metadata)
+[2026-11-11 19:27:30,528] INFO [Schema registry clientId=sr-1, groupId=schema-registry] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null isFenced: false) (io.confluent.kafka.schemaregistry.leaderelector.kafka.SchemaRegistryCoordinator)
+[2026-11-11 19:27:30,531] INFO [Schema registry clientId=sr-1, groupId=schema-registry] (Re-)joining group (io.confluent.kafka.schemaregistry.leaderelector.kafka.SchemaRegistryCoordinator)
+[2026-11-11 19:27:30,532] INFO Updating metadata (io.confluent.kafka.schemaregistry.leaderelector.kafka.SchemaRegistryCoordinator)
+[2026-11-11 19:27:30,548] INFO [Schema registry clientId=sr-1, groupId=schema-registry] Group coordinator localhost:9092 (id: 2147483646 rack: null isFenced: false) is unavailable or invalid due to cause: error response NOT_COORDINATOR. isDisconnected: false. Rediscovery will be attempted. (io.confluent.kafka.schemaregistry.leaderelector.kafka.SchemaRegistryCoordinator)
+[2026-11-11 19:27:30,548] INFO [Schema registry clientId=sr-1, groupId=schema-registry] Requesting disconnect from last known coordinator localhost:9092 (id: 2147483646 rack: null isFenced: false) (io.confluent.kafka.schemaregistry.leaderelector.kafka.SchemaRegistryCoordinator)
+[2026-11-11 19:27:30,551] INFO [Schema registry clientId=sr-1, groupId=schema-registry] JoinGroup failed: This is not the correct coordinator. Marking coordinator unknown. Sent generation was Generation{generationId=-1, memberId='', protocol='null'} (io.confluent.kafka.schemaregistry.leaderelector.kafka.SchemaRegistryCoordinator)
+[2026-11-11 19:27:30,552] INFO [Schema registry clientId=sr-1, groupId=schema-registry] Request joining group due to: rebalance failed due to 'This is not the correct coordinator.' (NotCoordinatorException) (io.confluent.kafka.schemaregistry.leaderelector.kafka.SchemaRegistryCoordinator)
+[2026-11-11 19:27:30,653] INFO [Schema registry clientId=sr-1, groupId=schema-registry] Client requested disconnect from node 2147483646 (org.apache.kafka.clients.NetworkClient)
+[2026-11-11 19:27:30,656] INFO [Schema registry clientId=sr-1, groupId=schema-registry] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null isFenced: false) (io.confluent.kafka.schemaregistry.leaderelector.kafka.SchemaRegistryCoordinator)
+[2026-11-11 19:27:30,657] INFO [Schema registry clientId=sr-1, groupId=schema-registry] Group coordinator localhost:9092 (id: 2147483646 rack: null isFenced: false) is unavailable or invalid due to cause: coordinator unavailable. isDisconnected: false. Rediscovery will be attempted. (io.confluent.kafka.schemaregistry.leaderelector.kafka.SchemaRegistryCoordinator)
+[2026-11-11 19:27:30,657] INFO [Schema registry clientId=sr-1, groupId=schema-registry] Requesting disconnect from last known coordinator localhost:9092 (id: 2147483646 rack: null isFenced: false) (io.confluent.kafka.schemaregistry.leaderelector.kafka.SchemaRegistryCoordinator)
+[2026-11-11 19:27:30,741] INFO [Schema registry clientId=sr-1, groupId=schema-registry] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null isFenced: false) (io.confluent.kafka.schemaregistry.leaderelector.kafka.SchemaRegistryCoordinator)
+[2026-11-11 19:27:30,742] INFO [Schema registry clientId=sr-1, groupId=schema-registry] (Re-)joining group (io.confluent.kafka.schemaregistry.leaderelector.kafka.SchemaRegistryCoordinator)
+[2026-11-11 19:27:30,742] INFO Updating metadata (io.confluent.kafka.schemaregistry.leaderelector.kafka.SchemaRegistryCoordinator)
+[2026-11-11 19:27:30,748] INFO [Schema registry clientId=sr-1, groupId=schema-registry] Group coordinator localhost:9092 (id: 2147483646 rack: null isFenced: false) is unavailable or invalid due to cause: error response NOT_COORDINATOR. isDisconnected: false. Rediscovery will be attempted. (io.confluent.kafka.schemaregistry.leaderelector.kafka.SchemaRegistryCoordinator)
+[2026-11-11 19:27:30,748] INFO [Schema registry clientId=sr-1, groupId=schema-registry] Requesting disconnect from last known coordinator localhost:9092 (id: 2147483646 rack: null isFenced: false) (io.confluent.kafka.schemaregistry.leaderelector.kafka.SchemaRegistryCoordinator)
+[2026-11-11 19:27:30,749] INFO [Schema registry clientId=sr-1, groupId=schema-registry] JoinGroup failed: This is not the correct coordinator. Marking coordinator unknown. Sent generation was Generation{generationId=-1, memberId='', protocol='null'} (io.confluent.kafka.schemaregistry.leaderelector.kafka.SchemaRegistryCoordinator)
+[2026-11-11 19:27:30,749] INFO [Schema registry clientId=sr-1, groupId=schema-registry] Request joining group due to: rebalance failed due to 'This is not the correct coordinator.' (NotCoordinatorException) (io.confluent.kafka.schemaregistry.leaderelector.kafka.SchemaRegistryCoordinator)
+[2026-11-11 19:27:30,849] INFO [Schema registry clientId=sr-1, groupId=schema-registry] Client requested disconnect from node 2147483646 (org.apache.kafka.clients.NetworkClient)
+[2026-11-11 19:27:30,853] INFO [Schema registry clientId=sr-1, groupId=schema-registry] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null isFenced: false) (io.confluent.kafka.schemaregistry.leaderelector.kafka.SchemaRegistryCoordinator)
+[2026-11-11 19:27:30,853] INFO [Schema registry clientId=sr-1, groupId=schema-registry] Group coordinator localhost:9092 (id: 2147483646 rack: null isFenced: false) is unavailable or invalid due to cause: coordinator unavailable. isDisconnected: false. Rediscovery will be attempted. (io.confluent.kafka.schemaregistry.leaderelector.kafka.SchemaRegistryCoordinator)
+[2026-11-11 19:27:30,853] INFO [Schema registry clientId=sr-1, groupId=schema-registry] Requesting disconnect from last known coordinator localhost:9092 (id: 2147483646 rack: null isFenced: false) (io.confluent.kafka.schemaregistry.leaderelector.kafka.SchemaRegistryCoordinator)
+[2026-11-11 19:27:30,938] INFO [Schema registry clientId=sr-1, groupId=schema-registry] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null isFenced: false) (io.confluent.kafka.schemaregistry.leaderelector.kafka.SchemaRegistryCoordinator)
+[2026-11-11 19:27:30,939] INFO [Schema registry clientId=sr-1, groupId=schema-registry] (Re-)joining group (io.confluent.kafka.schemaregistry.leaderelector.kafka.SchemaRegistryCoordinator)
+[2026-11-11 19:27:30,940] INFO Updating metadata (io.confluent.kafka.schemaregistry.leaderelector.kafka.SchemaRegistryCoordinator)
+[2026-11-11 19:27:30,945] INFO [Schema registry clientId=sr-1, groupId=schema-registry] Group coordinator localhost:9092 (id: 2147483646 rack: null isFenced: false) is unavailable or invalid due to cause: error response NOT_COORDINATOR. isDisconnected: false. Rediscovery will be attempted. (io.confluent.kafka.schemaregistry.leaderelector.kafka.SchemaRegistryCoordinator)
+[2026-11-11 19:27:30,945] INFO [Schema registry clientId=sr-1, groupId=schema-registry] Requesting disconnect from last known coordinator localhost:9092 (id: 2147483646 rack: null isFenced: false) (io.confluent.kafka.schemaregistry.leaderelector.kafka.SchemaRegistryCoordinator)
+[2026-11-11 19:27:30,945] INFO [Schema registry clientId=sr-1, groupId=schema-registry] JoinGroup failed: This is not the correct coordinator. Marking coordinator unknown. Sent generation was Generation{generationId=-1, memberId='', protocol='null'} (io.confluent.kafka.schemaregistry.leaderelector.kafka.SchemaRegistryCoordinator)
+[2026-11-11 19:27:30,945] INFO [Schema registry clientId=sr-1, groupId=schema-registry] Request joining group due to: rebalance failed due to 'This is not the correct coordinator.' (NotCoordinatorException) (io.confluent.kafka.schemaregistry.leaderelector.kafka.SchemaRegistryCoordinator)
+[2026-11-11 19:27:31,046] INFO [Schema registry clientId=sr-1, groupId=schema-registry] Client requested disconnect from node 2147483646 (org.apache.kafka.clients.NetworkClient)
+[2026-11-11 19:27:31,050] INFO [Schema registry clientId=sr-1, groupId=schema-registry] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null isFenced: false) (io.confluent.kafka.schemaregistry.leaderelector.kafka.SchemaRegistryCoordinator)
+[2026-11-11 19:27:31,050] INFO [Schema registry clientId=sr-1, groupId=schema-registry] Group coordinator localhost:9092 (id: 2147483646 rack: null isFenced: false) is unavailable or invalid due to cause: coordinator unavailable. isDisconnected: false. Rediscovery will be attempted. (io.confluent.kafka.schemaregistry.leaderelector.kafka.SchemaRegistryCoordinator)
+[2026-11-11 19:27:31,050] INFO [Schema registry clientId=sr-1, groupId=schema-registry] Requesting disconnect from last known coordinator localhost:9092 (id: 2147483646 rack: null isFenced: false) (io.confluent.kafka.schemaregistry.leaderelector.kafka.SchemaRegistryCoordinator)
+[2026-11-11 19:27:31,141] INFO [Schema registry clientId=sr-1, groupId=schema-registry] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null isFenced: false) (io.confluent.kafka.schemaregistry.leaderelector.kafka.SchemaRegistryCoordinator)
+[2026-11-11 19:27:31,142] INFO [Schema registry clientId=sr-1, groupId=schema-registry] (Re-)joining group (io.confluent.kafka.schemaregistry.leaderelector.kafka.SchemaRegistryCoordinator)
+[2026-11-11 19:27:31,142] INFO Updating metadata (io.confluent.kafka.schemaregistry.leaderelector.kafka.SchemaRegistryCoordinator)
+[2026-11-11 19:27:31,154] INFO [Schema registry clientId=sr-1, groupId=schema-registry] Request joining group due to: need to re-join with the given member-id: sr-1-d6f4bebd-b41e-4296-a956-71d350bc587b (io.confluent.kafka.schemaregistry.leaderelector.kafka.SchemaRegistryCoordinator)
+[2026-11-11 19:27:31,154] INFO [Schema registry clientId=sr-1, groupId=schema-registry] (Re-)joining group (io.confluent.kafka.schemaregistry.leaderelector.kafka.SchemaRegistryCoordinator)
+[2026-11-11 19:27:31,154] INFO Updating metadata (io.confluent.kafka.schemaregistry.leaderelector.kafka.SchemaRegistryCoordinator)
+[2026-11-11 19:27:31,164] INFO [Schema registry clientId=sr-1, groupId=schema-registry] Successfully joined group with generation Generation{generationId=1, memberId='sr-1-d6f4bebd-b41e-4296-a956-71d350bc587b', protocol='v0'} (io.confluent.kafka.schemaregistry.leaderelector.kafka.SchemaRegistryCoordinator)
+[2026-11-11 19:27:31,164] INFO Performing assignment (io.confluent.kafka.schemaregistry.leaderelector.kafka.SchemaRegistryCoordinator)
+[2026-11-11 19:27:31,175] INFO Member information: {sr-1-d6f4bebd-b41e-4296-a956-71d350bc587b=version=1,host=localhost,port=8081,scheme=http,leaderEligibility=true,isLeader=false} (io.confluent.kafka.schemaregistry.leaderelector.kafka.SchemaRegistryCoordinator)
+[2026-11-11 19:27:31,176] INFO Assignment: Assignment{version=1, error=0, leader='sr-1-d6f4bebd-b41e-4296-a956-71d350bc587b', leaderIdentity=version=1,host=localhost,port=8081,scheme=http,leaderEligibility=true,isLeader=false} (io.confluent.kafka.schemaregistry.leaderelector.kafka.SchemaRegistryCoordinator)
+[2026-11-11 19:27:31,196] INFO [Schema registry clientId=sr-1, groupId=schema-registry] Successfully synced group in generation Generation{generationId=1, memberId='sr-1-d6f4bebd-b41e-4296-a956-71d350bc587b', protocol='v0'} (io.confluent.kafka.schemaregistry.leaderelector.kafka.SchemaRegistryCoordinator)
+[2026-11-11 19:27:31,200] INFO Finished rebalance with leader election result: Assignment{version=1, error=0, leader='sr-1-d6f4bebd-b41e-4296-a956-71d350bc587b', leaderIdentity=version=1,host=localhost,port=8081,scheme=http,leaderEligibility=true,isLeader=false} (io.confluent.kafka.schemaregistry.leaderelector.kafka.KafkaGroupLeaderElector)
+[2026-11-11 19:27:31,201] INFO Setting the leader to version=1,host=localhost,port=8081,scheme=http,leaderEligibility=true,isLeader=false (io.confluent.kafka.schemaregistry.storage.KafkaSchemaRegistry)
+[2026-11-11 19:27:31,227] INFO Leader changed from null to version=1,host=localhost,port=8081,scheme=http,leaderEligibility=true,isLeader=false (io.confluent.kafka.schemaregistry.storage.KafkaSchemaRegistry)
+[2026-11-11 19:27:31,242] INFO Wait to catch up until the offset at 1 (io.confluent.kafka.schemaregistry.storage.KafkaStore)
+[2026-11-11 19:27:31,246] INFO Reached offset at 1 (io.confluent.kafka.schemaregistry.storage.KafkaStore)
+[2026-11-11 19:27:31,308] INFO Binding SchemaRegistryRestApplication to all listeners. (io.confluent.rest.Application)
+[2026-11-11 19:27:31,350] INFO jetty-12.0.35; built: 2026-05-01T05:38:52.785Z; git: ae9286497b46fd709861e330fb364408a946d6e5; jvm 21.0.11+10-LTS (org.eclipse.jetty.server.Server)
+[2026-11-11 19:27:31,411] INFO Session workerName=node0 (org.eclipse.jetty.session.DefaultSessionIdManager)
+[2026-11-11 19:27:31,422] INFO Started oeje10s.ServletContextHandler@7ec95456{ROOT,/,b=null,a=AVAILABLE,h=icksr.RequestHeaderHandler@4bdf{STARTED}} (org.eclipse.jetty.server.handler.ContextHandler)
+Nov 11, 2026 7:27:31 PM org.glassfish.jersey.internal.inject.Providers checkProviderRuntime
+WARNING: A provider io.confluent.kafka.schemaregistry.rest.resources.AssociationsResource registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider io.confluent.kafka.schemaregistry.rest.resources.AssociationsResource will be ignored. 
+Nov 11, 2026 7:27:31 PM org.glassfish.jersey.internal.inject.Providers checkProviderRuntime
+[2026-11-11 19:27:31,958] INFO HV000001: Hibernate Validator 8.0.2.Final (org.hibernate.validator.internal.util.Version)
+WARNING: A provider io.confluent.kafka.schemaregistry.rest.resources.ConfigResource registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider io.confluent.kafka.schemaregistry.rest.resources.ConfigResource will be ignored. 
+Nov 11, 2026 7:27:31 PM org.glassfish.jersey.internal.inject.Providers checkProviderRuntime
+WARNING: A provider io.confluent.kafka.schemaregistry.rest.resources.ContextsResource registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider io.confluent.kafka.schemaregistry.rest.resources.ContextsResource will be ignored. 
+Nov 11, 2026 7:27:31 PM org.glassfish.jersey.internal.inject.Providers checkProviderRuntime
+WARNING: A provider io.confluent.kafka.schemaregistry.rest.resources.SubjectsResource registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider io.confluent.kafka.schemaregistry.rest.resources.SubjectsResource will be ignored. 
+Nov 11, 2026 7:27:31 PM org.glassfish.jersey.internal.inject.Providers checkProviderRuntime
+WARNING: A provider io.confluent.kafka.schemaregistry.rest.resources.SchemasResource registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider io.confluent.kafka.schemaregistry.rest.resources.SchemasResource will be ignored. 
+Nov 11, 2026 7:27:31 PM org.glassfish.jersey.internal.inject.Providers checkProviderRuntime
+WARNING: A provider io.confluent.kafka.schemaregistry.rest.resources.SubjectVersionsResource registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider io.confluent.kafka.schemaregistry.rest.resources.SubjectVersionsResource will be ignored. 
+Nov 11, 2026 7:27:31 PM org.glassfish.jersey.internal.inject.Providers checkProviderRuntime
+WARNING: A provider io.confluent.kafka.schemaregistry.rest.resources.CompatibilityResource registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider io.confluent.kafka.schemaregistry.rest.resources.CompatibilityResource will be ignored. 
+Nov 11, 2026 7:27:31 PM org.glassfish.jersey.internal.inject.Providers checkProviderRuntime
+WARNING: A provider io.confluent.kafka.schemaregistry.rest.resources.ModeResource registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider io.confluent.kafka.schemaregistry.rest.resources.ModeResource will be ignored. 
+Nov 11, 2026 7:27:31 PM org.glassfish.jersey.internal.inject.Providers checkProviderRuntime
+WARNING: A provider io.confluent.kafka.schemaregistry.rest.resources.ServerMetadataResource registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider io.confluent.kafka.schemaregistry.rest.resources.ServerMetadataResource will be ignored. 
+[2026-11-11 19:27:32,168] INFO Started oeje10s.ServletContextHandler@7ec95456{ROOT,/,b=null,a=AVAILABLE,h=icksr.RequestHeaderHandler@4bdf{STARTED}} (org.eclipse.jetty.ee10.servlet.ServletContextHandler)
+[2026-11-11 19:27:32,206] INFO Started oeje10s.ServletContextHandler@70c56434{/ws,/ws,b=null,a=AVAILABLE,h=oeje10s.SessionHandler@f10d055{STARTED}} (org.eclipse.jetty.server.handler.ContextHandler)
+[2026-11-11 19:27:32,207] INFO Started oeje10s.ServletContextHandler@70c56434{/ws,/ws,b=null,a=AVAILABLE,h=oeje10s.SessionHandler@f10d055{STARTED}} (org.eclipse.jetty.ee10.servlet.ServletContextHandler)
+[2026-11-11 19:27:32,212] INFO Getter/setter type mismatch for mbean attribute formEncodedMethods in class org.eclipse.jetty.server.HttpConfiguration, attribute will be read-only (org.eclipse.jetty.jmx.MetaData)
+[2026-11-11 19:27:32,225] INFO Started NetworkTrafficServerConnector@6bff19ff{HTTP/1.1, (http/1.1, h2c)}{0.0.0.0:8081} (org.eclipse.jetty.server.AbstractConnector)
+[2026-11-11 19:27:32,227] INFO Started icr.ApplicationServer@39fc6b2c{STARTING}[12.0.35,sto=5000] @5662ms (org.eclipse.jetty.server.Server)
+[2026-11-11 19:27:32,228] INFO Schema Registry version: 8.0.6 commitId: 9842a1060b813d98d3de030f69e01bdbd28a1349 (io.confluent.kafka.schemaregistry.rest.SchemaRegistryMain)
+[2026-11-11 19:27:32,229] INFO Server started, listening for requests... (io.confluent.kafka.schemaregistry.rest.SchemaRegistryMain)
+[2026-11-11 19:27:34,240] INFO Forwarded for header in RequestHeaderHandler: [0:0:0:0:0:0:0:1] (io.confluent.kafka.schemaregistry.rest.RequestHeaderHandler)
+[2026-11-11 19:27:34,421] INFO [0:0:0:0:0:0:0:1] - - [11/Nov/2026:19:27:34 +0000] "GET /subjects HTTP/1.1" 200 2 "" "curl/7.76.1" 210 (io.confluent.rest-utils.requests)

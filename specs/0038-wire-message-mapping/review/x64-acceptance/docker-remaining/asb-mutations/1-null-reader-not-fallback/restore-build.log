@@ -1,0 +1,13 @@
+  Paramore.Brighter -> C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter\bin\Release\net10.0\Paramore.Brighter.dll
+  Paramore.Brighter.Locking.Azure -> C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter.Locking.Azure\bin\Release\net10.0\Paramore.Brighter.Locking.Azure.dll
+  Paramore.Brighter.Archive.Azure -> C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter.Archive.Azure\bin\Release\net10.0\Paramore.Brighter.Archive.Azure.dll
+  Paramore.Brighter.ServiceActivator -> C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter.ServiceActivator\bin\Release\net10.0\Paramore.Brighter.ServiceActivator.dll
+  Paramore.Brighter.MessagingGateway.AzureServiceBus -> C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter.MessagingGateway.AzureServiceBus\bin\Release\net10.0\Paramore.Brighter.MessagingGateway.AzureServiceBus.dll
+  Paramore.Brighter.MessageScheduler.Azure -> C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter.MessageScheduler.Azure\bin\Release\net10.0\Paramore.Brighter.MessageScheduler.Azure.dll
+  Paramore.Brighter.AzureServiceBus.Tests -> C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\tests\Paramore.Brighter.AzureServiceBus.Tests\bin\Release\net10.0\Paramore.Brighter.AzureServiceBus.Tests.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:07.00

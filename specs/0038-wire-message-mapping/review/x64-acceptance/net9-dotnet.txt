@@ -1,0 +1,45 @@
+.NET SDK:
+ Version:           9.0.315
+ Commit:            11c70475d8
+ Workload version:  9.0.300-manifests.618366fb
+ MSBuild version:   17.14.43+2a0eb78b3
+
+Runtime Environment:
+ OS Name:     Windows
+ OS Version:  10.0.26200
+ OS Platform: Windows
+ RID:         win-x64
+ Base Path:   C:\Users\IRAKLI~1\AppData\Local\Temp\brighter-x64-dotnet\sdk\9.0.315\
+
+.NET workloads installed:
+There are no installed workloads to display.
+Configured to use loose manifests when installing new manifests.
+
+Host:
+  Version:      9.0.17
+  Architecture: x64
+  Commit:       f2c8152eed
+
+.NET SDKs installed:
+  9.0.315 [C:\Users\IRAKLI~1\AppData\Local\Temp\brighter-x64-dotnet\sdk]
+
+.NET runtimes installed:
+  Microsoft.AspNetCore.App 9.0.17 [C:\Users\IRAKLI~1\AppData\Local\Temp\brighter-x64-dotnet\shared\Microsoft.AspNetCore.App]
+  Microsoft.NETCore.App 9.0.17 [C:\Users\IRAKLI~1\AppData\Local\Temp\brighter-x64-dotnet\shared\Microsoft.NETCore.App]
+  Microsoft.WindowsDesktop.App 9.0.17 [C:\Users\IRAKLI~1\AppData\Local\Temp\brighter-x64-dotnet\shared\Microsoft.WindowsDesktop.App]
+
+Other architectures found:
+  x86   [C:\Program Files (x86)\dotnet]
+    registered at [HKLM\SOFTWARE\dotnet\Setup\InstalledVersions\x86\InstallLocation]
+
+Environment variables:
+  Not set
+
+global.json file:
+  Not found
+
+Learn more:
+  https://aka.ms/dotnet/info
+
+Download .NET:
+  https://aka.ms/dotnet/download

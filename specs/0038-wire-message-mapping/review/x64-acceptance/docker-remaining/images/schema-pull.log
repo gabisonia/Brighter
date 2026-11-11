@@ -1,0 +1,47 @@
+8.0.6: Pulling from confluentinc/cp-schema-registry
+189751940cd2: Pulling fs layer
+ba7d2e02ea8c: Pulling fs layer
+319dc73d93be: Pulling fs layer
+4a8f4696449d: Pulling fs layer
+04cc2c8c8a93: Pulling fs layer
+e6b2a7dfd843: Pulling fs layer
+7703c869139b: Pulling fs layer
+0178001dffe6: Pulling fs layer
+6d72c4072e5a: Pulling fs layer
+a490c60dc9a3: Pulling fs layer
+d55a9a157042: Pulling fs layer
+30aecec7cef4: Pulling fs layer
+836f51cb9015: Pulling fs layer
+609420ab5b56: Pulling fs layer
+189751940cd2: Download complete
+ba7d2e02ea8c: Download complete
+4a8f4696449d: Download complete
+319dc73d93be: Download complete
+04cc2c8c8a93: Download complete
+0178001dffe6: Download complete
+a490c60dc9a3: Download complete
+6d72c4072e5a: Download complete
+d55a9a157042: Download complete
+30aecec7cef4: Download complete
+6d72c4072e5a: Pull complete
+7703c869139b: Download complete
+609420ab5b56: Download complete
+836f51cb9015: Download complete
+ba7d2e02ea8c: Pull complete
+836f51cb9015: Pull complete
+7703c869139b: Pull complete
+04cc2c8c8a93: Pull complete
+d55a9a157042: Pull complete
+319dc73d93be: Pull complete
+a490c60dc9a3: Pull complete
+4a8f4696449d: Pull complete
+30aecec7cef4: Pull complete
+609420ab5b56: Pull complete
+0178001dffe6: Pull complete
+e6b2a7dfd843: Download complete
+189751940cd2: Pull complete
+189751940cd2: Pull complete
+e6b2a7dfd843: Pull complete
+Digest: sha256:a3d68ec7d0af26be38e37557a323c65def17f929e304235c1a630c53c68b1cd6
+Status: Downloaded newer image for confluentinc/cp-schema-registry:8.0.6
+docker.io/confluentinc/cp-schema-registry:8.0.6

@@ -1,0 +1,32 @@
+﻿[
+    {
+        "path":  "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/ASBCreds.cs",
+        "expected":  "6e7b7a44edf16913a4eb79718f5a4fce63e48be20f0c02aac882bfac0a4a2413",
+        "actual":  "c81cdad79300470b02a0b191d7d517158c0bdca441eff9ca5dec10eeeba2928d"
+    },
+    {
+        "path":  "tests/Paramore.Brighter.AzureServiceBus.Tests/TestDoubles/InMemoryLockingServiceBusReceiver.cs",
+        "expected":  "56ec22906d99a8c4647b8f599caa31b37b73ca5d1e2e849de5d5df43db37aee0",
+        "actual":  "b3db8d41df417ca9fc6e6a54015617ff6aa4d74650f6a639a718c15688a82918"
+    },
+    {
+        "path":  "tests/Paramore.Brighter.AzureServiceBus.Tests/TestDoubles/InMemoryLockingServiceBusSessionReceiver.cs",
+        "expected":  "e3fd97b6f027d24cbf5695996dac656fcad1f4422409763ed1fcae665ff6216a",
+        "actual":  "3ee6d77fbd9704b17bb7e759b43c412ab63963eefcc09eaffa7e2a5c81d55a61"
+    },
+    {
+        "path":  "tests/Paramore.Brighter.Gcp.Tests/Helper/GatewayFactory.cs",
+        "expected":  "545ab5c95a83afadaaa1a13f263d9dbe8c73f8ca04f4f7bd308cecb8559d3f22",
+        "actual":  "5511f490c8fcdd4ca2e8eea0bc9252cdb2248d1d4c01e6d412188b4d2898d00d"
+    },
+    {
+        "path":  "tests/Paramore.Brighter.Gcp.Tests/MessagingGateway/GcpStreamMessageGatewayProvider.cs",
+        "expected":  "95591c0ceb7a26ed9d245b053c428e46487d07d3567ad9d39c9118d55f17d2fc",
+        "actual":  "dbe28cac7042e8af0da52087acad8f55bd71a741f18782230f887e3b6a9877d0"
+    },
+    {
+        "path":  "tests/Paramore.Brighter.Kafka.Tests/MessagingGateway/Reactor/When_committing_offsets_during_revoke_should_not_race.cs",
+        "expected":  "328191a636c99857e0b76648f55815649feb68cd62ba15eefe2aa5119927b41d",
+        "actual":  "1aa499bbb12e9f6e678088aa349f1a8ef5b9855c893cd911a81cf272e443c15f"
+    }
+]

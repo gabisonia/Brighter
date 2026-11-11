@@ -1,11 +1,42 @@
 # Full issue completion plan
 
+**Latest local Docker checkpoint (2026-11-11):** [results and remaining gates](review/x64-acceptance/docker-remaining/README.md)
+supersede the earlier next-run queue below. Expanded ASB acceptance has 745 passes,
+12 failures and four existing skips per target; original recovery remains unstable
+on both runtimes. Pub/Sub passes 459 cases on .NET 9 and 458 on .NET 10, with one
+original async shutdown failure and 55 existing skips per target. Both passive Kafka
+full suites abort in native consumer close after 223 passes; separate remainder
+coverage is recorded in the latest report. Actual failing GCP traces and complete
+Kafka cores are now available. Source remains on the fork at the verified HEAD;
+no production changes, Redis rerun, paid services, commits or pushes. Production
+readiness remains blocked; continue from the latest report, not the historical queue.
+
 Status: final blocker resolution in progress; not production-ready. Updated 2026-11-11;
 scope and recorded evidence remain tied to
 [#4170](https://github.com/BrighterCommand/Brighter/issues/4170),
 [requirements](requirements.md), [tasks](tasks.md) and the recorded test evidence.
 
 ## Active completion plan — 2026-11-11
+
+**Native x64 continuation:** the [Windows/x64 checkpoint](review/x64-acceptance/README.md)
+verifies all 7,252 source/build inputs at
+`2db6bcc9b53bdb1d388b667d8f8bbe6c05c0be33`. Complete native SQL Server 2022 suites
+pass 396 cases/four existing skips per framework, with all 400 identities/outcomes
+matching between the new runs. Historical SQL Edge TRXs were not transferred, so
+exact historical identity parity remains unverified. The bounded native-amd64 ASB
+SDK comparison has four topic failures/four queue passes on .NET 9 and eight passes
+on .NET 10. The same duplicate-sequence fault therefore also reproduces without
+ARM64 or emulated SQL. No Brighter acceptance gate is closed by the SDK-only pass.
+All eight owned containers are stopped; no production/test source, commits or
+pushes changed. The requested x64 experiment is finished; remaining gates below
+stay open, and no unchanged rerun is queued.
+
+The subsequent [local Docker Brighter acceptance](review/x64-acceptance/asb-recovery-isolated/README.md)
+uses fresh entities per original reader-recovery case: .NET 9 passes six/fails two,
+and .NET 10 passes all eight. The .NET 9 synchronous throwing-reader topic and queue
+cases correlate with duplicate-sequence broker faults. All four additional owned
+containers are stopped. This adds actual Brighter-path evidence, while the recovery
+mutation, scheduler, lost-lock and broader release gates remain open.
 
 This is the execution plan. The dated checkpoints below retain historical evidence;
 they are not additional queues to restart. Implementation and local review are done.
@@ -18,7 +49,7 @@ All changes remain local: no commits, pushes, paid resources or Redis reruns.
 | 1 | ASB DLQ cause isolation | Reproduce the Docker topic/DLQ failure using only the native Azure SDK, the same image/configuration and original receive/dead-letter sequence. Record native IDs, sequence numbers, settlement and broker errors. A fixed queue control distinguishes topic-specific behavior. | Complete: SDK-only probe reproduces four topic failures and four queue passes on each framework; no Brighter dependency |
 | 2 | ASB failure disposition and acceptance | If Brighter or fixture code is responsible, demonstrate RED, fix it and run affected full regressions. If SDK-only execution reproduces the failure, retain a minimal upstream reproduction and identify the healthy-broker requirement explicitly. Complete outstanding reader-recovery mutations, retry scheduling and lost-lock acceptance only on a fixture meeting their preconditions. | Local disposition complete: SDK-only failure retained; reader mutations, scheduling and lost-lock acceptance await a healthy isolated broker |
 | 3 | Lifecycle findings disposition | For ASB session locks, GCP shutdown/replacement and Kafka close, reconcile each retained failure with its exact source/environment and a concrete causal hypothesis. Run a bounded diagnostic only when it can distinguish that hypothesis. Produce a fix with regression evidence, an established external cause, or an unresolved release blocker with the exact missing observation. | Disposition review complete; three historical lifecycle findings remain unresolved with exact missing evidence in local-review.md |
-| 4 | Supported environment acceptance | Run SQL Server 2022 on native x86-64 and required hosted ASB cases using existing resources. Collect final-source CI evidence when possible without commit/push. Prepare exact commands/source identification before requesting any missing access. ARM64 emulation and runs of older remote commits cannot satisfy these checks. | External access required; do not poll credentials |
+| 4 | Supported environment acceptance | Run SQL Server 2022 on native x86-64 and required hosted ASB cases using existing resources. Collect final-source CI evidence when possible without commit/push. Prepare exact commands/source identification before requesting any missing access. ARM64 emulation and runs of older remote commits cannot satisfy these checks. | Native x64 SQL execution passes both targets; exact historical SQL Edge identity comparison lacks transferred raw inventories. Hosted ASB and final-source CI remain open; do not poll credentials |
 | 5 | Final verification and decision | Check requirement coverage, source/build/API evidence continuity, all mandatory outcomes and remaining skips. Run affected suites for any new fixes; reuse unchanged evidence. Publish a local final report listing either completed release gates or the precise blockers. | Local checkpoint complete; release decision remains blocked by steps 2–4. Recheck affected evidence after those gates close |
 
 ### Investigation stop rules
@@ -141,7 +172,7 @@ it does not close native ASB acceptance or supported-x64 SQL Server validation.
 | Work held for later | Resume condition | Required evidence |
 | --- | --- | --- |
 | ASB native retry scheduling, DLQ reader failures and lost-lock cancellation | Existing healthy namespace and usable authentication are available; no new paid resource is implied | Native queue/session timing, duplicate detection, settlement and failure/recovery acceptance for the implemented writer selection |
-| SQL Server 2022 runtime validation | A supported native x86-64 environment is available | Required runtime matrix on SQL Server 2022; existing SQL Edge results remain separate |
+| SQL Server 2022 runtime validation | Native x86-64 execution completed in the x64 continuation | Both targets pass 396 cases/four existing skips, with exact parity between the new framework runs. Historical SQL Edge results remain separate; retrieve the missing historical case inventory before claiming exact cross-environment identity parity. No unchanged native rerun is queued |
 | Remote CI / final external release verification | It can run within explicit authorization and the standing no-commit/no-push constraint | CI evidence or an explicit remaining limitation; local passes do not stand in for an unrun remote check |
 
 Within a stage, implement only behavior required by the contract or a reproduced
@@ -162,7 +193,7 @@ to the requirement it threatens and update that stage's exit criterion.
 | MQTT | Endpoint/default mapping, consumer-created immediate retry/rejection and scheduled retry selection are validated (121 passes/four skips per framework); scoped integration and compiled API checks are complete. |
 | Redis | Selected endpoint/retry/rejection mappings, failure/cancellation recovery and the certified paced aggregate are validated (203 passes/four skips per framework); scoped default-framing/API checks are complete. No quota rerun is needed. |
 | RocketMQ | Endpoint/rejection mapping, native delay and real scheduled callbacks are validated (136 passes/two skips per framework); all 130 prior outcomes plus eight new cases are retained. Compiled API checks pass. |
-| SQL Server | Configuration/schema integration, rejection and scheduled retry selection pass 396 cases/four skips on both frameworks using canonical ARM64 SQL Edge. Supported x86-64 SQL Server 2022 runtime coverage remains required; the Rosetta startup crash is an unsupported-environment finding. |
+| SQL Server | Native x86-64 SQL Server 2022 now passes 396 cases/four existing skips on both frameworks, matching all 400 identities/outcomes between the new runs. The prior ARM64 SQL Edge reports have the same totals; exact historical identity parity remains unverified because their raw TRXs/inventories were not transferred. See the x64 checkpoint. The earlier Rosetta crash remains an unsupported-environment finding, not a native-x64 runtime failure. |
 | PostgreSQL | Native reader/writer/requeue and rejection mapping pass 341 cases on the declared .NET 10 test target. Native visibility, schema/outbox applicability and compiled API checks are reconciled; see the scheduler audit for limits. |
 
 Detailed test identities, failures and accepted corrections remain in the existing

@@ -1,0 +1,8 @@
+VSTest version 18.7.0 (x64)
+
+Starting test execution, please wait...
+A total of 1 test files matched the specified pattern.
+Data collector 'Blame' message: All tests finished running, Sequence file will not be generated.
+Results File: C:\Users\IrakliGabisonia\source\repos\Personal\Brighter\specs\0038-wire-message-mapping\review\x64-acceptance/docker-remaining/asb-mutations/2-ordinary-event-control\restored-1.trx
+
+Passed!  - Failed:     0, Passed:     1, Skipped:     0, Total:     1, Duration: 588 ms - Paramore.Brighter.AzureServiceBus.Tests.dll (net10.0)

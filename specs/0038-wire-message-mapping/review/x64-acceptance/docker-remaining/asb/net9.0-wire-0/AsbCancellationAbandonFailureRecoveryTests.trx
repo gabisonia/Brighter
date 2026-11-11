@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="c5563bd5-1321-4f8b-8cb5-16b69d701778" name="IrakliGabisonia@HCI-PF6GVL2D 2026-11-11 19:14:54" runUser="AzureAD\IrakliGabisonia" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-11-11T19:14:54.1908392+01:00" queuing="2026-11-11T19:14:54.1908400+01:00" start="2026-11-11T19:14:51.5004923+01:00" finish="2026-11-11T19:14:54.2140751+01:00" />
+  <TestSettings name="default" id="1d4df3da-159f-407e-a8ba-30eb9b3bcb13">
+    <Deployment runDeploymentRoot="IrakliGabisonia_HCI-PF6GVL2D_2026-11-11_19_14_54" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="e57f296c-c551-45c7-9176-0f9997374e9f" testId="b4605d65-5d2e-d8d4-73ea-0358c2dd24c3" testName="Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbCancellationAbandonFailureRecoveryTests.When_cancellation_cleanup_loses_one_asb_lock_should_release_remaining_deliveries_and_recover(useQueue: True)" computerName="HCI-PF6GVL2D" duration="00:00:00.4976107" startTime="2026-11-11T19:14:53.4663946+01:00" endTime="2026-11-11T19:14:53.9534423+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e57f296c-c551-45c7-9176-0f9997374e9f">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.IsType() Failure: Value is not the exact type&#xD;
+Expected: typeof(Azure.Messaging.ServiceBus.ServiceBusException)&#xD;
+Actual:   typeof(System.OperationCanceledException)</Message>
+          <StackTrace>   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbCancellationAbandonFailureRecoveryTests.When_cancellation_cleanup_loses_one_asb_lock_should_release_remaining_deliveries_and_recover(Boolean useQueue) in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\tests\Paramore.Brighter.AzureServiceBus.Tests\MessagingGateway\When_cancellation_cleanup_loses_one_asb_lock_should_release_remaining_deliveries_and_recover.cs:line 96&#xD;
+   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbCancellationAbandonFailureRecoveryTests.When_cancellation_cleanup_loses_one_asb_lock_should_release_remaining_deliveries_and_recover(Boolean useQueue) in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\tests\Paramore.Brighter.AzureServiceBus.Tests\MessagingGateway\When_cancellation_cleanup_loses_one_asb_lock_should_release_remaining_deliveries_and_recover.cs:line 145&#xD;
+   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbCancellationAbandonFailureRecoveryTests.When_cancellation_cleanup_loses_one_asb_lock_should_release_remaining_deliveries_and_recover(Boolean useQueue) in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\tests\Paramore.Brighter.AzureServiceBus.Tests\MessagingGateway\When_cancellation_cleanup_loses_one_asb_lock_should_release_remaining_deliveries_and_recover.cs:line 145&#xD;
+   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbCancellationAbandonFailureRecoveryTests.When_cancellation_cleanup_loses_one_asb_lock_should_release_remaining_deliveries_and_recover(Boolean useQueue) in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\tests\Paramore.Brighter.AzureServiceBus.Tests\MessagingGateway\When_cancellation_cleanup_loses_one_asb_lock_should_release_remaining_deliveries_and_recover.cs:line 145&#xD;
+   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbCancellationAbandonFailureRecoveryTests.When_cancellation_cleanup_loses_one_asb_lock_should_release_remaining_deliveries_and_recover(Boolean useQueue) in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\tests\Paramore.Brighter.AzureServiceBus.Tests\MessagingGateway\When_cancellation_cleanup_loses_one_asb_lock_should_release_remaining_deliveries_and_recover.cs:line 145&#xD;
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="d20840c9-be7a-4c9d-a6bf-b2ace48d1b7a" testId="fb55e7df-b959-06df-4c67-6e76f40e31df" testName="Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbCancellationAbandonFailureRecoveryTests.When_cancellation_cleanup_loses_one_asb_lock_should_release_remaining_deliveries_and_recover(useQueue: False)" computerName="HCI-PF6GVL2D" duration="00:00:00.0948688" startTime="2026-11-11T19:14:53.9864237+01:00" endTime="2026-11-11T19:14:54.0504826+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d20840c9-be7a-4c9d-a6bf-b2ace48d1b7a">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.IsType() Failure: Value is not the exact type&#xD;
+Expected: typeof(Azure.Messaging.ServiceBus.ServiceBusException)&#xD;
+Actual:   typeof(System.OperationCanceledException)</Message>
+          <StackTrace>   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbCancellationAbandonFailureRecoveryTests.When_cancellation_cleanup_loses_one_asb_lock_should_release_remaining_deliveries_and_recover(Boolean useQueue) in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\tests\Paramore.Brighter.AzureServiceBus.Tests\MessagingGateway\When_cancellation_cleanup_loses_one_asb_lock_should_release_remaining_deliveries_and_recover.cs:line 96&#xD;
+   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbCancellationAbandonFailureRecoveryTests.When_cancellation_cleanup_loses_one_asb_lock_should_release_remaining_deliveries_and_recover(Boolean useQueue) in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\tests\Paramore.Brighter.AzureServiceBus.Tests\MessagingGateway\When_cancellation_cleanup_loses_one_asb_lock_should_release_remaining_deliveries_and_recover.cs:line 145&#xD;
+   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbCancellationAbandonFailureRecoveryTests.When_cancellation_cleanup_loses_one_asb_lock_should_release_remaining_deliveries_and_recover(Boolean useQueue) in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\tests\Paramore.Brighter.AzureServiceBus.Tests\MessagingGateway\When_cancellation_cleanup_loses_one_asb_lock_should_release_remaining_deliveries_and_recover.cs:line 145&#xD;
+   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbCancellationAbandonFailureRecoveryTests.When_cancellation_cleanup_loses_one_asb_lock_should_release_remaining_deliveries_and_recover(Boolean useQueue) in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\tests\Paramore.Brighter.AzureServiceBus.Tests\MessagingGateway\When_cancellation_cleanup_loses_one_asb_lock_should_release_remaining_deliveries_and_recover.cs:line 145&#xD;
+   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbCancellationAbandonFailureRecoveryTests.When_cancellation_cleanup_loses_one_asb_lock_should_release_remaining_deliveries_and_recover(Boolean useQueue) in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\tests\Paramore.Brighter.AzureServiceBus.Tests\MessagingGateway\When_cancellation_cleanup_loses_one_asb_lock_should_release_remaining_deliveries_and_recover.cs:line 145&#xD;
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbCancellationAbandonFailureRecoveryTests.When_cancellation_cleanup_loses_one_asb_lock_should_release_remaining_deliveries_and_recover(useQueue: False)" storage="c:\users\irakligabisonia\appdata\local\temp\brighter-4170-docker-remaining\tests\paramore.brighter.azureservicebus.tests\bin\release\net9.0\paramore.brighter.azureservicebus.tests.dll" id="fb55e7df-b959-06df-4c67-6e76f40e31df">
+      <Execution id="d20840c9-be7a-4c9d-a6bf-b2ace48d1b7a" />
+      <TestMethod codeBase="C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\tests\Paramore.Brighter.AzureServiceBus.Tests\bin\Release\net9.0\Paramore.Brighter.AzureServiceBus.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbCancellationAbandonFailureRecoveryTests" name="When_cancellation_cleanup_loses_one_asb_lock_should_release_remaining_deliveries_and_recover" />
+    </UnitTest>
+    <UnitTest name="Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbCancellationAbandonFailureRecoveryTests.When_cancellation_cleanup_loses_one_asb_lock_should_release_remaining_deliveries_and_recover(useQueue: True)" storage="c:\users\irakligabisonia\appdata\local\temp\brighter-4170-docker-remaining\tests\paramore.brighter.azureservicebus.tests\bin\release\net9.0\paramore.brighter.azureservicebus.tests.dll" id="b4605d65-5d2e-d8d4-73ea-0358c2dd24c3">
+      <Execution id="e57f296c-c551-45c7-9176-0f9997374e9f" />
+      <TestMethod codeBase="C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\tests\Paramore.Brighter.AzureServiceBus.Tests\bin\Release\net9.0\Paramore.Brighter.AzureServiceBus.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbCancellationAbandonFailureRecoveryTests" name="When_cancellation_cleanup_loses_one_asb_lock_should_release_remaining_deliveries_and_recover" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="b4605d65-5d2e-d8d4-73ea-0358c2dd24c3" executionId="e57f296c-c551-45c7-9176-0f9997374e9f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="fb55e7df-b959-06df-4c67-6e76f40e31df" executionId="d20840c9-be7a-4c9d-a6bf-b2ace48d1b7a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="2" executed="2" passed="0" failed="2" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v4.0.0+05679a7ab5 (64-bit .NET 9.0.17)&#xD;
+[xUnit.net 00:00:00.15]   Discovering: Paramore.Brighter.AzureServiceBus.Tests&#xD;
+[xUnit.net 00:00:00.36]   Discovered:  Paramore.Brighter.AzureServiceBus.Tests&#xD;
+[xUnit.net 00:00:00.39]   Starting:    Paramore.Brighter.AzureServiceBus.Tests&#xD;
+[xUnit.net 00:00:00.95]       Assert.IsType() Failure: Value is not the exact type&#xD;
+[xUnit.net 00:00:00.95]       Expected: typeof(Azure.Messaging.ServiceBus.ServiceBusException)&#xD;
+[xUnit.net 00:00:00.95]       Actual:   typeof(System.OperationCanceledException)&#xD;
+[xUnit.net 00:00:00.95]       Stack Trace:&#xD;
+[xUnit.net 00:00:00.95]         C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\tests\Paramore.Brighter.AzureServiceBus.Tests\MessagingGateway\When_cancellation_cleanup_loses_one_asb_lock_should_release_remaining_deliveries_and_recover.cs(96,0): at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbCancellationAbandonFailureRecoveryTests.When_cancellation_cleanup_loses_one_asb_lock_should_release_remaining_deliveries_and_recover(Boolean useQueue)&#xD;
+[xUnit.net 00:00:00.95]         C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\tests\Paramore.Brighter.AzureServiceBus.Tests\MessagingGateway\When_cancellation_cleanup_loses_one_asb_lock_should_release_remaining_deliveries_and_recover.cs(145,0): at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbCancellationAbandonFailureRecoveryTests.When_cancellation_cleanup_loses_one_asb_lock_should_release_remaining_deliveries_and_recover(Boolean useQueue)&#xD;
+[xUnit.net 00:00:00.95]         C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\tests\Paramore.Brighter.AzureServiceBus.Tests\MessagingGateway\When_cancellation_cleanup_loses_one_asb_lock_should_release_remaining_deliveries_and_recover.cs(145,0): at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbCancellationAbandonFailureRecoveryTests.When_cancellation_cleanup_loses_one_asb_lock_should_release_remaining_deliveries_and_recover(Boolean useQueue)&#xD;
+[xUnit.net 00:00:00.95]         C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\tests\Paramore.Brighter.AzureServiceBus.Tests\MessagingGateway\When_cancellation_cleanup_loses_one_asb_lock_should_release_remaining_deliveries_and_recover.cs(145,0): at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbCancellationAbandonFailureRecoveryTests.When_cancellation_cleanup_loses_one_asb_lock_should_release_remaining_deliveries_and_recover(Boolean useQueue)&#xD;
+[xUnit.net 00:00:00.95]         C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\tests\Paramore.Brighter.AzureServiceBus.Tests\MessagingGateway\When_cancellation_cleanup_loses_one_asb_lock_should_release_remaining_deliveries_and_recover.cs(145,0): at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbCancellationAbandonFailureRecoveryTests.When_cancellation_cleanup_loses_one_asb_lock_should_release_remaining_deliveries_and_recover(Boolean useQueue)&#xD;
+[xUnit.net 00:00:00.95]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:01.04]       Assert.IsType() Failure: Value is not the exact type&#xD;
+[xUnit.net 00:00:01.04]       Expected: typeof(Azure.Messaging.ServiceBus.ServiceBusException)&#xD;
+[xUnit.net 00:00:01.04]       Actual:   typeof(System.OperationCanceledException)&#xD;
+[xUnit.net 00:00:01.04]       Stack Trace:&#xD;
+[xUnit.net 00:00:01.04]         C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\tests\Paramore.Brighter.AzureServiceBus.Tests\MessagingGateway\When_cancellation_cleanup_loses_one_asb_lock_should_release_remaining_deliveries_and_recover.cs(96,0): at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbCancellationAbandonFailureRecoveryTests.When_cancellation_cleanup_loses_one_asb_lock_should_release_remaining_deliveries_and_recover(Boolean useQueue)&#xD;
+[xUnit.net 00:00:01.04]         C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\tests\Paramore.Brighter.AzureServiceBus.Tests\MessagingGateway\When_cancellation_cleanup_loses_one_asb_lock_should_release_remaining_deliveries_and_recover.cs(145,0): at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbCancellationAbandonFailureRecoveryTests.When_cancellation_cleanup_loses_one_asb_lock_should_release_remaining_deliveries_and_recover(Boolean useQueue)&#xD;
+[xUnit.net 00:00:01.04]         C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\tests\Paramore.Brighter.AzureServiceBus.Tests\MessagingGateway\When_cancellation_cleanup_loses_one_asb_lock_should_release_remaining_deliveries_and_recover.cs(145,0): at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbCancellationAbandonFailureRecoveryTests.When_cancellation_cleanup_loses_one_asb_lock_should_release_remaining_deliveries_and_recover(Boolean useQueue)&#xD;
+[xUnit.net 00:00:01.04]         C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\tests\Paramore.Brighter.AzureServiceBus.Tests\MessagingGateway\When_cancellation_cleanup_loses_one_asb_lock_should_release_remaining_deliveries_and_recover.cs(145,0): at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbCancellationAbandonFailureRecoveryTests.When_cancellation_cleanup_loses_one_asb_lock_should_release_remaining_deliveries_and_recover(Boolean useQueue)&#xD;
+[xUnit.net 00:00:01.04]         C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\tests\Paramore.Brighter.AzureServiceBus.Tests\MessagingGateway\When_cancellation_cleanup_loses_one_asb_lock_should_release_remaining_deliveries_and_recover.cs(145,0): at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbCancellationAbandonFailureRecoveryTests.When_cancellation_cleanup_loses_one_asb_lock_should_release_remaining_deliveries_and_recover(Boolean useQueue)&#xD;
+[xUnit.net 00:00:01.04]         --- End of stack trace from previous location ---&#xD;
+[xUnit.net 00:00:01.05]   Finished:    Paramore.Brighter.AzureServiceBus.Tests&#xD;
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="HCI-PF6GVL2D" outcome="Error" timestamp="2026-11-11T19:14:53.9573816+01:00">
+        <Text>[xUnit.net 00:00:00.95]     Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbCancellationAbandonFailureRecoveryTests.When_cancellation_cleanup_loses_one_asb_lock_should_release_remaining_deliveries_and_recover(useQueue: True) [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="HCI-PF6GVL2D" outcome="Error" timestamp="2026-11-11T19:14:54.0511968+01:00">
+        <Text>[xUnit.net 00:00:01.04]     Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbCancellationAbandonFailureRecoveryTests.When_cancellation_cleanup_loses_one_asb_lock_should_release_remaining_deliveries_and_recover(useQueue: False) [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="HCI-PF6GVL2D" outcome="Warning" timestamp="2026-11-11T19:14:54.1183620+01:00">
+        <Text>Data collector 'Blame' message: All tests finished running, Sequence file will not be generated.</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

@@ -1,0 +1,7 @@
+[createdump] Gathering state for process 54 dotnet
+[createdump] Writing crash report to file /tmp/pending-close.core.crashreport.json
+[createdump] Crash report successfully written
+[createdump] Writing full dump to file /tmp/pending-close.core
+[createdump] Written 1666170880 bytes (406780 pages) to core file
+[createdump] Target process is alive
+[createdump] Dump successfully written in 10726ms

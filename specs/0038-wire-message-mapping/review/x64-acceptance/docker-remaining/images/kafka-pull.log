@@ -1,0 +1,38 @@
+4.0.2: Pulling from apache/kafka
+d781dd4a40ed: Pulling fs layer
+0f79893ae8e0: Pulling fs layer
+99238bb853e4: Pulling fs layer
+edf3d2d03510: Pulling fs layer
+1a7a516dcbb6: Pulling fs layer
+7075c2f6271f: Pulling fs layer
+24043d2011a4: Pulling fs layer
+589002ba0eae: Pulling fs layer
+71075870ab49: Pulling fs layer
+3655cb26ed1a: Pulling fs layer
+5df9c4c4dcbf: Pulling fs layer
+99238bb853e4: Download complete
+1a7a516dcbb6: Download complete
+d781dd4a40ed: Download complete
+7075c2f6271f: Download complete
+0f79893ae8e0: Download complete
+edf3d2d03510: Download complete
+71075870ab49: Download complete
+3655cb26ed1a: Download complete
+589002ba0eae: Download complete
+589002ba0eae: Pull complete
+2a6db5b01cc6: Download complete
+71075870ab49: Pull complete
+5df9c4c4dcbf: Download complete
+1a7a516dcbb6: Pull complete
+3655cb26ed1a: Pull complete
+5df9c4c4dcbf: Pull complete
+24043d2011a4: Download complete
+99238bb853e4: Pull complete
+24043d2011a4: Pull complete
+0f79893ae8e0: Pull complete
+d781dd4a40ed: Pull complete
+7075c2f6271f: Pull complete
+edf3d2d03510: Pull complete
+Digest: sha256:836cafdad9f4825880d7cf1d5a21202915ae2527bd0ef1c3600c526ed7814d1f
+Status: Downloaded newer image for apache/kafka:4.0.2
+docker.io/apache/kafka:4.0.2

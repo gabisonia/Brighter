@@ -1,5 +1,74 @@
 # Continue issue 4170 on the x64 machine
 
+## Transfer checkpoint — 2026-11-11
+
+The user authorized committing and pushing this checkpoint to the fork for work
+on another computer. Use branch `wip/4170-x64-validation` on
+`https://github.com/gabisonia/Brighter.git`. The earlier no-commit/no-push statements
+below describe the validation run before this transfer authorization.
+
+Start with [the final Docker report](review/x64-acceptance/docker-remaining/README.md)
+and its raw-TRX-derived `acceptance-analysis.json`. SQL passes both targets. ASB
+recovery/mutations/lost-lock acceptance, GCP .NET 10 shutdown replacement, Kafka
+native close concurrency and final-source CI remain open. Kafka has 410/412 unique
+passing identities per runtime across separate runs, not a green full suite.
+All 44 remaining-matrix fixtures are stopped. Main production source is unchanged;
+all 7,252 saved inputs match the validated parent snapshot
+`2db6bcc9b53bdb1d388b667d8f8bbe6c05c0be33` allowing checkout line endings only.
+
+Reviewed logs, TRX, crash reports and symbolicated stacks are included in this
+checkpoint. Large `.core`/`.dmp` binaries remain on this computer; full core hashes
+and ELF completeness checks are in `acceptance-analysis.json`. Absolute Windows
+TEMP workspace and dump paths will not exist on the next computer. Do not claim
+to inspect those raw cores from the transferred reports alone. Runners intentionally
+refuse evidence overwrite and depend on a prepared isolated workspace; read them
+before adapting paths or executing a discriminating follow-up.
+
+Continue with the concrete remaining gates in the latest report. Do not repeat
+unchanged broad runs merely seeking green. Preserve raw failing evidence and test
+assertions. Do not rerun Redis, use paid services, rewrite history or push upstream.
+Further commits/pushes require the user's instruction; this authorization covers
+the transfer checkpoint.
+
+Suggested next-machine prompt:
+
+> Read AGENTS.md and specs/0038-wire-message-mapping/X64-HANDOFF.md on my fork's
+> wip/4170-x64-validation branch. Continue from the final Docker report. Verify
+> machine/source state, investigate the retained ASB/GCP/Kafka blockers using
+> discriminating evidence, and preserve assertions. Do not rerun Redis, use paid
+> services, commit, push or rewrite history without my instruction.
+
+## Earlier validation history
+
+**Latest local Docker checkpoint (2026-11-11):** [results and remaining gates](review/x64-acceptance/docker-remaining/README.md)
+supersede the earlier next-run queue below. Expanded ASB acceptance has 745 passes,
+12 failures and four existing skips per target; original recovery remains unstable
+on both runtimes. Pub/Sub passes 459 cases on .NET 9 and 458 on .NET 10, with one
+original async shutdown failure and 55 existing skips per target. Both passive Kafka
+full suites abort in native consumer close after 223 passes; separate remainder
+coverage is recorded in the latest report. Actual failing GCP traces and complete
+Kafka cores are now available. Source remains on the fork at the verified HEAD;
+no production changes, Redis rerun, paid services, commits or pushes. Production
+readiness remains blocked; continue from the latest report, not the historical queue.
+
+**Continuation completed on 2026-11-11:** see the
+[native x64 checkpoint](review/x64-acceptance/README.md) before using the original
+startup queue below. Host/source verification, both full SQL Server 2022 targets
+and the bounded ASB comparison have now run at
+`2db6bcc9b53bdb1d388b667d8f8bbe6c05c0be33`. SQL passes 396/four existing skips per
+framework. ASB reproduces the SDK-only duplicate-sequence fault on native x64
+under .NET 9; the .NET 10 sample passes. All owned fixtures are stopped. Historical
+SQL Edge identity reconciliation and the recorded ASB/lifecycle/CI release gates
+remain open. Do not restart these unchanged experiments merely from the original
+handoff instructions. No new commit or push was made.
+
+The user then requested further local Docker validation. The
+[isolated Brighter reader-recovery follow-up](review/x64-acceptance/asb-recovery-isolated/README.md)
+runs all eight cases with fresh entities per case: .NET 9 passes six/fails two;
+.NET 10 passes eight. The two failures correlate with native duplicate-sequence
+faults on distinct topic/queue entities. Four additional owned fixtures are stopped.
+No source/assertion changes or mutations were applied; remaining release gates stay open.
+
 This is a temporary validation snapshot on `gabisonia/Brighter`, branch
 `wip/4170-x64-validation`. It is not a release or an upstream pull request.
 The user explicitly authorized committing and pushing this transfer snapshot to

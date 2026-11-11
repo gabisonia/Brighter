@@ -1,0 +1,13 @@
+﻿{
+    "head":  "2db6bcc9b53bdb1d388b667d8f8bbe6c05c0be33",
+    "branch":  "wip/4170-x64-validation",
+    "utc":  "2026-11-11T17:48:50.8373285Z",
+    "manifestEntries":  7252,
+    "headMatches":  7252,
+    "rawWorkingMatches":  0,
+    "checkoutLineEndingOnly":  7252,
+    "mismatches":  [
+
+                   ],
+    "method":  "git -c core.autocrlf=false -c core.eol=lf archive HEAD; SHA256 of HEAD ZIP entries against saved manifest; working files raw or CRLF/LF-only comparison. Checkout core.autocrlf=true."
+}

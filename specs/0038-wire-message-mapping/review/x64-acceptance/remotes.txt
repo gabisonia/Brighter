@@ -1,0 +1,4 @@
+origin	https://github.com/gabisonia/Brighter.git (fetch)
+origin	https://github.com/gabisonia/Brighter.git (push)
+upstream	https://github.com/BrighterCommand/Brighter.git (fetch)
+upstream	https://github.com/BrighterCommand/Brighter.git (push)

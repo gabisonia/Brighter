@@ -1,0 +1,1228 @@
+﻿{
+    "head":  "2db6bcc9b53bdb1d388b667d8f8bbe6c05c0be33",
+    "framework":  "net9.0",
+    "cases":  [
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaExplicitUnacceptableTests.When_a_kafka_reader_returns_unacceptable_should_preserve_its_mapping_and_acknowledge_the_native_offset(useAsync: False, compose: True, badFirst: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaSubscriptionIsolationTests.When_kafka_subscriptions_select_different_readers_should_keep_mapping_and_acknowledgement_isolated(useAsync: True, customFirst: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaFailedForwardOffsetBarrierTests.When_a_later_kafka_message_is_acknowledged_should_not_commit_past_a_failed_forward(useAsync: True, commitBatchSize: 10)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaWireReaderFailureTests.When_a_kafka_wire_reader_fails_should_preserve_the_delivery_and_continue_receiving(useAsync: False, returnNull: False, badFirst: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaCustomHeaderFailureTests.When_kafka_custom_header_parsing_fails_should_preserve_the_delivery_and_continue_receiving(useAsync: True, explicitDefault: True, badFirst: True, duplicateHeader: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaConsumerRepeatedDisposalTests.When_a_kafka_consumer_with_owned_producers_is_disposed_repeatedly_should_not_throw(ownedProducers: \"all\", firstDisposeAsync: True, subsequentDisposeAsync: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaConsumerRepeatedDisposalTests.When_a_kafka_consumer_with_owned_producers_is_disposed_repeatedly_should_not_throw(ownedProducers: \"dead-letter\", firstDisposeAsync: True, subsequentDisposeAsync: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaCustomHeaderFailureTests.When_kafka_custom_header_parsing_fails_should_preserve_the_delivery_and_continue_receiving(useAsync: True, explicitDefault: True, badFirst: True, duplicateHeader: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaLostPartitionRecoveryTests.When_a_lost_partition_returns_after_another_consumer_recovers_should_resume_commits(useAsync: True, assignment: CooperativeSticky)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaRequeueWriterRecoveryTests.When_a_kafka_retry_writer_fails_should_preserve_source_commits_and_recover(useAsync: False, returnNull: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaEndpointWireReaderTests.When_a_kafka_subscription_selects_a_wire_reader_should_preserve_mapping_and_acknowledge_the_native_offset(useAsync: True, compose: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.RetryableChannelTransientFailureTests.When_the_channel_failure_outlasts_the_timeout_should_rethrow_rather_than_report_no_message",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaConsumerRepeatedDisposalTests.When_a_kafka_consumer_with_owned_producers_is_disposed_repeatedly_should_not_throw(ownedProducers: \"requeue\", firstDisposeAsync: True, subsequentDisposeAsync: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaFailedForwardOffsetBarrierTests.When_a_later_kafka_message_is_acknowledged_should_not_commit_past_a_failed_forward(useAsync: False, commitBatchSize: 1)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaParserExceptionTests.When_kafka_header_parsing_throws_should_preserve_the_delivery_and_continue_receiving(useAsync: True, explicitDefault: True, badFirst: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaMultipleFailedForwardsTests.When_some_failed_kafka_forwards_recover_should_commit_only_up_to_the_remaining_failure(useAsync: False, recoverEarlierFirst: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaConsumerRepeatedDisposalTests.When_a_kafka_consumer_with_owned_producers_is_disposed_repeatedly_should_not_throw(ownedProducers: \"all\", firstDisposeAsync: False, subsequentDisposeAsync: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaRequeueConfirmationTimeoutRecoveryTests.When_kafka_retry_confirmation_times_out_should_preserve_source_commits_and_recover(useAsync: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaDeadLetterWriterRecoveryTests.When_kafka_dead_letter_writer_fails_should_keep_source_uncommitted_and_recover_after_redelivery(useAsync: True, returnNull: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaTopicPropagationRaceTests.When_a_consumer_subscribes_right_after_the_producer_creates_the_topic_should_not_throw_subscribed_topic_not_available",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaConsumerRepeatedDisposalTests.When_a_kafka_consumer_with_owned_producers_is_disposed_repeatedly_should_not_throw(ownedProducers: \"requeue\", firstDisposeAsync: True, subsequentDisposeAsync: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaPublicationIsolationTests.When_kafka_publications_select_different_writers_should_keep_mapping_and_confirmations_isolated(useAsync: True, customFirst: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaMultipleFailedForwardsTests.When_some_failed_kafka_forwards_recover_should_commit_only_up_to_the_remaining_failure(useAsync: True, recoverEarlierFirst: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaEndpointWireWriterTests.When_a_kafka_publication_selects_a_wire_writer_should_preserve_mapping_trace_and_confirmation_identity(useAsync: False, compose: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaImmediateRequeueWriterTests.When_a_kafka_subscription_selects_a_requeue_writer_should_map_the_retry_and_commit_only_the_source(useAsync: False, selectWriter: False, useNullDelay: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaWireReaderFailureTests.When_a_kafka_wire_reader_fails_should_preserve_the_delivery_and_continue_receiving(useAsync: True, returnNull: False, badFirst: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaOutboxRecoveryTests.When_kafka_publication_or_confirmation_fails_should_preserve_pending_outbox_messages_and_recover(useAsync: True, failureMode: 1)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaExplicitUnacceptableTests.When_a_kafka_reader_returns_unacceptable_should_preserve_its_mapping_and_acknowledge_the_native_offset(useAsync: True, compose: False, badFirst: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaDefaultWireWriterCompatibilityTests.When_the_default_kafka_writer_maps_a_message_should_preserve_native_content_and_headers",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaDeadLetterWireWriterTests.When_rejecting_with_a_selected_kafka_writer_should_map_the_dead_letter_delivery_and_acknowledge_the_source(useAsync: True, compose: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaExplicitUnacceptableTests.When_a_kafka_reader_returns_unacceptable_should_preserve_its_mapping_and_acknowledge_the_native_offset(useAsync: True, compose: False, badFirst: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaDefaultParserFailureTests.When_kafka_default_parsing_fails_should_preserve_the_delivery_and_continue_receiving(useAsync: True, explicitDefault: True, badFirst: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaRequeueWriterRecoveryTests.When_a_kafka_retry_writer_fails_should_preserve_source_commits_and_recover(useAsync: True, returnNull: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaInflightForwardCommitBarrierTests.When_a_rejection_is_in_flight_should_hold_later_acknowledgements_until_forwarding_succeeds(useAsync: False, failFirstWrite: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaScheduledRetrySelectionTests.When_kafka_schedules_a_retry_should_select_the_registered_writer_and_preserve_the_destination(useAsync: True, custom: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaParserExceptionTests.When_kafka_header_parsing_throws_should_preserve_the_delivery_and_continue_receiving(useAsync: True, explicitDefault: True, badFirst: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaExplicitUnacceptableTests.When_a_kafka_reader_returns_unacceptable_should_preserve_its_mapping_and_acknowledge_the_native_offset(useAsync: True, compose: True, badFirst: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaConsumerRepeatedDisposalTests.When_a_kafka_consumer_with_owned_producers_is_disposed_repeatedly_should_not_throw(ownedProducers: \"all\", firstDisposeAsync: False, subsequentDisposeAsync: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaFailedForwardOffsetBarrierTests.When_a_later_kafka_message_is_acknowledged_should_not_commit_past_a_failed_forward(useAsync: True, commitBatchSize: 1)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaConsumerCleanupFailureTests.When_kafka_cleanup_fails_should_commit_pending_offsets(firstDisposeAsync: False, subsequentDisposeAsync: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaScheduledRetrySelectionTests.When_kafka_schedules_a_retry_should_select_the_registered_writer_and_preserve_the_destination(useAsync: False, custom: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaDeadLetterWriterRecoveryTests.When_kafka_dead_letter_writer_fails_should_keep_source_uncommitted_and_recover_after_redelivery(useAsync: False, returnNull: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.When_error_log_level_returns_none_should_suppress_logging.When_the_error_log_level_returns_none_the_error_is_not_logged",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaDefaultWireReaderCompatibilityTests.When_the_default_kafka_reader_maps_a_native_delivery_should_preserve_content_telemetry_and_offsets",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaInvalidWireWriterTests.When_rejecting_with_a_selected_kafka_writer_should_map_the_invalid_delivery_and_acknowledge_the_source(useAsync: True, compose: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaRequeueWriterRecoveryTests.When_a_kafka_retry_writer_fails_should_preserve_source_commits_and_recover(useAsync: False, returnNull: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaConsumerRepeatedDisposalTests.When_a_kafka_consumer_with_owned_producers_is_disposed_repeatedly_should_not_throw(ownedProducers: \"dead-letter\", firstDisposeAsync: False, subsequentDisposeAsync: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaExplicitUnacceptableTests.When_a_kafka_reader_returns_unacceptable_should_preserve_its_mapping_and_acknowledge_the_native_offset(useAsync: False, compose: False, badFirst: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaWireReaderFailureTests.When_a_kafka_wire_reader_fails_should_preserve_the_delivery_and_continue_receiving(useAsync: True, returnNull: True, badFirst: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaMultipleFailedForwardsTests.When_some_failed_kafka_forwards_recover_should_commit_only_up_to_the_remaining_failure(useAsync: False, recoverEarlierFirst: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaEndpointWireWriterTests.When_a_kafka_publication_selects_a_wire_writer_should_preserve_mapping_trace_and_confirmation_identity(useAsync: True, compose: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaWriterRecoveryTests.When_a_kafka_writer_fails_should_surface_the_error_and_recover_publication_and_confirmations(useAsync: True, returnNull: False, badFirst: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaInflightForwardCommitBarrierTests.When_a_rejection_is_in_flight_should_hold_later_acknowledgements_until_forwarding_succeeds(useAsync: True, failFirstWrite: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaCustomHeaderFailureTests.When_kafka_custom_header_parsing_fails_should_preserve_the_delivery_and_continue_receiving(useAsync: True, explicitDefault: False, badFirst: False, duplicateHeader: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaConsumerRepeatedDisposalTests.When_a_kafka_consumer_with_owned_producers_is_disposed_repeatedly_should_not_throw(ownedProducers: \"dead-letter\", firstDisposeAsync: True, subsequentDisposeAsync: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaConsumerRepeatedDisposalTests.When_a_kafka_consumer_with_owned_producers_is_disposed_repeatedly_should_not_throw(ownedProducers: \"invalid\", firstDisposeAsync: False, subsequentDisposeAsync: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaEndpointWireReaderTests.When_a_kafka_subscription_selects_a_wire_reader_should_preserve_mapping_and_acknowledge_the_native_offset(useAsync: True, compose: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaCustomHeaderFailureTests.When_kafka_custom_header_parsing_fails_should_preserve_the_delivery_and_continue_receiving(useAsync: True, explicitDefault: False, badFirst: True, duplicateHeader: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaOutboxRecoveryTests.When_kafka_publication_or_confirmation_fails_should_preserve_pending_outbox_messages_and_recover(useAsync: False, failureMode: 2)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaConsumerRepeatedDisposalTests.When_a_kafka_consumer_with_owned_producers_is_disposed_repeatedly_should_not_throw(ownedProducers: \"requeue\", firstDisposeAsync: False, subsequentDisposeAsync: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaOutboxRecoveryTests.When_kafka_publication_or_confirmation_fails_should_preserve_pending_outbox_messages_and_recover(useAsync: False, failureMode: 1)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaRequeueBrokerRecoveryTests.When_kafka_rejects_an_immediate_retry_should_hold_source_commits_until_retry_recovers(useAsync: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.When_error_log_level_is_null_should_log_fatal_at_error_and_non_fatal_at_warning.When_no_error_log_level_is_configured_fatal_errors_log_at_error_and_non_fatal_at_warning",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaDeadLetterWireWriterTests.When_rejecting_with_a_selected_kafka_writer_should_map_the_dead_letter_delivery_and_acknowledge_the_source(useAsync: False, compose: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.When_a_non_fatal_producer_error_follows_a_fatal_error_should_log_as_non_fatal.When_the_non_fatal_error_arrives_after_the_fatal_error_it_is_logged_as_non_fatal",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaConsumerCleanupFailureTests.When_kafka_cleanup_fails_should_commit_pending_offsets(firstDisposeAsync: True, subsequentDisposeAsync: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.Reactor.KafkaMessageConsumerUpdateOffset.When_a_message_is_acknowldgede_update_offset",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaEndpointWireReaderTests.When_a_kafka_subscription_selects_a_wire_reader_should_preserve_mapping_and_acknowledge_the_native_offset(useAsync: False, compose: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaInvalidWriterRecoveryTests.When_kafka_invalid_writer_fails_should_keep_source_uncommitted_and_recover_after_redelivery(useAsync: True, returnNull: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaProducerRepeatedDisposalTests.When_a_kafka_producer_is_disposed_repeatedly_should_not_throw(firstDisposeAsync: False, subsequentDisposeAsync: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaRequeueConfirmationTimeoutRecoveryTests.When_kafka_retry_confirmation_times_out_should_preserve_source_commits_and_recover(useAsync: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.When_nacking_a_message_without_offset_should_not_throw.When_message_has_wrong_type_for_partition_offset_should_not_throw",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaImmediateRequeueWriterTests.When_a_kafka_subscription_selects_a_requeue_writer_should_map_the_retry_and_commit_only_the_source(useAsync: True, selectWriter: True, useNullDelay: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaParserExceptionTests.When_kafka_header_parsing_throws_should_preserve_the_delivery_and_continue_receiving(useAsync: False, explicitDefault: False, badFirst: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaSubscriptionIsolationTests.When_kafka_subscriptions_select_different_readers_should_keep_mapping_and_acknowledgement_isolated(useAsync: True, customFirst: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaProducerRepeatedDisposalTests.When_a_kafka_producer_is_disposed_repeatedly_should_not_throw(firstDisposeAsync: True, subsequentDisposeAsync: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaInvalidWriterRecoveryTests.When_kafka_invalid_writer_fails_should_keep_source_uncommitted_and_recover_after_redelivery(useAsync: False, returnNull: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaDefaultParserFailureTests.When_kafka_default_parsing_fails_should_preserve_the_delivery_and_continue_receiving(useAsync: False, explicitDefault: True, badFirst: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaOutboxRecoveryTests.When_kafka_publication_or_confirmation_fails_should_preserve_pending_outbox_messages_and_recover(useAsync: True, failureMode: 0)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaInvalidWriterRecoveryTests.When_kafka_invalid_writer_fails_should_keep_source_uncommitted_and_recover_after_redelivery(useAsync: True, returnNull: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaImmediateRequeueWriterTests.When_a_kafka_subscription_selects_a_requeue_writer_should_map_the_retry_and_commit_only_the_source(useAsync: False, selectWriter: True, useNullDelay: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaPartitionForwardIsolationTests.When_a_failed_kafka_forward_recovers_should_preserve_other_partition_failures_and_progress(useAsync: True, recoveredPartition: 0)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaImmediateRequeueWriterTests.When_a_kafka_subscription_selects_a_requeue_writer_should_map_the_retry_and_commit_only_the_source(useAsync: True, selectWriter: False, useNullDelay: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.When_a_non_fatal_consumer_error_follows_a_fatal_error_should_log_as_non_fatal.When_the_non_fatal_error_arrives_after_the_fatal_error_it_is_logged_as_non_fatal",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaExplicitUnacceptableTests.When_a_kafka_reader_returns_unacceptable_should_preserve_its_mapping_and_acknowledge_the_native_offset(useAsync: False, compose: False, badFirst: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.When_a_fatal_consumer_error_is_followed_by_a_non_fatal_should_still_throw.When_the_non_fatal_error_arrives_after_the_fatal_error_receive_still_throws",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaDefaultParserFailureTests.When_kafka_default_parsing_fails_should_preserve_the_delivery_and_continue_receiving(useAsync: True, explicitDefault: False, badFirst: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaInvalidWireWriterTests.When_rejecting_with_a_selected_kafka_writer_should_map_the_invalid_delivery_and_acknowledge_the_source(useAsync: True, compose: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.RetryableChannelTransientFailureTests.When_the_channel_failure_outlasts_the_timeout_should_rethrow_rather_than_report_no_message_async",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaImmediateRequeueWriterTests.When_a_kafka_subscription_selects_a_requeue_writer_should_map_the_retry_and_commit_only_the_source(useAsync: True, selectWriter: False, useNullDelay: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaProducerRepeatedDisposalTests.When_a_kafka_producer_is_disposed_repeatedly_should_not_throw(firstDisposeAsync: True, subsequentDisposeAsync: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaLostPartitionRecoveryTests.When_a_lost_partition_returns_after_another_consumer_recovers_should_resume_commits(useAsync: True, assignment: RoundRobin)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaWriterRecoveryTests.When_a_kafka_writer_fails_should_surface_the_error_and_recover_publication_and_confirmations(useAsync: True, returnNull: True, badFirst: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaCustomHeaderFailureTests.When_kafka_custom_header_parsing_fails_should_preserve_the_delivery_and_continue_receiving(useAsync: False, explicitDefault: False, badFirst: True, duplicateHeader: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaDeadLetterWriterRecoveryTests.When_kafka_dead_letter_writer_fails_should_keep_source_uncommitted_and_recover_after_redelivery(useAsync: True, returnNull: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaWireReaderFailureTests.When_a_kafka_wire_reader_fails_should_preserve_the_delivery_and_continue_receiving(useAsync: False, returnNull: True, badFirst: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaSubscriptionIsolationTests.When_kafka_subscriptions_select_different_readers_should_keep_mapping_and_acknowledgement_isolated(useAsync: False, customFirst: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.When_error_log_level_suppresses_logs_should_still_latch_fatal_error.When_the_error_log_level_suppresses_logging_the_fatal_error_is_still_latched",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaConsumerCleanupFailureTests.When_kafka_cleanup_fails_should_commit_pending_offsets(firstDisposeAsync: True, subsequentDisposeAsync: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.When_error_log_level_downgrades_an_error_code_should_log_at_downgraded_level.When_the_error_log_level_downgrades_an_error_code_it_is_logged_at_that_level",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaWireReaderFailureTests.When_a_kafka_wire_reader_fails_should_preserve_the_delivery_and_continue_receiving(useAsync: True, returnNull: False, badFirst: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaPublicationIsolationTests.When_kafka_publications_select_different_writers_should_keep_mapping_and_confirmations_isolated(useAsync: False, customFirst: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaConsumerCleanupFailureTests.When_kafka_cleanup_fails_should_commit_pending_offsets(firstDisposeAsync: False, subsequentDisposeAsync: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaFailedForwardSameConsumerRecoveryTests.When_a_failed_kafka_forward_is_retried_should_resume_commits_on_the_same_consumer(useAsync: False, commitBatchSize: 10)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaInvalidWriterRecoveryTests.When_kafka_invalid_writer_fails_should_keep_source_uncommitted_and_recover_after_redelivery(useAsync: False, returnNull: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaScheduledRetrySelectionTests.When_kafka_schedules_a_retry_should_select_the_registered_writer_and_preserve_the_destination(useAsync: True, custom: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaImmediateRequeueWriterTests.When_a_kafka_subscription_selects_a_requeue_writer_should_map_the_retry_and_commit_only_the_source(useAsync: True, selectWriter: True, useNullDelay: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaWriterRecoveryTests.When_a_kafka_writer_fails_should_surface_the_error_and_recover_publication_and_confirmations(useAsync: False, returnNull: True, badFirst: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaConsumerRepeatedDisposalTests.When_a_kafka_consumer_with_owned_producers_is_disposed_repeatedly_should_not_throw(ownedProducers: \"invalid\", firstDisposeAsync: True, subsequentDisposeAsync: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaFailedForwardSameConsumerRecoveryTests.When_a_failed_kafka_forward_is_retried_should_resume_commits_on_the_same_consumer(useAsync: True, commitBatchSize: 10)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaParserExceptionTests.When_kafka_header_parsing_throws_should_preserve_the_delivery_and_continue_receiving(useAsync: False, explicitDefault: True, badFirst: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaOutboxRecoveryTests.When_kafka_publication_or_confirmation_fails_should_preserve_pending_outbox_messages_and_recover(useAsync: False, failureMode: 0)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaInvalidBrokerRecoveryTests.When_kafka_broker_rejects_invalid_forwarding_should_keep_source_uncommitted_and_recover_after_redelivery(useAsync: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaWriterRecoveryTests.When_a_kafka_writer_fails_should_surface_the_error_and_recover_publication_and_confirmations(useAsync: False, returnNull: False, badFirst: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaImmediateRequeueWriterTests.When_a_kafka_subscription_selects_a_requeue_writer_should_map_the_retry_and_commit_only_the_source(useAsync: False, selectWriter: True, useNullDelay: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaEndpointWireReaderTests.When_a_kafka_subscription_selects_a_wire_reader_should_preserve_mapping_and_acknowledge_the_native_offset(useAsync: False, compose: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaLostPartitionRecoveryTests.When_a_lost_partition_returns_after_another_consumer_recovers_should_resume_commits(useAsync: False, assignment: RoundRobin)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaOutboxRecoveryTests.When_kafka_publication_or_confirmation_fails_should_preserve_pending_outbox_messages_and_recover(useAsync: True, failureMode: 2)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaCustomHeaderFailureTests.When_kafka_custom_header_parsing_fails_should_preserve_the_delivery_and_continue_receiving(useAsync: False, explicitDefault: False, badFirst: False, duplicateHeader: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaDefaultParserFailureTests.When_kafka_default_parsing_fails_should_preserve_the_delivery_and_continue_receiving(useAsync: True, explicitDefault: False, badFirst: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaDeadLetterWireWriterTests.When_rejecting_with_a_selected_kafka_writer_should_map_the_dead_letter_delivery_and_acknowledge_the_source(useAsync: True, compose: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaSubscriptionIsolationTests.When_kafka_subscriptions_select_different_readers_should_keep_mapping_and_acknowledgement_isolated(useAsync: False, customFirst: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaWireReaderFailureTests.When_a_kafka_wire_reader_fails_should_preserve_the_delivery_and_continue_receiving(useAsync: True, returnNull: True, badFirst: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaWriterRecoveryTests.When_a_kafka_writer_fails_should_surface_the_error_and_recover_publication_and_confirmations(useAsync: False, returnNull: False, badFirst: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaDefaultParserFailureTests.When_kafka_default_parsing_fails_should_preserve_the_delivery_and_continue_receiving(useAsync: False, explicitDefault: False, badFirst: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaParserExceptionTests.When_kafka_header_parsing_throws_should_preserve_the_delivery_and_continue_receiving(useAsync: True, explicitDefault: False, badFirst: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaCustomHeaderFailureTests.When_kafka_custom_header_parsing_fails_should_preserve_the_delivery_and_continue_receiving(useAsync: True, explicitDefault: True, badFirst: False, duplicateHeader: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaPartitionForwardIsolationTests.When_a_failed_kafka_forward_recovers_should_preserve_other_partition_failures_and_progress(useAsync: False, recoveredPartition: 0)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaCustomHeaderFailureTests.When_kafka_custom_header_parsing_fails_should_preserve_the_delivery_and_continue_receiving(useAsync: False, explicitDefault: True, badFirst: False, duplicateHeader: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaEndpointWireWriterTests.When_a_kafka_publication_selects_a_wire_writer_should_preserve_mapping_trace_and_confirmation_identity(useAsync: False, compose: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaImmediateRequeueWriterTests.When_a_kafka_subscription_selects_a_requeue_writer_should_map_the_retry_and_commit_only_the_source(useAsync: False, selectWriter: False, useNullDelay: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaParserExceptionTests.When_kafka_header_parsing_throws_should_preserve_the_delivery_and_continue_receiving(useAsync: True, explicitDefault: False, badFirst: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaInvalidWireWriterTests.When_rejecting_with_a_selected_kafka_writer_should_map_the_invalid_delivery_and_acknowledge_the_source(useAsync: False, compose: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.RetryableChannelTransientFailureTests.When_a_channel_failure_is_followed_only_by_empty_receives_should_rethrow_rather_than_report_no_message",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaProducerRepeatedDisposalTests.When_a_kafka_producer_is_disposed_repeatedly_should_not_throw(firstDisposeAsync: False, subsequentDisposeAsync: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaRequeueBrokerRecoveryTests.When_kafka_rejects_an_immediate_retry_should_hold_source_commits_until_retry_recovers(useAsync: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaInvalidWireWriterTests.When_rejecting_with_a_selected_kafka_writer_should_map_the_invalid_delivery_and_acknowledge_the_source(useAsync: False, compose: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaWriterRecoveryTests.When_a_kafka_writer_fails_should_surface_the_error_and_recover_publication_and_confirmations(useAsync: True, returnNull: False, badFirst: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaMultipleFailedForwardsTests.When_some_failed_kafka_forwards_recover_should_commit_only_up_to_the_remaining_failure(useAsync: True, recoverEarlierFirst: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaWriterRecoveryTests.When_a_kafka_writer_fails_should_surface_the_error_and_recover_publication_and_confirmations(useAsync: True, returnNull: True, badFirst: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.RetryableChannelTransientFailureTests.When_the_inner_channel_throws_a_transient_channel_failure_should_retry_within_the_remaining_timeout",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaInflightForwardCommitBarrierTests.When_a_rejection_is_in_flight_should_hold_later_acknowledgements_until_forwarding_succeeds(useAsync: False, failFirstWrite: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaExplicitUnacceptableTests.When_a_kafka_reader_returns_unacceptable_should_preserve_its_mapping_and_acknowledge_the_native_offset(useAsync: False, compose: True, badFirst: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaScheduledRetrySelectionTests.When_kafka_schedules_a_retry_should_select_the_registered_writer_and_preserve_the_destination(useAsync: False, custom: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaRequeueWriterRecoveryTests.When_a_kafka_retry_writer_fails_should_preserve_source_commits_and_recover(useAsync: True, returnNull: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaCustomHeaderFailureTests.When_kafka_custom_header_parsing_fails_should_preserve_the_delivery_and_continue_receiving(useAsync: False, explicitDefault: False, badFirst: False, duplicateHeader: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.When_nacking_a_message_without_offset_should_not_throw.When_message_has_no_partition_offset_in_bag_should_not_throw",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaDeadLetterWireWriterTests.When_rejecting_with_a_selected_kafka_writer_should_map_the_dead_letter_delivery_and_acknowledge_the_source(useAsync: False, compose: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaConsumerRepeatedDisposalTests.When_a_kafka_consumer_with_owned_producers_is_disposed_repeatedly_should_not_throw(ownedProducers: \"invalid\", firstDisposeAsync: False, subsequentDisposeAsync: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaFailedForwardOffsetBarrierTests.When_a_later_kafka_message_is_acknowledged_should_not_commit_past_a_failed_forward(useAsync: False, commitBatchSize: 10)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaCustomHeaderFailureTests.When_kafka_custom_header_parsing_fails_should_preserve_the_delivery_and_continue_receiving(useAsync: False, explicitDefault: False, badFirst: True, duplicateHeader: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaDefaultWireWriterIsolationTests.When_a_default_kafka_writer_is_reused_should_keep_each_native_message_and_header_collection_independent",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaConsumerRepeatedDisposalTests.When_a_kafka_consumer_with_owned_producers_is_disposed_repeatedly_should_not_throw(ownedProducers: \"dead-letter\", firstDisposeAsync: False, subsequentDisposeAsync: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaLostPartitionRecoveryTests.When_a_lost_partition_returns_after_another_consumer_recovers_should_resume_commits(useAsync: False, assignment: CooperativeSticky)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaWireReaderFailureTests.When_a_kafka_wire_reader_fails_should_preserve_the_delivery_and_continue_receiving(useAsync: False, returnNull: False, badFirst: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaRequeueCancellationRecoveryTests.When_an_inflight_kafka_retry_is_cancelled_should_preserve_the_source_for_recovery",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaCustomHeaderFailureTests.When_kafka_custom_header_parsing_fails_should_preserve_the_delivery_and_continue_receiving(useAsync: False, explicitDefault: True, badFirst: False, duplicateHeader: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaCustomHeaderFailureTests.When_kafka_custom_header_parsing_fails_should_preserve_the_delivery_and_continue_receiving(useAsync: True, explicitDefault: True, badFirst: False, duplicateHeader: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaCustomHeaderFailureTests.When_kafka_custom_header_parsing_fails_should_preserve_the_delivery_and_continue_receiving(useAsync: False, explicitDefault: True, badFirst: True, duplicateHeader: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaPartitionForwardIsolationTests.When_a_failed_kafka_forward_recovers_should_preserve_other_partition_failures_and_progress(useAsync: True, recoveredPartition: 1)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaDefaultParserFailureTests.When_kafka_default_parsing_fails_should_preserve_the_delivery_and_continue_receiving(useAsync: True, explicitDefault: True, badFirst: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaCustomHeaderFailureTests.When_kafka_custom_header_parsing_fails_should_preserve_the_delivery_and_continue_receiving(useAsync: True, explicitDefault: False, badFirst: False, duplicateHeader: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaWriterRecoveryTests.When_a_kafka_writer_fails_should_surface_the_error_and_recover_publication_and_confirmations(useAsync: False, returnNull: True, badFirst: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaPartitionForwardIsolationTests.When_a_failed_kafka_forward_recovers_should_preserve_other_partition_failures_and_progress(useAsync: False, recoveredPartition: 1)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaLegacyHeaderBuilderWireWriterTests.When_the_default_kafka_writer_uses_a_legacy_header_builder_should_preserve_its_selected_format",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaPublicationIsolationTests.When_kafka_publications_select_different_writers_should_keep_mapping_and_confirmations_isolated(useAsync: True, customFirst: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaCustomHeaderFailureTests.When_kafka_custom_header_parsing_fails_should_preserve_the_delivery_and_continue_receiving(useAsync: True, explicitDefault: False, badFirst: True, duplicateHeader: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.RetryableChannelTransientFailureTests.When_a_channel_failure_is_followed_only_by_empty_receives_should_rethrow_rather_than_report_no_message_async",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaFailedForwardSameConsumerRecoveryTests.When_a_failed_kafka_forward_is_retried_should_resume_commits_on_the_same_consumer(useAsync: False, commitBatchSize: 1)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaConsumerRepeatedDisposalTests.When_a_kafka_consumer_with_owned_producers_is_disposed_repeatedly_should_not_throw(ownedProducers: \"all\", firstDisposeAsync: True, subsequentDisposeAsync: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaEndpointWireWriterTests.When_a_kafka_publication_selects_a_wire_writer_should_preserve_mapping_trace_and_confirmation_identity(useAsync: True, compose: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaParserExceptionTests.When_kafka_header_parsing_throws_should_preserve_the_delivery_and_continue_receiving(useAsync: False, explicitDefault: False, badFirst: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaConsumerRepeatedDisposalTests.When_a_kafka_consumer_with_owned_producers_is_disposed_repeatedly_should_not_throw(ownedProducers: \"invalid\", firstDisposeAsync: True, subsequentDisposeAsync: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaPublicationIsolationTests.When_kafka_publications_select_different_writers_should_keep_mapping_and_confirmations_isolated(useAsync: False, customFirst: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.When_a_fatal_producer_error_is_followed_by_a_non_fatal_should_still_throw.When_the_non_fatal_error_arrives_after_the_fatal_error_send_still_throws",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaInflightForwardCommitBarrierTests.When_a_rejection_is_in_flight_should_hold_later_acknowledgements_until_forwarding_succeeds(useAsync: True, failFirstWrite: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaInvalidBrokerRecoveryTests.When_kafka_broker_rejects_invalid_forwarding_should_keep_source_uncommitted_and_recover_after_redelivery(useAsync: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaExplicitUnacceptableTests.When_a_kafka_reader_returns_unacceptable_should_preserve_its_mapping_and_acknowledge_the_native_offset(useAsync: True, compose: True, badFirst: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaParserExceptionTests.When_kafka_header_parsing_throws_should_preserve_the_delivery_and_continue_receiving(useAsync: False, explicitDefault: True, badFirst: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaDefaultParserFailureTests.When_kafka_default_parsing_fails_should_preserve_the_delivery_and_continue_receiving(useAsync: False, explicitDefault: False, badFirst: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaFailedForwardSameConsumerRecoveryTests.When_a_failed_kafka_forward_is_retried_should_resume_commits_on_the_same_consumer(useAsync: True, commitBatchSize: 1)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaConsumerRepeatedDisposalTests.When_a_kafka_consumer_with_owned_producers_is_disposed_repeatedly_should_not_throw(ownedProducers: \"requeue\", firstDisposeAsync: False, subsequentDisposeAsync: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaDeadLetterWriterRecoveryTests.When_kafka_dead_letter_writer_fails_should_keep_source_uncommitted_and_recover_after_redelivery(useAsync: False, returnNull: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaDefaultParserFailureTests.When_kafka_default_parsing_fails_should_preserve_the_delivery_and_continue_receiving(useAsync: False, explicitDefault: True, badFirst: False)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaCustomHeaderFailureTests.When_kafka_custom_header_parsing_fails_should_preserve_the_delivery_and_continue_receiving(useAsync: False, explicitDefault: True, badFirst: True, duplicateHeader: True)",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.RetryableChannelTransientFailureTests.When_the_inner_channel_throws_a_transient_channel_failure_should_retry_within_the_remaining_timeout_async",
+                      "stack":  ""
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  "",
+                      "name":  "Paramore.Brighter.Kafka.Tests.MessagingGateway.KafkaWireReaderFailureTests.When_a_kafka_wire_reader_fails_should_preserve_the_delivery_and_continue_receiving(useAsync: False, returnNull: True, badFirst: False)",
+                      "stack":  ""
+                  }
+              ],
+    "captures":  [
+
+                 ],
+    "containers":  [
+                       {
+                           "runningAfterStop":  "false",
+                           "name":  "brighter-4170-rem-kafka-remainder-net9-net9-0-tests",
+                           "stateBeforeStop":  {
+                                                   "Status":  "exited",
+                                                   "Running":  false,
+                                                   "Paused":  false,
+                                                   "Restarting":  false,
+                                                   "OOMKilled":  false,
+                                                   "Dead":  false,
+                                                   "Pid":  0,
+                                                   "ExitCode":  0,
+                                                   "Error":  "",
+                                                   "StartedAt":  "2026-11-11T19:22:39.724095374Z",
+                                                   "FinishedAt":  "2026-11-11T19:28:02.018963287Z"
+                                               }
+                       },
+                       {
+                           "runningAfterStop":  "false",
+                           "name":  "brighter-4170-rem-kafka-remainder-net9-net9-0-schema",
+                           "stateBeforeStop":  {
+                                                   "Status":  "running",
+                                                   "Running":  true,
+                                                   "Paused":  false,
+                                                   "Restarting":  false,
+                                                   "OOMKilled":  false,
+                                                   "Dead":  false,
+                                                   "Pid":  49108,
+                                                   "ExitCode":  0,
+                                                   "Error":  "",
+                                                   "StartedAt":  "2026-11-11T19:22:28.815407163Z",
+                                                   "FinishedAt":  "0001-01-01T00:00:00Z"
+                                               }
+                       },
+                       {
+                           "runningAfterStop":  "false",
+                           "name":  "brighter-4170-rem-kafka-remainder-net9-net9-0-broker",
+                           "stateBeforeStop":  {
+                                                   "Status":  "running",
+                                                   "Running":  true,
+                                                   "Paused":  false,
+                                                   "Restarting":  false,
+                                                   "OOMKilled":  false,
+                                                   "Dead":  false,
+                                                   "Pid":  47652,
+                                                   "ExitCode":  0,
+                                                   "Error":  "",
+                                                   "StartedAt":  "2026-11-11T19:22:22.52727683Z",
+                                                   "FinishedAt":  "0001-01-01T00:00:00Z"
+                                               }
+                       }
+                   ],
+    "pendingCloses":  {
+
+                      },
+    "completedCloses":  0,
+    "exitCode":  0,
+    "seconds":  326.00358589999996,
+    "serializationFields":  [
+                                {
+                                    "name":  "head",
+                                    "type":  "System.String"
+                                },
+                                {
+                                    "name":  "framework",
+                                    "type":  "System.String"
+                                },
+                                {
+                                    "name":  "cases",
+                                    "type":  "System.Object[]"
+                                },
+                                {
+                                    "name":  "captures",
+                                    "type":  "System.Object[]"
+                                },
+                                {
+                                    "name":  "containers",
+                                    "type":  "System.Object[]"
+                                },
+                                {
+                                    "name":  "pendingCloses",
+                                    "type":  "System.Collections.Hashtable"
+                                },
+                                {
+                                    "name":  "completedCloses",
+                                    "type":  "System.Int32"
+                                },
+                                {
+                                    "name":  "exitCode",
+                                    "type":  "System.Int32"
+                                },
+                                {
+                                    "name":  "seconds",
+                                    "type":  "System.Double"
+                                }
+                            ]
+}

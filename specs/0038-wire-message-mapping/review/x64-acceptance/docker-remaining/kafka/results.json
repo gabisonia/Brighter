@@ -1,0 +1,81 @@
+﻿{
+    "head":  "2db6bcc9b53bdb1d388b667d8f8bbe6c05c0be33",
+    "framework":  "net9.0",
+    "cases":  [
+
+              ],
+    "captures":  [
+                     {
+                         "label":  "healthy-reference",
+                         "run":  {
+                                     "finishedUtc":  "2026-11-11T18:31:02.7772713Z",
+                                     "exitCode":  0,
+                                     "log":  "C:\\Users\\IrakliGabisonia\\source\\repos\\Personal\\Brighter\\specs\\0038-wire-message-mapping\\review\\x64-acceptance/docker-remaining/kafka/net9.0/healthy-reference-createdump.log",
+                                     "startedUtc":  "2026-11-11T18:29:18.2620477Z",
+                                     "clockDiscontinuity":  false,
+                                     "seconds":  104.4350262
+                                 },
+                         "pendingClients":  [
+
+                                            ]
+                     }
+                 ],
+    "containers":  [
+                       {
+                           "runningAfterStop":  "false",
+                           "name":  "brighter-4170-rem-kafka-net9-0-tests",
+                           "stateBeforeStop":  {
+                                                   "Status":  "running",
+                                                   "Running":  true,
+                                                   "Paused":  false,
+                                                   "Restarting":  false,
+                                                   "OOMKilled":  false,
+                                                   "Dead":  false,
+                                                   "Pid":  83432,
+                                                   "ExitCode":  0,
+                                                   "Error":  "",
+                                                   "StartedAt":  "2026-11-11T18:19:20.919970435Z",
+                                                   "FinishedAt":  "0001-01-01T00:00:00Z"
+                                               }
+                       },
+                       {
+                           "runningAfterStop":  "false",
+                           "name":  "brighter-4170-rem-kafka-net9-0-schema",
+                           "stateBeforeStop":  {
+                                                   "Status":  "running",
+                                                   "Running":  true,
+                                                   "Paused":  false,
+                                                   "Restarting":  false,
+                                                   "OOMKilled":  false,
+                                                   "Dead":  false,
+                                                   "Pid":  82353,
+                                                   "ExitCode":  0,
+                                                   "Error":  "",
+                                                   "StartedAt":  "2026-11-11T18:19:09.882319456Z",
+                                                   "FinishedAt":  "0001-01-01T00:00:00Z"
+                                               }
+                       },
+                       {
+                           "runningAfterStop":  "false",
+                           "name":  "brighter-4170-rem-kafka-net9-0-broker",
+                           "stateBeforeStop":  {
+                                                   "Status":  "running",
+                                                   "Running":  true,
+                                                   "Paused":  false,
+                                                   "Restarting":  false,
+                                                   "OOMKilled":  false,
+                                                   "Dead":  false,
+                                                   "Pid":  80804,
+                                                   "ExitCode":  0,
+                                                   "Error":  "",
+                                                   "StartedAt":  "2026-11-11T18:19:03.41368751Z",
+                                                   "FinishedAt":  "0001-01-01T00:00:00Z"
+                                               }
+                       }
+                   ],
+    "pendingCloses":  {
+
+                      },
+    "completedCloses":  0,
+    "error":  "Process deadline exceeded: C:/Users/IrakliGabisonia/AppData/Local/Programs/DockerDesktop/resources/bin/docker.exe (180 seconds). See C:\\Users\\IrakliGabisonia\\source\\repos\\Personal\\Brighter\\specs\\0038-wire-message-mapping\\review\\x64-acceptance/docker-remaining/kafka/net9.0/pending-close-createdump.log"
+}

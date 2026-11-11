@@ -1,0 +1,598 @@
+﻿#region Licence
+/* The MIT License (MIT)
+Copyright © 2022 Ian Cooper <ian_hammond_cooper@yahoo.co.uk>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the “Software”), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE. */
+
+#endregion
+
+using System;
+using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
+using Azure.Messaging.ServiceBus;
+using Microsoft.Extensions.Logging;
+using Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusWrappers;
+using Paramore.Brighter.Tasks;
+using Paramore.Brighter.Observability;
+
+namespace Paramore.Brighter.MessagingGateway.AzureServiceBus;
+
+/// <summary>
+/// Implementation of <see cref="IAmAMessageConsumerSync"/> using Azure Service Bus for Transport.
+/// </summary>
+public abstract partial class AzureServiceBusConsumer : IAmAMessageConsumerSync, IAmAMessageConsumerAsync, IHaveAMessagingSystem
+{
+    /// <inheritdoc />
+    public MessagingSystem MessagingSystem => MessagingSystem.ServiceBus;
+
+    protected abstract string SubscriptionName { get; }
+    protected abstract ILogger Logger { get; }
+
+    protected readonly AzureServiceBusSubscription Subscription;
+    protected readonly string Topic;
+    private readonly IAmAMessageScheduler? _requeueScheduler;
+    private int _retryDelayWarningLogged;
+    private readonly AsyncLocal<CancellationToken> _receiverAcquisitionCancellation = new();
+
+    internal CancellationToken ReceiverAcquisitionCancellationToken => _receiverAcquisitionCancellation.Value;
+    protected readonly IAdministrationClientWrapper AdministrationClientWrapper;
+    private readonly int _batchSize;
+    protected IServiceBusReceiverWrapper? ServiceBusReceiver;
+    protected readonly AzureServiceBusSubscriptionConfiguration SubscriptionConfiguration;
+    private readonly AzureServiceBusMessageCreator _azureServiceBusMesssageCreator;
+
+    /// <summary>
+    /// Constructor for the Azure Service Bus Consumer
+    /// </summary>
+    /// <param name="subscription">The ASB subscription details</param>
+    /// <param name="requeueScheduler">The selected queue retry scheduler; null for direct topic subscriptions.</param>
+    /// <param name="administrationClientWrapper">The admin client for ASB</param>
+    protected AzureServiceBusConsumer(
+        AzureServiceBusSubscription subscription, 
+        IAmAMessageScheduler? requeueScheduler,
+        IAdministrationClientWrapper administrationClientWrapper
+    )
+    {
+        Subscription = subscription;
+        Topic = subscription.RoutingKey.Value;
+        _batchSize = subscription.BufferSize;
+        SubscriptionConfiguration = subscription.Configuration ?? new AzureServiceBusSubscriptionConfiguration();
+        _requeueScheduler = requeueScheduler;
+        AdministrationClientWrapper = administrationClientWrapper;
+        _azureServiceBusMesssageCreator = new AzureServiceBusMessageCreator(subscription);
+    }
+        
+    /// <summary>
+    /// Dispose of the Consumer.
+    /// </summary>
+    public void Dispose()
+    {
+        ServiceBusReceiver?.Close();
+        GC.SuppressFinalize(this);
+    }
+        
+    public async ValueTask DisposeAsync()
+    {
+        if (ServiceBusReceiver is not null) await ServiceBusReceiver.CloseAsync();
+        GC.SuppressFinalize(this);
+    }
+
+    /// <summary>
+    /// Acknowledges the specified message.
+    /// </summary>
+    /// <param name="message">The message.</param>
+    public void Acknowledge(Message message) => BrighterAsyncContext.Run(async() => await AcknowledgeAsync(message));
+
+    /// <summary>
+    /// Acknowledges the specified message.
+    /// </summary>
+    /// <param name="message">The message.</param>
+    /// <param name="cancellationToken">Cancels the acknowledge operation</param>
+    /// <exception cref="OperationCanceledException">The token was cancelled before acknowledging the message.</exception>
+    public async Task AcknowledgeAsync(Message message, CancellationToken cancellationToken = default(CancellationToken))
+    {
+        cancellationToken.ThrowIfCancellationRequested();
+        try
+        {
+            await EnsureChannelAsync();
+            var lockToken = message.Header.Bag[ASBConstants.LockTokenHeaderBagKey].ToString();
+
+            if (string.IsNullOrEmpty(lockToken))
+                throw new Exception($"LockToken for message with id {message.Id} is null or empty");
+            Log.AcknowledgingMessage(Logger, message.Id.Value, lockToken);
+                
+            if(ServiceBusReceiver == null)
+                await GetMessageReceiverProviderAsync();
+
+            await ServiceBusReceiver!.CompleteAsync(lockToken);
+                
+            await CloseSessionIfIdleAsync();
+        }
+        catch (AggregateException ex)
+        {
+            if (ex.InnerException is ServiceBusException asbException)
+            {
+                HandleAsbException(asbException, message.Id.Value);
+                throw;
+            }
+            else
+            {
+                Log.ErrorCompletingPeekLock(Logger, ex, message.Id.Value);
+                throw;
+            }
+        }
+        catch (ServiceBusException ex)
+        {
+            HandleAsbException(ex, message.Id.Value);
+            throw;
+        }
+        catch (Exception ex)
+        {
+            Log.ErrorCompletingPeekLock(Logger, ex, message.Id.Value);
+            throw;
+        }
+    }
+
+    /// <summary>
+    /// Purges the specified queue name.
+    /// </summary>
+    public void Purge() => BrighterAsyncContext.Run(() => PurgeAsync());
+        
+    /// <summary>
+    /// Purges the specified queue name.
+    /// </summary>
+    public abstract Task PurgeAsync(CancellationToken cancellationToken = default(CancellationToken));
+        
+    /// <summary>
+    /// Receives the specified queue name.
+    /// An abstraction over a third-party messaging library. Used to read messages from the broker and to acknowledge
+    /// the processing of those messages or requeue them.
+    /// Used by a <see cref="Channel"/> to provide access to a third-party message queue.
+    /// Sync over async
+    /// </summary>
+    /// <param name="timeOut">The timeout for a message being available. Defaults to 300ms.</param>
+    /// <returns>Message.</returns>
+    public Message[] Receive(TimeSpan? timeOut = null) => BrighterAsyncContext.Run(() => ReceiveAsync(timeOut));
+        
+    /// <summary>
+    /// Receives the specified queue name.
+    /// An abstraction over a third-party messaging library. Used to read messages from the broker and to acknowledge
+    /// the processing of those messages or requeue them.
+    /// Used by a <see cref="Channel"/> to provide access to a third-party message queue.
+    /// </summary>
+    /// <param name="timeOut">The timeout for a message being available. Defaults to 300ms.</param>
+    /// <param name="cancellationToken">Cancel the receive</param>
+    /// <returns>Message.</returns>
+    /// <exception cref="OperationCanceledException">The token was cancelled before receiving, while acquiring a native session or waiting on the native receiver, or during message mapping.</exception>
+    public async Task<Message[]> ReceiveAsync(TimeSpan? timeOut = null, CancellationToken cancellationToken = default(CancellationToken))
+    {
+        cancellationToken.ThrowIfCancellationRequested();
+        Log.PreparingToRetrieveNextMessages(Logger, Topic, SubscriptionName, timeOut, _batchSize);
+
+        IEnumerable<IBrokeredMessageWrapper> messages;
+        await EnsureChannelAsync();
+
+        var messagesToReturn = new List<Message>();
+
+        try
+        {
+            if (ServiceBusReceiver == null || (SubscriptionConfiguration.RequireSession &&
+                ServiceBusReceiver is not ServiceBusReceiverWrapper { HasPendingMessages: true }))
+            {
+                if (ServiceBusReceiver is not null) await ServiceBusReceiver.CloseAsync();
+                await AcquireReceiverAsync(cancellationToken);
+                if (ServiceBusReceiver == null)
+                {
+                    Log.CouldNotGetSessionLock(Logger, Topic);
+                    return messagesToReturn.ToArray();   
+                }
+            }
+
+            timeOut ??= TimeSpan.FromMilliseconds(300);
+
+            messages = ServiceBusReceiver is ServiceBusReceiverWrapper receiver
+                ? await receiver.ReceiveAsync(_batchSize, timeOut.Value, cancellationToken)
+                : await ServiceBusReceiver.ReceiveAsync(_batchSize, timeOut.Value);
+        }
+        catch (OperationCanceledException) when (cancellationToken.IsCancellationRequested)
+        {
+            await ResetReceiverAsync();
+            throw;
+        }
+        catch (Exception e)
+        {
+            if (ServiceBusReceiver is {IsClosedOrClosing: true} && !SubscriptionConfiguration.RequireSession)
+            {
+                Log.MessageReceiverClosing(Logger);
+                var message = new Message(
+                    new MessageHeader(string.Empty, new RoutingKey(Topic), MessageType.MT_QUIT), 
+                    new MessageBody(string.Empty));
+                messagesToReturn.Add(message);
+                return messagesToReturn.ToArray();
+            }
+
+            Log.FailingToReceiveMessages(Logger, e);
+
+            //The connection to Azure Service bus may have failed so we re-establish the connection.
+            await ResetReceiverAsync();
+            await AcquireReceiverAsync(cancellationToken);
+
+            throw new ChannelFailureException("Failing to receive messages.", e);
+        }
+
+        try
+        {
+            foreach (IBrokeredMessageWrapper azureServiceBusMessage in messages)
+            {
+                Message message = ReadMessage(azureServiceBusMessage);
+                if (cancellationToken.IsCancellationRequested)
+                    await ReleaseMessagesAsync(messages);
+                cancellationToken.ThrowIfCancellationRequested();
+                if (await CanDispatchAsync(message)) messagesToReturn.Add(message);
+            }
+        }
+        catch
+        {
+            await ResetReceiverAsync();
+            throw;
+        }
+
+        if (ServiceBusReceiver is ServiceBusReceiverWrapper)
+            await CloseSessionIfIdleAsync();
+        return messagesToReturn.ToArray();
+    }
+               
+    /// <summary>
+    /// Nacks the specified message, abandoning the lock so it is available for redelivery.
+    /// Sync over Async
+    /// </summary>
+    /// <param name="message">The message.</param>
+    public void Nack(Message message) => BrighterAsyncContext.Run(async () => await NackAsync(message));
+
+    /// <summary>
+    /// Nacks the specified message, abandoning the lock so it is available for redelivery.
+    /// </summary>
+    /// <param name="message">The message.</param>
+    /// <param name="cancellationToken">Cancel the nack operation</param>
+    /// <exception cref="OperationCanceledException">The token was cancelled before abandoning the message.</exception>
+    public async Task NackAsync(Message message, CancellationToken cancellationToken = default)
+    {
+        cancellationToken.ThrowIfCancellationRequested();
+        try
+        {
+            await EnsureChannelAsync();
+            var lockToken = message.Header.Bag[ASBConstants.LockTokenHeaderBagKey].ToString();
+
+            if (string.IsNullOrEmpty(lockToken))
+                throw new Exception($"LockToken for message with id {message.Id} is null or empty");
+
+            Logger.LogDebug("Nacking (abandoning) Message with Id {Id} Lock Token : {LockToken}", message.Id, lockToken);
+
+            if (ServiceBusReceiver == null)
+                await GetMessageReceiverProviderAsync();
+
+            await ServiceBusReceiver!.AbandonAsync(lockToken);
+
+            await CloseSessionIfIdleAsync();
+        }
+        catch (AggregateException ex)
+        {
+            if (ex.InnerException is ServiceBusException asbException)
+                HandleAsbException(asbException, message.Id.Value);
+            else
+            {
+                Logger.LogError(ex, "Error abandoning message with id {Id}", message.Id);
+                throw;
+            }
+        }
+        catch (ServiceBusException ex)
+        {
+            HandleAsbException(ex, message.Id.Value);
+        }
+        catch (Exception ex)
+        {
+            Logger.LogError(ex, "Error abandoning message with id {Id}", message.Id);
+            throw;
+        }
+    }
+
+    /// <summary>
+    /// Rejects the specified message.
+    /// Sync over Async
+    /// </summary>
+    /// <param name="message">The message.</param>
+    /// <param name="reason">The <see cref="MessageRejectionReason"/> that explains why we rejected the message</param>
+    /// <returns>True if the message has been removed from the channel, false otherwise</returns>
+    public bool Reject(Message message, MessageRejectionReason? reason = null) => BrighterAsyncContext.Run(() => RejectAsync(message, reason));
+
+    /// <summary>
+    /// Rejects the specified message.
+    /// </summary>
+    /// <param name="message">The message.</param>
+    /// <param name="reason">The <see cref="MessageRejectionReason"/> that explains why we rejected the message</param>
+    /// <param name="cancellationToken">Cancel the rejection</param>
+    /// <returns>True if the message has been removed from the channel, false otherwise</returns>
+    /// <exception cref="OperationCanceledException">The token was cancelled before rejecting the message.</exception>
+    public async Task<bool> RejectAsync(Message message, MessageRejectionReason? reason = null, CancellationToken cancellationToken = default(CancellationToken))
+    {
+        cancellationToken.ThrowIfCancellationRequested();
+        try
+        {
+            await EnsureChannelAsync();
+            var lockToken = message.Header.Bag[ASBConstants.LockTokenHeaderBagKey].ToString();
+
+            if (string.IsNullOrEmpty(lockToken))
+                throw new Exception($"LockToken for message with id {message.Id} is null or empty");
+           
+            var reasonString = reason is null ? nameof(RejectionReason.DeliveryError) : reason.RejectionReason.ToString();
+            var description = reason is null ? "unknown" : reason.Description ?? "unknown";
+            
+            Log.DeadLetteringMessage(Logger, message.Id.Value, lockToken, reasonString, description);
+
+            if(ServiceBusReceiver == null)
+                await GetMessageReceiverProviderAsync();
+
+            await ServiceBusReceiver!.DeadLetterAsync(lockToken, reasonString, description);
+            await CloseSessionIfIdleAsync();
+        }
+        catch (Exception ex)
+        {
+            Log.ErrorDeadLetteringMessage(Logger, ex, message.Id.Value);
+            throw;
+        }
+
+        return true;
+    }
+
+    /// <summary>
+    /// Requeues the specified message.
+    /// </summary>
+    /// <param name="message"></param>
+    /// <param name="delay">Delay to the delivery of the message. 0 is no delay. Defaults to 0.</param>
+    /// <returns>True when the message has been requeued.</returns>
+    public bool Requeue(Message message, TimeSpan? delay = null)
+    {
+        delay ??= TimeSpan.Zero;
+        Log.RequeuingMessage(Logger, message.Header.Topic, message.Id.Value);
+        if (UsesDirectSubscription)
+        {
+            WarnIfDelayRequiresForwarding(message, delay.Value);
+            BrighterAsyncContext.Run(() => AbandonForRetryAsync(message, CancellationToken.None));
+        }
+        else
+        {
+            if (_requeueScheduler is not IAmAMessageRequeueSchedulerSync scheduler)
+                throw new ConfigurationException("The retry scheduler must implement IAmAMessageRequeueSchedulerSync.");
+            scheduler.Requeue(message, RetryDestination, delay.Value);
+            Acknowledge(message);
+        }
+        return true;
+    }
+
+    /// <summary>
+    /// Requeues the specified message.
+    /// </summary>
+    /// <param name="message"></param>
+    /// <param name="delay">Delay to the delivery of the message. 0 is no delay. Defaults to 0.</param>
+    /// <param name="cancellationToken">Cancel the requeue operation.</param>
+    /// <returns>True when the message has been requeued.</returns>
+    /// <remarks>
+    /// Immediate retries on direct topic subscriptions abandon the original delivery and persist its handled count.
+    /// Abandon also increments Azure Service Bus's delivery count, so the subscription's
+    /// MaxDeliveryCount can dead-letter a message before Brighter exhausts its retry budget.
+    /// Direct topic subscriptions abandon immediately and warn when a delay was requested.
+    /// Set AzureServiceBusSubscriptionConfiguration.ForwardTo to consume and retry through a dedicated
+    /// queue. Alternatively, provision forwarding externally and use UseServiceBusQueue with the queue
+    /// name as the routing key.
+    /// </remarks>
+    public async Task<bool> RequeueAsync(Message message, TimeSpan? delay = null, CancellationToken cancellationToken = default(CancellationToken))
+    {
+        cancellationToken.ThrowIfCancellationRequested();
+        delay ??= TimeSpan.Zero;
+        Log.RequeuingMessage(Logger, message.Header.Topic, message.Id.Value);
+        if (UsesDirectSubscription)
+        {
+            WarnIfDelayRequiresForwarding(message, delay.Value);
+            await AbandonForRetryAsync(message, cancellationToken);
+        }
+        else
+        {
+            if (_requeueScheduler is not IAmAMessageRequeueSchedulerAsync scheduler)
+                throw new ConfigurationException("The retry scheduler must implement IAmAMessageRequeueSchedulerAsync.");
+            await scheduler.RequeueAsync(message, RetryDestination, delay.Value, cancellationToken);
+            await AcknowledgeAsync(message, cancellationToken);
+        }
+        return true;
+    }
+
+    private bool UsesDirectSubscription => !SubscriptionConfiguration.UseServiceBusQueue
+        && SubscriptionConfiguration.ForwardTo is null;
+
+    private ChannelName RetryDestination => new(SubscriptionConfiguration.ForwardTo ?? Topic);
+
+    private void WarnIfDelayRequiresForwarding(Message message, TimeSpan delay)
+    {
+        if (delay > TimeSpan.Zero && Interlocked.Exchange(ref _retryDelayWarningLogged, 1) == 0)
+            Log.RetryDelayRequiresForwarding(Logger, delay, message.Id.Value, Topic, SubscriptionName);
+    }
+
+    private async Task AbandonForRetryAsync(Message message, CancellationToken cancellationToken)
+    {
+        cancellationToken.ThrowIfCancellationRequested();
+        await EnsureChannelAsync();
+        var lockToken = message.Header.Bag[ASBConstants.LockTokenHeaderBagKey].ToString();
+        if (string.IsNullOrEmpty(lockToken))
+            throw new ChannelFailureException($"LockToken for message with id {message.Id} is null or empty");
+
+        if (ServiceBusReceiver == null)
+            await GetMessageReceiverProviderAsync();
+
+        if (ServiceBusReceiver is not IAmAServiceBusRetryReceiver receiver)
+        {
+            throw new ChannelFailureException(
+                "Immediate topic retries require a receiver that implements IAmAServiceBusRetryReceiver.");
+        }
+
+        await receiver.AbandonAsync(lockToken, new Dictionary<string, object>
+        {
+            [ASBConstants.HandledCountHeaderBagKey] = message.Header.HandledCount
+        }, cancellationToken);
+        await CloseSessionIfIdleAsync();
+    }
+
+    private async Task ReleaseMessagesAsync(IEnumerable<IBrokeredMessageWrapper> messages)
+    {
+        foreach (var message in messages)
+            await ServiceBusReceiver!.AbandonAsync(message.LockToken);
+    }
+
+    internal async Task ResetReceiverAsync()
+    {
+        var receiver = ServiceBusReceiver;
+        ServiceBusReceiver = null;
+        if (receiver is not null) await receiver.CloseAsync().ConfigureAwait(false);
+    }
+
+    private Message ReadMessage(IBrokeredMessageWrapper delivery)
+    {
+        var reader = Subscription.WireMessageReader;
+        if (reader is null)
+            return _azureServiceBusMesssageCreator.MapToBrighterMessage(delivery);
+
+        if (delivery is not BrokeredMessageWrapper nativeDelivery)
+            throw new ConfigurationException("A configured wire reader requires a native Service Bus delivery.");
+
+        Message message;
+        try
+        {
+            message = reader.ReadMessage(nativeDelivery.NativeMessage)
+                ?? throw new InvalidOperationException("The wire message reader returned null.");
+        }
+        catch (Exception exception) when (exception is not OperationCanceledException)
+        {
+            Log.ErrorMappingNativeMessage(Logger, exception, delivery.Id, Topic);
+            message = Message.FailureMessage(new RoutingKey(Topic), new Id(delivery.Id));
+            message.Body = new MessageBody(delivery.MessageBodyMemory);
+        }
+
+        message.Header.Bag[ASBConstants.LockTokenHeaderBagKey] = delivery.LockToken;
+        message.Header.Bag[ASBConstants.SequenceNumberBagKey] = delivery.SequenceNumber;
+        return message;
+    }
+
+    internal async Task<bool> CanDispatchAsync(Message message)
+    {
+        if (ServiceBusReceiver is not ServiceBusReceiverWrapper receiver ||
+            !message.Header.Bag.TryGetValue(ASBConstants.LockTokenHeaderBagKey, out var token))
+            return true;
+
+        var lockToken = token.ToString();
+        if (string.IsNullOrEmpty(lockToken) || receiver.IsLockValid(lockToken)) return true;
+
+        Log.SkippingMessageWithInvalidLock(Logger, message.Id.Value, Topic, Subscription.ChannelName.Value);
+        await receiver.ForgetAsync(lockToken).ConfigureAwait(false);
+        await CloseSessionIfIdleAsync().ConfigureAwait(false);
+        return false;
+    }
+
+    private async Task CloseSessionIfIdleAsync()
+    {
+        if (SubscriptionConfiguration.RequireSession && ServiceBusReceiver is not null &&
+            ServiceBusReceiver is not ServiceBusReceiverWrapper { HasPendingMessages: true })
+            await ServiceBusReceiver.CloseAsync().ConfigureAwait(false);
+    }
+
+    // Carries cancellation through the existing subclass hook without changing its signature.
+    private async Task AcquireReceiverAsync(CancellationToken cancellationToken)
+    {
+        var previous = _receiverAcquisitionCancellation.Value;
+        _receiverAcquisitionCancellation.Value = cancellationToken;
+        try
+        {
+            await GetMessageReceiverProviderAsync().ConfigureAwait(false);
+        }
+        finally
+        {
+            _receiverAcquisitionCancellation.Value = previous;
+        }
+    }
+
+    protected abstract Task GetMessageReceiverProviderAsync();
+
+    protected abstract Task EnsureChannelAsync();
+
+    /// <summary>
+    /// Provisions (or validates) the queue or subscription this consumer reads from, honouring
+    /// <see cref="Subscription.MakeChannels"/>, so that a channel factory can do so before handing out a channel.
+    /// </summary>
+    internal Task EnsureChannelExistsAsync() => EnsureChannelAsync();
+
+    private void HandleAsbException(ServiceBusException ex, string messageId)
+    {
+        if (ex.Reason == ServiceBusFailureReason.MessageLockLost)
+            Log.ErrorCompletingPeekLock(Logger, ex, messageId);
+        else
+        {
+            Log.ErrorCompletingPeekLockWithReason(Logger, ex, messageId, ex.Reason);
+        }
+    }
+
+    private static partial class Log
+    {
+        [LoggerMessage(LogLevel.Error, "Failed to map native Service Bus message {Id} from {Topic}")]
+        public static partial void ErrorMappingNativeMessage(ILogger logger, Exception exception, string id, string topic);
+
+        [LoggerMessage(LogLevel.Warning, "Cannot honor retry delay {Delay} for message {Id} on topic {Topic} subscription {ChannelName}; abandoning immediately. Configure ForwardTo to a dedicated queue to retain delayed retries")]
+        public static partial void RetryDelayRequiresForwarding(ILogger logger, TimeSpan delay, string id, string topic, string channelName);
+
+        [LoggerMessage(LogLevel.Warning, "Skipping Service Bus message with id {Id} from {Topic} via {ChannelName} because its lock has expired or been lost; the message will not be dispatched")]
+        public static partial void SkippingMessageWithInvalidLock(ILogger logger, string id, string topic, string channelName);
+
+        [LoggerMessage(LogLevel.Debug, "Acknowledging Message with Id {Id} Lock Token : {LockToken}")]
+        public static partial void AcknowledgingMessage(ILogger logger, string id, string lockToken);
+
+        [LoggerMessage(LogLevel.Error, "Error completing peek lock on message with id {Id}")]
+        public static partial void ErrorCompletingPeekLock(ILogger logger, Exception e, string id);
+
+        [LoggerMessage(LogLevel.Debug, "Preparing to retrieve next message(s) from topic {Topic} via subscription {ChannelName} with timeout {Timeout} and batch size {BatchSize}")]
+        public static partial void PreparingToRetrieveNextMessages(ILogger logger, string topic, string channelName, TimeSpan? timeout, int batchSize);
+
+        [LoggerMessage(LogLevel.Information, "Message Gateway: Could not get a lock on a session for {TopicName}")]
+        public static partial void CouldNotGetSessionLock(ILogger logger, string topicName);
+
+        [LoggerMessage(LogLevel.Debug, "Message Receiver is closing...")]
+        public static partial void MessageReceiverClosing(ILogger logger);
+
+        [LoggerMessage(LogLevel.Error, "Failing to receive messages")]
+        public static partial void FailingToReceiveMessages(ILogger logger, Exception e);
+
+        [LoggerMessage(LogLevel.Debug, "Dead Lettering Message with Id {Id} Lock Token : {LockToken} Due to {Reason} because of {Description}")]
+        public static partial void DeadLetteringMessage(ILogger logger, string id, string lockToken, string reason, string description);
+
+        [LoggerMessage(LogLevel.Error, "Error Dead Lettering message with id {Id}")]
+        public static partial void ErrorDeadLetteringMessage(ILogger logger, Exception e, string id);
+
+        [LoggerMessage(LogLevel.Information, "Requeuing message with topic {Topic} and id {Id}")]
+        public static partial void RequeuingMessage(ILogger logger, RoutingKey topic, string id);
+
+        [LoggerMessage(LogLevel.Error, "Error completing peek lock on message with id {Id} Reason {ErrorReason}")]
+        public static partial void ErrorCompletingPeekLockWithReason(ILogger logger, Exception e, string id, ServiceBusFailureReason errorReason);
+    }
+}

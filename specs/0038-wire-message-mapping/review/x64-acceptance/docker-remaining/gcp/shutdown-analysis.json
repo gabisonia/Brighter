@@ -1,0 +1,1026 @@
+{
+  "originalShutdownObservations": [
+    {
+      "framework": "net9.0",
+      "test": "Paramore.Brighter.Gcp.Tests.MessagingGateway.Stream.GcpStreamDisposeWithUnsettledMessageTests.When_a_gcp_stream_channel_is_disposed_holding_an_unsettled_message_should_return_promptly",
+      "outcome": "Passed",
+      "start": "2026-11-11T19:26:23.4309589+01:00",
+      "end": "2026-11-11T19:26:23.9086364+01:00",
+      "assertion": null,
+      "providers": [
+        {
+          "provider": "4b39a089bea4457c81561f0c5cc8cc9d",
+          "originalDeliveries": [
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:26:23.5975604+00:00",
+              "nativeId": "2321",
+              "ackId": "projects/brighter-docker4170/subscriptions/gen-stream-69409a5a77eb457ebd3a5dc04df15ced:14119",
+              "applicationId": "01a1cbdc-6e45-7e1d-abef-3248061dcd5f"
+            }
+          ],
+          "replacementDeliveries": [
+            {
+              "generation": 2,
+              "time": "2026-11-11T18:26:23.7777493+00:00",
+              "nativeId": "2321",
+              "ackId": "projects/brighter-docker4170/subscriptions/gen-stream-69409a5a77eb457ebd3a5dc04df15ced:14120",
+              "applicationId": "01a1cbdc-6e45-7e1d-abef-3248061dcd5f"
+            }
+          ],
+          "deadlineRpcEvents": [
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:26:23.6006430+00:00",
+              "event": "RPC START ModifyAckDeadline",
+              "ackDeadlineSeconds": 60,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-69409a5a77eb457ebd3a5dc04df15ced:14119"
+              ]
+            },
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:26:23.6082137+00:00",
+              "event": "RPC SUCCESS ModifyAckDeadline",
+              "ackDeadlineSeconds": 60,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-69409a5a77eb457ebd3a5dc04df15ced:14119"
+              ]
+            },
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:26:23.6758613+00:00",
+              "event": "RPC START ModifyAckDeadline",
+              "ackDeadlineSeconds": 0,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-69409a5a77eb457ebd3a5dc04df15ced:14119"
+              ]
+            },
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:26:23.7050263+00:00",
+              "event": "RPC SUCCESS ModifyAckDeadline",
+              "ackDeadlineSeconds": 0,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-69409a5a77eb457ebd3a5dc04df15ced:14119"
+              ]
+            },
+            {
+              "generation": 2,
+              "time": "2026-11-11T18:26:23.7809027+00:00",
+              "event": "RPC START ModifyAckDeadline",
+              "ackDeadlineSeconds": 60,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-69409a5a77eb457ebd3a5dc04df15ced:14120"
+              ]
+            },
+            {
+              "generation": 2,
+              "time": "2026-11-11T18:26:23.8037237+00:00",
+              "event": "RPC FAILURE ModifyAckDeadline",
+              "ackDeadlineSeconds": 60,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-69409a5a77eb457ebd3a5dc04df15ced:14120"
+              ]
+            }
+          ],
+          "completedShutdownNacks": [
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:26:23.7050263+00:00",
+              "event": "RPC SUCCESS ModifyAckDeadline",
+              "ackDeadlineSeconds": 0,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-69409a5a77eb457ebd3a5dc04df15ced:14119"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "framework": "net9.0",
+      "test": "Paramore.Brighter.Gcp.Tests.MessagingGateway.Stream.GcpStreamDisposeWithBufferedRedeliveryTests.When_a_gcp_stream_channel_is_disposed_with_a_redelivery_buffered_after_requeue_should_return_promptly",
+      "outcome": "Passed",
+      "start": "2026-11-11T19:26:20.2639095+01:00",
+      "end": "2026-11-11T19:26:22.7643842+01:00",
+      "assertion": null,
+      "providers": [
+        {
+          "provider": "00a2461c9b3b446cba468e64426470aa",
+          "originalDeliveries": [
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:26:20.4434923+00:00",
+              "nativeId": "2318",
+              "ackId": "projects/brighter-docker4170/subscriptions/gen-stream-74dc696120654cbb9d21e4762569f7d5:14112",
+              "applicationId": "01a1cbdc-61e7-7113-8fe4-0c32e009fc05"
+            },
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:26:20.4623255+00:00",
+              "nativeId": "2318",
+              "ackId": "projects/brighter-docker4170/subscriptions/gen-stream-74dc696120654cbb9d21e4762569f7d5:14113",
+              "applicationId": "01a1cbdc-61e7-7113-8fe4-0c32e009fc05"
+            }
+          ],
+          "replacementDeliveries": [
+            {
+              "generation": 2,
+              "time": "2026-11-11T18:26:22.6309406+00:00",
+              "nativeId": "2318",
+              "ackId": "projects/brighter-docker4170/subscriptions/gen-stream-74dc696120654cbb9d21e4762569f7d5:14115",
+              "applicationId": "01a1cbdc-61e7-7113-8fe4-0c32e009fc05"
+            }
+          ],
+          "deadlineRpcEvents": [
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:26:20.4467454+00:00",
+              "event": "RPC START ModifyAckDeadline",
+              "ackDeadlineSeconds": 60,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-74dc696120654cbb9d21e4762569f7d5:14112"
+              ]
+            },
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:26:20.4519606+00:00",
+              "event": "RPC START ModifyAckDeadline",
+              "ackDeadlineSeconds": 0,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-74dc696120654cbb9d21e4762569f7d5:14112"
+              ]
+            },
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:26:20.4590797+00:00",
+              "event": "RPC SUCCESS ModifyAckDeadline",
+              "ackDeadlineSeconds": 60,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-74dc696120654cbb9d21e4762569f7d5:14112"
+              ]
+            },
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:26:20.4620417+00:00",
+              "event": "RPC SUCCESS ModifyAckDeadline",
+              "ackDeadlineSeconds": 0,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-74dc696120654cbb9d21e4762569f7d5:14112"
+              ]
+            },
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:26:20.4764916+00:00",
+              "event": "RPC START ModifyAckDeadline",
+              "ackDeadlineSeconds": 60,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-74dc696120654cbb9d21e4762569f7d5:14113"
+              ]
+            },
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:26:20.4989618+00:00",
+              "event": "RPC SUCCESS ModifyAckDeadline",
+              "ackDeadlineSeconds": 60,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-74dc696120654cbb9d21e4762569f7d5:14113"
+              ]
+            },
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:26:22.5143871+00:00",
+              "event": "RPC START ModifyAckDeadline",
+              "ackDeadlineSeconds": 0,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-74dc696120654cbb9d21e4762569f7d5:14113"
+              ]
+            },
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:26:22.5681574+00:00",
+              "event": "RPC SUCCESS ModifyAckDeadline",
+              "ackDeadlineSeconds": 0,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-74dc696120654cbb9d21e4762569f7d5:14113"
+              ]
+            },
+            {
+              "generation": 2,
+              "time": "2026-11-11T18:26:22.6389543+00:00",
+              "event": "RPC START ModifyAckDeadline",
+              "ackDeadlineSeconds": 60,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-74dc696120654cbb9d21e4762569f7d5:14115"
+              ]
+            },
+            {
+              "generation": 2,
+              "time": "2026-11-11T18:26:22.6638003+00:00",
+              "event": "RPC SUCCESS ModifyAckDeadline",
+              "ackDeadlineSeconds": 60,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-74dc696120654cbb9d21e4762569f7d5:14115"
+              ]
+            }
+          ],
+          "completedShutdownNacks": [
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:26:20.4620417+00:00",
+              "event": "RPC SUCCESS ModifyAckDeadline",
+              "ackDeadlineSeconds": 0,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-74dc696120654cbb9d21e4762569f7d5:14112"
+              ]
+            },
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:26:22.5681574+00:00",
+              "event": "RPC SUCCESS ModifyAckDeadline",
+              "ackDeadlineSeconds": 0,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-74dc696120654cbb9d21e4762569f7d5:14113"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "framework": "net9.0",
+      "test": "Paramore.Brighter.Gcp.Tests.MessagingGateway.Stream.GcpStreamDisposeWithUnsettledMessageAsyncTests.When_a_gcp_stream_channel_is_disposed_holding_an_unsettled_message_async_should_return_promptly",
+      "outcome": "Passed",
+      "start": "2026-11-11T19:26:23.0248123+01:00",
+      "end": "2026-11-11T19:26:23.4281205+01:00",
+      "assertion": null,
+      "providers": [
+        {
+          "provider": "1f6d90a6ff9f42ac996c6e32918334e3",
+          "originalDeliveries": [
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:26:23.1731198+00:00",
+              "nativeId": "2320",
+              "ackId": "projects/brighter-docker4170/subscriptions/gen-stream-0c455d049c6e4842a900ca44f51e60ad:14117",
+              "applicationId": "01a1cbdc-6cb0-7019-987d-1b66252db4cb"
+            }
+          ],
+          "replacementDeliveries": [
+            {
+              "generation": 2,
+              "time": "2026-11-11T18:26:23.3397517+00:00",
+              "nativeId": "2320",
+              "ackId": "projects/brighter-docker4170/subscriptions/gen-stream-0c455d049c6e4842a900ca44f51e60ad:14118",
+              "applicationId": "01a1cbdc-6cb0-7019-987d-1b66252db4cb"
+            }
+          ],
+          "deadlineRpcEvents": [
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:26:23.1758513+00:00",
+              "event": "RPC START ModifyAckDeadline",
+              "ackDeadlineSeconds": 60,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-0c455d049c6e4842a900ca44f51e60ad:14117"
+              ]
+            },
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:26:23.2338274+00:00",
+              "event": "RPC SUCCESS ModifyAckDeadline",
+              "ackDeadlineSeconds": 60,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-0c455d049c6e4842a900ca44f51e60ad:14117"
+              ]
+            },
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:26:23.2656834+00:00",
+              "event": "RPC START ModifyAckDeadline",
+              "ackDeadlineSeconds": 0,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-0c455d049c6e4842a900ca44f51e60ad:14117"
+              ]
+            },
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:26:23.2733406+00:00",
+              "event": "RPC SUCCESS ModifyAckDeadline",
+              "ackDeadlineSeconds": 0,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-0c455d049c6e4842a900ca44f51e60ad:14117"
+              ]
+            },
+            {
+              "generation": 2,
+              "time": "2026-11-11T18:26:23.3427880+00:00",
+              "event": "RPC START ModifyAckDeadline",
+              "ackDeadlineSeconds": 60,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-0c455d049c6e4842a900ca44f51e60ad:14118"
+              ]
+            },
+            {
+              "generation": 2,
+              "time": "2026-11-11T18:26:23.3729732+00:00",
+              "event": "RPC SUCCESS ModifyAckDeadline",
+              "ackDeadlineSeconds": 60,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-0c455d049c6e4842a900ca44f51e60ad:14118"
+              ]
+            }
+          ],
+          "completedShutdownNacks": [
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:26:23.2733406+00:00",
+              "event": "RPC SUCCESS ModifyAckDeadline",
+              "ackDeadlineSeconds": 0,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-0c455d049c6e4842a900ca44f51e60ad:14117"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "framework": "net9.0",
+      "test": "Paramore.Brighter.Gcp.Tests.MessagingGateway.Stream.GcpStreamDisposeWithBufferedRedeliveryAsyncTests.When_a_gcp_stream_channel_is_disposed_with_a_redelivery_buffered_after_requeue_async_should_return_promptly",
+      "outcome": "Passed",
+      "start": "2026-11-11T19:26:17.7386826+01:00",
+      "end": "2026-11-11T19:26:20.2608056+01:00",
+      "assertion": null,
+      "providers": [
+        {
+          "provider": "7ceacaae758b42f9a90e3e3a0bee7646",
+          "originalDeliveries": [
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:26:17.9399119+00:00",
+              "nativeId": "2317",
+              "ackId": "projects/brighter-docker4170/subscriptions/gen-stream-55066136c9e44fffac365a7850e627a9:14109",
+              "applicationId": "01a1cbdc-5812-719b-bb32-1073e623f91b"
+            },
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:26:18.0404078+00:00",
+              "nativeId": "2317",
+              "ackId": "projects/brighter-docker4170/subscriptions/gen-stream-55066136c9e44fffac365a7850e627a9:14110",
+              "applicationId": "01a1cbdc-5812-719b-bb32-1073e623f91b"
+            }
+          ],
+          "replacementDeliveries": [
+            {
+              "generation": 2,
+              "time": "2026-11-11T18:26:20.0858134+00:00",
+              "nativeId": "2317",
+              "ackId": "projects/brighter-docker4170/subscriptions/gen-stream-55066136c9e44fffac365a7850e627a9:14111",
+              "applicationId": "01a1cbdc-5812-719b-bb32-1073e623f91b"
+            }
+          ],
+          "deadlineRpcEvents": [
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:26:17.9530124+00:00",
+              "event": "RPC START ModifyAckDeadline",
+              "ackDeadlineSeconds": 60,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-55066136c9e44fffac365a7850e627a9:14109"
+              ]
+            },
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:26:17.9556847+00:00",
+              "event": "RPC START ModifyAckDeadline",
+              "ackDeadlineSeconds": 0,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-55066136c9e44fffac365a7850e627a9:14109"
+              ]
+            },
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:26:17.9742086+00:00",
+              "event": "RPC SUCCESS ModifyAckDeadline",
+              "ackDeadlineSeconds": 0,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-55066136c9e44fffac365a7850e627a9:14109"
+              ]
+            },
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:26:17.9744323+00:00",
+              "event": "RPC SUCCESS ModifyAckDeadline",
+              "ackDeadlineSeconds": 60,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-55066136c9e44fffac365a7850e627a9:14109"
+              ]
+            },
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:26:18.0468701+00:00",
+              "event": "RPC START ModifyAckDeadline",
+              "ackDeadlineSeconds": 60,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-55066136c9e44fffac365a7850e627a9:14110"
+              ]
+            },
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:26:18.0866503+00:00",
+              "event": "RPC SUCCESS ModifyAckDeadline",
+              "ackDeadlineSeconds": 60,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-55066136c9e44fffac365a7850e627a9:14110"
+              ]
+            },
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:26:20.0135354+00:00",
+              "event": "RPC START ModifyAckDeadline",
+              "ackDeadlineSeconds": 0,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-55066136c9e44fffac365a7850e627a9:14110"
+              ]
+            },
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:26:20.0237829+00:00",
+              "event": "RPC SUCCESS ModifyAckDeadline",
+              "ackDeadlineSeconds": 0,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-55066136c9e44fffac365a7850e627a9:14110"
+              ]
+            },
+            {
+              "generation": 2,
+              "time": "2026-11-11T18:26:20.0988820+00:00",
+              "event": "RPC START ModifyAckDeadline",
+              "ackDeadlineSeconds": 60,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-55066136c9e44fffac365a7850e627a9:14111"
+              ]
+            },
+            {
+              "generation": 2,
+              "time": "2026-11-11T18:26:20.1738829+00:00",
+              "event": "RPC FAILURE ModifyAckDeadline",
+              "ackDeadlineSeconds": 60,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-55066136c9e44fffac365a7850e627a9:14111"
+              ]
+            }
+          ],
+          "completedShutdownNacks": [
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:26:17.9742086+00:00",
+              "event": "RPC SUCCESS ModifyAckDeadline",
+              "ackDeadlineSeconds": 0,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-55066136c9e44fffac365a7850e627a9:14109"
+              ]
+            },
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:26:20.0237829+00:00",
+              "event": "RPC SUCCESS ModifyAckDeadline",
+              "ackDeadlineSeconds": 0,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-55066136c9e44fffac365a7850e627a9:14110"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "framework": "net10.0",
+      "test": "Paramore.Brighter.Gcp.Tests.MessagingGateway.Stream.GcpStreamDisposeWithBufferedRedeliveryTests.When_a_gcp_stream_channel_is_disposed_with_a_redelivery_buffered_after_requeue_should_return_promptly",
+      "outcome": "Passed",
+      "start": "2026-11-11T19:37:06.0522235+01:00",
+      "end": "2026-11-11T19:37:08.4995017+01:00",
+      "assertion": null,
+      "providers": [
+        {
+          "provider": "87844150594f46ab9e255cc2ba9c6cfd",
+          "originalDeliveries": [
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:37:06.1994014+00:00",
+              "nativeId": "2320",
+              "ackId": "projects/brighter-docker4170/subscriptions/gen-stream-eb43842c7528413a9ac5ad0f19fe1634:12245",
+              "applicationId": "01a1cbe6-3c83-76ff-b31f-31bc4435b0df"
+            },
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:37:06.2486603+00:00",
+              "nativeId": "2320",
+              "ackId": "projects/brighter-docker4170/subscriptions/gen-stream-eb43842c7528413a9ac5ad0f19fe1634:12246",
+              "applicationId": "01a1cbe6-3c83-76ff-b31f-31bc4435b0df"
+            }
+          ],
+          "replacementDeliveries": [
+            {
+              "generation": 2,
+              "time": "2026-11-11T18:37:08.3014770+00:00",
+              "nativeId": "2320",
+              "ackId": "projects/brighter-docker4170/subscriptions/gen-stream-eb43842c7528413a9ac5ad0f19fe1634:12248",
+              "applicationId": "01a1cbe6-3c83-76ff-b31f-31bc4435b0df"
+            }
+          ],
+          "deadlineRpcEvents": [
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:37:06.2040144+00:00",
+              "event": "RPC START ModifyAckDeadline",
+              "ackDeadlineSeconds": 60,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-eb43842c7528413a9ac5ad0f19fe1634:12245"
+              ]
+            },
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:37:06.2059914+00:00",
+              "event": "RPC START ModifyAckDeadline",
+              "ackDeadlineSeconds": 0,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-eb43842c7528413a9ac5ad0f19fe1634:12245"
+              ]
+            },
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:37:06.2093100+00:00",
+              "event": "RPC SUCCESS ModifyAckDeadline",
+              "ackDeadlineSeconds": 60,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-eb43842c7528413a9ac5ad0f19fe1634:12245"
+              ]
+            },
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:37:06.2109360+00:00",
+              "event": "RPC SUCCESS ModifyAckDeadline",
+              "ackDeadlineSeconds": 0,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-eb43842c7528413a9ac5ad0f19fe1634:12245"
+              ]
+            },
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:37:06.2515788+00:00",
+              "event": "RPC START ModifyAckDeadline",
+              "ackDeadlineSeconds": 60,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-eb43842c7528413a9ac5ad0f19fe1634:12246"
+              ]
+            },
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:37:06.2671457+00:00",
+              "event": "RPC SUCCESS ModifyAckDeadline",
+              "ackDeadlineSeconds": 60,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-eb43842c7528413a9ac5ad0f19fe1634:12246"
+              ]
+            },
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:37:08.2505170+00:00",
+              "event": "RPC START ModifyAckDeadline",
+              "ackDeadlineSeconds": 0,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-eb43842c7528413a9ac5ad0f19fe1634:12246"
+              ]
+            },
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:37:08.2690260+00:00",
+              "event": "RPC SUCCESS ModifyAckDeadline",
+              "ackDeadlineSeconds": 0,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-eb43842c7528413a9ac5ad0f19fe1634:12246"
+              ]
+            },
+            {
+              "generation": 2,
+              "time": "2026-11-11T18:37:08.3048575+00:00",
+              "event": "RPC START ModifyAckDeadline",
+              "ackDeadlineSeconds": 60,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-eb43842c7528413a9ac5ad0f19fe1634:12248"
+              ]
+            },
+            {
+              "generation": 2,
+              "time": "2026-11-11T18:37:08.4003902+00:00",
+              "event": "RPC SUCCESS ModifyAckDeadline",
+              "ackDeadlineSeconds": 60,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-eb43842c7528413a9ac5ad0f19fe1634:12248"
+              ]
+            }
+          ],
+          "completedShutdownNacks": [
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:37:06.2109360+00:00",
+              "event": "RPC SUCCESS ModifyAckDeadline",
+              "ackDeadlineSeconds": 0,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-eb43842c7528413a9ac5ad0f19fe1634:12245"
+              ]
+            },
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:37:08.2690260+00:00",
+              "event": "RPC SUCCESS ModifyAckDeadline",
+              "ackDeadlineSeconds": 0,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-eb43842c7528413a9ac5ad0f19fe1634:12246"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "framework": "net10.0",
+      "test": "Paramore.Brighter.Gcp.Tests.MessagingGateway.Stream.GcpStreamDisposeWithBufferedRedeliveryAsyncTests.When_a_gcp_stream_channel_is_disposed_with_a_redelivery_buffered_after_requeue_async_should_return_promptly",
+      "outcome": "Passed",
+      "start": "2026-11-11T19:37:03.7146469+01:00",
+      "end": "2026-11-11T19:37:06.0494489+01:00",
+      "assertion": null,
+      "providers": [
+        {
+          "provider": "db7863321b7b4889a8de2e903399285a",
+          "originalDeliveries": [
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:37:03.8603708+00:00",
+              "nativeId": "2317",
+              "ackId": "projects/brighter-docker4170/subscriptions/gen-stream-0d0cd2b20d994c74a4ad93490cb72076:12241",
+              "applicationId": "01a1cbe6-336b-73de-a980-6c026801fb1b"
+            },
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:37:03.9195922+00:00",
+              "nativeId": "2317",
+              "ackId": "projects/brighter-docker4170/subscriptions/gen-stream-0d0cd2b20d994c74a4ad93490cb72076:12243",
+              "applicationId": "01a1cbe6-336b-73de-a980-6c026801fb1b"
+            }
+          ],
+          "replacementDeliveries": [
+            {
+              "generation": 2,
+              "time": "2026-11-11T18:37:05.9425853+00:00",
+              "nativeId": "2317",
+              "ackId": "projects/brighter-docker4170/subscriptions/gen-stream-0d0cd2b20d994c74a4ad93490cb72076:12244",
+              "applicationId": "01a1cbe6-336b-73de-a980-6c026801fb1b"
+            }
+          ],
+          "deadlineRpcEvents": [
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:37:03.8680435+00:00",
+              "event": "RPC START ModifyAckDeadline",
+              "ackDeadlineSeconds": 60,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-0d0cd2b20d994c74a4ad93490cb72076:12241"
+              ]
+            },
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:37:03.8804173+00:00",
+              "event": "RPC START ModifyAckDeadline",
+              "ackDeadlineSeconds": 0,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-0d0cd2b20d994c74a4ad93490cb72076:12241"
+              ]
+            },
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:37:03.9083468+00:00",
+              "event": "RPC SUCCESS ModifyAckDeadline",
+              "ackDeadlineSeconds": 60,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-0d0cd2b20d994c74a4ad93490cb72076:12241"
+              ]
+            },
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:37:03.9195732+00:00",
+              "event": "RPC SUCCESS ModifyAckDeadline",
+              "ackDeadlineSeconds": 0,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-0d0cd2b20d994c74a4ad93490cb72076:12241"
+              ]
+            },
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:37:03.9251023+00:00",
+              "event": "RPC START ModifyAckDeadline",
+              "ackDeadlineSeconds": 60,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-0d0cd2b20d994c74a4ad93490cb72076:12243"
+              ]
+            },
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:37:03.9310471+00:00",
+              "event": "RPC SUCCESS ModifyAckDeadline",
+              "ackDeadlineSeconds": 60,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-0d0cd2b20d994c74a4ad93490cb72076:12243"
+              ]
+            },
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:37:05.9076531+00:00",
+              "event": "RPC START ModifyAckDeadline",
+              "ackDeadlineSeconds": 0,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-0d0cd2b20d994c74a4ad93490cb72076:12243"
+              ]
+            },
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:37:05.9194858+00:00",
+              "event": "RPC SUCCESS ModifyAckDeadline",
+              "ackDeadlineSeconds": 0,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-0d0cd2b20d994c74a4ad93490cb72076:12243"
+              ]
+            },
+            {
+              "generation": 2,
+              "time": "2026-11-11T18:37:05.9531231+00:00",
+              "event": "RPC START ModifyAckDeadline",
+              "ackDeadlineSeconds": 60,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-0d0cd2b20d994c74a4ad93490cb72076:12244"
+              ]
+            },
+            {
+              "generation": 2,
+              "time": "2026-11-11T18:37:05.9867987+00:00",
+              "event": "RPC FAILURE ModifyAckDeadline",
+              "ackDeadlineSeconds": 60,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-0d0cd2b20d994c74a4ad93490cb72076:12244"
+              ]
+            }
+          ],
+          "completedShutdownNacks": [
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:37:03.9195732+00:00",
+              "event": "RPC SUCCESS ModifyAckDeadline",
+              "ackDeadlineSeconds": 0,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-0d0cd2b20d994c74a4ad93490cb72076:12241"
+              ]
+            },
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:37:05.9194858+00:00",
+              "event": "RPC SUCCESS ModifyAckDeadline",
+              "ackDeadlineSeconds": 0,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-0d0cd2b20d994c74a4ad93490cb72076:12243"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "framework": "net10.0",
+      "test": "Paramore.Brighter.Gcp.Tests.MessagingGateway.Stream.GcpStreamDisposeWithUnsettledMessageTests.When_a_gcp_stream_channel_is_disposed_holding_an_unsettled_message_should_return_promptly",
+      "outcome": "Passed",
+      "start": "2026-11-11T19:37:29.6330740+01:00",
+      "end": "2026-11-11T19:37:29.9638732+01:00",
+      "assertion": null,
+      "providers": [
+        {
+          "provider": "a1fc58d63fd1487a849ada626aca68c1",
+          "originalDeliveries": [
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:37:29.7346767+00:00",
+              "nativeId": "2329",
+              "ackId": "projects/brighter-docker4170/subscriptions/gen-stream-3273188fd94b4f328b747eff53ea73ac:12259",
+              "applicationId": "01a1cbe6-9890-771a-898a-c4d140babaca"
+            }
+          ],
+          "replacementDeliveries": [
+            {
+              "generation": 2,
+              "time": "2026-11-11T18:37:29.8333935+00:00",
+              "nativeId": "2329",
+              "ackId": "projects/brighter-docker4170/subscriptions/gen-stream-3273188fd94b4f328b747eff53ea73ac:12260",
+              "applicationId": "01a1cbe6-9890-771a-898a-c4d140babaca"
+            }
+          ],
+          "deadlineRpcEvents": [
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:37:29.7437771+00:00",
+              "event": "RPC START ModifyAckDeadline",
+              "ackDeadlineSeconds": 60,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-3273188fd94b4f328b747eff53ea73ac:12259"
+              ]
+            },
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:37:29.7764991+00:00",
+              "event": "RPC SUCCESS ModifyAckDeadline",
+              "ackDeadlineSeconds": 60,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-3273188fd94b4f328b747eff53ea73ac:12259"
+              ]
+            },
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:37:29.7777279+00:00",
+              "event": "RPC START ModifyAckDeadline",
+              "ackDeadlineSeconds": 0,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-3273188fd94b4f328b747eff53ea73ac:12259"
+              ]
+            },
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:37:29.8049527+00:00",
+              "event": "RPC SUCCESS ModifyAckDeadline",
+              "ackDeadlineSeconds": 0,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-3273188fd94b4f328b747eff53ea73ac:12259"
+              ]
+            },
+            {
+              "generation": 2,
+              "time": "2026-11-11T18:37:29.8402605+00:00",
+              "event": "RPC START ModifyAckDeadline",
+              "ackDeadlineSeconds": 60,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-3273188fd94b4f328b747eff53ea73ac:12260"
+              ]
+            },
+            {
+              "generation": 2,
+              "time": "2026-11-11T18:37:29.9219212+00:00",
+              "event": "RPC SUCCESS ModifyAckDeadline",
+              "ackDeadlineSeconds": 60,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-3273188fd94b4f328b747eff53ea73ac:12260"
+              ]
+            }
+          ],
+          "completedShutdownNacks": [
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:37:29.8049527+00:00",
+              "event": "RPC SUCCESS ModifyAckDeadline",
+              "ackDeadlineSeconds": 0,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-3273188fd94b4f328b747eff53ea73ac:12259"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "framework": "net10.0",
+      "test": "Paramore.Brighter.Gcp.Tests.MessagingGateway.Stream.GcpStreamDisposeWithUnsettledMessageAsyncTests.When_a_gcp_stream_channel_is_disposed_holding_an_unsettled_message_async_should_return_promptly",
+      "outcome": "Failed",
+      "start": "2026-11-11T19:37:08.9551437+01:00",
+      "end": "2026-11-11T19:37:29.6167271+01:00",
+      "assertion": "Assert.Equal() Failure: Values differ\r\nExpected: 01a1cbe6-47e2-7120-9c52-e4228e1fb1be\r\nActual:   ",
+      "providers": [
+        {
+          "provider": "fbe6f5427b2c47f69b5e62b1e66c30a3",
+          "originalDeliveries": [
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:37:09.2505847+00:00",
+              "nativeId": "2322",
+              "ackId": "projects/brighter-docker4170/subscriptions/gen-stream-85191bcf1c1f425790f312b740fbf855:12250",
+              "applicationId": "01a1cbe6-47e2-7120-9c52-e4228e1fb1be"
+            },
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:37:09.3727455+00:00",
+              "nativeId": "2322",
+              "ackId": "projects/brighter-docker4170/subscriptions/gen-stream-85191bcf1c1f425790f312b740fbf855:12251",
+              "applicationId": "01a1cbe6-47e2-7120-9c52-e4228e1fb1be"
+            }
+          ],
+          "replacementDeliveries": [],
+          "deadlineRpcEvents": [
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:37:09.2619823+00:00",
+              "event": "RPC START ModifyAckDeadline",
+              "ackDeadlineSeconds": 60,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-85191bcf1c1f425790f312b740fbf855:12250"
+              ]
+            },
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:37:09.2985985+00:00",
+              "event": "RPC SUCCESS ModifyAckDeadline",
+              "ackDeadlineSeconds": 60,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-85191bcf1c1f425790f312b740fbf855:12250"
+              ]
+            },
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:37:09.3392273+00:00",
+              "event": "RPC START ModifyAckDeadline",
+              "ackDeadlineSeconds": 0,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-85191bcf1c1f425790f312b740fbf855:12250"
+              ]
+            },
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:37:09.3727631+00:00",
+              "event": "RPC SUCCESS ModifyAckDeadline",
+              "ackDeadlineSeconds": 0,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-85191bcf1c1f425790f312b740fbf855:12250"
+              ]
+            },
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:37:09.3793145+00:00",
+              "event": "RPC START ModifyAckDeadline",
+              "ackDeadlineSeconds": 60,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-85191bcf1c1f425790f312b740fbf855:12251"
+              ]
+            },
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:37:09.3876004+00:00",
+              "event": "RPC START ModifyAckDeadline",
+              "ackDeadlineSeconds": 0,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-85191bcf1c1f425790f312b740fbf855:12251"
+              ]
+            },
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:37:09.3878980+00:00",
+              "event": "RPC FAILURE ModifyAckDeadline",
+              "ackDeadlineSeconds": 60,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-85191bcf1c1f425790f312b740fbf855:12251"
+              ]
+            },
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:37:09.4106107+00:00",
+              "event": "RPC SUCCESS ModifyAckDeadline",
+              "ackDeadlineSeconds": 0,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-85191bcf1c1f425790f312b740fbf855:12251"
+              ]
+            }
+          ],
+          "completedShutdownNacks": [
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:37:09.3727631+00:00",
+              "event": "RPC SUCCESS ModifyAckDeadline",
+              "ackDeadlineSeconds": 0,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-85191bcf1c1f425790f312b740fbf855:12250"
+              ]
+            },
+            {
+              "generation": 1,
+              "time": "2026-11-11T18:37:09.4106107+00:00",
+              "event": "RPC SUCCESS ModifyAckDeadline",
+              "ackDeadlineSeconds": 0,
+              "ackIds": [
+                "projects/brighter-docker4170/subscriptions/gen-stream-85191bcf1c1f425790f312b740fbf855:12251"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "passed": 7,
+  "failed": 1,
+  "conclusion": "The .NET 10 original unsettled async replacement failure is reproduced. Its observer sees original-generation redelivery and successful deadline-zero RPCs, but no replacement-generation native delivery in the bounded receive interval. Native-delivery-to-Brighter mapping loss is not demonstrated by this sample.",
+  "limits": "Client-side RPC success does not establish server execution order relative to the canceled 60-second extension. This observer does not explicitly log stream construction/open or terminal SubscriberClient.StartAsync task state. Exact SDK/emulator/caller-lifecycle cause remains unresolved; do not generalize the separately known ordered-nack cause."
+}

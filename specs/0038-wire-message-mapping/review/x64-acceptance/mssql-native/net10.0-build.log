@@ -1,0 +1,21 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  Paramore.Brighter -> C:\Users\IrakliGabisonia\source\repos\Personal\Brighter\src\Paramore.Brighter\bin\Release\net10.0\Paramore.Brighter.dll
+  Paramore.Brighter.MsSql -> C:\Users\IrakliGabisonia\source\repos\Personal\Brighter\src\Paramore.Brighter.MsSql\bin\Release\net10.0\Paramore.Brighter.MsSql.dll
+  Paramore.Brighter.Extensions.DependencyInjection -> C:\Users\IrakliGabisonia\source\repos\Personal\Brighter\src\Paramore.Brighter.Extensions.DependencyInjection\bin\Release\net10.0\Paramore.Brighter.Extensions.DependencyInjection.dll
+  Paramore.Brighter.ServiceActivator -> C:\Users\IrakliGabisonia\source\repos\Personal\Brighter\src\Paramore.Brighter.ServiceActivator\bin\Release\net10.0\Paramore.Brighter.ServiceActivator.dll
+  Paramore.Brighter.Base.Test -> C:\Users\IrakliGabisonia\source\repos\Personal\Brighter\tests\Paramore.Brighter.Base.Test\bin\Release\net10.0\Paramore.Brighter.Base.Test.dll
+  Paramore.Brighter.Outbox.MsSql -> C:\Users\IrakliGabisonia\source\repos\Personal\Brighter\src\Paramore.Brighter.Outbox.MsSql\bin\Release\net10.0\Paramore.Brighter.Outbox.MsSql.dll
+  Paramore.Brighter.Locking.MsSql -> C:\Users\IrakliGabisonia\source\repos\Personal\Brighter\src\Paramore.Brighter.Locking.MsSql\bin\Release\net10.0\Paramore.Brighter.Locking.MsSql.dll
+  Paramore.Brighter.BoxProvisioning -> C:\Users\IrakliGabisonia\source\repos\Personal\Brighter\src\Paramore.Brighter.BoxProvisioning\bin\Release\net10.0\Paramore.Brighter.BoxProvisioning.dll
+  Paramore.Brighter.Inbox.MsSql -> C:\Users\IrakliGabisonia\source\repos\Personal\Brighter\src\Paramore.Brighter.Inbox.MsSql\bin\Release\net10.0\Paramore.Brighter.Inbox.MsSql.dll
+  Paramore.Brighter.MessagingGateway.MsSql -> C:\Users\IrakliGabisonia\source\repos\Personal\Brighter\src\Paramore.Brighter.MessagingGateway.MsSql\bin\Release\net10.0\Paramore.Brighter.MessagingGateway.MsSql.dll
+  Paramore.Brighter.BoxProvisioning.Tests -> C:\Users\IrakliGabisonia\source\repos\Personal\Brighter\tests\Paramore.Brighter.BoxProvisioning.Tests\bin\Release\net10.0\Paramore.Brighter.BoxProvisioning.Tests.dll
+  Paramore.Brighter.BoxProvisioning.MsSql -> C:\Users\IrakliGabisonia\source\repos\Personal\Brighter\src\Paramore.Brighter.BoxProvisioning.MsSql\bin\Release\net10.0\Paramore.Brighter.BoxProvisioning.MsSql.dll
+  Paramore.Brighter.MSSQL.Tests -> C:\Users\IrakliGabisonia\source\repos\Personal\Brighter\tests\Paramore.Brighter.MSSQL.Tests\bin\Release\net10.0\Paramore.Brighter.MSSQL.Tests.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:05.24

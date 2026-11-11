@@ -1,0 +1,19 @@
+mcr.microsoft.com/azure-messaging/servicebus-emulator@sha256:5a96d893b245031740f7d46e0fe5ff282d24b78c4b7d761dd57590f3f010a9b3: Pulling from azure-messaging/servicebus-emulator
+94994b2855e6: Pulling fs layer
+d7ac76ea30fe: Pulling fs layer
+60122052401d: Pulling fs layer
+85534760f3c1: Pulling fs layer
+4f4fb700ef54: Pulling fs layer
+4f4fb700ef54: Already exists
+d7ac76ea30fe: Download complete
+60122052401d: Download complete
+d7ac76ea30fe: Pull complete
+60122052401d: Pull complete
+85534760f3c1: Download complete
+4f4fb700ef54: Pull complete
+85534760f3c1: Pull complete
+94994b2855e6: Download complete
+94994b2855e6: Pull complete
+Digest: sha256:5a96d893b245031740f7d46e0fe5ff282d24b78c4b7d761dd57590f3f010a9b3
+Status: Downloaded newer image for mcr.microsoft.com/azure-messaging/servicebus-emulator@sha256:5a96d893b245031740f7d46e0fe5ff282d24b78c4b7d761dd57590f3f010a9b3
+mcr.microsoft.com/azure-messaging/servicebus-emulator@sha256:5a96d893b245031740f7d46e0fe5ff282d24b78c4b7d761dd57590f3f010a9b3

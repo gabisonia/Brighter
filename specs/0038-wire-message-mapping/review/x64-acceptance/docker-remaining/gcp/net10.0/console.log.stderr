@@ -1,0 +1,2 @@
+[xUnit.net 00:07:43.21]     Paramore.Brighter.Gcp.Tests.MessagingGateway.Stream.GcpStreamDisposeWithUnsettledMessageAsyncTests.When_a_gcp_stream_channel_is_disposed_holding_an_unsettled_message_async_should_return_promptly [FAIL]
+Test Run Failed.

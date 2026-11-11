@@ -1,0 +1,70 @@
+﻿[
+    {
+        "requested":  "gcr.io/google.com/cloudsdktool/cloud-sdk@sha256:3797a874fae6b75aa25260b5bd40fa0397c2f1102f18ae3ac7dc887732fbe449",
+        "name":  "gcp",
+        "id":  "sha256:3797a874fae6b75aa25260b5bd40fa0397c2f1102f18ae3ac7dc887732fbe449",
+        "run":  {
+                    "finishedUtc":  "2026-11-11T18:09:57.4242916Z",
+                    "exitCode":  0,
+                    "log":  "C:\\Users\\IrakliGabisonia\\source\\repos\\Personal\\Brighter\\specs\\0038-wire-message-mapping\\review\\x64-acceptance/docker-remaining/images/gcp-pull.log",
+                    "startedUtc":  "2026-11-11T18:06:38.8259757Z",
+                    "clockDiscontinuity":  false,
+                    "seconds":  198.5419532
+                },
+        "digests":  [
+                        "gcr.io/google.com/cloudsdktool/cloud-sdk@sha256:3797a874fae6b75aa25260b5bd40fa0397c2f1102f18ae3ac7dc887732fbe449"
+                    ],
+        "architecture":  "amd64"
+    },
+    {
+        "requested":  "apache/kafka:4.0.2",
+        "name":  "kafka",
+        "id":  "sha256:836cafdad9f4825880d7cf1d5a21202915ae2527bd0ef1c3600c526ed7814d1f",
+        "run":  {
+                    "finishedUtc":  "2026-11-11T18:10:14.3363725Z",
+                    "exitCode":  0,
+                    "log":  "C:\\Users\\IrakliGabisonia\\source\\repos\\Personal\\Brighter\\specs\\0038-wire-message-mapping\\review\\x64-acceptance/docker-remaining/images/kafka-pull.log",
+                    "startedUtc":  "2026-11-11T18:09:58.3093375Z",
+                    "clockDiscontinuity":  false,
+                    "seconds":  15.9794278
+                },
+        "digests":  [
+                        "apache/kafka@sha256:836cafdad9f4825880d7cf1d5a21202915ae2527bd0ef1c3600c526ed7814d1f"
+                    ],
+        "architecture":  "amd64"
+    },
+    {
+        "requested":  "confluentinc/cp-schema-registry:8.0.6",
+        "name":  "schema",
+        "id":  "sha256:a3d68ec7d0af26be38e37557a323c65def17f929e304235c1a630c53c68b1cd6",
+        "run":  {
+                    "finishedUtc":  "2026-11-11T18:12:37.1097801Z",
+                    "exitCode":  0,
+                    "log":  "C:\\Users\\IrakliGabisonia\\source\\repos\\Personal\\Brighter\\specs\\0038-wire-message-mapping\\review\\x64-acceptance/docker-remaining/images/schema-pull.log",
+                    "startedUtc":  "2026-11-11T18:10:15.0821233Z",
+                    "clockDiscontinuity":  false,
+                    "seconds":  141.9709057
+                },
+        "digests":  [
+                        "confluentinc/cp-schema-registry@sha256:a3d68ec7d0af26be38e37557a323c65def17f929e304235c1a630c53c68b1cd6"
+                    ],
+        "architecture":  "amd64"
+    },
+    {
+        "requested":  "mcr.microsoft.com/dotnet/sdk:9.0",
+        "name":  "net9",
+        "id":  "sha256:1dfdb27e9c2c345cb598925ccf6b13719ecfebea8467bd4745c23a3c108cdf84",
+        "run":  {
+                    "finishedUtc":  "2026-11-11T18:13:06.2692258Z",
+                    "exitCode":  0,
+                    "log":  "C:\\Users\\IrakliGabisonia\\source\\repos\\Personal\\Brighter\\specs\\0038-wire-message-mapping\\review\\x64-acceptance/docker-remaining/images/net9-pull.log",
+                    "startedUtc":  "2026-11-11T18:12:37.8435904Z",
+                    "clockDiscontinuity":  false,
+                    "seconds":  28.3794754
+                },
+        "digests":  [
+                        "mcr.microsoft.com/dotnet/sdk@sha256:1dfdb27e9c2c345cb598925ccf6b13719ecfebea8467bd4745c23a3c108cdf84"
+                    ],
+        "architecture":  "amd64"
+    }
+]

@@ -1,0 +1,4 @@
+brighter-4170-recovery-isolated-net10-0-20261111-broker|exited|Exited (137) About a minute ago
+brighter-4170-recovery-isolated-net10-0-20261111-sql|exited|Exited (137) 53 seconds ago
+brighter-4170-recovery-isolated-net9-0-20261111-broker|exited|Exited (137) 3 minutes ago
+brighter-4170-recovery-isolated-net9-0-20261111-sql|exited|Exited (137) 2 minutes ago

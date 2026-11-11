@@ -1,0 +1,8 @@
+brighter-4170-x64-sdk-net10-0-20261111-broker|exited|Exited (137) 50 seconds ago
+brighter-4170-x64-sdk-net10-0-20261111-sql|exited|Exited (137) 36 seconds ago
+brighter-4170-x64-sdk-net9-0-20261111-broker|exited|Exited (137) About a minute ago
+brighter-4170-x64-sdk-net9-0-20261111-sql|exited|Exited (137) About a minute ago
+brighter-4170-x64-mssql-20261111-native|exited|Exited (137) 3 minutes ago
+brighter-4170-x64-mssql-20261111-final|exited|Exited (137) 7 minutes ago
+brighter-4170-x64-mssql-20261111-acceptance|exited|Exited (137) 9 minutes ago
+brighter-4170-x64-mssql-20261111|exited|Exited (137) 10 minutes ago

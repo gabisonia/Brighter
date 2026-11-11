@@ -1,0 +1,31 @@
+﻿{
+    "head":  "2db6bcc9b53bdb1d388b667d8f8bbe6c05c0be33",
+    "framework":  "net10.0",
+    "cases":  [
+
+              ],
+    "captures":  [
+                     {
+                         "label":  "pending-close",
+                         "run":  {
+                                     "finishedUtc":  "2026-11-11T19:21:53.4370117Z",
+                                     "exitCode":  0,
+                                     "log":  "C:\\Users\\IrakliGabisonia\\source\\repos\\Personal\\Brighter\\specs\\0038-wire-message-mapping\\review\\x64-acceptance/docker-remaining/kafka-passive-net10/net10.0/pending-close-createdump.log",
+                                     "startedUtc":  "2026-11-11T19:21:39.3835167Z",
+                                     "clockDiscontinuity":  false,
+                                     "seconds":  14.0028445
+                                 },
+                         "pendingClients":  [
+                                                "Kafka Consumer Test#consumer-1229"
+                                            ],
+                         "destination":  "/tmp/pending-close.core"
+                     }
+                 ],
+    "containers":  [
+
+                   ],
+    "pendingCloses":  {
+                          "Kafka Consumer Test#consumer-1229":  580.0657886
+                      },
+    "completedCloses":  0
+}

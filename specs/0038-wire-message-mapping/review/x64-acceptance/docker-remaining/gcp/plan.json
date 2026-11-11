@@ -1,0 +1,11 @@
+﻿{
+    "hypothesis":  "Native x64 Pub/Sub lifecycle coverage with correlated stream input/deadline-zero/replacement evidence. One full matrix per framework, no green-seeking retry.",
+    "filter":  "FullyQualifiedName~Paramore.Brighter.Gcp.Tests.MessagingGateway.",
+    "assertionsChanged":  false,
+    "head":  "2db6bcc9b53bdb1d388b667d8f8bbe6c05c0be33",
+    "image":  "gcr.io/google.com/cloudsdktool/cloud-sdk@sha256:3797a874fae6b75aa25260b5bd40fa0397c2f1102f18ae3ac7dc887732fbe449",
+    "productionChanges":  [
+
+                          ],
+    "excluded":  "Firestore, Spanner and GCS are different adapters, outside the Pub/Sub wire-mapping gate; no hosted credentials used"
+}

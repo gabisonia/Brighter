@@ -1,0 +1,9 @@
+﻿{
+    "originalPath":  "C:\\Users\\IrakliGabisonia\\source\\repos\\Personal\\Brighter\\specs\\0038-wire-message-mapping\\review\\x64-acceptance\\docker-remaining\\kafka\\net9.0\\pending-close.core",
+    "retainedPath":  "C:\\Users\\IRAKLI~1\\AppData\\Local\\Temp\\brighter-4170-docker-native-captures\\snapshot-affected-net9-partial.core",
+    "bytes":  335695872,
+    "sha256":  "E352640A7257F3AF3449D28AE9E90B3A395450EF11DBAC7089F5EBF9358B8EAF",
+    "completeCore":  false,
+    "reason":  "Collection exceeded its 180-second deadline; retain as partial raw evidence, not a complete usable memory core",
+    "crashReport":  "pending-close.core.crashreport.json"
+}

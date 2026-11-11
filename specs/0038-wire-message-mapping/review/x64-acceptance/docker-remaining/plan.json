@@ -1,0 +1,20 @@
+﻿{
+    "head":  "2db6bcc9b53bdb1d388b667d8f8bbe6c05c0be33",
+    "scope":  "Remaining release acceptance and lifecycle checks supported by Docker; one bounded sample per declared target; reuse already completed unchanged evidence",
+    "asb":  "Full managed/native inventory plus each static wire/session/cancellation class on isolated entities; retained approved lost-lock case admitted only in isolated copy; prior eight reader-recovery identities reused",
+    "gcp":  "Complete Pub/Sub MessagingGateway inventory with native RPC observer; Firestore/Spanner/GCS are separate unmodified adapters and are excluded from this Pub/Sub release gate",
+    "kafka":  "Full Kafka suite on native Linux amd64 with direct stderr capture and pending-close dump watchdog",
+    "reused":  [
+                   "Native x64 SQL Server: 396 passes / 4 existing skips each target",
+                   "ASB original reader recovery: net9 6 pass/2 fail; net10 8 pass",
+                   "Other unchanged gateway and build/API review packages, tied to the 7252-input manifest"
+               ],
+    "excluded":  [
+                     "Redis: standing explicit exclusion",
+                     "Paid or hosted services",
+                     "Commit, push, history rewrite or remote CI trigger"
+                 ],
+    "diagnosticsOnly":  true,
+    "assertionsChanged":  false,
+    "productionChanged":  false
+}

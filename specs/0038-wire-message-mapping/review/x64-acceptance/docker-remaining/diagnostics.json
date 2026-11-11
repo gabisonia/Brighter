@@ -1,0 +1,13 @@
+﻿{
+    "workspace":  "C:\\Users\\IRAKLI~1\\AppData\\Local\\Temp\\brighter-4170-docker-remaining",
+    "hook":  "C:\\Users\\IRAKLI~1\\AppData\\Local\\Temp\\brighter-4170-docker-hook",
+    "productionChanges":  [
+
+                          ],
+    "assertionsChanged":  false,
+    "fixtureOnlyChanges":  [
+                               "passive GCP stream RPC observer through existing public hook",
+                               "GCP emulator-only credential fixture",
+                               "native librdkafka debug in original concurrency test"
+                           ]
+}

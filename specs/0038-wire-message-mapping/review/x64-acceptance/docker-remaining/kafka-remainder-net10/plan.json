@@ -1,0 +1,15 @@
+﻿{
+    "brokerImage":  "sha256:836cafdad9f4825880d7cf1d5a21202915ae2527bd0ef1c3600c526ed7814d1f",
+    "hypothesis":  "Native x64 lifecycle acceptance with direct native stderr and a 60-second pending-close trigger. Passive control removes the demonstrated intrusive healthy-reference pause; no green-seeking repetitions.",
+    "assertionsChanged":  false,
+    "schemaNetwork":  "Shares owned broker network namespace so hardcoded localhost:8081 resolves locally without publishing host ports",
+    "passiveOnly":  true,
+    "frameworks":  [
+                       "net10.0"
+                   ],
+    "schemaImage":  "sha256:a3d68ec7d0af26be38e37557a323c65def17f929e304235c1a630c53c68b1cd6",
+    "head":  "2db6bcc9b53bdb1d388b667d8f8bbe6c05c0be33",
+    "productionChanges":  [
+
+                          ]
+}

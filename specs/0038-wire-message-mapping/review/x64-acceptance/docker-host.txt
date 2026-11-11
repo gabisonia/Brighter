@@ -1,0 +1,1 @@
+OS=linux Architecture=x86_64 CPUs=24 MemoryBytes=20790824960

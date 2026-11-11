@@ -1,0 +1,46 @@
+[
+    {
+        "Name": "brighter-4170-x64-sdk-net9-0-20261111",
+        "Id": "d49f297098338c5fa184737fb21b4d9c2e2228e9cce48bdc609510f8df7cd0d2",
+        "Created": "2026-11-11T17:32:18.90111656Z",
+        "Scope": "local",
+        "Driver": "bridge",
+        "EnableIPv4": true,
+        "EnableIPv6": false,
+        "IPAM": {
+            "Driver": "default",
+            "Options": {},
+            "Config": [
+                {
+                    "Subnet": "172.26.0.0/16",
+                    "Gateway": "172.26.0.1"
+                }
+            ]
+        },
+        "Internal": false,
+        "Attachable": false,
+        "Ingress": false,
+        "ConfigFrom": {
+            "Network": ""
+        },
+        "ConfigOnly": false,
+        "Options": {
+            "com.docker.network.enable_ipv4": "true",
+            "com.docker.network.enable_ipv6": "false"
+        },
+        "Labels": {
+            "brighter.validation": "4170-x64"
+        },
+        "Containers": {},
+        "Status": {
+            "IPAM": {
+                "Subnets": {
+                    "172.26.0.0/16": {
+                        "IPsInUse": 3,
+                        "DynamicIPsAvailable": 65533
+                    }
+                }
+            }
+        }
+    }
+]

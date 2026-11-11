@@ -1,0 +1,811 @@
+NATIVE CAPTURE pid=53 utc=2026-11-11T18:19:22.3679334+00:00
+%7|1794421754.813|INIT|Kafka Consumer Test#producer-1226| [thrd:app]: librdkafka v2.15.1 (0x20f01ff) Kafka Consumer Test#producer-1226 initialized (builtin.features gzip,snappy,ssl,sasl,regex,lz4,sasl_plain,sasl_scram,plugins,zstd,sasl_oauthbearer,http,oidc, STRIP STATIC_LINKING GCC GXX PKGCONFIG INSTALL GNULD LDS C11THREADS LIBDL PLUGINS ZLIB SSL ZSTD CURL HDRHISTOGRAM SYSLOG SNAPPY SOCKEM SASL_SCRAM SASL_OAUTHBEARER OAUTHBEARER_OIDC CRC32C_HW, debug 0x2104)
+%7|1794421754.842|TOPIC|Kafka Consumer Test#producer-1226| [thrd:app]: New local topic: 21fcbf65-6004-46b1-ab66-ba40789a4b17
+%7|1794421754.867|TOPPARNEW|Kafka Consumer Test#producer-1226| [thrd:app]: NEW 21fcbf65-6004-46b1-ab66-ba40789a4b17 [-1] 0x70b5d4171310 refcnt 0x70b5d41713a0 (at rd_kafka_topic_new0:489)
+%7|1794421754.902|FASTQUERY|Kafka Consumer Test#producer-1226| [thrd:app]: Starting fast leader query
+%7|1794421754.938|STATE|Kafka Consumer Test#producer-1226| [thrd:main]: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 changed state unknown -> exists
+%7|1794421754.954|PARTCNT|Kafka Consumer Test#producer-1226| [thrd:main]: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 (id AAAAAAAAAAAAAAAAAAAAAA) partition count changed from 0 to 3
+%7|1794421754.968|TOPPARNEW|Kafka Consumer Test#producer-1226| [thrd:main]: NEW 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0] 0x70b51c07e050 refcnt 0x70b51c07e0e0 (at rd_kafka_topic_partition_cnt_update:1155)
+%7|1794421754.985|TOPPARNEW|Kafka Consumer Test#producer-1226| [thrd:main]: NEW 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] 0x70b51c0aec20 refcnt 0x70b51c0aecb0 (at rd_kafka_topic_partition_cnt_update:1155)
+%7|1794421754.996|TOPPARNEW|Kafka Consumer Test#producer-1226| [thrd:main]: NEW 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2] 0x70b51c0af0e0 refcnt 0x70b51c0af170 (at rd_kafka_topic_partition_cnt_update:1155)
+%7|1794421755.008|METADATA|Kafka Consumer Test#producer-1226| [thrd:main]: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 changed id from AAAAAAAAAAAAAAAAAAAAAA to Lqx8jrhHT+WiK89OHsHd5g
+%7|1794421755.020|METADATA|Kafka Consumer Test#producer-1226| [thrd:main]: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0] Leader 1 Epoch 0
+%7|1794421755.051|BROKER|Kafka Consumer Test#producer-1226| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0]: leader -1 epoch -1 -> leader 1 epoch 0
+%7|1794421755.095|LEADER|Kafka Consumer Test#producer-1226| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0]: applying leader-id update -1 -> 1 (epoch 0)
+%7|1794421755.105|BRKDELGT|Kafka Consumer Test#producer-1226| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0]: delegate to broker localhost:9092/1 (rktp 0x70b51c07e050, term 0, ref 3)
+%7|1794421755.115|BRKDELGT|Kafka Consumer Test#producer-1226| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0]: delegating to broker localhost:9092/1 for partition with 0 messages (0 bytes) queued
+%7|1794421755.128|BRKMIGR|Kafka Consumer Test#producer-1226| [thrd:main]: Migrating topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0] 0x70b51c07e050 from (none) to localhost:9092/1 (sending PARTITION_JOIN to localhost:9092/1)
+%7|1794421755.139|METADATA|Kafka Consumer Test#producer-1226| [thrd:main]: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] Leader 1 Epoch 0
+%7|1794421755.155|BROKER|Kafka Consumer Test#producer-1226| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1]: leader -1 epoch -1 -> leader 1 epoch 0
+%7|1794421755.177|LEADER|Kafka Consumer Test#producer-1226| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1]: applying leader-id update -1 -> 1 (epoch 0)
+%7|1794421755.206|BRKDELGT|Kafka Consumer Test#producer-1226| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1]: delegate to broker localhost:9092/1 (rktp 0x70b51c0aec20, term 0, ref 3)
+%7|1794421755.256|BRKDELGT|Kafka Consumer Test#producer-1226| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1]: delegating to broker localhost:9092/1 for partition with 0 messages (0 bytes) queued
+%7|1794421755.280|BRKMIGR|Kafka Consumer Test#producer-1226| [thrd:main]: Migrating topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] 0x70b51c0aec20 from (none) to localhost:9092/1 (sending PARTITION_JOIN to localhost:9092/1)
+%7|1794421755.139|TOPBRK|Kafka Consumer Test#producer-1226| [thrd:localhost:9092/1]: localhost:9092/1: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0]: joining broker (rktp 0x70b51c07e050, 0 message(s) queued)
+%7|1794421755.337|FETCHADD|Kafka Consumer Test#producer-1226| [thrd:localhost:9092/1]: localhost:9092/1: Added 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0] to active list (1 entries, opv 0, 0 messages queued): joining
+%7|1794421755.355|TOPBRK|Kafka Consumer Test#producer-1226| [thrd:localhost:9092/1]: localhost:9092/1: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1]: joining broker (rktp 0x70b51c0aec20, 0 message(s) queued)
+%7|1794421755.375|FETCHADD|Kafka Consumer Test#producer-1226| [thrd:localhost:9092/1]: localhost:9092/1: Added 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] to active list (2 entries, opv 0, 0 messages queued): joining
+%7|1794421755.305|METADATA|Kafka Consumer Test#producer-1226| [thrd:main]: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2] Leader 1 Epoch 0
+%7|1794421755.427|BROKER|Kafka Consumer Test#producer-1226| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2]: leader -1 epoch -1 -> leader 1 epoch 0
+%7|1794421755.445|LEADER|Kafka Consumer Test#producer-1226| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2]: applying leader-id update -1 -> 1 (epoch 0)
+%7|1794421755.478|BRKDELGT|Kafka Consumer Test#producer-1226| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2]: delegate to broker localhost:9092/1 (rktp 0x70b51c0af0e0, term 0, ref 3)
+%7|1794421755.491|BRKDELGT|Kafka Consumer Test#producer-1226| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2]: delegating to broker localhost:9092/1 for partition with 0 messages (0 bytes) queued
+%7|1794421755.495|BRKMIGR|Kafka Consumer Test#producer-1226| [thrd:main]: Migrating topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2] 0x70b51c0af0e0 from (none) to localhost:9092/1 (sending PARTITION_JOIN to localhost:9092/1)
+%7|1794421755.502|PARTCNT|Kafka Consumer Test#producer-1226| [thrd:main]: Partitioning 0 unassigned messages in topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 to 3 partitions
+%7|1794421755.507|UAS|Kafka Consumer Test#producer-1226| [thrd:main]: 0/0 messages were partitioned in topic 21fcbf65-6004-46b1-ab66-ba40789a4b17
+%7|1794421755.502|TOPBRK|Kafka Consumer Test#producer-1226| [thrd:localhost:9092/1]: localhost:9092/1: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2]: joining broker (rktp 0x70b51c0af0e0, 0 message(s) queued)
+%7|1794421755.511|FETCHADD|Kafka Consumer Test#producer-1226| [thrd:localhost:9092/1]: localhost:9092/1: Added 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2] to active list (3 entries, opv 0, 0 messages queued): joining
+%7|1794421755.509|METADATA|Kafka Consumer Test#producer-1226| [thrd:main]: localhost:9092/1: 1/1 requested topic(s) seen in metadata (lookup by name)
+%7|1794421755.515|METADATA|Kafka Consumer Test#producer-1226| [thrd:main]: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0] Leader 1 Epoch 0
+%7|1794421755.517|BROKER|Kafka Consumer Test#producer-1226| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0]: leader 1 epoch 0 -> leader 1 epoch 0
+%7|1794421755.519|METADATA|Kafka Consumer Test#producer-1226| [thrd:main]: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] Leader 1 Epoch 0
+%7|1794421755.521|BROKER|Kafka Consumer Test#producer-1226| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1]: leader 1 epoch 0 -> leader 1 epoch 0
+%7|1794421755.523|METADATA|Kafka Consumer Test#producer-1226| [thrd:main]: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2] Leader 1 Epoch 0
+%7|1794421755.527|BROKER|Kafka Consumer Test#producer-1226| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2]: leader 1 epoch 0 -> leader 1 epoch 0
+%7|1794421755.535|METADATA|Kafka Consumer Test#producer-1226| [thrd:main]: localhost:9092/1: 1/1 requested topic(s) seen in metadata (lookup by name)
+%7|1794421755.743|DESTROY|Kafka Consumer Test#producer-1226| [thrd:app]: Terminating instance (destroy flags none (0x0))
+%7|1794421755.758|DESTROY|Kafka Consumer Test#producer-1226| [thrd:main]: Destroy internal
+%7|1794421755.776|DESTROY|Kafka Consumer Test#producer-1226| [thrd:main]: Removing all topics
+%7|1794421755.782|PARTCNT|Kafka Consumer Test#producer-1226| [thrd:main]: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 (id Lqx8jrhHT+WiK89OHsHd5g) partition count changed from 3 to 0
+%7|1794421755.786|REMOVE|Kafka Consumer Test#producer-1226| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0] no longer reported in metadata
+%7|1794421755.790|BRKMIGR|Kafka Consumer Test#producer-1226| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0] 0x70b51c07e050 sending final LEAVE for removal by localhost:9092/1
+%7|1794421755.792|REMOVE|Kafka Consumer Test#producer-1226| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] no longer reported in metadata
+%7|1794421755.794|BRKMIGR|Kafka Consumer Test#producer-1226| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] 0x70b51c0aec20 sending final LEAVE for removal by localhost:9092/1
+%7|1794421755.797|REMOVE|Kafka Consumer Test#producer-1226| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2] no longer reported in metadata
+%7|1794421755.799|BRKMIGR|Kafka Consumer Test#producer-1226| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2] 0x70b51c0af0e0 sending final LEAVE for removal by localhost:9092/1
+%7|1794421755.803|TOPPARREMOVE|Kafka Consumer Test#producer-1226| [thrd:main]: Removing toppar 21fcbf65-6004-46b1-ab66-ba40789a4b17 [-1] 0x70b5d4171310
+%7|1794421755.805|DESTROY|Kafka Consumer Test#producer-1226| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [-1]: 0x70b5d4171310 DESTROY_FINAL
+%7|1794421755.808|TOPBRK|Kafka Consumer Test#producer-1226| [thrd:localhost:9092/1]: localhost:9092/1: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0]: leaving broker (0 messages in xmitq, next broker (none), rktp 0x70b51c07e050)
+%7|1794421755.811|FETCHADD|Kafka Consumer Test#producer-1226| [thrd:localhost:9092/1]: localhost:9092/1: Removed 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0] from active list (2 entries, opv 0): leaving
+%7|1794421755.814|TOPBRK|Kafka Consumer Test#producer-1226| [thrd:localhost:9092/1]: localhost:9092/1: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0]: no next broker, failing 0 message(s) in partition queue
+%7|1794421755.820|TOPPARREMOVE|Kafka Consumer Test#producer-1226| [thrd:localhost:9092/1]: Removing toppar 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0] 0x70b51c07e050
+%7|1794421755.829|DESTROY|Kafka Consumer Test#producer-1226| [thrd:localhost:9092/1]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0]: 0x70b51c07e050 DESTROY_FINAL
+%7|1794421755.869|TOPBRK|Kafka Consumer Test#producer-1226| [thrd:localhost:9092/1]: localhost:9092/1: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1]: leaving broker (0 messages in xmitq, next broker (none), rktp 0x70b51c0aec20)
+%7|1794421755.876|FETCHADD|Kafka Consumer Test#producer-1226| [thrd:localhost:9092/1]: localhost:9092/1: Removed 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] from active list (1 entries, opv 0): leaving
+%7|1794421755.879|TOPBRK|Kafka Consumer Test#producer-1226| [thrd:localhost:9092/1]: localhost:9092/1: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1]: no next broker, failing 0 message(s) in partition queue
+%7|1794421755.884|TOPPARREMOVE|Kafka Consumer Test#producer-1226| [thrd:localhost:9092/1]: Removing toppar 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] 0x70b51c0aec20
+%7|1794421755.887|DESTROY|Kafka Consumer Test#producer-1226| [thrd:localhost:9092/1]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1]: 0x70b51c0aec20 DESTROY_FINAL
+%7|1794421755.888|TOPBRK|Kafka Consumer Test#producer-1226| [thrd:localhost:9092/1]: localhost:9092/1: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2]: leaving broker (0 messages in xmitq, next broker (none), rktp 0x70b51c0af0e0)
+%7|1794421755.892|FETCHADD|Kafka Consumer Test#producer-1226| [thrd:localhost:9092/1]: localhost:9092/1: Removed 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2] from active list (0 entries, opv 0): leaving
+%7|1794421755.894|TOPBRK|Kafka Consumer Test#producer-1226| [thrd:localhost:9092/1]: localhost:9092/1: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2]: no next broker, failing 0 message(s) in partition queue
+%7|1794421755.896|TOPPARREMOVE|Kafka Consumer Test#producer-1226| [thrd:localhost:9092/1]: Removing toppar 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2] 0x70b51c0af0e0
+%7|1794421755.898|DESTROY|Kafka Consumer Test#producer-1226| [thrd:localhost:9092/1]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2]: 0x70b51c0af0e0 DESTROY_FINAL
+%7|1794421755.901|MEMBERID|Kafka Consumer Test#consumer-1227| [thrd:app]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": updating member id "(not-set)" -> ""
+%7|1794421755.904|CGRPSTATE|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" changed state init -> query-coord (join-state init)
+%7|1794421755.904|INIT|Kafka Consumer Test#consumer-1227| [thrd:app]: librdkafka v2.15.1 (0x20f01ff) Kafka Consumer Test#consumer-1227 initialized (builtin.features gzip,snappy,ssl,sasl,regex,lz4,sasl_plain,sasl_scram,plugins,zstd,sasl_oauthbearer,http,oidc, STRIP STATIC_LINKING GCC GXX PKGCONFIG INSTALL GNULD LDS C11THREADS LIBDL PLUGINS ZLIB SSL ZSTD CURL HDRHISTOGRAM SYSLOG SNAPPY SOCKEM SASL_SCRAM SASL_OAUTHBEARER OAUTHBEARER_OIDC CRC32C_HW, debug 0x2104)
+%7|1794421755.908|CGRPQUERY|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": no broker available for coordinator query: intervaled in state query-coord
+%7|1794421755.914|CGRPOP|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" received op SUBSCRIBE in state query-coord (join-state init)
+%7|1794421755.915|SUBSCRIBE|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": subscribe to new subscription of 1 topics (join-state init)
+%7|1794421755.917|CGRPQUERY|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": no broker available for coordinator query: intervaled in state query-coord
+%7|1794421755.919|CGRPQUERY|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": no broker available for coordinator query: intervaled in state query-coord
+%7|1794421755.923|CGRPQUERY|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": no broker available for coordinator query: intervaled in state query-coord
+%7|1794421755.926|CGRPQUERY|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": no broker available for coordinator query: intervaled in state query-coord
+%7|1794421755.959|CGRPQUERY|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": no broker available for coordinator query: intervaled in state query-coord
+%7|1794421755.985|CGRPQUERY|Kafka Consumer Test#consumer-1227| [thrd:main]: localhost:9092/1: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": querying for coordinator: intervaled in state query-coord
+%7|1794421755.987|CGRPSTATE|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" changed state query-coord -> wait-coord (join-state init)
+%7|1794421755.990|CGRPCOORD|Kafka Consumer Test#consumer-1227| [thrd:main]: localhost:9092/1: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" coordinator is localhost:9092 id 1
+%7|1794421755.992|CGRPCOORD|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" changing coordinator -1 -> 1
+%7|1794421755.994|COORDSET|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" coordinator set to broker localhost:9092/1
+%7|1794421755.996|CGRPSTATE|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" changed state wait-coord -> wait-broker-transport (join-state init)
+%7|1794421755.998|CGRPQUERY|Kafka Consumer Test#consumer-1227| [thrd:main]: localhost:9092/1: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": querying for coordinator: intervaled in state wait-broker-transport
+%7|1794421756.002|CGRPSTATE|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" changed state wait-broker-transport -> up (join-state init)
+%7|1794421756.004|JOIN|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": join with 0 subscribed topic(s)
+%7|1794421756.007|CGRPMETADATA|Kafka Consumer Test#consumer-1227| [thrd:main]: consumer join: metadata for subscription only available for 0/1 topics (-1ms old)
+%7|1794421756.010|JOIN|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": postponing join until up-to-date metadata is available
+%7|1794421756.012|CGRPJOINSTATE|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" changed join state init -> wait-metadata (state up)
+%7|1794421756.014|DUMP|Kafka Consumer Test#consumer-1227| [thrd:main]: Assignment dump (started_cnt=0, wait_stop_cnt=0)
+%7|1794421756.016|DUMP_ALL|Kafka Consumer Test#consumer-1227| [thrd:main]: List with 0 partition(s):
+%7|1794421756.018|DUMP_PND|Kafka Consumer Test#consumer-1227| [thrd:main]: List with 0 partition(s):
+%7|1794421756.020|DUMP_QRY|Kafka Consumer Test#consumer-1227| [thrd:main]: List with 0 partition(s):
+%7|1794421756.023|DUMP_REM|Kafka Consumer Test#consumer-1227| [thrd:main]: List with 0 partition(s):
+%7|1794421756.027|ASSIGNDONE|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": assignment operations done in join-state wait-metadata (rebalance rejoin=false)
+%7|1794421756.029|CGRPCOORD|Kafka Consumer Test#consumer-1227| [thrd:main]: localhost:9092/1: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" coordinator is localhost:9092 id 1
+%7|1794421756.032|METADATA|Kafka Consumer Test#consumer-1227| [thrd:main]: localhost:9092/1: 1/1 requested topic(s) seen in metadata (lookup by name)
+%7|1794421756.035|SUBSCRIPTION|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": effective subscription list changed from 0 to 1 topic(s):
+%7|1794421756.036|SUBSCRIPTION|Kafka Consumer Test#consumer-1227| [thrd:main]:  Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 with 3 partition(s)
+%7|1794421756.038|REJOIN|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": subscription updated from metadata change: rejoining group in state wait-metadata
+%7|1794421756.041|GRPLEADER|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": resetting group leader info: group (re)join
+%7|1794421756.042|REJOIN|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" (re)joining in join-state wait-metadata with 0 assigned partition(s): Metadata for subscribed topic(s) has changed
+%7|1794421756.044|REBALANCE|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" initiating rebalance (NONE) in state up (join-state wait-metadata) with 0 assigned partition(s): Metadata for subscribed topic(s) has changed
+%7|1794421756.046|REJOIN|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": Rejoining group without an assignment: Metadata for subscribed topic(s) has changed
+%7|1794421756.049|CGRPJOINSTATE|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" changed join state wait-metadata -> init (state up)
+%7|1794421756.051|JOIN|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": join with 1 subscribed topic(s)
+%7|1794421756.055|CGRPMETADATA|Kafka Consumer Test#consumer-1227| [thrd:main]: consumer join: metadata for subscription is up to date (22ms old)
+%7|1794421756.058|JOIN|Kafka Consumer Test#consumer-1227| [thrd:main]: localhost:9092/1: Joining group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" with 1 subscribed topic(s) and member id ""
+%7|1794421756.078|CGRPJOINSTATE|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" changed join state init -> wait-join (state up)
+%7|1794421756.096|JOINGROUP|Kafka Consumer Test#consumer-1227| [thrd:main]: JoinGroup response: GenerationId -1, Protocol , LeaderId , my MemberId Kafka Consumer Test-29f13a4f-3030-4af1-ab65-fbdd57ea5f94, member metadata count 0: Broker: Group member needs a valid member ID
+%7|1794421756.100|MEMBERID|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": updating member id "" -> "Kafka Consumer Test-29f13a4f-3030-4af1-ab65-fbdd57ea5f94"
+%7|1794421756.104|REJOIN|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": Rejoining group without an assignment: JoinGroup error: Broker: Group member needs a valid member ID
+%7|1794421756.108|CGRPJOINSTATE|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" changed join state wait-join -> init (state up)
+%7|1794421756.111|JOIN|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": join with 1 subscribed topic(s)
+%7|1794421756.113|CGRPMETADATA|Kafka Consumer Test#consumer-1227| [thrd:main]: consumer join: metadata for subscription is up to date (81ms old)
+%7|1794421756.115|JOIN|Kafka Consumer Test#consumer-1227| [thrd:main]: localhost:9092/1: Joining group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" with 1 subscribed topic(s) and member id "Kafka Consumer Test-29f13a4f-3030-4af1-ab65-fbdd57ea5f94"
+%7|1794421756.117|CGRPJOINSTATE|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" changed join state init -> wait-join (state up)
+%7|1794421756.123|JOINGROUP|Kafka Consumer Test#consumer-1227| [thrd:main]: JoinGroup response: GenerationId 1, Protocol roundrobin, LeaderId Kafka Consumer Test-29f13a4f-3030-4af1-ab65-fbdd57ea5f94 (me), my MemberId Kafka Consumer Test-29f13a4f-3030-4af1-ab65-fbdd57ea5f94, member metadata count 1: (no error)
+%7|1794421756.125|JOINGROUP|Kafka Consumer Test#consumer-1227| [thrd:main]: I am elected leader for group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" with 1 member(s)
+%7|1794421756.128|GRPLEADER|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": resetting group leader info: JoinGroup response clean-up
+%7|1794421756.130|CGRPJOINSTATE|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" changed join state wait-join -> wait-metadata (state up)
+%7|1794421756.157|METADATA|Kafka Consumer Test#consumer-1227| [thrd:main]: GroupCoordinator/1: 1/1 requested topic(s) seen in metadata (lookup by name)
+%7|1794421756.164|ASSIGN|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" running roundrobin assignor for 1 member(s) and 1 eligible subscribed topic(s):
+%7|1794421756.166|ASSIGN|Kafka Consumer Test#consumer-1227| [thrd:main]:  Member "Kafka Consumer Test-29f13a4f-3030-4af1-ab65-fbdd57ea5f94" (me) with 0 owned partition(s) and 1 subscribed topic(s):
+%7|1794421756.169|ASSIGN|Kafka Consumer Test#consumer-1227| [thrd:main]:   21fcbf65-6004-46b1-ab66-ba40789a4b17 [-1]
+%7|1794421756.172|ASSIGN|Kafka Consumer Test#consumer-1227| [thrd:main]: roundrobin: Member "Kafka Consumer Test-29f13a4f-3030-4af1-ab65-fbdd57ea5f94": assigned topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 partition 0
+%7|1794421756.174|ASSIGN|Kafka Consumer Test#consumer-1227| [thrd:main]: roundrobin: Member "Kafka Consumer Test-29f13a4f-3030-4af1-ab65-fbdd57ea5f94": assigned topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 partition 1
+%7|1794421756.176|ASSIGN|Kafka Consumer Test#consumer-1227| [thrd:main]: roundrobin: Member "Kafka Consumer Test-29f13a4f-3030-4af1-ab65-fbdd57ea5f94": assigned topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 partition 2
+%7|1794421756.179|ASSIGN|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" roundrobin assignment for 1 member(s) finished in 14.738ms:
+%7|1794421756.181|ASSIGN|Kafka Consumer Test#consumer-1227| [thrd:main]:  Member "Kafka Consumer Test-29f13a4f-3030-4af1-ab65-fbdd57ea5f94" (me) assigned 3 partition(s):
+%7|1794421756.182|ASSIGN|Kafka Consumer Test#consumer-1227| [thrd:main]:   21fcbf65-6004-46b1-ab66-ba40789a4b17 [0]
+%7|1794421756.184|ASSIGN|Kafka Consumer Test#consumer-1227| [thrd:main]:   21fcbf65-6004-46b1-ab66-ba40789a4b17 [1]
+%7|1794421756.185|ASSIGN|Kafka Consumer Test#consumer-1227| [thrd:main]:   21fcbf65-6004-46b1-ab66-ba40789a4b17 [2]
+%7|1794421756.187|ASSIGNOR|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": "roundrobin" assignor run for 1 member(s)
+%7|1794421756.192|CGRPJOINSTATE|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" changed join state wait-metadata -> wait-sync (state up)
+%7|1794421756.202|SYNCGROUP|Kafka Consumer Test#consumer-1227| [thrd:main]: SyncGroup response: Success (64 bytes of MemberState data)
+%7|1794421756.205|ASSIGNMENT|Kafka Consumer Test#consumer-1227| [thrd:main]: List with 3 partition(s):
+%7|1794421756.207|ASSIGNMENT|Kafka Consumer Test#consumer-1227| [thrd:main]:  21fcbf65-6004-46b1-ab66-ba40789a4b17 [0] offset INVALID
+%7|1794421756.209|ASSIGNMENT|Kafka Consumer Test#consumer-1227| [thrd:main]:  21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] offset INVALID
+%7|1794421756.211|ASSIGNMENT|Kafka Consumer Test#consumer-1227| [thrd:main]:  21fcbf65-6004-46b1-ab66-ba40789a4b17 [2] offset INVALID
+%7|1794421756.213|CGRPJOINSTATE|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" changed join state wait-sync -> wait-assign-call (state up)
+%7|1794421756.230|ASSIGN|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": delegating assign of 3 partition(s) to application on queue rd_kafka_cgrp_new: new assignment
+%7|1794421756.248|ASSIGNMENT|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": setting group assignment to 3 partition(s)
+%7|1794421756.251|GRPASSIGNMENT|Kafka Consumer Test#consumer-1227| [thrd:main]: List with 3 partition(s):
+%7|1794421756.252|GRPASSIGNMENT|Kafka Consumer Test#consumer-1227| [thrd:main]:  21fcbf65-6004-46b1-ab66-ba40789a4b17 [0] offset INVALID
+%7|1794421756.254|GRPASSIGNMENT|Kafka Consumer Test#consumer-1227| [thrd:main]:  21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] offset INVALID
+%7|1794421756.258|GRPASSIGNMENT|Kafka Consumer Test#consumer-1227| [thrd:main]:  21fcbf65-6004-46b1-ab66-ba40789a4b17 [2] offset INVALID
+%7|1794421756.260|HEARTBEAT|Kafka Consumer Test#consumer-1227| [thrd:main]: GroupCoordinator/1: Heartbeat for group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" generation id 1
+%7|1794421756.262|CGRPOP|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" received op GET_REBALANCE_PROTOCOL in state up (join-state wait-assign-call)
+%7|1794421756.265|CGRPOP|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" received op GET_REBALANCE_PROTOCOL in state up (join-state wait-assign-call)
+%7|1794421756.267|CGRPOP|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" received op ASSIGN in state up (join-state wait-assign-call)
+%7|1794421756.269|ASSIGN|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": new assignment of 3 partition(s) in join-state wait-assign-call
+%7|1794421756.270|CLEARASSIGN|Kafka Consumer Test#consumer-1227| [thrd:main]: No current assignment to clear
+%7|1794421756.272|TOPIC|Kafka Consumer Test#consumer-1227| [thrd:main]: New local topic: 21fcbf65-6004-46b1-ab66-ba40789a4b17
+%7|1794421756.274|TOPPARNEW|Kafka Consumer Test#consumer-1227| [thrd:main]: NEW 21fcbf65-6004-46b1-ab66-ba40789a4b17 [-1] 0x70b74c069a50 refcnt 0x70b74c069ae0 (at rd_kafka_topic_new0:489)
+%7|1794421756.276|STATE|Kafka Consumer Test#consumer-1227| [thrd:main]: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 changed state unknown -> exists
+%7|1794421756.278|PARTCNT|Kafka Consumer Test#consumer-1227| [thrd:main]: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 (id AAAAAAAAAAAAAAAAAAAAAA) partition count changed from 0 to 3
+%7|1794421756.283|TOPPARNEW|Kafka Consumer Test#consumer-1227| [thrd:main]: NEW 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0] 0x70b74c0bd350 refcnt 0x70b74c0bd3e0 (at rd_kafka_topic_partition_cnt_update:1155)
+%7|1794421756.285|TOPPARNEW|Kafka Consumer Test#consumer-1227| [thrd:main]: NEW 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] 0x70b74c044000 refcnt 0x70b74c044090 (at rd_kafka_topic_partition_cnt_update:1155)
+%7|1794421756.291|TOPPARNEW|Kafka Consumer Test#consumer-1227| [thrd:main]: NEW 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2] 0x70b74c0058c0 refcnt 0x70b74c005950 (at rd_kafka_topic_partition_cnt_update:1155)
+%7|1794421756.293|METADATA|Kafka Consumer Test#consumer-1227| [thrd:main]: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 changed id from AAAAAAAAAAAAAAAAAAAAAA to Lqx8jrhHT+WiK89OHsHd5g
+%7|1794421756.296|METADATA|Kafka Consumer Test#consumer-1227| [thrd:main]: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0] Leader 1 Epoch 0
+%7|1794421756.300|BROKER|Kafka Consumer Test#consumer-1227| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0]: leader -1 epoch -1 -> leader 1 epoch 0
+%7|1794421756.304|LEADER|Kafka Consumer Test#consumer-1227| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0]: applying leader-id update -1 -> 1 (epoch 0)
+%7|1794421756.307|BRKDELGT|Kafka Consumer Test#consumer-1227| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0]: delegate to broker localhost:9092/1 (rktp 0x70b74c0bd350, term 0, ref 3)
+%7|1794421756.309|BRKDELGT|Kafka Consumer Test#consumer-1227| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0]: delegating to broker localhost:9092/1 for partition with 0 messages (0 bytes) queued
+%7|1794421756.311|BRKMIGR|Kafka Consumer Test#consumer-1227| [thrd:main]: Migrating topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0] 0x70b74c0bd350 from (none) to localhost:9092/1 (sending PARTITION_JOIN to localhost:9092/1)
+%7|1794421756.320|METADATA|Kafka Consumer Test#consumer-1227| [thrd:main]: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] Leader 1 Epoch 0
+%7|1794421756.322|BROKER|Kafka Consumer Test#consumer-1227| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1]: leader -1 epoch -1 -> leader 1 epoch 0
+%7|1794421756.320|TOPBRK|Kafka Consumer Test#consumer-1227| [thrd:localhost:9092/1]: localhost:9092/1: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0]: joining broker (rktp 0x70b74c0bd350, 0 message(s) queued)
+%7|1794421756.324|LEADER|Kafka Consumer Test#consumer-1227| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1]: applying leader-id update -1 -> 1 (epoch 0)
+%7|1794421756.327|BRKDELGT|Kafka Consumer Test#consumer-1227| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1]: delegate to broker localhost:9092/1 (rktp 0x70b74c044000, term 0, ref 3)
+%7|1794421756.330|BRKDELGT|Kafka Consumer Test#consumer-1227| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1]: delegating to broker localhost:9092/1 for partition with 0 messages (0 bytes) queued
+%7|1794421756.333|BRKMIGR|Kafka Consumer Test#consumer-1227| [thrd:main]: Migrating topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] 0x70b74c044000 from (none) to localhost:9092/1 (sending PARTITION_JOIN to localhost:9092/1)
+%7|1794421756.334|METADATA|Kafka Consumer Test#consumer-1227| [thrd:main]: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2] Leader 1 Epoch 0
+%7|1794421756.337|BROKER|Kafka Consumer Test#consumer-1227| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2]: leader -1 epoch -1 -> leader 1 epoch 0
+%7|1794421756.339|LEADER|Kafka Consumer Test#consumer-1227| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2]: applying leader-id update -1 -> 1 (epoch 0)
+%7|1794421756.341|BRKDELGT|Kafka Consumer Test#consumer-1227| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2]: delegate to broker localhost:9092/1 (rktp 0x70b74c0058c0, term 0, ref 3)
+%7|1794421756.361|BRKDELGT|Kafka Consumer Test#consumer-1227| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2]: delegating to broker localhost:9092/1 for partition with 0 messages (0 bytes) queued
+%7|1794421756.392|BRKMIGR|Kafka Consumer Test#consumer-1227| [thrd:main]: Migrating topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2] 0x70b74c0058c0 from (none) to localhost:9092/1 (sending PARTITION_JOIN to localhost:9092/1)
+%7|1794421756.408|DESIRED|Kafka Consumer Test#consumer-1227| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0]: marking as DESIRED
+%7|1794421756.334|TOPBRK|Kafka Consumer Test#consumer-1227| [thrd:localhost:9092/1]: localhost:9092/1: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1]: joining broker (rktp 0x70b74c044000, 0 message(s) queued)
+%7|1794421756.424|TOPBRK|Kafka Consumer Test#consumer-1227| [thrd:localhost:9092/1]: localhost:9092/1: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2]: joining broker (rktp 0x70b74c0058c0, 0 message(s) queued)
+%7|1794421756.424|DESIRED|Kafka Consumer Test#consumer-1227| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1]: marking as DESIRED
+%7|1794421756.433|DESIRED|Kafka Consumer Test#consumer-1227| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2]: marking as DESIRED
+%7|1794421756.438|ASSIGNMENT|Kafka Consumer Test#consumer-1227| [thrd:main]: Added 3 partition(s) to assignment which now consists of 3 partition(s) where of 3 are in pending state and 0 are being queried
+%7|1794421756.440|PAUSE|Kafka Consumer Test#consumer-1227| [thrd:main]: Resuming fetchers for 3 assigned partition(s): assign called
+%7|1794421756.442|RESUME|Kafka Consumer Test#consumer-1227| [thrd:main]: Library resuming 3 partition(s)
+%7|1794421756.444|CGRPJOINSTATE|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" changed join state wait-assign-call -> steady (state up)
+%7|1794421756.446|DUMP|Kafka Consumer Test#consumer-1227| [thrd:main]: Assignment dump (started_cnt=0, wait_stop_cnt=0)
+%7|1794421756.448|DUMP_ALL|Kafka Consumer Test#consumer-1227| [thrd:main]: List with 3 partition(s):
+%7|1794421756.449|DUMP_ALL|Kafka Consumer Test#consumer-1227| [thrd:main]:  21fcbf65-6004-46b1-ab66-ba40789a4b17 [0] offset STORED
+%7|1794421756.451|DUMP_ALL|Kafka Consumer Test#consumer-1227| [thrd:main]:  21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] offset STORED
+%7|1794421756.453|DUMP_ALL|Kafka Consumer Test#consumer-1227| [thrd:main]:  21fcbf65-6004-46b1-ab66-ba40789a4b17 [2] offset STORED
+%7|1794421756.455|DUMP_PND|Kafka Consumer Test#consumer-1227| [thrd:main]: List with 3 partition(s):
+%7|1794421756.457|DUMP_PND|Kafka Consumer Test#consumer-1227| [thrd:main]:  21fcbf65-6004-46b1-ab66-ba40789a4b17 [0] offset STORED
+%7|1794421756.459|DUMP_PND|Kafka Consumer Test#consumer-1227| [thrd:main]:  21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] offset STORED
+%7|1794421756.461|DUMP_PND|Kafka Consumer Test#consumer-1227| [thrd:main]:  21fcbf65-6004-46b1-ab66-ba40789a4b17 [2] offset STORED
+%7|1794421756.464|DUMP_QRY|Kafka Consumer Test#consumer-1227| [thrd:main]: List with 0 partition(s):
+%7|1794421756.466|DUMP_REM|Kafka Consumer Test#consumer-1227| [thrd:main]: List with 0 partition(s):
+%7|1794421756.487|SRVPEND|Kafka Consumer Test#consumer-1227| [thrd:main]: Querying committed offset for pending assigned partition 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2]
+%7|1794421756.499|SRVPEND|Kafka Consumer Test#consumer-1227| [thrd:main]: Querying committed offset for pending assigned partition 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1]
+%7|1794421756.500|SRVPEND|Kafka Consumer Test#consumer-1227| [thrd:main]: Querying committed offset for pending assigned partition 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0]
+%7|1794421756.504|OFFSETFETCH|Kafka Consumer Test#consumer-1227| [thrd:main]: Fetching committed offsets for 3 pending partition(s) in assignment
+%7|1794421756.507|OFFSET|Kafka Consumer Test#consumer-1227| [thrd:main]: GroupCoordinator/1: Group 045ba8a1-fc0f-4e16-8646-4fc17fbedce3 OffsetFetchRequest(v9) for 3/3 partition(s)
+%7|1794421756.509|OFFSET|Kafka Consumer Test#consumer-1227| [thrd:main]: GroupCoordinator/1: Fetch committed offsets for 3/3 partition(s)
+%7|1794421756.511|ASSIGNMENT|Kafka Consumer Test#consumer-1227| [thrd:main]: Current assignment of 3 partition(s) with 3 pending adds, 3 offset queries, 0 partitions awaiting stop and 0 offset commits in progress
+%7|1794421756.514|OFFSETFETCH|Kafka Consumer Test#consumer-1227| [thrd:main]: GroupCoordinator/1: OffsetFetchResponse: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0] offset -1, leader epoch -1, metadata 0 byte(s): NO_ERROR
+%7|1794421756.516|OFFSETFETCH|Kafka Consumer Test#consumer-1227| [thrd:main]: GroupCoordinator/1: OffsetFetchResponse: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] offset -1, leader epoch -1, metadata 0 byte(s): NO_ERROR
+%7|1794421756.519|OFFSETFETCH|Kafka Consumer Test#consumer-1227| [thrd:main]: GroupCoordinator/1: OffsetFetchResponse: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2] offset -1, leader epoch -1, metadata 0 byte(s): NO_ERROR
+%7|1794421756.521|OFFFETCH|Kafka Consumer Test#consumer-1227| [thrd:main]: GroupCoordinator/1: OffsetFetch for 3/3 partition(s) (0 unstable partition(s)) returned Success
+%7|1794421756.523|OFFSETFETCH|Kafka Consumer Test#consumer-1227| [thrd:main]: Adding 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0] back to pending list with offset INVALID
+%7|1794421756.526|OFFSETFETCH|Kafka Consumer Test#consumer-1227| [thrd:main]: Adding 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] back to pending list with offset INVALID
+%7|1794421756.528|OFFSETFETCH|Kafka Consumer Test#consumer-1227| [thrd:main]: Adding 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2] back to pending list with offset INVALID
+%7|1794421756.531|DUMP|Kafka Consumer Test#consumer-1227| [thrd:main]: Assignment dump (started_cnt=0, wait_stop_cnt=0)
+%7|1794421756.534|DUMP_ALL|Kafka Consumer Test#consumer-1227| [thrd:main]: List with 3 partition(s):
+%7|1794421756.537|DUMP_ALL|Kafka Consumer Test#consumer-1227| [thrd:main]:  21fcbf65-6004-46b1-ab66-ba40789a4b17 [0] offset STORED
+%7|1794421756.539|DUMP_ALL|Kafka Consumer Test#consumer-1227| [thrd:main]:  21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] offset STORED
+%7|1794421756.541|DUMP_ALL|Kafka Consumer Test#consumer-1227| [thrd:main]:  21fcbf65-6004-46b1-ab66-ba40789a4b17 [2] offset STORED
+%7|1794421756.542|DUMP_PND|Kafka Consumer Test#consumer-1227| [thrd:main]: List with 3 partition(s):
+%7|1794421756.544|DUMP_PND|Kafka Consumer Test#consumer-1227| [thrd:main]:  21fcbf65-6004-46b1-ab66-ba40789a4b17 [0] offset INVALID
+%7|1794421756.546|DUMP_PND|Kafka Consumer Test#consumer-1227| [thrd:main]:  21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] offset INVALID
+%7|1794421756.549|DUMP_PND|Kafka Consumer Test#consumer-1227| [thrd:main]:  21fcbf65-6004-46b1-ab66-ba40789a4b17 [2] offset INVALID
+%7|1794421756.553|DUMP_QRY|Kafka Consumer Test#consumer-1227| [thrd:main]: List with 0 partition(s):
+%7|1794421756.554|DUMP_REM|Kafka Consumer Test#consumer-1227| [thrd:main]: List with 0 partition(s):
+%7|1794421756.556|SRVPEND|Kafka Consumer Test#consumer-1227| [thrd:main]: Starting pending assigned partition 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2] at offset INVALID (leader epoch -1)
+%7|1794421756.559|BARRIER|Kafka Consumer Test#consumer-1227| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2]: rd_kafka_toppar_op_fetch_start:2390: new version barrier v2
+%7|1794421756.561|CONSUMER|Kafka Consumer Test#consumer-1227| [thrd:main]: Start consuming 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2] at offset INVALID (leader epoch -1) (v2)
+%7|1794421756.562|SRVPEND|Kafka Consumer Test#consumer-1227| [thrd:main]: Starting pending assigned partition 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] at offset INVALID (leader epoch -1)
+%7|1794421756.565|BARRIER|Kafka Consumer Test#consumer-1227| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1]: rd_kafka_toppar_op_fetch_start:2390: new version barrier v2
+%7|1794421756.572|CONSUMER|Kafka Consumer Test#consumer-1227| [thrd:main]: Start consuming 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] at offset INVALID (leader epoch -1) (v2)
+%7|1794421756.590|SRVPEND|Kafka Consumer Test#consumer-1227| [thrd:main]: Starting pending assigned partition 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0] at offset INVALID (leader epoch -1)
+%7|1794421756.606|BARRIER|Kafka Consumer Test#consumer-1227| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0]: rd_kafka_toppar_op_fetch_start:2390: new version barrier v2
+%7|1794421756.609|CONSUMER|Kafka Consumer Test#consumer-1227| [thrd:main]: Start consuming 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0] at offset INVALID (leader epoch -1) (v2)
+%7|1794421756.612|ASSIGNDONE|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": assignment operations done in join-state steady (rebalance rejoin=false)
+%7|1794421756.614|OP|Kafka Consumer Test#consumer-1227| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2] received op FETCH_START (v2) in fetch-state none (opv1)
+%7|1794421756.616|FETCH|Kafka Consumer Test#consumer-1227| [thrd:main]: Start fetch for 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2] in state none at offset INVALID (leader epoch -1) (v2)
+%7|1794421756.617|PARTSTATE|Kafka Consumer Test#consumer-1227| [thrd:main]: Partition 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2] changed fetch state none -> offset-query
+%7|1794421756.620|OFFSET|Kafka Consumer Test#consumer-1227| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2]: offset reset (at offset INVALID (leader epoch -1), broker -1) to offset BEGINNING (leader epoch -1): no previously committed offset available: Local: No offset stored
+%7|1794421756.625|OFFSET|Kafka Consumer Test#consumer-1227| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2]: backoff: (re)starting offset query timer for offset BEGINNING (leader epoch -1)
+%7|1794421756.628|OP|Kafka Consumer Test#consumer-1227| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] received op FETCH_START (v2) in fetch-state none (opv1)
+%7|1794421756.629|FETCH|Kafka Consumer Test#consumer-1227| [thrd:main]: Start fetch for 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] in state none at offset INVALID (leader epoch -1) (v2)
+%7|1794421756.631|PARTSTATE|Kafka Consumer Test#consumer-1227| [thrd:main]: Partition 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] changed fetch state none -> offset-query
+%7|1794421756.635|OFFSET|Kafka Consumer Test#consumer-1227| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1]: offset reset (at offset INVALID (leader epoch -1), broker -1) to offset BEGINNING (leader epoch -1): no previously committed offset available: Local: No offset stored
+%7|1794421756.637|OFFSET|Kafka Consumer Test#consumer-1227| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1]: backoff: (re)starting offset query timer for offset BEGINNING (leader epoch -1)
+%7|1794421756.639|OP|Kafka Consumer Test#consumer-1227| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0] received op FETCH_START (v2) in fetch-state none (opv1)
+%7|1794421756.640|FETCH|Kafka Consumer Test#consumer-1227| [thrd:main]: Start fetch for 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0] in state none at offset INVALID (leader epoch -1) (v2)
+%7|1794421756.642|PARTSTATE|Kafka Consumer Test#consumer-1227| [thrd:main]: Partition 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0] changed fetch state none -> offset-query
+%7|1794421756.645|OFFSET|Kafka Consumer Test#consumer-1227| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0]: offset reset (at offset INVALID (leader epoch -1), broker -1) to offset BEGINNING (leader epoch -1): no previously committed offset available: Local: No offset stored
+%7|1794421756.647|OFFSET|Kafka Consumer Test#consumer-1227| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0]: backoff: (re)starting offset query timer for offset BEGINNING (leader epoch -1)
+%7|1794421756.649|CGRPOP|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" received op PARTITION_JOIN in state up (join-state steady) for 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2]
+%7|1794421756.650|PARTADD|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": add 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2]
+%7|1794421756.652|CGRPOP|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" received op PARTITION_JOIN in state up (join-state steady) for 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1]
+%7|1794421756.654|PARTADD|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": add 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1]
+%7|1794421756.657|CGRPOP|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" received op PARTITION_JOIN in state up (join-state steady) for 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0]
+%7|1794421756.659|PARTADD|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": add 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0]
+%7|1794421756.728|OFFSET|Kafka Consumer Test#consumer-1227| [thrd:main]: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2]: timed offset query for offset BEGINNING (leader epoch -1) in state offset-query
+%7|1794421756.732|OFFREQ|Kafka Consumer Test#consumer-1227| [thrd:main]: localhost:9092/1: Partition 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2]: querying for logical offset BEGINNING (opv 2)
+%7|1794421756.734|PARTSTATE|Kafka Consumer Test#consumer-1227| [thrd:main]: Partition 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2] changed fetch state offset-query -> offset-wait
+%7|1794421756.736|OFFSET|Kafka Consumer Test#consumer-1227| [thrd:localhost:9092/1]: localhost:9092/1: ListOffsetsRequest (v7, opv 2) for 1 topic(s) and 1 partition(s)
+%7|1794421756.739|OFFSET|Kafka Consumer Test#consumer-1227| [thrd:main]: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1]: timed offset query for offset BEGINNING (leader epoch -1) in state offset-query
+%7|1794421756.742|OFFREQ|Kafka Consumer Test#consumer-1227| [thrd:main]: localhost:9092/1: Partition 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1]: querying for logical offset BEGINNING (opv 2)
+%7|1794421756.744|PARTSTATE|Kafka Consumer Test#consumer-1227| [thrd:main]: Partition 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] changed fetch state offset-query -> offset-wait
+%7|1794421756.745|OFFSET|Kafka Consumer Test#consumer-1227| [thrd:main]: localhost:9092/1: Offset reply for topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2] (v2 vs v2)
+%7|1794421756.745|OFFSET|Kafka Consumer Test#consumer-1227| [thrd:localhost:9092/1]: localhost:9092/1: ListOffsetsRequest (v7, opv 2) for 1 topic(s) and 1 partition(s)
+%7|1794421756.747|OFFSET|Kafka Consumer Test#consumer-1227| [thrd:main]: Offset BEGINNING request for 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2] returned offset 0 (0) leader epoch 0
+%7|1794421756.751|PARTSTATE|Kafka Consumer Test#consumer-1227| [thrd:main]: Partition 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2] changed fetch state offset-wait -> active
+%7|1794421756.754|FETCH|Kafka Consumer Test#consumer-1227| [thrd:main]: Partition 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2] start fetching at offset 0 (leader epoch 0)
+%7|1794421756.756|OFFSET|Kafka Consumer Test#consumer-1227| [thrd:main]: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0]: timed offset query for offset 0 (leader epoch 0) in state offset-query
+%7|1794421756.760|OFFREQ|Kafka Consumer Test#consumer-1227| [thrd:main]: localhost:9092/1: Partition 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0]: querying for logical offset BEGINNING (opv 2)
+%7|1794421756.756|FETCHDEC|Kafka Consumer Test#consumer-1227| [thrd:localhost:9092/1]: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2]: fetch decide: updating to version 2 (was 0) at offset 0 (leader epoch 0) (was offset 0 (leader epoch -1))
+%7|1794421756.762|PARTSTATE|Kafka Consumer Test#consumer-1227| [thrd:main]: Partition 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0] changed fetch state offset-query -> offset-wait
+%7|1794421756.763|FETCHADD|Kafka Consumer Test#consumer-1227| [thrd:localhost:9092/1]: localhost:9092/1: Added 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2] to fetch list (1 entries, opv 2, 0 messages queued): fetchable
+%7|1794421756.767|OFFSET|Kafka Consumer Test#consumer-1227| [thrd:main]: localhost:9092/1: Offset reply for topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] (v2 vs v2)
+%7|1794421756.767|OFFSET|Kafka Consumer Test#consumer-1227| [thrd:localhost:9092/1]: localhost:9092/1: ListOffsetsRequest (v7, opv 2) for 1 topic(s) and 1 partition(s)
+%7|1794421756.769|OFFSET|Kafka Consumer Test#consumer-1227| [thrd:main]: Offset BEGINNING request for 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] returned offset 0 (0) leader epoch 0
+%7|1794421756.773|PARTSTATE|Kafka Consumer Test#consumer-1227| [thrd:main]: Partition 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] changed fetch state offset-wait -> active
+%7|1794421756.775|FETCH|Kafka Consumer Test#consumer-1227| [thrd:main]: Partition 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] start fetching at offset 0 (leader epoch 0)
+%7|1794421756.776|FETCHDEC|Kafka Consumer Test#consumer-1227| [thrd:localhost:9092/1]: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1]: fetch decide: updating to version 2 (was 0) at offset 0 (leader epoch 0) (was offset 0 (leader epoch -1))
+%7|1794421756.778|FETCHADD|Kafka Consumer Test#consumer-1227| [thrd:localhost:9092/1]: localhost:9092/1: Added 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] to fetch list (2 entries, opv 2, 0 messages queued): fetchable
+%7|1794421756.787|OFFSET|Kafka Consumer Test#consumer-1227| [thrd:main]: localhost:9092/1: Offset reply for topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0] (v2 vs v2)
+%7|1794421756.806|OFFSET|Kafka Consumer Test#consumer-1227| [thrd:main]: Offset BEGINNING request for 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0] returned offset 0 (0) leader epoch 0
+%7|1794421756.820|PARTSTATE|Kafka Consumer Test#consumer-1227| [thrd:main]: Partition 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0] changed fetch state offset-wait -> active
+%7|1794421756.823|FETCH|Kafka Consumer Test#consumer-1227| [thrd:main]: Partition 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0] start fetching at offset 0 (leader epoch 0)
+%7|1794421756.826|CGRPOP|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" received op OFFSET_COMMIT in state up (join-state steady)
+%7|1794421756.829|COMMIT|Kafka Consumer Test#consumer-1227| [thrd:main]: GroupCoordinator/1: Committing offsets for 1 partition(s) with generation-id 1 in join-state steady: manual
+%7|1794421756.826|FETCHDEC|Kafka Consumer Test#consumer-1227| [thrd:localhost:9092/1]: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0]: fetch decide: updating to version 2 (was 0) at offset 0 (leader epoch 0) (was offset 0 (leader epoch -1))
+%7|1794421756.834|FETCHADD|Kafka Consumer Test#consumer-1227| [thrd:localhost:9092/1]: localhost:9092/1: Added 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0] to fetch list (3 entries, opv 2, 0 messages queued): fetchable
+%7|1794421756.832|OFFSET|Kafka Consumer Test#consumer-1227| [thrd:main]: GroupCoordinator/1: Enqueue OffsetCommitRequest(v9, 1/1 partition(s))): manual
+%7|1794421756.840|CGRPOP|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" received op NAME in state up (join-state steady)
+%7|1794421756.848|COMMIT|Kafka Consumer Test#consumer-1227| [thrd:main]: GroupCoordinator/1: OffsetCommit for 1 partition(s) in join-state steady: manual: returned: Success
+%7|1794421756.850|DUMP|Kafka Consumer Test#consumer-1227| [thrd:main]: Assignment dump (started_cnt=3, wait_stop_cnt=0)
+%7|1794421756.852|DUMP_ALL|Kafka Consumer Test#consumer-1227| [thrd:main]: List with 3 partition(s):
+%7|1794421756.854|DUMP_ALL|Kafka Consumer Test#consumer-1227| [thrd:main]:  21fcbf65-6004-46b1-ab66-ba40789a4b17 [0] offset STORED
+%7|1794421756.857|DUMP_ALL|Kafka Consumer Test#consumer-1227| [thrd:main]:  21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] offset STORED
+%7|1794421756.859|DUMP_ALL|Kafka Consumer Test#consumer-1227| [thrd:main]:  21fcbf65-6004-46b1-ab66-ba40789a4b17 [2] offset STORED
+%7|1794421756.861|DUMP_PND|Kafka Consumer Test#consumer-1227| [thrd:main]: List with 0 partition(s):
+%7|1794421756.864|DUMP_QRY|Kafka Consumer Test#consumer-1227| [thrd:main]: List with 0 partition(s):
+%7|1794421756.866|DUMP_REM|Kafka Consumer Test#consumer-1227| [thrd:main]: List with 0 partition(s):
+%7|1794421756.870|ASSIGNDONE|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": assignment operations done in join-state steady (rebalance rejoin=false)
+%7|1794421757.291|CGRPOP|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" received op NAME in state up (join-state steady)
+%7|1794421757.291|INIT|Kafka Consumer Test#producer-1228| [thrd:app]: librdkafka v2.15.1 (0x20f01ff) Kafka Consumer Test#producer-1228 initialized (builtin.features gzip,snappy,ssl,sasl,regex,lz4,sasl_plain,sasl_scram,plugins,zstd,sasl_oauthbearer,http,oidc, STRIP STATIC_LINKING GCC GXX PKGCONFIG INSTALL GNULD LDS C11THREADS LIBDL PLUGINS ZLIB SSL ZSTD CURL HDRHISTOGRAM SYSLOG SNAPPY SOCKEM SASL_SCRAM SASL_OAUTHBEARER OAUTHBEARER_OIDC CRC32C_HW, debug 0x2104)
+%7|1794421757.307|CGRPOP|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" received op OFFSET_COMMIT in state up (join-state steady)
+%7|1794421757.313|TOPIC|Kafka Consumer Test#producer-1228| [thrd:app]: New local topic: 21fcbf65-6004-46b1-ab66-ba40789a4b17
+%7|1794421757.314|COMMIT|Kafka Consumer Test#consumer-1227| [thrd:main]: GroupCoordinator/1: Committing offsets for 1 partition(s) with generation-id 1 in join-state steady: manual
+%7|1794421757.316|TOPPARNEW|Kafka Consumer Test#producer-1228| [thrd:app]: NEW 21fcbf65-6004-46b1-ab66-ba40789a4b17 [-1] 0x70b628045c70 refcnt 0x70b628045d00 (at rd_kafka_topic_new0:489)
+%7|1794421757.321|FASTQUERY|Kafka Consumer Test#producer-1228| [thrd:app]: Starting fast leader query
+%7|1794421757.318|OFFSET|Kafka Consumer Test#consumer-1227| [thrd:main]: GroupCoordinator/1: Enqueue OffsetCommitRequest(v9, 1/1 partition(s))): manual
+%7|1794421757.340|COMMIT|Kafka Consumer Test#consumer-1227| [thrd:main]: GroupCoordinator/1: OffsetCommit for 1 partition(s) in join-state steady: manual: returned: Success
+%7|1794421757.342|DUMP|Kafka Consumer Test#consumer-1227| [thrd:main]: Assignment dump (started_cnt=3, wait_stop_cnt=0)
+%7|1794421757.344|DUMP_ALL|Kafka Consumer Test#consumer-1227| [thrd:main]: List with 3 partition(s):
+%7|1794421757.346|DUMP_ALL|Kafka Consumer Test#consumer-1227| [thrd:main]:  21fcbf65-6004-46b1-ab66-ba40789a4b17 [0] offset STORED
+%7|1794421757.346|STATE|Kafka Consumer Test#producer-1228| [thrd:main]: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 changed state unknown -> exists
+%7|1794421757.349|PARTCNT|Kafka Consumer Test#producer-1228| [thrd:main]: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 (id AAAAAAAAAAAAAAAAAAAAAA) partition count changed from 0 to 3
+%7|1794421757.348|DUMP_ALL|Kafka Consumer Test#consumer-1227| [thrd:main]:  21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] offset STORED
+%7|1794421757.351|TOPPARNEW|Kafka Consumer Test#producer-1228| [thrd:main]: NEW 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0] 0x70b5d408f6e0 refcnt 0x70b5d408f770 (at rd_kafka_topic_partition_cnt_update:1155)
+%7|1794421757.362|DUMP_ALL|Kafka Consumer Test#consumer-1227| [thrd:main]:  21fcbf65-6004-46b1-ab66-ba40789a4b17 [2] offset STORED
+%7|1794421757.366|DUMP_PND|Kafka Consumer Test#consumer-1227| [thrd:main]: List with 0 partition(s):
+%7|1794421757.367|DUMP_QRY|Kafka Consumer Test#consumer-1227| [thrd:main]: List with 0 partition(s):
+%7|1794421757.368|DUMP_REM|Kafka Consumer Test#consumer-1227| [thrd:main]: List with 0 partition(s):
+%7|1794421757.369|ASSIGNDONE|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": assignment operations done in join-state steady (rebalance rejoin=false)
+%7|1794421757.364|TOPPARNEW|Kafka Consumer Test#producer-1228| [thrd:main]: NEW 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] 0x70b5d4046710 refcnt 0x70b5d40467a0 (at rd_kafka_topic_partition_cnt_update:1155)
+%7|1794421757.372|TOPPARNEW|Kafka Consumer Test#producer-1228| [thrd:main]: NEW 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2] 0x70b5d4171dd0 refcnt 0x70b5d4171e60 (at rd_kafka_topic_partition_cnt_update:1155)
+%7|1794421757.382|METADATA|Kafka Consumer Test#producer-1228| [thrd:main]: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 changed id from AAAAAAAAAAAAAAAAAAAAAA to Lqx8jrhHT+WiK89OHsHd5g
+%7|1794421757.406|METADATA|Kafka Consumer Test#producer-1228| [thrd:main]: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0] Leader 1 Epoch 0
+%7|1794421757.417|BROKER|Kafka Consumer Test#producer-1228| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0]: leader -1 epoch -1 -> leader 1 epoch 0
+%7|1794421757.419|LEADER|Kafka Consumer Test#producer-1228| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0]: applying leader-id update -1 -> 1 (epoch 0)
+%7|1794421757.420|BRKDELGT|Kafka Consumer Test#producer-1228| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0]: delegate to broker localhost:9092/1 (rktp 0x70b5d408f6e0, term 0, ref 3)
+%7|1794421757.422|BRKDELGT|Kafka Consumer Test#producer-1228| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0]: delegating to broker localhost:9092/1 for partition with 0 messages (0 bytes) queued
+%7|1794421757.424|BRKMIGR|Kafka Consumer Test#producer-1228| [thrd:main]: Migrating topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0] 0x70b5d408f6e0 from (none) to localhost:9092/1 (sending PARTITION_JOIN to localhost:9092/1)
+%7|1794421757.426|METADATA|Kafka Consumer Test#producer-1228| [thrd:main]: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] Leader 1 Epoch 0
+%7|1794421757.427|BROKER|Kafka Consumer Test#producer-1228| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1]: leader -1 epoch -1 -> leader 1 epoch 0
+%7|1794421757.429|LEADER|Kafka Consumer Test#producer-1228| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1]: applying leader-id update -1 -> 1 (epoch 0)
+%7|1794421757.431|BRKDELGT|Kafka Consumer Test#producer-1228| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1]: delegate to broker localhost:9092/1 (rktp 0x70b5d4046710, term 0, ref 3)
+%7|1794421757.433|BRKDELGT|Kafka Consumer Test#producer-1228| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1]: delegating to broker localhost:9092/1 for partition with 0 messages (0 bytes) queued
+%7|1794421757.435|BRKMIGR|Kafka Consumer Test#producer-1228| [thrd:main]: Migrating topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] 0x70b5d4046710 from (none) to localhost:9092/1 (sending PARTITION_JOIN to localhost:9092/1)
+%7|1794421757.426|TOPBRK|Kafka Consumer Test#producer-1228| [thrd:localhost:9092/1]: localhost:9092/1: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0]: joining broker (rktp 0x70b5d408f6e0, 0 message(s) queued)
+%7|1794421757.439|FETCHADD|Kafka Consumer Test#producer-1228| [thrd:localhost:9092/1]: localhost:9092/1: Added 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0] to active list (1 entries, opv 0, 0 messages queued): joining
+%7|1794421757.437|METADATA|Kafka Consumer Test#producer-1228| [thrd:main]: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2] Leader 1 Epoch 0
+%7|1794421757.443|BROKER|Kafka Consumer Test#producer-1228| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2]: leader -1 epoch -1 -> leader 1 epoch 0
+%7|1794421757.445|LEADER|Kafka Consumer Test#producer-1228| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2]: applying leader-id update -1 -> 1 (epoch 0)
+%7|1794421757.447|BRKDELGT|Kafka Consumer Test#producer-1228| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2]: delegate to broker localhost:9092/1 (rktp 0x70b5d4171dd0, term 0, ref 3)
+%7|1794421757.449|BRKDELGT|Kafka Consumer Test#producer-1228| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2]: delegating to broker localhost:9092/1 for partition with 0 messages (0 bytes) queued
+%7|1794421757.441|TOPBRK|Kafka Consumer Test#producer-1228| [thrd:localhost:9092/1]: localhost:9092/1: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1]: joining broker (rktp 0x70b5d4046710, 0 message(s) queued)
+%7|1794421757.451|BRKMIGR|Kafka Consumer Test#producer-1228| [thrd:main]: Migrating topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2] 0x70b5d4171dd0 from (none) to localhost:9092/1 (sending PARTITION_JOIN to localhost:9092/1)
+%7|1794421757.456|PARTCNT|Kafka Consumer Test#producer-1228| [thrd:main]: Partitioning 0 unassigned messages in topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 to 3 partitions
+%7|1794421757.459|UAS|Kafka Consumer Test#producer-1228| [thrd:main]: 0/0 messages were partitioned in topic 21fcbf65-6004-46b1-ab66-ba40789a4b17
+%7|1794421757.453|FETCHADD|Kafka Consumer Test#producer-1228| [thrd:localhost:9092/1]: localhost:9092/1: Added 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] to active list (2 entries, opv 0, 0 messages queued): joining
+%7|1794421757.462|METADATA|Kafka Consumer Test#producer-1228| [thrd:main]: localhost:9092/1: 1/1 requested topic(s) seen in metadata (lookup by name)
+%7|1794421757.464|TOPBRK|Kafka Consumer Test#producer-1228| [thrd:localhost:9092/1]: localhost:9092/1: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2]: joining broker (rktp 0x70b5d4171dd0, 0 message(s) queued)
+%7|1794421757.487|FETCHADD|Kafka Consumer Test#producer-1228| [thrd:localhost:9092/1]: localhost:9092/1: Added 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2] to active list (3 entries, opv 0, 0 messages queued): joining
+%7|1794421757.508|METADATA|Kafka Consumer Test#producer-1228| [thrd:main]: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0] Leader 1 Epoch 0
+%7|1794421757.510|BROKER|Kafka Consumer Test#producer-1228| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0]: leader 1 epoch 0 -> leader 1 epoch 0
+%7|1794421757.514|METADATA|Kafka Consumer Test#producer-1228| [thrd:main]: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] Leader 1 Epoch 0
+%7|1794421757.516|BROKER|Kafka Consumer Test#producer-1228| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1]: leader 1 epoch 0 -> leader 1 epoch 0
+%7|1794421757.518|METADATA|Kafka Consumer Test#producer-1228| [thrd:main]: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2] Leader 1 Epoch 0
+%7|1794421757.520|BROKER|Kafka Consumer Test#producer-1228| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2]: leader 1 epoch 0 -> leader 1 epoch 0
+%7|1794421757.522|METADATA|Kafka Consumer Test#producer-1228| [thrd:main]: localhost:9092/1: 1/1 requested topic(s) seen in metadata (lookup by name)
+%7|1794421757.713|DESTROY|Kafka Consumer Test#producer-1228| [thrd:app]: Terminating instance (destroy flags none (0x0))
+%7|1794421757.715|DESTROY|Kafka Consumer Test#producer-1228| [thrd:main]: Destroy internal
+%7|1794421757.718|DESTROY|Kafka Consumer Test#producer-1228| [thrd:main]: Removing all topics
+%7|1794421757.720|PARTCNT|Kafka Consumer Test#producer-1228| [thrd:main]: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 (id Lqx8jrhHT+WiK89OHsHd5g) partition count changed from 3 to 0
+%7|1794421757.722|REMOVE|Kafka Consumer Test#producer-1228| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0] no longer reported in metadata
+%7|1794421757.724|BRKMIGR|Kafka Consumer Test#producer-1228| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0] 0x70b5d408f6e0 sending final LEAVE for removal by localhost:9092/1
+%7|1794421757.728|REMOVE|Kafka Consumer Test#producer-1228| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] no longer reported in metadata
+%7|1794421757.733|BRKMIGR|Kafka Consumer Test#producer-1228| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] 0x70b5d4046710 sending final LEAVE for removal by localhost:9092/1
+%7|1794421757.735|REMOVE|Kafka Consumer Test#producer-1228| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2] no longer reported in metadata
+%7|1794421757.740|BRKMIGR|Kafka Consumer Test#producer-1228| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2] 0x70b5d4171dd0 sending final LEAVE for removal by localhost:9092/1
+%7|1794421757.744|TOPPARREMOVE|Kafka Consumer Test#producer-1228| [thrd:main]: Removing toppar 21fcbf65-6004-46b1-ab66-ba40789a4b17 [-1] 0x70b628045c70
+%7|1794421757.750|DESTROY|Kafka Consumer Test#producer-1228| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [-1]: 0x70b628045c70 DESTROY_FINAL
+%7|1794421757.758|TOPBRK|Kafka Consumer Test#producer-1228| [thrd:localhost:9092/1]: localhost:9092/1: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0]: leaving broker (0 messages in xmitq, next broker (none), rktp 0x70b5d408f6e0)
+%7|1794421757.762|FETCHADD|Kafka Consumer Test#producer-1228| [thrd:localhost:9092/1]: localhost:9092/1: Removed 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0] from active list (2 entries, opv 0): leaving
+%7|1794421757.788|TOPBRK|Kafka Consumer Test#producer-1228| [thrd:localhost:9092/1]: localhost:9092/1: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0]: no next broker, failing 0 message(s) in partition queue
+%7|1794421757.793|TOPPARREMOVE|Kafka Consumer Test#producer-1228| [thrd:localhost:9092/1]: Removing toppar 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0] 0x70b5d408f6e0
+%7|1794421757.807|DESTROY|Kafka Consumer Test#producer-1228| [thrd:localhost:9092/1]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0]: 0x70b5d408f6e0 DESTROY_FINAL
+%7|1794421757.832|TOPBRK|Kafka Consumer Test#producer-1228| [thrd:localhost:9092/1]: localhost:9092/1: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1]: leaving broker (0 messages in xmitq, next broker (none), rktp 0x70b5d4046710)
+%7|1794421757.835|FETCHADD|Kafka Consumer Test#producer-1228| [thrd:localhost:9092/1]: localhost:9092/1: Removed 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] from active list (1 entries, opv 0): leaving
+%7|1794421757.837|TOPBRK|Kafka Consumer Test#producer-1228| [thrd:localhost:9092/1]: localhost:9092/1: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1]: no next broker, failing 0 message(s) in partition queue
+%7|1794421757.838|TOPPARREMOVE|Kafka Consumer Test#producer-1228| [thrd:localhost:9092/1]: Removing toppar 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] 0x70b5d4046710
+%7|1794421757.840|DESTROY|Kafka Consumer Test#producer-1228| [thrd:localhost:9092/1]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1]: 0x70b5d4046710 DESTROY_FINAL
+%7|1794421757.843|TOPBRK|Kafka Consumer Test#producer-1228| [thrd:localhost:9092/1]: localhost:9092/1: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2]: leaving broker (0 messages in xmitq, next broker (none), rktp 0x70b5d4171dd0)
+%7|1794421757.844|FETCHADD|Kafka Consumer Test#producer-1228| [thrd:localhost:9092/1]: localhost:9092/1: Removed 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2] from active list (0 entries, opv 0): leaving
+%7|1794421757.860|TOPBRK|Kafka Consumer Test#producer-1228| [thrd:localhost:9092/1]: localhost:9092/1: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2]: no next broker, failing 0 message(s) in partition queue
+%7|1794421757.864|TOPPARREMOVE|Kafka Consumer Test#producer-1228| [thrd:localhost:9092/1]: Removing toppar 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2] 0x70b5d4171dd0
+%7|1794421757.865|DESTROY|Kafka Consumer Test#producer-1228| [thrd:localhost:9092/1]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2]: 0x70b5d4171dd0 DESTROY_FINAL
+%7|1794421757.868|MEMBERID|Kafka Consumer Test#consumer-1229| [thrd:app]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": updating member id "(not-set)" -> ""
+%7|1794421757.870|CGRPSTATE|Kafka Consumer Test#consumer-1229| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" changed state init -> query-coord (join-state init)
+%7|1794421757.870|INIT|Kafka Consumer Test#consumer-1229| [thrd:app]: librdkafka v2.15.1 (0x20f01ff) Kafka Consumer Test#consumer-1229 initialized (builtin.features gzip,snappy,ssl,sasl,regex,lz4,sasl_plain,sasl_scram,plugins,zstd,sasl_oauthbearer,http,oidc, STRIP STATIC_LINKING GCC GXX PKGCONFIG INSTALL GNULD LDS C11THREADS LIBDL PLUGINS ZLIB SSL ZSTD CURL HDRHISTOGRAM SYSLOG SNAPPY SOCKEM SASL_SCRAM SASL_OAUTHBEARER OAUTHBEARER_OIDC CRC32C_HW, debug 0x2104)
+%7|1794421757.872|CGRPQUERY|Kafka Consumer Test#consumer-1229| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": no broker available for coordinator query: intervaled in state query-coord
+%7|1794421757.875|CGRPOP|Kafka Consumer Test#consumer-1229| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" received op SUBSCRIBE in state query-coord (join-state init)
+%7|1794421757.876|SUBSCRIBE|Kafka Consumer Test#consumer-1229| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": subscribe to new subscription of 1 topics (join-state init)
+%7|1794421757.878|CGRPQUERY|Kafka Consumer Test#consumer-1229| [thrd:main]: localhost:9092/bootstrap: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": querying for coordinator: intervaled in state query-coord
+%7|1794421757.879|CGRPSTATE|Kafka Consumer Test#consumer-1229| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" changed state query-coord -> wait-coord (join-state init)
+%7|1794421757.881|CGRPCOORD|Kafka Consumer Test#consumer-1229| [thrd:main]: localhost:9092/bootstrap: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" coordinator is localhost:9092 id 1
+%7|1794421757.883|CGRPCOORD|Kafka Consumer Test#consumer-1229| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" changing coordinator -1 -> 1
+%7|1794421757.884|COORDSET|Kafka Consumer Test#consumer-1229| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" coordinator set to broker localhost:9092/1
+%7|1794421757.886|CGRPSTATE|Kafka Consumer Test#consumer-1229| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" changed state wait-coord -> wait-broker-transport (join-state init)
+%7|1794421757.888|CGRPQUERY|Kafka Consumer Test#consumer-1229| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": no broker available for coordinator query: intervaled in state wait-broker-transport
+%7|1794421757.914|CGRPSTATE|Kafka Consumer Test#consumer-1229| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" changed state wait-broker-transport -> up (join-state init)
+%7|1794421757.926|JOIN|Kafka Consumer Test#consumer-1229| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": join with 0 subscribed topic(s)
+%7|1794421757.929|CGRPMETADATA|Kafka Consumer Test#consumer-1229| [thrd:main]: consumer join: metadata for subscription only available for 0/1 topics (-1ms old)
+%7|1794421757.931|CGRPMETADATA|Kafka Consumer Test#consumer-1229| [thrd:main]: consumer join: need to refresh metadata (-1ms old) but no usable brokers available: Local: Broker transport failure
+%7|1794421757.935|JOIN|Kafka Consumer Test#consumer-1229| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": postponing join until up-to-date metadata can be requested
+%7|1794421757.938|DUMP|Kafka Consumer Test#consumer-1229| [thrd:main]: Assignment dump (started_cnt=0, wait_stop_cnt=0)
+%7|1794421757.940|DUMP_ALL|Kafka Consumer Test#consumer-1229| [thrd:main]: List with 0 partition(s):
+%7|1794421757.942|DUMP_PND|Kafka Consumer Test#consumer-1229| [thrd:main]: List with 0 partition(s):
+%7|1794421757.944|DUMP_QRY|Kafka Consumer Test#consumer-1229| [thrd:main]: List with 0 partition(s):
+%7|1794421757.945|DUMP_REM|Kafka Consumer Test#consumer-1229| [thrd:main]: List with 0 partition(s):
+%7|1794421757.947|ASSIGNDONE|Kafka Consumer Test#consumer-1229| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": assignment operations done in join-state init (rebalance rejoin=false)
+%7|1794421757.948|METADATA|Kafka Consumer Test#consumer-1229| [thrd:main]: localhost:9092/1: 1/1 requested topic(s) seen in metadata (lookup by name)
+%7|1794421757.949|CGRPQUERY|Kafka Consumer Test#consumer-1229| [thrd:main]: localhost:9092/1: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": querying for coordinator: intervaled in state up
+%7|1794421757.951|JOIN|Kafka Consumer Test#consumer-1229| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": join with 0 subscribed topic(s)
+%7|1794421757.953|CGRPMETADATA|Kafka Consumer Test#consumer-1229| [thrd:main]: consumer join: metadata for subscription is up to date (5ms old)
+%7|1794421757.957|SUBSCRIPTION|Kafka Consumer Test#consumer-1229| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": effective subscription list changed from 0 to 1 topic(s):
+%7|1794421757.962|SUBSCRIPTION|Kafka Consumer Test#consumer-1229| [thrd:main]:  Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 with 3 partition(s)
+%7|1794421757.964|JOIN|Kafka Consumer Test#consumer-1229| [thrd:main]: localhost:9092/1: Joining group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" with 1 subscribed topic(s) and member id ""
+%7|1794421757.966|CGRPJOINSTATE|Kafka Consumer Test#consumer-1229| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" changed join state init -> wait-join (state up)
+%7|1794421757.968|CGRPCOORD|Kafka Consumer Test#consumer-1229| [thrd:main]: localhost:9092/1: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" coordinator is localhost:9092 id 1
+%7|1794421757.970|JOINGROUP|Kafka Consumer Test#consumer-1229| [thrd:main]: JoinGroup response: GenerationId -1, Protocol , LeaderId , my MemberId Kafka Consumer Test-5a3c13c3-769f-4f66-8f98-a6cc7e0a17e7, member metadata count 0: Broker: Group member needs a valid member ID
+%7|1794421757.973|MEMBERID|Kafka Consumer Test#consumer-1229| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": updating member id "" -> "Kafka Consumer Test-5a3c13c3-769f-4f66-8f98-a6cc7e0a17e7"
+%7|1794421757.975|REJOIN|Kafka Consumer Test#consumer-1229| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": Rejoining group without an assignment: JoinGroup error: Broker: Group member needs a valid member ID
+%7|1794421757.977|CGRPJOINSTATE|Kafka Consumer Test#consumer-1229| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" changed join state wait-join -> init (state up)
+%7|1794421757.979|JOIN|Kafka Consumer Test#consumer-1229| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": join with 1 subscribed topic(s)
+%7|1794421757.981|CGRPMETADATA|Kafka Consumer Test#consumer-1229| [thrd:main]: consumer join: metadata for subscription is up to date (33ms old)
+%7|1794421757.983|JOIN|Kafka Consumer Test#consumer-1229| [thrd:main]: localhost:9092/1: Joining group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" with 1 subscribed topic(s) and member id "Kafka Consumer Test-5a3c13c3-769f-4f66-8f98-a6cc7e0a17e7"
+%7|1794421757.985|CGRPJOINSTATE|Kafka Consumer Test#consumer-1229| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" changed join state init -> wait-join (state up)
+%7|1794421759.449|HEARTBEAT|Kafka Consumer Test#consumer-1227| [thrd:main]: GroupCoordinator/1: Heartbeat for group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" generation id 1
+%7|1794421759.453|HEARTBEAT|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" heartbeat error response in state up (join-state steady, 3 partition(s) assigned): Broker: Group rebalance in progress
+%7|1794421759.457|REBALANCE|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" is rebalancing (EAGER) in state up (join-state steady) with 3 assigned partition(s): rebalance in progress
+%7|1794421759.459|CGRPJOINSTATE|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" changed join state steady -> wait-unassign-call (state up)
+%7|1794421759.462|ASSIGN|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": delegating revoke of 3 partition(s) to application on queue rd_kafka_cgrp_new: rebalance in progress
+%7|1794421759.464|PAUSE|Kafka Consumer Test#consumer-1227| [thrd:main]: Pausing fetchers for 3 assigned partition(s): rebalance
+%7|1794421759.468|PAUSE|Kafka Consumer Test#consumer-1227| [thrd:main]: Library pausing 3 partition(s)
+%7|1794421759.473|BARRIER|Kafka Consumer Test#consumer-1227| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0]: rd_kafka_toppar_op_pause_resume:2524: new version barrier v3
+%7|1794421759.484|PAUSE|Kafka Consumer Test#consumer-1227| [thrd:main]: Pause 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0] (v3)
+%7|1794421759.508|BARRIER|Kafka Consumer Test#consumer-1227| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1]: rd_kafka_toppar_op_pause_resume:2524: new version barrier v3
+%7|1794421759.514|PAUSE|Kafka Consumer Test#consumer-1227| [thrd:main]: Pause 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] (v3)
+%7|1794421759.518|BARRIER|Kafka Consumer Test#consumer-1227| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2]: rd_kafka_toppar_op_pause_resume:2524: new version barrier v3
+%7|1794421759.523|PAUSE|Kafka Consumer Test#consumer-1227| [thrd:main]: Pause 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2] (v3)
+%7|1794421759.524|ASSIGNMENT|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": clearing group assignment
+%7|1794421759.527|OP|Kafka Consumer Test#consumer-1227| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0] received op PAUSE (v3) in fetch-state active (opv2)
+%7|1794421759.529|PAUSE|Kafka Consumer Test#consumer-1227| [thrd:main]: Pause 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0]: at offset 9 (leader epoch 0) (state active, v3)
+%7|1794421759.534|OP|Kafka Consumer Test#consumer-1227| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] received op PAUSE (v3) in fetch-state active (opv2)
+%7|1794421759.537|PAUSE|Kafka Consumer Test#consumer-1227| [thrd:main]: Pause 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1]: at offset 8 (leader epoch 0) (state active, v3)
+%7|1794421759.538|OP|Kafka Consumer Test#consumer-1227| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2] received op PAUSE (v3) in fetch-state active (opv2)
+%7|1794421759.541|PAUSE|Kafka Consumer Test#consumer-1227| [thrd:main]: Pause 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2]: at offset 8 (leader epoch 0) (state active, v3)
+%7|1794421759.800|FETCHDEC|Kafka Consumer Test#consumer-1227| [thrd:localhost:9092/1]: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0]: fetch decide: updating to version 3 (was 2) at offset 9 (leader epoch 0) (was offset 14 (leader epoch 0))
+%7|1794421759.824|FETCHADD|Kafka Consumer Test#consumer-1227| [thrd:localhost:9092/1]: localhost:9092/1: Removed 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0] from fetch list (2 entries, opv 3): paused
+%7|1794421759.830|FETCHDEC|Kafka Consumer Test#consumer-1227| [thrd:localhost:9092/1]: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1]: fetch decide: updating to version 3 (was 2) at offset 8 (leader epoch 0) (was offset 8 (leader epoch 0))
+%7|1794421759.832|FETCHADD|Kafka Consumer Test#consumer-1227| [thrd:localhost:9092/1]: localhost:9092/1: Removed 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] from fetch list (1 entries, opv 3): paused
+%7|1794421759.834|FETCHDEC|Kafka Consumer Test#consumer-1227| [thrd:localhost:9092/1]: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2]: fetch decide: updating to version 3 (was 2) at offset 8 (leader epoch 0) (was offset 8 (leader epoch 0))
+%7|1794421759.836|FETCHADD|Kafka Consumer Test#consumer-1227| [thrd:localhost:9092/1]: localhost:9092/1: Removed 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2] from fetch list (0 entries, opv 3): paused
+%4|1794421862.419|SESSTMOUT|Kafka Consumer Test#consumer-1016| [thrd:main]: Consumer group session timed out (in join-state steady) after 104729 ms without a successful response from the group coordinator (broker 1, last error was Success): revoking assignment and rejoining group
+%7|1794421862.420|HEARTBEAT|Kafka Consumer Test#consumer-1227| [thrd:main]: GroupCoordinator/1: Heartbeat for group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" generation id 1
+%7|1794421862.420|JOINGROUP|Kafka Consumer Test#consumer-1229| [thrd:main]: JoinGroup response: GenerationId 2, Protocol roundrobin, LeaderId Kafka Consumer Test-5a3c13c3-769f-4f66-8f98-a6cc7e0a17e7 (me), my MemberId Kafka Consumer Test-5a3c13c3-769f-4f66-8f98-a6cc7e0a17e7, member metadata count 1: (no error)
+%4|1794421862.432|MAXPOLL|Kafka Consumer Test#consumer-1016| [thrd:main]: Application maximum poll interval (300000ms) exceeded by 8808ms (adjust max.poll.interval.ms for long-running message processing): leaving group
+%7|1794421862.446|CGRPOP|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" received op GET_REBALANCE_PROTOCOL in state up (join-state wait-unassign-call)
+%7|1794421862.455|JOINGROUP|Kafka Consumer Test#consumer-1229| [thrd:main]: I am elected leader for group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" with 1 member(s)
+%7|1794421862.475|HEARTBEAT|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" heartbeat error response in state up (join-state wait-unassign-call, 0 partition(s) assigned): Broker: Unknown member
+%7|1794421862.491|MEMBERID|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": updating member id "Kafka Consumer Test-29f13a4f-3030-4af1-ab65-fbdd57ea5f94" -> ""
+%7|1794421862.482|GRPLEADER|Kafka Consumer Test#consumer-1229| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": resetting group leader info: JoinGroup response clean-up
+%7|1794421862.497|REBALANCE|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": rebalance (EAGER) already in progress, skipping in state up (join-state wait-unassign-call) with 0 assigned partition(s) (lost): resetting member-id
+%7|1794421862.505|CGRPJOINSTATE|Kafka Consumer Test#consumer-1229| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" changed join state wait-join -> wait-metadata (state up)
+%7|1794421862.511|CGRPOP|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" received op OFFSET_COMMIT in state up (join-state wait-unassign-call)
+%7|1794421862.517|METADATA|Kafka Consumer Test#consumer-1229| [thrd:main]: GroupCoordinator/1: 1/1 requested topic(s) seen in metadata (lookup by name)
+%7|1794421862.523|COMMIT|Kafka Consumer Test#consumer-1227| [thrd:main]: GroupCoordinator/1: Committing offsets for 3 partition(s) with generation-id 1 in join-state wait-unassign-call: manual
+%7|1794421862.527|ASSIGN|Kafka Consumer Test#consumer-1229| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" running roundrobin assignor for 1 member(s) and 1 eligible subscribed topic(s):
+%7|1794421862.533|ASSIGN|Kafka Consumer Test#consumer-1229| [thrd:main]:  Member "Kafka Consumer Test-5a3c13c3-769f-4f66-8f98-a6cc7e0a17e7" (me) with 0 owned partition(s) and 1 subscribed topic(s):
+%7|1794421862.540|ASSIGN|Kafka Consumer Test#consumer-1229| [thrd:main]:   21fcbf65-6004-46b1-ab66-ba40789a4b17 [-1]
+%7|1794421862.547|ASSIGN|Kafka Consumer Test#consumer-1229| [thrd:main]: roundrobin: Member "Kafka Consumer Test-5a3c13c3-769f-4f66-8f98-a6cc7e0a17e7": assigned topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 partition 0
+%7|1794421862.552|ASSIGN|Kafka Consumer Test#consumer-1229| [thrd:main]: roundrobin: Member "Kafka Consumer Test-5a3c13c3-769f-4f66-8f98-a6cc7e0a17e7": assigned topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 partition 1
+%7|1794421862.530|OFFSET|Kafka Consumer Test#consumer-1227| [thrd:main]: GroupCoordinator/1: Enqueue OffsetCommitRequest(v9, 3/3 partition(s))): manual
+%7|1794421862.560|ASSIGN|Kafka Consumer Test#consumer-1229| [thrd:main]: roundrobin: Member "Kafka Consumer Test-5a3c13c3-769f-4f66-8f98-a6cc7e0a17e7": assigned topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 partition 2
+%7|1794421862.566|ASSIGN|Kafka Consumer Test#consumer-1229| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" roundrobin assignment for 1 member(s) finished in 39.452ms:
+%7|1794421862.567|COMMIT|Kafka Consumer Test#consumer-1227| [thrd:main]: GroupCoordinator/1: OffsetCommit for 3 partition(s) in join-state wait-unassign-call: manual: returned: Broker: Unknown member
+%7|1794421862.572|REBALANCE|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": rebalance (EAGER) already in progress, skipping in state up (join-state wait-unassign-call) with 0 assigned partition(s) (lost): OffsetCommit error: Unknown member
+%7|1794421862.574|OFFSET|Kafka Consumer Test#consumer-1227| [thrd:main]: OffsetCommit failed for 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0] at offset 9 in join-state wait-unassign-call: Broker: Unknown member
+%7|1794421862.576|OFFSET|Kafka Consumer Test#consumer-1227| [thrd:main]: OffsetCommit failed for 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] at offset 8 in join-state wait-unassign-call: Broker: Unknown member
+%7|1794421862.578|OFFSET|Kafka Consumer Test#consumer-1227| [thrd:main]: OffsetCommit failed for 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2] at offset 8 in join-state wait-unassign-call: Broker: Unknown member
+%7|1794421862.569|ASSIGN|Kafka Consumer Test#consumer-1229| [thrd:main]:  Member "Kafka Consumer Test-5a3c13c3-769f-4f66-8f98-a6cc7e0a17e7" (me) assigned 3 partition(s):
+%7|1794421862.585|ASSIGN|Kafka Consumer Test#consumer-1229| [thrd:main]:   21fcbf65-6004-46b1-ab66-ba40789a4b17 [0]
+%7|1794421862.587|ASSIGN|Kafka Consumer Test#consumer-1229| [thrd:main]:   21fcbf65-6004-46b1-ab66-ba40789a4b17 [1]
+%7|1794421862.582|DUMP|Kafka Consumer Test#consumer-1227| [thrd:main]: Assignment dump (started_cnt=3, wait_stop_cnt=0)
+%7|1794421862.591|DUMP_ALL|Kafka Consumer Test#consumer-1227| [thrd:main]: List with 3 partition(s):
+%7|1794421862.593|DUMP_ALL|Kafka Consumer Test#consumer-1227| [thrd:main]:  21fcbf65-6004-46b1-ab66-ba40789a4b17 [0] offset STORED
+%7|1794421862.594|DUMP_ALL|Kafka Consumer Test#consumer-1227| [thrd:main]:  21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] offset STORED
+%7|1794421862.595|DUMP_ALL|Kafka Consumer Test#consumer-1227| [thrd:main]:  21fcbf65-6004-46b1-ab66-ba40789a4b17 [2] offset STORED
+%7|1794421862.597|DUMP_PND|Kafka Consumer Test#consumer-1227| [thrd:main]: List with 0 partition(s):
+%7|1794421862.598|DUMP_QRY|Kafka Consumer Test#consumer-1227| [thrd:main]: List with 0 partition(s):
+%7|1794421862.600|DUMP_REM|Kafka Consumer Test#consumer-1227| [thrd:main]: List with 0 partition(s):
+%7|1794421862.601|ASSIGNDONE|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": assignment operations done in join-state wait-unassign-call (rebalance rejoin=false)
+%7|1794421862.590|ASSIGN|Kafka Consumer Test#consumer-1229| [thrd:main]:   21fcbf65-6004-46b1-ab66-ba40789a4b17 [2]
+%7|1794421862.603|CGRPOP|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" received op GET_REBALANCE_PROTOCOL in state up (join-state wait-unassign-call)
+%7|1794421862.606|ASSIGNOR|Kafka Consumer Test#consumer-1229| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": "roundrobin" assignor run for 1 member(s)
+%7|1794421862.609|CGRPOP|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" received op ASSIGN in state up (join-state wait-unassign-call)
+%7|1794421862.612|CLEARASSIGN|Kafka Consumer Test#consumer-1227| [thrd:main]: Clearing current assignment of 3 partition(s)
+%7|1794421862.610|CGRPJOINSTATE|Kafka Consumer Test#consumer-1229| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" changed join state wait-metadata -> wait-sync (state up)
+%7|1794421862.614|CGRPJOINSTATE|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" changed join state wait-unassign-call -> wait-unassign-to-complete (state up)
+%7|1794421862.617|DUMP|Kafka Consumer Test#consumer-1227| [thrd:main]: Assignment dump (started_cnt=3, wait_stop_cnt=0)
+%7|1794421862.618|DUMP_ALL|Kafka Consumer Test#consumer-1227| [thrd:main]: List with 0 partition(s):
+%7|1794421862.620|DUMP_PND|Kafka Consumer Test#consumer-1227| [thrd:main]: List with 0 partition(s):
+%7|1794421862.623|DUMP_QRY|Kafka Consumer Test#consumer-1227| [thrd:main]: List with 0 partition(s):
+%7|1794421862.625|DUMP_REM|Kafka Consumer Test#consumer-1227| [thrd:main]: List with 3 partition(s):
+%7|1794421862.628|DUMP_REM|Kafka Consumer Test#consumer-1227| [thrd:main]:  21fcbf65-6004-46b1-ab66-ba40789a4b17 [0] offset STORED
+%7|1794421862.630|DUMP_REM|Kafka Consumer Test#consumer-1227| [thrd:main]:  21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] offset STORED
+%7|1794421862.632|DUMP_REM|Kafka Consumer Test#consumer-1227| [thrd:main]:  21fcbf65-6004-46b1-ab66-ba40789a4b17 [2] offset STORED
+%7|1794421862.633|BARRIER|Kafka Consumer Test#consumer-1227| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0]: rd_kafka_toppar_op_fetch_stop:2426: new version barrier v4
+%7|1794421862.635|CONSUMER|Kafka Consumer Test#consumer-1227| [thrd:main]: Stop consuming 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0] (v4)
+%7|1794421862.637|BARRIER|Kafka Consumer Test#consumer-1227| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0]: rd_kafka_toppar_op_pause_resume:2524: new version barrier v5
+%7|1794421862.638|RESUME|Kafka Consumer Test#consumer-1227| [thrd:main]: Resume 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0] (v5)
+%7|1794421862.641|DESP|Kafka Consumer Test#consumer-1227| [thrd:main]: Removing (un)desired topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0]
+%7|1794421862.645|REMOVE|Kafka Consumer Test#consumer-1227| [thrd:main]: Removing 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0] from assignment (started=true, pending=false, queried=false, stored offset=INVALID)
+%7|1794421862.650|BARRIER|Kafka Consumer Test#consumer-1227| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1]: rd_kafka_toppar_op_fetch_stop:2426: new version barrier v4
+%7|1794421862.656|CONSUMER|Kafka Consumer Test#consumer-1227| [thrd:main]: Stop consuming 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] (v4)
+%7|1794421862.662|BARRIER|Kafka Consumer Test#consumer-1227| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1]: rd_kafka_toppar_op_pause_resume:2524: new version barrier v5
+%7|1794421862.666|RESUME|Kafka Consumer Test#consumer-1227| [thrd:main]: Resume 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] (v5)
+%7|1794421862.673|DESP|Kafka Consumer Test#consumer-1227| [thrd:main]: Removing (un)desired topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1]
+%7|1794421862.682|REMOVE|Kafka Consumer Test#consumer-1227| [thrd:main]: Removing 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] from assignment (started=true, pending=false, queried=false, stored offset=INVALID)
+%7|1794421862.689|BARRIER|Kafka Consumer Test#consumer-1227| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2]: rd_kafka_toppar_op_fetch_stop:2426: new version barrier v4
+%7|1794421862.693|CONSUMER|Kafka Consumer Test#consumer-1227| [thrd:main]: Stop consuming 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2] (v4)
+%7|1794421862.705|BARRIER|Kafka Consumer Test#consumer-1227| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2]: rd_kafka_toppar_op_pause_resume:2524: new version barrier v5
+%7|1794421862.711|RESUME|Kafka Consumer Test#consumer-1227| [thrd:main]: Resume 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2] (v5)
+%7|1794421862.716|DESP|Kafka Consumer Test#consumer-1227| [thrd:main]: Removing (un)desired topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2]
+%7|1794421862.720|REMOVE|Kafka Consumer Test#consumer-1227| [thrd:main]: Removing 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2] from assignment (started=true, pending=false, queried=false, stored offset=INVALID)
+%7|1794421862.723|REMOVE|Kafka Consumer Test#consumer-1227| [thrd:main]: Served 3 removed partition(s), with 0 offset(s) to commit
+%7|1794421862.726|ASSIGNMENT|Kafka Consumer Test#consumer-1227| [thrd:main]: Current assignment of 0 partition(s) with 0 pending adds, 0 offset queries, 3 partitions awaiting stop and 0 offset commits in progress
+%7|1794421862.618|SYNCGROUP|Kafka Consumer Test#consumer-1229| [thrd:main]: SyncGroup response: Broker: Unknown member (0 bytes of MemberState data)
+%7|1794421862.731|OP|Kafka Consumer Test#consumer-1227| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0] received op FETCH_STOP (v4) in fetch-state active (opv3)
+%7|1794421862.741|FETCH|Kafka Consumer Test#consumer-1227| [thrd:main]: Stopping fetch for 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0] in state active (v4)
+%7|1794421862.735|GRPSYNC|Kafka Consumer Test#consumer-1229| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": synchronization failed: Broker: Unknown member: rejoining
+%7|1794421862.747|PARTSTATE|Kafka Consumer Test#consumer-1227| [thrd:main]: Partition 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0] changed fetch state active -> stopping
+%7|1794421862.756|STORETERM|Kafka Consumer Test#consumer-1227| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0]: offset store terminating
+%7|1794421862.759|PARTSTATE|Kafka Consumer Test#consumer-1227| [thrd:main]: Partition 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0] changed fetch state stopping -> stopped
+%7|1794421862.763|OP|Kafka Consumer Test#consumer-1227| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0] received op PAUSE (v5) in fetch-state stopped (opv4)
+%7|1794421862.765|RESUME|Kafka Consumer Test#consumer-1227| [thrd:main]: Not resuming stopped 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0]: at offset 9 (leader epoch 0) (state stopped, v5)
+%7|1794421862.768|OP|Kafka Consumer Test#consumer-1227| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] received op FETCH_STOP (v4) in fetch-state active (opv3)
+%7|1794421862.770|FETCH|Kafka Consumer Test#consumer-1227| [thrd:main]: Stopping fetch for 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] in state active (v4)
+%7|1794421862.752|MEMBERID|Kafka Consumer Test#consumer-1229| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": updating member id "Kafka Consumer Test-5a3c13c3-769f-4f66-8f98-a6cc7e0a17e7" -> ""
+%7|1794421862.779|REJOIN|Kafka Consumer Test#consumer-1229| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": Rejoining group without an assignment: SyncGroup error: Broker: Unknown member
+%7|1794421862.773|PARTSTATE|Kafka Consumer Test#consumer-1227| [thrd:main]: Partition 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] changed fetch state active -> stopping
+%7|1794421862.783|STORETERM|Kafka Consumer Test#consumer-1227| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1]: offset store terminating
+%7|1794421862.787|PARTSTATE|Kafka Consumer Test#consumer-1227| [thrd:main]: Partition 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] changed fetch state stopping -> stopped
+%7|1794421862.789|OP|Kafka Consumer Test#consumer-1227| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] received op PAUSE (v5) in fetch-state stopped (opv4)
+%7|1794421862.781|CGRPJOINSTATE|Kafka Consumer Test#consumer-1229| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" changed join state wait-sync -> init (state up)
+%7|1794421862.790|RESUME|Kafka Consumer Test#consumer-1227| [thrd:main]: Not resuming stopped 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1]: at offset 8 (leader epoch 0) (state stopped, v5)
+%7|1794421862.797|OP|Kafka Consumer Test#consumer-1227| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2] received op FETCH_STOP (v4) in fetch-state active (opv3)
+%7|1794421862.798|FETCH|Kafka Consumer Test#consumer-1227| [thrd:main]: Stopping fetch for 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2] in state active (v4)
+%7|1794421862.794|JOIN|Kafka Consumer Test#consumer-1229| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": join with 1 subscribed topic(s)
+%7|1794421862.800|PARTSTATE|Kafka Consumer Test#consumer-1227| [thrd:main]: Partition 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2] changed fetch state active -> stopping
+%7|1794421862.805|STORETERM|Kafka Consumer Test#consumer-1227| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2]: offset store terminating
+%7|1794421862.807|PARTSTATE|Kafka Consumer Test#consumer-1227| [thrd:main]: Partition 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2] changed fetch state stopping -> stopped
+%7|1794421862.808|OP|Kafka Consumer Test#consumer-1227| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2] received op PAUSE (v5) in fetch-state stopped (opv4)
+%7|1794421862.813|RESUME|Kafka Consumer Test#consumer-1227| [thrd:main]: Not resuming stopped 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2]: at offset 8 (leader epoch 0) (state stopped, v5)
+%7|1794421862.819|CGRPOP|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" received op PARTITION_LEAVE in state up (join-state wait-unassign-to-complete) for 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0]
+%7|1794421862.826|PARTDEL|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": delete 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0]
+%7|1794421862.801|CGRPMETADATA|Kafka Consumer Test#consumer-1229| [thrd:main]: consumer join: metadata for subscription is up to date (284ms old)
+%7|1794421862.833|CGRPOP|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" received op PARTITION_LEAVE in state up (join-state wait-unassign-to-complete) for 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1]
+%7|1794421862.847|PARTDEL|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": delete 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1]
+%7|1794421862.851|CGRPOP|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" received op PARTITION_LEAVE in state up (join-state wait-unassign-to-complete) for 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2]
+%7|1794421862.855|PARTDEL|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": delete 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2]
+%7|1794421862.859|STOPSERVE|Kafka Consumer Test#consumer-1227| [thrd:main]: All partitions awaiting stop are now stopped: serving assignment
+%7|1794421862.868|DUMP|Kafka Consumer Test#consumer-1227| [thrd:main]: Assignment dump (started_cnt=0, wait_stop_cnt=0)
+%7|1794421862.879|DUMP_ALL|Kafka Consumer Test#consumer-1227| [thrd:main]: List with 0 partition(s):
+%7|1794421862.883|DUMP_PND|Kafka Consumer Test#consumer-1227| [thrd:main]: List with 0 partition(s):
+%7|1794421862.885|DUMP_QRY|Kafka Consumer Test#consumer-1227| [thrd:main]: List with 0 partition(s):
+%7|1794421862.887|DUMP_REM|Kafka Consumer Test#consumer-1227| [thrd:main]: List with 0 partition(s):
+%7|1794421862.889|ASSIGNDONE|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": assignment operations done in join-state wait-unassign-to-complete (rebalance rejoin=false)
+%7|1794421862.892|UNASSIGN|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": unassign done in state up (join-state wait-unassign-to-complete)
+%7|1794421862.893|REJOIN|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": Rejoining group without an assignment: Unassignment done
+%7|1794421862.840|JOIN|Kafka Consumer Test#consumer-1229| [thrd:main]: localhost:9092/1: Joining group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" with 1 subscribed topic(s) and member id ""
+%7|1794421862.897|CGRPJOINSTATE|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" changed join state wait-unassign-to-complete -> init (state up)
+%7|1794421862.900|JOIN|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": join with 1 subscribed topic(s)
+%7|1794421862.901|CGRPMETADATA|Kafka Consumer Test#consumer-1227| [thrd:main]: consumer join: metadata for subscription is up to date (106753ms old)
+%7|1794421862.903|JOIN|Kafka Consumer Test#consumer-1227| [thrd:main]: localhost:9092/1: Joining group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" with 1 subscribed topic(s) and member id ""
+%7|1794421862.904|CGRPJOINSTATE|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" changed join state init -> wait-join (state up)
+%7|1794421862.899|CGRPJOINSTATE|Kafka Consumer Test#consumer-1229| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" changed join state init -> wait-join (state up)
+%7|1794421862.909|JOINGROUP|Kafka Consumer Test#consumer-1227| [thrd:main]: JoinGroup response: GenerationId -1, Protocol , LeaderId , my MemberId Kafka Consumer Test-d2ce2c07-949f-4674-82fd-8e67b639c861, member metadata count 0: Broker: Group member needs a valid member ID
+%7|1794421862.913|MEMBERID|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": updating member id "" -> "Kafka Consumer Test-d2ce2c07-949f-4674-82fd-8e67b639c861"
+%7|1794421862.916|REJOIN|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": Rejoining group without an assignment: JoinGroup error: Broker: Group member needs a valid member ID
+%7|1794421862.919|CGRPJOINSTATE|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" changed join state wait-join -> init (state up)
+%7|1794421862.922|JOIN|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": join with 1 subscribed topic(s)
+%7|1794421862.925|CGRPMETADATA|Kafka Consumer Test#consumer-1227| [thrd:main]: consumer join: metadata for subscription is up to date (106777ms old)
+%7|1794421862.929|JOIN|Kafka Consumer Test#consumer-1227| [thrd:main]: localhost:9092/1: Joining group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" with 1 subscribed topic(s) and member id "Kafka Consumer Test-d2ce2c07-949f-4674-82fd-8e67b639c861"
+%7|1794421862.910|JOINGROUP|Kafka Consumer Test#consumer-1229| [thrd:main]: JoinGroup response: GenerationId -1, Protocol , LeaderId , my MemberId Kafka Consumer Test-0a232a00-cbf2-4fe0-9638-f911d43d6097, member metadata count 0: Broker: Group member needs a valid member ID
+%7|1794421862.935|CGRPJOINSTATE|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" changed join state init -> wait-join (state up)
+%7|1794421862.942|MEMBERID|Kafka Consumer Test#consumer-1229| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": updating member id "" -> "Kafka Consumer Test-0a232a00-cbf2-4fe0-9638-f911d43d6097"
+%7|1794421862.953|JOINGROUP|Kafka Consumer Test#consumer-1227| [thrd:main]: JoinGroup response: GenerationId 4, Protocol roundrobin, LeaderId Kafka Consumer Test-d2ce2c07-949f-4674-82fd-8e67b639c861 (me), my MemberId Kafka Consumer Test-d2ce2c07-949f-4674-82fd-8e67b639c861, member metadata count 1: (no error)
+%7|1794421862.964|REJOIN|Kafka Consumer Test#consumer-1229| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": Rejoining group without an assignment: JoinGroup error: Broker: Group member needs a valid member ID
+%7|1794421862.981|JOINGROUP|Kafka Consumer Test#consumer-1227| [thrd:main]: I am elected leader for group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" with 1 member(s)
+%7|1794421863.000|CGRPJOINSTATE|Kafka Consumer Test#consumer-1229| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" changed join state wait-join -> init (state up)
+%7|1794421863.011|GRPLEADER|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": resetting group leader info: JoinGroup response clean-up
+%7|1794421863.033|JOIN|Kafka Consumer Test#consumer-1229| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": join with 1 subscribed topic(s)
+%7|1794421863.057|CGRPMETADATA|Kafka Consumer Test#consumer-1229| [thrd:main]: consumer join: metadata for subscription is up to date (540ms old)
+%7|1794421863.075|JOIN|Kafka Consumer Test#consumer-1229| [thrd:main]: localhost:9092/1: Joining group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" with 1 subscribed topic(s) and member id "Kafka Consumer Test-0a232a00-cbf2-4fe0-9638-f911d43d6097"
+%7|1794421863.087|CGRPJOINSTATE|Kafka Consumer Test#consumer-1229| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" changed join state init -> wait-join (state up)
+%7|1794421863.044|CGRPJOINSTATE|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" changed join state wait-join -> wait-metadata (state up)
+%7|1794421863.130|METADATA|Kafka Consumer Test#consumer-1227| [thrd:main]: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0] Leader 1 Epoch 0
+%7|1794421863.147|BROKER|Kafka Consumer Test#consumer-1227| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0]: leader 1 epoch 0 -> leader 1 epoch 0
+%7|1794421863.161|METADATA|Kafka Consumer Test#consumer-1227| [thrd:main]: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] Leader 1 Epoch 0
+%7|1794421863.170|BROKER|Kafka Consumer Test#consumer-1227| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1]: leader 1 epoch 0 -> leader 1 epoch 0
+%7|1794421863.179|METADATA|Kafka Consumer Test#consumer-1227| [thrd:main]: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2] Leader 1 Epoch 0
+%7|1794421863.192|BROKER|Kafka Consumer Test#consumer-1227| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2]: leader 1 epoch 0 -> leader 1 epoch 0
+%7|1794421863.205|METADATA|Kafka Consumer Test#consumer-1227| [thrd:main]: GroupCoordinator/1: 1/1 requested topic(s) seen in metadata (lookup by name)
+%7|1794421863.210|ASSIGN|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" running roundrobin assignor for 1 member(s) and 1 eligible subscribed topic(s):
+%7|1794421863.217|ASSIGN|Kafka Consumer Test#consumer-1227| [thrd:main]:  Member "Kafka Consumer Test-d2ce2c07-949f-4674-82fd-8e67b639c861" (me) with 0 owned partition(s) and 1 subscribed topic(s):
+%7|1794421863.225|ASSIGN|Kafka Consumer Test#consumer-1227| [thrd:main]:   21fcbf65-6004-46b1-ab66-ba40789a4b17 [-1]
+%7|1794421863.245|ASSIGN|Kafka Consumer Test#consumer-1227| [thrd:main]: roundrobin: Member "Kafka Consumer Test-d2ce2c07-949f-4674-82fd-8e67b639c861": assigned topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 partition 0
+%7|1794421863.256|ASSIGN|Kafka Consumer Test#consumer-1227| [thrd:main]: roundrobin: Member "Kafka Consumer Test-d2ce2c07-949f-4674-82fd-8e67b639c861": assigned topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 partition 1
+%7|1794421863.263|ASSIGN|Kafka Consumer Test#consumer-1227| [thrd:main]: roundrobin: Member "Kafka Consumer Test-d2ce2c07-949f-4674-82fd-8e67b639c861": assigned topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 partition 2
+%7|1794421863.267|ASSIGN|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" roundrobin assignment for 1 member(s) finished in 57.345ms:
+%7|1794421863.274|ASSIGN|Kafka Consumer Test#consumer-1227| [thrd:main]:  Member "Kafka Consumer Test-d2ce2c07-949f-4674-82fd-8e67b639c861" (me) assigned 3 partition(s):
+%7|1794421863.282|ASSIGN|Kafka Consumer Test#consumer-1227| [thrd:main]:   21fcbf65-6004-46b1-ab66-ba40789a4b17 [0]
+%7|1794421863.292|ASSIGN|Kafka Consumer Test#consumer-1227| [thrd:main]:   21fcbf65-6004-46b1-ab66-ba40789a4b17 [1]
+%7|1794421863.304|ASSIGN|Kafka Consumer Test#consumer-1227| [thrd:main]:   21fcbf65-6004-46b1-ab66-ba40789a4b17 [2]
+%7|1794421863.306|ASSIGNOR|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": "roundrobin" assignor run for 1 member(s)
+%7|1794421863.308|CGRPJOINSTATE|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" changed join state wait-metadata -> wait-sync (state up)
+%7|1794421863.311|SYNCGROUP|Kafka Consumer Test#consumer-1227| [thrd:main]: SyncGroup response: Broker: Group rebalance in progress (0 bytes of MemberState data)
+%7|1794421863.319|GRPSYNC|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": synchronization failed: Broker: Group rebalance in progress: rejoining
+%7|1794421863.327|REJOIN|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": Rejoining group without an assignment: SyncGroup error: Broker: Group rebalance in progress
+%7|1794421863.330|CGRPJOINSTATE|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" changed join state wait-sync -> init (state up)
+%7|1794421863.333|JOIN|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": join with 1 subscribed topic(s)
+%7|1794421863.335|CGRPMETADATA|Kafka Consumer Test#consumer-1227| [thrd:main]: consumer join: metadata for subscription is up to date (129ms old)
+%7|1794421863.337|JOIN|Kafka Consumer Test#consumer-1227| [thrd:main]: localhost:9092/1: Joining group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" with 1 subscribed topic(s) and member id "Kafka Consumer Test-d2ce2c07-949f-4674-82fd-8e67b639c861"
+%7|1794421863.341|CGRPJOINSTATE|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" changed join state init -> wait-join (state up)
+%7|1794421863.345|JOINGROUP|Kafka Consumer Test#consumer-1227| [thrd:main]: JoinGroup response: GenerationId 5, Protocol roundrobin, LeaderId Kafka Consumer Test-d2ce2c07-949f-4674-82fd-8e67b639c861 (me), my MemberId Kafka Consumer Test-d2ce2c07-949f-4674-82fd-8e67b639c861, member metadata count 2: (no error)
+%7|1794421863.345|JOINGROUP|Kafka Consumer Test#consumer-1229| [thrd:main]: JoinGroup response: GenerationId 5, Protocol roundrobin, LeaderId Kafka Consumer Test-d2ce2c07-949f-4674-82fd-8e67b639c861, my MemberId Kafka Consumer Test-0a232a00-cbf2-4fe0-9638-f911d43d6097, member metadata count 0: (no error)
+%7|1794421863.350|CGRPJOINSTATE|Kafka Consumer Test#consumer-1229| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" changed join state wait-join -> wait-sync (state up)
+%7|1794421863.347|JOINGROUP|Kafka Consumer Test#consumer-1227| [thrd:main]: I am elected leader for group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" with 2 member(s)
+%7|1794421863.359|GRPLEADER|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": resetting group leader info: JoinGroup response clean-up
+%7|1794421863.364|CGRPJOINSTATE|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" changed join state wait-join -> wait-metadata (state up)
+%7|1794421863.371|METADATA|Kafka Consumer Test#consumer-1227| [thrd:main]: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0] Leader 1 Epoch 0
+%7|1794421863.375|BROKER|Kafka Consumer Test#consumer-1227| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [0]: leader 1 epoch 0 -> leader 1 epoch 0
+%7|1794421863.385|METADATA|Kafka Consumer Test#consumer-1227| [thrd:main]: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] Leader 1 Epoch 0
+%7|1794421863.391|BROKER|Kafka Consumer Test#consumer-1227| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1]: leader 1 epoch 0 -> leader 1 epoch 0
+%7|1794421863.400|METADATA|Kafka Consumer Test#consumer-1227| [thrd:main]: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2] Leader 1 Epoch 0
+%7|1794421863.407|BROKER|Kafka Consumer Test#consumer-1227| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [2]: leader 1 epoch 0 -> leader 1 epoch 0
+%7|1794421863.417|METADATA|Kafka Consumer Test#consumer-1227| [thrd:main]: GroupCoordinator/1: 1/1 requested topic(s) seen in metadata (lookup by name)
+%7|1794421863.429|ASSIGN|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" running roundrobin assignor for 2 member(s) and 1 eligible subscribed topic(s):
+%7|1794421863.435|ASSIGN|Kafka Consumer Test#consumer-1227| [thrd:main]:  Member "Kafka Consumer Test-d2ce2c07-949f-4674-82fd-8e67b639c861" (me) with 0 owned partition(s) and 1 subscribed topic(s):
+%7|1794421863.440|ASSIGN|Kafka Consumer Test#consumer-1227| [thrd:main]:   21fcbf65-6004-46b1-ab66-ba40789a4b17 [-1]
+%7|1794421863.445|ASSIGN|Kafka Consumer Test#consumer-1227| [thrd:main]:  Member "Kafka Consumer Test-0a232a00-cbf2-4fe0-9638-f911d43d6097" with 0 owned partition(s) and 1 subscribed topic(s):
+%7|1794421863.447|ASSIGN|Kafka Consumer Test#consumer-1227| [thrd:main]:   21fcbf65-6004-46b1-ab66-ba40789a4b17 [-1]
+%7|1794421863.448|ASSIGN|Kafka Consumer Test#consumer-1227| [thrd:main]: roundrobin: Member "Kafka Consumer Test-0a232a00-cbf2-4fe0-9638-f911d43d6097": assigned topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 partition 0
+%7|1794421863.450|ASSIGN|Kafka Consumer Test#consumer-1227| [thrd:main]: roundrobin: Member "Kafka Consumer Test-d2ce2c07-949f-4674-82fd-8e67b639c861": assigned topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 partition 1
+%7|1794421863.453|ASSIGN|Kafka Consumer Test#consumer-1227| [thrd:main]: roundrobin: Member "Kafka Consumer Test-0a232a00-cbf2-4fe0-9638-f911d43d6097": assigned topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 partition 2
+%7|1794421863.455|ASSIGN|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" roundrobin assignment for 2 member(s) finished in 25.361ms:
+%7|1794421863.458|ASSIGN|Kafka Consumer Test#consumer-1227| [thrd:main]:  Member "Kafka Consumer Test-0a232a00-cbf2-4fe0-9638-f911d43d6097" assigned 2 partition(s):
+%7|1794421863.460|ASSIGN|Kafka Consumer Test#consumer-1227| [thrd:main]:   21fcbf65-6004-46b1-ab66-ba40789a4b17 [0]
+%7|1794421863.463|ASSIGN|Kafka Consumer Test#consumer-1227| [thrd:main]:   21fcbf65-6004-46b1-ab66-ba40789a4b17 [2]
+%7|1794421863.469|ASSIGN|Kafka Consumer Test#consumer-1227| [thrd:main]:  Member "Kafka Consumer Test-d2ce2c07-949f-4674-82fd-8e67b639c861" (me) assigned 1 partition(s):
+%7|1794421863.471|ASSIGN|Kafka Consumer Test#consumer-1227| [thrd:main]:   21fcbf65-6004-46b1-ab66-ba40789a4b17 [1]
+%7|1794421863.473|ASSIGNOR|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": "roundrobin" assignor run for 2 member(s)
+%7|1794421863.475|CGRPJOINSTATE|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" changed join state wait-metadata -> wait-sync (state up)
+%7|1794421863.485|SYNCGROUP|Kafka Consumer Test#consumer-1227| [thrd:main]: SyncGroup response: Success (56 bytes of MemberState data)
+%7|1794421863.486|SYNCGROUP|Kafka Consumer Test#consumer-1229| [thrd:main]: SyncGroup response: Success (60 bytes of MemberState data)
+%7|1794421863.488|ASSIGNMENT|Kafka Consumer Test#consumer-1227| [thrd:main]: List with 1 partition(s):
+%7|1794421863.491|ASSIGNMENT|Kafka Consumer Test#consumer-1229| [thrd:main]: List with 2 partition(s):
+%7|1794421863.497|ASSIGNMENT|Kafka Consumer Test#consumer-1229| [thrd:main]:  21fcbf65-6004-46b1-ab66-ba40789a4b17 [0] offset INVALID
+%7|1794421863.499|ASSIGNMENT|Kafka Consumer Test#consumer-1229| [thrd:main]:  21fcbf65-6004-46b1-ab66-ba40789a4b17 [2] offset INVALID
+%7|1794421863.494|ASSIGNMENT|Kafka Consumer Test#consumer-1227| [thrd:main]:  21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] offset INVALID
+%7|1794421863.503|CGRPJOINSTATE|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" changed join state wait-sync -> wait-assign-call (state up)
+%7|1794421863.504|ASSIGN|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": delegating assign of 1 partition(s) to application on queue rd_kafka_cgrp_new: new assignment
+%7|1794421863.506|ASSIGNMENT|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": setting group assignment to 1 partition(s)
+%7|1794421863.508|GRPASSIGNMENT|Kafka Consumer Test#consumer-1227| [thrd:main]: List with 1 partition(s):
+%7|1794421863.510|GRPASSIGNMENT|Kafka Consumer Test#consumer-1227| [thrd:main]:  21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] offset INVALID
+%7|1794421863.501|CGRPJOINSTATE|Kafka Consumer Test#consumer-1229| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" changed join state wait-sync -> wait-assign-call (state up)
+%7|1794421863.512|CGRPOP|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" received op GET_REBALANCE_PROTOCOL in state up (join-state wait-assign-call)
+%7|1794421863.514|ASSIGN|Kafka Consumer Test#consumer-1229| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": delegating assign of 2 partition(s) to application on queue rd_kafka_cgrp_new: new assignment
+%7|1794421863.517|CGRPOP|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" received op GET_REBALANCE_PROTOCOL in state up (join-state wait-assign-call)
+%7|1794421863.521|ASSIGNMENT|Kafka Consumer Test#consumer-1229| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": setting group assignment to 2 partition(s)
+%7|1794421863.525|GRPASSIGNMENT|Kafka Consumer Test#consumer-1229| [thrd:main]: List with 2 partition(s):
+%7|1794421863.528|GRPASSIGNMENT|Kafka Consumer Test#consumer-1229| [thrd:main]:  21fcbf65-6004-46b1-ab66-ba40789a4b17 [0] offset INVALID
+%7|1794421863.532|GRPASSIGNMENT|Kafka Consumer Test#consumer-1229| [thrd:main]:  21fcbf65-6004-46b1-ab66-ba40789a4b17 [2] offset INVALID
+%7|1794421863.523|CGRPOP|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" received op ASSIGN in state up (join-state wait-assign-call)
+%7|1794421863.536|ASSIGN|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": new assignment of 1 partition(s) in join-state wait-assign-call
+%7|1794421863.538|CLEARASSIGN|Kafka Consumer Test#consumer-1227| [thrd:main]: No current assignment to clear
+%7|1794421863.540|DESIRED|Kafka Consumer Test#consumer-1227| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1]: marking as DESIRED
+%7|1794421863.535|HEARTBEAT|Kafka Consumer Test#consumer-1229| [thrd:main]: GroupCoordinator/1: Heartbeat for group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" generation id 5
+%7|1794421863.542|ASSIGNMENT|Kafka Consumer Test#consumer-1227| [thrd:main]: Added 1 partition(s) to assignment which now consists of 1 partition(s) where of 1 are in pending state and 0 are being queried
+%7|1794421863.546|PAUSE|Kafka Consumer Test#consumer-1227| [thrd:main]: Resuming fetchers for 1 assigned partition(s): assign called
+%7|1794421863.548|RESUME|Kafka Consumer Test#consumer-1227| [thrd:main]: Library resuming 1 partition(s)
+%7|1794421863.550|CGRPJOINSTATE|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" changed join state wait-assign-call -> steady (state up)
+%7|1794421863.552|DUMP|Kafka Consumer Test#consumer-1227| [thrd:main]: Assignment dump (started_cnt=0, wait_stop_cnt=0)
+%7|1794421863.554|DUMP_ALL|Kafka Consumer Test#consumer-1227| [thrd:main]: List with 1 partition(s):
+%7|1794421863.557|DUMP_ALL|Kafka Consumer Test#consumer-1227| [thrd:main]:  21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] offset STORED
+%7|1794421863.560|DUMP_PND|Kafka Consumer Test#consumer-1227| [thrd:main]: List with 1 partition(s):
+%7|1794421863.562|DUMP_PND|Kafka Consumer Test#consumer-1227| [thrd:main]:  21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] offset STORED
+%7|1794421863.563|DUMP_QRY|Kafka Consumer Test#consumer-1227| [thrd:main]: List with 0 partition(s):
+%7|1794421863.566|DUMP_REM|Kafka Consumer Test#consumer-1227| [thrd:main]: List with 0 partition(s):
+%7|1794421863.568|SRVPEND|Kafka Consumer Test#consumer-1227| [thrd:main]: Querying committed offset for pending assigned partition 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1]
+%7|1794421863.571|OFFSETFETCH|Kafka Consumer Test#consumer-1227| [thrd:main]: Fetching committed offsets for 1 pending partition(s) in assignment
+%7|1794421863.587|OFFSET|Kafka Consumer Test#consumer-1227| [thrd:main]: GroupCoordinator/1: Group 045ba8a1-fc0f-4e16-8646-4fc17fbedce3 OffsetFetchRequest(v9) for 1/1 partition(s)
+%7|1794421863.595|OFFSET|Kafka Consumer Test#consumer-1227| [thrd:main]: GroupCoordinator/1: Fetch committed offsets for 1/1 partition(s)
+%7|1794421863.600|ASSIGNMENT|Kafka Consumer Test#consumer-1227| [thrd:main]: Current assignment of 1 partition(s) with 1 pending adds, 1 offset queries, 0 partitions awaiting stop and 0 offset commits in progress
+%7|1794421863.602|OFFSETFETCH|Kafka Consumer Test#consumer-1227| [thrd:main]: GroupCoordinator/1: OffsetFetchResponse: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] offset -1, leader epoch -1, metadata 0 byte(s): NO_ERROR
+%7|1794421863.604|OFFFETCH|Kafka Consumer Test#consumer-1227| [thrd:main]: GroupCoordinator/1: OffsetFetch for 1/1 partition(s) (0 unstable partition(s)) returned Success
+%7|1794421863.607|OFFSETFETCH|Kafka Consumer Test#consumer-1227| [thrd:main]: Adding 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] back to pending list with offset INVALID
+%7|1794421863.613|DUMP|Kafka Consumer Test#consumer-1227| [thrd:main]: Assignment dump (started_cnt=0, wait_stop_cnt=0)
+%7|1794421863.614|DUMP_ALL|Kafka Consumer Test#consumer-1227| [thrd:main]: List with 1 partition(s):
+%7|1794421863.618|DUMP_ALL|Kafka Consumer Test#consumer-1227| [thrd:main]:  21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] offset STORED
+%7|1794421863.621|DUMP_PND|Kafka Consumer Test#consumer-1227| [thrd:main]: List with 1 partition(s):
+%7|1794421863.623|DUMP_PND|Kafka Consumer Test#consumer-1227| [thrd:main]:  21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] offset INVALID
+%7|1794421863.627|DUMP_QRY|Kafka Consumer Test#consumer-1227| [thrd:main]: List with 0 partition(s):
+%7|1794421863.630|DUMP_REM|Kafka Consumer Test#consumer-1227| [thrd:main]: List with 0 partition(s):
+%7|1794421863.632|SRVPEND|Kafka Consumer Test#consumer-1227| [thrd:main]: Starting pending assigned partition 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] at offset INVALID (leader epoch -1)
+%7|1794421863.635|BARRIER|Kafka Consumer Test#consumer-1227| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1]: rd_kafka_toppar_op_fetch_start:2390: new version barrier v6
+%7|1794421863.637|CONSUMER|Kafka Consumer Test#consumer-1227| [thrd:main]: Start consuming 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] at offset INVALID (leader epoch -1) (v6)
+%7|1794421863.642|ASSIGNDONE|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": assignment operations done in join-state steady (rebalance rejoin=false)
+%7|1794421863.646|OP|Kafka Consumer Test#consumer-1227| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] received op FETCH_START (v6) in fetch-state stopped (opv5)
+%7|1794421863.648|FETCH|Kafka Consumer Test#consumer-1227| [thrd:main]: Start fetch for 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] in state stopped at offset INVALID (leader epoch -1) (v6)
+%7|1794421863.650|PARTSTATE|Kafka Consumer Test#consumer-1227| [thrd:main]: Partition 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] changed fetch state stopped -> active
+%7|1794421863.653|FETCH|Kafka Consumer Test#consumer-1227| [thrd:main]: Partition 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] start fetching at offset 0 (leader epoch -1)
+%7|1794421863.655|OFFSET|Kafka Consumer Test#consumer-1227| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1]: offset reset (at offset INVALID (leader epoch -1), broker -1) to cached BEGINNING offset offset 0 (leader epoch -1): no previously committed offset available: Local: No offset stored
+%7|1794421863.657|CGRPOP|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" received op PARTITION_JOIN in state up (join-state steady) for 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1]
+%7|1794421863.660|PARTADD|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": add 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1]
+%7|1794421863.657|FETCHDEC|Kafka Consumer Test#consumer-1227| [thrd:localhost:9092/1]: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1]: fetch decide: updating to version 6 (was 3) at offset 0 (leader epoch -1) (was offset 8 (leader epoch 0))
+%7|1794421863.666|FETCHADD|Kafka Consumer Test#consumer-1227| [thrd:localhost:9092/1]: localhost:9092/1: Added 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] to fetch list (1 entries, opv 6, 0 messages queued): fetchable
+%7|1794421863.671|CLOSE|Kafka Consumer Test#consumer-1229| [thrd:app]: Closing consumer
+%7|1794421863.676|CLOSE|Kafka Consumer Test#consumer-1229| [thrd:app]: Waiting for close events
+%7|1794421863.676|CGRPOP|Kafka Consumer Test#consumer-1229| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" received op TERMINATE in state up (join-state wait-assign-call)
+%7|1794421863.689|CGRPTERM|Kafka Consumer Test#consumer-1229| [thrd:main]: Terminating group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" in state up with 0 partition(s)
+%7|1794421863.696|UNSUBSCRIBE|Kafka Consumer Test#consumer-1229| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": unsubscribe from current subscription of size 1 (leave group=true, has joined=true, Kafka Consumer Test-0a232a00-cbf2-4fe0-9638-f911d43d6097, join-state wait-assign-call)
+%7|1794421863.701|SUBSCRIPTION|Kafka Consumer Test#consumer-1229| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": clearing subscribed topics list (1)
+%7|1794421863.705|SUBSCRIPTION|Kafka Consumer Test#consumer-1229| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": effective subscription list changed from 1 to 0 topic(s):
+%7|1794421863.710|GRPLEADER|Kafka Consumer Test#consumer-1229| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": resetting group leader info: unsubscribe
+%7|1794421863.713|REBALANCE|Kafka Consumer Test#consumer-1229| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" initiating rebalance (EAGER) in state up (join-state wait-assign-call) with 2 assigned partition(s): unsubscribe
+%7|1794421863.716|NOREJOIN|Kafka Consumer Test#consumer-1229| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": Not rejoining group with 2 owned partition(s): unsubscribe: no subscribed topics
+%7|1794421863.719|MEMBERID|Kafka Consumer Test#consumer-1229| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": updating member id "Kafka Consumer Test-0a232a00-cbf2-4fe0-9638-f911d43d6097" -> ""
+%7|1794421863.722|LEAVE|Kafka Consumer Test#consumer-1229| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": leave (in state up)
+%7|1794421863.725|LEAVE|Kafka Consumer Test#consumer-1229| [thrd:main]: localhost:9092/1: Leaving group
+%7|1794421863.727|CGRPJOINSTATE|Kafka Consumer Test#consumer-1229| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" changed join state wait-assign-call -> init (state up)
+%7|1794421863.730|CLEARASSIGN|Kafka Consumer Test#consumer-1229| [thrd:main]: No current assignment to clear
+%7|1794421863.735|DUMP|Kafka Consumer Test#consumer-1229| [thrd:main]: Assignment dump (started_cnt=0, wait_stop_cnt=0)
+%7|1794421863.738|DUMP_ALL|Kafka Consumer Test#consumer-1229| [thrd:main]: List with 0 partition(s):
+%7|1794421863.741|DUMP_PND|Kafka Consumer Test#consumer-1229| [thrd:main]: List with 0 partition(s):
+%7|1794421863.746|DUMP_QRY|Kafka Consumer Test#consumer-1229| [thrd:main]: List with 0 partition(s):
+%7|1794421863.751|DUMP_REM|Kafka Consumer Test#consumer-1229| [thrd:main]: List with 0 partition(s):
+%7|1794421863.756|ASSIGNDONE|Kafka Consumer Test#consumer-1229| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": assignment operations done in join-state init (rebalance rejoin=false)
+%7|1794421863.760|CGRPTERM|Kafka Consumer Test#consumer-1229| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": waiting for 0 toppar(s), 0 commit(s), 0 share session leave(s) remaining, wait-leave, (state up, join-state init) before terminating
+%7|1794421863.767|CGRPTERM|Kafka Consumer Test#consumer-1229| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": waiting for 0 toppar(s), 0 commit(s), 0 share session leave(s) remaining, wait-leave, (state up, join-state init) before terminating
+%7|1794421863.772|CGRPTERM|Kafka Consumer Test#consumer-1229| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": waiting for 0 toppar(s), 0 commit(s), 0 share session leave(s) remaining, wait-leave, (state up, join-state init) before terminating
+%7|1794421863.777|CGRPOP|Kafka Consumer Test#consumer-1229| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" received op GET_REBALANCE_PROTOCOL in state up (join-state init)
+%7|1794421863.782|LEAVEGROUP|Kafka Consumer Test#consumer-1229| [thrd:main]: LeaveGroup response received in state up
+%7|1794421863.789|CGRPSTATE|Kafka Consumer Test#consumer-1229| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" changed state up -> term (join-state init)
+%7|1794421863.797|ASSIGNMENT|Kafka Consumer Test#consumer-1229| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": clearing group assignment
+%7|1794421863.804|COORDCLEAR|Kafka Consumer Test#consumer-1229| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" broker localhost:9092/1 is no longer coordinator
+%7|1794421863.808|CGRPTERM|Kafka Consumer Test#consumer-1229| [thrd:main]: Consumer group sub-system terminated (will enqueue reply)
+%7|1794421865.478|HEARTBEAT|Kafka Consumer Test#consumer-1227| [thrd:main]: GroupCoordinator/1: Heartbeat for group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" generation id 5
+%7|1794421865.482|HEARTBEAT|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" heartbeat error response in state up (join-state steady, 1 partition(s) assigned): Broker: Group rebalance in progress
+%7|1794421865.486|REBALANCE|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" is rebalancing (EAGER) in state up (join-state steady) with 1 assigned partition(s): rebalance in progress
+%7|1794421865.490|CGRPJOINSTATE|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" changed join state steady -> wait-unassign-call (state up)
+%7|1794421865.494|ASSIGN|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": delegating revoke of 1 partition(s) to application on queue rd_kafka_cgrp_new: rebalance in progress
+%7|1794421865.496|PAUSE|Kafka Consumer Test#consumer-1227| [thrd:main]: Pausing fetchers for 1 assigned partition(s): rebalance
+%7|1794421865.500|PAUSE|Kafka Consumer Test#consumer-1227| [thrd:main]: Library pausing 1 partition(s)
+%7|1794421865.505|BARRIER|Kafka Consumer Test#consumer-1227| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1]: rd_kafka_toppar_op_pause_resume:2524: new version barrier v7
+%7|1794421865.510|PAUSE|Kafka Consumer Test#consumer-1227| [thrd:main]: Pause 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] (v7)
+%7|1794421865.519|ASSIGNMENT|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3": clearing group assignment
+%7|1794421865.525|OP|Kafka Consumer Test#consumer-1227| [thrd:main]: 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] received op PAUSE (v7) in fetch-state active (opv6)
+%7|1794421865.534|PAUSE|Kafka Consumer Test#consumer-1227| [thrd:main]: Pause 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1]: at offset 1 (leader epoch 0) (state active, v7)
+%7|1794421865.655|FETCHDEC|Kafka Consumer Test#consumer-1227| [thrd:localhost:9092/1]: Topic 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1]: fetch decide: updating to version 7 (was 6) at offset 1 (leader epoch 0) (was offset 8 (leader epoch 0))
+%7|1794421865.670|FETCHADD|Kafka Consumer Test#consumer-1227| [thrd:localhost:9092/1]: localhost:9092/1: Removed 21fcbf65-6004-46b1-ab66-ba40789a4b17 [1] from fetch list (0 entries, opv 7): paused
+%7|1794421868.483|HEARTBEAT|Kafka Consumer Test#consumer-1227| [thrd:main]: GroupCoordinator/1: Heartbeat for group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" generation id 5
+%7|1794421868.509|HEARTBEAT|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" heartbeat error response in state up (join-state wait-unassign-call, 0 partition(s) assigned): Broker: Group rebalance in progress
+%7|1794421871.509|HEARTBEAT|Kafka Consumer Test#consumer-1227| [thrd:main]: GroupCoordinator/1: Heartbeat for group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" generation id 5
+%7|1794421871.516|HEARTBEAT|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" heartbeat error response in state up (join-state wait-unassign-call, 0 partition(s) assigned): Broker: Group rebalance in progress
+%7|1794421874.516|HEARTBEAT|Kafka Consumer Test#consumer-1227| [thrd:main]: GroupCoordinator/1: Heartbeat for group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" generation id 5
+%7|1794421874.519|HEARTBEAT|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" heartbeat error response in state up (join-state wait-unassign-call, 0 partition(s) assigned): Broker: Group rebalance in progress
+%7|1794421877.519|HEARTBEAT|Kafka Consumer Test#consumer-1227| [thrd:main]: GroupCoordinator/1: Heartbeat for group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" generation id 5
+%7|1794421877.523|HEARTBEAT|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" heartbeat error response in state up (join-state wait-unassign-call, 0 partition(s) assigned): Broker: Group rebalance in progress
+%7|1794421880.521|HEARTBEAT|Kafka Consumer Test#consumer-1227| [thrd:main]: GroupCoordinator/1: Heartbeat for group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" generation id 5
+%7|1794421880.530|HEARTBEAT|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" heartbeat error response in state up (join-state wait-unassign-call, 0 partition(s) assigned): Broker: Group rebalance in progress
+%7|1794421883.530|HEARTBEAT|Kafka Consumer Test#consumer-1227| [thrd:main]: GroupCoordinator/1: Heartbeat for group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" generation id 5
+%7|1794421883.541|HEARTBEAT|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" heartbeat error response in state up (join-state wait-unassign-call, 0 partition(s) assigned): Broker: Group rebalance in progress
+%7|1794421886.541|HEARTBEAT|Kafka Consumer Test#consumer-1227| [thrd:main]: GroupCoordinator/1: Heartbeat for group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" generation id 5
+%7|1794421886.544|HEARTBEAT|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" heartbeat error response in state up (join-state wait-unassign-call, 0 partition(s) assigned): Broker: Group rebalance in progress
+%7|1794421889.544|HEARTBEAT|Kafka Consumer Test#consumer-1227| [thrd:main]: GroupCoordinator/1: Heartbeat for group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" generation id 5
+%7|1794421889.550|HEARTBEAT|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" heartbeat error response in state up (join-state wait-unassign-call, 0 partition(s) assigned): Broker: Group rebalance in progress
+%7|1794421892.551|HEARTBEAT|Kafka Consumer Test#consumer-1227| [thrd:main]: GroupCoordinator/1: Heartbeat for group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" generation id 5
+%7|1794421892.571|HEARTBEAT|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" heartbeat error response in state up (join-state wait-unassign-call, 0 partition(s) assigned): Broker: Group rebalance in progress
+%7|1794421895.572|HEARTBEAT|Kafka Consumer Test#consumer-1227| [thrd:main]: GroupCoordinator/1: Heartbeat for group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" generation id 5
+%7|1794421895.612|HEARTBEAT|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" heartbeat error response in state up (join-state wait-unassign-call, 0 partition(s) assigned): Broker: Group rebalance in progress
+%7|1794421898.612|HEARTBEAT|Kafka Consumer Test#consumer-1227| [thrd:main]: GroupCoordinator/1: Heartbeat for group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" generation id 5
+%7|1794421898.621|HEARTBEAT|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" heartbeat error response in state up (join-state wait-unassign-call, 0 partition(s) assigned): Broker: Group rebalance in progress
+%7|1794421901.620|HEARTBEAT|Kafka Consumer Test#consumer-1227| [thrd:main]: GroupCoordinator/1: Heartbeat for group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" generation id 5
+%7|1794421901.624|HEARTBEAT|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" heartbeat error response in state up (join-state wait-unassign-call, 0 partition(s) assigned): Broker: Group rebalance in progress
+%7|1794421904.624|HEARTBEAT|Kafka Consumer Test#consumer-1227| [thrd:main]: GroupCoordinator/1: Heartbeat for group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" generation id 5
+%7|1794421904.627|HEARTBEAT|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" heartbeat error response in state up (join-state wait-unassign-call, 0 partition(s) assigned): Broker: Group rebalance in progress
+%7|1794421907.627|HEARTBEAT|Kafka Consumer Test#consumer-1227| [thrd:main]: GroupCoordinator/1: Heartbeat for group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" generation id 5
+%7|1794421907.629|HEARTBEAT|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" heartbeat error response in state up (join-state wait-unassign-call, 0 partition(s) assigned): Broker: Group rebalance in progress
+%7|1794421910.627|HEARTBEAT|Kafka Consumer Test#consumer-1227| [thrd:main]: GroupCoordinator/1: Heartbeat for group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" generation id 5
+%7|1794421910.635|HEARTBEAT|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" heartbeat error response in state up (join-state wait-unassign-call, 0 partition(s) assigned): Broker: Group rebalance in progress
+%7|1794421913.636|HEARTBEAT|Kafka Consumer Test#consumer-1227| [thrd:main]: GroupCoordinator/1: Heartbeat for group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" generation id 5
+%7|1794421913.642|HEARTBEAT|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" heartbeat error response in state up (join-state wait-unassign-call, 0 partition(s) assigned): Broker: Group rebalance in progress
+%7|1794421916.643|HEARTBEAT|Kafka Consumer Test#consumer-1227| [thrd:main]: GroupCoordinator/1: Heartbeat for group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" generation id 5
+%7|1794421916.671|HEARTBEAT|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" heartbeat error response in state up (join-state wait-unassign-call, 0 partition(s) assigned): Broker: Group rebalance in progress
+%7|1794421919.671|HEARTBEAT|Kafka Consumer Test#consumer-1227| [thrd:main]: GroupCoordinator/1: Heartbeat for group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" generation id 5
+%7|1794421919.675|HEARTBEAT|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" heartbeat error response in state up (join-state wait-unassign-call, 0 partition(s) assigned): Broker: Group rebalance in progress
+%7|1794421922.676|HEARTBEAT|Kafka Consumer Test#consumer-1227| [thrd:main]: GroupCoordinator/1: Heartbeat for group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" generation id 5
+%7|1794421922.682|HEARTBEAT|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" heartbeat error response in state up (join-state wait-unassign-call, 0 partition(s) assigned): Broker: Group rebalance in progress
+%7|1794421925.683|HEARTBEAT|Kafka Consumer Test#consumer-1227| [thrd:main]: GroupCoordinator/1: Heartbeat for group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" generation id 5
+%7|1794421925.685|HEARTBEAT|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" heartbeat error response in state up (join-state wait-unassign-call, 0 partition(s) assigned): Broker: Group rebalance in progress
+%7|1794421928.686|HEARTBEAT|Kafka Consumer Test#consumer-1227| [thrd:main]: GroupCoordinator/1: Heartbeat for group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" generation id 5
+%7|1794421928.701|HEARTBEAT|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" heartbeat error response in state up (join-state wait-unassign-call, 0 partition(s) assigned): Broker: Group rebalance in progress
+%7|1794421931.702|HEARTBEAT|Kafka Consumer Test#consumer-1227| [thrd:main]: GroupCoordinator/1: Heartbeat for group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" generation id 5
+%7|1794421931.704|HEARTBEAT|Kafka Consumer Test#consumer-1227| [thrd:main]: Group "045ba8a1-fc0f-4e16-8646-4fc17fbedce3" heartbeat error response in state up (join-state wait-unassign-call, 0 partition(s) assigned): Broker: Group rebalance in progress

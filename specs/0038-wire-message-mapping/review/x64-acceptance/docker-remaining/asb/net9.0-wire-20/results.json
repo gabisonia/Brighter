@@ -1,0 +1,262 @@
+﻿{
+    "head":  "2db6bcc9b53bdb1d388b667d8f8bbe6c05c0be33",
+    "framework":  "net9.0",
+    "batch":  "wire-20",
+    "build":  {
+                  "finishedUtc":  "2026-11-11T18:02:10.2827205Z",
+                  "exitCode":  0,
+                  "log":  "C:\\Users\\IrakliGabisonia\\source\\repos\\Personal\\Brighter\\specs\\0038-wire-message-mapping\\review\\x64-acceptance/docker-remaining/asb/net9.0-build.log",
+                  "startedUtc":  "2026-11-11T18:01:31.6856738Z",
+                  "clockDiscontinuity":  false,
+                  "seconds":  38.5512722
+              },
+    "cases":  [
+                  {
+                      "outcome":  "Passed",
+                      "message":  null,
+                      "name":  "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbRejectCancellationRecoveryTests.When_an_asb_rejection_is_cancelled_before_entry_should_preserve_delivery_and_allow_acknowledgement(useQueue: True)",
+                      "stack":  null
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  null,
+                      "name":  "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbRejectCancellationRecoveryTests.When_an_asb_rejection_is_cancelled_before_entry_should_preserve_delivery_and_allow_acknowledgement(useQueue: False)",
+                      "stack":  null
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  null,
+                      "name":  "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbScheduledWireWriterTests.When_an_asb_publication_schedules_with_a_custom_writer_should_preserve_mapping_and_delay(useQueue: False, useAsync: False)",
+                      "stack":  null
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  null,
+                      "name":  "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbScheduledWireWriterTests.When_an_asb_publication_schedules_with_a_custom_writer_should_preserve_mapping_and_delay(useQueue: True, useAsync: False)",
+                      "stack":  null
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  null,
+                      "name":  "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbScheduledWireWriterTests.When_an_asb_publication_schedules_with_a_custom_writer_should_preserve_mapping_and_delay(useQueue: True, useAsync: True)",
+                      "stack":  null
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  null,
+                      "name":  "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbScheduledWireWriterTests.When_an_asb_publication_schedules_with_a_custom_writer_should_preserve_mapping_and_delay(useQueue: False, useAsync: True)",
+                      "stack":  null
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  null,
+                      "name":  "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbSendCancellationRecoveryTests.When_an_asb_send_is_cancelled_after_mapping_should_report_cancellation_and_recover(useQueue: True, scheduled: False)",
+                      "stack":  null
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  null,
+                      "name":  "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbSendCancellationRecoveryTests.When_an_asb_send_is_cancelled_after_mapping_should_report_cancellation_and_recover(useQueue: False, scheduled: False)",
+                      "stack":  null
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  null,
+                      "name":  "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbSendCancellationRecoveryTests.When_an_asb_send_is_cancelled_after_mapping_should_report_cancellation_and_recover(useQueue: False, scheduled: True)",
+                      "stack":  null
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  null,
+                      "name":  "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbSendCancellationRecoveryTests.When_an_asb_send_is_cancelled_after_mapping_should_report_cancellation_and_recover(useQueue: True, scheduled: True)",
+                      "stack":  null
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  null,
+                      "name":  "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbSessionAcquisitionCancellationRecoveryTests.When_asb_session_acquisition_is_cancelled_should_stop_promptly_and_recover(useQueue: False)",
+                      "stack":  null
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  null,
+                      "name":  "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbSessionAcquisitionCancellationRecoveryTests.When_asb_session_acquisition_is_cancelled_should_stop_promptly_and_recover(useQueue: True)",
+                      "stack":  null
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  null,
+                      "name":  "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbSessionPartialAbandonmentRenewalTests.When_asb_abandons_one_session_delivery_should_preserve_renewal_and_redeliver_it(useQueue: True)",
+                      "stack":  null
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  null,
+                      "name":  "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbSessionPartialAbandonmentRenewalTests.When_asb_abandons_one_session_delivery_should_preserve_renewal_and_redeliver_it(useQueue: False)",
+                      "stack":  null
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  null,
+                      "name":  "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbSessionPartialSettlementRenewalTests.When_asb_settles_one_session_delivery_should_keep_renewing_the_remaining_delivery(useQueue: True)",
+                      "stack":  null
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  null,
+                      "name":  "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbSessionPartialSettlementRenewalTests.When_asb_settles_one_session_delivery_should_keep_renewing_the_remaining_delivery(useQueue: False)",
+                      "stack":  null
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  null,
+                      "name":  "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbSessionRenewalBudgetRecoveryTests.When_asb_session_renewal_budget_expires_should_allow_mapped_redelivery_on_the_same_consumer(useQueue: True)",
+                      "stack":  null
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  null,
+                      "name":  "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbSessionRenewalBudgetRecoveryTests.When_asb_session_renewal_budget_expires_should_allow_mapped_redelivery_on_the_same_consumer(useQueue: False)",
+                      "stack":  null
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  null,
+                      "name":  "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbUnvisitedBufferedCancellationRecoveryTests.When_an_asb_receive_is_cancelled_before_mapping_the_last_delivery_should_release_the_entire_batch(useQueue: False)",
+                      "stack":  null
+                  },
+                  {
+                      "outcome":  "Passed",
+                      "message":  null,
+                      "name":  "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbUnvisitedBufferedCancellationRecoveryTests.When_an_asb_receive_is_cancelled_before_mapping_the_last_delivery_should_release_the_entire_batch(useQueue: True)",
+                      "stack":  null
+                  }
+              ],
+    "runs":  [
+                 {
+                     "class":  "AsbRejectCancellationRecoveryTests",
+                     "run":  {
+                                 "finishedUtc":  "2026-11-11T18:18:27.8641470Z",
+                                 "exitCode":  0,
+                                 "log":  "C:\\Users\\IrakliGabisonia\\source\\repos\\Personal\\Brighter\\specs\\0038-wire-message-mapping\\review\\x64-acceptance/docker-remaining/asb/net9.0-wire-20/AsbRejectCancellationRecoveryTests.log",
+                                 "startedUtc":  "2026-11-11T18:18:23.2677130Z",
+                                 "clockDiscontinuity":  false,
+                                 "seconds":  4.5616173
+                             }
+                 },
+                 {
+                     "class":  "AsbScheduledWireWriterTests",
+                     "run":  {
+                                 "finishedUtc":  "2026-11-11T18:18:51.5379330Z",
+                                 "exitCode":  0,
+                                 "log":  "C:\\Users\\IrakliGabisonia\\source\\repos\\Personal\\Brighter\\specs\\0038-wire-message-mapping\\review\\x64-acceptance/docker-remaining/asb/net9.0-wire-20/AsbScheduledWireWriterTests.log",
+                                 "startedUtc":  "2026-11-11T18:18:27.8736872Z",
+                                 "clockDiscontinuity":  false,
+                                 "seconds":  23.6388809
+                             }
+                 },
+                 {
+                     "class":  "AsbSendCancellationRecoveryTests",
+                     "run":  {
+                                 "finishedUtc":  "2026-11-11T18:19:05.9181972Z",
+                                 "exitCode":  0,
+                                 "log":  "C:\\Users\\IrakliGabisonia\\source\\repos\\Personal\\Brighter\\specs\\0038-wire-message-mapping\\review\\x64-acceptance/docker-remaining/asb/net9.0-wire-20/AsbSendCancellationRecoveryTests.log",
+                                 "startedUtc":  "2026-11-11T18:18:51.5597736Z",
+                                 "clockDiscontinuity":  false,
+                                 "seconds":  14.315385599999999
+                             }
+                 },
+                 {
+                     "class":  "AsbSessionAcquisitionCancellationRecoveryTests",
+                     "run":  {
+                                 "finishedUtc":  "2026-11-11T18:19:10.8516524Z",
+                                 "exitCode":  0,
+                                 "log":  "C:\\Users\\IrakliGabisonia\\source\\repos\\Personal\\Brighter\\specs\\0038-wire-message-mapping\\review\\x64-acceptance/docker-remaining/asb/net9.0-wire-20/AsbSessionAcquisitionCancellationRecoveryTests.log",
+                                 "startedUtc":  "2026-11-11T18:19:05.9293539Z",
+                                 "clockDiscontinuity":  false,
+                                 "seconds":  4.8863004
+                             }
+                 },
+                 {
+                     "class":  "AsbSessionPartialAbandonmentRenewalTests",
+                     "run":  {
+                                 "finishedUtc":  "2026-11-11T18:19:31.8011933Z",
+                                 "exitCode":  0,
+                                 "log":  "C:\\Users\\IrakliGabisonia\\source\\repos\\Personal\\Brighter\\specs\\0038-wire-message-mapping\\review\\x64-acceptance/docker-remaining/asb/net9.0-wire-20/AsbSessionPartialAbandonmentRenewalTests.log",
+                                 "startedUtc":  "2026-11-11T18:19:10.8614149Z",
+                                 "clockDiscontinuity":  false,
+                                 "seconds":  20.9143017
+                             }
+                 },
+                 {
+                     "class":  "AsbSessionPartialSettlementRenewalTests",
+                     "run":  {
+                                 "finishedUtc":  "2026-11-11T18:19:52.4989732Z",
+                                 "exitCode":  0,
+                                 "log":  "C:\\Users\\IrakliGabisonia\\source\\repos\\Personal\\Brighter\\specs\\0038-wire-message-mapping\\review\\x64-acceptance/docker-remaining/asb/net9.0-wire-20/AsbSessionPartialSettlementRenewalTests.log",
+                                 "startedUtc":  "2026-11-11T18:19:31.8151951Z",
+                                 "clockDiscontinuity":  false,
+                                 "seconds":  20.6458434
+                             }
+                 },
+                 {
+                     "class":  "AsbSessionRenewalBudgetRecoveryTests",
+                     "run":  {
+                                 "finishedUtc":  "2026-11-11T18:20:22.6204616Z",
+                                 "exitCode":  0,
+                                 "log":  "C:\\Users\\IrakliGabisonia\\source\\repos\\Personal\\Brighter\\specs\\0038-wire-message-mapping\\review\\x64-acceptance/docker-remaining/asb/net9.0-wire-20/AsbSessionRenewalBudgetRecoveryTests.log",
+                                 "startedUtc":  "2026-11-11T18:19:52.5047678Z",
+                                 "clockDiscontinuity":  false,
+                                 "seconds":  30.0880904
+                             }
+                 },
+                 {
+                     "class":  "AsbUnvisitedBufferedCancellationRecoveryTests",
+                     "run":  {
+                                 "finishedUtc":  "2026-11-11T18:20:26.7611062Z",
+                                 "exitCode":  0,
+                                 "log":  "C:\\Users\\IrakliGabisonia\\source\\repos\\Personal\\Brighter\\specs\\0038-wire-message-mapping\\review\\x64-acceptance/docker-remaining/asb/net9.0-wire-20/AsbUnvisitedBufferedCancellationRecoveryTests.log",
+                                 "startedUtc":  "2026-11-11T18:20:22.6204616Z",
+                                 "clockDiscontinuity":  false,
+                                 "seconds":  4.1085807999999995
+                             }
+                 }
+             ],
+    "containers":  [
+                       {
+                           "runningAfterStop":  "false",
+                           "name":  "brighter-4170-rem-net9-0-wire-20-broker",
+                           "stateBeforeStop":  {
+                                                   "Status":  "running",
+                                                   "Running":  true,
+                                                   "Paused":  false,
+                                                   "Restarting":  false,
+                                                   "OOMKilled":  false,
+                                                   "Dead":  false,
+                                                   "Pid":  78124,
+                                                   "ExitCode":  0,
+                                                   "Error":  "",
+                                                   "StartedAt":  "2026-11-11T18:17:48.569819212Z",
+                                                   "FinishedAt":  "0001-01-01T00:00:00Z"
+                                               }
+                       },
+                       {
+                           "runningAfterStop":  "false",
+                           "name":  "brighter-4170-rem-net9-0-wire-20-sql",
+                           "stateBeforeStop":  {
+                                                   "Status":  "running",
+                                                   "Running":  true,
+                                                   "Paused":  false,
+                                                   "Restarting":  false,
+                                                   "OOMKilled":  false,
+                                                   "Dead":  false,
+                                                   "Pid":  77588,
+                                                   "ExitCode":  0,
+                                                   "Error":  "",
+                                                   "StartedAt":  "2026-11-11T18:17:43.853905151Z",
+                                                   "FinishedAt":  "0001-01-01T00:00:00Z"
+                                               }
+                       }
+                   ],
+    "managementHealth":  200
+}

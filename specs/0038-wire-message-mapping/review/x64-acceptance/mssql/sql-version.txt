@@ -1,0 +1,2 @@
+Msg 102, Level 15, State 1, Server adf77722ad29, Line 1
+Incorrect syntax near 'SELECT'.

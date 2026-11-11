@@ -1,0 +1,220 @@
+﻿[
+    {
+        "framework":  "net9.0",
+        "head":  "2db6bcc9b53bdb1d388b667d8f8bbe6c05c0be33",
+        "total":  8,
+        "passed":  6,
+        "failed":  2,
+        "historicalIdentityDifferences":  [
+
+                                          ],
+        "allOwnedContainersStopped":  true,
+        "cases":  [
+                      {
+                          "index":  0,
+                          "name":  "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: False, useAsync: False, returnNull: False)",
+                          "outcome":  "Failed",
+                          "entity":  "recovery-topic-0",
+                          "error":  "Assert.IsType() Failure: Value is null\r\nExpected: typeof(Azure.Messaging.ServiceBus.ServiceBusReceivedMessage)\r\nActual:   null",
+                          "duplicateSequenceFault":  true,
+                          "duplicateFaultRecords":  2,
+                          "startedUtc":  "2026-11-11T17:45:19.5211657Z",
+                          "finishedUtc":  "2026-11-11T17:45:23.8810995Z",
+                          "clockDiscontinuity":  false
+                      },
+                      {
+                          "index":  1,
+                          "name":  "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: False, useAsync: False, returnNull: True)",
+                          "outcome":  "Passed",
+                          "entity":  "recovery-topic-1",
+                          "error":  null,
+                          "duplicateSequenceFault":  false,
+                          "duplicateFaultRecords":  0,
+                          "startedUtc":  "2026-11-11T17:45:23.9091469Z",
+                          "finishedUtc":  "2026-11-11T17:45:27.7131543Z",
+                          "clockDiscontinuity":  false
+                      },
+                      {
+                          "index":  2,
+                          "name":  "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: False, useAsync: True, returnNull: False)",
+                          "outcome":  "Passed",
+                          "entity":  "recovery-topic-2",
+                          "error":  null,
+                          "duplicateSequenceFault":  false,
+                          "duplicateFaultRecords":  0,
+                          "startedUtc":  "2026-11-11T17:45:27.7325102Z",
+                          "finishedUtc":  "2026-11-11T17:45:31.3954675Z",
+                          "clockDiscontinuity":  false
+                      },
+                      {
+                          "index":  3,
+                          "name":  "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: False, useAsync: True, returnNull: True)",
+                          "outcome":  "Passed",
+                          "entity":  "recovery-topic-3",
+                          "error":  null,
+                          "duplicateSequenceFault":  false,
+                          "duplicateFaultRecords":  0,
+                          "startedUtc":  "2026-11-11T17:45:31.4163491Z",
+                          "finishedUtc":  "2026-11-11T17:45:35.0468626Z",
+                          "clockDiscontinuity":  false
+                      },
+                      {
+                          "index":  4,
+                          "name":  "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: True, useAsync: False, returnNull: False)",
+                          "outcome":  "Failed",
+                          "entity":  "recovery-queue-4",
+                          "error":  "Assert.IsType() Failure: Value is null\r\nExpected: typeof(Azure.Messaging.ServiceBus.ServiceBusReceivedMessage)\r\nActual:   null",
+                          "duplicateSequenceFault":  true,
+                          "duplicateFaultRecords":  2,
+                          "startedUtc":  "2026-11-11T17:45:35.0589431Z",
+                          "finishedUtc":  "2026-11-11T17:45:38.6236832Z",
+                          "clockDiscontinuity":  false
+                      },
+                      {
+                          "index":  5,
+                          "name":  "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: True, useAsync: False, returnNull: True)",
+                          "outcome":  "Passed",
+                          "entity":  "recovery-queue-5",
+                          "error":  null,
+                          "duplicateSequenceFault":  false,
+                          "duplicateFaultRecords":  0,
+                          "startedUtc":  "2026-11-11T17:45:38.6338026Z",
+                          "finishedUtc":  "2026-11-11T17:45:42.1562064Z",
+                          "clockDiscontinuity":  false
+                      },
+                      {
+                          "index":  6,
+                          "name":  "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: True, useAsync: True, returnNull: False)",
+                          "outcome":  "Passed",
+                          "entity":  "recovery-queue-6",
+                          "error":  null,
+                          "duplicateSequenceFault":  false,
+                          "duplicateFaultRecords":  0,
+                          "startedUtc":  "2026-11-11T17:45:42.1636007Z",
+                          "finishedUtc":  "2026-11-11T17:45:45.7456732Z",
+                          "clockDiscontinuity":  false
+                      },
+                      {
+                          "index":  7,
+                          "name":  "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: True, useAsync: True, returnNull: True)",
+                          "outcome":  "Passed",
+                          "entity":  "recovery-queue-7",
+                          "error":  null,
+                          "duplicateSequenceFault":  false,
+                          "duplicateFaultRecords":  0,
+                          "startedUtc":  "2026-11-11T17:45:45.7456732Z",
+                          "finishedUtc":  "2026-11-11T17:45:49.2150878Z",
+                          "clockDiscontinuity":  false
+                      }
+                  ]
+    },
+    {
+        "framework":  "net10.0",
+        "head":  "2db6bcc9b53bdb1d388b667d8f8bbe6c05c0be33",
+        "total":  8,
+        "passed":  8,
+        "failed":  0,
+        "historicalIdentityDifferences":  [
+
+                                          ],
+        "allOwnedContainersStopped":  true,
+        "cases":  [
+                      {
+                          "index":  0,
+                          "name":  "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: False, useAsync: False, returnNull: False)",
+                          "outcome":  "Passed",
+                          "entity":  "recovery-topic-0",
+                          "error":  null,
+                          "duplicateSequenceFault":  false,
+                          "duplicateFaultRecords":  0,
+                          "startedUtc":  "2026-11-11T17:47:13.8951592Z",
+                          "finishedUtc":  "2026-11-11T17:47:19.4180673Z",
+                          "clockDiscontinuity":  false
+                      },
+                      {
+                          "index":  1,
+                          "name":  "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: False, useAsync: False, returnNull: True)",
+                          "outcome":  "Passed",
+                          "entity":  "recovery-topic-1",
+                          "error":  null,
+                          "duplicateSequenceFault":  false,
+                          "duplicateFaultRecords":  0,
+                          "startedUtc":  "2026-11-11T17:47:19.4334557Z",
+                          "finishedUtc":  "2026-11-11T17:47:24.8859946Z",
+                          "clockDiscontinuity":  false
+                      },
+                      {
+                          "index":  2,
+                          "name":  "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: False, useAsync: True, returnNull: False)",
+                          "outcome":  "Passed",
+                          "entity":  "recovery-topic-2",
+                          "error":  null,
+                          "duplicateSequenceFault":  false,
+                          "duplicateFaultRecords":  0,
+                          "startedUtc":  "2026-11-11T17:47:24.8942188Z",
+                          "finishedUtc":  "2026-11-11T17:47:29.6842191Z",
+                          "clockDiscontinuity":  false
+                      },
+                      {
+                          "index":  3,
+                          "name":  "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: False, useAsync: True, returnNull: True)",
+                          "outcome":  "Passed",
+                          "entity":  "recovery-topic-3",
+                          "error":  null,
+                          "duplicateSequenceFault":  false,
+                          "duplicateFaultRecords":  0,
+                          "startedUtc":  "2026-11-11T17:47:29.6999676Z",
+                          "finishedUtc":  "2026-11-11T17:47:33.7749342Z",
+                          "clockDiscontinuity":  false
+                      },
+                      {
+                          "index":  4,
+                          "name":  "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: True, useAsync: False, returnNull: False)",
+                          "outcome":  "Passed",
+                          "entity":  "recovery-queue-4",
+                          "error":  null,
+                          "duplicateSequenceFault":  false,
+                          "duplicateFaultRecords":  0,
+                          "startedUtc":  "2026-11-11T17:47:33.7906623Z",
+                          "finishedUtc":  "2026-11-11T17:47:37.9418212Z",
+                          "clockDiscontinuity":  false
+                      },
+                      {
+                          "index":  5,
+                          "name":  "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: True, useAsync: False, returnNull: True)",
+                          "outcome":  "Passed",
+                          "entity":  "recovery-queue-5",
+                          "error":  null,
+                          "duplicateSequenceFault":  false,
+                          "duplicateFaultRecords":  0,
+                          "startedUtc":  "2026-11-11T17:47:37.9507376Z",
+                          "finishedUtc":  "2026-11-11T17:47:41.7166413Z",
+                          "clockDiscontinuity":  false
+                      },
+                      {
+                          "index":  6,
+                          "name":  "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: True, useAsync: True, returnNull: False)",
+                          "outcome":  "Passed",
+                          "entity":  "recovery-queue-6",
+                          "error":  null,
+                          "duplicateSequenceFault":  false,
+                          "duplicateFaultRecords":  0,
+                          "startedUtc":  "2026-11-11T17:47:41.7284033Z",
+                          "finishedUtc":  "2026-11-11T17:47:45.4891721Z",
+                          "clockDiscontinuity":  false
+                      },
+                      {
+                          "index":  7,
+                          "name":  "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: True, useAsync: True, returnNull: True)",
+                          "outcome":  "Passed",
+                          "entity":  "recovery-queue-7",
+                          "error":  null,
+                          "duplicateSequenceFault":  false,
+                          "duplicateFaultRecords":  0,
+                          "startedUtc":  "2026-11-11T17:47:45.4908886Z",
+                          "finishedUtc":  "2026-11-11T17:47:49.6471938Z",
+                          "clockDiscontinuity":  false
+                      }
+                  ]
+    }
+]

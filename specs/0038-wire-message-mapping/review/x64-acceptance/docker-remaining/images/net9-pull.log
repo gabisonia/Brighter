@@ -1,0 +1,37 @@
+9.0: Pulling from dotnet/sdk
+53b1393c7c21: Pulling fs layer
+3201495d8fcb: Pulling fs layer
+e7603960e367: Pulling fs layer
+d96759fed1fb: Pulling fs layer
+d90606c0c4d7: Pulling fs layer
+d931cc97bd60: Pulling fs layer
+38a674fe701b: Pulling fs layer
+dd051e1b8c92: Pulling fs layer
+39f51f894b99: Pulling fs layer
+4f72c09696c6: Pulling fs layer
+2a1d2781e792: Pulling fs layer
+d931cc97bd60: Download complete
+d96759fed1fb: Download complete
+e7603960e367: Download complete
+38a674fe701b: Download complete
+39f51f894b99: Download complete
+4f72c09696c6: Download complete
+53b1393c7c21: Download complete
+dd051e1b8c92: Download complete
+3201495d8fcb: Download complete
+dd051e1b8c92: Pull complete
+39f51f894b99: Pull complete
+4f72c09696c6: Pull complete
+3201495d8fcb: Pull complete
+2a1d2781e792: Download complete
+d931cc97bd60: Pull complete
+e7603960e367: Pull complete
+2a1d2781e792: Pull complete
+d90606c0c4d7: Download complete
+d90606c0c4d7: Pull complete
+d96759fed1fb: Pull complete
+38a674fe701b: Pull complete
+53b1393c7c21: Pull complete
+Digest: sha256:1dfdb27e9c2c345cb598925ccf6b13719ecfebea8467bd4745c23a3c108cdf84
+Status: Downloaded newer image for mcr.microsoft.com/dotnet/sdk:9.0
+mcr.microsoft.com/dotnet/sdk:9.0

@@ -1,0 +1,4 @@
+[createdump] Gathering state for process 53 dotnet
+[createdump] Writing crash report to file /capture/pending-close.core.crashreport.json
+[createdump] Crash report successfully written
+[createdump] Writing full dump to file /capture/pending-close.core

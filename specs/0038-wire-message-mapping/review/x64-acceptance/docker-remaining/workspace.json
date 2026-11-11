@@ -1,0 +1,15 @@
+﻿{
+    "output":  "C:\\Users\\IrakliGabisonia\\source\\repos\\Personal\\Brighter\\specs\\0038-wire-message-mapping\\review\\x64-acceptance/docker-remaining",
+    "assertionsChanged":  false,
+    "productionChanges":  [
+
+                          ],
+    "isolatedOnlyChanges":  [
+                                "ASBCreds management endpoint routing",
+                                "DockerAcceptanceClientProvider real SDK adapter",
+                                "two retained passive in-memory lock diagnostic helpers",
+                                "two retained approved lost-lock test/helper files"
+                            ],
+    "head":  "2db6bcc9b53bdb1d388b667d8f8bbe6c05c0be33",
+    "workspace":  "C:\\Users\\IRAKLI~1\\AppData\\Local\\Temp\\brighter-4170-docker-remaining"
+}

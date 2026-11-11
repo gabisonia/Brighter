@@ -1,0 +1,19 @@
+﻿{
+    "sourceFiles":  [
+                        {
+                            "Path":  "C:\\Users\\IrakliGabisonia\\source\\repos\\Personal\\Brighter\\specs\\0038-wire-message-mapping\\review\\asb-sdk-dlq\\probe\\packages.lock.json",
+                            "Hash":  "50898214E696167235E2AFABA9739B5208E765F2ABD3ECD29B3B68D55EC2F5F8"
+                        },
+                        {
+                            "Path":  "C:\\Users\\IrakliGabisonia\\source\\repos\\Personal\\Brighter\\specs\\0038-wire-message-mapping\\review\\asb-sdk-dlq\\probe\\Probe.csproj",
+                            "Hash":  "B03853995685187A5591A08794FEFBB06737301F7B683C99B2DB393333EE21E7"
+                        },
+                        {
+                            "Path":  "C:\\Users\\IrakliGabisonia\\source\\repos\\Personal\\Brighter\\specs\\0038-wire-message-mapping\\review\\asb-sdk-dlq\\probe\\Program.cs",
+                            "Hash":  "66027A06BFA18DB1ED20F0A69D0EBFC09A6F20851F00165E7E2E5CE1DB455934"
+                        }
+                    ],
+    "copiedWithoutEdits":  true,
+    "head":  "2db6bcc9b53bdb1d388b667d8f8bbe6c05c0be33",
+    "experiment":  "One cold sample per framework; unchanged four topic and four queue cycles; 300 second outer deadline; architecture/backend hypothesis only"
+}

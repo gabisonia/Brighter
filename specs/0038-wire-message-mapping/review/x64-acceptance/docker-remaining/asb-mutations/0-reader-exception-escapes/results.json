@@ -1,0 +1,551 @@
+﻿{
+    "head":  "2db6bcc9b53bdb1d388b667d8f8bbe6c05c0be33",
+    "framework":  "net10.0",
+    "variant":  "reader-exception-escapes",
+    "index":  0,
+    "sourceBefore":  "0223491A60DDAD10CC6B8D0E5A6A63E4CD7C513DA5D9BA4D675400B2A59D3C0A",
+    "baseline":  [
+                     {
+                         "scenario":  {
+                                          "index":  0,
+                                          "useQueue":  false,
+                                          "useAsync":  false,
+                                          "returnNull":  false
+                                      },
+                         "name":  "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: False, useAsync: False, returnNull: False)",
+                         "outcome":  "Passed",
+                         "message":  null,
+                         "stack":  null,
+                         "run":  {
+                                     "finishedUtc":  "2026-11-11T18:47:15.8421307Z",
+                                     "exitCode":  0,
+                                     "log":  "C:\\Users\\IrakliGabisonia\\source\\repos\\Personal\\Brighter\\specs\\0038-wire-message-mapping\\review\\x64-acceptance/docker-remaining/asb-mutations/0-reader-exception-escapes/baseline-0.log",
+                                     "startedUtc":  "2026-11-11T18:47:11.5969145Z",
+                                     "clockDiscontinuity":  false,
+                                     "seconds":  4.2107241
+                                 }
+                     },
+                     {
+                         "scenario":  {
+                                          "index":  1,
+                                          "useQueue":  false,
+                                          "useAsync":  false,
+                                          "returnNull":  true
+                                      },
+                         "name":  "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: False, useAsync: False, returnNull: True)",
+                         "outcome":  "Passed",
+                         "message":  null,
+                         "stack":  null,
+                         "run":  {
+                                     "finishedUtc":  "2026-11-11T18:47:19.6648870Z",
+                                     "exitCode":  0,
+                                     "log":  "C:\\Users\\IrakliGabisonia\\source\\repos\\Personal\\Brighter\\specs\\0038-wire-message-mapping\\review\\x64-acceptance/docker-remaining/asb-mutations/0-reader-exception-escapes/baseline-1.log",
+                                     "startedUtc":  "2026-11-11T18:47:15.8787889Z",
+                                     "clockDiscontinuity":  false,
+                                     "seconds":  3.75535
+                                 }
+                     },
+                     {
+                         "scenario":  {
+                                          "index":  2,
+                                          "useQueue":  false,
+                                          "useAsync":  true,
+                                          "returnNull":  false
+                                      },
+                         "name":  "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: False, useAsync: True, returnNull: False)",
+                         "outcome":  "Passed",
+                         "message":  null,
+                         "stack":  null,
+                         "run":  {
+                                     "finishedUtc":  "2026-11-11T18:47:23.5616790Z",
+                                     "exitCode":  0,
+                                     "log":  "C:\\Users\\IrakliGabisonia\\source\\repos\\Personal\\Brighter\\specs\\0038-wire-message-mapping\\review\\x64-acceptance/docker-remaining/asb-mutations/0-reader-exception-escapes/baseline-2.log",
+                                     "startedUtc":  "2026-11-11T18:47:19.6648870Z",
+                                     "clockDiscontinuity":  false,
+                                     "seconds":  3.8506443999999997
+                                 }
+                     },
+                     {
+                         "scenario":  {
+                                          "index":  3,
+                                          "useQueue":  false,
+                                          "useAsync":  true,
+                                          "returnNull":  true
+                                      },
+                         "name":  "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: False, useAsync: True, returnNull: True)",
+                         "outcome":  "Passed",
+                         "message":  null,
+                         "stack":  null,
+                         "run":  {
+                                     "finishedUtc":  "2026-11-11T18:47:27.4451935Z",
+                                     "exitCode":  0,
+                                     "log":  "C:\\Users\\IrakliGabisonia\\source\\repos\\Personal\\Brighter\\specs\\0038-wire-message-mapping\\review\\x64-acceptance/docker-remaining/asb-mutations/0-reader-exception-escapes/baseline-3.log",
+                                     "startedUtc":  "2026-11-11T18:47:23.5640019Z",
+                                     "clockDiscontinuity":  false,
+                                     "seconds":  3.8637324
+                                 }
+                     },
+                     {
+                         "scenario":  {
+                                          "index":  4,
+                                          "useQueue":  true,
+                                          "useAsync":  false,
+                                          "returnNull":  false
+                                      },
+                         "name":  "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: True, useAsync: False, returnNull: False)",
+                         "outcome":  "Passed",
+                         "message":  null,
+                         "stack":  null,
+                         "run":  {
+                                     "finishedUtc":  "2026-11-11T18:47:31.5164080Z",
+                                     "exitCode":  0,
+                                     "log":  "C:\\Users\\IrakliGabisonia\\source\\repos\\Personal\\Brighter\\specs\\0038-wire-message-mapping\\review\\x64-acceptance/docker-remaining/asb-mutations/0-reader-exception-escapes/baseline-4.log",
+                                     "startedUtc":  "2026-11-11T18:47:27.4451935Z",
+                                     "clockDiscontinuity":  false,
+                                     "seconds":  4.0552154
+                                 }
+                     },
+                     {
+                         "scenario":  {
+                                          "index":  5,
+                                          "useQueue":  true,
+                                          "useAsync":  false,
+                                          "returnNull":  true
+                                      },
+                         "name":  "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: True, useAsync: False, returnNull: True)",
+                         "outcome":  "Passed",
+                         "message":  null,
+                         "stack":  null,
+                         "run":  {
+                                     "finishedUtc":  "2026-11-11T18:47:35.5915590Z",
+                                     "exitCode":  0,
+                                     "log":  "C:\\Users\\IrakliGabisonia\\source\\repos\\Personal\\Brighter\\specs\\0038-wire-message-mapping\\review\\x64-acceptance/docker-remaining/asb-mutations/0-reader-exception-escapes/baseline-5.log",
+                                     "startedUtc":  "2026-11-11T18:47:31.5274920Z",
+                                     "clockDiscontinuity":  false,
+                                     "seconds":  4.0405397
+                                 }
+                     },
+                     {
+                         "scenario":  {
+                                          "index":  6,
+                                          "useQueue":  true,
+                                          "useAsync":  true,
+                                          "returnNull":  false
+                                      },
+                         "name":  "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: True, useAsync: True, returnNull: False)",
+                         "outcome":  "Passed",
+                         "message":  null,
+                         "stack":  null,
+                         "run":  {
+                                     "finishedUtc":  "2026-11-11T18:47:39.4534349Z",
+                                     "exitCode":  0,
+                                     "log":  "C:\\Users\\IrakliGabisonia\\source\\repos\\Personal\\Brighter\\specs\\0038-wire-message-mapping\\review\\x64-acceptance/docker-remaining/asb-mutations/0-reader-exception-escapes/baseline-6.log",
+                                     "startedUtc":  "2026-11-11T18:47:35.5925945Z",
+                                     "clockDiscontinuity":  false,
+                                     "seconds":  3.8357978999999998
+                                 }
+                     },
+                     {
+                         "scenario":  {
+                                          "index":  7,
+                                          "useQueue":  true,
+                                          "useAsync":  true,
+                                          "returnNull":  true
+                                      },
+                         "name":  "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: True, useAsync: True, returnNull: True)",
+                         "outcome":  "Passed",
+                         "message":  null,
+                         "stack":  null,
+                         "run":  {
+                                     "finishedUtc":  "2026-11-11T18:47:43.2129470Z",
+                                     "exitCode":  0,
+                                     "log":  "C:\\Users\\IrakliGabisonia\\source\\repos\\Personal\\Brighter\\specs\\0038-wire-message-mapping\\review\\x64-acceptance/docker-remaining/asb-mutations/0-reader-exception-escapes/baseline-7.log",
+                                     "startedUtc":  "2026-11-11T18:47:39.4560707Z",
+                                     "clockDiscontinuity":  false,
+                                     "seconds":  3.7471056
+                                 }
+                     }
+                 ],
+    "mutated":  [
+                    {
+                        "scenario":  {
+                                         "index":  0,
+                                         "useQueue":  false,
+                                         "useAsync":  false,
+                                         "returnNull":  false
+                                     },
+                        "name":  "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: False, useAsync: False, returnNull: False)",
+                        "outcome":  "Failed",
+                        "message":  "System.InvalidOperationException : Deliberate wire reader failure",
+                        "stack":  "   at Paramore.Brighter.AzureServiceBus.Tests.TestDoubles.AsbRecoverableWireReader.ReadMessage(ServiceBusReceivedMessage delivery) in C:\\Users\\IrakliGabisonia\\AppData\\Local\\Temp\\brighter-4170-docker-remaining\\tests\\Paramore.Brighter.AzureServiceBus.Tests\\TestDoubles\\AsbRecoverableWireReader.cs:line 49\r\n   at Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusConsumer.ReadMessage(IBrokeredMessageWrapper delivery) in C:\\Users\\IrakliGabisonia\\AppData\\Local\\Temp\\brighter-4170-docker-remaining\\src\\Paramore.Brighter.MessagingGateway.AzureServiceBus\\AzureServiceBusConsumer.cs:line 482\r\n   at Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusConsumer.ReceiveAsync(Nullable`1 timeOut, CancellationToken cancellationToken) in C:\\Users\\IrakliGabisonia\\AppData\\Local\\Temp\\brighter-4170-docker-remaining\\src\\Paramore.Brighter.MessagingGateway.AzureServiceBus\\AzureServiceBusConsumer.cs:line 244\r\n   at Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusConsumer.ReceiveAsync(Nullable`1 timeOut, CancellationToken cancellationToken) in C:\\Users\\IrakliGabisonia\\AppData\\Local\\Temp\\brighter-4170-docker-remaining\\src\\Paramore.Brighter.MessagingGateway.AzureServiceBus\\AzureServiceBusConsumer.cs:line 254\r\n   at Paramore.Brighter.Tasks.TaskExtensions.WaitAndUnwrapException[TResult](Task`1 task) in C:\\Users\\IrakliGabisonia\\AppData\\Local\\Temp\\brighter-4170-docker-remaining\\src\\Paramore.Brighter\\Tasks\\TaskExtensions.cs:line 68\r\n   at Paramore.Brighter.Tasks.BrighterAsyncContext.\u003c\u003ec__30`1.\u003cRun\u003eb__30_0(Task`1 t, Object state) in C:\\Users\\IrakliGabisonia\\AppData\\Local\\Temp\\brighter-4170-docker-remaining\\src\\Paramore.Brighter\\Tasks\\BrighterAsyncContext.cs:line 295\r\n   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()\r\n   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)\r\n--- End of stack trace from previous location ---\r\n   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)\r\n   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task\u0026 currentTaskSlot, Thread threadPoolThread)\r\n--- End of stack trace from previous location ---\r\n   at Paramore.Brighter.Tasks.TaskExtensions.WaitAndUnwrapException[TResult](Task`1 task) in C:\\Users\\IrakliGabisonia\\AppData\\Local\\Temp\\brighter-4170-docker-remaining\\src\\Paramore.Brighter\\Tasks\\TaskExtensions.cs:line 68\r\n   at Paramore.Brighter.Tasks.BrighterAsyncContext.Run[TResult](Func`1 func) in C:\\Users\\IrakliGabisonia\\AppData\\Local\\Temp\\brighter-4170-docker-remaining\\src\\Paramore.Brighter\\Tasks\\BrighterAsyncContext.cs:line 308\r\n   at Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusConsumer.Receive(Nullable`1 timeOut) in C:\\Users\\IrakliGabisonia\\AppData\\Local\\Temp\\brighter-4170-docker-remaining\\src\\Paramore.Brighter.MessagingGateway.AzureServiceBus\\AzureServiceBusConsumer.cs:line 172\r\n   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.\u003c\u003ec__DisplayClass0_0.\u003c\u003cWhen_an_asb_reader_fails_should_preserve_native_rejection_and_recover\u003eg__Receive|0\u003ed.MoveNext() in C:\\Users\\IrakliGabisonia\\AppData\\Local\\Temp\\brighter-4170-docker-remaining\\tests\\Paramore.Brighter.AzureServiceBus.Tests\\MessagingGateway\\When_an_asb_reader_fails_should_preserve_native_rejection_and_recover.cs:line 150\r\n--- End of stack trace from previous location ---\r\n   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(Boolean useQueue, Boolean useAsync, Boolean returnNull) in C:\\Users\\IrakliGabisonia\\AppData\\Local\\Temp\\brighter-4170-docker-remaining\\tests\\Paramore.Brighter.AzureServiceBus.Tests\\MessagingGateway\\When_an_asb_reader_fails_should_preserve_native_rejection_and_recover.cs:line 99\r\n   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(Boolean useQueue, Boolean useAsync, Boolean returnNull) in C:\\Users\\IrakliGabisonia\\AppData\\Local\\Temp\\brighter-4170-docker-remaining\\tests\\Paramore.Brighter.AzureServiceBus.Tests\\MessagingGateway\\When_an_asb_reader_fails_should_preserve_native_rejection_and_recover.cs:line 148\r\n   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(Boolean useQueue, Boolean useAsync, Boolean returnNull) in C:\\Users\\IrakliGabisonia\\AppData\\Local\\Temp\\brighter-4170-docker-remaining\\tests\\Paramore.Brighter.AzureServiceBus.Tests\\MessagingGateway\\When_an_asb_reader_fails_should_preserve_native_rejection_and_recover.cs:line 148\r\n   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(Boolean useQueue, Boolean useAsync, Boolean returnNull) in C:\\Users\\IrakliGabisonia\\AppData\\Local\\Temp\\brighter-4170-docker-remaining\\tests\\Paramore.Brighter.AzureServiceBus.Tests\\MessagingGateway\\When_an_asb_reader_fails_should_preserve_native_rejection_and_recover.cs:line 148\r\n   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(Boolean useQueue, Boolean useAsync, Boolean returnNull) in C:\\Users\\IrakliGabisonia\\AppData\\Local\\Temp\\brighter-4170-docker-remaining\\tests\\Paramore.Brighter.AzureServiceBus.Tests\\MessagingGateway\\When_an_asb_reader_fails_should_preserve_native_rejection_and_recover.cs:line 148\r\n   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(Boolean useQueue, Boolean useAsync, Boolean returnNull) in C:\\Users\\IrakliGabisonia\\AppData\\Local\\Temp\\brighter-4170-docker-remaining\\tests\\Paramore.Brighter.AzureServiceBus.Tests\\MessagingGateway\\When_an_asb_reader_fails_should_preserve_native_rejection_and_recover.cs:line 148\r\n--- End of stack trace from previous location ---",
+                        "run":  {
+                                    "finishedUtc":  "2026-11-11T18:48:05.7275008Z",
+                                    "exitCode":  1,
+                                    "log":  "C:\\Users\\IrakliGabisonia\\source\\repos\\Personal\\Brighter\\specs\\0038-wire-message-mapping\\review\\x64-acceptance/docker-remaining/asb-mutations/0-reader-exception-escapes/mutated-0.log",
+                                    "startedUtc":  "2026-11-11T18:48:01.8264971Z",
+                                    "clockDiscontinuity":  false,
+                                    "seconds":  3.8836274
+                                }
+                    },
+                    {
+                        "scenario":  {
+                                         "index":  1,
+                                         "useQueue":  false,
+                                         "useAsync":  false,
+                                         "returnNull":  true
+                                     },
+                        "name":  "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: False, useAsync: False, returnNull: True)",
+                        "outcome":  "Passed",
+                        "message":  null,
+                        "stack":  null,
+                        "run":  {
+                                    "finishedUtc":  "2026-11-11T18:48:09.4992360Z",
+                                    "exitCode":  0,
+                                    "log":  "C:\\Users\\IrakliGabisonia\\source\\repos\\Personal\\Brighter\\specs\\0038-wire-message-mapping\\review\\x64-acceptance/docker-remaining/asb-mutations/0-reader-exception-escapes/mutated-1.log",
+                                    "startedUtc":  "2026-11-11T18:48:05.7374495Z",
+                                    "clockDiscontinuity":  false,
+                                    "seconds":  3.7332957999999996
+                                }
+                    },
+                    {
+                        "scenario":  {
+                                         "index":  2,
+                                         "useQueue":  false,
+                                         "useAsync":  true,
+                                         "returnNull":  false
+                                     },
+                        "name":  "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: False, useAsync: True, returnNull: False)",
+                        "outcome":  "Failed",
+                        "message":  "System.InvalidOperationException : Deliberate wire reader failure",
+                        "stack":  "   at Paramore.Brighter.AzureServiceBus.Tests.TestDoubles.AsbRecoverableWireReader.ReadMessage(ServiceBusReceivedMessage delivery) in C:\\Users\\IrakliGabisonia\\AppData\\Local\\Temp\\brighter-4170-docker-remaining\\tests\\Paramore.Brighter.AzureServiceBus.Tests\\TestDoubles\\AsbRecoverableWireReader.cs:line 49\r\n   at Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusConsumer.ReadMessage(IBrokeredMessageWrapper delivery) in C:\\Users\\IrakliGabisonia\\AppData\\Local\\Temp\\brighter-4170-docker-remaining\\src\\Paramore.Brighter.MessagingGateway.AzureServiceBus\\AzureServiceBusConsumer.cs:line 482\r\n   at Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusConsumer.ReceiveAsync(Nullable`1 timeOut, CancellationToken cancellationToken) in C:\\Users\\IrakliGabisonia\\AppData\\Local\\Temp\\brighter-4170-docker-remaining\\src\\Paramore.Brighter.MessagingGateway.AzureServiceBus\\AzureServiceBusConsumer.cs:line 244\r\n   at Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusConsumer.ReceiveAsync(Nullable`1 timeOut, CancellationToken cancellationToken) in C:\\Users\\IrakliGabisonia\\AppData\\Local\\Temp\\brighter-4170-docker-remaining\\src\\Paramore.Brighter.MessagingGateway.AzureServiceBus\\AzureServiceBusConsumer.cs:line 254\r\n   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.\u003c\u003ec__DisplayClass0_0.\u003c\u003cWhen_an_asb_reader_fails_should_preserve_native_rejection_and_recover\u003eg__Receive|0\u003ed.MoveNext() in C:\\Users\\IrakliGabisonia\\AppData\\Local\\Temp\\brighter-4170-docker-remaining\\tests\\Paramore.Brighter.AzureServiceBus.Tests\\MessagingGateway\\When_an_asb_reader_fails_should_preserve_native_rejection_and_recover.cs:line 150\r\n--- End of stack trace from previous location ---\r\n   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(Boolean useQueue, Boolean useAsync, Boolean returnNull) in C:\\Users\\IrakliGabisonia\\AppData\\Local\\Temp\\brighter-4170-docker-remaining\\tests\\Paramore.Brighter.AzureServiceBus.Tests\\MessagingGateway\\When_an_asb_reader_fails_should_preserve_native_rejection_and_recover.cs:line 99\r\n   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(Boolean useQueue, Boolean useAsync, Boolean returnNull) in C:\\Users\\IrakliGabisonia\\AppData\\Local\\Temp\\brighter-4170-docker-remaining\\tests\\Paramore.Brighter.AzureServiceBus.Tests\\MessagingGateway\\When_an_asb_reader_fails_should_preserve_native_rejection_and_recover.cs:line 148\r\n   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(Boolean useQueue, Boolean useAsync, Boolean returnNull) in C:\\Users\\IrakliGabisonia\\AppData\\Local\\Temp\\brighter-4170-docker-remaining\\tests\\Paramore.Brighter.AzureServiceBus.Tests\\MessagingGateway\\When_an_asb_reader_fails_should_preserve_native_rejection_and_recover.cs:line 148\r\n   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(Boolean useQueue, Boolean useAsync, Boolean returnNull) in C:\\Users\\IrakliGabisonia\\AppData\\Local\\Temp\\brighter-4170-docker-remaining\\tests\\Paramore.Brighter.AzureServiceBus.Tests\\MessagingGateway\\When_an_asb_reader_fails_should_preserve_native_rejection_and_recover.cs:line 148\r\n   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(Boolean useQueue, Boolean useAsync, Boolean returnNull) in C:\\Users\\IrakliGabisonia\\AppData\\Local\\Temp\\brighter-4170-docker-remaining\\tests\\Paramore.Brighter.AzureServiceBus.Tests\\MessagingGateway\\When_an_asb_reader_fails_should_preserve_native_rejection_and_recover.cs:line 148\r\n   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(Boolean useQueue, Boolean useAsync, Boolean returnNull) in C:\\Users\\IrakliGabisonia\\AppData\\Local\\Temp\\brighter-4170-docker-remaining\\tests\\Paramore.Brighter.AzureServiceBus.Tests\\MessagingGateway\\When_an_asb_reader_fails_should_preserve_native_rejection_and_recover.cs:line 148\r\n--- End of stack trace from previous location ---",
+                        "run":  {
+                                    "finishedUtc":  "2026-11-11T18:48:13.2164390Z",
+                                    "exitCode":  1,
+                                    "log":  "C:\\Users\\IrakliGabisonia\\source\\repos\\Personal\\Brighter\\specs\\0038-wire-message-mapping\\review\\x64-acceptance/docker-remaining/asb-mutations/0-reader-exception-escapes/mutated-2.log",
+                                    "startedUtc":  "2026-11-11T18:48:09.5014210Z",
+                                    "clockDiscontinuity":  false,
+                                    "seconds":  3.6994192999999997
+                                }
+                    },
+                    {
+                        "scenario":  {
+                                         "index":  3,
+                                         "useQueue":  false,
+                                         "useAsync":  true,
+                                         "returnNull":  true
+                                     },
+                        "name":  "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: False, useAsync: True, returnNull: True)",
+                        "outcome":  "Passed",
+                        "message":  null,
+                        "stack":  null,
+                        "run":  {
+                                    "finishedUtc":  "2026-11-11T18:48:17.0038685Z",
+                                    "exitCode":  0,
+                                    "log":  "C:\\Users\\IrakliGabisonia\\source\\repos\\Personal\\Brighter\\specs\\0038-wire-message-mapping\\review\\x64-acceptance/docker-remaining/asb-mutations/0-reader-exception-escapes/mutated-3.log",
+                                    "startedUtc":  "2026-11-11T18:48:13.2164390Z",
+                                    "clockDiscontinuity":  false,
+                                    "seconds":  3.7589207
+                                }
+                    },
+                    {
+                        "scenario":  {
+                                         "index":  4,
+                                         "useQueue":  true,
+                                         "useAsync":  false,
+                                         "returnNull":  false
+                                     },
+                        "name":  "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: True, useAsync: False, returnNull: False)",
+                        "outcome":  "Failed",
+                        "message":  "System.InvalidOperationException : Deliberate wire reader failure",
+                        "stack":  "   at Paramore.Brighter.AzureServiceBus.Tests.TestDoubles.AsbRecoverableWireReader.ReadMessage(ServiceBusReceivedMessage delivery) in C:\\Users\\IrakliGabisonia\\AppData\\Local\\Temp\\brighter-4170-docker-remaining\\tests\\Paramore.Brighter.AzureServiceBus.Tests\\TestDoubles\\AsbRecoverableWireReader.cs:line 49\r\n   at Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusConsumer.ReadMessage(IBrokeredMessageWrapper delivery) in C:\\Users\\IrakliGabisonia\\AppData\\Local\\Temp\\brighter-4170-docker-remaining\\src\\Paramore.Brighter.MessagingGateway.AzureServiceBus\\AzureServiceBusConsumer.cs:line 482\r\n   at Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusConsumer.ReceiveAsync(Nullable`1 timeOut, CancellationToken cancellationToken) in C:\\Users\\IrakliGabisonia\\AppData\\Local\\Temp\\brighter-4170-docker-remaining\\src\\Paramore.Brighter.MessagingGateway.AzureServiceBus\\AzureServiceBusConsumer.cs:line 244\r\n   at Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusConsumer.ReceiveAsync(Nullable`1 timeOut, CancellationToken cancellationToken) in C:\\Users\\IrakliGabisonia\\AppData\\Local\\Temp\\brighter-4170-docker-remaining\\src\\Paramore.Brighter.MessagingGateway.AzureServiceBus\\AzureServiceBusConsumer.cs:line 254\r\n   at Paramore.Brighter.Tasks.TaskExtensions.WaitAndUnwrapException[TResult](Task`1 task) in C:\\Users\\IrakliGabisonia\\AppData\\Local\\Temp\\brighter-4170-docker-remaining\\src\\Paramore.Brighter\\Tasks\\TaskExtensions.cs:line 68\r\n   at Paramore.Brighter.Tasks.BrighterAsyncContext.\u003c\u003ec__30`1.\u003cRun\u003eb__30_0(Task`1 t, Object state) in C:\\Users\\IrakliGabisonia\\AppData\\Local\\Temp\\brighter-4170-docker-remaining\\src\\Paramore.Brighter\\Tasks\\BrighterAsyncContext.cs:line 295\r\n   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()\r\n   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)\r\n--- End of stack trace from previous location ---\r\n   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)\r\n   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task\u0026 currentTaskSlot, Thread threadPoolThread)\r\n--- End of stack trace from previous location ---\r\n   at Paramore.Brighter.Tasks.TaskExtensions.WaitAndUnwrapException[TResult](Task`1 task) in C:\\Users\\IrakliGabisonia\\AppData\\Local\\Temp\\brighter-4170-docker-remaining\\src\\Paramore.Brighter\\Tasks\\TaskExtensions.cs:line 68\r\n   at Paramore.Brighter.Tasks.BrighterAsyncContext.Run[TResult](Func`1 func) in C:\\Users\\IrakliGabisonia\\AppData\\Local\\Temp\\brighter-4170-docker-remaining\\src\\Paramore.Brighter\\Tasks\\BrighterAsyncContext.cs:line 308\r\n   at Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusConsumer.Receive(Nullable`1 timeOut) in C:\\Users\\IrakliGabisonia\\AppData\\Local\\Temp\\brighter-4170-docker-remaining\\src\\Paramore.Brighter.MessagingGateway.AzureServiceBus\\AzureServiceBusConsumer.cs:line 172\r\n   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.\u003c\u003ec__DisplayClass0_0.\u003c\u003cWhen_an_asb_reader_fails_should_preserve_native_rejection_and_recover\u003eg__Receive|0\u003ed.MoveNext() in C:\\Users\\IrakliGabisonia\\AppData\\Local\\Temp\\brighter-4170-docker-remaining\\tests\\Paramore.Brighter.AzureServiceBus.Tests\\MessagingGateway\\When_an_asb_reader_fails_should_preserve_native_rejection_and_recover.cs:line 150\r\n--- End of stack trace from previous location ---\r\n   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(Boolean useQueue, Boolean useAsync, Boolean returnNull) in C:\\Users\\IrakliGabisonia\\AppData\\Local\\Temp\\brighter-4170-docker-remaining\\tests\\Paramore.Brighter.AzureServiceBus.Tests\\MessagingGateway\\When_an_asb_reader_fails_should_preserve_native_rejection_and_recover.cs:line 99\r\n   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(Boolean useQueue, Boolean useAsync, Boolean returnNull) in C:\\Users\\IrakliGabisonia\\AppData\\Local\\Temp\\brighter-4170-docker-remaining\\tests\\Paramore.Brighter.AzureServiceBus.Tests\\MessagingGateway\\When_an_asb_reader_fails_should_preserve_native_rejection_and_recover.cs:line 148\r\n   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(Boolean useQueue, Boolean useAsync, Boolean returnNull) in C:\\Users\\IrakliGabisonia\\AppData\\Local\\Temp\\brighter-4170-docker-remaining\\tests\\Paramore.Brighter.AzureServiceBus.Tests\\MessagingGateway\\When_an_asb_reader_fails_should_preserve_native_rejection_and_recover.cs:line 148\r\n   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(Boolean useQueue, Boolean useAsync, Boolean returnNull) in C:\\Users\\IrakliGabisonia\\AppData\\Local\\Temp\\brighter-4170-docker-remaining\\tests\\Paramore.Brighter.AzureServiceBus.Tests\\MessagingGateway\\When_an_asb_reader_fails_should_preserve_native_rejection_and_recover.cs:line 148\r\n   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(Boolean useQueue, Boolean useAsync, Boolean returnNull) in C:\\Users\\IrakliGabisonia\\AppData\\Local\\Temp\\brighter-4170-docker-remaining\\tests\\Paramore.Brighter.AzureServiceBus.Tests\\MessagingGateway\\When_an_asb_reader_fails_should_preserve_native_rejection_and_recover.cs:line 148\r\n   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(Boolean useQueue, Boolean useAsync, Boolean returnNull) in C:\\Users\\IrakliGabisonia\\AppData\\Local\\Temp\\brighter-4170-docker-remaining\\tests\\Paramore.Brighter.AzureServiceBus.Tests\\MessagingGateway\\When_an_asb_reader_fails_should_preserve_native_rejection_and_recover.cs:line 148\r\n--- End of stack trace from previous location ---",
+                        "run":  {
+                                    "finishedUtc":  "2026-11-11T18:48:20.7083855Z",
+                                    "exitCode":  1,
+                                    "log":  "C:\\Users\\IrakliGabisonia\\source\\repos\\Personal\\Brighter\\specs\\0038-wire-message-mapping\\review\\x64-acceptance/docker-remaining/asb-mutations/0-reader-exception-escapes/mutated-4.log",
+                                    "startedUtc":  "2026-11-11T18:48:17.0038685Z",
+                                    "clockDiscontinuity":  false,
+                                    "seconds":  3.6776377
+                                }
+                    },
+                    {
+                        "scenario":  {
+                                         "index":  5,
+                                         "useQueue":  true,
+                                         "useAsync":  false,
+                                         "returnNull":  true
+                                     },
+                        "name":  "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: True, useAsync: False, returnNull: True)",
+                        "outcome":  "Passed",
+                        "message":  null,
+                        "stack":  null,
+                        "run":  {
+                                    "finishedUtc":  "2026-11-11T18:48:24.3884182Z",
+                                    "exitCode":  0,
+                                    "log":  "C:\\Users\\IrakliGabisonia\\source\\repos\\Personal\\Brighter\\specs\\0038-wire-message-mapping\\review\\x64-acceptance/docker-remaining/asb-mutations/0-reader-exception-escapes/mutated-5.log",
+                                    "startedUtc":  "2026-11-11T18:48:20.7110688Z",
+                                    "clockDiscontinuity":  false,
+                                    "seconds":  3.6663778
+                                }
+                    },
+                    {
+                        "scenario":  {
+                                         "index":  6,
+                                         "useQueue":  true,
+                                         "useAsync":  true,
+                                         "returnNull":  false
+                                     },
+                        "name":  "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: True, useAsync: True, returnNull: False)",
+                        "outcome":  "Failed",
+                        "message":  "System.InvalidOperationException : Deliberate wire reader failure",
+                        "stack":  "   at Paramore.Brighter.AzureServiceBus.Tests.TestDoubles.AsbRecoverableWireReader.ReadMessage(ServiceBusReceivedMessage delivery) in C:\\Users\\IrakliGabisonia\\AppData\\Local\\Temp\\brighter-4170-docker-remaining\\tests\\Paramore.Brighter.AzureServiceBus.Tests\\TestDoubles\\AsbRecoverableWireReader.cs:line 49\r\n   at Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusConsumer.ReadMessage(IBrokeredMessageWrapper delivery) in C:\\Users\\IrakliGabisonia\\AppData\\Local\\Temp\\brighter-4170-docker-remaining\\src\\Paramore.Brighter.MessagingGateway.AzureServiceBus\\AzureServiceBusConsumer.cs:line 482\r\n   at Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusConsumer.ReceiveAsync(Nullable`1 timeOut, CancellationToken cancellationToken) in C:\\Users\\IrakliGabisonia\\AppData\\Local\\Temp\\brighter-4170-docker-remaining\\src\\Paramore.Brighter.MessagingGateway.AzureServiceBus\\AzureServiceBusConsumer.cs:line 244\r\n   at Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusConsumer.ReceiveAsync(Nullable`1 timeOut, CancellationToken cancellationToken) in C:\\Users\\IrakliGabisonia\\AppData\\Local\\Temp\\brighter-4170-docker-remaining\\src\\Paramore.Brighter.MessagingGateway.AzureServiceBus\\AzureServiceBusConsumer.cs:line 254\r\n   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.\u003c\u003ec__DisplayClass0_0.\u003c\u003cWhen_an_asb_reader_fails_should_preserve_native_rejection_and_recover\u003eg__Receive|0\u003ed.MoveNext() in C:\\Users\\IrakliGabisonia\\AppData\\Local\\Temp\\brighter-4170-docker-remaining\\tests\\Paramore.Brighter.AzureServiceBus.Tests\\MessagingGateway\\When_an_asb_reader_fails_should_preserve_native_rejection_and_recover.cs:line 150\r\n--- End of stack trace from previous location ---\r\n   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(Boolean useQueue, Boolean useAsync, Boolean returnNull) in C:\\Users\\IrakliGabisonia\\AppData\\Local\\Temp\\brighter-4170-docker-remaining\\tests\\Paramore.Brighter.AzureServiceBus.Tests\\MessagingGateway\\When_an_asb_reader_fails_should_preserve_native_rejection_and_recover.cs:line 99\r\n   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(Boolean useQueue, Boolean useAsync, Boolean returnNull) in C:\\Users\\IrakliGabisonia\\AppData\\Local\\Temp\\brighter-4170-docker-remaining\\tests\\Paramore.Brighter.AzureServiceBus.Tests\\MessagingGateway\\When_an_asb_reader_fails_should_preserve_native_rejection_and_recover.cs:line 148\r\n   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(Boolean useQueue, Boolean useAsync, Boolean returnNull) in C:\\Users\\IrakliGabisonia\\AppData\\Local\\Temp\\brighter-4170-docker-remaining\\tests\\Paramore.Brighter.AzureServiceBus.Tests\\MessagingGateway\\When_an_asb_reader_fails_should_preserve_native_rejection_and_recover.cs:line 148\r\n   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(Boolean useQueue, Boolean useAsync, Boolean returnNull) in C:\\Users\\IrakliGabisonia\\AppData\\Local\\Temp\\brighter-4170-docker-remaining\\tests\\Paramore.Brighter.AzureServiceBus.Tests\\MessagingGateway\\When_an_asb_reader_fails_should_preserve_native_rejection_and_recover.cs:line 148\r\n   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(Boolean useQueue, Boolean useAsync, Boolean returnNull) in C:\\Users\\IrakliGabisonia\\AppData\\Local\\Temp\\brighter-4170-docker-remaining\\tests\\Paramore.Brighter.AzureServiceBus.Tests\\MessagingGateway\\When_an_asb_reader_fails_should_preserve_native_rejection_and_recover.cs:line 148\r\n   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(Boolean useQueue, Boolean useAsync, Boolean returnNull) in C:\\Users\\IrakliGabisonia\\AppData\\Local\\Temp\\brighter-4170-docker-remaining\\tests\\Paramore.Brighter.AzureServiceBus.Tests\\MessagingGateway\\When_an_asb_reader_fails_should_preserve_native_rejection_and_recover.cs:line 148\r\n--- End of stack trace from previous location ---",
+                        "run":  {
+                                    "finishedUtc":  "2026-11-11T18:48:28.0207452Z",
+                                    "exitCode":  1,
+                                    "log":  "C:\\Users\\IrakliGabisonia\\source\\repos\\Personal\\Brighter\\specs\\0038-wire-message-mapping\\review\\x64-acceptance/docker-remaining/asb-mutations/0-reader-exception-escapes/mutated-6.log",
+                                    "startedUtc":  "2026-11-11T18:48:24.4012950Z",
+                                    "clockDiscontinuity":  false,
+                                    "seconds":  3.5991188999999997
+                                }
+                    },
+                    {
+                        "scenario":  {
+                                         "index":  7,
+                                         "useQueue":  true,
+                                         "useAsync":  true,
+                                         "returnNull":  true
+                                     },
+                        "name":  "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: True, useAsync: True, returnNull: True)",
+                        "outcome":  "Passed",
+                        "message":  null,
+                        "stack":  null,
+                        "run":  {
+                                    "finishedUtc":  "2026-11-11T18:48:31.6822572Z",
+                                    "exitCode":  0,
+                                    "log":  "C:\\Users\\IrakliGabisonia\\source\\repos\\Personal\\Brighter\\specs\\0038-wire-message-mapping\\review\\x64-acceptance/docker-remaining/asb-mutations/0-reader-exception-escapes/mutated-7.log",
+                                    "startedUtc":  "2026-11-11T18:48:28.0239259Z",
+                                    "clockDiscontinuity":  false,
+                                    "seconds":  3.6390404
+                                }
+                    }
+                ],
+    "containers":  [
+                       {
+                           "runningAfterStop":  "false",
+                           "name":  "brighter-4170-rem-mutation-0-broker",
+                           "stateBeforeStop":  {
+                                                   "Status":  "running",
+                                                   "Running":  true,
+                                                   "Paused":  false,
+                                                   "Restarting":  false,
+                                                   "OOMKilled":  false,
+                                                   "Dead":  false,
+                                                   "Pid":  59750,
+                                                   "ExitCode":  0,
+                                                   "Error":  "",
+                                                   "StartedAt":  "2026-11-11T18:46:38.837648228Z",
+                                                   "FinishedAt":  "0001-01-01T00:00:00Z"
+                                               }
+                       },
+                       {
+                           "runningAfterStop":  "false",
+                           "name":  "brighter-4170-rem-mutation-0-sql",
+                           "stateBeforeStop":  {
+                                                   "Status":  "running",
+                                                   "Running":  true,
+                                                   "Paused":  false,
+                                                   "Restarting":  false,
+                                                   "OOMKilled":  false,
+                                                   "Dead":  false,
+                                                   "Pid":  59224,
+                                                   "ExitCode":  0,
+                                                   "Error":  "",
+                                                   "StartedAt":  "2026-11-11T18:46:34.07711044Z",
+                                                   "FinishedAt":  "0001-01-01T00:00:00Z"
+                                               }
+                       }
+                   ],
+    "valid":  true,
+    "mutatedSourceSha256":  "686691D4AD4469E881776286035A28B26C2B72A1B6B9E3143701960FAA0836BC",
+    "build":  {
+                  "finishedUtc":  "2026-11-11T18:48:01.8172015Z",
+                  "exitCode":  0,
+                  "log":  "C:\\Users\\IrakliGabisonia\\source\\repos\\Personal\\Brighter\\specs\\0038-wire-message-mapping\\review\\x64-acceptance/docker-remaining/asb-mutations/0-reader-exception-escapes/build.log",
+                  "startedUtc":  "2026-11-11T18:47:43.2742841Z",
+                  "clockDiscontinuity":  false,
+                  "seconds":  18.5202268
+              },
+    "unattributed":  [
+
+                     ],
+    "restoredSourceSha256":  "0223491A60DDAD10CC6B8D0E5A6A63E4CD7C513DA5D9BA4D675400B2A59D3C0A",
+    "restoreBuild":  {
+                         "finishedUtc":  "2026-11-11T18:48:42.4506254Z",
+                         "exitCode":  0,
+                         "log":  "C:\\Users\\IrakliGabisonia\\source\\repos\\Personal\\Brighter\\specs\\0038-wire-message-mapping\\review\\x64-acceptance/docker-remaining/asb-mutations/0-reader-exception-escapes/restore-build.log",
+                         "startedUtc":  "2026-11-11T18:48:32.2871394Z",
+                         "clockDiscontinuity":  false,
+                         "seconds":  10.1451349
+                     },
+    "restoredCases":  [
+                          {
+                              "scenario":  {
+                                               "index":  0,
+                                               "useQueue":  false,
+                                               "useAsync":  false,
+                                               "returnNull":  false
+                                           },
+                              "name":  "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: False, useAsync: False, returnNull: False)",
+                              "outcome":  "Passed",
+                              "message":  null,
+                              "stack":  null,
+                              "run":  {
+                                          "finishedUtc":  "2026-11-11T18:48:46.5549110Z",
+                                          "exitCode":  0,
+                                          "log":  "C:\\Users\\IrakliGabisonia\\source\\repos\\Personal\\Brighter\\specs\\0038-wire-message-mapping\\review\\x64-acceptance/docker-remaining/asb-mutations/0-reader-exception-escapes/restored-0.log",
+                                          "startedUtc":  "2026-11-11T18:48:42.4551725Z",
+                                          "clockDiscontinuity":  false,
+                                          "seconds":  4.0754459999999995
+                                      }
+                          },
+                          {
+                              "scenario":  {
+                                               "index":  1,
+                                               "useQueue":  false,
+                                               "useAsync":  false,
+                                               "returnNull":  true
+                                           },
+                              "name":  "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: False, useAsync: False, returnNull: True)",
+                              "outcome":  "Passed",
+                              "message":  null,
+                              "stack":  null,
+                              "run":  {
+                                          "finishedUtc":  "2026-11-11T18:48:50.6685878Z",
+                                          "exitCode":  0,
+                                          "log":  "C:\\Users\\IrakliGabisonia\\source\\repos\\Personal\\Brighter\\specs\\0038-wire-message-mapping\\review\\x64-acceptance/docker-remaining/asb-mutations/0-reader-exception-escapes/restored-1.log",
+                                          "startedUtc":  "2026-11-11T18:48:46.5549110Z",
+                                          "clockDiscontinuity":  false,
+                                          "seconds":  4.0874442
+                                      }
+                          },
+                          {
+                              "scenario":  {
+                                               "index":  2,
+                                               "useQueue":  false,
+                                               "useAsync":  true,
+                                               "returnNull":  false
+                                           },
+                              "name":  "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: False, useAsync: True, returnNull: False)",
+                              "outcome":  "Passed",
+                              "message":  null,
+                              "stack":  null,
+                              "run":  {
+                                          "finishedUtc":  "2026-11-11T18:48:54.8778351Z",
+                                          "exitCode":  0,
+                                          "log":  "C:\\Users\\IrakliGabisonia\\source\\repos\\Personal\\Brighter\\specs\\0038-wire-message-mapping\\review\\x64-acceptance/docker-remaining/asb-mutations/0-reader-exception-escapes/restored-2.log",
+                                          "startedUtc":  "2026-11-11T18:48:50.6712494Z",
+                                          "clockDiscontinuity":  false,
+                                          "seconds":  4.185413
+                                      }
+                          },
+                          {
+                              "scenario":  {
+                                               "index":  3,
+                                               "useQueue":  false,
+                                               "useAsync":  true,
+                                               "returnNull":  true
+                                           },
+                              "name":  "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: False, useAsync: True, returnNull: True)",
+                              "outcome":  "Passed",
+                              "message":  null,
+                              "stack":  null,
+                              "run":  {
+                                          "finishedUtc":  "2026-11-11T18:48:58.9577844Z",
+                                          "exitCode":  0,
+                                          "log":  "C:\\Users\\IrakliGabisonia\\source\\repos\\Personal\\Brighter\\specs\\0038-wire-message-mapping\\review\\x64-acceptance/docker-remaining/asb-mutations/0-reader-exception-escapes/restored-3.log",
+                                          "startedUtc":  "2026-11-11T18:48:54.8778351Z",
+                                          "clockDiscontinuity":  false,
+                                          "seconds":  4.0630292
+                                      }
+                          },
+                          {
+                              "scenario":  {
+                                               "index":  4,
+                                               "useQueue":  true,
+                                               "useAsync":  false,
+                                               "returnNull":  false
+                                           },
+                              "name":  "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: True, useAsync: False, returnNull: False)",
+                              "outcome":  "Passed",
+                              "message":  null,
+                              "stack":  null,
+                              "run":  {
+                                          "finishedUtc":  "2026-11-11T18:49:02.8014271Z",
+                                          "exitCode":  0,
+                                          "log":  "C:\\Users\\IrakliGabisonia\\source\\repos\\Personal\\Brighter\\specs\\0038-wire-message-mapping\\review\\x64-acceptance/docker-remaining/asb-mutations/0-reader-exception-escapes/restored-4.log",
+                                          "startedUtc":  "2026-11-11T18:48:58.9577844Z",
+                                          "clockDiscontinuity":  false,
+                                          "seconds":  3.8179098999999996
+                                      }
+                          },
+                          {
+                              "scenario":  {
+                                               "index":  5,
+                                               "useQueue":  true,
+                                               "useAsync":  false,
+                                               "returnNull":  true
+                                           },
+                              "name":  "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: True, useAsync: False, returnNull: True)",
+                              "outcome":  "Passed",
+                              "message":  null,
+                              "stack":  null,
+                              "run":  {
+                                          "finishedUtc":  "2026-11-11T18:49:06.6235492Z",
+                                          "exitCode":  0,
+                                          "log":  "C:\\Users\\IrakliGabisonia\\source\\repos\\Personal\\Brighter\\specs\\0038-wire-message-mapping\\review\\x64-acceptance/docker-remaining/asb-mutations/0-reader-exception-escapes/restored-5.log",
+                                          "startedUtc":  "2026-11-11T18:49:02.8116864Z",
+                                          "clockDiscontinuity":  false,
+                                          "seconds":  3.7817447
+                                      }
+                          },
+                          {
+                              "scenario":  {
+                                               "index":  6,
+                                               "useQueue":  true,
+                                               "useAsync":  true,
+                                               "returnNull":  false
+                                           },
+                              "name":  "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: True, useAsync: True, returnNull: False)",
+                              "outcome":  "Passed",
+                              "message":  null,
+                              "stack":  null,
+                              "run":  {
+                                          "finishedUtc":  "2026-11-11T18:49:10.3201387Z",
+                                          "exitCode":  0,
+                                          "log":  "C:\\Users\\IrakliGabisonia\\source\\repos\\Personal\\Brighter\\specs\\0038-wire-message-mapping\\review\\x64-acceptance/docker-remaining/asb-mutations/0-reader-exception-escapes/restored-6.log",
+                                          "startedUtc":  "2026-11-11T18:49:06.6255564Z",
+                                          "clockDiscontinuity":  false,
+                                          "seconds":  3.67637
+                                      }
+                          },
+                          {
+                              "scenario":  {
+                                               "index":  7,
+                                               "useQueue":  true,
+                                               "useAsync":  true,
+                                               "returnNull":  true
+                                           },
+                              "name":  "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: True, useAsync: True, returnNull: True)",
+                              "outcome":  "Passed",
+                              "message":  null,
+                              "stack":  null,
+                              "run":  {
+                                          "finishedUtc":  "2026-11-11T18:49:14.1035826Z",
+                                          "exitCode":  0,
+                                          "log":  "C:\\Users\\IrakliGabisonia\\source\\repos\\Personal\\Brighter\\specs\\0038-wire-message-mapping\\review\\x64-acceptance/docker-remaining/asb-mutations/0-reader-exception-escapes/restored-7.log",
+                                          "startedUtc":  "2026-11-11T18:49:10.3201387Z",
+                                          "clockDiscontinuity":  false,
+                                          "seconds":  3.7596727999999997
+                                      }
+                          }
+                      ]
+}

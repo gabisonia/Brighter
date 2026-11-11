@@ -1,0 +1,5 @@
+# Preserve reviewed acceptance logs despite the repository-wide log exclusion.
+!*.log
+# Native dump binaries remain local; reports, hashes and symbolic stacks transfer.
+*.dmp
+*.core

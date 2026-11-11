@@ -1,0 +1,582 @@
+VSTest version 18.7.0 (x64)
+
+Starting test execution, please wait...
+A total of 1 test files matched the specified pattern.
+  Failed Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.ASBConsumerTests.When_A_Subscription_is_created_the_properties_are_set_as_Expected [1 ms]
+  Error Message:
+   Paramore.Brighter.ChannelFailureException : Failing to check or create subscription
+---- System.ArgumentException : The value supplied must be between 00:00:01 and 01:00:00. (Parameter 'DefaultMessageTimeToLive')
+Actual value was 4.00:00:00. TrackingId:951ed1e3-b2c6-45a1-9dd5-c96f9234553e_G0, SystemTracker:sbemulatorns:Topic:consumer-tests-f0e43be4-20f8-4dcd-8d35-f8e67309fac3, Timestamp:2026-11-11T18:23:02
+Status: 400 (Bad Request)
+
+Content:
+<Error><Code>400</Code><Detail>The value supplied must be between 00:00:01 and 01:00:00. (Parameter 'DefaultMessageTimeToLive')
+Actual value was 4.00:00:00. TrackingId:951ed1e3-b2c6-45a1-9dd5-c96f9234553e_G0, SystemTracker:sbemulatorns:Topic:consumer-tests-f0e43be4-20f8-4dcd-8d35-f8e67309fac3, Timestamp:2026-11-11T18:23:02</Detail></Error>
+
+Headers:
+Connection: keep-alive
+Date: Wed, 11 Nov 2026 18:23:03 GMT
+Server: Kestrel
+ETag: 639300181812270000
+Content-Length: 341
+Content-Type: application/xml; charset=utf-8
+
+-------- Azure.RequestFailedException : The value supplied must be between 00:00:01 and 01:00:00. (Parameter 'DefaultMessageTimeToLive')
+Actual value was 4.00:00:00. TrackingId:951ed1e3-b2c6-45a1-9dd5-c96f9234553e_G0, SystemTracker:sbemulatorns:Topic:consumer-tests-f0e43be4-20f8-4dcd-8d35-f8e67309fac3, Timestamp:2026-11-11T18:23:02
+Status: 400 (Bad Request)
+
+Content:
+<Error><Code>400</Code><Detail>The value supplied must be between 00:00:01 and 01:00:00. (Parameter 'DefaultMessageTimeToLive')
+Actual value was 4.00:00:00. TrackingId:951ed1e3-b2c6-45a1-9dd5-c96f9234553e_G0, SystemTracker:sbemulatorns:Topic:consumer-tests-f0e43be4-20f8-4dcd-8d35-f8e67309fac3, Timestamp:2026-11-11T18:23:02</Detail></Error>
+
+Headers:
+Connection: keep-alive
+Date: Wed, 11 Nov 2026 18:23:03 GMT
+Server: Kestrel
+ETag: 639300181812270000
+Content-Length: 341
+Content-Type: application/xml; charset=utf-8
+
+  Stack Trace:
+     at Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusTopicConsumer.EnsureChannelAsync() in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter.MessagingGateway.AzureServiceBus\AzureServiceBusTopicConsumer.cs:line 124
+   at Paramore.Brighter.Tasks.TaskExtensions.WaitAndUnwrapException(Task task) in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter\Tasks\TaskExtensions.cs:line 29
+   at Paramore.Brighter.Tasks.BrighterAsyncContext.<>c.<Run>b__29_0(Task t, Object state) in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter\Tasks\BrighterAsyncContext.cs:line 257
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Paramore.Brighter.Tasks.TaskExtensions.WaitAndUnwrapException(Task task) in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter\Tasks\TaskExtensions.cs:line 29
+   at Paramore.Brighter.Tasks.BrighterAsyncContext.Run(Func`1 func) in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter\Tasks\BrighterAsyncContext.cs:line 270
+   at Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusChannelFactory.CreateSyncChannel(Subscription subscription) in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter.MessagingGateway.AzureServiceBus\AzureServiceBusChannelFactory.cs:line 68
+   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.ASBConsumerTests..ctor() in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\tests\Paramore.Brighter.AzureServiceBus.Tests\MessagingGateway\When_consuming_a_message_via_the_consumer.cs:line 100
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean wrapExceptions)
+----- Inner Stack Trace -----
+   at Azure.Messaging.ServiceBus.Administration.HttpRequestAndResponse.ThrowIfRequestFailed(Request request, Response response)
+   at Azure.Messaging.ServiceBus.Administration.HttpRequestAndResponse.SendHttpRequestAsync(Request request, CancellationToken cancellationToken)
+   at Azure.Messaging.ServiceBus.Administration.HttpRequestAndResponse.PutEntityAsync(String entityPath, String requestBody, Boolean isUpdate, String forwardTo, String fwdDeadLetterTo, CancellationToken cancellationToken)
+   at Azure.Messaging.ServiceBus.Administration.ServiceBusAdministrationClient.CreateSubscriptionAsync(CreateSubscriptionOptions options, CreateRuleOptions rule, CancellationToken cancellationToken)
+   at Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusWrappers.AdministrationClientWrapper.CreateSubscriptionAsync(String topicName, String subscriptionName, AzureServiceBusSubscriptionConfiguration subscriptionConfiguration) in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter.MessagingGateway.AzureServiceBus\AzureServiceBusWrappers\AdministrationClientWrapper.cs:line 162
+   at Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusTopicConsumer.EnsureChannelAsync() in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter.MessagingGateway.AzureServiceBus\AzureServiceBusTopicConsumer.cs:line 102
+----- Inner Stack Trace -----
+
+  Failed Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.ASBProducerTests.When_posting_a_message_via_the_bulk_producer(testQueues: True) [1 ms]
+  Error Message:
+   Paramore.Brighter.ChannelFailureException : Failing to check or create subscription
+---- System.ArgumentException : The value supplied must be between 00:00:01 and 01:00:00. (Parameter 'DefaultMessageTimeToLive')
+Actual value was 3.00:00:00. TrackingId:dfda5b72-7851-42e1-aea0-1c904c37ac52_G0, SystemTracker:sbemulatorns:Topic:producer-send-tests-4637e347-e53f-4102-b0af-9404883af931, Timestamp:2026-11-11T18:23:03
+Status: 400 (Bad Request)
+
+Content:
+<Error><Code>400</Code><Detail>The value supplied must be between 00:00:01 and 01:00:00. (Parameter 'DefaultMessageTimeToLive')
+Actual value was 3.00:00:00. TrackingId:dfda5b72-7851-42e1-aea0-1c904c37ac52_G0, SystemTracker:sbemulatorns:Topic:producer-send-tests-4637e347-e53f-4102-b0af-9404883af931, Timestamp:2026-11-11T18:23:03</Detail></Error>
+
+Headers:
+Connection: keep-alive
+Date: Wed, 11 Nov 2026 18:23:04 GMT
+Server: Kestrel
+ETag: 639300181814670000
+Content-Length: 346
+Content-Type: application/xml; charset=utf-8
+
+-------- Azure.RequestFailedException : The value supplied must be between 00:00:01 and 01:00:00. (Parameter 'DefaultMessageTimeToLive')
+Actual value was 3.00:00:00. TrackingId:dfda5b72-7851-42e1-aea0-1c904c37ac52_G0, SystemTracker:sbemulatorns:Topic:producer-send-tests-4637e347-e53f-4102-b0af-9404883af931, Timestamp:2026-11-11T18:23:03
+Status: 400 (Bad Request)
+
+Content:
+<Error><Code>400</Code><Detail>The value supplied must be between 00:00:01 and 01:00:00. (Parameter 'DefaultMessageTimeToLive')
+Actual value was 3.00:00:00. TrackingId:dfda5b72-7851-42e1-aea0-1c904c37ac52_G0, SystemTracker:sbemulatorns:Topic:producer-send-tests-4637e347-e53f-4102-b0af-9404883af931, Timestamp:2026-11-11T18:23:03</Detail></Error>
+
+Headers:
+Connection: keep-alive
+Date: Wed, 11 Nov 2026 18:23:04 GMT
+Server: Kestrel
+ETag: 639300181814670000
+Content-Length: 346
+Content-Type: application/xml; charset=utf-8
+
+  Stack Trace:
+     at Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusTopicConsumer.EnsureChannelAsync() in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter.MessagingGateway.AzureServiceBus\AzureServiceBusTopicConsumer.cs:line 124
+   at Paramore.Brighter.Tasks.TaskExtensions.WaitAndUnwrapException(Task task) in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter\Tasks\TaskExtensions.cs:line 29
+   at Paramore.Brighter.Tasks.BrighterAsyncContext.<>c.<Run>b__29_0(Task t, Object state) in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter\Tasks\BrighterAsyncContext.cs:line 257
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Paramore.Brighter.Tasks.TaskExtensions.WaitAndUnwrapException(Task task) in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter\Tasks\TaskExtensions.cs:line 29
+   at Paramore.Brighter.Tasks.BrighterAsyncContext.Run(Func`1 func) in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter\Tasks\BrighterAsyncContext.cs:line 270
+   at Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusChannelFactory.CreateSyncChannel(Subscription subscription) in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter.MessagingGateway.AzureServiceBus\AzureServiceBusChannelFactory.cs:line 68
+   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.ASBProducerTests..ctor() in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\tests\Paramore.Brighter.AzureServiceBus.Tests\MessagingGateway\When_posting_a_message_via_the_producer.cs:line 68
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean wrapExceptions)
+----- Inner Stack Trace -----
+   at Azure.Messaging.ServiceBus.Administration.HttpRequestAndResponse.ThrowIfRequestFailed(Request request, Response response)
+   at Azure.Messaging.ServiceBus.Administration.HttpRequestAndResponse.SendHttpRequestAsync(Request request, CancellationToken cancellationToken)
+   at Azure.Messaging.ServiceBus.Administration.HttpRequestAndResponse.PutEntityAsync(String entityPath, String requestBody, Boolean isUpdate, String forwardTo, String fwdDeadLetterTo, CancellationToken cancellationToken)
+   at Azure.Messaging.ServiceBus.Administration.ServiceBusAdministrationClient.CreateSubscriptionAsync(CreateSubscriptionOptions options, CreateRuleOptions rule, CancellationToken cancellationToken)
+   at Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusWrappers.AdministrationClientWrapper.CreateSubscriptionAsync(String topicName, String subscriptionName, AzureServiceBusSubscriptionConfiguration subscriptionConfiguration) in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter.MessagingGateway.AzureServiceBus\AzureServiceBusWrappers\AdministrationClientWrapper.cs:line 162
+   at Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusTopicConsumer.EnsureChannelAsync() in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter.MessagingGateway.AzureServiceBus\AzureServiceBusTopicConsumer.cs:line 102
+----- Inner Stack Trace -----
+
+  Failed Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.LargeAsbMessageProducerTests.When_posting_a_large_message_via_the_bulk_producer(testQueues: True) [1 ms]
+  Error Message:
+   Paramore.Brighter.ChannelFailureException : Failing to check or create subscription
+---- System.ArgumentException : The value supplied must be between 00:00:01 and 01:00:00. (Parameter 'DefaultMessageTimeToLive')
+Actual value was 3.00:00:00. TrackingId:ecbf13b0-99b6-4b61-ab7c-12d60ff2786e_G0, SystemTracker:sbemulatorns:Topic:producer-send-tests-0c5a2600-37e0-41c6-acb4-65e84fc4e25a, Timestamp:2026-11-11T18:23:04
+Status: 400 (Bad Request)
+
+Content:
+<Error><Code>400</Code><Detail>The value supplied must be between 00:00:01 and 01:00:00. (Parameter 'DefaultMessageTimeToLive')
+Actual value was 3.00:00:00. TrackingId:ecbf13b0-99b6-4b61-ab7c-12d60ff2786e_G0, SystemTracker:sbemulatorns:Topic:producer-send-tests-0c5a2600-37e0-41c6-acb4-65e84fc4e25a, Timestamp:2026-11-11T18:23:04</Detail></Error>
+
+Headers:
+Connection: keep-alive
+Date: Wed, 11 Nov 2026 18:23:05 GMT
+Server: Kestrel
+ETag: 639300181744870000
+Content-Length: 346
+Content-Type: application/xml; charset=utf-8
+
+-------- Azure.RequestFailedException : The value supplied must be between 00:00:01 and 01:00:00. (Parameter 'DefaultMessageTimeToLive')
+Actual value was 3.00:00:00. TrackingId:ecbf13b0-99b6-4b61-ab7c-12d60ff2786e_G0, SystemTracker:sbemulatorns:Topic:producer-send-tests-0c5a2600-37e0-41c6-acb4-65e84fc4e25a, Timestamp:2026-11-11T18:23:04
+Status: 400 (Bad Request)
+
+Content:
+<Error><Code>400</Code><Detail>The value supplied must be between 00:00:01 and 01:00:00. (Parameter 'DefaultMessageTimeToLive')
+Actual value was 3.00:00:00. TrackingId:ecbf13b0-99b6-4b61-ab7c-12d60ff2786e_G0, SystemTracker:sbemulatorns:Topic:producer-send-tests-0c5a2600-37e0-41c6-acb4-65e84fc4e25a, Timestamp:2026-11-11T18:23:04</Detail></Error>
+
+Headers:
+Connection: keep-alive
+Date: Wed, 11 Nov 2026 18:23:05 GMT
+Server: Kestrel
+ETag: 639300181744870000
+Content-Length: 346
+Content-Type: application/xml; charset=utf-8
+
+  Stack Trace:
+     at Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusTopicConsumer.EnsureChannelAsync() in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter.MessagingGateway.AzureServiceBus\AzureServiceBusTopicConsumer.cs:line 124
+   at Paramore.Brighter.Tasks.TaskExtensions.WaitAndUnwrapException(Task task) in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter\Tasks\TaskExtensions.cs:line 29
+   at Paramore.Brighter.Tasks.BrighterAsyncContext.<>c.<Run>b__29_0(Task t, Object state) in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter\Tasks\BrighterAsyncContext.cs:line 257
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Paramore.Brighter.Tasks.TaskExtensions.WaitAndUnwrapException(Task task) in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter\Tasks\TaskExtensions.cs:line 29
+   at Paramore.Brighter.Tasks.BrighterAsyncContext.Run(Func`1 func) in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter\Tasks\BrighterAsyncContext.cs:line 270
+   at Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusChannelFactory.CreateSyncChannel(Subscription subscription) in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter.MessagingGateway.AzureServiceBus\AzureServiceBusChannelFactory.cs:line 68
+   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.LargeAsbMessageProducerTests..ctor() in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\tests\Paramore.Brighter.AzureServiceBus.Tests\MessagingGateway\When_posting_a_large_message_via_the_producer.cs:line 71
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean wrapExceptions)
+----- Inner Stack Trace -----
+   at Azure.Messaging.ServiceBus.Administration.HttpRequestAndResponse.ThrowIfRequestFailed(Request request, Response response)
+   at Azure.Messaging.ServiceBus.Administration.HttpRequestAndResponse.SendHttpRequestAsync(Request request, CancellationToken cancellationToken)
+   at Azure.Messaging.ServiceBus.Administration.HttpRequestAndResponse.PutEntityAsync(String entityPath, String requestBody, Boolean isUpdate, String forwardTo, String fwdDeadLetterTo, CancellationToken cancellationToken)
+   at Azure.Messaging.ServiceBus.Administration.ServiceBusAdministrationClient.CreateSubscriptionAsync(CreateSubscriptionOptions options, CreateRuleOptions rule, CancellationToken cancellationToken)
+   at Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusWrappers.AdministrationClientWrapper.CreateSubscriptionAsync(String topicName, String subscriptionName, AzureServiceBusSubscriptionConfiguration subscriptionConfiguration) in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter.MessagingGateway.AzureServiceBus\AzureServiceBusWrappers\AdministrationClientWrapper.cs:line 162
+   at Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusTopicConsumer.EnsureChannelAsync() in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter.MessagingGateway.AzureServiceBus\AzureServiceBusTopicConsumer.cs:line 102
+----- Inner Stack Trace -----
+
+  Failed Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.ASBConsumerTests.When_rejecting_a_message_via_the_consumer [1 ms]
+  Error Message:
+   Paramore.Brighter.ChannelFailureException : Failing to check or create subscription
+---- System.ArgumentException : The value supplied must be between 00:00:01 and 01:00:00. (Parameter 'DefaultMessageTimeToLive')
+Actual value was 4.00:00:00. TrackingId:d64e5351-0f6b-4339-a23a-50f6f3e7ac52_G0, SystemTracker:sbemulatorns:Topic:consumer-tests-d52d3cb5-cc7c-403d-a89d-22b23bd8beb9, Timestamp:2026-11-11T18:23:14
+Status: 400 (Bad Request)
+
+Content:
+<Error><Code>400</Code><Detail>The value supplied must be between 00:00:01 and 01:00:00. (Parameter 'DefaultMessageTimeToLive')
+Actual value was 4.00:00:00. TrackingId:d64e5351-0f6b-4339-a23a-50f6f3e7ac52_G0, SystemTracker:sbemulatorns:Topic:consumer-tests-d52d3cb5-cc7c-403d-a89d-22b23bd8beb9, Timestamp:2026-11-11T18:23:14</Detail></Error>
+
+Headers:
+Connection: keep-alive
+Date: Wed, 11 Nov 2026 18:23:15 GMT
+Server: Kestrel
+ETag: 639300181935400000
+Content-Length: 341
+Content-Type: application/xml; charset=utf-8
+
+-------- Azure.RequestFailedException : The value supplied must be between 00:00:01 and 01:00:00. (Parameter 'DefaultMessageTimeToLive')
+Actual value was 4.00:00:00. TrackingId:d64e5351-0f6b-4339-a23a-50f6f3e7ac52_G0, SystemTracker:sbemulatorns:Topic:consumer-tests-d52d3cb5-cc7c-403d-a89d-22b23bd8beb9, Timestamp:2026-11-11T18:23:14
+Status: 400 (Bad Request)
+
+Content:
+<Error><Code>400</Code><Detail>The value supplied must be between 00:00:01 and 01:00:00. (Parameter 'DefaultMessageTimeToLive')
+Actual value was 4.00:00:00. TrackingId:d64e5351-0f6b-4339-a23a-50f6f3e7ac52_G0, SystemTracker:sbemulatorns:Topic:consumer-tests-d52d3cb5-cc7c-403d-a89d-22b23bd8beb9, Timestamp:2026-11-11T18:23:14</Detail></Error>
+
+Headers:
+Connection: keep-alive
+Date: Wed, 11 Nov 2026 18:23:15 GMT
+Server: Kestrel
+ETag: 639300181935400000
+Content-Length: 341
+Content-Type: application/xml; charset=utf-8
+
+  Stack Trace:
+     at Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusTopicConsumer.EnsureChannelAsync() in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter.MessagingGateway.AzureServiceBus\AzureServiceBusTopicConsumer.cs:line 124
+   at Paramore.Brighter.Tasks.BrighterAsyncContext.<>c.<Run>b__29_0(Task t, Object state) in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter\Tasks\BrighterAsyncContext.cs:line 257
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Paramore.Brighter.Tasks.BrighterAsyncContext.Run(Func`1 func) in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter\Tasks\BrighterAsyncContext.cs:line 270
+   at Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusChannelFactory.CreateSyncChannel(Subscription subscription) in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter.MessagingGateway.AzureServiceBus\AzureServiceBusChannelFactory.cs:line 68
+   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.ASBConsumerTests..ctor() in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\tests\Paramore.Brighter.AzureServiceBus.Tests\MessagingGateway\When_consuming_a_message_via_the_consumer.cs:line 100
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean wrapExceptions)
+----- Inner Stack Trace -----
+   at Azure.Messaging.ServiceBus.Administration.HttpRequestAndResponse.ThrowIfRequestFailed(Request request, Response response)
+   at Azure.Messaging.ServiceBus.Administration.HttpRequestAndResponse.SendHttpRequestAsync(Request request, CancellationToken cancellationToken)
+   at Azure.Messaging.ServiceBus.Administration.HttpRequestAndResponse.PutEntityAsync(String entityPath, String requestBody, Boolean isUpdate, String forwardTo, String fwdDeadLetterTo, CancellationToken cancellationToken)
+   at Azure.Messaging.ServiceBus.Administration.ServiceBusAdministrationClient.CreateSubscriptionAsync(CreateSubscriptionOptions options, CreateRuleOptions rule, CancellationToken cancellationToken)
+   at Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusWrappers.AdministrationClientWrapper.CreateSubscriptionAsync(String topicName, String subscriptionName, AzureServiceBusSubscriptionConfiguration subscriptionConfiguration) in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter.MessagingGateway.AzureServiceBus\AzureServiceBusWrappers\AdministrationClientWrapper.cs:line 162
+   at Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusTopicConsumer.EnsureChannelAsync() in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter.MessagingGateway.AzureServiceBus\AzureServiceBusTopicConsumer.cs:line 102
+----- Inner Stack Trace -----
+
+  Failed Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.ASBProducerTests.When_posting_a_message_via_the_bulk_producer(testQueues: False) [1 ms]
+  Error Message:
+   Paramore.Brighter.ChannelFailureException : Failing to check or create subscription
+---- System.ArgumentException : The value supplied must be between 00:00:01 and 01:00:00. (Parameter 'DefaultMessageTimeToLive')
+Actual value was 3.00:00:00. TrackingId:f9d3707c-14a8-4cc2-a50a-b015d73511a2_G0, SystemTracker:sbemulatorns:Topic:producer-send-tests-ebe1c973-58cc-4b68-8a94-5fa44aaa1e32, Timestamp:2026-11-11T18:23:15
+Status: 400 (Bad Request)
+
+Content:
+<Error><Code>400</Code><Detail>The value supplied must be between 00:00:01 and 01:00:00. (Parameter 'DefaultMessageTimeToLive')
+Actual value was 3.00:00:00. TrackingId:f9d3707c-14a8-4cc2-a50a-b015d73511a2_G0, SystemTracker:sbemulatorns:Topic:producer-send-tests-ebe1c973-58cc-4b68-8a94-5fa44aaa1e32, Timestamp:2026-11-11T18:23:15</Detail></Error>
+
+Headers:
+Connection: keep-alive
+Date: Wed, 11 Nov 2026 18:23:16 GMT
+Server: Kestrel
+ETag: 639300181937900000
+Content-Length: 346
+Content-Type: application/xml; charset=utf-8
+
+-------- Azure.RequestFailedException : The value supplied must be between 00:00:01 and 01:00:00. (Parameter 'DefaultMessageTimeToLive')
+Actual value was 3.00:00:00. TrackingId:f9d3707c-14a8-4cc2-a50a-b015d73511a2_G0, SystemTracker:sbemulatorns:Topic:producer-send-tests-ebe1c973-58cc-4b68-8a94-5fa44aaa1e32, Timestamp:2026-11-11T18:23:15
+Status: 400 (Bad Request)
+
+Content:
+<Error><Code>400</Code><Detail>The value supplied must be between 00:00:01 and 01:00:00. (Parameter 'DefaultMessageTimeToLive')
+Actual value was 3.00:00:00. TrackingId:f9d3707c-14a8-4cc2-a50a-b015d73511a2_G0, SystemTracker:sbemulatorns:Topic:producer-send-tests-ebe1c973-58cc-4b68-8a94-5fa44aaa1e32, Timestamp:2026-11-11T18:23:15</Detail></Error>
+
+Headers:
+Connection: keep-alive
+Date: Wed, 11 Nov 2026 18:23:16 GMT
+Server: Kestrel
+ETag: 639300181937900000
+Content-Length: 346
+Content-Type: application/xml; charset=utf-8
+
+  Stack Trace:
+     at Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusTopicConsumer.EnsureChannelAsync() in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter.MessagingGateway.AzureServiceBus\AzureServiceBusTopicConsumer.cs:line 124
+   at Paramore.Brighter.Tasks.BrighterAsyncContext.<>c.<Run>b__29_0(Task t, Object state) in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter\Tasks\BrighterAsyncContext.cs:line 257
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Paramore.Brighter.Tasks.BrighterAsyncContext.Run(Func`1 func) in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter\Tasks\BrighterAsyncContext.cs:line 270
+   at Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusChannelFactory.CreateSyncChannel(Subscription subscription) in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter.MessagingGateway.AzureServiceBus\AzureServiceBusChannelFactory.cs:line 68
+   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.ASBProducerTests..ctor() in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\tests\Paramore.Brighter.AzureServiceBus.Tests\MessagingGateway\When_posting_a_message_via_the_producer.cs:line 68
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean wrapExceptions)
+----- Inner Stack Trace -----
+   at Azure.Messaging.ServiceBus.Administration.HttpRequestAndResponse.ThrowIfRequestFailed(Request request, Response response)
+   at Azure.Messaging.ServiceBus.Administration.HttpRequestAndResponse.SendHttpRequestAsync(Request request, CancellationToken cancellationToken)
+   at Azure.Messaging.ServiceBus.Administration.HttpRequestAndResponse.PutEntityAsync(String entityPath, String requestBody, Boolean isUpdate, String forwardTo, String fwdDeadLetterTo, CancellationToken cancellationToken)
+   at Azure.Messaging.ServiceBus.Administration.ServiceBusAdministrationClient.CreateSubscriptionAsync(CreateSubscriptionOptions options, CreateRuleOptions rule, CancellationToken cancellationToken)
+   at Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusWrappers.AdministrationClientWrapper.CreateSubscriptionAsync(String topicName, String subscriptionName, AzureServiceBusSubscriptionConfiguration subscriptionConfiguration) in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter.MessagingGateway.AzureServiceBus\AzureServiceBusWrappers\AdministrationClientWrapper.cs:line 162
+   at Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusTopicConsumer.EnsureChannelAsync() in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter.MessagingGateway.AzureServiceBus\AzureServiceBusTopicConsumer.cs:line 102
+----- Inner Stack Trace -----
+
+  Failed Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.LargeAsbMessageProducerTests.When_posting_a_large_message_via_the_bulk_producer(testQueues: False) [1 ms]
+  Error Message:
+   Paramore.Brighter.ChannelFailureException : Failing to check or create subscription
+---- System.ArgumentException : The value supplied must be between 00:00:01 and 01:00:00. (Parameter 'DefaultMessageTimeToLive')
+Actual value was 3.00:00:00. TrackingId:abaf0e7e-2008-408b-bebe-bb94997fe55d_G0, SystemTracker:sbemulatorns:Topic:producer-send-tests-89f6c093-8ef4-4ee9-9bab-2d5702a69919, Timestamp:2026-11-11T18:23:18
+Status: 400 (Bad Request)
+
+Content:
+<Error><Code>400</Code><Detail>The value supplied must be between 00:00:01 and 01:00:00. (Parameter 'DefaultMessageTimeToLive')
+Actual value was 3.00:00:00. TrackingId:abaf0e7e-2008-408b-bebe-bb94997fe55d_G0, SystemTracker:sbemulatorns:Topic:producer-send-tests-89f6c093-8ef4-4ee9-9bab-2d5702a69919, Timestamp:2026-11-11T18:23:18</Detail></Error>
+
+Headers:
+Connection: keep-alive
+Date: Wed, 11 Nov 2026 18:23:18 GMT
+Server: Kestrel
+ETag: 639300181903970000
+Content-Length: 346
+Content-Type: application/xml; charset=utf-8
+
+-------- Azure.RequestFailedException : The value supplied must be between 00:00:01 and 01:00:00. (Parameter 'DefaultMessageTimeToLive')
+Actual value was 3.00:00:00. TrackingId:abaf0e7e-2008-408b-bebe-bb94997fe55d_G0, SystemTracker:sbemulatorns:Topic:producer-send-tests-89f6c093-8ef4-4ee9-9bab-2d5702a69919, Timestamp:2026-11-11T18:23:18
+Status: 400 (Bad Request)
+
+Content:
+<Error><Code>400</Code><Detail>The value supplied must be between 00:00:01 and 01:00:00. (Parameter 'DefaultMessageTimeToLive')
+Actual value was 3.00:00:00. TrackingId:abaf0e7e-2008-408b-bebe-bb94997fe55d_G0, SystemTracker:sbemulatorns:Topic:producer-send-tests-89f6c093-8ef4-4ee9-9bab-2d5702a69919, Timestamp:2026-11-11T18:23:18</Detail></Error>
+
+Headers:
+Connection: keep-alive
+Date: Wed, 11 Nov 2026 18:23:18 GMT
+Server: Kestrel
+ETag: 639300181903970000
+Content-Length: 346
+Content-Type: application/xml; charset=utf-8
+
+  Stack Trace:
+     at Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusTopicConsumer.EnsureChannelAsync() in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter.MessagingGateway.AzureServiceBus\AzureServiceBusTopicConsumer.cs:line 124
+   at Paramore.Brighter.Tasks.BrighterAsyncContext.<>c.<Run>b__29_0(Task t, Object state) in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter\Tasks\BrighterAsyncContext.cs:line 257
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Paramore.Brighter.Tasks.BrighterAsyncContext.Run(Func`1 func) in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter\Tasks\BrighterAsyncContext.cs:line 270
+   at Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusChannelFactory.CreateSyncChannel(Subscription subscription) in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter.MessagingGateway.AzureServiceBus\AzureServiceBusChannelFactory.cs:line 68
+   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.LargeAsbMessageProducerTests..ctor() in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\tests\Paramore.Brighter.AzureServiceBus.Tests\MessagingGateway\When_posting_a_large_message_via_the_producer.cs:line 71
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean wrapExceptions)
+----- Inner Stack Trace -----
+   at Azure.Messaging.ServiceBus.Administration.HttpRequestAndResponse.ThrowIfRequestFailed(Request request, Response response)
+   at Azure.Messaging.ServiceBus.Administration.HttpRequestAndResponse.SendHttpRequestAsync(Request request, CancellationToken cancellationToken)
+   at Azure.Messaging.ServiceBus.Administration.HttpRequestAndResponse.PutEntityAsync(String entityPath, String requestBody, Boolean isUpdate, String forwardTo, String fwdDeadLetterTo, CancellationToken cancellationToken)
+   at Azure.Messaging.ServiceBus.Administration.ServiceBusAdministrationClient.CreateSubscriptionAsync(CreateSubscriptionOptions options, CreateRuleOptions rule, CancellationToken cancellationToken)
+   at Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusWrappers.AdministrationClientWrapper.CreateSubscriptionAsync(String topicName, String subscriptionName, AzureServiceBusSubscriptionConfiguration subscriptionConfiguration) in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter.MessagingGateway.AzureServiceBus\AzureServiceBusWrappers\AdministrationClientWrapper.cs:line 162
+   at Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusTopicConsumer.EnsureChannelAsync() in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter.MessagingGateway.AzureServiceBus\AzureServiceBusTopicConsumer.cs:line 102
+----- Inner Stack Trace -----
+
+  Failed Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.ASBConsumerTests.When_requeueing_a_message_via_the_consumer [1 ms]
+  Error Message:
+   Paramore.Brighter.ChannelFailureException : Failing to check or create subscription
+---- System.ArgumentException : The value supplied must be between 00:00:01 and 01:00:00. (Parameter 'DefaultMessageTimeToLive')
+Actual value was 4.00:00:00. TrackingId:80183a24-9d5f-4cc0-b372-1535be83b0c2_G0, SystemTracker:sbemulatorns:Topic:consumer-tests-4d8541f4-a1ba-443d-8277-caf5652d9e32, Timestamp:2026-11-11T18:23:28
+Status: 400 (Bad Request)
+
+Content:
+<Error><Code>400</Code><Detail>The value supplied must be between 00:00:01 and 01:00:00. (Parameter 'DefaultMessageTimeToLive')
+Actual value was 4.00:00:00. TrackingId:80183a24-9d5f-4cc0-b372-1535be83b0c2_G0, SystemTracker:sbemulatorns:Topic:consumer-tests-4d8541f4-a1ba-443d-8277-caf5652d9e32, Timestamp:2026-11-11T18:23:28</Detail></Error>
+
+Headers:
+Connection: keep-alive
+Date: Wed, 11 Nov 2026 18:23:29 GMT
+Server: Kestrel
+ETag: 639300182076230000
+Content-Length: 341
+Content-Type: application/xml; charset=utf-8
+
+-------- Azure.RequestFailedException : The value supplied must be between 00:00:01 and 01:00:00. (Parameter 'DefaultMessageTimeToLive')
+Actual value was 4.00:00:00. TrackingId:80183a24-9d5f-4cc0-b372-1535be83b0c2_G0, SystemTracker:sbemulatorns:Topic:consumer-tests-4d8541f4-a1ba-443d-8277-caf5652d9e32, Timestamp:2026-11-11T18:23:28
+Status: 400 (Bad Request)
+
+Content:
+<Error><Code>400</Code><Detail>The value supplied must be between 00:00:01 and 01:00:00. (Parameter 'DefaultMessageTimeToLive')
+Actual value was 4.00:00:00. TrackingId:80183a24-9d5f-4cc0-b372-1535be83b0c2_G0, SystemTracker:sbemulatorns:Topic:consumer-tests-4d8541f4-a1ba-443d-8277-caf5652d9e32, Timestamp:2026-11-11T18:23:28</Detail></Error>
+
+Headers:
+Connection: keep-alive
+Date: Wed, 11 Nov 2026 18:23:29 GMT
+Server: Kestrel
+ETag: 639300182076230000
+Content-Length: 341
+Content-Type: application/xml; charset=utf-8
+
+  Stack Trace:
+     at Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusTopicConsumer.EnsureChannelAsync() in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter.MessagingGateway.AzureServiceBus\AzureServiceBusTopicConsumer.cs:line 124
+   at Paramore.Brighter.Tasks.BrighterAsyncContext.<>c.<Run>b__29_0(Task t, Object state) in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter\Tasks\BrighterAsyncContext.cs:line 257
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Paramore.Brighter.Tasks.BrighterAsyncContext.Run(Func`1 func) in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter\Tasks\BrighterAsyncContext.cs:line 270
+   at Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusChannelFactory.CreateSyncChannel(Subscription subscription) in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter.MessagingGateway.AzureServiceBus\AzureServiceBusChannelFactory.cs:line 68
+   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.ASBConsumerTests..ctor() in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\tests\Paramore.Brighter.AzureServiceBus.Tests\MessagingGateway\When_consuming_a_message_via_the_consumer.cs:line 100
+   at System.RuntimeType.CreateInstanceImpl(BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture)
+----- Inner Stack Trace -----
+   at Azure.Messaging.ServiceBus.Administration.HttpRequestAndResponse.ThrowIfRequestFailed(Request request, Response response)
+   at Azure.Messaging.ServiceBus.Administration.HttpRequestAndResponse.SendHttpRequestAsync(Request request, CancellationToken cancellationToken)
+   at Azure.Messaging.ServiceBus.Administration.HttpRequestAndResponse.PutEntityAsync(String entityPath, String requestBody, Boolean isUpdate, String forwardTo, String fwdDeadLetterTo, CancellationToken cancellationToken)
+   at Azure.Messaging.ServiceBus.Administration.ServiceBusAdministrationClient.CreateSubscriptionAsync(CreateSubscriptionOptions options, CreateRuleOptions rule, CancellationToken cancellationToken)
+   at Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusWrappers.AdministrationClientWrapper.CreateSubscriptionAsync(String topicName, String subscriptionName, AzureServiceBusSubscriptionConfiguration subscriptionConfiguration) in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter.MessagingGateway.AzureServiceBus\AzureServiceBusWrappers\AdministrationClientWrapper.cs:line 162
+   at Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusTopicConsumer.EnsureChannelAsync() in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter.MessagingGateway.AzureServiceBus\AzureServiceBusTopicConsumer.cs:line 102
+----- Inner Stack Trace -----
+
+  Failed Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.ASBProducerTests.When_posting_a_message_via_the_producer(testQueues: True) [1 ms]
+  Error Message:
+   Paramore.Brighter.ChannelFailureException : Failing to check or create subscription
+---- System.ArgumentException : The value supplied must be between 00:00:01 and 01:00:00. (Parameter 'DefaultMessageTimeToLive')
+Actual value was 3.00:00:00. TrackingId:ba72ef22-14bf-4bbe-a2d8-d3a2048432cc_G0, SystemTracker:sbemulatorns:Topic:producer-send-tests-442a455a-422b-41eb-8b58-195ed06d755c, Timestamp:2026-11-11T18:23:29
+Status: 400 (Bad Request)
+
+Content:
+<Error><Code>400</Code><Detail>The value supplied must be between 00:00:01 and 01:00:00. (Parameter 'DefaultMessageTimeToLive')
+Actual value was 3.00:00:00. TrackingId:ba72ef22-14bf-4bbe-a2d8-d3a2048432cc_G0, SystemTracker:sbemulatorns:Topic:producer-send-tests-442a455a-422b-41eb-8b58-195ed06d755c, Timestamp:2026-11-11T18:23:29</Detail></Error>
+
+Headers:
+Connection: keep-alive
+Date: Wed, 11 Nov 2026 18:23:30 GMT
+Server: Kestrel
+ETag: 639300182085970000
+Content-Length: 346
+Content-Type: application/xml; charset=utf-8
+
+-------- Azure.RequestFailedException : The value supplied must be between 00:00:01 and 01:00:00. (Parameter 'DefaultMessageTimeToLive')
+Actual value was 3.00:00:00. TrackingId:ba72ef22-14bf-4bbe-a2d8-d3a2048432cc_G0, SystemTracker:sbemulatorns:Topic:producer-send-tests-442a455a-422b-41eb-8b58-195ed06d755c, Timestamp:2026-11-11T18:23:29
+Status: 400 (Bad Request)
+
+Content:
+<Error><Code>400</Code><Detail>The value supplied must be between 00:00:01 and 01:00:00. (Parameter 'DefaultMessageTimeToLive')
+Actual value was 3.00:00:00. TrackingId:ba72ef22-14bf-4bbe-a2d8-d3a2048432cc_G0, SystemTracker:sbemulatorns:Topic:producer-send-tests-442a455a-422b-41eb-8b58-195ed06d755c, Timestamp:2026-11-11T18:23:29</Detail></Error>
+
+Headers:
+Connection: keep-alive
+Date: Wed, 11 Nov 2026 18:23:30 GMT
+Server: Kestrel
+ETag: 639300182085970000
+Content-Length: 346
+Content-Type: application/xml; charset=utf-8
+
+  Stack Trace:
+     at Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusTopicConsumer.EnsureChannelAsync() in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter.MessagingGateway.AzureServiceBus\AzureServiceBusTopicConsumer.cs:line 124
+   at Paramore.Brighter.Tasks.BrighterAsyncContext.<>c.<Run>b__29_0(Task t, Object state) in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter\Tasks\BrighterAsyncContext.cs:line 257
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Paramore.Brighter.Tasks.BrighterAsyncContext.Run(Func`1 func) in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter\Tasks\BrighterAsyncContext.cs:line 270
+   at Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusChannelFactory.CreateSyncChannel(Subscription subscription) in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter.MessagingGateway.AzureServiceBus\AzureServiceBusChannelFactory.cs:line 68
+   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.ASBProducerTests..ctor() in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\tests\Paramore.Brighter.AzureServiceBus.Tests\MessagingGateway\When_posting_a_message_via_the_producer.cs:line 68
+   at System.RuntimeType.CreateInstanceImpl(BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture)
+----- Inner Stack Trace -----
+   at Azure.Messaging.ServiceBus.Administration.HttpRequestAndResponse.ThrowIfRequestFailed(Request request, Response response)
+   at Azure.Messaging.ServiceBus.Administration.HttpRequestAndResponse.SendHttpRequestAsync(Request request, CancellationToken cancellationToken)
+   at Azure.Messaging.ServiceBus.Administration.HttpRequestAndResponse.PutEntityAsync(String entityPath, String requestBody, Boolean isUpdate, String forwardTo, String fwdDeadLetterTo, CancellationToken cancellationToken)
+   at Azure.Messaging.ServiceBus.Administration.ServiceBusAdministrationClient.CreateSubscriptionAsync(CreateSubscriptionOptions options, CreateRuleOptions rule, CancellationToken cancellationToken)
+   at Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusWrappers.AdministrationClientWrapper.CreateSubscriptionAsync(String topicName, String subscriptionName, AzureServiceBusSubscriptionConfiguration subscriptionConfiguration) in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter.MessagingGateway.AzureServiceBus\AzureServiceBusWrappers\AdministrationClientWrapper.cs:line 162
+   at Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusTopicConsumer.EnsureChannelAsync() in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter.MessagingGateway.AzureServiceBus\AzureServiceBusTopicConsumer.cs:line 102
+----- Inner Stack Trace -----
+
+  Failed Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.ASBConsumerTests.When_receiving_a_message_via_the_consumer [1 ms]
+  Error Message:
+   Paramore.Brighter.ChannelFailureException : Failing to check or create subscription
+---- System.ArgumentException : The value supplied must be between 00:00:01 and 01:00:00. (Parameter 'DefaultMessageTimeToLive')
+Actual value was 4.00:00:00. TrackingId:8131a329-25d0-425a-ada3-605d3be5af06_G0, SystemTracker:sbemulatorns:Topic:consumer-tests-62923969-5e40-4571-ac78-833a5c238541, Timestamp:2026-11-11T18:23:39
+Status: 400 (Bad Request)
+
+Content:
+<Error><Code>400</Code><Detail>The value supplied must be between 00:00:01 and 01:00:00. (Parameter 'DefaultMessageTimeToLive')
+Actual value was 4.00:00:00. TrackingId:8131a329-25d0-425a-ada3-605d3be5af06_G0, SystemTracker:sbemulatorns:Topic:consumer-tests-62923969-5e40-4571-ac78-833a5c238541, Timestamp:2026-11-11T18:23:39</Detail></Error>
+
+Headers:
+Connection: keep-alive
+Date: Wed, 11 Nov 2026 18:23:39 GMT
+Server: Kestrel
+ETag: 639300182177100000
+Content-Length: 341
+Content-Type: application/xml; charset=utf-8
+
+-------- Azure.RequestFailedException : The value supplied must be between 00:00:01 and 01:00:00. (Parameter 'DefaultMessageTimeToLive')
+Actual value was 4.00:00:00. TrackingId:8131a329-25d0-425a-ada3-605d3be5af06_G0, SystemTracker:sbemulatorns:Topic:consumer-tests-62923969-5e40-4571-ac78-833a5c238541, Timestamp:2026-11-11T18:23:39
+Status: 400 (Bad Request)
+
+Content:
+<Error><Code>400</Code><Detail>The value supplied must be between 00:00:01 and 01:00:00. (Parameter 'DefaultMessageTimeToLive')
+Actual value was 4.00:00:00. TrackingId:8131a329-25d0-425a-ada3-605d3be5af06_G0, SystemTracker:sbemulatorns:Topic:consumer-tests-62923969-5e40-4571-ac78-833a5c238541, Timestamp:2026-11-11T18:23:39</Detail></Error>
+
+Headers:
+Connection: keep-alive
+Date: Wed, 11 Nov 2026 18:23:39 GMT
+Server: Kestrel
+ETag: 639300182177100000
+Content-Length: 341
+Content-Type: application/xml; charset=utf-8
+
+  Stack Trace:
+     at Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusTopicConsumer.EnsureChannelAsync() in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter.MessagingGateway.AzureServiceBus\AzureServiceBusTopicConsumer.cs:line 124
+   at Paramore.Brighter.Tasks.BrighterAsyncContext.<>c.<Run>b__29_0(Task t, Object state) in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter\Tasks\BrighterAsyncContext.cs:line 257
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Paramore.Brighter.Tasks.BrighterAsyncContext.Run(Func`1 func) in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter\Tasks\BrighterAsyncContext.cs:line 270
+   at Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusChannelFactory.CreateSyncChannel(Subscription subscription) in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter.MessagingGateway.AzureServiceBus\AzureServiceBusChannelFactory.cs:line 68
+   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.ASBConsumerTests..ctor() in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\tests\Paramore.Brighter.AzureServiceBus.Tests\MessagingGateway\When_consuming_a_message_via_the_consumer.cs:line 100
+   at System.RuntimeType.CreateInstanceImpl(BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture)
+----- Inner Stack Trace -----
+   at Azure.Messaging.ServiceBus.Administration.HttpRequestAndResponse.ThrowIfRequestFailed(Request request, Response response)
+   at Azure.Messaging.ServiceBus.Administration.HttpRequestAndResponse.SendHttpRequestAsync(Request request, CancellationToken cancellationToken)
+   at Azure.Messaging.ServiceBus.Administration.HttpRequestAndResponse.PutEntityAsync(String entityPath, String requestBody, Boolean isUpdate, String forwardTo, String fwdDeadLetterTo, CancellationToken cancellationToken)
+   at Azure.Messaging.ServiceBus.Administration.ServiceBusAdministrationClient.CreateSubscriptionAsync(CreateSubscriptionOptions options, CreateRuleOptions rule, CancellationToken cancellationToken)
+   at Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusWrappers.AdministrationClientWrapper.CreateSubscriptionAsync(String topicName, String subscriptionName, AzureServiceBusSubscriptionConfiguration subscriptionConfiguration) in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter.MessagingGateway.AzureServiceBus\AzureServiceBusWrappers\AdministrationClientWrapper.cs:line 162
+   at Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusTopicConsumer.EnsureChannelAsync() in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter.MessagingGateway.AzureServiceBus\AzureServiceBusTopicConsumer.cs:line 102
+----- Inner Stack Trace -----
+
+  Failed Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.ASBProducerTests.When_posting_a_message_via_the_producer(testQueues: False) [1 ms]
+  Error Message:
+   Paramore.Brighter.ChannelFailureException : Failing to check or create subscription
+---- System.ArgumentException : The value supplied must be between 00:00:01 and 01:00:00. (Parameter 'DefaultMessageTimeToLive')
+Actual value was 3.00:00:00. TrackingId:327f92ed-a8b1-48ef-8f5a-bebdf725cd51_G0, SystemTracker:sbemulatorns:Topic:producer-send-tests-7c59586d-c5a7-4f97-bb19-23872bae06b3, Timestamp:2026-11-11T18:23:40
+Status: 400 (Bad Request)
+
+Content:
+<Error><Code>400</Code><Detail>The value supplied must be between 00:00:01 and 01:00:00. (Parameter 'DefaultMessageTimeToLive')
+Actual value was 3.00:00:00. TrackingId:327f92ed-a8b1-48ef-8f5a-bebdf725cd51_G0, SystemTracker:sbemulatorns:Topic:producer-send-tests-7c59586d-c5a7-4f97-bb19-23872bae06b3, Timestamp:2026-11-11T18:23:40</Detail></Error>
+
+Headers:
+Connection: keep-alive
+Date: Wed, 11 Nov 2026 18:23:40 GMT
+Server: Kestrel
+ETag: 639300182189970000
+Content-Length: 346
+Content-Type: application/xml; charset=utf-8
+
+-------- Azure.RequestFailedException : The value supplied must be between 00:00:01 and 01:00:00. (Parameter 'DefaultMessageTimeToLive')
+Actual value was 3.00:00:00. TrackingId:327f92ed-a8b1-48ef-8f5a-bebdf725cd51_G0, SystemTracker:sbemulatorns:Topic:producer-send-tests-7c59586d-c5a7-4f97-bb19-23872bae06b3, Timestamp:2026-11-11T18:23:40
+Status: 400 (Bad Request)
+
+Content:
+<Error><Code>400</Code><Detail>The value supplied must be between 00:00:01 and 01:00:00. (Parameter 'DefaultMessageTimeToLive')
+Actual value was 3.00:00:00. TrackingId:327f92ed-a8b1-48ef-8f5a-bebdf725cd51_G0, SystemTracker:sbemulatorns:Topic:producer-send-tests-7c59586d-c5a7-4f97-bb19-23872bae06b3, Timestamp:2026-11-11T18:23:40</Detail></Error>
+
+Headers:
+Connection: keep-alive
+Date: Wed, 11 Nov 2026 18:23:40 GMT
+Server: Kestrel
+ETag: 639300182189970000
+Content-Length: 346
+Content-Type: application/xml; charset=utf-8
+
+  Stack Trace:
+     at Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusTopicConsumer.EnsureChannelAsync() in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter.MessagingGateway.AzureServiceBus\AzureServiceBusTopicConsumer.cs:line 124
+   at Paramore.Brighter.Tasks.BrighterAsyncContext.<>c.<Run>b__29_0(Task t, Object state) in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter\Tasks\BrighterAsyncContext.cs:line 257
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Paramore.Brighter.Tasks.BrighterAsyncContext.Run(Func`1 func) in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter\Tasks\BrighterAsyncContext.cs:line 270
+   at Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusChannelFactory.CreateSyncChannel(Subscription subscription) in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter.MessagingGateway.AzureServiceBus\AzureServiceBusChannelFactory.cs:line 68
+   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.ASBProducerTests..ctor() in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\tests\Paramore.Brighter.AzureServiceBus.Tests\MessagingGateway\When_posting_a_message_via_the_producer.cs:line 68
+   at System.RuntimeType.CreateInstanceImpl(BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture)
+----- Inner Stack Trace -----
+   at Azure.Messaging.ServiceBus.Administration.HttpRequestAndResponse.ThrowIfRequestFailed(Request request, Response response)
+   at Azure.Messaging.ServiceBus.Administration.HttpRequestAndResponse.SendHttpRequestAsync(Request request, CancellationToken cancellationToken)
+   at Azure.Messaging.ServiceBus.Administration.HttpRequestAndResponse.PutEntityAsync(String entityPath, String requestBody, Boolean isUpdate, String forwardTo, String fwdDeadLetterTo, CancellationToken cancellationToken)
+   at Azure.Messaging.ServiceBus.Administration.ServiceBusAdministrationClient.CreateSubscriptionAsync(CreateSubscriptionOptions options, CreateRuleOptions rule, CancellationToken cancellationToken)
+   at Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusWrappers.AdministrationClientWrapper.CreateSubscriptionAsync(String topicName, String subscriptionName, AzureServiceBusSubscriptionConfiguration subscriptionConfiguration) in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter.MessagingGateway.AzureServiceBus\AzureServiceBusWrappers\AdministrationClientWrapper.cs:line 162
+   at Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusTopicConsumer.EnsureChannelAsync() in C:\Users\IrakliGabisonia\AppData\Local\Temp\brighter-4170-docker-remaining\src\Paramore.Brighter.MessagingGateway.AzureServiceBus\AzureServiceBusTopicConsumer.cs:line 102
+----- Inner Stack Trace -----
+
+[xUnit.net 00:01:00.14]     Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.Proactor.WhenRequeuingAMessageTooManyTimesShouldMoveToDeadLetterQueueAsync.When_requeuing_a_message_too_many_times_should_move_to_dead_letter_queue_async [SKIP]
+  Skipped Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.Proactor.WhenRequeuingAMessageTooManyTimesShouldMoveToDeadLetterQueueAsync.When_requeuing_a_message_too_many_times_should_move_to_dead_letter_queue_async [1 ms]
+[xUnit.net 00:01:30.61]     Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.Proactor.WhenRejectingMessageWithUnacceptableReasonShouldSendToInvalidChannelAsync.When_rejecting_message_with_unacceptable_reason_should_send_to_invalid_channel_async [SKIP]
+  Skipped Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.Proactor.WhenRejectingMessageWithUnacceptableReasonShouldSendToInvalidChannelAsync.When_rejecting_message_with_unacceptable_reason_should_send_to_invalid_channel_async [1 ms]
+[xUnit.net 00:02:40.63]     Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.Reactor.WhenRequeuingAMessageTooManyTimesShouldMoveToDeadLetterQueue.When_requeuing_a_message_too_many_times_should_move_to_dead_letter_queue [SKIP]
+  Skipped Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.Reactor.WhenRequeuingAMessageTooManyTimesShouldMoveToDeadLetterQueue.When_requeuing_a_message_too_many_times_should_move_to_dead_letter_queue [1 ms]
+[xUnit.net 00:03:10.74]     Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.Reactor.WhenRejectingMessageWithUnacceptableReasonShouldSendToInvalidChannel.When_rejecting_message_with_unacceptable_reason_should_send_to_invalid_channel [SKIP]
+  Skipped Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.Reactor.WhenRejectingMessageWithUnacceptableReasonShouldSendToInvalidChannel.When_rejecting_message_with_unacceptable_reason_should_send_to_invalid_channel [1 ms]
+Data collector 'Blame' message: All tests finished running, Sequence file will not be generated.
+Results File: C:\Users\IrakliGabisonia\source\repos\Personal\Brighter\specs\0038-wire-message-mapping\review\x64-acceptance/docker-remaining/asb/net10.0-managed\managed.trx
+
+Failed!  - Failed:    10, Passed:   644, Skipped:     4, Total:   658, Duration: 11 m 13 s - Paramore.Brighter.AzureServiceBus.Tests.dll (net10.0)
