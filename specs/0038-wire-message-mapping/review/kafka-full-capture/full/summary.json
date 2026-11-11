@@ -1,0 +1,18 @@
+{
+  "mode": "full",
+  "captures": [],
+  "exit": 0,
+  "wall_seconds": 899.6160409450531,
+  "monotonic_seconds": 899.5766513748094,
+  "completed_native_closes": 4,
+  "pending_closes": {},
+  "clock_discontinuity": false,
+  "counts": {
+    "Passed": 412
+  },
+  "failures": [],
+  "identities_match_prior_412": true,
+  "fixture_stop_exit": 0,
+  "input_count": 6616,
+  "unchanged_inputs": true
+}

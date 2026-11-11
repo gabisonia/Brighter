@@ -1,0 +1,29 @@
+{
+  "purpose": "Temporary fork-only transfer for native x64 validation; not production readiness",
+  "branch": "wip/4170-x64-validation",
+  "destination": "https://github.com/gabisonia/Brighter.git",
+  "base_commit": "64ba97097199c708974195f55fbdca0ce3e8487c",
+  "validated_source_build_inputs": 7252,
+  "source_manifest_sha256": "1a497511662f916bb82aeb9f16ad8c26053b80a205200a60ddd4fe50992ea4fa",
+  "source_mismatches": [],
+  "reviewed_ignored_logs_included": 45,
+  "initial_staged_paths": 1555,
+  "credential_pattern_review": "No private-key, AWS access-key, GitHub token, OpenAI key or JWT matches. SAS matches are emulator placeholders; password matches reviewed as redacted logs, local fixture defaults, GitHub secret references or source property assignments. Pattern review is not a guarantee of exhaustive secret detection.",
+  "excluded": "Credentials, build outputs, machine-local current gear and temporary directories",
+  "whitespace": {
+    "findings": 455,
+    "type": "pre-existing trailing whitespace",
+    "review_artifact_findings": 432,
+    "source_findings": 23,
+    "source_files": [
+      "src/Paramore.Brighter.MessagingGateway.AWSSQS.V4/DefaultSnsWireMessageWriter.cs",
+      "src/Paramore.Brighter.MessagingGateway.AWSSQS.V4/DefaultSqsWireMessageWriter.cs",
+      "src/Paramore.Brighter.MessagingGateway.RocketMQ/DefaultRocketMqWireMessageReader.cs"
+    ],
+    "disposition": "Preserve validated source and raw evidence bytes during transfer; no whitespace normalization"
+  },
+  "tests_rerun": false,
+  "production_changes_during_transfer": false,
+  "handoff": "../X64-HANDOFF.md",
+  "preflight_shell_syntax": "passed"
+}

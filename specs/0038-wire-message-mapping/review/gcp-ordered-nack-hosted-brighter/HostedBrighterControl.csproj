@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>net9.0;net10.0</TargetFrameworks>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="xunit" />
+    <ProjectReference Include="../../../../src/Paramore.Brighter.MessagingGateway.GcpPubSub/Paramore.Brighter.MessagingGateway.GcpPubSub.csproj" />
+    <Compile Include="../../../../tests/Paramore.Brighter.Gcp.Tests/TestDoubles/GcpStreamRpcObserver.cs" Link="GcpStreamRpcObserver.cs" />
+    <Compile Include="../../../../tests/Paramore.Brighter.Gcp.Tests/TestDoubles/GcpObservedStreamReader.cs" Link="GcpObservedStreamReader.cs" />
+  </ItemGroup>
+</Project>

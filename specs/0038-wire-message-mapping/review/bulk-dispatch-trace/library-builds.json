@@ -1,0 +1,8 @@
+{
+  "GcpPubSub": {
+    "exit": 0
+  },
+  "AzureServiceBus": {
+    "exit": 0
+  }
+}

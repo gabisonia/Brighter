@@ -24,6 +24,27 @@ public partial class GcpPubSubStreamMessageConsumer(
     RoutingKey? invalidMessageRoutingKey = null,
     OnMissingChannel makeChannels = OnMissingChannel.Assume) : IAmAMessageConsumerSync, IAmAMessageConsumerAsync, IHaveAMessagingSystem
 {
+    private readonly IAmAWireMessageReader<GcpStreamMessage> _wireMessageReader = new DefaultGcpPubSubStreamWireMessageReader();
+
+    internal GcpPubSubStreamMessageConsumer(
+        GcpMessagingGatewayConnection connection,
+        GcpStreamConsumer consumer,
+        Google.Cloud.PubSub.V1.SubscriptionName subscriptionName,
+        TimeProvider timeProvider,
+        RoutingKey? deadLetterRoutingKey,
+        RoutingKey? invalidMessageRoutingKey,
+        OnMissingChannel makeChannels,
+        IAmAWireMessageReader<GcpStreamMessage>? wireMessageReader,
+        IAmAWireMessageWriter<PubsubMessage>? deadLetterWireMessageWriter = null,
+        IAmAWireMessageWriter<PubsubMessage>? invalidMessageWireMessageWriter = null)
+        : this(connection, consumer, subscriptionName, timeProvider,
+            deadLetterRoutingKey, invalidMessageRoutingKey, makeChannels)
+    {
+        _wireMessageReader = wireMessageReader ?? _wireMessageReader;
+        _router = new GcpRejectionRouter(connection, deadLetterRoutingKey, invalidMessageRoutingKey,
+            makeChannels, subscriptionName.ProjectId, timeProvider, deadLetterWireMessageWriter, invalidMessageWireMessageWriter);
+    }
+
     /// <inheritdoc />
     public MessagingSystem MessagingSystem => MessagingSystem.PubSub;
 
@@ -249,6 +270,10 @@ public partial class GcpPubSubStreamMessageConsumer(
     /// Synchronously reads the next message from the internal channel reader, blocking 
     /// until a message is available or the timeout is reached.
     /// </summary>
+    /// <remarks>
+    /// A throwing or null-returning wire reader yields an unacceptable message with the native
+    /// payload and receipt. The caller remains responsible for settling that delivery.
+    /// </remarks>
     /// <param name="timeOut">Optional timeout for the receive operation.</param>
     /// <returns>An array containing one message if available, or an array with a default message if a timeout occurs.</returns>
     public Message[] Receive(TimeSpan? timeOut = null)
@@ -260,6 +285,10 @@ public partial class GcpPubSubStreamMessageConsumer(
     /// Asynchronously reads the next message from the internal channel reader, waiting 
     /// until a message is available or the timeout is reached.
     /// </summary>
+    /// <remarks>
+    /// A throwing or null-returning wire reader yields an unacceptable message with the native
+    /// payload and receipt. The caller remains responsible for settling that delivery.
+    /// </remarks>
     /// <param name="timeOut">Optional timeout for the receive operation.</param>
     /// <param name="cancellationToken">The cancellation token.</param>
     /// <returns>A task returning an array containing one message if available, or an array with a default message if a timeout occurs.</returns>
@@ -285,7 +314,7 @@ public partial class GcpPubSubStreamMessageConsumer(
 
                 if (message.CanProcess)
                 {
-                    return [Parser.ToBrighterMessage(message)];
+                    return [ReadWireMessage(message)];
                 }
             }
 
@@ -377,8 +406,39 @@ public partial class GcpPubSubStreamMessageConsumer(
     /// </summary>
     private static void Nack(GcpStreamMessage gcpStreamMessage) => gcpStreamMessage.Reject();
 
+    private Message ReadWireMessage(GcpStreamMessage delivery)
+    {
+        Message message;
+        try
+        {
+            message = _wireMessageReader.ReadMessage(delivery)
+                ?? throw new InvalidOperationException("The wire message reader returned null.");
+        }
+        catch (Exception exception)
+        {
+            Log.WireMappingFailed(s_logger, exception, delivery.Message.MessageId);
+            message = CreateUnacceptableMessage(delivery);
+        }
+
+        message.Header.Bag["ReceiptHandle"] = delivery;
+        message.Header.HandledCount = Parser.ReadDeliveryCount(delivery);
+        return message;
+    }
+
+    private static Message CreateUnacceptableMessage(GcpStreamMessage delivery)
+    {
+        var topic = delivery.Message.Attributes.TryGetValue(HeaderNames.Topic, out var value)
+            ? new RoutingKey(value)
+            : RoutingKey.Empty;
+        var header = new MessageHeader(new Id(delivery.Message.MessageId), topic, MessageType.MT_UNACCEPTABLE);
+        return new Message(header, new MessageBody(delivery.Message.Data.ToByteArray()));
+    }
+
     private static partial class Log
     {
+        [LoggerMessage(LogLevel.Warning, "GcpStreamMessageConsumer: Wire mapping failed for message {Id}")]
+        public static partial void WireMappingFailed(ILogger logger, Exception exception, string id);
+
         [LoggerMessage(LogLevel.Information, "GcpStreamMessageConsumer: The message {Id} acknowledged with the receipt handle {ReceiptHandle} on the subscription {SubscriptionName}")]
         public static partial void AcknowledgeSuccess(ILogger logger, string id, string receiptHandle,
             string subscriptionName);

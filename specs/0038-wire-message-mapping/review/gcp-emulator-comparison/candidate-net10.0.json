@@ -1,0 +1,19 @@
+{
+  "variant": "candidate",
+  "framework": "net10.0",
+  "image": "gcr.io/google.com/cloudsdktool/google-cloud-cli@sha256:faff8f5e8a44e70df68a2a916cefa187cac9e132c25350a8a0f27f36fd586676",
+  "exit": 0,
+  "wall_seconds": 31.345985889434814,
+  "monotonic_seconds": 31.34600079059601,
+  "clock_discontinuity": false,
+  "results": [
+    "RESULT addStream=False acknowledgeSecondFirst=False firstReturnedWithin30Seconds=True",
+    "RESULT addStream=False acknowledgeSecondFirst=True firstReturnedWithin30Seconds=True",
+    "RESULT addStream=True acknowledgeSecondFirst=False firstReturnedWithin30Seconds=True",
+    "RESULT addStream=True acknowledgeSecondFirst=True firstReturnedWithin30Seconds=False"
+  ],
+  "recoveries": [
+    "RECOVERY afterRepeatedSecondAck=True"
+  ],
+  "errors": []
+}

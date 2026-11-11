@@ -1,0 +1,92 @@
+{
+  "original_failure_artifacts": {
+    "directory": "/private/tmp/brighter-4170-kafka-requeue-cancellation-recovery",
+    "directory_present": false,
+    "raw_stack_recovered": false
+  },
+  "prior_healthy_trx_sha256": "88da10d661b2c76cabb64621eaae79c8a5ba01a941c4f0853bc42921a6f01689",
+  "prior_healthy_cases": [
+    {
+      "strategy": "RoundRobin",
+      "topic": "fc71227a-70e2-4659-8e6a-c92ac101c1f8",
+      "group": "57a90130-36ab-4950-a8d9-67245adbdffb",
+      "outcome": "Passed",
+      "consumers": [
+        {
+          "name": "Kafka Consumer Test#consumer-1227",
+          "log": "healthy-net9-RoundRobin-consumer-1227.txt",
+          "line_count": 420,
+          "close_duration_ms_at_log_resolution": 8.0
+        },
+        {
+          "name": "Kafka Consumer Test#consumer-1229",
+          "log": "healthy-net9-RoundRobin-consumer-1229.txt",
+          "line_count": 156,
+          "close_duration_ms_at_log_resolution": 1.0
+        }
+      ]
+    },
+    {
+      "strategy": "CooperativeSticky",
+      "topic": "887efaaa-d91e-438f-90a5-c62c682b74f4",
+      "group": "3a31da4d-05a7-4fd1-8c34-875698c2f38d",
+      "outcome": "Passed",
+      "consumers": [
+        {
+          "name": "Kafka Consumer Test#consumer-1234",
+          "log": "healthy-net9-CooperativeSticky-consumer-1234.txt",
+          "line_count": 481,
+          "close_duration_ms_at_log_resolution": 9.0
+        },
+        {
+          "name": "Kafka Consumer Test#consumer-1236",
+          "log": "healthy-net9-CooperativeSticky-consumer-1236.txt",
+          "line_count": 213,
+          "close_duration_ms_at_log_resolution": 4.0
+        }
+      ]
+    }
+  ],
+  "live_capture_validation": {
+    "purpose": "Validate durable native stderr and nonterminating native/managed capture, not reproduce or clear the historical stall.",
+    "live_capture": {
+      "pid": 54,
+      "bytes_before_test_completion": 21462,
+      "runner_still_running": true
+    },
+    "createdump_exit": 0,
+    "exit": 0,
+    "crashreport_exists": true,
+    "cases": [
+      {
+        "testName": "Paramore.Brighter.Kafka.Tests.MessagingGateway.Reactor.KafkaMessageConsumerCommitRevokeConcurrency.When_committing_offsets_during_revoke_should_not_race_with_background_commit(partitionAssignmentStrategy: RoundRobin)",
+        "outcome": "Passed",
+        "duration": "00:00:08.0327939"
+      },
+      {
+        "testName": "Paramore.Brighter.Kafka.Tests.MessagingGateway.Reactor.KafkaMessageConsumerCommitRevokeConcurrency.When_committing_offsets_during_revoke_should_not_race_with_background_commit(partitionAssignmentStrategy: CooperativeSticky)",
+        "outcome": "Passed",
+        "duration": "00:00:07.9409207"
+      }
+    ],
+    "fixture_stop_exit": 0,
+    "input_count": 6616,
+    "unchanged_inputs": true
+  },
+  "healthy_stack_report": {
+    "sha256": "3658333b620ebbef9997340b85a70b94933d6d08f9dfa9de36fd4fd8e21044c5",
+    "threads": 29,
+    "threads_with_librdkafka_frames": 9,
+    "internal_librdkafka_function_symbols_present": false
+  },
+  "source_sha256": {
+    "StartupHook.cs": "aba1c5ee4da774dba888ece614f35bfbcadc9e05b8aba0c9fbb127321f42a6b9",
+    "NativeCapture.csproj": "fa6375684d4de4f1bcd0aafb6276543df3b66460d98c49190cd7c2fcd815821c",
+    "validate.py": "4974e7ea8c4b22074124110c681f322e14b0c0a31da6b9e5e0ffff6db43a3900"
+  },
+  "validated_source_sha256": "cfdaf17a7b886ba07a2c6b0771f8709e6dd7382358785ee6a59e76f9786d8bfd",
+  "validated_binary_sha256": "208fd68c7626c0a9dc4009ff8d4e1e44d6cea89360a2fc434686783b59b2dac7",
+  "post_validation_source_change": "License header added and one explanatory comment moved; executable statements unchanged.",
+  "final_diagnostic_binary_sha256": "1c7cb1a9381979be9d62e581c54bf5f6e9f7382f5ea6b752aeee49002dd85f9d",
+  "executable_statements_unchanged_after_validation": true
+}

@@ -1,0 +1,11 @@
+--- full-matrix/tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_asb_bulk_dispatches_outbox_messages_should_map_the_current_producer_context.cs
++++ final/tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_asb_bulk_dispatches_outbox_messages_should_map_the_current_producer_context.cs
+@@ -107,7 +107,7 @@
+             var prefix = custom ? "external-" : "cloudevents:";
+             foreach (var source in sources)
+             {
+-                var native = Assert.Single(client.Sent.Where(message => message.MessageId == (custom ? "wire-" : "") + source.Id.Value));
++                var native = Assert.Single(client.Sent, message => message.MessageId == (custom ? "wire-" : "") + source.Id.Value);
+                 Assert.Equal(span.Id, native.ApplicationProperties[prefix + "traceparent"]);
+                 Assert.Equal("vendor=dispatch", native.ApplicationProperties[prefix + "tracestate"]);
+                 Assert.Contains("bulk=dispatch", Assert.IsType<string>(native.ApplicationProperties[prefix + "baggage"]));

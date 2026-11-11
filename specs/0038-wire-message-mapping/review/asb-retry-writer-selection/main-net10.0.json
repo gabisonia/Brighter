@@ -1,0 +1,10 @@
+{
+  "exit": 0,
+  "clock_discontinuity": false,
+  "counts": {
+    "Passed": 12,
+    "Failed": 0,
+    "NotExecuted": 0
+  },
+  "failures": []
+}

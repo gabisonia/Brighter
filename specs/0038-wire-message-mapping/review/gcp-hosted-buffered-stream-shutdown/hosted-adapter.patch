@@ -1,0 +1,109 @@
+--- existing-approved-buffered-diagnostic
++++ hosted-sdk-owned-client-adapter
+@@ -37,8 +37,6 @@
+ using Google.Cloud.PubSub.V1;
+ using Google.Protobuf;
+ using Grpc.Core;
+-using Grpc.Core.Interceptors;
+-using Grpc.Net.Client;
+ using Paramore.Brighter.Gcp.Tests.TestDoubles;
+ using Paramore.Brighter.MessagingGateway.GcpPubSub;
+ using Xunit;
+@@ -46,32 +44,22 @@
+ 
+ namespace Paramore.Brighter.Gcp.Tests.MessagingGateway;
+ 
+-[Trait("Category", "GcpNativeStreamLifecycle")]
+-[Trait("Requires", "PubSubEmulator")]
+-public class GcpStreamShutdownObservationTests(ITestOutputHelper output)
++public class GcpHostedBufferedShutdownObservationTests(ITestOutputHelper output)
+ {
+-    [Theory]
+-    [InlineData(false, false, false)]
+-    [InlineData(false, false, true)]
+-    [InlineData(false, true, false)]
+-    [InlineData(false, true, true)]
+-    [InlineData(true, false, false)]
+-    [InlineData(true, false, true)]
+-    [InlineData(true, true, false)]
+-    [InlineData(true, true, true)]
+     public async Task When_stopping_a_gcp_stream_should_release_the_observed_native_delivery(
+         bool useAsync, bool buffered, bool nativeRecovery)
+     {
+         //Arrange
+-        var host = Environment.GetEnvironmentVariable("PUBSUB_EMULATOR_HOST");
+-        Assert.False(string.IsNullOrWhiteSpace(host), "An explicit Pub/Sub emulator is required.");
+-        var project = Environment.GetEnvironmentVariable("GOOGLE_CLOUD_PROJECT") ?? "brighter-test";
+-        var name = "stream-shutdown-" + Guid.NewGuid().ToString("N");
++        Assert.True(string.IsNullOrWhiteSpace(Environment.GetEnvironmentVariable("PUBSUB_EMULATOR_HOST")),
++            "Hosted execution rejects PUBSUB_EMULATOR_HOST.");
++        const string project = "brighter-pubsub-validation";
++        var name = "hosted-buffered-shutdown-" + Guid.NewGuid().ToString("N");
+         var topic = TopicName.FromProjectTopic(project, name);
+         var subscription = Google.Cloud.PubSub.V1.SubscriptionName.FromProjectSubscription(project, name);
+         var starts = new ConcurrentDictionary<object, long>(ReferenceEqualityComparer.Instance);
+         var completed = new ConcurrentQueue<(long Started, string Method, int? Deadline, string[] AckIds)>();
+         var trace = new ConcurrentQueue<string>();
++        trace.Enqueue($"RESOURCE {topic} {subscription}");
+         var observer = new GcpPurgeFaultInterceptor
+         {
+             BeforeCall = (method, request) =>
+@@ -89,14 +77,11 @@
+                 trace.Enqueue($"{DateTimeOffset.UtcNow:O} SUCCESS {method} {request}");
+             }
+         };
+-        using var transport = GrpcChannel.ForAddress("http://" + host,
+-            new Grpc.Net.Client.GrpcChannelOptions { Credentials = ChannelCredentials.Insecure });
+-        var native = new SubscriberServiceApiClientBuilder { CallInvoker = transport.Intercept(observer) }.Build();
+-        var topics = new PublisherServiceApiClientBuilder { CallInvoker = transport.CreateCallInvoker() }.Build();
++        var native = new SubscriberServiceApiClientBuilder { EmulatorDetection = EmulatorDetection.ProductionOnly }.Build();
++        var topics = new PublisherServiceApiClientBuilder { EmulatorDetection = EmulatorDetection.ProductionOnly }.Build();
+         var connection = new GcpMessagingGatewayConnection { ProjectId = project };
+         using var budget = new CancellationTokenSource(TimeSpan.FromSeconds(90));
+         var calls = CallSettings.FromCancellationToken(budget.Token);
+-        var clients = new List<SubscriberClient>();
+         var consumers = new List<GcpPubSubStreamMessageConsumer>();
+         var cleanupErrors = new List<Exception>();
+         var behaviorSucceeded = false;
+@@ -205,22 +190,6 @@
+                     trace.Enqueue($"Cleanup consumer: {exception}");
+                 }
+             }
+-            foreach (var client in clients)
+-            {
+-                try
+-                {
+-                    await client.StopAsync(new SubscriberClient.ShutdownOptions
+-                    {
+-                        Mode = SubscriberClient.ShutdownMode.NackImmediately,
+-                        Timeout = TimeSpan.FromSeconds(2)
+-                    }).WaitAsync(TimeSpan.FromSeconds(3));
+-                }
+-                catch (Exception exception)
+-                {
+-                    cleanupErrors.Add(exception);
+-                    trace.Enqueue($"Cleanup client: {exception}");
+-                }
+-            }
+             try { await DeleteAsync(() => native.DeleteSubscriptionAsync(subscription)); }
+             finally
+             {
+@@ -239,10 +208,14 @@
+ 
+         (GcpPubSubStreamMessageConsumer Consumer, GcpStreamConsumer Stream) CreateConsumer()
+         {
+-            var client = new SubscriberClientImpl(subscription, new[] { native },
+-                new SubscriberClient.Settings { FlowControlSettings = new FlowControlSettings(1, null) },
+-                () => Task.CompletedTask);
+-            clients.Add(client);
++            var client = new SubscriberClientBuilder
++            {
++                SubscriptionName = subscription,
++                EmulatorDetection = EmulatorDetection.ProductionOnly,
++                ClientCount = 1,
++                Settings = new SubscriberClient.Settings { FlowControlSettings = new FlowControlSettings(1, null) },
++                ApiSettings = new SubscriberServiceApiSettings { Interceptor = observer }
++            }.Build();
+             var stream = new GcpStreamConsumer(client);
+             Assert.True(stream.TryStart());
+             var consumer = new GcpPubSubStreamMessageConsumer(connection, stream, subscription, TimeProvider.System);

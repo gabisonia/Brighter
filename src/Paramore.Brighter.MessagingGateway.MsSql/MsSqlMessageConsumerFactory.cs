@@ -54,7 +54,13 @@ namespace Paramore.Brighter.MessagingGateway.MsSql
             var invalidMessageRoutingKey = (subscription as IUseBrighterInvalidMessageSupport)?.InvalidMessageRoutingKey;
 
             Log.MsSqlMessageConsumerFactoryCreate(s_logger, subscription.ChannelName);
-            return new MsSqlMessageConsumer(_msSqlConfiguration, subscription.ChannelName!, _scheduler, deadLetterRoutingKey, invalidMessageRoutingKey);
+            return new MsSqlMessageConsumer(_msSqlConfiguration, subscription.ChannelName!,
+                new MsSqlConnectionProvider(_msSqlConfiguration), _scheduler, deadLetterRoutingKey, invalidMessageRoutingKey,
+                (subscription as MsSqlSubscription)?.WireMessageReader,
+                (subscription as MsSqlSubscription)?.RequeueWireMessageWriter,
+                (subscription as MsSqlSubscription)?.DeadLetterWireMessageWriter,
+                (subscription as MsSqlSubscription)?.InvalidMessageWireMessageWriter,
+                (subscription as MsSqlSubscription)?.ScheduledRequeuePublicationTopic);
         }
 
         public IAmAMessageConsumerAsync CreateAsync(Subscription subscription)
@@ -65,7 +71,13 @@ namespace Paramore.Brighter.MessagingGateway.MsSql
             var invalidMessageRoutingKey = (subscription as IUseBrighterInvalidMessageSupport)?.InvalidMessageRoutingKey;
 
             Log.MsSqlMessageConsumerFactoryCreateAsync(s_logger, subscription.ChannelName);
-            return new MsSqlMessageConsumer(_msSqlConfiguration, subscription.ChannelName!, _scheduler, deadLetterRoutingKey, invalidMessageRoutingKey);
+            return new MsSqlMessageConsumer(_msSqlConfiguration, subscription.ChannelName!,
+                new MsSqlConnectionProvider(_msSqlConfiguration), _scheduler, deadLetterRoutingKey, invalidMessageRoutingKey,
+                (subscription as MsSqlSubscription)?.WireMessageReader,
+                (subscription as MsSqlSubscription)?.RequeueWireMessageWriter,
+                (subscription as MsSqlSubscription)?.DeadLetterWireMessageWriter,
+                (subscription as MsSqlSubscription)?.InvalidMessageWireMessageWriter,
+                (subscription as MsSqlSubscription)?.ScheduledRequeuePublicationTopic);
         }
 
         private static partial class Log

@@ -34,6 +34,55 @@ namespace Paramore.Brighter.MessagingGateway.Kafka
     public class KafkaSubscription : Subscription, IUseBrighterDeadLetterSupport, IUseBrighterInvalidMessageSupport
     {
         /// <summary>
+        /// Gets or sets the strategy for mapping native Kafka deliveries to Brighter messages.
+        /// </summary>
+        /// <remarks>
+        /// Null uses <see cref="DefaultKafkaWireMessageReader"/>. The factory captures the selection for each consumer.
+        /// Readers must return a message without modifying native input and support their consumers' concurrency.
+        /// The gateway replaces the mapped partition offset with the consumed offset for acknowledgement.
+        /// This selection does not configure writers for retry or rejection.
+        /// </remarks>
+        public IAmAWireMessageReader<ConsumeResult<string, byte[]>>? WireMessageReader { get; set; }
+
+        /// <summary>
+        /// Gets or sets the strategy for mapping deliveries forwarded to the invalid message channel.
+        /// </summary>
+        /// <remarks>
+        /// Null preserves the default Kafka mapping. The factory captures this selection per consumer.
+        /// Rejection metadata is available before mapping; the gateway owns the destination and acknowledgement offset.
+        /// Writers must return a fresh native message without modifying the source.
+        /// This selection does not configure publication, retry or dead-letter writers.
+        /// </remarks>
+        public IAmAWireMessageWriter<Message<string, byte[]>>? InvalidMessageWireMessageWriter { get; set; }
+
+        /// <summary>Gets or sets the writer used for dead-letter forwarding.</summary>
+        /// <remarks>
+        /// Null preserves the default mapping. The factory captures this selection per consumer.
+        /// The gateway owns the destination and source acknowledgement offset.
+        /// </remarks>
+        public IAmAWireMessageWriter<Message<string, byte[]>>? DeadLetterWireMessageWriter { get; set; }
+
+        /// <summary>
+        /// Gets or sets the strategy for mapping immediate retries published by this consumer.
+        /// </summary>
+        /// <remarks>
+        /// Null preserves the default Kafka mapping. The factory captures this selection per consumer.
+        /// Writers must return a fresh native message without modifying the source and support their consumers' concurrency.
+        /// The gateway owns the retry destination and source acknowledgement offset.
+        /// This selection does not configure scheduled dispatch, publication or rejection writers.
+        /// </remarks>
+        public IAmAWireMessageWriter<Message<string, byte[]>>? RequeueWireMessageWriter { get; set; }
+
+        /// <summary>Gets or sets the publication lookup topic used for scheduled retries.</summary>
+        /// <remarks>
+        /// The factory captures this selection per consumer. Register a publication under this topic and the
+        /// message's CloudEvents type with the desired writer. The logical message destination stays unchanged.
+        /// Null preserves the message's existing publication lookup. This does not select an immediate retry writer.
+        /// </remarks>
+        public RoutingKey? ScheduledRequeuePublicationTopic { get; set; }
+
+
+        /// <summary>
         /// The routing key used for the Dead Letter Channel
         /// </summary>
         public RoutingKey? DeadLetterRoutingKey { get; set; }

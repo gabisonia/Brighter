@@ -1,0 +1,85 @@
+{
+  "date": "2026-11-10",
+  "scope": "Documentation-only final local requirement review; no test/build execution",
+  "source_snapshot": "/private/tmp/brighter-4170-gcp-bulk-dispatch-trace/source-before.json",
+  "source_snapshot_sha256": "88dbbd59d27252e1283e5591b44f926cbd57e10053963b049009977c9e1d12ec",
+  "bulk_verification_sha256": "8b76974468d01b1cc7f0f1283e8bf6c077615f2fa15272ed927279eb43a0f076",
+  "source_inputs_checked_after_bulk_amendments": 6618,
+  "source_mismatches": [],
+  "solution_build_snapshot": "/private/tmp/brighter-4170-rocketmq-scheduled-publication/build-inputs.json",
+  "solution_build_snapshot_sha256": "4fabdbc39d597ebbc617bf93ffd74b483d7a045cb01ecaed49b53e9be8c44939",
+  "previous_solution_inputs": 7248,
+  "current_solution_inputs": 7252,
+  "changed_since_solution_build": [
+    {
+      "path": "src/Paramore.Brighter.MessagingGateway.AzureServiceBus/AzureServiceBusMessageProducer.cs",
+      "current_sha256": "614282f3c55379076ce696a86f958497686e0317f1b52719c6b89f9fb1e0a4f9"
+    },
+    {
+      "path": "src/Paramore.Brighter.MessagingGateway.AzureServiceBus/AzureServiceBusPublication.cs",
+      "current_sha256": "4e2ac55190c1710665278c92f24046fbf7efc01732ffc5bced7db2543ae4bc13"
+    },
+    {
+      "path": "src/Paramore.Brighter.MessagingGateway.GcpPubSub/GcpMessageProducer.cs",
+      "current_sha256": "74f0100529bf3b1aee266b871344a278a27e27edcbca373dc9262789b2b5cd9f"
+    },
+    {
+      "path": "tests/Paramore.Brighter.Gcp.Tests/MessagingGateway/Stream/When_a_gcp_stream_channel_is_disposed_holding_an_unsettled_message_should_return_promptly_async.cs",
+      "current_sha256": "df36df4e63eefbeb3b1f2402c734f56505026830a522b468627a9146d4b0db23"
+    },
+    {
+      "path": "tests/Paramore.Brighter.Gcp.Tests/MessagingGateway/Stream/When_a_gcp_stream_channel_is_disposed_with_a_redelivery_buffered_after_requeue_should_return_promptly_async.cs",
+      "current_sha256": "f7df63eb7a0f912495a300058cc02553373434886b431d75a7ee362f9756c343"
+    }
+  ],
+  "added_since_solution_build": [
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_asb_bulk_dispatches_outbox_messages_should_map_the_current_producer_context.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/TestDoubles/InMemoryBatchServiceBusClient.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/TestDoubles/InMemoryBatchServiceBusSender.cs",
+    "tests/Paramore.Brighter.Gcp.Tests/MessagingGateway/When_gcp_bulk_dispatches_outbox_messages_should_map_the_current_producer_context.cs"
+  ],
+  "removed_since_solution_build": [],
+  "unchanged_build_configuration_inputs": 265,
+  "production_or_test_changes_in_followup": false,
+  "tests_run_in_followup": false,
+  "builds_run_in_followup": false,
+  "remaining_gates": [
+    "ASB historical session lock",
+    "GCP historical shutdown/replacement and ordered-nack disposition",
+    "Kafka historical native close",
+    "native ASB retry/scheduler/DLQ/lost-lock acceptance",
+    "SQL Server 2022 on native x86-64",
+    "remote CI/final release verification"
+  ],
+  "committed": false,
+  "pushed": false,
+  "local_file_links_checked": 471,
+  "missing_local_file_links": [],
+  "git_diff_check": "passed",
+  "documentation_files": [
+    {
+      "path": "specs/0038-wire-message-mapping/local-review.md",
+      "sha256": "0f1e89ecfce081a17acb6291e4295d61d41bf1187f6d1e90d87266c3a676f72d"
+    },
+    {
+      "path": "specs/0038-wire-message-mapping/tasks.md",
+      "sha256": "3f3ff69e1ad13da7fc8080615e8eca74d7cd1c3825e35e1c231cf882c7b308df"
+    },
+    {
+      "path": "specs/0038-wire-message-mapping/completion-plan.md",
+      "sha256": "b69697631eeee77ee92d58f59bdf51a47754f6b038f5646475900f4fe69cd6ad"
+    },
+    {
+      "path": "specs/0038-wire-message-mapping/release-review.md",
+      "sha256": "85e8a9db4b06b35ab61feb6d98f48ff0918c29812ade820142310c3c4e539974"
+    },
+    {
+      "path": "specs/0038-wire-message-mapping/usage.md",
+      "sha256": "bd9840a3cf07aae93740f331a959cc5e7babab1bb997dd7db75f007ccbd849e7"
+    },
+    {
+      "path": "docs/adr/0086-configurable-wire-message-writers.md",
+      "sha256": "1b77bbae0f535b5e4d0b95364c73604fee5d1b7a5679dbab45b9a2fde00d3d2f"
+    }
+  ]
+}

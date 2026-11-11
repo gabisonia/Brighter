@@ -1,0 +1,10 @@
+--- a/tests/Paramore.Brighter.RMQ.Async.Tests/Paramore.Brighter.RMQ.Async.Tests.csproj
++++ b/tests/Paramore.Brighter.RMQ.Async.Tests/Paramore.Brighter.RMQ.Async.Tests.csproj
+@@ -28,6 +28,7 @@
+     <ItemGroup>
+       <ProjectReference Include="..\..\src\Paramore.Brighter.Extensions.DependencyInjection\Paramore.Brighter.Extensions.DependencyInjection.csproj" />
+       <ProjectReference Include="..\..\src\Paramore.Brighter.MessagingGateway.RMQ.Async\Paramore.Brighter.MessagingGateway.RMQ.Async.csproj" />
++      <ProjectReference Include="..\..\src\Paramore.Brighter.MessageScheduler.Quartz\Paramore.Brighter.MessageScheduler.Quartz.csproj" />
+       <ProjectReference Include="..\..\src\Paramore.Brighter.ServiceActivator\Paramore.Brighter.ServiceActivator.csproj" />
+       <ProjectReference Include="..\..\src\Paramore.Brighter\Paramore.Brighter.csproj" />
+     </ItemGroup>

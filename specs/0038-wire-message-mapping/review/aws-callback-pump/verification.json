@@ -1,0 +1,35 @@
+{
+  "matrices": {
+    "V3-net9.0": {
+      "Passed": 627,
+      "Failed": 0,
+      "NotExecuted": 0
+    },
+    "V4-net9.0": {
+      "Passed": 627,
+      "Failed": 0,
+      "NotExecuted": 0
+    },
+    "V3-net10.0": {
+      "Passed": 627,
+      "Failed": 0,
+      "NotExecuted": 0
+    },
+    "V4-net10.0": {
+      "Passed": 627,
+      "Failed": 0,
+      "NotExecuted": 0
+    }
+  },
+  "all_prior_identities_and_outcomes_preserved": true,
+  "intended_mutation_failures": 16,
+  "production_handlers_exactly_restored": true,
+  "integrated_into_main_workspace": true,
+  "whole_feature_production_ready": false,
+  "final_test_hashes": {
+    "tests/Paramore.Brighter.AWS.Tests/MessagingGateway/When_an_aws_callback_pump_writer_fails_should_settle_callback_and_preserve_outbox_for_recovery.cs": "d1a0764b019cd73d2b941c68f43de332d6c4ab8ce394680b401fba6d0e6aa5ea",
+    "tests/Paramore.Brighter.AWS.Tests/TestDoubles/CallbackRecoveryWireWriter.cs": "f4d9a72346ac2f1794d2e173aebd9f026305a8ed8516936a672ce6cb0e65576e",
+    "tests/Paramore.Brighter.AWS.V4.Tests/MessagingGateway/When_an_aws_callback_pump_writer_fails_should_settle_callback_and_preserve_outbox_for_recovery.cs": "5b718ed253e29b7aa2af89f956edd7da9ae238dfcb87140255c755ac78e1c9d9",
+    "tests/Paramore.Brighter.AWS.V4.Tests/TestDoubles/CallbackRecoveryWireWriter.cs": "84a5a3536de49464a0d9e691f8cce8aa3b0cfd0e2aa5d3f2ba1ecab5bff25e99"
+  }
+}

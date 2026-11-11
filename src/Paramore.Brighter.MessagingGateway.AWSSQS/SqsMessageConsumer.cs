@@ -55,7 +55,10 @@ namespace Paramore.Brighter.MessagingGateway.AWSSQS
         private readonly RoutingKey? _deadLetterRoutingKey;
         private readonly RoutingKey? _invalidMessageRoutingKey;
         private readonly OnMissingChannel _makeChannels;
-        private readonly bool _rawMessageDelivery;
+        private readonly DefaultSqsWireMessageReader _defaultWireMessageReader;
+        private readonly IAmAWireMessageReader<Amazon.SQS.Model.Message>? _wireMessageReader;
+        private readonly IAmAWireMessageWriter<SqsWireMessage>? _invalidMessageWireMessageWriter;
+        private readonly IAmAWireMessageWriter<SqsWireMessage>? _deadLetterWireMessageWriter;
         private readonly SqsAttributes _queueAttributes;
         private readonly Message _noopMessage = new Message();
         private readonly Lazy<SqsMessageProducer?>? _deadLetterProducer;
@@ -84,6 +87,24 @@ namespace Paramore.Brighter.MessagingGateway.AWSSQS
             bool isQueueUrl = false,
             bool rawMessageDelivery = true,
             SqsAttributes? queueAttributes = null)
+            : this(awsConnection, queueName, null, batchSize, deadLetterRoutingKey, invalidMessageRoutingKey,
+                makeChannels, isQueueUrl, rawMessageDelivery, queueAttributes)
+        {
+        }
+
+        internal SqsMessageConsumer(
+            AWSMessagingGatewayConnection awsConnection,
+            string? queueName,
+            IAmAWireMessageReader<Amazon.SQS.Model.Message>? wireMessageReader,
+            int batchSize = 1,
+            RoutingKey? deadLetterRoutingKey = null,
+            RoutingKey? invalidMessageRoutingKey = null,
+            OnMissingChannel makeChannels = OnMissingChannel.Create,
+            bool isQueueUrl = false,
+            bool rawMessageDelivery = true,
+            SqsAttributes? queueAttributes = null,
+            IAmAWireMessageWriter<SqsWireMessage>? invalidMessageWireMessageWriter = null,
+            IAmAWireMessageWriter<SqsWireMessage>? deadLetterWireMessageWriter = null)
         {
             if (string.IsNullOrEmpty(queueName))
                 throw new ConfigurationException("QueueName is mandatory");
@@ -97,7 +118,10 @@ namespace Paramore.Brighter.MessagingGateway.AWSSQS
             _deadLetterRoutingKey = deadLetterRoutingKey;
             _invalidMessageRoutingKey = invalidMessageRoutingKey;
             _makeChannels = makeChannels;
-            _rawMessageDelivery = rawMessageDelivery;
+            _defaultWireMessageReader = new DefaultSqsWireMessageReader(rawMessageDelivery);
+            _wireMessageReader = wireMessageReader;
+            _invalidMessageWireMessageWriter = invalidMessageWireMessageWriter;
+            _deadLetterWireMessageWriter = deadLetterWireMessageWriter;
             _queueAttributes = queueAttributes ?? SqsAttributes.Empty;
 
             // LazyThreadSafetyMode.None: message pumps are single-threaded per consumer, so no
@@ -229,7 +253,7 @@ namespace Paramore.Brighter.MessagingGateway.AWSSQS
             var messages = new Message[sqsMessages.Length];
             for (int i = 0; i < sqsMessages.Length; i++)
             {
-                var message = SqsMessageCreatorFactory.Create(_rawMessageDelivery).CreateMessage(sqsMessages[i]);
+                var message = CreateMessage(sqsMessages[i]);
                 Log.ReceivedMessageFromQueue(s_logger, _queueName, Environment.NewLine, JsonSerializer.Serialize(message, JsonSerialisationOptions.Options));
                 messages[i] = message;
             }
@@ -237,6 +261,37 @@ namespace Paramore.Brighter.MessagingGateway.AWSSQS
             return messages;
         }
         
+        private Message CreateMessage(Amazon.SQS.Model.Message nativeMessage)
+        {
+            if (_wireMessageReader is null)
+                return _defaultWireMessageReader.ReadMessage(nativeMessage);
+
+            Message message;
+            try
+            {
+                message = _wireMessageReader.ReadMessage(nativeMessage)
+                    ?? throw new InvalidOperationException("The wire message reader returned null.");
+            }
+            catch (Exception exception)
+            {
+                Log.ErrorMappingNativeMessage(s_logger, exception, _queueName);
+                message = Message.FailureMessage(RoutingKey.Empty, new Id(nativeMessage.MessageId));
+                message.Body = new MessageBody(nativeMessage.Body);
+            }
+
+            message.Header.Bag["ReceiptHandle"] = nativeMessage.ReceiptHandle;
+            int? brokerCount = null;
+            if (nativeMessage.Attributes != null
+                && nativeMessage.Attributes.TryGetValue(MessageSystemAttributeName.ApproximateReceiveCount, out var rawCount)
+                && int.TryParse(rawCount, out var parsedCount))
+            {
+                brokerCount = parsedCount;
+            }
+
+            message.Header.HandledCount = DeliveryCount.Resolve(message.Header.HandledCount, brokerCount, message.Header.Bag);
+            return message;
+        }
+
         /// <summary>
         /// Rejects the specified message.
         /// Sync over async
@@ -466,7 +521,10 @@ namespace Paramore.Brighter.MessagingGateway.AWSSQS
             var publication = new SqsPublication(
                 channelName: new ChannelName(_deadLetterRoutingKey!.Value),
                 queueAttributes: _queueAttributes,
-                makeChannels: _makeChannels);
+                makeChannels: _makeChannels)
+            {
+                WireMessageWriter = _deadLetterWireMessageWriter
+            };
 
             try
             {
@@ -488,7 +546,10 @@ namespace Paramore.Brighter.MessagingGateway.AWSSQS
             var publication = new SqsPublication(
                 channelName: new ChannelName(_invalidMessageRoutingKey!.Value),
                 queueAttributes: _queueAttributes,
-                makeChannels: _makeChannels);
+                makeChannels: _makeChannels)
+            {
+                WireMessageWriter = _invalidMessageWireMessageWriter
+            };
 
             try
             {
@@ -626,6 +687,9 @@ namespace Paramore.Brighter.MessagingGateway.AWSSQS
 
         private static partial class Log
         {
+            [LoggerMessage(LogLevel.Warning, "Error mapping native message from queue {QueueName}")]
+            public static partial void ErrorMappingNativeMessage(ILogger logger, Exception exception, string queueName);
+
             [LoggerMessage(LogLevel.Information, "SqsMessageConsumer: Deleted the message {Id} with receipt handle {ReceiptHandle} on the queue {Url}")]
             public static partial void DeletedMessage(ILogger logger, string id, string? receiptHandle, string url);
 

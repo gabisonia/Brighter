@@ -1,0 +1,39 @@
+{
+  "matrices": {
+    "async": {
+      "net9.0": {
+        "Passed": 566,
+        "Failed": 0,
+        "NotExecuted": 2
+      },
+      "net10.0": {
+        "Passed": 566,
+        "Failed": 0,
+        "NotExecuted": 2
+      }
+    },
+    "sync": {
+      "net9.0": {
+        "Passed": 299,
+        "Failed": 0,
+        "NotExecuted": 1
+      },
+      "net10.0": {
+        "Passed": 299,
+        "Failed": 0,
+        "NotExecuted": 1
+      }
+    }
+  },
+  "actual_red_failures": 8,
+  "default_control_passes": 8,
+  "all_prior_identities_and_outcomes_preserved": true,
+  "final_source_hashes": {
+    "src/Paramore.Brighter.MessagingGateway.RMQ.Async/RmqMessagePublisher.cs": "f097a9a7cada1aacdaf51bc63f79915455098a9b1054cfa1ebcb95f534943963",
+    "src/Paramore.Brighter.MessagingGateway.RMQ.Sync/RmqMessagePublisher.cs": "400661cc15a6c10b37040a45b170b8a76b401a08a9c7c93f9afb4dd3146b9277",
+    "tests/Paramore.Brighter.RMQ.Async.Tests/MessagingGateway/When_delay_is_unsupported_should_preserve_immediate_destination_routing.cs": "6a1d86aaf1fe17709c07380c6020075525d3e05dec4aa05808d86075b613a009",
+    "tests/Paramore.Brighter.RMQ.Sync.Tests/MessagingGateway/When_delay_is_unsupported_should_preserve_immediate_destination_routing.cs": "753ddaf7777ccefb7aa135baa98a34808305e808b956d0967ff8c676a2baef53"
+  },
+  "integrated_into_main_workspace": true,
+  "whole_feature_production_ready": false
+}

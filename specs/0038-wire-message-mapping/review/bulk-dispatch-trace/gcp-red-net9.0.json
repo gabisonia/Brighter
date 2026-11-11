@@ -1,0 +1,23 @@
+{
+  "exit": 1,
+  "wall_seconds": 1.706610918045044,
+  "monotonic_seconds": 1.7065775422379375,
+  "clock_discontinuity": false,
+  "counts": {
+    "Passed": 0,
+    "Failed": 2,
+    "NotExecuted": 0
+  },
+  "failures": [
+    {
+      "name": "Paramore.Brighter.Gcp.Tests.MessagingGateway.GcpBulkDispatchTraceTests.When_gcp_bulk_dispatches_outbox_messages_should_map_the_current_producer_context(custom: True)",
+      "message": "Assert.Equal() Failure: Strings differ\n              \u2193 (pos 3)\nExpected: \"00-f7a9192d42d8d4d4f141137c76cb7bd1-03578\"\u00b7\u00b7\u00b7\nActual:   \"00-4bf92f3577b34da6a3ce929d0e0e4736-00f06\"\u00b7\u00b7\u00b7\n              \u2191 (pos 3)",
+      "stack": "   at Paramore.Brighter.Gcp.Tests.MessagingGateway.GcpBulkDispatchTraceTests.When_gcp_bulk_dispatches_outbox_messages_should_map_the_current_producer_context(Boolean custom) in /private/tmp/brighter-4170-rmq-scheduled-selection/workspace/tests/Paramore.Brighter.Gcp.Tests/MessagingGateway/When_gcp_bulk_dispatches_outbox_messages_should_map_the_current_producer_context.cs:line 134\n   at Paramore.Brighter.Gcp.Tests.MessagingGateway.GcpBulkDispatchTraceTests.When_gcp_bulk_dispatches_outbox_messages_should_map_the_current_producer_context(Boolean custom) in /private/tmp/brighter-4170-rmq-scheduled-selection/workspace/tests/Paramore.Brighter.Gcp.Tests/MessagingGateway/When_gcp_bulk_dispatches_outbox_messages_should_map_the_current_producer_context.cs:line 146\n--- End of stack trace from previous location ---"
+    },
+    {
+      "name": "Paramore.Brighter.Gcp.Tests.MessagingGateway.GcpBulkDispatchTraceTests.When_gcp_bulk_dispatches_outbox_messages_should_map_the_current_producer_context(custom: False)",
+      "message": "Assert.Equal() Failure: Strings differ\n              \u2193 (pos 3)\nExpected: \"00-f10e4f6dd8714fa53a1b2424a86ed00e-3c21a\"\u00b7\u00b7\u00b7\nActual:   \"00-4bf92f3577b34da6a3ce929d0e0e4736-00f06\"\u00b7\u00b7\u00b7\n              \u2191 (pos 3)",
+      "stack": "   at Paramore.Brighter.Gcp.Tests.MessagingGateway.GcpBulkDispatchTraceTests.When_gcp_bulk_dispatches_outbox_messages_should_map_the_current_producer_context(Boolean custom) in /private/tmp/brighter-4170-rmq-scheduled-selection/workspace/tests/Paramore.Brighter.Gcp.Tests/MessagingGateway/When_gcp_bulk_dispatches_outbox_messages_should_map_the_current_producer_context.cs:line 134\n   at Paramore.Brighter.Gcp.Tests.MessagingGateway.GcpBulkDispatchTraceTests.When_gcp_bulk_dispatches_outbox_messages_should_map_the_current_producer_context(Boolean custom) in /private/tmp/brighter-4170-rmq-scheduled-selection/workspace/tests/Paramore.Brighter.Gcp.Tests/MessagingGateway/When_gcp_bulk_dispatches_outbox_messages_should_map_the_current_producer_context.cs:line 146\n--- End of stack trace from previous location ---"
+    }
+  ]
+}

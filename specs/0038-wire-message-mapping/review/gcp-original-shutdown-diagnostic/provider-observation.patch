@@ -1,0 +1,28 @@
+--- a/GcpStreamMessageGatewayProvider.cs
++++ b/GcpStreamMessageGatewayProvider.cs
+@@ -52,6 +52,8 @@
+ 
+     public GcpStreamMessageGatewayProvider()
+     {
++        var diagnosticProvider = Guid.NewGuid().ToString("N");
++        var diagnosticGeneration = 0;
+         _connection = new GcpMessagingGatewayConnection
+         {
+             Credential = GatewayFactory.GetCredential(),
+@@ -76,6 +78,16 @@
+             StreamConfiguration = cfg =>
+             {
+                 cfg.EmulatorDetection = EmulatorDetection.EmulatorOrProduction;
++                var generation = System.Threading.Interlocked.Increment(ref diagnosticGeneration);
++                cfg.ApiSettings ??= new Google.Cloud.PubSub.V1.SubscriberServiceApiSettings();
++                cfg.ApiSettings.Interceptor = new GcpStreamRpcObserver(line =>
++                {
++                    lock (typeof(GcpStreamMessageGatewayProvider))
++                    {
++                        System.IO.File.AppendAllText("/results/original-shutdown-rpc-net" + Environment.Version.Major + ".log",
++                            "provider=" + diagnosticProvider + " generation=" + generation + " " + line + Environment.NewLine);
++                    }
++                });
+             },
+         };
+         _channelFactory = new GcpPubSubChannelFactory(_connection);

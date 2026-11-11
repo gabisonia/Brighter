@@ -1,0 +1,14 @@
+{
+  "checked_at": "2026-11-09",
+  "official_image_tag": "gcr.io/google.com/cloudsdktool/google-cloud-cli:592.0.0-emulators",
+  "linux_arm64_manifest": "sha256:faff8f5e8a44e70df68a2a916cefa187cac9e132c25350a8a0f27f36fd586676",
+  "image_pulled": true,
+  "emulator_jar_version_verified": true,
+  "emulator_jar_version": "0.8.37",
+  "protocol_comparison_run": true,
+  "comparison_date": "2026-11-09",
+  "comparison_review": "../gcp-emulator-comparison/README.md",
+  "comparison_outcome": "Same two-stream ack-second-before-nack-first timeout on both frameworks; separately repeated ack recovers. No fix established.",
+  "project_dependency_or_fixture_changed": false,
+  "release_note_source": "https://firebase.google.com/support/release-notes/cli"
+}

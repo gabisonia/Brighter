@@ -1,0 +1,25 @@
+{
+  "matrices": {
+    "net9.0": {
+      "Passed": 117,
+      "Failed": 0,
+      "NotExecuted": 4
+    },
+    "net10.0": {
+      "Passed": 117,
+      "Failed": 0,
+      "NotExecuted": 4
+    }
+  },
+  "actual_intended_red_failures_each_framework": 18,
+  "all_103_prior_identities_and_outcomes_preserved": true,
+  "final_source_hashes": {
+    "src/Paramore.Brighter.MessagingGateway.MQTT/MQTTMessageConsumer.cs": "00068f4beb01d7da2a76cf3ab6f97283587a00438d587afacb93eb77e8e9fe65",
+    "src/Paramore.Brighter.MessagingGateway.MQTT/MqttMessageConsumerFactory.cs": "83c55e75245d3723d28a58469c5bce978b7603b1b3ce87c4d004186c4c61c67b",
+    "src/Paramore.Brighter.MessagingGateway.MQTT/MqttSubscription.cs": "688698863cdfaa14a63a9a926be07a49829df2215960db720e44cacf14b1190d",
+    "tests/Paramore.Brighter.MQTT.Tests/MessagingGateway/When_consumers_republish_should_use_captured_writers_and_preserve_recovery.cs": "0fa56a861ce7d0a173254b3ee58646cdfec23fc0407b102a259b750d6a49cd6d",
+    "tests/Paramore.Brighter.MQTT.Tests/TestDoubles/MqttConsumerSelectedWireWriter.cs": "ec73bede0e2d7af97055e0eebfc0f93020b419bf169a4c036856e3356a3d8899"
+  },
+  "integrated_into_main_workspace": true,
+  "whole_feature_production_ready": false
+}

@@ -41,6 +41,7 @@ namespace Paramore.Brighter.MessagingGateway.MsSql
     /// </summary>
     public partial class MsSqlMessageProducer : IAmAMessageProducerSync, IAmAMessageProducerAsync
     {
+        private static readonly DefaultMsSqlWireMessageWriter s_defaultWireMessageWriter = new();
         private static readonly ILogger s_logger = ApplicationLogging.CreateLogger<MsSqlMessageProducer>();
         private readonly InstrumentationOptions _instrumentation;
         private readonly MsSqlMessageQueue<Message> _sqlQ;
@@ -72,7 +73,7 @@ namespace Paramore.Brighter.MessagingGateway.MsSql
             InstrumentationOptions instrumentation = InstrumentationOptions.All
         )
         {
-            _sqlQ = new MsSqlMessageQueue<Message>(msSqlConfiguration, connectonProvider);
+            _sqlQ = new MsSqlMessageQueue<Message>(msSqlConfiguration, connectonProvider, MapMessage, null);
             _instrumentation = instrumentation;
             Publication = publication ?? new Publication { MakeChannels = OnMissingChannel.Create };
         }
@@ -190,6 +191,10 @@ namespace Paramore.Brighter.MessagingGateway.MsSql
         {
             return new ValueTask(Task.CompletedTask);
         }
+
+        private string MapMessage(Message message) =>
+            ((Publication as MsSqlPublication)?.WireMessageWriter ?? s_defaultWireMessageWriter).WriteMessage(message)
+            ?? throw new InvalidOperationException("The SQL Server wire message writer returned null.");
 
         private static partial class Log
         {

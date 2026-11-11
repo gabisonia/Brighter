@@ -1,0 +1,302 @@
+[
+  {
+    "framework": "net9.0",
+    "sql_image": "mcr.microsoft.com/mssql/server@sha256:cf8f0ab2ebe61feec2eed2629061a07d247f791c2a8ddda74a4ac9f06a291718",
+    "broker_image": "mcr.microsoft.com/azure-messaging/servicebus-emulator@sha256:5a96d893b245031740f7d46e0fe5ff282d24b78c4b7d761dd57590f3f010a9b3",
+    "host_architecture": "aarch64",
+    "sql_emulated": true,
+    "experiment": "native SDK only; one empty DLQ receive before the same four topic and four queue cycles",
+    "assembly_sha256": "a99bee20b32bab98b1aa98ce683dda95783d1d5690cfe05f03498c0d219f153e",
+    "exit_code": 1,
+    "wall_seconds": 2.803784132003784,
+    "monotonic_seconds": 2.803713375236839,
+    "clock_discontinuity": false,
+    "counts": {
+      "Passed": 4,
+      "Failed": 4
+    },
+    "probe": {
+      "framework": ".NET 9.0.20",
+      "sdk": "7.21.0.0",
+      "failures": 4,
+      "results": [
+        {
+          "queue": false,
+          "iteration": 0,
+          "phase": "receive-DLQ",
+          "expectedId": "e70494de-f66f-4b53-91a6-66f920c60deb",
+          "observedId": null,
+          "sequence": 1,
+          "deadSequence": null,
+          "error": "Exception: Native DLQ receive returned null after successful dead-letter settlement.",
+          "elapsedMs": 410
+        },
+        {
+          "queue": false,
+          "iteration": 1,
+          "phase": "receive-DLQ",
+          "expectedId": "f55884b6-d45b-4379-97b8-4a7bd5cbd003",
+          "observedId": "e70494de-f66f-4b53-91a6-66f920c60deb",
+          "sequence": 2,
+          "deadSequence": 1,
+          "error": "Exception: Native DLQ identity mismatch.",
+          "elapsedMs": 292
+        },
+        {
+          "queue": false,
+          "iteration": 2,
+          "phase": "receive-DLQ",
+          "expectedId": "776d8e0e-f366-49ec-8e63-8c5251f9abfa",
+          "observedId": "f55884b6-d45b-4379-97b8-4a7bd5cbd003",
+          "sequence": 3,
+          "deadSequence": 2,
+          "error": "Exception: Native DLQ identity mismatch.",
+          "elapsedMs": 57
+        },
+        {
+          "queue": false,
+          "iteration": 3,
+          "phase": "receive-DLQ",
+          "expectedId": "75dce2b9-da2c-4b6b-9acd-eea901de37cf",
+          "observedId": "776d8e0e-f366-49ec-8e63-8c5251f9abfa",
+          "sequence": 4,
+          "deadSequence": 3,
+          "error": "Exception: Native DLQ identity mismatch.",
+          "elapsedMs": 61
+        },
+        {
+          "queue": true,
+          "iteration": 0,
+          "phase": "complete",
+          "expectedId": "ec834356-9b65-49a2-95bd-edf0c81458ad",
+          "observedId": "ec834356-9b65-49a2-95bd-edf0c81458ad",
+          "sequence": 1,
+          "deadSequence": 1,
+          "error": null,
+          "elapsedMs": 366
+        },
+        {
+          "queue": true,
+          "iteration": 1,
+          "phase": "complete",
+          "expectedId": "fb4b5183-5677-437e-9cea-cbf85ceffde9",
+          "observedId": "fb4b5183-5677-437e-9cea-cbf85ceffde9",
+          "sequence": 3,
+          "deadSequence": 3,
+          "error": null,
+          "elapsedMs": 172
+        },
+        {
+          "queue": true,
+          "iteration": 2,
+          "phase": "complete",
+          "expectedId": "ef01b9ec-62f8-4bff-843a-a6e25f83dba6",
+          "observedId": "ef01b9ec-62f8-4bff-843a-a6e25f83dba6",
+          "sequence": 5,
+          "deadSequence": 5,
+          "error": null,
+          "elapsedMs": 118
+        },
+        {
+          "queue": true,
+          "iteration": 3,
+          "phase": "complete",
+          "expectedId": "a465e949-7014-4fac-856f-0f97ce80856a",
+          "observedId": "a465e949-7014-4fac-856f-0f97ce80856a",
+          "sequence": 7,
+          "deadSequence": 7,
+          "error": null,
+          "elapsedMs": 107
+        }
+      ]
+    },
+    "containers": [
+      {
+        "name": "brighter-4170-asb-sdk-dlq-warmup-broker-net9-0",
+        "state_before_stop": {
+          "Status": "running",
+          "Running": true,
+          "Paused": false,
+          "Restarting": false,
+          "OOMKilled": false,
+          "Dead": false,
+          "Pid": 2135,
+          "ExitCode": 0,
+          "Error": "",
+          "StartedAt": "2026-11-11T16:53:11.164599256Z",
+          "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "stop_exit_code": 0,
+        "running_after_stop": "false"
+      },
+      {
+        "name": "brighter-4170-asb-sdk-dlq-warmup-sql-net9-0",
+        "state_before_stop": {
+          "Status": "running",
+          "Running": true,
+          "Paused": false,
+          "Restarting": false,
+          "OOMKilled": false,
+          "Dead": false,
+          "Pid": 1651,
+          "ExitCode": 0,
+          "Error": "",
+          "StartedAt": "2026-11-11T16:53:02.617258836Z",
+          "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "stop_exit_code": 0,
+        "running_after_stop": "false"
+      }
+    ]
+  },
+  {
+    "framework": "net10.0",
+    "sql_image": "mcr.microsoft.com/mssql/server@sha256:cf8f0ab2ebe61feec2eed2629061a07d247f791c2a8ddda74a4ac9f06a291718",
+    "broker_image": "mcr.microsoft.com/azure-messaging/servicebus-emulator@sha256:5a96d893b245031740f7d46e0fe5ff282d24b78c4b7d761dd57590f3f010a9b3",
+    "host_architecture": "aarch64",
+    "sql_emulated": true,
+    "experiment": "native SDK only; one empty DLQ receive before the same four topic and four queue cycles",
+    "assembly_sha256": "4c8ea00c6777ed23e4fb31a51a70aa71dd4ef701717eeae381fb5de0d0ffac9c",
+    "exit_code": 0,
+    "wall_seconds": 2.409651041030884,
+    "monotonic_seconds": 2.409589333925396,
+    "clock_discontinuity": false,
+    "counts": {
+      "Passed": 8,
+      "Failed": 0
+    },
+    "probe": {
+      "framework": ".NET 10.0.11",
+      "sdk": "7.21.0.0",
+      "failures": 0,
+      "results": [
+        {
+          "queue": false,
+          "iteration": 0,
+          "phase": "complete",
+          "expectedId": "5bba1b0d-fdc0-45be-b109-9890491780df",
+          "observedId": "5bba1b0d-fdc0-45be-b109-9890491780df",
+          "sequence": 1,
+          "deadSequence": 1,
+          "error": null,
+          "elapsedMs": 521
+        },
+        {
+          "queue": false,
+          "iteration": 1,
+          "phase": "complete",
+          "expectedId": "0eedc7e4-52c9-43ae-a3ab-9eff7d5dcea0",
+          "observedId": "0eedc7e4-52c9-43ae-a3ab-9eff7d5dcea0",
+          "sequence": 3,
+          "deadSequence": 3,
+          "error": null,
+          "elapsedMs": 88
+        },
+        {
+          "queue": false,
+          "iteration": 2,
+          "phase": "complete",
+          "expectedId": "e99d0a45-9d79-4c6c-97b1-9a0f598a1a5d",
+          "observedId": "e99d0a45-9d79-4c6c-97b1-9a0f598a1a5d",
+          "sequence": 5,
+          "deadSequence": 5,
+          "error": null,
+          "elapsedMs": 92
+        },
+        {
+          "queue": false,
+          "iteration": 3,
+          "phase": "complete",
+          "expectedId": "43c5f5f1-bc94-44e2-97cc-9168840c23d6",
+          "observedId": "43c5f5f1-bc94-44e2-97cc-9168840c23d6",
+          "sequence": 7,
+          "deadSequence": 7,
+          "error": null,
+          "elapsedMs": 101
+        },
+        {
+          "queue": true,
+          "iteration": 0,
+          "phase": "complete",
+          "expectedId": "c8498a62-cbea-49bd-b4ae-21d9d802f677",
+          "observedId": "c8498a62-cbea-49bd-b4ae-21d9d802f677",
+          "sequence": 1,
+          "deadSequence": 1,
+          "error": null,
+          "elapsedMs": 168
+        },
+        {
+          "queue": true,
+          "iteration": 1,
+          "phase": "complete",
+          "expectedId": "d9450d76-641a-4784-945d-05536e120d55",
+          "observedId": "d9450d76-641a-4784-945d-05536e120d55",
+          "sequence": 3,
+          "deadSequence": 3,
+          "error": null,
+          "elapsedMs": 74
+        },
+        {
+          "queue": true,
+          "iteration": 2,
+          "phase": "complete",
+          "expectedId": "14b7bfb0-67f8-4773-ab7e-d7f46b300ff4",
+          "observedId": "14b7bfb0-67f8-4773-ab7e-d7f46b300ff4",
+          "sequence": 5,
+          "deadSequence": 5,
+          "error": null,
+          "elapsedMs": 73
+        },
+        {
+          "queue": true,
+          "iteration": 3,
+          "phase": "complete",
+          "expectedId": "ed46dc37-7037-4ab9-82c2-a921779c74ed",
+          "observedId": "ed46dc37-7037-4ab9-82c2-a921779c74ed",
+          "sequence": 7,
+          "deadSequence": 7,
+          "error": null,
+          "elapsedMs": 86
+        }
+      ]
+    },
+    "containers": [
+      {
+        "name": "brighter-4170-asb-sdk-dlq-warmup-broker-net10-0",
+        "state_before_stop": {
+          "Status": "running",
+          "Running": true,
+          "Paused": false,
+          "Restarting": false,
+          "OOMKilled": false,
+          "Dead": false,
+          "Pid": 3757,
+          "ExitCode": 0,
+          "Error": "",
+          "StartedAt": "2026-11-11T16:54:08.403955172Z",
+          "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "stop_exit_code": 0,
+        "running_after_stop": "false"
+      },
+      {
+        "name": "brighter-4170-asb-sdk-dlq-warmup-sql-net10-0",
+        "state_before_stop": {
+          "Status": "running",
+          "Running": true,
+          "Paused": false,
+          "Restarting": false,
+          "OOMKilled": false,
+          "Dead": false,
+          "Pid": 3280,
+          "ExitCode": 0,
+          "Error": "",
+          "StartedAt": "2026-11-11T16:53:59.889104043Z",
+          "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "stop_exit_code": 0,
+        "running_after_stop": "false"
+      }
+    ]
+  }
+]

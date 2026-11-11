@@ -36,6 +36,37 @@ namespace Paramore.Brighter.MessagingGateway.AWSSQS;
 /// </summary>
 public class SqsSubscription : Subscription, IUseBrighterDeadLetterSupport, IUseBrighterInvalidMessageSupport, IAmADeliveryCountingSubscription
 {
+    /// <summary>
+    /// Gets or sets the reader for native SQS deliveries. Null preserves default parsing.
+    /// </summary>
+    /// <remarks>
+    /// Configure before creating consumers. Custom readers receive the original delivery,
+    /// including any SNS envelope. The consumer owns receipt metadata and delivery counts.
+    /// </remarks>
+    public IAmAWireMessageReader<Amazon.SQS.Model.Message>? WireMessageReader { get; set; }
+
+    /// <summary>
+    /// Gets or sets the writer for Brighter-managed invalid-message forwarding.
+    /// Null preserves the default wire format.
+    /// </summary>
+    /// <remarks>
+    /// Configure before creating consumers. This writer is used only when the invalid-message
+    /// route is selected. Fallback to the dead-letter route uses its own writer instead.
+    /// The writer receives refreshed rejection metadata; the gateway owns routing and settlement.
+    /// </remarks>
+    public IAmAWireMessageWriter<SqsWireMessage>? InvalidMessageWireMessageWriter { get; set; }
+
+    /// <summary>
+    /// Gets or sets the writer for Brighter-managed dead-letter forwarding.
+    /// Null preserves the default wire format.
+    /// </summary>
+    /// <remarks>
+    /// Configure before creating consumers. This includes invalid-message fallback to the
+    /// dead-letter route, but does not configure broker-managed redrive.
+    /// The writer receives refreshed rejection metadata; the gateway owns routing and settlement.
+    /// </remarks>
+    public IAmAWireMessageWriter<SqsWireMessage>? DeadLetterWireMessageWriter { get; set; }
+
     /// <inheritdoc />
     public override Type ChannelFactoryType => typeof(ChannelFactory);
 

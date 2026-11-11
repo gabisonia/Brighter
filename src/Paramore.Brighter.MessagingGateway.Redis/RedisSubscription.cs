@@ -28,6 +28,67 @@ namespace Paramore.Brighter.MessagingGateway.Redis
 {
     public class RedisSubscription : Subscription, IUseBrighterDeadLetterSupport, IUseBrighterInvalidMessageSupport
     {
+        /// <summary>
+        /// Gets or sets the reader used to map stored strings for this subscription.
+        /// </summary>
+        /// <value>The reader, or null to use <see cref="DefaultRedisWireMessageReader"/>.</value>
+        /// <remarks>
+        /// The reader controls application identity, topic, body and metadata. The gateway owns
+        /// native queue IDs and the in-flight acknowledgement gate. Readers must return an
+        /// independent message for each call and support concurrent calls when shared.
+        /// A configured reader exception or null result produces a rejectable failure message
+        /// containing the stored string, native queue ID and source topic. Queue removal is
+        /// destructive; rejecting the failure can forward it to the configured invalid channel.
+        /// </remarks>
+        public IAmAWireMessageReader<string>? WireMessageReader { get; set; }
+
+        /// <summary>
+        /// Gets or sets the writer used to map immediate retries for this subscription.
+        /// </summary>
+        /// <value>The writer, or null to use <see cref="DefaultRedisWireMessageWriter"/>.</value>
+        /// <remarks>
+        /// The gateway retains the native source ID, queue, topic, counter and expiry controls.
+        /// Writers must leave source messages unchanged and support concurrent calls when shared.
+        /// Writer exceptions propagate unchanged; a null result throws <see cref="InvalidOperationException"/>
+        /// before storage, queue or in-flight changes. Delayed retries use the scheduler's existing mapping path.
+        /// </remarks>
+        public IAmAWireMessageWriter<string>? RequeueWireMessageWriter { get; set; }
+
+        /// <summary>
+        /// Gets or sets the registered publication topic for scheduled retries.
+        /// </summary>
+        /// <value>The lookup topic, or null to retain ordinary scheduled publication.</value>
+        /// <remarks>
+        /// The consumer captures this selection when created. Register the retry publication
+        /// with the message's event type and configure its writer and native destination.
+        /// Immediate retries continue to use RequeueWireMessageWriter.
+        /// </remarks>
+        public RoutingKey? ScheduledRequeuePublicationTopic { get; set; }
+
+        /// <summary>
+        /// Gets or sets the writer used for Brighter-managed invalid-message forwarding.
+        /// </summary>
+        /// <value>The writer, or null to use <see cref="DefaultRedisWireMessageWriter"/>.</value>
+        /// <remarks>
+        /// The writer receives the destination topic and refreshed rejection metadata.
+        /// Writer exceptions propagate unchanged; null throws <see cref="InvalidOperationException"/>.
+        /// Mapping failure restores the source topic and retains its in-flight entry before native publication.
+        /// Writers must leave the supplied message unchanged and support concurrent calls when shared.
+        /// </remarks>
+        public IAmAWireMessageWriter<string>? InvalidMessageWireMessageWriter { get; set; }
+
+        /// <summary>
+        /// Gets or sets the writer used for Brighter-managed dead-letter forwarding.
+        /// </summary>
+        /// <value>The writer, or null to use <see cref="DefaultRedisWireMessageWriter"/>.</value>
+        /// <remarks>
+        /// The writer receives the destination topic and refreshed rejection metadata.
+        /// Writer exceptions propagate unchanged; null throws <see cref="InvalidOperationException"/>.
+        /// Mapping failure restores the source topic and retains its in-flight entry before native publication.
+        /// Writers must leave the supplied message unchanged and support concurrent calls when shared.
+        /// </remarks>
+        public IAmAWireMessageWriter<string>? DeadLetterWireMessageWriter { get; set; }
+
         /// <inheritdoc />
         public override Type ChannelFactoryType => typeof(ChannelFactory);
 

@@ -1,0 +1,114 @@
+{
+  "net9.0": {
+    "lost_or_changed_prior_outcomes": [],
+    "new_outcomes": [
+      [
+        "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusRetryWireSelectionTests.When_asb_retries_with_selected_writers_should_preserve_native_controls_and_recover(synchronous: True, global: True, behavior: 1)",
+        "Passed"
+      ],
+      [
+        "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusRetryWireSelectionTests.When_asb_retries_with_selected_writers_should_preserve_native_controls_and_recover(synchronous: False, global: False, behavior: 1)",
+        "Passed"
+      ],
+      [
+        "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusRetryWireSelectionTests.When_asb_retries_with_selected_writers_should_preserve_native_controls_and_recover(synchronous: False, global: True, behavior: 1)",
+        "Passed"
+      ],
+      [
+        "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusRetryWireSelectionTests.When_asb_retries_with_selected_writers_should_preserve_native_controls_and_recover(synchronous: False, global: False, behavior: 0)",
+        "Passed"
+      ],
+      [
+        "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusRetryWireSelectionTests.When_asb_retries_with_selected_writers_should_preserve_native_controls_and_recover(synchronous: True, global: True, behavior: 0)",
+        "Passed"
+      ],
+      [
+        "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusRetryWireSelectionTests.When_asb_retries_with_selected_writers_should_preserve_native_controls_and_recover(synchronous: True, global: False, behavior: 1)",
+        "Passed"
+      ],
+      [
+        "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusRetryWireSelectionTests.When_asb_retries_with_selected_writers_should_preserve_native_controls_and_recover(synchronous: True, global: True, behavior: 2)",
+        "Passed"
+      ],
+      [
+        "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusRetryWireSelectionTests.When_asb_retries_with_selected_writers_should_preserve_native_controls_and_recover(synchronous: True, global: False, behavior: 2)",
+        "Passed"
+      ],
+      [
+        "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusRetryWireSelectionTests.When_asb_retries_with_selected_writers_should_preserve_native_controls_and_recover(synchronous: False, global: True, behavior: 2)",
+        "Passed"
+      ],
+      [
+        "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusRetryWireSelectionTests.When_asb_retries_with_selected_writers_should_preserve_native_controls_and_recover(synchronous: False, global: False, behavior: 2)",
+        "Passed"
+      ],
+      [
+        "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusRetryWireSelectionTests.When_asb_retries_with_selected_writers_should_preserve_native_controls_and_recover(synchronous: False, global: True, behavior: 0)",
+        "Passed"
+      ],
+      [
+        "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusRetryWireSelectionTests.When_asb_retries_with_selected_writers_should_preserve_native_controls_and_recover(synchronous: True, global: False, behavior: 0)",
+        "Passed"
+      ]
+    ]
+  },
+  "net10.0": {
+    "lost_or_changed_prior_outcomes": [],
+    "new_outcomes": [
+      [
+        "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusRetryWireSelectionTests.When_asb_retries_with_selected_writers_should_preserve_native_controls_and_recover(synchronous: True, global: False, behavior: 2)",
+        "Passed"
+      ],
+      [
+        "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusRetryWireSelectionTests.When_asb_retries_with_selected_writers_should_preserve_native_controls_and_recover(synchronous: False, global: True, behavior: 1)",
+        "Passed"
+      ],
+      [
+        "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusRetryWireSelectionTests.When_asb_retries_with_selected_writers_should_preserve_native_controls_and_recover(synchronous: True, global: False, behavior: 1)",
+        "Passed"
+      ],
+      [
+        "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusRetryWireSelectionTests.When_asb_retries_with_selected_writers_should_preserve_native_controls_and_recover(synchronous: True, global: True, behavior: 1)",
+        "Passed"
+      ],
+      [
+        "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusRetryWireSelectionTests.When_asb_retries_with_selected_writers_should_preserve_native_controls_and_recover(synchronous: False, global: False, behavior: 0)",
+        "Passed"
+      ],
+      [
+        "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusRetryWireSelectionTests.When_asb_retries_with_selected_writers_should_preserve_native_controls_and_recover(synchronous: True, global: True, behavior: 2)",
+        "Passed"
+      ],
+      [
+        "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusRetryWireSelectionTests.When_asb_retries_with_selected_writers_should_preserve_native_controls_and_recover(synchronous: False, global: True, behavior: 2)",
+        "Passed"
+      ],
+      [
+        "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusRetryWireSelectionTests.When_asb_retries_with_selected_writers_should_preserve_native_controls_and_recover(synchronous: True, global: True, behavior: 0)",
+        "Passed"
+      ],
+      [
+        "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusRetryWireSelectionTests.When_asb_retries_with_selected_writers_should_preserve_native_controls_and_recover(synchronous: False, global: False, behavior: 2)",
+        "Passed"
+      ],
+      [
+        "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusRetryWireSelectionTests.When_asb_retries_with_selected_writers_should_preserve_native_controls_and_recover(synchronous: False, global: True, behavior: 0)",
+        "Passed"
+      ],
+      [
+        "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusRetryWireSelectionTests.When_asb_retries_with_selected_writers_should_preserve_native_controls_and_recover(synchronous: True, global: False, behavior: 0)",
+        "Passed"
+      ],
+      [
+        "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusRetryWireSelectionTests.When_asb_retries_with_selected_writers_should_preserve_native_controls_and_recover(synchronous: False, global: False, behavior: 1)",
+        "Passed"
+      ]
+    ]
+  },
+  "source_hashes": {
+    "src/Paramore.Brighter.MessagingGateway.AzureServiceBus/AzureServiceBusConsumerFactory.cs": "4e3ef07d6f3f87edb52a6923c79ba322cf3317a34f20c07cc076fa9883967024",
+    "src/Paramore.Brighter.MessagingGateway.AzureServiceBus/AzureServiceBusRequeueScheduler.cs": "89b39c2c81555a8deb75878e1004678b84a5edd722e06bc8c7ba489b9635518a",
+    "src/Paramore.Brighter.MessageScheduler.Azure/AzureServiceBusSchedulerFactory.cs": "d38fce1db044cb18f8ead880569c8941efecdc67a5eacb4a17ed559d7b8590b7",
+    "src/Paramore.Brighter.MessageScheduler.Azure/AzureServiceBusRequeueScheduler.cs": "112f5b86a9753bc4b3c615a9c695c33f6fdafbecf168af4e7dae9043a070049f"
+  }
+}

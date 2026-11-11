@@ -46,7 +46,9 @@ internal sealed class AzureServiceBusForwardingConsumer(
     protected override string SubscriptionName => Subscription.ChannelName.Value;
 
     protected override async Task GetMessageReceiverProviderAsync()
-        => ServiceBusReceiver = await receiverProvider.GetAsync(_queueName, SubscriptionConfiguration.RequireSession);
+        => ServiceBusReceiver = receiverProvider is ServiceBusReceiverProvider provider
+            ? await provider.GetAsync(_queueName, SubscriptionConfiguration.RequireSession, ReceiverAcquisitionCancellationToken)
+            : await receiverProvider.GetAsync(_queueName, SubscriptionConfiguration.RequireSession);
 
     public override async Task PurgeAsync(CancellationToken cancellationToken = default)
     {

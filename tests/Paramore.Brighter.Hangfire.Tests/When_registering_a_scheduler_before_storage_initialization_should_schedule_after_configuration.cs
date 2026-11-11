@@ -28,6 +28,8 @@ THE SOFTWARE. */
 using Hangfire;
 using Hangfire.InMemory;
 using Hangfire.Logging;
+using Microsoft.Extensions.Logging;
+using Paramore.Brighter.Logging;
 using Microsoft.Extensions.DependencyInjection;
 using Paramore.Brighter.Extensions.DependencyInjection;
 using Paramore.Brighter.Hangfire.Tests.TestDoubles;
@@ -39,6 +41,7 @@ namespace Paramore.Brighter.Hangfire.Tests;
 public class HangfireSchedulerFactoryConfigurationTests : IDisposable
 {
     private readonly JobStorage? _previousStorage;
+    private readonly ILoggerFactory _previousLoggerFactory = ApplicationLogging.LoggerFactory;
     private readonly JobActivator _previousActivator = JobActivator.Current;
 
     public HangfireSchedulerFactoryConfigurationTests()
@@ -111,6 +114,7 @@ public class HangfireSchedulerFactoryConfigurationTests : IDisposable
 
     public void Dispose()
     {
+        ApplicationLogging.LoggerFactory = _previousLoggerFactory;
         JobStorage.Current = _previousStorage!;
         JobActivator.Current = _previousActivator;
         LogProvider.SetCurrentLogProvider(null!);

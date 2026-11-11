@@ -1,0 +1,75 @@
+--- existing-approved-emulator-diagnostic
++++ hosted-execution-adapter
+@@ -36,7 +36,6 @@
+ using Google.Api.Gax.Grpc;
+ using Google.Cloud.PubSub.V1;
+ using Grpc.Core;
+-using Grpc.Net.Client;
+ using Paramore.Brighter.Gcp.Tests.TestDoubles;
+ using Paramore.Brighter.MessagingGateway.GcpPubSub;
+ using Xunit;
+@@ -44,43 +43,32 @@
+ 
+ namespace Paramore.Brighter.Gcp.Tests.MessagingGateway;
+ 
+-[Trait("Category", "GcpNativeStreamLifecycle")]
+-[Trait("Requires", "PubSubEmulator")]
+-public class GcpOrderedNackRpcRecoveryTests(ITestOutputHelper output)
++public class GcpHostedOrderedNackRpcRecoveryTests(ITestOutputHelper output)
+ {
+-    [Theory]
+-    [InlineData(false, 0)]
+-    [InlineData(false, 1)]
+-    [InlineData(false, 2)]
+-    [InlineData(true, 0)]
+-    [InlineData(true, 1)]
+-    [InlineData(true, 2)]
+     public async Task When_nacking_an_ordered_gcp_delivery_should_send_a_native_nack_and_recover_both_messages(
+         bool useAsync, int clientCount)
+     {
+         //Arrange
+-        var host = Environment.GetEnvironmentVariable("PUBSUB_EMULATOR_HOST");
+-        Assert.False(string.IsNullOrWhiteSpace(host), "An explicit Pub/Sub emulator is required.");
+-        var project = Environment.GetEnvironmentVariable("GOOGLE_CLOUD_PROJECT") ?? "brighter-test";
+-        var name = "ordered-nack-rpc-" + Guid.NewGuid().ToString("N");
++        Assert.True(string.IsNullOrWhiteSpace(Environment.GetEnvironmentVariable("PUBSUB_EMULATOR_HOST")),
++            "Hosted execution rejects PUBSUB_EMULATOR_HOST.");
++        const string project = "brighter-pubsub-validation";
++        var name = "hosted-brighter-nack-" + Guid.NewGuid().ToString("N");
+         var topic = TopicName.FromProjectTopic(project, name);
+         var nativeSubscription = Google.Cloud.PubSub.V1.SubscriptionName.FromProjectSubscription(project, name);
+-        using var transport = GrpcChannel.ForAddress("http://" + host,
+-            new Grpc.Net.Client.GrpcChannelOptions { Credentials = ChannelCredentials.Insecure });
+-        var invoker = transport.CreateCallInvoker();
+-        var topics = new PublisherServiceApiClientBuilder { CallInvoker = invoker }.Build();
+-        var admin = new SubscriberServiceApiClientBuilder { CallInvoker = invoker }.Build();
++        var topics = new PublisherServiceApiClientBuilder { EmulatorDetection = EmulatorDetection.ProductionOnly }.Build();
++        var admin = new SubscriberServiceApiClientBuilder { EmulatorDetection = EmulatorDetection.ProductionOnly }.Build();
+         var trace = new ConcurrentQueue<string>();
++        trace.Enqueue($"RESOURCE {topic} {nativeSubscription}");
+         var observer = new GcpStreamRpcObserver(trace.Enqueue);
+         var connection = new GcpMessagingGatewayConnection
+         {
+             ProjectId = project,
+-            TopicManagerConfiguration = builder => builder.CallInvoker = invoker,
+-            SubscriptionManagerConfiguration = builder => builder.CallInvoker = invoker,
+-            PublisherConfiguration = builder => builder.EmulatorDetection = EmulatorDetection.EmulatorOnly,
++            TopicManagerConfiguration = builder => builder.EmulatorDetection = EmulatorDetection.ProductionOnly,
++            SubscriptionManagerConfiguration = builder => builder.EmulatorDetection = EmulatorDetection.ProductionOnly,
++            PublisherConfiguration = builder => builder.EmulatorDetection = EmulatorDetection.ProductionOnly,
+             StreamConfiguration = builder =>
+             {
+-                builder.EmulatorDetection = EmulatorDetection.EmulatorOnly;
++                builder.EmulatorDetection = EmulatorDetection.ProductionOnly;
+                 if (clientCount > 0)
+                     builder.ClientCount = clientCount;
+                 builder.ApiSettings ??= new SubscriberServiceApiSettings();
+@@ -96,7 +84,7 @@
+             EnableMessageOrdering = true
+         };
+         var subscription = new GcpPubSubSubscription(new SubscriptionName(name), new ChannelName(name), destination,
+-            requestType: typeof(MyCommand),
++            requestType: typeof(HostedOrderedNackCommand),
+             messagePumpType: useAsync ? MessagePumpType.Proactor : MessagePumpType.Reactor,
+             makeChannels: OnMissingChannel.Assume, projectId: project,
+             ackDeadlineSeconds: 30, subscriptionMode: SubscriptionMode.Stream, enableMessageOrdering: true);

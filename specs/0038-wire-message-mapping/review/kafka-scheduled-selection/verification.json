@@ -1,0 +1,29 @@
+{
+  "matrices": {
+    "net9.0": {
+      "Passed": 412,
+      "Failed": 0,
+      "NotExecuted": 0
+    },
+    "net10.0": {
+      "Passed": 412,
+      "Failed": 0,
+      "NotExecuted": 0
+    }
+  },
+  "actual_dead_letter_red_cases_each_framework": 8,
+  "actual_scheduled_retry_red_cases_each_framework": 4,
+  "intended_selector_mutation_failures": 4,
+  "all_400_prior_identities_and_outcomes_preserved": true,
+  "final_source_hashes": {
+    "src/Paramore.Brighter.MessagingGateway.Kafka/KafkaSubscription.cs": "5123da1b455e387755b0f3d373b2dd24ff73138da6fdd1d133590540692cd277",
+    "src/Paramore.Brighter.MessagingGateway.Kafka/KafkaMessageConsumer.cs": "0e990252cc81378027023e7f0942648496f7cf77fbda4da93745999c264fd066",
+    "src/Paramore.Brighter.MessagingGateway.Kafka/KafkaMessageConsumerFactory.cs": "04899d6ff879ec4afee1e14e5a57779b1a7c14b3b7756e62a299998a749b6e85",
+    "tests/Paramore.Brighter.Kafka.Tests/MessagingGateway/When_rejecting_with_a_selected_kafka_writer_should_map_the_dead_letter_delivery_and_acknowledge_the_source.cs": "5e7d61234d71e7b6adacf3050143a482d7e5f286883ddd3c2531ada8525828d7",
+    "tests/Paramore.Brighter.Kafka.Tests/MessagingGateway/When_kafka_dead_letter_writer_fails_should_keep_source_uncommitted_and_recover_after_redelivery.cs": "31d5305b2181a8a11e1be9bc22e5dfb77618e4a246f4822832acde33a42698b4",
+    "tests/Paramore.Brighter.Kafka.Tests/MessagingGateway/When_kafka_schedules_a_retry_should_select_the_registered_writer_and_preserve_the_destination.cs": "621fa2f8e30ec69fc4e0a16f56f5b2fb618af1fb5a493e33eae5b4f21cfad331",
+    "tests/Paramore.Brighter.Kafka.Tests/TestDoubles/KafkaScheduledWireWriter.cs": "7da4a37af37d1b69ad0b0d8c688a97838d6d7100b26000dcbc46641c71bd2345"
+  },
+  "integrated_into_main_workspace": true,
+  "whole_feature_production_ready": false
+}

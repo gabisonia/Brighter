@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>net9.0;net10.0</TargetFrameworks>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Google.Cloud.PubSub.V1" />
+    <Compile Include="../../../../tests/Paramore.Brighter.Gcp.Tests/TestDoubles/GcpStreamRpcObserver.cs" Link="GcpStreamRpcObserver.cs" />
+    <Compile Include="../../../../tests/Paramore.Brighter.Gcp.Tests/TestDoubles/GcpObservedStreamReader.cs" Link="GcpObservedStreamReader.cs" />
+  </ItemGroup>
+</Project>

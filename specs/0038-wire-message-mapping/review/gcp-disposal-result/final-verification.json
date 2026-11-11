@@ -1,0 +1,11 @@
+{
+  "source_files_checked": 6614,
+  "changed_sources": [
+    "tests/Paramore.Brighter.Gcp.Tests/MessagingGateway/Stream/When_a_gcp_stream_channel_is_disposed_holding_an_unsettled_message_should_return_promptly_async.cs",
+    "tests/Paramore.Brighter.Gcp.Tests/MessagingGateway/Stream/When_a_gcp_stream_channel_is_disposed_with_a_redelivery_buffered_after_requeue_should_return_promptly_async.cs"
+  ],
+  "production_restored": true,
+  "main_focused_passes_per_framework": 2,
+  "committed": false,
+  "pushed": false
+}

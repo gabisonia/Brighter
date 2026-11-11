@@ -35,11 +35,18 @@ namespace Paramore.Brighter.RMQ.Async.Tests.TestDoubles;
 public class GatedTagReadRmqProducer(RmqMessagingGatewayConnection connection)
     : RmqMessageProducer(connection)
 {
+    private GatedTagReadRmqChannel? _gatedChannel;
+
+    public ulong[] ReadTags => _gatedChannel!.ReadTags.ToArray();
+
+    public Task PrepareAsync() => ConnectToBrokerAsync(OnMissingChannel.Create);
+
     protected override async Task ConnectToBrokerAsync(OnMissingChannel makeExchange, CancellationToken cancellationToken = default)
     {
         await base.ConnectToBrokerAsync(makeExchange, cancellationToken);
         if (Channel is GatedTagReadRmqChannel) return;
 
-        Channel = (IChannel)(object)GatedTagReadRmqChannel.Wrap(Channel!);
+        _gatedChannel = GatedTagReadRmqChannel.Wrap(Channel!);
+        Channel = (IChannel)(object)_gatedChannel;
     }
 }

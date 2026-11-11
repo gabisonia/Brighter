@@ -1,0 +1,37 @@
+[
+  {
+    "tid": 101,
+    "name": "rdk:broker-1",
+    "state": "S (sleeping)"
+  },
+  {
+    "tid": 102,
+    "name": "rdk:main",
+    "state": "S (sleeping)"
+  },
+  {
+    "tid": 103,
+    "name": "rdk:broker-1",
+    "state": "S (sleeping)"
+  },
+  {
+    "tid": 105,
+    "name": "rdk:broker1",
+    "state": "S (sleeping)"
+  },
+  {
+    "tid": 76,
+    "name": "rdk:main",
+    "state": "S (sleeping)"
+  },
+  {
+    "tid": 77,
+    "name": "rdk:broker-1",
+    "state": "S (sleeping)"
+  },
+  {
+    "tid": 80,
+    "name": "rdk:broker1",
+    "state": "S (sleeping)"
+  }
+]

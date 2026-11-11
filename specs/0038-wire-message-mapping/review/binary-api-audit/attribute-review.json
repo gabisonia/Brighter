@@ -1,0 +1,1806 @@
+{
+  "all_diagnostics_are_compiler_async_state_machine_metadata": true,
+  "diagnostics": [
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.SnsMessagePublisher.PublishAsync(Paramore.Brighter.Message)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.SqsMessageConsumer.AcknowledgeAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.SqsMessageConsumer.PurgeAsync(System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.SqsMessageConsumer.ReceiveAsync(System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.SqsMessageConsumer.RejectAsync(Paramore.Brighter.Message, Paramore.Brighter.MessageRejectionReason?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.SqsMessageConsumer.NackAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.SqsMessageConsumer.RequeueAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.SqsMessageConsumer.DisposeAsync()'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.SqsMessageSender.SendAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.SnsMessagePublisher.PublishAsync(Paramore.Brighter.Message)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.SqsMessageConsumer.AcknowledgeAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.SqsMessageConsumer.PurgeAsync(System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.SqsMessageConsumer.ReceiveAsync(System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.SqsMessageConsumer.RejectAsync(Paramore.Brighter.Message, Paramore.Brighter.MessageRejectionReason?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.SqsMessageConsumer.NackAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.SqsMessageConsumer.RequeueAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.SqsMessageConsumer.DisposeAsync()'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.SqsMessageSender.SendAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.SnsMessagePublisher.PublishAsync(Paramore.Brighter.Message)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.SqsMessageConsumer.AcknowledgeAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.SqsMessageConsumer.PurgeAsync(System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.SqsMessageConsumer.ReceiveAsync(System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.SqsMessageConsumer.RejectAsync(Paramore.Brighter.Message, Paramore.Brighter.MessageRejectionReason?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.SqsMessageConsumer.NackAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.SqsMessageConsumer.RequeueAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.SqsMessageConsumer.DisposeAsync()'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.SqsMessageSender.SendAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.SnsMessagePublisher.PublishAsync(Paramore.Brighter.Message)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.SqsMessageConsumer.AcknowledgeAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.SqsMessageConsumer.PurgeAsync(System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.SqsMessageConsumer.ReceiveAsync(System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.SqsMessageConsumer.RejectAsync(Paramore.Brighter.Message, Paramore.Brighter.MessageRejectionReason?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.SqsMessageConsumer.NackAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.SqsMessageConsumer.RequeueAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.SqsMessageConsumer.DisposeAsync()'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.SqsMessageSender.SendAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS.V4",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.V4.SnsMessagePublisher.PublishAsync(Paramore.Brighter.Message)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS.V4",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.V4.SqsMessageConsumer.AcknowledgeAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS.V4",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.V4.SqsMessageConsumer.RejectAsync(Paramore.Brighter.Message, Paramore.Brighter.MessageRejectionReason?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS.V4",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.V4.SqsMessageConsumer.PurgeAsync(System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS.V4",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.V4.SqsMessageConsumer.ReceiveAsync(System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS.V4",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.V4.SqsMessageConsumer.NackAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS.V4",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.V4.SqsMessageConsumer.RequeueAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS.V4",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.V4.SqsMessageConsumer.DisposeAsync()'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS.V4",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.V4.SqsMessageSender.SendAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS.V4",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.V4.SnsMessagePublisher.PublishAsync(Paramore.Brighter.Message)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS.V4",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.V4.SqsMessageConsumer.AcknowledgeAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS.V4",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.V4.SqsMessageConsumer.RejectAsync(Paramore.Brighter.Message, Paramore.Brighter.MessageRejectionReason?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS.V4",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.V4.SqsMessageConsumer.PurgeAsync(System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS.V4",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.V4.SqsMessageConsumer.ReceiveAsync(System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS.V4",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.V4.SqsMessageConsumer.NackAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS.V4",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.V4.SqsMessageConsumer.RequeueAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS.V4",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.V4.SqsMessageConsumer.DisposeAsync()'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS.V4",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.V4.SqsMessageSender.SendAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS.V4",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.V4.SnsMessagePublisher.PublishAsync(Paramore.Brighter.Message)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS.V4",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.V4.SqsMessageConsumer.AcknowledgeAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS.V4",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.V4.SqsMessageConsumer.RejectAsync(Paramore.Brighter.Message, Paramore.Brighter.MessageRejectionReason?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS.V4",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.V4.SqsMessageConsumer.PurgeAsync(System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS.V4",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.V4.SqsMessageConsumer.ReceiveAsync(System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS.V4",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.V4.SqsMessageConsumer.NackAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS.V4",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.V4.SqsMessageConsumer.RequeueAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS.V4",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.V4.SqsMessageConsumer.DisposeAsync()'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS.V4",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.V4.SqsMessageSender.SendAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS.V4",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.V4.SnsMessagePublisher.PublishAsync(Paramore.Brighter.Message)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS.V4",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.V4.SqsMessageConsumer.AcknowledgeAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS.V4",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.V4.SqsMessageConsumer.RejectAsync(Paramore.Brighter.Message, Paramore.Brighter.MessageRejectionReason?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS.V4",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.V4.SqsMessageConsumer.PurgeAsync(System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS.V4",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.V4.SqsMessageConsumer.ReceiveAsync(System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS.V4",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.V4.SqsMessageConsumer.NackAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS.V4",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.V4.SqsMessageConsumer.RequeueAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS.V4",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.V4.SqsMessageConsumer.DisposeAsync()'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AWSSQS.V4",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AWSSQS.V4.SqsMessageSender.SendAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AzureServiceBus",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusConsumer.DisposeAsync()'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AzureServiceBus",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusConsumer.AcknowledgeAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AzureServiceBus",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusConsumer.ReceiveAsync(System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AzureServiceBus",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusConsumer.NackAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AzureServiceBus",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusConsumer.RejectAsync(Paramore.Brighter.Message, Paramore.Brighter.MessageRejectionReason?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AzureServiceBus",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusConsumer.RequeueAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AzureServiceBus",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusMessageProducer.SendAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AzureServiceBus",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusMessageProducer.CreateBatchesAsync(System.Collections.Generic.IEnumerable<Paramore.Brighter.Message>, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AzureServiceBus",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusMessageProducer.SendAsync(Paramore.Brighter.IAmAMessageBatch, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AzureServiceBus",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusMessageProducer.SendWithDelayAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AzureServiceBus",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusRequeueScheduler.RequeueAsync(Paramore.Brighter.Message, Paramore.Brighter.ChannelName, System.TimeSpan, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AzureServiceBus",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusConsumer.DisposeAsync()'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AzureServiceBus",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusConsumer.AcknowledgeAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AzureServiceBus",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusConsumer.ReceiveAsync(System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AzureServiceBus",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusConsumer.NackAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AzureServiceBus",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusConsumer.RejectAsync(Paramore.Brighter.Message, Paramore.Brighter.MessageRejectionReason?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AzureServiceBus",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusConsumer.RequeueAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AzureServiceBus",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusMessageProducer.SendAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AzureServiceBus",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusMessageProducer.CreateBatchesAsync(System.Collections.Generic.IEnumerable<Paramore.Brighter.Message>, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AzureServiceBus",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusMessageProducer.SendAsync(Paramore.Brighter.IAmAMessageBatch, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AzureServiceBus",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusMessageProducer.SendWithDelayAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AzureServiceBus",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusRequeueScheduler.RequeueAsync(Paramore.Brighter.Message, Paramore.Brighter.ChannelName, System.TimeSpan, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AzureServiceBus",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusConsumer.DisposeAsync()'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AzureServiceBus",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusConsumer.AcknowledgeAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AzureServiceBus",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusConsumer.ReceiveAsync(System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AzureServiceBus",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusConsumer.NackAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AzureServiceBus",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusConsumer.RejectAsync(Paramore.Brighter.Message, Paramore.Brighter.MessageRejectionReason?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AzureServiceBus",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusConsumer.RequeueAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AzureServiceBus",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusMessageProducer.SendAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AzureServiceBus",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusMessageProducer.CreateBatchesAsync(System.Collections.Generic.IEnumerable<Paramore.Brighter.Message>, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AzureServiceBus",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusMessageProducer.SendAsync(Paramore.Brighter.IAmAMessageBatch, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AzureServiceBus",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusMessageProducer.SendWithDelayAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AzureServiceBus",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusRequeueScheduler.RequeueAsync(Paramore.Brighter.Message, Paramore.Brighter.ChannelName, System.TimeSpan, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AzureServiceBus",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusConsumer.DisposeAsync()'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AzureServiceBus",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusConsumer.AcknowledgeAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AzureServiceBus",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusConsumer.ReceiveAsync(System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AzureServiceBus",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusConsumer.NackAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AzureServiceBus",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusConsumer.RejectAsync(Paramore.Brighter.Message, Paramore.Brighter.MessageRejectionReason?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AzureServiceBus",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusConsumer.RequeueAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AzureServiceBus",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusMessageProducer.SendAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AzureServiceBus",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusMessageProducer.CreateBatchesAsync(System.Collections.Generic.IEnumerable<Paramore.Brighter.Message>, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AzureServiceBus",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusMessageProducer.SendAsync(Paramore.Brighter.IAmAMessageBatch, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AzureServiceBus",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusMessageProducer.SendWithDelayAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.AzureServiceBus",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusRequeueScheduler.RequeueAsync(Paramore.Brighter.Message, Paramore.Brighter.ChannelName, System.TimeSpan, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.GcpPubSub",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.GcpPubSub.GcpMessageProducer.SendWithDelayAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.GcpPubSub",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.GcpPubSub.GcpMessageProducer.SendAsync(Paramore.Brighter.IAmAMessageBatch, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.GcpPubSub",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.GcpPubSub.GcpMessageProducer.DisposeAsync()'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.GcpPubSub",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.GcpPubSub.GcpPubSubStreamMessageConsumer.RejectAsync(Paramore.Brighter.Message, Paramore.Brighter.MessageRejectionReason?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.GcpPubSub",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.GcpPubSub.GcpPubSubStreamMessageConsumer.PurgeAsync(System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.GcpPubSub",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.GcpPubSub.GcpPubSubStreamMessageConsumer.ReceiveAsync(System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.GcpPubSub",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.GcpPubSub.GcpPubSubStreamMessageConsumer.DisposeAsync()'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.GcpPubSub",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.GcpPubSub.GcpPullMessageConsumer.AcknowledgeAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.GcpPubSub",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.GcpPubSub.GcpPullMessageConsumer.PurgeAsync(System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.GcpPubSub",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.GcpPubSub.GcpPullMessageConsumer.ReceiveAsync(System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.GcpPubSub",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.GcpPubSub.GcpPullMessageConsumer.RejectAsync(Paramore.Brighter.Message, Paramore.Brighter.MessageRejectionReason?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.GcpPubSub",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.GcpPubSub.GcpPullMessageConsumer.RequeueAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.GcpPubSub",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.GcpPubSub.GcpPullMessageConsumer.DisposeAsync()'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.GcpPubSub",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.GcpPubSub.GcpMessageProducer.SendWithDelayAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.GcpPubSub",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.GcpPubSub.GcpMessageProducer.SendAsync(Paramore.Brighter.IAmAMessageBatch, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.GcpPubSub",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.GcpPubSub.GcpMessageProducer.DisposeAsync()'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.GcpPubSub",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.GcpPubSub.GcpPubSubStreamMessageConsumer.RejectAsync(Paramore.Brighter.Message, Paramore.Brighter.MessageRejectionReason?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.GcpPubSub",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.GcpPubSub.GcpPubSubStreamMessageConsumer.PurgeAsync(System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.GcpPubSub",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.GcpPubSub.GcpPubSubStreamMessageConsumer.ReceiveAsync(System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.GcpPubSub",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.GcpPubSub.GcpPubSubStreamMessageConsumer.DisposeAsync()'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.GcpPubSub",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.GcpPubSub.GcpPullMessageConsumer.AcknowledgeAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.GcpPubSub",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.GcpPubSub.GcpPullMessageConsumer.PurgeAsync(System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.GcpPubSub",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.GcpPubSub.GcpPullMessageConsumer.ReceiveAsync(System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.GcpPubSub",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.GcpPubSub.GcpPullMessageConsumer.RejectAsync(Paramore.Brighter.Message, Paramore.Brighter.MessageRejectionReason?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.GcpPubSub",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.GcpPubSub.GcpPullMessageConsumer.RequeueAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.GcpPubSub",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.GcpPubSub.GcpPullMessageConsumer.DisposeAsync()'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.GcpPubSub",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.GcpPubSub.GcpMessageProducer.SendWithDelayAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.GcpPubSub",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.GcpPubSub.GcpMessageProducer.SendAsync(Paramore.Brighter.IAmAMessageBatch, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.GcpPubSub",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.GcpPubSub.GcpMessageProducer.DisposeAsync()'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.GcpPubSub",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.GcpPubSub.GcpPubSubStreamMessageConsumer.RejectAsync(Paramore.Brighter.Message, Paramore.Brighter.MessageRejectionReason?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.GcpPubSub",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.GcpPubSub.GcpPubSubStreamMessageConsumer.PurgeAsync(System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.GcpPubSub",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.GcpPubSub.GcpPubSubStreamMessageConsumer.ReceiveAsync(System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.GcpPubSub",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.GcpPubSub.GcpPubSubStreamMessageConsumer.DisposeAsync()'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.GcpPubSub",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.GcpPubSub.GcpPullMessageConsumer.AcknowledgeAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.GcpPubSub",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.GcpPubSub.GcpPullMessageConsumer.PurgeAsync(System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.GcpPubSub",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.GcpPubSub.GcpPullMessageConsumer.ReceiveAsync(System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.GcpPubSub",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.GcpPubSub.GcpPullMessageConsumer.RejectAsync(Paramore.Brighter.Message, Paramore.Brighter.MessageRejectionReason?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.GcpPubSub",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.GcpPubSub.GcpPullMessageConsumer.RequeueAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.GcpPubSub",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.GcpPubSub.GcpPullMessageConsumer.DisposeAsync()'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.GcpPubSub",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.GcpPubSub.GcpMessageProducer.SendWithDelayAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.GcpPubSub",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.GcpPubSub.GcpMessageProducer.SendAsync(Paramore.Brighter.IAmAMessageBatch, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.GcpPubSub",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.GcpPubSub.GcpMessageProducer.DisposeAsync()'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.GcpPubSub",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.GcpPubSub.GcpPubSubStreamMessageConsumer.RejectAsync(Paramore.Brighter.Message, Paramore.Brighter.MessageRejectionReason?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.GcpPubSub",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.GcpPubSub.GcpPubSubStreamMessageConsumer.PurgeAsync(System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.GcpPubSub",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.GcpPubSub.GcpPubSubStreamMessageConsumer.ReceiveAsync(System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.GcpPubSub",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.GcpPubSub.GcpPubSubStreamMessageConsumer.DisposeAsync()'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.GcpPubSub",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.GcpPubSub.GcpPullMessageConsumer.AcknowledgeAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.GcpPubSub",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.GcpPubSub.GcpPullMessageConsumer.PurgeAsync(System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.GcpPubSub",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.GcpPubSub.GcpPullMessageConsumer.ReceiveAsync(System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.GcpPubSub",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.GcpPubSub.GcpPullMessageConsumer.RejectAsync(Paramore.Brighter.Message, Paramore.Brighter.MessageRejectionReason?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.GcpPubSub",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.GcpPubSub.GcpPullMessageConsumer.RequeueAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.GcpPubSub",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.GcpPubSub.GcpPullMessageConsumer.DisposeAsync()'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Kafka",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Kafka.KafkaMessageConsumer.PurgeAsync(System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Kafka",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Kafka.KafkaMessageConsumer.ReceiveAsync(System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Kafka",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Kafka.KafkaMessageConsumer.RejectAsync(Paramore.Brighter.Message, Paramore.Brighter.MessageRejectionReason?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Kafka",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Kafka.KafkaMessageConsumer.RequeueAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Kafka",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Kafka.KafkaMessageConsumer.DisposeAsync()'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Kafka",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Kafka.KafkaMessageProducer.SendAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Kafka",
+      "framework": "net10.0",
+      "diagnostic": "CP0014: Cannot remove attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute(typeof(Paramore.Brighter.MessagingGateway.Kafka.KafkaMessageProducer.<SendWithDelayAsync>d__42))' from 'Paramore.Brighter.MessagingGateway.Kafka.KafkaMessageProducer.SendWithDelayAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Kafka",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Kafka.KafkaMessageConsumer.PurgeAsync(System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Kafka",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Kafka.KafkaMessageConsumer.ReceiveAsync(System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Kafka",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Kafka.KafkaMessageConsumer.RejectAsync(Paramore.Brighter.Message, Paramore.Brighter.MessageRejectionReason?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Kafka",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Kafka.KafkaMessageConsumer.RequeueAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Kafka",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Kafka.KafkaMessageConsumer.DisposeAsync()'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Kafka",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Kafka.KafkaMessageProducer.SendAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Kafka",
+      "framework": "net8.0",
+      "diagnostic": "CP0014: Cannot remove attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute(typeof(Paramore.Brighter.MessagingGateway.Kafka.KafkaMessageProducer.<SendWithDelayAsync>d__42))' from 'Paramore.Brighter.MessagingGateway.Kafka.KafkaMessageProducer.SendWithDelayAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Kafka",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Kafka.KafkaMessageConsumer.PurgeAsync(System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Kafka",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Kafka.KafkaMessageConsumer.ReceiveAsync(System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Kafka",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Kafka.KafkaMessageConsumer.RejectAsync(Paramore.Brighter.Message, Paramore.Brighter.MessageRejectionReason?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Kafka",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Kafka.KafkaMessageConsumer.RequeueAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Kafka",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Kafka.KafkaMessageConsumer.DisposeAsync()'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Kafka",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Kafka.KafkaMessageProducer.SendAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Kafka",
+      "framework": "net9.0",
+      "diagnostic": "CP0014: Cannot remove attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute(typeof(Paramore.Brighter.MessagingGateway.Kafka.KafkaMessageProducer.<SendWithDelayAsync>d__42))' from 'Paramore.Brighter.MessagingGateway.Kafka.KafkaMessageProducer.SendWithDelayAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Kafka",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Kafka.KafkaMessageConsumer.PurgeAsync(System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Kafka",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Kafka.KafkaMessageConsumer.ReceiveAsync(System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Kafka",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Kafka.KafkaMessageConsumer.RejectAsync(Paramore.Brighter.Message, Paramore.Brighter.MessageRejectionReason?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Kafka",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Kafka.KafkaMessageConsumer.RequeueAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Kafka",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Kafka.KafkaMessageConsumer.DisposeAsync()'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Kafka",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Kafka.KafkaMessageProducer.SendAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Kafka",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0014: Cannot remove attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute(typeof(Paramore.Brighter.MessagingGateway.Kafka.KafkaMessageProducer.<SendWithDelayAsync>d__42))' from 'Paramore.Brighter.MessagingGateway.Kafka.KafkaMessageProducer.SendWithDelayAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.MQTT",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.MQTT.MqttMessageConsumer.DisposeAsync()'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.MQTT",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.MQTT.MqttMessageConsumer.ReceiveAsync(System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.MQTT",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.MQTT.MqttMessageConsumer.RejectAsync(Paramore.Brighter.Message, Paramore.Brighter.MessageRejectionReason?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.MQTT",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.MQTT.MqttMessageConsumer.RequeueAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.MQTT",
+      "framework": "net10.0",
+      "diagnostic": "CP0014: Cannot remove attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute(typeof(Paramore.Brighter.MessagingGateway.MQTT.MqttMessagePublisher.<PublishMessageAsync>d__7))' from 'Paramore.Brighter.MessagingGateway.MQTT.MqttMessagePublisher.PublishMessageAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.MQTT",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.MQTT.MqttMessagePublisher.DisposeAsync()'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.MQTT",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.MQTT.MqttMessageConsumer.DisposeAsync()'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.MQTT",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.MQTT.MqttMessageConsumer.ReceiveAsync(System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.MQTT",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.MQTT.MqttMessageConsumer.RejectAsync(Paramore.Brighter.Message, Paramore.Brighter.MessageRejectionReason?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.MQTT",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.MQTT.MqttMessageConsumer.RequeueAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.MQTT",
+      "framework": "net8.0",
+      "diagnostic": "CP0014: Cannot remove attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute(typeof(Paramore.Brighter.MessagingGateway.MQTT.MqttMessagePublisher.<PublishMessageAsync>d__7))' from 'Paramore.Brighter.MessagingGateway.MQTT.MqttMessagePublisher.PublishMessageAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.MQTT",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.MQTT.MqttMessagePublisher.DisposeAsync()'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.MQTT",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.MQTT.MqttMessageConsumer.DisposeAsync()'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.MQTT",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.MQTT.MqttMessageConsumer.ReceiveAsync(System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.MQTT",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.MQTT.MqttMessageConsumer.RejectAsync(Paramore.Brighter.Message, Paramore.Brighter.MessageRejectionReason?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.MQTT",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.MQTT.MqttMessageConsumer.RequeueAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.MQTT",
+      "framework": "net9.0",
+      "diagnostic": "CP0014: Cannot remove attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute(typeof(Paramore.Brighter.MessagingGateway.MQTT.MqttMessagePublisher.<PublishMessageAsync>d__7))' from 'Paramore.Brighter.MessagingGateway.MQTT.MqttMessagePublisher.PublishMessageAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.MQTT",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.MQTT.MqttMessagePublisher.DisposeAsync()'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.MsSql",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.MsSql.MsSqlMessageConsumer.PurgeAsync(System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.MsSql",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.MsSql.MsSqlMessageConsumer.ReceiveAsync(System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.MsSql",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.MsSql.MsSqlMessageConsumer.RejectAsync(Paramore.Brighter.Message, Paramore.Brighter.MessageRejectionReason?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.MsSql",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.MsSql.MsSqlMessageConsumer.RequeueAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.MsSql",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.MsSql.MsSqlMessageConsumer.DisposeAsync()'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.MsSql",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.MsSql.MsSqlMessageProducer.SendAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.MsSql",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.MsSql.MsSqlMessageProducer.SendWithDelayAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.MsSql",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.MsSql.SqlQueues.MsSqlMessageQueue<T>.SendAsync(T, string, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.MsSql",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.MsSql.SqlQueues.MsSqlMessageQueue<T>.TryReceiveAsync(string, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.MsSql",
+      "framework": "net462",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.MsSql.MsSqlMessageConsumer.PurgeAsync(System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.MsSql",
+      "framework": "net462",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.MsSql.MsSqlMessageConsumer.ReceiveAsync(System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.MsSql",
+      "framework": "net462",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.MsSql.MsSqlMessageConsumer.RejectAsync(Paramore.Brighter.Message, Paramore.Brighter.MessageRejectionReason?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.MsSql",
+      "framework": "net462",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.MsSql.MsSqlMessageConsumer.RequeueAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.MsSql",
+      "framework": "net462",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.MsSql.MsSqlMessageConsumer.DisposeAsync()'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.MsSql",
+      "framework": "net462",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.MsSql.MsSqlMessageProducer.SendAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.MsSql",
+      "framework": "net462",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.MsSql.MsSqlMessageProducer.SendWithDelayAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.MsSql",
+      "framework": "net462",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.MsSql.SqlQueues.MsSqlMessageQueue<T>.SendAsync(T, string, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.MsSql",
+      "framework": "net462",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.MsSql.SqlQueues.MsSqlMessageQueue<T>.TryReceiveAsync(string, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.MsSql",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.MsSql.MsSqlMessageConsumer.PurgeAsync(System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.MsSql",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.MsSql.MsSqlMessageConsumer.ReceiveAsync(System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.MsSql",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.MsSql.MsSqlMessageConsumer.RejectAsync(Paramore.Brighter.Message, Paramore.Brighter.MessageRejectionReason?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.MsSql",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.MsSql.MsSqlMessageConsumer.RequeueAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.MsSql",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.MsSql.MsSqlMessageConsumer.DisposeAsync()'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.MsSql",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.MsSql.MsSqlMessageProducer.SendAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.MsSql",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.MsSql.MsSqlMessageProducer.SendWithDelayAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.MsSql",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.MsSql.SqlQueues.MsSqlMessageQueue<T>.SendAsync(T, string, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.MsSql",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.MsSql.SqlQueues.MsSqlMessageQueue<T>.TryReceiveAsync(string, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.MsSql",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.MsSql.MsSqlMessageConsumer.PurgeAsync(System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.MsSql",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.MsSql.MsSqlMessageConsumer.ReceiveAsync(System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.MsSql",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.MsSql.MsSqlMessageConsumer.RejectAsync(Paramore.Brighter.Message, Paramore.Brighter.MessageRejectionReason?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.MsSql",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.MsSql.MsSqlMessageConsumer.RequeueAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.MsSql",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.MsSql.MsSqlMessageConsumer.DisposeAsync()'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.MsSql",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.MsSql.MsSqlMessageProducer.SendAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.MsSql",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.MsSql.MsSqlMessageProducer.SendWithDelayAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.MsSql",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.MsSql.SqlQueues.MsSqlMessageQueue<T>.SendAsync(T, string, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.MsSql",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.MsSql.SqlQueues.MsSqlMessageQueue<T>.TryReceiveAsync(string, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Postgres",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Postgres.PostgresMessageConsumer.AcknowledgeAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Postgres",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Postgres.PostgresMessageConsumer.PurgeAsync(System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Postgres",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Postgres.PostgresMessageConsumer.ReceiveAsync(System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Postgres",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Postgres.PostgresMessageConsumer.RejectAsync(Paramore.Brighter.Message, Paramore.Brighter.MessageRejectionReason?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Postgres",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Postgres.PostgresMessageConsumer.RequeueAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Postgres",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Postgres.PostgresMessageProducer.SendAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Postgres",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Postgres.PostgresMessageProducer.SendWithDelayAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Postgres",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Postgres.PostgresMessageConsumer.AcknowledgeAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Postgres",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Postgres.PostgresMessageConsumer.PurgeAsync(System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Postgres",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Postgres.PostgresMessageConsumer.ReceiveAsync(System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Postgres",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Postgres.PostgresMessageConsumer.RejectAsync(Paramore.Brighter.Message, Paramore.Brighter.MessageRejectionReason?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Postgres",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Postgres.PostgresMessageConsumer.RequeueAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Postgres",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Postgres.PostgresMessageProducer.SendAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Postgres",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Postgres.PostgresMessageProducer.SendWithDelayAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Postgres",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Postgres.PostgresMessageConsumer.AcknowledgeAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Postgres",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Postgres.PostgresMessageConsumer.PurgeAsync(System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Postgres",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Postgres.PostgresMessageConsumer.ReceiveAsync(System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Postgres",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Postgres.PostgresMessageConsumer.RejectAsync(Paramore.Brighter.Message, Paramore.Brighter.MessageRejectionReason?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Postgres",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Postgres.PostgresMessageConsumer.RequeueAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Postgres",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Postgres.PostgresMessageProducer.SendAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Postgres",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Postgres.PostgresMessageProducer.SendWithDelayAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.RMQ.Async",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.RMQ.Async.RmqMessageConsumer.AcknowledgeAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.RMQ.Async",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.RMQ.Async.RmqMessageConsumer.PurgeAsync(System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.RMQ.Async",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.RMQ.Async.RmqMessageConsumer.ReceiveAsync(System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.RMQ.Async",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.RMQ.Async.RmqMessageConsumer.NackAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.RMQ.Async",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.RMQ.Async.RmqMessageConsumer.RejectAsync(Paramore.Brighter.Message, Paramore.Brighter.MessageRejectionReason?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.RMQ.Async",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.RMQ.Async.RmqMessageConsumer.RequeueAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.RMQ.Async",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.RMQ.Async.RmqMessageConsumer.EnsureChannelAsync(System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.RMQ.Async",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.RMQ.Async.RmqMessageConsumer.DisposeAsync()'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.RMQ.Async",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.RMQ.Async.RmqMessageConsumer.AcknowledgeAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.RMQ.Async",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.RMQ.Async.RmqMessageConsumer.PurgeAsync(System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.RMQ.Async",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.RMQ.Async.RmqMessageConsumer.ReceiveAsync(System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.RMQ.Async",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.RMQ.Async.RmqMessageConsumer.NackAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.RMQ.Async",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.RMQ.Async.RmqMessageConsumer.RejectAsync(Paramore.Brighter.Message, Paramore.Brighter.MessageRejectionReason?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.RMQ.Async",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.RMQ.Async.RmqMessageConsumer.RequeueAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.RMQ.Async",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.RMQ.Async.RmqMessageConsumer.EnsureChannelAsync(System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.RMQ.Async",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.RMQ.Async.RmqMessageConsumer.DisposeAsync()'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.RMQ.Async",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.RMQ.Async.RmqMessageConsumer.AcknowledgeAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.RMQ.Async",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.RMQ.Async.RmqMessageConsumer.PurgeAsync(System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.RMQ.Async",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.RMQ.Async.RmqMessageConsumer.ReceiveAsync(System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.RMQ.Async",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.RMQ.Async.RmqMessageConsumer.NackAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.RMQ.Async",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.RMQ.Async.RmqMessageConsumer.RejectAsync(Paramore.Brighter.Message, Paramore.Brighter.MessageRejectionReason?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.RMQ.Async",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.RMQ.Async.RmqMessageConsumer.RequeueAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.RMQ.Async",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.RMQ.Async.RmqMessageConsumer.EnsureChannelAsync(System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.RMQ.Async",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.RMQ.Async.RmqMessageConsumer.DisposeAsync()'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.RMQ.Async",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.RMQ.Async.RmqMessageConsumer.AcknowledgeAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.RMQ.Async",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.RMQ.Async.RmqMessageConsumer.PurgeAsync(System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.RMQ.Async",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.RMQ.Async.RmqMessageConsumer.ReceiveAsync(System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.RMQ.Async",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.RMQ.Async.RmqMessageConsumer.NackAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.RMQ.Async",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.RMQ.Async.RmqMessageConsumer.RejectAsync(Paramore.Brighter.Message, Paramore.Brighter.MessageRejectionReason?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.RMQ.Async",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.RMQ.Async.RmqMessageConsumer.RequeueAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.RMQ.Async",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.RMQ.Async.RmqMessageConsumer.EnsureChannelAsync(System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.RMQ.Async",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.RMQ.Async.RmqMessageConsumer.DisposeAsync()'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Redis",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Redis.RedisMessageConsumer.DisposeAsync()'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Redis",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Redis.RedisMessageConsumer.PurgeAsync(System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Redis",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Redis.RedisMessageConsumer.ReceiveAsync(System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Redis",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Redis.RedisMessageConsumer.RejectAsync(Paramore.Brighter.Message, Paramore.Brighter.MessageRejectionReason?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Redis",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Redis.RedisMessageConsumer.RequeueAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Redis",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Redis.RedisMessageConsumer.GetClientAsync(System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Redis",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Redis.RedisMessageProducer.DisposeAsync()'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Redis",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Redis.RedisMessageProducer.SendAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Redis",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Redis.RedisMessageProducer.SendWithDelayAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Redis",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Redis.RedisMessageConsumer.DisposeAsync()'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Redis",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Redis.RedisMessageConsumer.PurgeAsync(System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Redis",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Redis.RedisMessageConsumer.ReceiveAsync(System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Redis",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Redis.RedisMessageConsumer.RejectAsync(Paramore.Brighter.Message, Paramore.Brighter.MessageRejectionReason?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Redis",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Redis.RedisMessageConsumer.RequeueAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Redis",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Redis.RedisMessageConsumer.GetClientAsync(System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Redis",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Redis.RedisMessageProducer.DisposeAsync()'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Redis",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Redis.RedisMessageProducer.SendAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Redis",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Redis.RedisMessageProducer.SendWithDelayAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Redis",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Redis.RedisMessageConsumer.DisposeAsync()'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Redis",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Redis.RedisMessageConsumer.PurgeAsync(System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Redis",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Redis.RedisMessageConsumer.ReceiveAsync(System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Redis",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Redis.RedisMessageConsumer.RejectAsync(Paramore.Brighter.Message, Paramore.Brighter.MessageRejectionReason?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Redis",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Redis.RedisMessageConsumer.RequeueAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Redis",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Redis.RedisMessageConsumer.GetClientAsync(System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Redis",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Redis.RedisMessageProducer.DisposeAsync()'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Redis",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Redis.RedisMessageProducer.SendAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Redis",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Redis.RedisMessageProducer.SendWithDelayAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Redis",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Redis.RedisMessageConsumer.DisposeAsync()'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Redis",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Redis.RedisMessageConsumer.PurgeAsync(System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Redis",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Redis.RedisMessageConsumer.ReceiveAsync(System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Redis",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Redis.RedisMessageConsumer.RejectAsync(Paramore.Brighter.Message, Paramore.Brighter.MessageRejectionReason?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Redis",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Redis.RedisMessageConsumer.RequeueAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Redis",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Redis.RedisMessageConsumer.GetClientAsync(System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Redis",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Redis.RedisMessageProducer.DisposeAsync()'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Redis",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Redis.RedisMessageProducer.SendAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.Redis",
+      "framework": "netstandard2.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.Redis.RedisMessageProducer.SendWithDelayAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.RocketMQ",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.RocketMQ.RocketMessageConsumer.AcknowledgeAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.RocketMQ",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.RocketMQ.RocketMessageConsumer.PurgeAsync(System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.RocketMQ",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.RocketMQ.RocketMessageConsumer.ReceiveAsync(System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.RocketMQ",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.RocketMQ.RocketMessageConsumer.NackAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.RocketMQ",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.RocketMQ.RocketMessageConsumer.RejectAsync(Paramore.Brighter.Message, Paramore.Brighter.MessageRejectionReason?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.RocketMQ",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.RocketMQ.RocketMessageConsumer.RequeueAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.RocketMQ",
+      "framework": "net10.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.RocketMQ.RocketMessageConsumer.DisposeAsync()'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.RocketMQ",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.RocketMQ.RocketMessageConsumer.AcknowledgeAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.RocketMQ",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.RocketMQ.RocketMessageConsumer.PurgeAsync(System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.RocketMQ",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.RocketMQ.RocketMessageConsumer.ReceiveAsync(System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.RocketMQ",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.RocketMQ.RocketMessageConsumer.NackAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.RocketMQ",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.RocketMQ.RocketMessageConsumer.RejectAsync(Paramore.Brighter.Message, Paramore.Brighter.MessageRejectionReason?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.RocketMQ",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.RocketMQ.RocketMessageConsumer.RequeueAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.RocketMQ",
+      "framework": "net8.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.RocketMQ.RocketMessageConsumer.DisposeAsync()'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.RocketMQ",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.RocketMQ.RocketMessageConsumer.AcknowledgeAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.RocketMQ",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.RocketMQ.RocketMessageConsumer.PurgeAsync(System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.RocketMQ",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.RocketMQ.RocketMessageConsumer.ReceiveAsync(System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.RocketMQ",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.RocketMQ.RocketMessageConsumer.NackAsync(Paramore.Brighter.Message, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.RocketMQ",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.RocketMQ.RocketMessageConsumer.RejectAsync(Paramore.Brighter.Message, Paramore.Brighter.MessageRejectionReason?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.RocketMQ",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.RocketMQ.RocketMessageConsumer.RequeueAsync(Paramore.Brighter.Message, System.TimeSpan?, System.Threading.CancellationToken)'."
+    },
+    {
+      "project": "Paramore.Brighter.MessagingGateway.RocketMQ",
+      "framework": "net9.0",
+      "diagnostic": "CP0015: Cannot change arguments of attribute 'System.Runtime.CompilerServices.AsyncStateMachineAttribute' on 'Paramore.Brighter.MessagingGateway.RocketMQ.RocketMessageConsumer.DisposeAsync()'."
+    }
+  ],
+  "unresolved_references": 0
+}

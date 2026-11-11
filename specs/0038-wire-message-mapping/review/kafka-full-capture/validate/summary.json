@@ -1,0 +1,28 @@
+{
+  "mode": "validate",
+  "captures": [
+    {
+      "label": "healthy-validation",
+      "proc_exit": 0,
+      "dump_exit": 0,
+      "core_bytes": 439771136,
+      "elf_core": true,
+      "report_exists": true,
+      "threads": 28,
+      "librdkafka_threads": 8
+    }
+  ],
+  "exit": 0,
+  "wall_seconds": 18.60192084312439,
+  "monotonic_seconds": 18.60171924997121,
+  "completed_native_closes": 4,
+  "pending_closes": {},
+  "clock_discontinuity": false,
+  "counts": {
+    "Passed": 2
+  },
+  "failures": [],
+  "fixture_stop_exit": 0,
+  "input_count": 6616,
+  "unchanged_inputs": true
+}

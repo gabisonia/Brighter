@@ -1,0 +1,429 @@
+{
+  "library_sha256": "b2264b3a88d3a0182d74cea66718556999e55621f780b66e4027e886d883ec4b",
+  "symbol_table_functions": 18871,
+  "threads": [
+    {
+      "thread_id": "0x4c",
+      "thread_name": "rdk:main",
+      "frames": [
+        {
+          "image_offset": "0x171d80",
+          "symbols": [
+            {
+              "name": "cnd_timedwait_ms",
+              "offset": 276
+            }
+          ]
+        },
+        {
+          "image_offset": "0x171fa0",
+          "symbols": [
+            {
+              "name": "cnd_timedwait_abs",
+              "offset": 96
+            }
+          ]
+        },
+        {
+          "image_offset": "0xfeffc",
+          "symbols": [
+            {
+              "name": "rd_kafka_q_serve0.localalias",
+              "offset": 396
+            },
+            {
+              "name": "rd_kafka_q_serve0",
+              "offset": 396
+            }
+          ]
+        },
+        {
+          "image_offset": "0xce250",
+          "symbols": [
+            {
+              "name": "rd_kafka_thread_main",
+              "offset": 464
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "thread_id": "0x4d",
+      "thread_name": "rdk:broker-1",
+      "frames": [
+        {
+          "image_offset": "0x171d80",
+          "symbols": [
+            {
+              "name": "cnd_timedwait_ms",
+              "offset": 276
+            }
+          ]
+        },
+        {
+          "image_offset": "0x171fa0",
+          "symbols": [
+            {
+              "name": "cnd_timedwait_abs",
+              "offset": 96
+            }
+          ]
+        },
+        {
+          "image_offset": "0xfe1d0",
+          "symbols": [
+            {
+              "name": "rd_kafka_q_pop_serve0",
+              "offset": 944
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2a9c",
+          "symbols": [
+            {
+              "name": "rd_kafka_broker_ops_io_serve",
+              "offset": 284
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe3960",
+          "symbols": [
+            {
+              "name": "rd_kafka_broker_serve",
+              "offset": 1728
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe3da0",
+          "symbols": [
+            {
+              "name": "rd_kafka_broker_thread_main",
+              "offset": 288
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "thread_id": "0x4f",
+      "thread_name": ".NET Long Runni",
+      "frames": [
+        {
+          "image_offset": "0x171d80",
+          "symbols": [
+            {
+              "name": "cnd_timedwait_ms",
+              "offset": 276
+            }
+          ]
+        },
+        {
+          "image_offset": "0x171fa0",
+          "symbols": [
+            {
+              "name": "cnd_timedwait_abs",
+              "offset": 96
+            }
+          ]
+        },
+        {
+          "image_offset": "0xfeffc",
+          "symbols": [
+            {
+              "name": "rd_kafka_q_serve0.localalias",
+              "offset": 396
+            },
+            {
+              "name": "rd_kafka_q_serve0",
+              "offset": 396
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "thread_id": "0x50",
+      "thread_name": "rdk:broker1",
+      "frames": [
+        {
+          "image_offset": "0xf974c",
+          "symbols": [
+            {
+              "name": "rd_kafka_transport_poll",
+              "offset": 36
+            }
+          ]
+        },
+        {
+          "image_offset": "0xfad40",
+          "symbols": [
+            {
+              "name": "rd_kafka_transport_io_serve",
+              "offset": 96
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2a64",
+          "symbols": [
+            {
+              "name": "rd_kafka_broker_ops_io_serve",
+              "offset": 228
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe3628",
+          "symbols": [
+            {
+              "name": "rd_kafka_broker_serve",
+              "offset": 904
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe40ac",
+          "symbols": [
+            {
+              "name": "rd_kafka_broker_thread_main",
+              "offset": 1068
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "thread_id": "0x65",
+      "thread_name": "rdk:broker-1",
+      "frames": [
+        {
+          "image_offset": "0xf974c",
+          "symbols": [
+            {
+              "name": "rd_kafka_transport_poll",
+              "offset": 36
+            }
+          ]
+        },
+        {
+          "image_offset": "0xfad40",
+          "symbols": [
+            {
+              "name": "rd_kafka_transport_io_serve",
+              "offset": 96
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2a64",
+          "symbols": [
+            {
+              "name": "rd_kafka_broker_ops_io_serve",
+              "offset": 228
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe30b0",
+          "symbols": [
+            {
+              "name": "rd_kafka_broker_consumer_serve",
+              "offset": 336
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe33b8",
+          "symbols": [
+            {
+              "name": "rd_kafka_broker_serve",
+              "offset": 280
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe40ac",
+          "symbols": [
+            {
+              "name": "rd_kafka_broker_thread_main",
+              "offset": 1068
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "thread_id": "0x66",
+      "thread_name": "rdk:main",
+      "frames": [
+        {
+          "image_offset": "0x171d80",
+          "symbols": [
+            {
+              "name": "cnd_timedwait_ms",
+              "offset": 276
+            }
+          ]
+        },
+        {
+          "image_offset": "0x171fa0",
+          "symbols": [
+            {
+              "name": "cnd_timedwait_abs",
+              "offset": 96
+            }
+          ]
+        },
+        {
+          "image_offset": "0xfeffc",
+          "symbols": [
+            {
+              "name": "rd_kafka_q_serve0.localalias",
+              "offset": 396
+            },
+            {
+              "name": "rd_kafka_q_serve0",
+              "offset": 396
+            }
+          ]
+        },
+        {
+          "image_offset": "0xce250",
+          "symbols": [
+            {
+              "name": "rd_kafka_thread_main",
+              "offset": 464
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "thread_id": "0x67",
+      "thread_name": "rdk:broker-1",
+      "frames": [
+        {
+          "image_offset": "0x171d80",
+          "symbols": [
+            {
+              "name": "cnd_timedwait_ms",
+              "offset": 276
+            }
+          ]
+        },
+        {
+          "image_offset": "0x171fa0",
+          "symbols": [
+            {
+              "name": "cnd_timedwait_abs",
+              "offset": 96
+            }
+          ]
+        },
+        {
+          "image_offset": "0xfe1d0",
+          "symbols": [
+            {
+              "name": "rd_kafka_q_pop_serve0",
+              "offset": 944
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2a9c",
+          "symbols": [
+            {
+              "name": "rd_kafka_broker_ops_io_serve",
+              "offset": 284
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe3ae4",
+          "symbols": [
+            {
+              "name": "rd_kafka_broker_serve",
+              "offset": 2116
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe3da0",
+          "symbols": [
+            {
+              "name": "rd_kafka_broker_thread_main",
+              "offset": 288
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "thread_id": "0x69",
+      "thread_name": "rdk:broker1",
+      "frames": [
+        {
+          "image_offset": "0xf974c",
+          "symbols": [
+            {
+              "name": "rd_kafka_transport_poll",
+              "offset": 36
+            }
+          ]
+        },
+        {
+          "image_offset": "0xfad40",
+          "symbols": [
+            {
+              "name": "rd_kafka_transport_io_serve",
+              "offset": 96
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe2a64",
+          "symbols": [
+            {
+              "name": "rd_kafka_broker_ops_io_serve",
+              "offset": 228
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe30b0",
+          "symbols": [
+            {
+              "name": "rd_kafka_broker_consumer_serve",
+              "offset": 336
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe33b8",
+          "symbols": [
+            {
+              "name": "rd_kafka_broker_serve",
+              "offset": 280
+            }
+          ]
+        },
+        {
+          "image_offset": "0xe40ac",
+          "symbols": [
+            {
+              "name": "rd_kafka_broker_thread_main",
+              "offset": 1068
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "resolved_frames": 40,
+  "unresolved_frames": 0,
+  "limitation": "Exact containing ELF function ranges, including aliases; no DWARF type, source-line or variable reconstruction."
+}

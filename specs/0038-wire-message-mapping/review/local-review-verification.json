@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-10",
+  "scope": "Read-only source/build continuity check; no new build or test execution",
+  "solution_build_snapshot": "/private/tmp/brighter-4170-rocketmq-scheduled-publication/build-inputs.json",
+  "solution_build_snapshot_sha256": "4fabdbc39d597ebbc617bf93ffd74b483d7a045cb01ecaed49b53e9be8c44939",
+  "recorded_inputs": 7248,
+  "current_inputs": 7248,
+  "added_inputs": [],
+  "removed_inputs": [],
+  "changed_inputs": [
+    {
+      "path": "tests/Paramore.Brighter.Gcp.Tests/MessagingGateway/Stream/When_a_gcp_stream_channel_is_disposed_holding_an_unsettled_message_should_return_promptly_async.cs",
+      "before_sha256": "143d8f65721a1a7e05590dddc4b64bb3906ce299f177813becc9690238507ed8",
+      "current_sha256": "df36df4e63eefbeb3b1f2402c734f56505026830a522b468627a9146d4b0db23",
+      "only_change": "one await disposing; line; removal restores exact prior hash"
+    },
+    {
+      "path": "tests/Paramore.Brighter.Gcp.Tests/MessagingGateway/Stream/When_a_gcp_stream_channel_is_disposed_with_a_redelivery_buffered_after_requeue_should_return_promptly_async.cs",
+      "before_sha256": "af7b09dd05d51b64f99d9671cfb37a114bf6d1f0ab01c21112a9e13c1bbf9f63",
+      "current_sha256": "f7df63eb7a0f912495a300058cc02553373434886b431d75a7ee362f9756c343",
+      "only_change": "one await disposing; line; removal restores exact prior hash"
+    }
+  ],
+  "later_source_snapshot": "/private/tmp/brighter-4170-kafka-full-capture/full/source-manifest.json",
+  "later_source_snapshot_sha256": "7d73ef7e0a3098d01c0249376c4d0863e6a31a902a3ce8115cb4f561ac5820be",
+  "later_inputs": 6616,
+  "later_input_set_and_hashes_match": true,
+  "historical_asb_raw_directory_present": false,
+  "production_changed_in_this_review": false,
+  "test_execution_in_this_review": false
+}

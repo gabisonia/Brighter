@@ -1,0 +1,230 @@
+{
+  "date": "2026-11-09",
+  "inputs": 6618,
+  "unchanged_inputs": true,
+  "source_sha256": "02d59064c9dffb8b75abbed9c59934ba0424ae5f6f7637f33b88f3d411393762",
+  "images": {
+    "baseline": {
+      "Id": "sha256:3797a874fae6b75aa25260b5bd40fa0397c2f1102f18ae3ac7dc887732fbe449",
+      "Architecture": "amd64",
+      "Os": "linux",
+      "Created": "2026-10-06T15:33:36.990148947Z",
+      "jar": [
+        {
+          "path": "/google-cloud-sdk/platform/pubsub-emulator/lib/cloud-pubsub-emulator-0.8.36-all.jar",
+          "sha256": "51f87210e624d28d7473f3cfa6eb2d4538a7362c8c4948ef08498cdd7595d25a"
+        }
+      ]
+    },
+    "candidate": {
+      "Id": "sha256:faff8f5e8a44e70df68a2a916cefa187cac9e132c25350a8a0f27f36fd586676",
+      "Architecture": "arm64",
+      "Os": "linux",
+      "Created": "2026-11-03T14:04:57.89182457Z",
+      "jar": [
+        {
+          "path": "/google-cloud-sdk/platform/pubsub-emulator/lib/cloud-pubsub-emulator-0.8.37-all.jar",
+          "sha256": "6a57355f6b6a8596ef0ffee91d377b034b24319724a33a9fc649e2e25b898791"
+        }
+      ]
+    }
+  },
+  "runs": [
+    {
+      "variant": "baseline",
+      "framework": "net9.0",
+      "image": "gcr.io/google.com/cloudsdktool/cloud-sdk@sha256:3797a874fae6b75aa25260b5bd40fa0397c2f1102f18ae3ac7dc887732fbe449",
+      "exit": 0,
+      "wall_seconds": 31.548163175582886,
+      "monotonic_seconds": 31.54818012472242,
+      "clock_discontinuity": false,
+      "results": [
+        "RESULT addStream=False acknowledgeSecondFirst=False firstReturnedWithin30Seconds=True",
+        "RESULT addStream=False acknowledgeSecondFirst=True firstReturnedWithin30Seconds=True",
+        "RESULT addStream=True acknowledgeSecondFirst=False firstReturnedWithin30Seconds=True",
+        "RESULT addStream=True acknowledgeSecondFirst=True firstReturnedWithin30Seconds=False"
+      ],
+      "recoveries": [
+        "RECOVERY afterRepeatedSecondAck=True"
+      ],
+      "errors": [],
+      "fixture_status": "exited",
+      "two_stream_ack_first_evidence": {
+        "original": {
+          "utc": "2026-11-09T20:48:32.2042002+00:00",
+          "stream": 0,
+          "ackId": "projects/brighter-test/subscriptions/ordered-protocol-3f135b7fd83e4281bb5b7002a98e0dfa:12",
+          "message": {
+            "data": "Zmlyc3Q=",
+            "messageId": "9",
+            "publishTime": "2026-11-09T20:48:32.148Z",
+            "orderingKey": "ordered-race-0"
+          }
+        },
+        "redeliveries": [
+          {
+            "utc": "2026-11-09T20:49:02.4958945+00:00",
+            "stream": 1,
+            "ackId": "projects/brighter-test/subscriptions/ordered-protocol-3f135b7fd83e4281bb5b7002a98e0dfa:16",
+            "message": {
+              "data": "Zmlyc3Q=",
+              "messageId": "9",
+              "publishTime": "2026-11-09T20:48:32.148Z",
+              "orderingKey": "ordered-race-0"
+            }
+          }
+        ],
+        "repeated_ack_success_utc": "2026-11-09T20:49:02.4818189+00:00",
+        "recovery_ms_after_repeated_ack_success": 14.076
+      }
+    },
+    {
+      "variant": "baseline",
+      "framework": "net10.0",
+      "image": "gcr.io/google.com/cloudsdktool/cloud-sdk@sha256:3797a874fae6b75aa25260b5bd40fa0397c2f1102f18ae3ac7dc887732fbe449",
+      "exit": 0,
+      "wall_seconds": 31.57628607749939,
+      "monotonic_seconds": 31.576302375178784,
+      "clock_discontinuity": false,
+      "results": [
+        "RESULT addStream=False acknowledgeSecondFirst=False firstReturnedWithin30Seconds=True",
+        "RESULT addStream=False acknowledgeSecondFirst=True firstReturnedWithin30Seconds=True",
+        "RESULT addStream=True acknowledgeSecondFirst=False firstReturnedWithin30Seconds=True",
+        "RESULT addStream=True acknowledgeSecondFirst=True firstReturnedWithin30Seconds=False"
+      ],
+      "recoveries": [
+        "RECOVERY afterRepeatedSecondAck=True"
+      ],
+      "errors": [],
+      "fixture_status": "exited",
+      "two_stream_ack_first_evidence": {
+        "original": {
+          "utc": "2026-11-09T20:49:10.0646397+00:00",
+          "stream": 0,
+          "ackId": "projects/brighter-test/subscriptions/ordered-protocol-ceabd10459b64ec48f90416415ab0665:12",
+          "message": {
+            "data": "Zmlyc3Q=",
+            "messageId": "9",
+            "publishTime": "2026-11-09T20:49:10.010Z",
+            "orderingKey": "ordered-race-0"
+          }
+        },
+        "redeliveries": [
+          {
+            "utc": "2026-11-09T20:49:40.4130030+00:00",
+            "stream": 1,
+            "ackId": "projects/brighter-test/subscriptions/ordered-protocol-ceabd10459b64ec48f90416415ab0665:16",
+            "message": {
+              "data": "Zmlyc3Q=",
+              "messageId": "9",
+              "publishTime": "2026-11-09T20:49:10.010Z",
+              "orderingKey": "ordered-race-0"
+            }
+          }
+        ],
+        "repeated_ack_success_utc": "2026-11-09T20:49:40.3828008+00:00",
+        "recovery_ms_after_repeated_ack_success": 30.203
+      }
+    },
+    {
+      "variant": "candidate",
+      "framework": "net9.0",
+      "image": "gcr.io/google.com/cloudsdktool/google-cloud-cli@sha256:faff8f5e8a44e70df68a2a916cefa187cac9e132c25350a8a0f27f36fd586676",
+      "exit": 0,
+      "wall_seconds": 31.347751140594482,
+      "monotonic_seconds": 31.347766290884465,
+      "clock_discontinuity": false,
+      "results": [
+        "RESULT addStream=False acknowledgeSecondFirst=False firstReturnedWithin30Seconds=True",
+        "RESULT addStream=False acknowledgeSecondFirst=True firstReturnedWithin30Seconds=True",
+        "RESULT addStream=True acknowledgeSecondFirst=False firstReturnedWithin30Seconds=True",
+        "RESULT addStream=True acknowledgeSecondFirst=True firstReturnedWithin30Seconds=False"
+      ],
+      "recoveries": [
+        "RECOVERY afterRepeatedSecondAck=True"
+      ],
+      "errors": [],
+      "fixture_status": "exited",
+      "two_stream_ack_first_evidence": {
+        "original": {
+          "utc": "2026-11-09T20:49:45.8096791+00:00",
+          "stream": 0,
+          "ackId": "projects/brighter-test/subscriptions/ordered-protocol-ec18cfa2e46d41d08ffe3d2022ff7a77:12",
+          "message": {
+            "data": "Zmlyc3Q=",
+            "messageId": "9",
+            "publishTime": "2026-11-09T20:49:45.756Z",
+            "orderingKey": "ordered-race-0"
+          }
+        },
+        "redeliveries": [
+          {
+            "utc": "2026-11-09T20:50:16.0645912+00:00",
+            "stream": 1,
+            "ackId": "projects/brighter-test/subscriptions/ordered-protocol-ec18cfa2e46d41d08ffe3d2022ff7a77:16",
+            "message": {
+              "data": "Zmlyc3Q=",
+              "messageId": "9",
+              "publishTime": "2026-11-09T20:49:45.756Z",
+              "orderingKey": "ordered-race-0"
+            }
+          }
+        ],
+        "repeated_ack_success_utc": "2026-11-09T20:50:16.0569196+00:00",
+        "recovery_ms_after_repeated_ack_success": 7.672
+      }
+    },
+    {
+      "variant": "candidate",
+      "framework": "net10.0",
+      "image": "gcr.io/google.com/cloudsdktool/google-cloud-cli@sha256:faff8f5e8a44e70df68a2a916cefa187cac9e132c25350a8a0f27f36fd586676",
+      "exit": 0,
+      "wall_seconds": 31.345985889434814,
+      "monotonic_seconds": 31.34600079059601,
+      "clock_discontinuity": false,
+      "results": [
+        "RESULT addStream=False acknowledgeSecondFirst=False firstReturnedWithin30Seconds=True",
+        "RESULT addStream=False acknowledgeSecondFirst=True firstReturnedWithin30Seconds=True",
+        "RESULT addStream=True acknowledgeSecondFirst=False firstReturnedWithin30Seconds=True",
+        "RESULT addStream=True acknowledgeSecondFirst=True firstReturnedWithin30Seconds=False"
+      ],
+      "recoveries": [
+        "RECOVERY afterRepeatedSecondAck=True"
+      ],
+      "errors": [],
+      "fixture_status": "exited",
+      "two_stream_ack_first_evidence": {
+        "original": {
+          "utc": "2026-11-09T20:50:21.4813397+00:00",
+          "stream": 0,
+          "ackId": "projects/brighter-test/subscriptions/ordered-protocol-c081eb921cbc4befae93d11766821cf4:12",
+          "message": {
+            "data": "Zmlyc3Q=",
+            "messageId": "9",
+            "publishTime": "2026-11-09T20:50:21.427Z",
+            "orderingKey": "ordered-race-0"
+          }
+        },
+        "redeliveries": [
+          {
+            "utc": "2026-11-09T20:50:51.7620110+00:00",
+            "stream": 1,
+            "ackId": "projects/brighter-test/subscriptions/ordered-protocol-c081eb921cbc4befae93d11766821cf4:16",
+            "message": {
+              "data": "Zmlyc3Q=",
+              "messageId": "9",
+              "publishTime": "2026-11-09T20:50:21.427Z",
+              "orderingKey": "ordered-race-0"
+            }
+          }
+        ],
+        "repeated_ack_success_utc": "2026-11-09T20:50:51.7510380+00:00",
+        "recovery_ms_after_repeated_ack_success": 10.973
+      }
+    }
+  ],
+  "build": {
+    "errors": 0,
+    "warnings": 0
+  }
+}

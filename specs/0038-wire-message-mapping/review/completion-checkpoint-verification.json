@@ -1,0 +1,103 @@
+{
+  "date": "2026-11-11",
+  "scope": "Bounded native SDK diagnostics and final local evidence continuity; release gates remain open",
+  "validated_source_inputs_checked": 6618,
+  "source_mismatches": [],
+  "full_source_build_inputs": 7252,
+  "source_manifest": "completion-source-manifest.json",
+  "source_manifest_sha256": "1a497511662f916bb82aeb9f16ad8c26053b80a205200a60ddd4fe50992ea4fa",
+  "changed_since_previous_complete_solution_build": [
+    "src/Paramore.Brighter.MessagingGateway.GcpPubSub/GcpMessageProducer.cs",
+    "src/Paramore.Brighter.MessagingGateway.AzureServiceBus/AzureServiceBusMessageProducer.cs",
+    "src/Paramore.Brighter.MessagingGateway.AzureServiceBus/AzureServiceBusPublication.cs",
+    "tests/Paramore.Brighter.Gcp.Tests/MessagingGateway/Stream/When_a_gcp_stream_channel_is_disposed_holding_an_unsettled_message_should_return_promptly_async.cs",
+    "tests/Paramore.Brighter.Gcp.Tests/MessagingGateway/Stream/When_a_gcp_stream_channel_is_disposed_with_a_redelivery_buffered_after_requeue_should_return_promptly_async.cs"
+  ],
+  "changes_already_covered_by_scoped_validation": true,
+  "sdk_diagnostics": [
+    {
+      "variant": "cold",
+      "framework": "net9.0",
+      "counts": {
+        "Passed": 4,
+        "Failed": 4
+      },
+      "containers_stopped": true
+    },
+    {
+      "variant": "cold",
+      "framework": "net10.0",
+      "counts": {
+        "Passed": 4,
+        "Failed": 4
+      },
+      "containers_stopped": true
+    },
+    {
+      "variant": "warmup",
+      "framework": "net9.0",
+      "counts": {
+        "Passed": 4,
+        "Failed": 4
+      },
+      "containers_stopped": true
+    },
+    {
+      "variant": "warmup",
+      "framework": "net10.0",
+      "counts": {
+        "Passed": 8,
+        "Failed": 0
+      },
+      "containers_stopped": true
+    }
+  ],
+  "diagnostic_evidence_sha256": {
+    "Config.json": "d9c0bcd2ffd78f4f1dbdf1631db0684243eb81cb66aa0263308536613f896d8c",
+    "README.md": "9beff08fc5793703e5571444b77925ff2ce3562122ee5ccf0ade1271e679d171",
+    "brighter-4170-asb-sdk-dlq-broker-net10-0.log": "f44c1a28fdaebdce0626e6d07566e0a28d6cd1e6cd658d6d25cf253e43f2f79f",
+    "brighter-4170-asb-sdk-dlq-broker-net9-0.log": "9a3bcd3049607d2edf696235d1f13fb989332a0a971b563fbf6aa71f4c7213b0",
+    "build-approved-access.log": "aa7ff6b7e80ee31acf60b05519ce0ee70dd26334176d664f7ede367addaba3ba",
+    "build.log": "35aee8426c4b172195e14c962db898b692d7a5fd10edb73b9aa1f63bd6e458f5",
+    "dependency-verification.json": "4b86180ca885233bbeea46221bb40d457bf9e0ad9ce4af716daec89351cbb562",
+    "net10.0-probe.json": "1112c5c5d3c62b43005475fc3f48beb193544f4a9b16e054eb619a5441f5e291",
+    "net10.0.log": "cd87c01a189bdbb34a36233f1ccab0a72dd054e99474723969bcf29e31e57d36",
+    "net9.0-probe.json": "829d902740124be63dbaf9383b97b0232f6d25cc9c170facf98582166356ca41",
+    "net9.0.log": "f032108e625d1b3a98250fb1d0181059a6f8938ab6e4922098ee9de4649c0eb6",
+    "probe/Probe.csproj": "7fa90da3a5311e6717023ce3e34d342769585b9f2459fb788f8cadfd5493dff7",
+    "probe/Program.cs": "4b4711f5a13acced4a2ac03580af61cf772a72814d1a6cf6ea88dab990ac9ae2",
+    "probe/packages.lock.json": "adbbe7911fcc8d3a4781ad9f9edd856df144f2128bee73fdca7d85c3702bbb25",
+    "results.json": "31a6a8075c1b44a38fb822442173d9b700ab50bbc6adb58f08551d54476639a3",
+    "run.py": "7cc0485a5bf96d1c0060fa2c2cb0bad745235f63dadcf96ced4b5a3c01a4af72",
+    "source-provenance.json": "9fca68d089f7d06f54b488ed5578623dd523a0d30ee05037fdf34369d0751025",
+    "warmup/Config.json": "d9c0bcd2ffd78f4f1dbdf1631db0684243eb81cb66aa0263308536613f896d8c",
+    "warmup/brighter-4170-asb-sdk-dlq-warmup-broker-net10-0.log": "23f8720ceec753ac285bc95aab8f90bd0036ebf513cfb418391472464c474482",
+    "warmup/brighter-4170-asb-sdk-dlq-warmup-broker-net9-0.log": "f348210836bbdd042aee6db4a660b1cd398c44c63f12fbbb49b6d555b189a402",
+    "warmup/build.log": "b7e7bc344528ee8dfba3b64b245ce4564c487a3a7fb741aab85777ac9187d107",
+    "warmup/net10.0-probe.json": "1c03e493131fb70de7f1c69b8f91792f8103369b8aea39fd2f4051e1a29232f2",
+    "warmup/net10.0.log": "1e888d5f51578559b0888392880bd2ba5d5c444d7770d21f7b5e762301fbfb47",
+    "warmup/net9.0-probe.json": "d64a067c27daf222549eb05f562bc5f32a02367ee85a33bdbb998fb82127bb7c",
+    "warmup/net9.0.log": "a05e7f45c397cf872c0ded55efc57c7a549ba54dca754bff443666c4cbb70e86",
+    "warmup/network-preflight.json": "8863d0973b898aca0f9e19b0320ab21df416719176e9801991de582035a88700",
+    "warmup/probe/Probe.csproj": "7fa90da3a5311e6717023ce3e34d342769585b9f2459fb788f8cadfd5493dff7",
+    "warmup/probe/Program.cs": "fd2a78ad970106d1a2dfb0a647027ac3834fe44c0da3a22ed2e9509596a4db63",
+    "warmup/probe/packages.lock.json": "adbbe7911fcc8d3a4781ad9f9edd856df144f2128bee73fdca7d85c3702bbb25",
+    "warmup/results.json": "88436597b6193dbb1d3e0e789458e288ebee001feebe9b27e1204f65bd5fe928",
+    "warmup/run.py": "c306f5aa3813c4cbb7c8b66297894e8f28ab209e1d4343a92db4f2745f00b779"
+  },
+  "git_diff_check": "passed",
+  "fixture_passwords_absent_from_retained_evidence": true,
+  "production_or_compiled_test_changes_in_checkpoint": false,
+  "broad_regressions_rerun": false,
+  "committed": false,
+  "pushed": false,
+  "release_decision": "blocked",
+  "open_gates": [
+    "healthy native ASB reader-recovery mutations, retry/scheduler and lost-lock acceptance",
+    "historical ASB session-lock, GCP shutdown/replacement and Kafka close findings",
+    "native x86-64 SQL Server 2022 runtime validation",
+    "final-source CI and final release approval"
+  ],
+  "local_file_links_checked": 438,
+  "missing_local_file_links": []
+}

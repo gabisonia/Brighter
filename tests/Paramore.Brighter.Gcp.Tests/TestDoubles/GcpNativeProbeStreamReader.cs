@@ -1,0 +1,48 @@
+#region Licence
+
+/* The MIT License (MIT)
+Copyright © 2026 gabisonia
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE. */
+
+#endregion
+
+using System.Collections.Concurrent;
+using System.Linq;
+using Google.Cloud.PubSub.V1;
+using Paramore.Brighter.MessagingGateway.GcpPubSub;
+
+namespace Paramore.Brighter.Gcp.Tests.TestDoubles;
+
+internal sealed class GcpNativeProbeStreamReader : IAmAWireMessageReader<GcpStreamMessage>
+{
+    private readonly ConcurrentQueue<GcpStreamMessage> _deliveries = new();
+    public GcpStreamMessage[] Deliveries => _deliveries.ToArray();
+
+    public Message ReadMessage(GcpStreamMessage delivery)
+    {
+        _deliveries.Enqueue(delivery);
+        var header = new MessageHeader(new Id("mapped-" + delivery.Message.MessageId),
+            new RoutingKey("mapped-topic"), MessageType.MT_EVENT, handledCount: 777);
+        header.Bag["ReceiptHandle"] = new GcpStreamMessage(new PubsubMessage());
+        header.Bag["mapped-marker"] = delivery.Message.Attributes["external-marker"];
+        return new Message(header,
+            new MessageBody(new byte[] { 82, 0 }.Concat(delivery.Message.Data.ToByteArray()).ToArray()));
+    }
+}

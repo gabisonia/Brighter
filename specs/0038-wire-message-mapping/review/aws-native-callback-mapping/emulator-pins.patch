@@ -1,0 +1,21 @@
+--- a/docker-compose-aws.yaml
++++ b/docker-compose-aws.yaml
+@@ -1,6 +1,6 @@
+ services:
+   floci:
+-    image: floci/floci:1.5.19
++    image: floci/floci:2.3.0
+     ports:
+       - "4566:4566" # Floci AWS emulator (same port as Moto/LocalStack for compatibility)
+     healthcheck:
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -563,7 +563,7 @@
+       AWS_SERVICE_URL: http://localhost:4566
+     services:
+       floci:
+-        image: floci/floci:1.5.19
++        image: floci/floci:2.3.0
+         ports:
+           - 4566:4566
+         options: >-

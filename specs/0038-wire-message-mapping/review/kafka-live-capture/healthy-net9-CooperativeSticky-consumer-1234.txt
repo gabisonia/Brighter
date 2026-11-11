@@ -1,0 +1,481 @@
+%7|1794251813.783|MEMBERID|Kafka Consumer Test#consumer-1234| [thrd:app]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": updating member id "(not-set)" -> ""
+%7|1794251813.783|CGRPSTATE|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" changed state init -> query-coord (join-state init)
+%7|1794251813.783|CGRPQUERY|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": no broker available for coordinator query: intervaled in state query-coord
+%7|1794251813.783|INIT|Kafka Consumer Test#consumer-1234| [thrd:app]: librdkafka v2.15.1 (0x20f01ff) Kafka Consumer Test#consumer-1234 initialized (builtin.features gzip,snappy,ssl,sasl,regex,lz4,sasl_plain,sasl_scram,plugins,zstd,sasl_oauthbearer,http,oidc, STRIP STATIC_LINKING GCC GXX PKGCONFIG INSTALL GNULD LDS C11THREADS LIBDL PLUGINS ZLIB SSL ZSTD CURL HDRHISTOGRAM SYSLOG SNAPPY SOCKEM SASL_SCRAM SASL_OAUTHBEARER OAUTHBEARER_OIDC, debug 0x2180)
+%7|1794251813.783|CGRPOP|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" received op SUBSCRIBE in state query-coord (join-state init)
+%7|1794251813.784|SUBSCRIBE|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": subscribe to new subscription of 1 topics (join-state init)
+%7|1794251813.784|CGRPQUERY|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": no broker available for coordinator query: intervaled in state query-coord
+%7|1794251813.784|CONNECTED|Kafka Consumer Test#consumer-1234| [thrd:localhost:9092/bootstrap]: localhost:9092/bootstrap: Connected (#1)
+%7|1794251813.784|FEATURE|Kafka Consumer Test#consumer-1234| [thrd:localhost:9092/bootstrap]: localhost:9092/bootstrap: Updated enabled protocol features +ApiVersion to ApiVersion
+%7|1794251813.784|SEND|Kafka Consumer Test#consumer-1234| [thrd:localhost:9092/bootstrap]: localhost:9092/bootstrap: Sent ApiVersionRequest (v3, 65 bytes @ 0, CorrId 1)
+%7|1794251813.785|RECV|Kafka Consumer Test#consumer-1234| [thrd:localhost:9092/bootstrap]: localhost:9092/bootstrap: Received ApiVersionResponse (v3, 539 bytes, CorrId 1, rtt 0.59ms)
+%7|1794251813.785|SEND|Kafka Consumer Test#consumer-1234| [thrd:localhost:9092/bootstrap]: localhost:9092/bootstrap: Sent MetadataRequest (v13, 38 bytes @ 0, CorrId 2)
+%7|1794251813.785|CGRPQUERY|Kafka Consumer Test#consumer-1234| [thrd:main]: localhost:9092/bootstrap: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": querying for coordinator: intervaled in state query-coord
+%7|1794251813.785|CGRPSTATE|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" changed state query-coord -> wait-coord (join-state init)
+%7|1794251813.785|SEND|Kafka Consumer Test#consumer-1234| [thrd:localhost:9092/bootstrap]: localhost:9092/bootstrap: Sent FindCoordinatorRequest (v2, 72 bytes @ 0, CorrId 3)
+%7|1794251813.785|RECV|Kafka Consumer Test#consumer-1234| [thrd:localhost:9092/bootstrap]: localhost:9092/bootstrap: Received MetadataResponse (v13, 57 bytes, CorrId 2, rtt 0.39ms)
+%7|1794251813.785|RECV|Kafka Consumer Test#consumer-1234| [thrd:localhost:9092/bootstrap]: localhost:9092/bootstrap: Received FindCoordinatorResponse (v2, 31 bytes, CorrId 3, rtt 0.58ms)
+%7|1794251813.785|CGRPCOORD|Kafka Consumer Test#consumer-1234| [thrd:main]: localhost:9092/bootstrap: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" coordinator is localhost:9092 id 1
+%7|1794251813.785|CGRPCOORD|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" changing coordinator -1 -> 1
+%7|1794251813.785|COORDSET|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" coordinator set to broker localhost:9092/1
+%7|1794251813.785|CGRPSTATE|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" changed state wait-coord -> wait-broker-transport (join-state init)
+%7|1794251813.785|CGRPQUERY|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": no broker available for coordinator query: intervaled in state wait-broker-transport
+%7|1794251813.785|CGRPQUERY|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": no broker available for coordinator query: intervaled in state wait-broker-transport
+%7|1794251813.785|CGRPQUERY|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": no broker available for coordinator query: intervaled in state wait-broker-transport
+%7|1794251813.785|CGRPQUERY|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": no broker available for coordinator query: intervaled in state wait-broker-transport
+%7|1794251813.786|CONNECTED|Kafka Consumer Test#consumer-1234| [thrd:GroupCoordinator]: GroupCoordinator/1: Connected (#1)
+%7|1794251813.786|FEATURE|Kafka Consumer Test#consumer-1234| [thrd:GroupCoordinator]: GroupCoordinator/1: Updated enabled protocol features +ApiVersion to ApiVersion
+%7|1794251813.786|SEND|Kafka Consumer Test#consumer-1234| [thrd:GroupCoordinator]: GroupCoordinator/1: Sent ApiVersionRequest (v3, 65 bytes @ 0, CorrId 1)
+%7|1794251813.786|RECV|Kafka Consumer Test#consumer-1234| [thrd:GroupCoordinator]: GroupCoordinator/1: Received ApiVersionResponse (v3, 539 bytes, CorrId 1, rtt 0.38ms)
+%7|1794251813.786|CGRPSTATE|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" changed state wait-broker-transport -> up (join-state init)
+%7|1794251813.786|JOIN|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": join with 0 subscribed topic(s)
+%7|1794251813.786|CGRPMETADATA|Kafka Consumer Test#consumer-1234| [thrd:main]: consumer join: metadata for subscription only available for 0/1 topics (-1ms old)
+%7|1794251813.786|CGRPMETADATA|Kafka Consumer Test#consumer-1234| [thrd:main]: consumer join: need to refresh metadata (-1ms old) but no usable brokers available: Local: Broker transport failure
+%7|1794251813.786|JOIN|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": postponing join until up-to-date metadata can be requested
+%7|1794251813.786|DUMP|Kafka Consumer Test#consumer-1234| [thrd:main]: Assignment dump (started_cnt=0, wait_stop_cnt=0)
+%7|1794251813.786|DUMP_ALL|Kafka Consumer Test#consumer-1234| [thrd:main]: List with 0 partition(s):
+%7|1794251813.786|SEND|Kafka Consumer Test#consumer-1234| [thrd:GroupCoordinator]: GroupCoordinator/1: Sent MetadataRequest (v13, 38 bytes @ 0, CorrId 2)
+%7|1794251813.786|DUMP_PND|Kafka Consumer Test#consumer-1234| [thrd:main]: List with 0 partition(s):
+%7|1794251813.786|DUMP_QRY|Kafka Consumer Test#consumer-1234| [thrd:main]: List with 0 partition(s):
+%7|1794251813.786|DUMP_REM|Kafka Consumer Test#consumer-1234| [thrd:main]: List with 0 partition(s):
+%7|1794251813.786|ASSIGNDONE|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": assignment operations done in join-state init (rebalance rejoin=false)
+%7|1794251813.786|RECV|Kafka Consumer Test#consumer-1234| [thrd:GroupCoordinator]: GroupCoordinator/1: Received MetadataResponse (v13, 57 bytes, CorrId 2, rtt 0.21ms)
+%7|1794251813.786|CGRPQUERY|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": no broker available for coordinator query: intervaled in state up
+%7|1794251813.786|JOIN|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": join with 0 subscribed topic(s)
+%7|1794251813.786|CGRPMETADATA|Kafka Consumer Test#consumer-1234| [thrd:main]: consumer join: metadata for subscription only available for 0/1 topics (-1ms old)
+%7|1794251813.786|CGRPMETADATA|Kafka Consumer Test#consumer-1234| [thrd:main]: consumer join: need to refresh metadata (-1ms old) but no usable brokers available: Local: Broker transport failure
+%7|1794251813.786|JOIN|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": postponing join until up-to-date metadata can be requested
+%7|1794251813.787|CGRPQUERY|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": no broker available for coordinator query: intervaled in state up
+%7|1794251813.836|CGRPQUERY|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": no broker available for coordinator query: intervaled in state up
+%7|1794251813.836|CGRPQUERY|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": no broker available for coordinator query: intervaled in state up
+%7|1794251813.836|CONNECTED|Kafka Consumer Test#consumer-1234| [thrd:localhost:9092/1]: localhost:9092/1: Connected (#1)
+%7|1794251813.836|FEATURE|Kafka Consumer Test#consumer-1234| [thrd:localhost:9092/1]: localhost:9092/1: Updated enabled protocol features +ApiVersion to ApiVersion
+%7|1794251813.836|SEND|Kafka Consumer Test#consumer-1234| [thrd:localhost:9092/1]: localhost:9092/1: Sent ApiVersionRequest (v3, 65 bytes @ 0, CorrId 1)
+%7|1794251813.837|RECV|Kafka Consumer Test#consumer-1234| [thrd:localhost:9092/1]: localhost:9092/1: Received ApiVersionResponse (v3, 539 bytes, CorrId 1, rtt 0.54ms)
+%7|1794251813.837|CGRPQUERY|Kafka Consumer Test#consumer-1234| [thrd:main]: localhost:9092/1: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": querying for coordinator: intervaled in state up
+%7|1794251813.837|SEND|Kafka Consumer Test#consumer-1234| [thrd:localhost:9092/1]: localhost:9092/1: Sent MetadataRequest (v13, 92 bytes @ 0, CorrId 2)
+%7|1794251813.837|SEND|Kafka Consumer Test#consumer-1234| [thrd:localhost:9092/1]: localhost:9092/1: Sent FindCoordinatorRequest (v2, 72 bytes @ 0, CorrId 3)
+%7|1794251813.837|RECV|Kafka Consumer Test#consumer-1234| [thrd:localhost:9092/1]: localhost:9092/1: Received MetadataResponse (v13, 197 bytes, CorrId 2, rtt 0.34ms)
+%7|1794251813.837|JOIN|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": join with 0 subscribed topic(s)
+%7|1794251813.837|CGRPMETADATA|Kafka Consumer Test#consumer-1234| [thrd:main]: consumer join: metadata for subscription is up to date (0ms old)
+%7|1794251813.837|SUBSCRIPTION|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": effective subscription list changed from 0 to 1 topic(s):
+%7|1794251813.837|SUBSCRIPTION|Kafka Consumer Test#consumer-1234| [thrd:main]:  Topic 887efaaa-d91e-438f-90a5-c62c682b74f4 with 3 partition(s)
+%7|1794251813.837|JOIN|Kafka Consumer Test#consumer-1234| [thrd:main]: localhost:9092/1: Joining group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" with 1 subscribed topic(s) and member id ""
+%7|1794251813.837|CGRPJOINSTATE|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" changed join state init -> wait-join (state up)
+%7|1794251813.838|SEND|Kafka Consumer Test#consumer-1234| [thrd:GroupCoordinator]: GroupCoordinator/1: Sent JoinGroupRequest (v5, 179 bytes @ 0, CorrId 3)
+%7|1794251813.838|RECV|Kafka Consumer Test#consumer-1234| [thrd:localhost:9092/1]: localhost:9092/1: Received FindCoordinatorResponse (v2, 31 bytes, CorrId 3, rtt 0.62ms)
+%7|1794251813.838|CGRPCOORD|Kafka Consumer Test#consumer-1234| [thrd:main]: localhost:9092/1: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" coordinator is localhost:9092 id 1
+%7|1794251813.838|RECV|Kafka Consumer Test#consumer-1234| [thrd:GroupCoordinator]: GroupCoordinator/1: Received JoinGroupResponse (v5, 76 bytes, CorrId 3, rtt 0.85ms)
+%7|1794251813.838|JOINGROUP|Kafka Consumer Test#consumer-1234| [thrd:main]: JoinGroup response: GenerationId -1, Protocol , LeaderId , my MemberId Kafka Consumer Test-246b37b5-ade2-4d46-97c3-d69ec946b09b, member metadata count 0: Broker: Group member needs a valid member ID
+%7|1794251813.838|MEMBERID|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": updating member id "" -> "Kafka Consumer Test-246b37b5-ade2-4d46-97c3-d69ec946b09b"
+%7|1794251813.838|REJOIN|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": Rejoining group without an assignment: JoinGroup error: Broker: Group member needs a valid member ID
+%7|1794251813.838|CGRPJOINSTATE|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" changed join state wait-join -> init (state up)
+%7|1794251813.838|JOIN|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": join with 1 subscribed topic(s)
+%7|1794251813.838|CGRPMETADATA|Kafka Consumer Test#consumer-1234| [thrd:main]: consumer join: metadata for subscription is up to date (1ms old)
+%7|1794251813.838|JOIN|Kafka Consumer Test#consumer-1234| [thrd:main]: localhost:9092/1: Joining group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" with 1 subscribed topic(s) and member id "Kafka Consumer Test-246b37b5-ade2-4d46-97c3-d69ec946b09b"
+%7|1794251813.838|CGRPJOINSTATE|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" changed join state init -> wait-join (state up)
+%7|1794251813.839|SEND|Kafka Consumer Test#consumer-1234| [thrd:GroupCoordinator]: GroupCoordinator/1: Sent JoinGroupRequest (v5, 235 bytes @ 0, CorrId 4)
+%7|1794251813.840|RECV|Kafka Consumer Test#consumer-1234| [thrd:GroupCoordinator]: GroupCoordinator/1: Received JoinGroupResponse (v5, 272 bytes, CorrId 4, rtt 1.00ms)
+%7|1794251813.840|JOINGROUP|Kafka Consumer Test#consumer-1234| [thrd:main]: JoinGroup response: GenerationId 1, Protocol cooperative-sticky, LeaderId Kafka Consumer Test-246b37b5-ade2-4d46-97c3-d69ec946b09b (me), my MemberId Kafka Consumer Test-246b37b5-ade2-4d46-97c3-d69ec946b09b, member metadata count 1: (no error)
+%7|1794251813.840|JOINGROUP|Kafka Consumer Test#consumer-1234| [thrd:main]: I am elected leader for group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" with 1 member(s)
+%7|1794251813.840|GRPLEADER|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": resetting group leader info: JoinGroup response clean-up
+%7|1794251813.840|CGRPJOINSTATE|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" changed join state wait-join -> wait-metadata (state up)
+%7|1794251813.840|SEND|Kafka Consumer Test#consumer-1234| [thrd:GroupCoordinator]: GroupCoordinator/1: Sent MetadataRequest (v13, 92 bytes @ 0, CorrId 5)
+%7|1794251813.840|RECV|Kafka Consumer Test#consumer-1234| [thrd:GroupCoordinator]: GroupCoordinator/1: Received MetadataResponse (v13, 197 bytes, CorrId 5, rtt 0.33ms)
+%7|1794251813.840|ASSIGN|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" running cooperative-sticky assignor for 1 member(s) and 1 eligible subscribed topic(s):
+%7|1794251813.840|ASSIGN|Kafka Consumer Test#consumer-1234| [thrd:main]:  Member "Kafka Consumer Test-246b37b5-ade2-4d46-97c3-d69ec946b09b" (me) with 0 owned partition(s) and 1 subscribed topic(s):
+%7|1794251813.840|ASSIGN|Kafka Consumer Test#consumer-1234| [thrd:main]:   887efaaa-d91e-438f-90a5-c62c682b74f4 [-1]
+%7|1794251813.840|ASSIGN|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" cooperative-sticky assignment for 1 member(s) finished in 0.118ms:
+%7|1794251813.840|ASSIGN|Kafka Consumer Test#consumer-1234| [thrd:main]:  Member "Kafka Consumer Test-246b37b5-ade2-4d46-97c3-d69ec946b09b" (me) assigned 3 partition(s):
+%7|1794251813.840|ASSIGN|Kafka Consumer Test#consumer-1234| [thrd:main]:   887efaaa-d91e-438f-90a5-c62c682b74f4 [0]
+%7|1794251813.840|ASSIGN|Kafka Consumer Test#consumer-1234| [thrd:main]:   887efaaa-d91e-438f-90a5-c62c682b74f4 [1]
+%7|1794251813.840|ASSIGN|Kafka Consumer Test#consumer-1234| [thrd:main]:   887efaaa-d91e-438f-90a5-c62c682b74f4 [2]
+%7|1794251813.840|ASSIGNOR|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": "cooperative-sticky" assignor run for 1 member(s)
+%7|1794251813.840|CGRP|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": Partitions owned by members: 0, partitions assigned by assignor: 3
+%7|1794251813.840|CGRP|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": COOPERATIVE protocol collection sizes: maybe revoking: 0, ready to migrate: 3, unknown but owned: 0
+%7|1794251813.840|CGRP|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": 3 partitions assigned to consumers
+%7|1794251813.840|CGRPJOINSTATE|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" changed join state wait-metadata -> wait-sync (state up)
+%7|1794251813.840|SEND|Kafka Consumer Test#consumer-1234| [thrd:GroupCoordinator]: GroupCoordinator/1: Sent SyncGroupRequest (v3, 265 bytes @ 0, CorrId 6)
+%7|1794251813.845|RECV|Kafka Consumer Test#consumer-1234| [thrd:GroupCoordinator]: GroupCoordinator/1: Received SyncGroupResponse (v3, 74 bytes, CorrId 6, rtt 4.25ms)
+%7|1794251813.845|SYNCGROUP|Kafka Consumer Test#consumer-1234| [thrd:main]: SyncGroup response: Success (64 bytes of MemberState data)
+%7|1794251813.845|ASSIGNMENT|Kafka Consumer Test#consumer-1234| [thrd:main]: List with 3 partition(s):
+%7|1794251813.845|ASSIGNMENT|Kafka Consumer Test#consumer-1234| [thrd:main]:  887efaaa-d91e-438f-90a5-c62c682b74f4 [0] offset INVALID
+%7|1794251813.845|ASSIGNMENT|Kafka Consumer Test#consumer-1234| [thrd:main]:  887efaaa-d91e-438f-90a5-c62c682b74f4 [1] offset INVALID
+%7|1794251813.845|ASSIGNMENT|Kafka Consumer Test#consumer-1234| [thrd:main]:  887efaaa-d91e-438f-90a5-c62c682b74f4 [2] offset INVALID
+%7|1794251813.845|COOPASSIGN|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": incremental assignment: 3 newly added, 0 revoked partitions based on assignment of 3 partitions
+%7|1794251813.845|CGRPJOINSTATE|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" changed join state wait-sync -> wait-assign-call (state up)
+%7|1794251813.845|ASSIGN|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": delegating incremental assign of 3 partition(s) to application on queue rd_kafka_cgrp_new: sync group assign
+%7|1794251813.845|ASSIGNMENT|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": 3 partition(s) being added to group assignment of 0 partition(s)
+%7|1794251813.845|ASSIGNMENT|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": setting group assignment to 3 partition(s)
+%7|1794251813.845|GRPASSIGNMENT|Kafka Consumer Test#consumer-1234| [thrd:main]: List with 3 partition(s):
+%7|1794251813.845|GRPASSIGNMENT|Kafka Consumer Test#consumer-1234| [thrd:main]:  887efaaa-d91e-438f-90a5-c62c682b74f4 [0] offset INVALID
+%7|1794251813.845|GRPASSIGNMENT|Kafka Consumer Test#consumer-1234| [thrd:main]:  887efaaa-d91e-438f-90a5-c62c682b74f4 [1] offset INVALID
+%7|1794251813.845|GRPASSIGNMENT|Kafka Consumer Test#consumer-1234| [thrd:main]:  887efaaa-d91e-438f-90a5-c62c682b74f4 [2] offset INVALID
+%7|1794251813.845|HEARTBEAT|Kafka Consumer Test#consumer-1234| [thrd:main]: GroupCoordinator/1: Heartbeat for group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" generation id 1
+%7|1794251813.845|SEND|Kafka Consumer Test#consumer-1234| [thrd:GroupCoordinator]: GroupCoordinator/1: Sent HeartbeatRequest (v3, 135 bytes @ 0, CorrId 7)
+%7|1794251813.845|CGRPOP|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" received op GET_REBALANCE_PROTOCOL in state up (join-state wait-assign-call)
+%7|1794251813.845|CGRPOP|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" received op GET_REBALANCE_PROTOCOL in state up (join-state wait-assign-call)
+%7|1794251813.845|RECV|Kafka Consumer Test#consumer-1234| [thrd:GroupCoordinator]: GroupCoordinator/1: Received HeartbeatResponse (v3, 6 bytes, CorrId 7, rtt 0.28ms)
+%7|1794251813.845|CGRPOP|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" received op ASSIGN in state up (join-state wait-assign-call)
+%7|1794251813.845|ASSIGNMENT|Kafka Consumer Test#consumer-1234| [thrd:main]: Added 3 partition(s) to assignment which now consists of 3 partition(s) where of 3 are in pending state and 0 are being queried
+%7|1794251813.846|PAUSE|Kafka Consumer Test#consumer-1234| [thrd:main]: Resuming fetchers for 3 assigned partition(s): incremental assign called
+%7|1794251813.846|CGRPJOINSTATE|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" changed join state wait-assign-call -> steady (state up)
+%7|1794251813.846|DUMP|Kafka Consumer Test#consumer-1234| [thrd:main]: Assignment dump (started_cnt=0, wait_stop_cnt=0)
+%7|1794251813.846|DUMP_ALL|Kafka Consumer Test#consumer-1234| [thrd:main]: List with 3 partition(s):
+%7|1794251813.846|DUMP_ALL|Kafka Consumer Test#consumer-1234| [thrd:main]:  887efaaa-d91e-438f-90a5-c62c682b74f4 [0] offset STORED
+%7|1794251813.846|DUMP_ALL|Kafka Consumer Test#consumer-1234| [thrd:main]:  887efaaa-d91e-438f-90a5-c62c682b74f4 [1] offset STORED
+%7|1794251813.846|DUMP_ALL|Kafka Consumer Test#consumer-1234| [thrd:main]:  887efaaa-d91e-438f-90a5-c62c682b74f4 [2] offset STORED
+%7|1794251813.846|DUMP_PND|Kafka Consumer Test#consumer-1234| [thrd:main]: List with 3 partition(s):
+%7|1794251813.846|DUMP_PND|Kafka Consumer Test#consumer-1234| [thrd:main]:  887efaaa-d91e-438f-90a5-c62c682b74f4 [0] offset STORED
+%7|1794251813.846|DUMP_PND|Kafka Consumer Test#consumer-1234| [thrd:main]:  887efaaa-d91e-438f-90a5-c62c682b74f4 [1] offset STORED
+%7|1794251813.846|DUMP_PND|Kafka Consumer Test#consumer-1234| [thrd:main]:  887efaaa-d91e-438f-90a5-c62c682b74f4 [2] offset STORED
+%7|1794251813.846|DUMP_QRY|Kafka Consumer Test#consumer-1234| [thrd:main]: List with 0 partition(s):
+%7|1794251813.846|DUMP_REM|Kafka Consumer Test#consumer-1234| [thrd:main]: List with 0 partition(s):
+%7|1794251813.846|SRVPEND|Kafka Consumer Test#consumer-1234| [thrd:main]: Querying committed offset for pending assigned partition 887efaaa-d91e-438f-90a5-c62c682b74f4 [2]
+%7|1794251813.846|SRVPEND|Kafka Consumer Test#consumer-1234| [thrd:main]: Querying committed offset for pending assigned partition 887efaaa-d91e-438f-90a5-c62c682b74f4 [1]
+%7|1794251813.846|SRVPEND|Kafka Consumer Test#consumer-1234| [thrd:main]: Querying committed offset for pending assigned partition 887efaaa-d91e-438f-90a5-c62c682b74f4 [0]
+%7|1794251813.846|OFFSETFETCH|Kafka Consumer Test#consumer-1234| [thrd:main]: Fetching committed offsets for 3 pending partition(s) in assignment
+%7|1794251813.846|OFFSET|Kafka Consumer Test#consumer-1234| [thrd:main]: GroupCoordinator/1: Group 3a31da4d-05a7-4fd1-8c34-875698c2f38d OffsetFetchRequest(v9) for 3/3 partition(s)
+%7|1794251813.846|OFFSET|Kafka Consumer Test#consumer-1234| [thrd:main]: GroupCoordinator/1: Fetch committed offsets for 3/3 partition(s)
+%7|1794251813.846|ASSIGNMENT|Kafka Consumer Test#consumer-1234| [thrd:main]: Current assignment of 3 partition(s) with 3 pending adds, 3 offset queries, 0 partitions awaiting stop and 0 offset commits in progress
+%7|1794251813.846|SEND|Kafka Consumer Test#consumer-1234| [thrd:GroupCoordinator]: GroupCoordinator/1: Sent OffsetFetchRequest (v9, 132 bytes @ 0, CorrId 8)
+%7|1794251813.846|RECV|Kafka Consumer Test#consumer-1234| [thrd:GroupCoordinator]: GroupCoordinator/1: Received OffsetFetchResponse (v9, 147 bytes, CorrId 8, rtt 0.47ms)
+%7|1794251813.846|OFFSETFETCH|Kafka Consumer Test#consumer-1234| [thrd:main]: Adding 887efaaa-d91e-438f-90a5-c62c682b74f4 [0] back to pending list with offset INVALID
+%7|1794251813.846|OFFSETFETCH|Kafka Consumer Test#consumer-1234| [thrd:main]: Adding 887efaaa-d91e-438f-90a5-c62c682b74f4 [1] back to pending list with offset INVALID
+%7|1794251813.846|OFFSETFETCH|Kafka Consumer Test#consumer-1234| [thrd:main]: Adding 887efaaa-d91e-438f-90a5-c62c682b74f4 [2] back to pending list with offset INVALID
+%7|1794251813.846|DUMP|Kafka Consumer Test#consumer-1234| [thrd:main]: Assignment dump (started_cnt=0, wait_stop_cnt=0)
+%7|1794251813.846|DUMP_ALL|Kafka Consumer Test#consumer-1234| [thrd:main]: List with 3 partition(s):
+%7|1794251813.846|DUMP_ALL|Kafka Consumer Test#consumer-1234| [thrd:main]:  887efaaa-d91e-438f-90a5-c62c682b74f4 [0] offset STORED
+%7|1794251813.846|DUMP_ALL|Kafka Consumer Test#consumer-1234| [thrd:main]:  887efaaa-d91e-438f-90a5-c62c682b74f4 [1] offset STORED
+%7|1794251813.846|DUMP_ALL|Kafka Consumer Test#consumer-1234| [thrd:main]:  887efaaa-d91e-438f-90a5-c62c682b74f4 [2] offset STORED
+%7|1794251813.846|DUMP_PND|Kafka Consumer Test#consumer-1234| [thrd:main]: List with 3 partition(s):
+%7|1794251813.846|DUMP_PND|Kafka Consumer Test#consumer-1234| [thrd:main]:  887efaaa-d91e-438f-90a5-c62c682b74f4 [0] offset INVALID
+%7|1794251813.846|DUMP_PND|Kafka Consumer Test#consumer-1234| [thrd:main]:  887efaaa-d91e-438f-90a5-c62c682b74f4 [1] offset INVALID
+%7|1794251813.846|DUMP_PND|Kafka Consumer Test#consumer-1234| [thrd:main]:  887efaaa-d91e-438f-90a5-c62c682b74f4 [2] offset INVALID
+%7|1794251813.846|DUMP_QRY|Kafka Consumer Test#consumer-1234| [thrd:main]: List with 0 partition(s):
+%7|1794251813.846|DUMP_REM|Kafka Consumer Test#consumer-1234| [thrd:main]: List with 0 partition(s):
+%7|1794251813.846|SRVPEND|Kafka Consumer Test#consumer-1234| [thrd:main]: Starting pending assigned partition 887efaaa-d91e-438f-90a5-c62c682b74f4 [2] at offset INVALID (leader epoch -1)
+%7|1794251813.846|SRVPEND|Kafka Consumer Test#consumer-1234| [thrd:main]: Starting pending assigned partition 887efaaa-d91e-438f-90a5-c62c682b74f4 [1] at offset INVALID (leader epoch -1)
+%7|1794251813.846|SRVPEND|Kafka Consumer Test#consumer-1234| [thrd:main]: Starting pending assigned partition 887efaaa-d91e-438f-90a5-c62c682b74f4 [0] at offset INVALID (leader epoch -1)
+%7|1794251813.846|ASSIGNDONE|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": assignment operations done in join-state steady (rebalance rejoin=false)
+%7|1794251813.846|CGRPOP|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" received op PARTITION_JOIN in state up (join-state steady) for 887efaaa-d91e-438f-90a5-c62c682b74f4 [2]
+%7|1794251813.846|PARTADD|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": add 887efaaa-d91e-438f-90a5-c62c682b74f4 [2]
+%7|1794251813.846|CGRPOP|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" received op PARTITION_JOIN in state up (join-state steady) for 887efaaa-d91e-438f-90a5-c62c682b74f4 [1]
+%7|1794251813.846|PARTADD|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": add 887efaaa-d91e-438f-90a5-c62c682b74f4 [1]
+%7|1794251813.846|CGRPOP|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" received op PARTITION_JOIN in state up (join-state steady) for 887efaaa-d91e-438f-90a5-c62c682b74f4 [0]
+%7|1794251813.846|PARTADD|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": add 887efaaa-d91e-438f-90a5-c62c682b74f4 [0]
+%7|1794251813.947|SEND|Kafka Consumer Test#consumer-1234| [thrd:localhost:9092/1]: localhost:9092/1: Sent ListOffsetsRequest (v7, 97 bytes @ 0, CorrId 4)
+%7|1794251813.947|SEND|Kafka Consumer Test#consumer-1234| [thrd:localhost:9092/1]: localhost:9092/1: Sent ListOffsetsRequest (v7, 97 bytes @ 0, CorrId 5)
+%7|1794251813.947|SEND|Kafka Consumer Test#consumer-1234| [thrd:localhost:9092/1]: localhost:9092/1: Sent ListOffsetsRequest (v7, 97 bytes @ 0, CorrId 6)
+%7|1794251813.949|RECV|Kafka Consumer Test#consumer-1234| [thrd:localhost:9092/1]: localhost:9092/1: Received ListOffsetsResponse (v7, 73 bytes, CorrId 4, rtt 1.41ms)
+%7|1794251813.949|FETCH|Kafka Consumer Test#consumer-1234| [thrd:main]: Partition 887efaaa-d91e-438f-90a5-c62c682b74f4 [2] start fetching at offset 0 (leader epoch 0)
+%7|1794251813.950|SEND|Kafka Consumer Test#consumer-1234| [thrd:localhost:9092/1]: localhost:9092/1: Sent FetchRequest (v16, 110 bytes @ 0, CorrId 7)
+%7|1794251813.951|RECV|Kafka Consumer Test#consumer-1234| [thrd:localhost:9092/1]: localhost:9092/1: Received ListOffsetsResponse (v7, 73 bytes, CorrId 5, rtt 3.83ms)
+%7|1794251813.951|FETCH|Kafka Consumer Test#consumer-1234| [thrd:main]: Partition 887efaaa-d91e-438f-90a5-c62c682b74f4 [1] start fetching at offset 0 (leader epoch 0)
+%7|1794251813.952|RECV|Kafka Consumer Test#consumer-1234| [thrd:localhost:9092/1]: localhost:9092/1: Received ListOffsetsResponse (v7, 73 bytes, CorrId 6, rtt 5.16ms)
+%7|1794251813.953|FETCH|Kafka Consumer Test#consumer-1234| [thrd:main]: Partition 887efaaa-d91e-438f-90a5-c62c682b74f4 [0] start fetching at offset 0 (leader epoch 0)
+%7|1794251813.954|RECV|Kafka Consumer Test#consumer-1234| [thrd:localhost:9092/1]: localhost:9092/1: Received FetchResponse (v16, 3984 bytes, CorrId 7, rtt 4.21ms)
+%7|1794251813.954|SEND|Kafka Consumer Test#consumer-1234| [thrd:localhost:9092/1]: localhost:9092/1: Sent FetchRequest (v16, 176 bytes @ 0, CorrId 8)
+%7|1794251813.955|CGRPOP|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" received op OFFSET_COMMIT in state up (join-state steady)
+%7|1794251813.955|COMMIT|Kafka Consumer Test#consumer-1234| [thrd:main]: GroupCoordinator/1: Committing offsets for 1 partition(s) with generation-id 1 in join-state steady: manual
+%7|1794251813.955|SEND|Kafka Consumer Test#consumer-1234| [thrd:GroupCoordinator]: GroupCoordinator/1: Sent OffsetCommitRequest (v9, 192 bytes @ 0, CorrId 9)
+%7|1794251813.956|RECV|Kafka Consumer Test#consumer-1234| [thrd:localhost:9092/1]: localhost:9092/1: Received FetchResponse (v16, 10882 bytes, CorrId 8, rtt 2.02ms)
+%7|1794251813.956|SEND|Kafka Consumer Test#consumer-1234| [thrd:localhost:9092/1]: localhost:9092/1: Sent FetchRequest (v16, 176 bytes @ 0, CorrId 9)
+%7|1794251813.956|CGRPOP|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" received op NAME in state up (join-state steady)
+%7|1794251813.962|RECV|Kafka Consumer Test#consumer-1234| [thrd:GroupCoordinator]: GroupCoordinator/1: Received OffsetCommitResponse (v9, 53 bytes, CorrId 9, rtt 6.86ms)
+%7|1794251813.962|COMMIT|Kafka Consumer Test#consumer-1234| [thrd:main]: GroupCoordinator/1: OffsetCommit for 1 partition(s) in join-state steady: manual: returned: Success
+%7|1794251813.962|DUMP|Kafka Consumer Test#consumer-1234| [thrd:main]: Assignment dump (started_cnt=3, wait_stop_cnt=0)
+%7|1794251813.962|DUMP_ALL|Kafka Consumer Test#consumer-1234| [thrd:main]: List with 3 partition(s):
+%7|1794251813.962|DUMP_ALL|Kafka Consumer Test#consumer-1234| [thrd:main]:  887efaaa-d91e-438f-90a5-c62c682b74f4 [0] offset STORED
+%7|1794251813.962|DUMP_ALL|Kafka Consumer Test#consumer-1234| [thrd:main]:  887efaaa-d91e-438f-90a5-c62c682b74f4 [1] offset STORED
+%7|1794251813.962|DUMP_ALL|Kafka Consumer Test#consumer-1234| [thrd:main]:  887efaaa-d91e-438f-90a5-c62c682b74f4 [2] offset STORED
+%7|1794251813.962|DUMP_PND|Kafka Consumer Test#consumer-1234| [thrd:main]: List with 0 partition(s):
+%7|1794251813.962|DUMP_QRY|Kafka Consumer Test#consumer-1234| [thrd:main]: List with 0 partition(s):
+%7|1794251813.962|DUMP_REM|Kafka Consumer Test#consumer-1234| [thrd:main]: List with 0 partition(s):
+%7|1794251813.962|ASSIGNDONE|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": assignment operations done in join-state steady (rebalance rejoin=false)
+%7|1794251814.457|RECV|Kafka Consumer Test#consumer-1234| [thrd:localhost:9092/1]: localhost:9092/1: Received FetchResponse (v16, 142 bytes, CorrId 9, rtt 501.38ms)
+%7|1794251814.457|SEND|Kafka Consumer Test#consumer-1234| [thrd:localhost:9092/1]: localhost:9092/1: Sent FetchRequest (v16, 176 bytes @ 0, CorrId 10)
+%7|1794251814.960|RECV|Kafka Consumer Test#consumer-1234| [thrd:localhost:9092/1]: localhost:9092/1: Received FetchResponse (v16, 142 bytes, CorrId 10, rtt 502.42ms)
+%7|1794251814.960|SEND|Kafka Consumer Test#consumer-1234| [thrd:localhost:9092/1]: localhost:9092/1: Sent FetchRequest (v16, 176 bytes @ 0, CorrId 11)
+%7|1794251815.461|RECV|Kafka Consumer Test#consumer-1234| [thrd:localhost:9092/1]: localhost:9092/1: Received FetchResponse (v16, 142 bytes, CorrId 11, rtt 501.45ms)
+%7|1794251815.462|SEND|Kafka Consumer Test#consumer-1234| [thrd:localhost:9092/1]: localhost:9092/1: Sent FetchRequest (v16, 176 bytes @ 0, CorrId 12)
+%7|1794251815.964|RECV|Kafka Consumer Test#consumer-1234| [thrd:localhost:9092/1]: localhost:9092/1: Received FetchResponse (v16, 142 bytes, CorrId 12, rtt 502.21ms)
+%7|1794251815.964|SEND|Kafka Consumer Test#consumer-1234| [thrd:localhost:9092/1]: localhost:9092/1: Sent FetchRequest (v16, 176 bytes @ 0, CorrId 13)
+%7|1794251816.465|RECV|Kafka Consumer Test#consumer-1234| [thrd:localhost:9092/1]: localhost:9092/1: Received FetchResponse (v16, 142 bytes, CorrId 13, rtt 501.18ms)
+%7|1794251816.465|SEND|Kafka Consumer Test#consumer-1234| [thrd:localhost:9092/1]: localhost:9092/1: Sent FetchRequest (v16, 176 bytes @ 0, CorrId 14)
+%7|1794251816.880|HEARTBEAT|Kafka Consumer Test#consumer-1234| [thrd:main]: GroupCoordinator/1: Heartbeat for group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" generation id 1
+%7|1794251816.880|SEND|Kafka Consumer Test#consumer-1234| [thrd:GroupCoordinator]: GroupCoordinator/1: Sent HeartbeatRequest (v3, 135 bytes @ 0, CorrId 10)
+%7|1794251816.880|RECV|Kafka Consumer Test#consumer-1234| [thrd:GroupCoordinator]: GroupCoordinator/1: Received HeartbeatResponse (v3, 6 bytes, CorrId 10, rtt 0.43ms)
+%7|1794251816.880|HEARTBEAT|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" heartbeat error response in state up (join-state steady, 3 partition(s) assigned): Broker: Group rebalance in progress
+%7|1794251816.880|REJOIN|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": Rejoining group with 3 owned partition(s): Group is rebalancing
+%7|1794251816.880|CGRPJOINSTATE|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" changed join state steady -> init (state up)
+%7|1794251816.880|JOIN|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": join with 1 subscribed topic(s)
+%7|1794251816.880|CGRPMETADATA|Kafka Consumer Test#consumer-1234| [thrd:main]: consumer join: metadata for subscription is up to date (3040ms old)
+%7|1794251816.880|JOIN|Kafka Consumer Test#consumer-1234| [thrd:main]: localhost:9092/1: Joining group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" with 1 subscribed topic(s) and member id "Kafka Consumer Test-246b37b5-ade2-4d46-97c3-d69ec946b09b"
+%7|1794251816.880|CGRPJOINSTATE|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" changed join state init -> wait-join (state up)
+%7|1794251816.881|SEND|Kafka Consumer Test#consumer-1234| [thrd:GroupCoordinator]: GroupCoordinator/1: Sent JoinGroupRequest (v5, 351 bytes @ 0, CorrId 11)
+%7|1794251816.881|RECV|Kafka Consumer Test#consumer-1234| [thrd:GroupCoordinator]: GroupCoordinator/1: Received JoinGroupResponse (v5, 510 bytes, CorrId 11, rtt 0.63ms)
+%7|1794251816.881|JOINGROUP|Kafka Consumer Test#consumer-1234| [thrd:main]: JoinGroup response: GenerationId 2, Protocol cooperative-sticky, LeaderId Kafka Consumer Test-246b37b5-ade2-4d46-97c3-d69ec946b09b (me), my MemberId Kafka Consumer Test-246b37b5-ade2-4d46-97c3-d69ec946b09b, member metadata count 2: (no error)
+%7|1794251816.881|JOINGROUP|Kafka Consumer Test#consumer-1234| [thrd:main]: I am elected leader for group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" with 2 member(s)
+%7|1794251816.881|GRPLEADER|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": resetting group leader info: JoinGroup response clean-up
+%7|1794251816.881|CGRPJOINSTATE|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" changed join state wait-join -> wait-metadata (state up)
+%7|1794251816.881|SEND|Kafka Consumer Test#consumer-1234| [thrd:GroupCoordinator]: GroupCoordinator/1: Sent MetadataRequest (v13, 92 bytes @ 0, CorrId 12)
+%7|1794251816.882|RECV|Kafka Consumer Test#consumer-1234| [thrd:GroupCoordinator]: GroupCoordinator/1: Received MetadataResponse (v13, 197 bytes, CorrId 12, rtt 0.31ms)
+%7|1794251816.882|ASSIGN|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" running cooperative-sticky assignor for 2 member(s) and 1 eligible subscribed topic(s):
+%7|1794251816.882|ASSIGN|Kafka Consumer Test#consumer-1234| [thrd:main]:  Member "Kafka Consumer Test-0712a44f-711d-4215-bc38-d0f93214f23d" with 0 owned partition(s) and 1 subscribed topic(s):
+%7|1794251816.882|ASSIGN|Kafka Consumer Test#consumer-1234| [thrd:main]:   887efaaa-d91e-438f-90a5-c62c682b74f4 [-1]
+%7|1794251816.882|ASSIGN|Kafka Consumer Test#consumer-1234| [thrd:main]:  Member "Kafka Consumer Test-246b37b5-ade2-4d46-97c3-d69ec946b09b" (me) with 3 owned partition(s) and 1 subscribed topic(s):
+%7|1794251816.882|ASSIGN|Kafka Consumer Test#consumer-1234| [thrd:main]:   887efaaa-d91e-438f-90a5-c62c682b74f4 [-1]
+%7|1794251816.882|ASSIGN|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" cooperative-sticky assignment for 2 member(s) finished in 0.047ms:
+%7|1794251816.882|ASSIGN|Kafka Consumer Test#consumer-1234| [thrd:main]:  Member "Kafka Consumer Test-0712a44f-711d-4215-bc38-d0f93214f23d" assigned 1 partition(s):
+%7|1794251816.882|ASSIGN|Kafka Consumer Test#consumer-1234| [thrd:main]:   887efaaa-d91e-438f-90a5-c62c682b74f4 [0]
+%7|1794251816.882|ASSIGN|Kafka Consumer Test#consumer-1234| [thrd:main]:  Member "Kafka Consumer Test-246b37b5-ade2-4d46-97c3-d69ec946b09b" (me) assigned 2 partition(s):
+%7|1794251816.882|ASSIGN|Kafka Consumer Test#consumer-1234| [thrd:main]:   887efaaa-d91e-438f-90a5-c62c682b74f4 [1]
+%7|1794251816.882|ASSIGN|Kafka Consumer Test#consumer-1234| [thrd:main]:   887efaaa-d91e-438f-90a5-c62c682b74f4 [2]
+%7|1794251816.882|ASSIGNOR|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": "cooperative-sticky" assignor run for 2 member(s)
+%7|1794251816.882|CGRP|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": Partitions owned by members: 3, partitions assigned by assignor: 3
+%7|1794251816.882|CGRP|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": COOPERATIVE protocol collection sizes: maybe revoking: 3, ready to migrate: 0, unknown but owned: 0
+%7|1794251816.882|CGRP|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": 2 partitions assigned to consumers
+%7|1794251816.882|CGRPJOINSTATE|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" changed join state wait-metadata -> wait-sync (state up)
+%7|1794251816.882|SEND|Kafka Consumer Test#consumer-1234| [thrd:GroupCoordinator]: GroupCoordinator/1: Sent SyncGroupRequest (v3, 395 bytes @ 0, CorrId 13)
+%7|1794251816.889|RECV|Kafka Consumer Test#consumer-1234| [thrd:GroupCoordinator]: GroupCoordinator/1: Received SyncGroupResponse (v3, 132 bytes, CorrId 13, rtt 7.37ms)
+%7|1794251816.889|SYNCGROUP|Kafka Consumer Test#consumer-1234| [thrd:main]: SyncGroup response: Success (122 bytes of MemberState data)
+%7|1794251816.889|ASSIGNMENT|Kafka Consumer Test#consumer-1234| [thrd:main]: List with 2 partition(s):
+%7|1794251816.889|ASSIGNMENT|Kafka Consumer Test#consumer-1234| [thrd:main]:  887efaaa-d91e-438f-90a5-c62c682b74f4 [1] offset INVALID
+%7|1794251816.889|ASSIGNMENT|Kafka Consumer Test#consumer-1234| [thrd:main]:  887efaaa-d91e-438f-90a5-c62c682b74f4 [2] offset INVALID
+%7|1794251816.889|COOPASSIGN|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": incremental assignment: 0 newly added, 1 revoked partitions based on assignment of 2 partitions
+%7|1794251816.889|CGRPJOINSTATE|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" changed join state wait-sync -> wait-unassign-call (state up)
+%7|1794251816.889|ASSIGN|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": delegating incremental revoke of 1 partition(s) to application on queue rd_kafka_cgrp_new: sync group revoke
+%7|1794251816.889|PAUSE|Kafka Consumer Test#consumer-1234| [thrd:main]: Pausing fetchers for 3 assigned partition(s): incremental rebalance
+%7|1794251816.889|ASSIGNMENT|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": 1 partition(s) being removed from group assignment of 3 partition(s)
+%7|1794251816.889|GRPASSIGNMENT|Kafka Consumer Test#consumer-1234| [thrd:main]: List with 2 partition(s):
+%7|1794251816.889|GRPASSIGNMENT|Kafka Consumer Test#consumer-1234| [thrd:main]:  887efaaa-d91e-438f-90a5-c62c682b74f4 [1] offset INVALID
+%7|1794251816.889|GRPASSIGNMENT|Kafka Consumer Test#consumer-1234| [thrd:main]:  887efaaa-d91e-438f-90a5-c62c682b74f4 [2] offset INVALID
+%7|1794251816.968|RECV|Kafka Consumer Test#consumer-1234| [thrd:localhost:9092/1]: localhost:9092/1: Received FetchResponse (v16, 142 bytes, CorrId 14, rtt 502.39ms)
+%7|1794251819.660|CGRPOP|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" received op GET_REBALANCE_PROTOCOL in state up (join-state wait-unassign-call)
+%7|1794251819.660|CGRPOP|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" received op OFFSET_COMMIT in state up (join-state wait-unassign-call)
+%7|1794251819.660|COMMIT|Kafka Consumer Test#consumer-1234| [thrd:main]: GroupCoordinator/1: Committing offsets for 1 partition(s) with generation-id 2 in join-state wait-unassign-call: manual
+%7|1794251819.660|SEND|Kafka Consumer Test#consumer-1234| [thrd:GroupCoordinator]: GroupCoordinator/1: Sent OffsetCommitRequest (v9, 192 bytes @ 0, CorrId 14)
+%7|1794251819.667|RECV|Kafka Consumer Test#consumer-1234| [thrd:GroupCoordinator]: GroupCoordinator/1: Received OffsetCommitResponse (v9, 53 bytes, CorrId 14, rtt 6.69ms)
+%7|1794251819.667|COMMIT|Kafka Consumer Test#consumer-1234| [thrd:main]: GroupCoordinator/1: OffsetCommit for 1 partition(s) in join-state wait-unassign-call: manual: returned: Success
+%7|1794251819.667|DUMP|Kafka Consumer Test#consumer-1234| [thrd:main]: Assignment dump (started_cnt=3, wait_stop_cnt=0)
+%7|1794251819.667|DUMP_ALL|Kafka Consumer Test#consumer-1234| [thrd:main]: List with 3 partition(s):
+%7|1794251819.667|DUMP_ALL|Kafka Consumer Test#consumer-1234| [thrd:main]:  887efaaa-d91e-438f-90a5-c62c682b74f4 [0] offset STORED
+%7|1794251819.667|DUMP_ALL|Kafka Consumer Test#consumer-1234| [thrd:main]:  887efaaa-d91e-438f-90a5-c62c682b74f4 [1] offset STORED
+%7|1794251819.667|DUMP_ALL|Kafka Consumer Test#consumer-1234| [thrd:main]:  887efaaa-d91e-438f-90a5-c62c682b74f4 [2] offset STORED
+%7|1794251819.667|DUMP_PND|Kafka Consumer Test#consumer-1234| [thrd:main]: List with 0 partition(s):
+%7|1794251819.667|DUMP_QRY|Kafka Consumer Test#consumer-1234| [thrd:main]: List with 0 partition(s):
+%7|1794251819.667|DUMP_REM|Kafka Consumer Test#consumer-1234| [thrd:main]: List with 0 partition(s):
+%7|1794251819.667|ASSIGNDONE|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": assignment operations done in join-state wait-unassign-call (rebalance rejoin=false)
+%7|1794251819.667|CGRPOP|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" received op GET_REBALANCE_PROTOCOL in state up (join-state wait-unassign-call)
+%7|1794251819.667|CGRPOP|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" received op ASSIGN in state up (join-state wait-unassign-call)
+%7|1794251819.667|REMOVEASSIGN|Kafka Consumer Test#consumer-1234| [thrd:main]: Removed 1 partition(s) (0 with outstanding offset queries) from assignment of 3 partition(s)
+%7|1794251819.667|PAUSE|Kafka Consumer Test#consumer-1234| [thrd:main]: Resuming fetchers for 2 assigned partition(s): incremental unassign called
+%7|1794251819.667|CGRPJOINSTATE|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" changed join state wait-unassign-call -> wait-incr-unassign-to-complete (state up)
+%7|1794251819.667|DUMP|Kafka Consumer Test#consumer-1234| [thrd:main]: Assignment dump (started_cnt=3, wait_stop_cnt=0)
+%7|1794251819.667|DUMP_ALL|Kafka Consumer Test#consumer-1234| [thrd:main]: List with 2 partition(s):
+%7|1794251819.667|DUMP_ALL|Kafka Consumer Test#consumer-1234| [thrd:main]:  887efaaa-d91e-438f-90a5-c62c682b74f4 [1] offset STORED
+%7|1794251819.667|DUMP_ALL|Kafka Consumer Test#consumer-1234| [thrd:main]:  887efaaa-d91e-438f-90a5-c62c682b74f4 [2] offset STORED
+%7|1794251819.667|DUMP_PND|Kafka Consumer Test#consumer-1234| [thrd:main]: List with 0 partition(s):
+%7|1794251819.667|DUMP_QRY|Kafka Consumer Test#consumer-1234| [thrd:main]: List with 0 partition(s):
+%7|1794251819.667|DUMP_REM|Kafka Consumer Test#consumer-1234| [thrd:main]: List with 1 partition(s):
+%7|1794251819.667|DUMP_REM|Kafka Consumer Test#consumer-1234| [thrd:main]:  887efaaa-d91e-438f-90a5-c62c682b74f4 [0] offset INVALID
+%7|1794251819.667|REMOVE|Kafka Consumer Test#consumer-1234| [thrd:main]: Removing 887efaaa-d91e-438f-90a5-c62c682b74f4 [0] from assignment (started=true, pending=false, queried=false, stored offset=INVALID)
+%7|1794251819.667|REMOVE|Kafka Consumer Test#consumer-1234| [thrd:main]: Served 1 removed partition(s), with 0 offset(s) to commit
+%7|1794251819.667|ASSIGNMENT|Kafka Consumer Test#consumer-1234| [thrd:main]: Current assignment of 2 partition(s) with 0 pending adds, 0 offset queries, 1 partitions awaiting stop and 0 offset commits in progress
+%7|1794251819.668|CGRPOP|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" received op PARTITION_LEAVE in state up (join-state wait-incr-unassign-to-complete) for 887efaaa-d91e-438f-90a5-c62c682b74f4 [0]
+%7|1794251819.668|PARTDEL|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": delete 887efaaa-d91e-438f-90a5-c62c682b74f4 [0]
+%7|1794251819.668|STOPSERVE|Kafka Consumer Test#consumer-1234| [thrd:main]: All partitions awaiting stop are now stopped: serving assignment
+%7|1794251819.668|DUMP|Kafka Consumer Test#consumer-1234| [thrd:main]: Assignment dump (started_cnt=2, wait_stop_cnt=0)
+%7|1794251819.668|DUMP_ALL|Kafka Consumer Test#consumer-1234| [thrd:main]: List with 2 partition(s):
+%7|1794251819.668|DUMP_ALL|Kafka Consumer Test#consumer-1234| [thrd:main]:  887efaaa-d91e-438f-90a5-c62c682b74f4 [1] offset STORED
+%7|1794251819.668|DUMP_ALL|Kafka Consumer Test#consumer-1234| [thrd:main]:  887efaaa-d91e-438f-90a5-c62c682b74f4 [2] offset STORED
+%7|1794251819.668|DUMP_PND|Kafka Consumer Test#consumer-1234| [thrd:main]: List with 0 partition(s):
+%7|1794251819.668|DUMP_QRY|Kafka Consumer Test#consumer-1234| [thrd:main]: List with 0 partition(s):
+%7|1794251819.668|DUMP_REM|Kafka Consumer Test#consumer-1234| [thrd:main]: List with 0 partition(s):
+%7|1794251819.668|ASSIGNDONE|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": assignment operations done in join-state wait-incr-unassign-to-complete (rebalance rejoin=false)
+%7|1794251819.668|CGRPJOINSTATE|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" changed join state wait-incr-unassign-to-complete -> wait-assign-call (state up)
+%7|1794251819.668|ASSIGN|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": delegating incremental assign of 0 partition(s) to application on queue rd_kafka_cgrp_new: cooperative assign after revoke
+%7|1794251819.668|PAUSE|Kafka Consumer Test#consumer-1234| [thrd:main]: Pausing fetchers for 2 assigned partition(s): incremental rebalance
+%7|1794251819.668|ASSIGNMENT|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": 0 partition(s) being added to group assignment of 2 partition(s)
+%7|1794251819.668|GRPASSIGNMENT|Kafka Consumer Test#consumer-1234| [thrd:main]: List with 2 partition(s):
+%7|1794251819.668|GRPASSIGNMENT|Kafka Consumer Test#consumer-1234| [thrd:main]:  887efaaa-d91e-438f-90a5-c62c682b74f4 [1] offset INVALID
+%7|1794251819.668|GRPASSIGNMENT|Kafka Consumer Test#consumer-1234| [thrd:main]:  887efaaa-d91e-438f-90a5-c62c682b74f4 [2] offset INVALID
+%7|1794251819.668|CGRPOP|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" received op GET_REBALANCE_PROTOCOL in state up (join-state wait-assign-call)
+%7|1794251819.668|CGRPOP|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" received op GET_REBALANCE_PROTOCOL in state up (join-state wait-assign-call)
+%7|1794251819.668|CGRPOP|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" received op ASSIGN in state up (join-state wait-assign-call)
+%7|1794251819.668|ASSIGNMENT|Kafka Consumer Test#consumer-1234| [thrd:main]: Added 0 partition(s) to assignment which now consists of 2 partition(s) where of 0 are in pending state and 0 are being queried
+%7|1794251819.668|PAUSE|Kafka Consumer Test#consumer-1234| [thrd:main]: Resuming fetchers for 2 assigned partition(s): incremental assign called
+%7|1794251819.668|CGRPJOINSTATE|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" changed join state wait-assign-call -> steady (state up)
+%7|1794251819.668|DUMP|Kafka Consumer Test#consumer-1234| [thrd:main]: Assignment dump (started_cnt=2, wait_stop_cnt=0)
+%7|1794251819.668|DUMP_ALL|Kafka Consumer Test#consumer-1234| [thrd:main]: List with 2 partition(s):
+%7|1794251819.668|DUMP_ALL|Kafka Consumer Test#consumer-1234| [thrd:main]:  887efaaa-d91e-438f-90a5-c62c682b74f4 [1] offset STORED
+%7|1794251819.668|DUMP_ALL|Kafka Consumer Test#consumer-1234| [thrd:main]:  887efaaa-d91e-438f-90a5-c62c682b74f4 [2] offset STORED
+%7|1794251819.668|DUMP_PND|Kafka Consumer Test#consumer-1234| [thrd:main]: List with 0 partition(s):
+%7|1794251819.668|DUMP_QRY|Kafka Consumer Test#consumer-1234| [thrd:main]: List with 0 partition(s):
+%7|1794251819.668|DUMP_REM|Kafka Consumer Test#consumer-1234| [thrd:main]: List with 0 partition(s):
+%7|1794251819.668|ASSIGNDONE|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": assignment operations done in join-state steady (rebalance rejoin=true)
+%7|1794251819.668|REJOIN|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": Rejoining group with 2 owned partition(s): rejoining group to redistribute previously owned partitions to other group members
+%7|1794251819.668|CGRPJOINSTATE|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" changed join state steady -> init (state up)
+%7|1794251819.668|JOIN|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": join with 1 subscribed topic(s)
+%7|1794251819.668|CGRPMETADATA|Kafka Consumer Test#consumer-1234| [thrd:main]: consumer join: metadata for subscription is up to date (2786ms old)
+%7|1794251819.668|JOIN|Kafka Consumer Test#consumer-1234| [thrd:main]: localhost:9092/1: Joining group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" with 1 subscribed topic(s) and member id "Kafka Consumer Test-246b37b5-ade2-4d46-97c3-d69ec946b09b"
+%7|1794251819.668|CGRPJOINSTATE|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" changed join state init -> wait-join (state up)
+%7|1794251819.668|SEND|Kafka Consumer Test#consumer-1234| [thrd:GroupCoordinator]: GroupCoordinator/1: Sent JoinGroupRequest (v5, 343 bytes @ 0, CorrId 15)
+%7|1794251819.898|RECV|Kafka Consumer Test#consumer-1234| [thrd:GroupCoordinator]: GroupCoordinator/1: Received JoinGroupResponse (v5, 510 bytes, CorrId 15, rtt 229.99ms)
+%7|1794251819.898|JOINGROUP|Kafka Consumer Test#consumer-1234| [thrd:main]: JoinGroup response: GenerationId 3, Protocol cooperative-sticky, LeaderId Kafka Consumer Test-246b37b5-ade2-4d46-97c3-d69ec946b09b (me), my MemberId Kafka Consumer Test-246b37b5-ade2-4d46-97c3-d69ec946b09b, member metadata count 2: (no error)
+%7|1794251819.898|JOINGROUP|Kafka Consumer Test#consumer-1234| [thrd:main]: I am elected leader for group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" with 2 member(s)
+%7|1794251819.898|GRPLEADER|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": resetting group leader info: JoinGroup response clean-up
+%7|1794251819.898|CGRPJOINSTATE|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" changed join state wait-join -> wait-metadata (state up)
+%7|1794251819.898|SEND|Kafka Consumer Test#consumer-1234| [thrd:GroupCoordinator]: GroupCoordinator/1: Sent MetadataRequest (v13, 92 bytes @ 0, CorrId 16)
+%7|1794251819.898|RECV|Kafka Consumer Test#consumer-1234| [thrd:GroupCoordinator]: GroupCoordinator/1: Received MetadataResponse (v13, 197 bytes, CorrId 16, rtt 0.23ms)
+%7|1794251819.898|ASSIGN|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" running cooperative-sticky assignor for 2 member(s) and 1 eligible subscribed topic(s):
+%7|1794251819.898|ASSIGN|Kafka Consumer Test#consumer-1234| [thrd:main]:  Member "Kafka Consumer Test-0712a44f-711d-4215-bc38-d0f93214f23d" with 0 owned partition(s) and 1 subscribed topic(s):
+%7|1794251819.898|ASSIGN|Kafka Consumer Test#consumer-1234| [thrd:main]:   887efaaa-d91e-438f-90a5-c62c682b74f4 [-1]
+%7|1794251819.898|ASSIGN|Kafka Consumer Test#consumer-1234| [thrd:main]:  Member "Kafka Consumer Test-246b37b5-ade2-4d46-97c3-d69ec946b09b" (me) with 2 owned partition(s) and 1 subscribed topic(s):
+%7|1794251819.898|ASSIGN|Kafka Consumer Test#consumer-1234| [thrd:main]:   887efaaa-d91e-438f-90a5-c62c682b74f4 [-1]
+%7|1794251819.898|ASSIGN|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" cooperative-sticky assignment for 2 member(s) finished in 0.028ms:
+%7|1794251819.898|ASSIGN|Kafka Consumer Test#consumer-1234| [thrd:main]:  Member "Kafka Consumer Test-0712a44f-711d-4215-bc38-d0f93214f23d" assigned 1 partition(s):
+%7|1794251819.898|ASSIGN|Kafka Consumer Test#consumer-1234| [thrd:main]:   887efaaa-d91e-438f-90a5-c62c682b74f4 [0]
+%7|1794251819.898|ASSIGN|Kafka Consumer Test#consumer-1234| [thrd:main]:  Member "Kafka Consumer Test-246b37b5-ade2-4d46-97c3-d69ec946b09b" (me) assigned 2 partition(s):
+%7|1794251819.898|ASSIGN|Kafka Consumer Test#consumer-1234| [thrd:main]:   887efaaa-d91e-438f-90a5-c62c682b74f4 [1]
+%7|1794251819.898|ASSIGN|Kafka Consumer Test#consumer-1234| [thrd:main]:   887efaaa-d91e-438f-90a5-c62c682b74f4 [2]
+%7|1794251819.898|ASSIGNOR|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": "cooperative-sticky" assignor run for 2 member(s)
+%7|1794251819.898|CGRP|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": Partitions owned by members: 2, partitions assigned by assignor: 3
+%7|1794251819.898|CGRP|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": COOPERATIVE protocol collection sizes: maybe revoking: 2, ready to migrate: 1, unknown but owned: 0
+%7|1794251819.898|CGRP|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": 3 partitions assigned to consumers
+%7|1794251819.898|CGRPJOINSTATE|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" changed join state wait-metadata -> wait-sync (state up)
+%7|1794251819.898|SEND|Kafka Consumer Test#consumer-1234| [thrd:GroupCoordinator]: GroupCoordinator/1: Sent SyncGroupRequest (v3, 445 bytes @ 0, CorrId 17)
+%7|1794251819.905|RECV|Kafka Consumer Test#consumer-1234| [thrd:GroupCoordinator]: GroupCoordinator/1: Received SyncGroupResponse (v3, 128 bytes, CorrId 17, rtt 6.43ms)
+%7|1794251819.905|SYNCGROUP|Kafka Consumer Test#consumer-1234| [thrd:main]: SyncGroup response: Success (118 bytes of MemberState data)
+%7|1794251819.905|ASSIGNMENT|Kafka Consumer Test#consumer-1234| [thrd:main]: List with 2 partition(s):
+%7|1794251819.905|ASSIGNMENT|Kafka Consumer Test#consumer-1234| [thrd:main]:  887efaaa-d91e-438f-90a5-c62c682b74f4 [1] offset INVALID
+%7|1794251819.905|ASSIGNMENT|Kafka Consumer Test#consumer-1234| [thrd:main]:  887efaaa-d91e-438f-90a5-c62c682b74f4 [2] offset INVALID
+%7|1794251819.905|COOPASSIGN|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": incremental assignment: 0 newly added, 0 revoked partitions based on assignment of 2 partitions
+%7|1794251819.905|CGRPJOINSTATE|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" changed join state wait-sync -> wait-assign-call (state up)
+%7|1794251819.905|ASSIGN|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": delegating incremental assign of 0 partition(s) to application on queue rd_kafka_cgrp_new: sync group assign
+%7|1794251819.905|PAUSE|Kafka Consumer Test#consumer-1234| [thrd:main]: Pausing fetchers for 2 assigned partition(s): incremental rebalance
+%7|1794251819.905|ASSIGNMENT|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": 0 partition(s) being added to group assignment of 2 partition(s)
+%7|1794251819.905|GRPASSIGNMENT|Kafka Consumer Test#consumer-1234| [thrd:main]: List with 2 partition(s):
+%7|1794251819.905|GRPASSIGNMENT|Kafka Consumer Test#consumer-1234| [thrd:main]:  887efaaa-d91e-438f-90a5-c62c682b74f4 [1] offset INVALID
+%7|1794251819.905|GRPASSIGNMENT|Kafka Consumer Test#consumer-1234| [thrd:main]:  887efaaa-d91e-438f-90a5-c62c682b74f4 [2] offset INVALID
+%7|1794251819.905|HEARTBEAT|Kafka Consumer Test#consumer-1234| [thrd:main]: GroupCoordinator/1: Heartbeat for group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" generation id 3
+%7|1794251819.905|CGRPOP|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" received op GET_REBALANCE_PROTOCOL in state up (join-state wait-assign-call)
+%7|1794251819.905|SEND|Kafka Consumer Test#consumer-1234| [thrd:GroupCoordinator]: GroupCoordinator/1: Sent HeartbeatRequest (v3, 135 bytes @ 0, CorrId 18)
+%7|1794251819.905|CGRPOP|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" received op GET_REBALANCE_PROTOCOL in state up (join-state wait-assign-call)
+%7|1794251819.905|CGRPOP|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" received op ASSIGN in state up (join-state wait-assign-call)
+%7|1794251819.905|ASSIGNMENT|Kafka Consumer Test#consumer-1234| [thrd:main]: Added 0 partition(s) to assignment which now consists of 2 partition(s) where of 0 are in pending state and 0 are being queried
+%7|1794251819.905|PAUSE|Kafka Consumer Test#consumer-1234| [thrd:main]: Resuming fetchers for 2 assigned partition(s): incremental assign called
+%7|1794251819.905|CGRPJOINSTATE|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" changed join state wait-assign-call -> steady (state up)
+%7|1794251819.905|DUMP|Kafka Consumer Test#consumer-1234| [thrd:main]: Assignment dump (started_cnt=2, wait_stop_cnt=0)
+%7|1794251819.905|DUMP_ALL|Kafka Consumer Test#consumer-1234| [thrd:main]: List with 2 partition(s):
+%7|1794251819.905|DUMP_ALL|Kafka Consumer Test#consumer-1234| [thrd:main]:  887efaaa-d91e-438f-90a5-c62c682b74f4 [1] offset STORED
+%7|1794251819.905|DUMP_ALL|Kafka Consumer Test#consumer-1234| [thrd:main]:  887efaaa-d91e-438f-90a5-c62c682b74f4 [2] offset STORED
+%7|1794251819.905|DUMP_PND|Kafka Consumer Test#consumer-1234| [thrd:main]: List with 0 partition(s):
+%7|1794251819.905|DUMP_QRY|Kafka Consumer Test#consumer-1234| [thrd:main]: List with 0 partition(s):
+%7|1794251819.905|DUMP_REM|Kafka Consumer Test#consumer-1234| [thrd:main]: List with 0 partition(s):
+%7|1794251819.905|ASSIGNDONE|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": assignment operations done in join-state steady (rebalance rejoin=false)
+%7|1794251819.905|RECV|Kafka Consumer Test#consumer-1234| [thrd:GroupCoordinator]: GroupCoordinator/1: Received HeartbeatResponse (v3, 6 bytes, CorrId 18, rtt 0.28ms)
+%7|1794251819.963|SEND|Kafka Consumer Test#consumer-1234| [thrd:localhost:9092/1]: localhost:9092/1: Sent FetchRequest (v16, 143 bytes @ 0, CorrId 15)
+%7|1794251820.466|RECV|Kafka Consumer Test#consumer-1234| [thrd:localhost:9092/1]: localhost:9092/1: Received FetchResponse (v16, 105 bytes, CorrId 15, rtt 502.01ms)
+%7|1794251820.466|SEND|Kafka Consumer Test#consumer-1234| [thrd:localhost:9092/1]: localhost:9092/1: Sent FetchRequest (v16, 143 bytes @ 0, CorrId 16)
+%7|1794251820.466|CGRPOP|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" received op NAME in state up (join-state steady)
+%7|1794251820.473|CGRPOP|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" received op OFFSET_COMMIT in state up (join-state steady)
+%7|1794251820.473|COMMIT|Kafka Consumer Test#consumer-1234| [thrd:main]: GroupCoordinator/1: Committing offsets for 2 partition(s) with generation-id 3 in join-state steady: manual
+%7|1794251820.473|SEND|Kafka Consumer Test#consumer-1234| [thrd:GroupCoordinator]: GroupCoordinator/1: Sent OffsetCommitRequest (v9, 210 bytes @ 0, CorrId 19)
+%7|1794251820.480|RECV|Kafka Consumer Test#consumer-1234| [thrd:GroupCoordinator]: GroupCoordinator/1: Received OffsetCommitResponse (v9, 60 bytes, CorrId 19, rtt 7.36ms)
+%7|1794251820.480|COMMIT|Kafka Consumer Test#consumer-1234| [thrd:main]: GroupCoordinator/1: OffsetCommit for 2 partition(s) in join-state steady: manual: returned: Success
+%7|1794251820.481|DUMP|Kafka Consumer Test#consumer-1234| [thrd:main]: Assignment dump (started_cnt=2, wait_stop_cnt=0)
+%7|1794251820.481|DUMP_ALL|Kafka Consumer Test#consumer-1234| [thrd:main]: List with 2 partition(s):
+%7|1794251820.481|DUMP_ALL|Kafka Consumer Test#consumer-1234| [thrd:main]:  887efaaa-d91e-438f-90a5-c62c682b74f4 [1] offset STORED
+%7|1794251820.481|DUMP_ALL|Kafka Consumer Test#consumer-1234| [thrd:main]:  887efaaa-d91e-438f-90a5-c62c682b74f4 [2] offset STORED
+%7|1794251820.481|DUMP_PND|Kafka Consumer Test#consumer-1234| [thrd:main]: List with 0 partition(s):
+%7|1794251820.481|DUMP_QRY|Kafka Consumer Test#consumer-1234| [thrd:main]: List with 0 partition(s):
+%7|1794251820.481|DUMP_REM|Kafka Consumer Test#consumer-1234| [thrd:main]: List with 0 partition(s):
+%7|1794251820.481|ASSIGNDONE|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": assignment operations done in join-state steady (rebalance rejoin=false)
+%7|1794251820.481|CLOSE|Kafka Consumer Test#consumer-1234| [thrd:app]: Closing consumer
+%7|1794251820.481|CLOSE|Kafka Consumer Test#consumer-1234| [thrd:app]: Waiting for close events
+%7|1794251820.481|CGRPOP|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" received op TERMINATE in state up (join-state steady)
+%7|1794251820.481|CGRPTERM|Kafka Consumer Test#consumer-1234| [thrd:main]: Terminating group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" in state up with 2 partition(s)
+%7|1794251820.481|UNSUBSCRIBE|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": unsubscribe from current subscription of size 1 (leave group=true, has joined=true, Kafka Consumer Test-246b37b5-ade2-4d46-97c3-d69ec946b09b, join-state steady)
+%7|1794251820.481|SUBSCRIPTION|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": clearing subscribed topics list (1)
+%7|1794251820.481|SUBSCRIPTION|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": effective subscription list changed from 1 to 0 topic(s):
+%7|1794251820.481|GRPLEADER|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": resetting group leader info: unsubscribe
+%7|1794251820.481|REBALANCE|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" initiating rebalance (COOPERATIVE) in state up (join-state steady) with 2 assigned partition(s): unsubscribe
+%7|1794251820.481|REBALANCE|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": revoking all 2 partition(s) (terminating)
+%7|1794251820.481|CGRPJOINSTATE|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" changed join state steady -> wait-unassign-call (state up)
+%7|1794251820.481|ASSIGN|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": delegating incremental revoke of 2 partition(s) to application on queue rd_kafka_consumer_close0: unsubscribe
+%7|1794251820.481|PAUSE|Kafka Consumer Test#consumer-1234| [thrd:main]: Pausing fetchers for 2 assigned partition(s): incremental rebalance
+%7|1794251820.481|ASSIGNMENT|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": 2 partition(s) being removed from group assignment of 2 partition(s)
+%7|1794251820.481|ASSIGNMENT|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": clearing group assignment
+%7|1794251820.481|DUMP|Kafka Consumer Test#consumer-1234| [thrd:main]: Assignment dump (started_cnt=2, wait_stop_cnt=0)
+%7|1794251820.481|DUMP_ALL|Kafka Consumer Test#consumer-1234| [thrd:main]: List with 2 partition(s):
+%7|1794251820.481|DUMP_ALL|Kafka Consumer Test#consumer-1234| [thrd:main]:  887efaaa-d91e-438f-90a5-c62c682b74f4 [1] offset STORED
+%7|1794251820.481|DUMP_ALL|Kafka Consumer Test#consumer-1234| [thrd:main]:  887efaaa-d91e-438f-90a5-c62c682b74f4 [2] offset STORED
+%7|1794251820.481|DUMP_PND|Kafka Consumer Test#consumer-1234| [thrd:main]: List with 0 partition(s):
+%7|1794251820.481|DUMP_QRY|Kafka Consumer Test#consumer-1234| [thrd:main]: List with 0 partition(s):
+%7|1794251820.481|DUMP_REM|Kafka Consumer Test#consumer-1234| [thrd:main]: List with 0 partition(s):
+%7|1794251820.481|ASSIGNDONE|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": assignment operations done in join-state wait-unassign-call (rebalance rejoin=false)
+%7|1794251820.481|CGRPTERM|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": waiting for assign call, 2 toppar(s), 0 commit(s), 0 share session leave(s) remaining (state up, join-state wait-unassign-call) before terminating
+%7|1794251820.481|CGRPTERM|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": waiting for assign call, 2 toppar(s), 0 commit(s), 0 share session leave(s) remaining (state up, join-state wait-unassign-call) before terminating
+%7|1794251820.481|CGRPTERM|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": waiting for assign call, 2 toppar(s), 0 commit(s), 0 share session leave(s) remaining (state up, join-state wait-unassign-call) before terminating
+%7|1794251820.481|CGRPOP|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" received op GET_REBALANCE_PROTOCOL in state up (join-state wait-unassign-call)
+%7|1794251820.481|CGRPTERM|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": waiting for assign call, 2 toppar(s), 0 commit(s), 0 share session leave(s) remaining (state up, join-state wait-unassign-call) before terminating
+%7|1794251820.481|CGRPOP|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" received op GET_REBALANCE_PROTOCOL in state up (join-state wait-unassign-call)
+%7|1794251820.481|CGRPTERM|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": waiting for assign call, 2 toppar(s), 0 commit(s), 0 share session leave(s) remaining (state up, join-state wait-unassign-call) before terminating
+%7|1794251820.481|CGRPOP|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" received op ASSIGN in state up (join-state wait-unassign-call)
+%7|1794251820.481|ASSIGN|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": Consumer is terminating: treating assign as unassign
+%7|1794251820.481|CLEARASSIGN|Kafka Consumer Test#consumer-1234| [thrd:main]: Clearing current assignment of 2 partition(s)
+%7|1794251820.481|CGRPJOINSTATE|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" changed join state wait-unassign-call -> wait-unassign-to-complete (state up)
+%7|1794251820.481|DUMP|Kafka Consumer Test#consumer-1234| [thrd:main]: Assignment dump (started_cnt=2, wait_stop_cnt=0)
+%7|1794251820.481|DUMP_ALL|Kafka Consumer Test#consumer-1234| [thrd:main]: List with 0 partition(s):
+%7|1794251820.481|DUMP_PND|Kafka Consumer Test#consumer-1234| [thrd:main]: List with 0 partition(s):
+%7|1794251820.481|DUMP_QRY|Kafka Consumer Test#consumer-1234| [thrd:main]: List with 0 partition(s):
+%7|1794251820.481|DUMP_REM|Kafka Consumer Test#consumer-1234| [thrd:main]: List with 2 partition(s):
+%7|1794251820.481|DUMP_REM|Kafka Consumer Test#consumer-1234| [thrd:main]:  887efaaa-d91e-438f-90a5-c62c682b74f4 [1] offset STORED
+%7|1794251820.481|DUMP_REM|Kafka Consumer Test#consumer-1234| [thrd:main]:  887efaaa-d91e-438f-90a5-c62c682b74f4 [2] offset STORED
+%7|1794251820.481|REMOVE|Kafka Consumer Test#consumer-1234| [thrd:main]: Removing 887efaaa-d91e-438f-90a5-c62c682b74f4 [1] from assignment (started=true, pending=false, queried=false, stored offset=INVALID)
+%7|1794251820.481|REMOVE|Kafka Consumer Test#consumer-1234| [thrd:main]: Removing 887efaaa-d91e-438f-90a5-c62c682b74f4 [2] from assignment (started=true, pending=false, queried=false, stored offset=INVALID)
+%7|1794251820.481|REMOVE|Kafka Consumer Test#consumer-1234| [thrd:main]: Served 2 removed partition(s), with 0 offset(s) to commit
+%7|1794251820.481|ASSIGNMENT|Kafka Consumer Test#consumer-1234| [thrd:main]: Current assignment of 0 partition(s) with 0 pending adds, 0 offset queries, 2 partitions awaiting stop and 0 offset commits in progress
+%7|1794251820.481|CGRPTERM|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": waiting for 2 toppar(s), assignment in progress, 0 commit(s), 0 share session leave(s) remaining (state up, join-state wait-unassign-to-complete) before terminating
+%7|1794251820.481|CGRPTERM|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": waiting for 2 toppar(s), assignment in progress, 0 commit(s), 0 share session leave(s) remaining (state up, join-state wait-unassign-to-complete) before terminating
+%7|1794251820.481|CGRPOP|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" received op PARTITION_LEAVE in state up (join-state wait-unassign-to-complete) for 887efaaa-d91e-438f-90a5-c62c682b74f4 [1]
+%7|1794251820.481|PARTDEL|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": delete 887efaaa-d91e-438f-90a5-c62c682b74f4 [1]
+%7|1794251820.481|CGRPTERM|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": waiting for 1 toppar(s), assignment in progress, 0 commit(s), 0 share session leave(s) remaining (state up, join-state wait-unassign-to-complete) before terminating
+%7|1794251820.481|CGRPOP|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" received op PARTITION_LEAVE in state up (join-state wait-unassign-to-complete) for 887efaaa-d91e-438f-90a5-c62c682b74f4 [2]
+%7|1794251820.481|PARTDEL|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": delete 887efaaa-d91e-438f-90a5-c62c682b74f4 [2]
+%7|1794251820.481|CGRPTERM|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": waiting for 0 toppar(s), assignment in progress, 0 commit(s), 0 share session leave(s) remaining (state up, join-state wait-unassign-to-complete) before terminating
+%7|1794251820.481|STOPSERVE|Kafka Consumer Test#consumer-1234| [thrd:main]: All partitions awaiting stop are now stopped: serving assignment
+%7|1794251820.481|DUMP|Kafka Consumer Test#consumer-1234| [thrd:main]: Assignment dump (started_cnt=0, wait_stop_cnt=0)
+%7|1794251820.481|DUMP_ALL|Kafka Consumer Test#consumer-1234| [thrd:main]: List with 0 partition(s):
+%7|1794251820.481|DUMP_PND|Kafka Consumer Test#consumer-1234| [thrd:main]: List with 0 partition(s):
+%7|1794251820.481|DUMP_QRY|Kafka Consumer Test#consumer-1234| [thrd:main]: List with 0 partition(s):
+%7|1794251820.481|DUMP_REM|Kafka Consumer Test#consumer-1234| [thrd:main]: List with 0 partition(s):
+%7|1794251820.481|ASSIGNDONE|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": assignment operations done in join-state wait-unassign-to-complete (rebalance rejoin=false)
+%7|1794251820.481|UNASSIGN|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": unassign done in state up (join-state wait-unassign-to-complete)
+%7|1794251820.481|MEMBERID|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": updating member id "Kafka Consumer Test-246b37b5-ade2-4d46-97c3-d69ec946b09b" -> ""
+%7|1794251820.481|LEAVE|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": leave (in state up)
+%7|1794251820.481|LEAVE|Kafka Consumer Test#consumer-1234| [thrd:main]: localhost:9092/1: Leaving group
+%7|1794251820.481|NOREJOIN|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": Not rejoining group without an assignment: Unassignment done: no subscribed topics
+%7|1794251820.481|CGRPJOINSTATE|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" changed join state wait-unassign-to-complete -> init (state up)
+%7|1794251820.481|CGRPTERM|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": waiting for 0 toppar(s), 0 commit(s), 0 share session leave(s) remaining, wait-leave, (state up, join-state init) before terminating
+%7|1794251820.481|SEND|Kafka Consumer Test#consumer-1234| [thrd:GroupCoordinator]: GroupCoordinator/1: Sent LeaveGroupRequest (v1, 129 bytes @ 0, CorrId 20)
+%7|1794251820.490|RECV|Kafka Consumer Test#consumer-1234| [thrd:GroupCoordinator]: GroupCoordinator/1: Received LeaveGroupResponse (v1, 6 bytes, CorrId 20, rtt 8.42ms)
+%7|1794251820.490|LEAVEGROUP|Kafka Consumer Test#consumer-1234| [thrd:main]: LeaveGroup response received in state up
+%7|1794251820.490|CGRPSTATE|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" changed state up -> term (join-state init)
+%7|1794251820.490|ASSIGNMENT|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": clearing group assignment
+%7|1794251820.490|COORDCLEAR|Kafka Consumer Test#consumer-1234| [thrd:main]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d" broker localhost:9092/1 is no longer coordinator
+%7|1794251820.490|CGRPTERM|Kafka Consumer Test#consumer-1234| [thrd:main]: Consumer group sub-system terminated (will enqueue reply)
+%7|1794251820.490|CLOSE|Kafka Consumer Test#consumer-1234| [thrd:app]: Consumer closed
+%7|1794251820.490|DESTROY|Kafka Consumer Test#consumer-1234| [thrd:app]: Terminating instance (destroy flags NoConsumerClose (0x8))
+%7|1794251820.490|SEND|Kafka Consumer Test#consumer-1234| [thrd:localhost:9092/1]: localhost:9092/1: Sent MetadataRequest (v13, 92 bytes @ 0, CorrId 17)
+%7|1794251820.490|DESTROY|Kafka Consumer Test#consumer-1234| [thrd:main]: Destroy internal
+%7|1794251820.490|DESTROY|Kafka Consumer Test#consumer-1234| [thrd:main]: Removing all topics
+%7|1794251820.490|BRKTERM|Kafka Consumer Test#consumer-1234| [thrd:GroupCoordinator]: GroupCoordinator: terminating: broker still has 3 refcnt(s), 0 buffer(s), 0 partition(s)
+%7|1794251820.490|BRKTERM|Kafka Consumer Test#consumer-1234| [thrd::0/internal]: :0/internal: terminating: broker still has 3 refcnt(s), 0 buffer(s), 0 partition(s)
+%7|1794251820.490|PARTDEL|Kafka Consumer Test#consumer-1234| [thrd:localhost:9092/1]: Not purging toppar fetch queue buffer. No ops present in the buffer.
+%7|1794251820.490|PARTDEL|Kafka Consumer Test#consumer-1234| [thrd:localhost:9092/1]: Not purging toppar fetch queue buffer. No ops present in the buffer.
+%7|1794251820.490|PARTDEL|Kafka Consumer Test#consumer-1234| [thrd:localhost:9092/1]: Not purging toppar fetch queue buffer. No ops present in the buffer.
+%7|1794251820.490|BRKTERM|Kafka Consumer Test#consumer-1234| [thrd:localhost:9092/1]: localhost:9092/1: terminating: broker still has 3 refcnt(s), 0 buffer(s), 0 partition(s)
+%7|1794251820.491|MEMBERID|Kafka Consumer Test#consumer-1234| [thrd:app]: Group "3a31da4d-05a7-4fd1-8c34-875698c2f38d": updating member id "" -> "(not-set)"

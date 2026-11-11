@@ -188,7 +188,7 @@ public partial class SqsMessageProducer : AwsMessagingGateway, IAmAMessageProduc
         await ConfirmQueueExistsAsync(cancellationToken);
 
         using var client = _clientFactory.CreateSqsClient();
-        var sender = new SqsMessageSender(ChannelQueueUrl!, client);
+        var sender = new SqsMessageSender(ChannelQueueUrl!, client, _publication.WireMessageWriter);
         var messageId = await sender.SendAsync(message, delay, cancellationToken);
 
         if (messageId == null)

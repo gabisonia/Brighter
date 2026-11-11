@@ -26,12 +26,24 @@ THE SOFTWARE. */
 
 using System;
 using Azure.Messaging;
+using Azure.Messaging.ServiceBus;
 
 namespace Paramore.Brighter.MessagingGateway.AzureServiceBus;
 
 public class AzureServiceBusPublication : Publication
 {
     private TimeSpan? _timeToLive;
+
+    /// <summary>
+    /// Gets or sets the native message writer used for individual and bulk sends.
+    /// </summary>
+    /// <value>The writer, or null to use the default mapping.</value>
+    /// <remarks>
+    /// A null value selects <see cref="DefaultAzureServiceBusWireMessageWriter"/>.
+    /// The writer owns the body and application metadata; configured publication TTL
+    /// overrides the writer's TTL. Bulk sends map each message during batch creation.
+    /// </remarks>
+    public IAmAWireMessageWriter<ServiceBusMessage>? WireMessageWriter { get; set; }
 
     /// <summary>
     /// Gets or sets the time to live applied to every message sent by this publication.

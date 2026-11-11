@@ -1,0 +1,58 @@
+{
+  "net9.0": {
+    "prior_count": 508,
+    "final_count": 512,
+    "lost_or_changed_prior_outcomes": [
+      [
+        "Paramore.Brighter.Gcp.Tests.MessagingGateway.StreamOrdering.Proactor.WhenNackingAMessageItShouldBeRedeliveredAsync.When_nacking_first_of_two_messages_should_redeliver_nacked_then_receive_second_async",
+        "Failed"
+      ]
+    ],
+    "new_or_changed_outcomes": [
+      [
+        "Paramore.Brighter.Gcp.Tests.MessagingGateway.GcpScheduledPublicationSelectionTests.When_gcp_dispatches_a_scheduled_publication_should_use_its_selected_writer(useAsync: True, custom: False)",
+        "Passed"
+      ],
+      [
+        "Paramore.Brighter.Gcp.Tests.MessagingGateway.GcpScheduledPublicationSelectionTests.When_gcp_dispatches_a_scheduled_publication_should_use_its_selected_writer(useAsync: False, custom: False)",
+        "Passed"
+      ],
+      [
+        "Paramore.Brighter.Gcp.Tests.MessagingGateway.GcpScheduledPublicationSelectionTests.When_gcp_dispatches_a_scheduled_publication_should_use_its_selected_writer(useAsync: False, custom: True)",
+        "Passed"
+      ],
+      [
+        "Paramore.Brighter.Gcp.Tests.MessagingGateway.StreamOrdering.Proactor.WhenNackingAMessageItShouldBeRedeliveredAsync.When_nacking_first_of_two_messages_should_redeliver_nacked_then_receive_second_async",
+        "Passed"
+      ],
+      [
+        "Paramore.Brighter.Gcp.Tests.MessagingGateway.GcpScheduledPublicationSelectionTests.When_gcp_dispatches_a_scheduled_publication_should_use_its_selected_writer(useAsync: True, custom: True)",
+        "Passed"
+      ]
+    ]
+  },
+  "net10.0": {
+    "prior_count": 508,
+    "final_count": 512,
+    "lost_or_changed_prior_outcomes": [],
+    "new_or_changed_outcomes": [
+      [
+        "Paramore.Brighter.Gcp.Tests.MessagingGateway.GcpScheduledPublicationSelectionTests.When_gcp_dispatches_a_scheduled_publication_should_use_its_selected_writer(useAsync: True, custom: False)",
+        "Passed"
+      ],
+      [
+        "Paramore.Brighter.Gcp.Tests.MessagingGateway.GcpScheduledPublicationSelectionTests.When_gcp_dispatches_a_scheduled_publication_should_use_its_selected_writer(useAsync: False, custom: True)",
+        "Passed"
+      ],
+      [
+        "Paramore.Brighter.Gcp.Tests.MessagingGateway.GcpScheduledPublicationSelectionTests.When_gcp_dispatches_a_scheduled_publication_should_use_its_selected_writer(useAsync: False, custom: False)",
+        "Passed"
+      ],
+      [
+        "Paramore.Brighter.Gcp.Tests.MessagingGateway.GcpScheduledPublicationSelectionTests.When_gcp_dispatches_a_scheduled_publication_should_use_its_selected_writer(useAsync: True, custom: True)",
+        "Passed"
+      ]
+    ]
+  },
+  "source_restored": true
+}

@@ -4,6 +4,7 @@ using Paramore.Brighter.Core.Tests.CommandProcessors.TestDoubles;
 using Paramore.Brighter.Core.Tests.MessageDispatch.TestDoubles;
 using Paramore.Brighter.Logging;
 using Serilog;
+using Paramore.Brighter.SchedulerRequestFailureProbe.TestDoubles;
 
 namespace Paramore.Brighter.Core.Tests
 {
@@ -14,6 +15,18 @@ namespace Paramore.Brighter.Core.Tests
         {
             var logger = new LoggerConfiguration().MinimumLevel.Debug().WriteTo.TestCorrelator().CreateLogger();
             ApplicationLogging.LoggerFactory = new LoggerFactory().AddSerilog(logger);
+            RuntimeHelpers.RunClassConstructor(typeof(RequestHandler<SyncScheduledFailureCommand>).TypeHandle);
+            RuntimeHelpers.RunClassConstructor(typeof(RequestHandlerAsync<SyncScheduledFailureCommand>).TypeHandle);
+            RuntimeHelpers.RunClassConstructor(typeof(PipelineBuilder<SyncScheduledFailureCommand>).TypeHandle);
+            RuntimeHelpers.RunClassConstructor(typeof(RequestHandler<SyncScheduledFailureEvent>).TypeHandle);
+            RuntimeHelpers.RunClassConstructor(typeof(RequestHandlerAsync<SyncScheduledFailureEvent>).TypeHandle);
+            RuntimeHelpers.RunClassConstructor(typeof(PipelineBuilder<SyncScheduledFailureEvent>).TypeHandle);
+            RuntimeHelpers.RunClassConstructor(typeof(RequestHandler<AsyncScheduledFailureCommand>).TypeHandle);
+            RuntimeHelpers.RunClassConstructor(typeof(RequestHandlerAsync<AsyncScheduledFailureCommand>).TypeHandle);
+            RuntimeHelpers.RunClassConstructor(typeof(PipelineBuilder<AsyncScheduledFailureCommand>).TypeHandle);
+            RuntimeHelpers.RunClassConstructor(typeof(RequestHandler<AsyncScheduledFailureEvent>).TypeHandle);
+            RuntimeHelpers.RunClassConstructor(typeof(RequestHandlerAsync<AsyncScheduledFailureEvent>).TypeHandle);
+            RuntimeHelpers.RunClassConstructor(typeof(PipelineBuilder<AsyncScheduledFailureEvent>).TypeHandle);
             RuntimeHelpers.RunClassConstructor(typeof(RequestHandler<ResilienceContextProbe>).TypeHandle);
             RuntimeHelpers.RunClassConstructor(typeof(RequestHandlerAsync<ResilienceContextProbe>).TypeHandle);
             RuntimeHelpers.RunClassConstructor(typeof(PipelineBuilder<ResilienceContextProbe>).TypeHandle);

@@ -169,7 +169,7 @@ namespace Paramore.Brighter.MessagingGateway.RMQ.Sync
                     //NOTE: EnsureBroker will create a channel if one does not exist
                     Log.PreparingToSend(s_logger, Connection.Exchange!.Name);
 
-                    var rmqMessagePublisher = new RmqMessagePublisher(Channel!, Connection);
+                    var rmqMessagePublisher = new RmqMessagePublisher(Channel!, Connection, _publication.WireMessageWriter, _publication.DestinationQueue);
 
                     message.Persist = Connection.PersistMessages;
                     SelectConfirmsOnChannel();
@@ -181,6 +181,9 @@ namespace Paramore.Brighter.MessagingGateway.RMQ.Sync
 
                      if (delay == TimeSpan.Zero || DelaySupported || Scheduler == null)
                      {
+                         if (_publication.DestinationQueue is { } destinationQueue && delay > TimeSpan.Zero && DelaySupported)
+                             RmqDelayedRequeue.EnsureTopology(Channel!, Connection, destinationQueue, _publication.MakeChannels);
+
                          pendingDeliveryTag = RecordPendingConfirmation(message, publishContext);
                          rmqMessagePublisher.PublishMessage(message, delay.Value);
                          _lastPublishedDeliveryTag = pendingDeliveryTag.Value;

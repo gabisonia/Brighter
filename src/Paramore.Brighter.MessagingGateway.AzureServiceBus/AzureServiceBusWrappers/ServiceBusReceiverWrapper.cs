@@ -62,9 +62,12 @@ namespace Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusWrap
         /// <param name="batchSize">The number of messages to receive.</param>
         /// <param name="serverWaitTime">The maximum time to wait for the messages.</param>
         /// <returns>A task that represents the asynchronous receive operation. The task result contains the received messages.</returns>
-        public async Task<IEnumerable<IBrokeredMessageWrapper>> ReceiveAsync(int batchSize, TimeSpan serverWaitTime)
+        public Task<IEnumerable<IBrokeredMessageWrapper>> ReceiveAsync(int batchSize, TimeSpan serverWaitTime)
+            => ReceiveAsync(batchSize, serverWaitTime, CancellationToken.None);
+
+        internal async Task<IEnumerable<IBrokeredMessageWrapper>> ReceiveAsync(int batchSize, TimeSpan serverWaitTime, CancellationToken cancellationToken)
         {
-            var messages = await _messageReceiver.ReceiveMessagesAsync(batchSize, serverWaitTime).ConfigureAwait(false);
+            var messages = await _messageReceiver.ReceiveMessagesAsync(batchSize, serverWaitTime, cancellationToken).ConfigureAwait(false);
 
             if (messages == null)
             {

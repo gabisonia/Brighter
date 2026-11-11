@@ -8,6 +8,17 @@ namespace Paramore.Brighter.MessagingGateway.AWSSQS.V4;
 public class SqsPublication : Publication
 {
     /// <summary>
+    /// Gets or sets the writer used to map the message body and attributes to SQS.
+    /// </summary>
+    /// <remarks>
+    /// When null, the gateway uses its default mapping. A custom writer replaces the body and
+    /// application attributes while the gateway retains routing, delay and FIFO controls.
+    /// The writer may be called concurrently and must not mutate the source message.
+    /// Compose <see cref="DefaultSqsWireMessageWriter"/> with a custom writer to retain default attributes.
+    /// </remarks>
+    public IAmAWireMessageWriter<SqsWireMessage>? WireMessageWriter { get; set; }
+
+    /// <summary>
     /// Creates a new SQS Publication for a point-to-point channel
     /// </summary>
     public SqsPublication()

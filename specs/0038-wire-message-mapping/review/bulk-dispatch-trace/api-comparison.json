@@ -1,0 +1,58 @@
+[
+  {
+    "pair": "Paramore.Brighter.MessagingGateway.AzureServiceBus-net10.0",
+    "exit": 0,
+    "unresolved_references": 0,
+    "current_sha256": "dc8bcb26b590b2b02e0dffaecefdabe5adf26ae091a1a751563dbbf8f0496442",
+    "baseline_sha256": "27f007b2794a2058eec585015191fbb430189df9e857c2c9959f71279c7b4866"
+  },
+  {
+    "pair": "Paramore.Brighter.MessagingGateway.AzureServiceBus-net8.0",
+    "exit": 0,
+    "unresolved_references": 0,
+    "current_sha256": "e581a604ff9be4d7190a90b7049286929284814b9e15301ab3eab129908ab053",
+    "baseline_sha256": "9ae88d7e6092ca881cc58fd00891471c8f0f374570c22057aa0604f34f9afda9"
+  },
+  {
+    "pair": "Paramore.Brighter.MessagingGateway.AzureServiceBus-net9.0",
+    "exit": 0,
+    "unresolved_references": 0,
+    "current_sha256": "76a0eaa1e42b4800e32aa894c7923e029b00ce0965ee550a5041d2bf7d01e2d5",
+    "baseline_sha256": "15dfa036f6b67d79188e1838ae92438d7a7efaa7388ba4966f29f94d17874f9f"
+  },
+  {
+    "pair": "Paramore.Brighter.MessagingGateway.AzureServiceBus-netstandard2.0",
+    "exit": 0,
+    "unresolved_references": 0,
+    "current_sha256": "13bcf709d99db2eef7922810e87925fc740727e7a3031eeee7c1abaa44a7397a",
+    "baseline_sha256": "e26e6e9675166d2678a078b547a001f1890b08c6fff9f40902a88d16ff0f997a"
+  },
+  {
+    "pair": "Paramore.Brighter.MessagingGateway.GcpPubSub-net10.0",
+    "exit": 0,
+    "unresolved_references": 0,
+    "current_sha256": "beafd35e5ce8ff080ab6a290eea3c66ca010e68e932099d5a34b7d26bb7f69fd",
+    "baseline_sha256": "6403fb4ad05b2f566684efa1754d47d1c4d25199babaa1f4ab476af251a31475"
+  },
+  {
+    "pair": "Paramore.Brighter.MessagingGateway.GcpPubSub-net8.0",
+    "exit": 0,
+    "unresolved_references": 0,
+    "current_sha256": "3da4564d351346091320d46a26d768cb27acbdf3ae00f848babdcb8e5d4b43c8",
+    "baseline_sha256": "da3bfc97766e36cfeffc679eb0d2a2c5b93d7478c057d9a6f6dd8d582fb035bc"
+  },
+  {
+    "pair": "Paramore.Brighter.MessagingGateway.GcpPubSub-net9.0",
+    "exit": 0,
+    "unresolved_references": 0,
+    "current_sha256": "463ac39ae35c5188f055abac00b881269613603141034e26e65463818e76ad59",
+    "baseline_sha256": "0bb02dafbd8cd5cd5f549a917570f6653103120506bcc1476fdb6d2e154f4d0f"
+  },
+  {
+    "pair": "Paramore.Brighter.MessagingGateway.GcpPubSub-netstandard2.0",
+    "exit": 0,
+    "unresolved_references": 0,
+    "current_sha256": "4206b3180e787f9c51cd1cd4589c82bb1276d2b19c538f6d438ba072a55873c5",
+    "baseline_sha256": "684af08e83b83d7fa97906f59a43ee1554b6e0151052952743b3b4aa8d7095d5"
+  }
+]

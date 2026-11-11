@@ -105,7 +105,14 @@ namespace Paramore.Brighter.MessagingGateway.Kafka
                 invalidMessageRoutingKey: invalidMessageRoutingKey,
                 timeProvider: kafkaSubscription.TimeProvider,
                 scheduler: _scheduler,
-                groupProtocol: kafkaSubscription.GroupProtocol);
+                groupProtocol: kafkaSubscription.GroupProtocol)
+            {
+                WireMessageReader = kafkaSubscription.WireMessageReader,
+                InvalidMessageWireMessageWriter = kafkaSubscription.InvalidMessageWireMessageWriter,
+                DeadLetterWireMessageWriter = kafkaSubscription.DeadLetterWireMessageWriter,
+                RequeueWireMessageWriter = kafkaSubscription.RequeueWireMessageWriter,
+                ScheduledRequeuePublicationTopic = kafkaSubscription.ScheduledRequeuePublicationTopic
+            };
 #pragma warning restore CS0618
         }
 

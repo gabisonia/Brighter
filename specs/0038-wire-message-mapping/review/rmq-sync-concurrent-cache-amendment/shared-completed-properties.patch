@@ -1,0 +1,39 @@
+--- a/src/Paramore.Brighter.MessagingGateway.RMQ.Sync/RmqMessagePublisher.cs
++++ b/src/Paramore.Brighter.MessagingGateway.RMQ.Sync/RmqMessagePublisher.cs
+@@ -36,6 +36,8 @@
+ {
+     private static readonly ILogger s_logger = ApplicationLogging.CreateLogger<RmqMessagePublisher>();
+     private static readonly DefaultRmqWireMessageWriter s_defaultWriter = new();
++    private static readonly Dictionary<RmqMessagingGatewayConnection, IBasicProperties> s_sharedProperties = new();
++    private static readonly object s_propertyLock = new();
+     private readonly IModel _channel;
+     private readonly RmqMessagingGatewayConnection _connection;
+     private readonly IAmAWireMessageWriter<RmqWireMessage> _wireMessageWriter;
+@@ -64,7 +66,7 @@
+         AddDeliveryHeaders(delay, headers, deliveryTag);
+ 
+         _channel.BasicPublish(_connection.Exchange.Name, message.Header.Topic, mandatory,
+-            properties, wireMessage.Body);
++            CacheCompletedProperties(properties), wireMessage.Body);
+     }
+ 
+     public void RequeueMessage(Message message, ChannelName queueName, TimeSpan timeOut)
+@@ -86,7 +88,17 @@
+ 
+         _channel.BasicPublish(
+             timeOut > TimeSpan.Zero ? RmqDelayedRequeue.ExchangeName(_connection) : string.Empty,
+-            queueName.Value, false, properties, wireMessage.Body);
++            queueName.Value, false, CacheCompletedProperties(properties), wireMessage.Body);
++    }
++
++    private IBasicProperties CacheCompletedProperties(IBasicProperties properties)
++    {
++        lock (s_propertyLock)
++        {
++            if (!s_sharedProperties.TryGetValue(_connection, out var cached))
++                s_sharedProperties.Add(_connection, cached = properties);
++            return cached;
++        }
+     }
+ 
+     private static void AddOriginalMessageIdOnRepublish(Message message, IDictionary<string, object> headers)

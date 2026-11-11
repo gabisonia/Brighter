@@ -5,6 +5,31 @@ namespace Paramore.Brighter.MessagingGateway.RMQ.Async
     public class RmqPublication : Publication
     {
         /// <summary>
+        /// Gets or sets an explicit native queue destination.
+        /// </summary>
+        /// <remarks>
+        /// Use a queue-specific retry publication to avoid routing scheduled retries to sibling queues.
+        /// Null preserves exchange routing by the message's logical topic. This does not change
+        /// the publication selector or the logical message topic. The destination queue must exist.
+        /// Zero-delay sends use the default exchange. Native delayed sends use the queue binding
+        /// on the connection's queue-specific delayed exchange. Create mode provisions that binding;
+        /// Validate and Assume require it to exist. The destination queue itself must already exist.
+        /// </remarks>
+        public ChannelName? DestinationQueue { get; set; }
+
+        /// <summary>
+        /// Gets or sets the writer used to map outgoing messages to RabbitMQ body and properties.
+        /// </summary>
+        /// <remarks>
+        /// Null preserves the existing mapping. A configured writer replaces application metadata and
+        /// body mapping; the gateway retains delivery controls and publisher-confirmation identity.
+        /// A writer-supplied delay header is discarded before the gateway applies its delivery delay.
+        /// A writer-supplied delivery tag is discarded; only a tag from the source message is emitted.
+        /// Writers may be called concurrently and must return independent output without mutating the source.
+        /// </remarks>
+        public IAmAWireMessageWriter<RmqWireMessage>? WireMessageWriter { get; set; }
+
+        /// <summary>
         /// How long should we wait on shutdown for the broker to finish confirming delivery of messages.
         /// If we shut down without confirmation then messages will not be marked as sent in the Outbox
         /// and any sweeper will resend.

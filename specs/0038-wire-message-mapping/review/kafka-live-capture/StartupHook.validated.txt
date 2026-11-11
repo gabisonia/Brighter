@@ -1,0 +1,48 @@
+using System.Runtime.InteropServices;
+using System.Text;
+using System.Text.Json;
+
+internal static class StartupHook
+{
+    public static void Initialize()
+    {
+        if (!OperatingSystem.IsLinux() || !Environment.GetCommandLineArgs().Any(
+                argument => argument.EndsWith("testhost.dll", StringComparison.Ordinal)))
+            return;
+
+        string directory = Environment.GetEnvironmentVariable("BRIGHTER_NATIVE_CAPTURE")
+            ?? throw new InvalidOperationException("An explicit diagnostic capture directory is required.");
+        int pid = Environment.ProcessId;
+        string path = Path.Combine(directory, $"native-stderr-{pid}.txt");
+        // Linux O_WRONLY | O_CREAT | O_APPEND, mode 0600. This diagnostic runs only in its isolated container.
+        int descriptor = open(path, 1 | 64 | 1024, 384);
+        if (descriptor < 0)
+            throw new InvalidOperationException($"Cannot open native capture: {Marshal.GetLastPInvokeError()}");
+        try
+        {
+            if (dup2(descriptor, 2) != 2)
+                throw new InvalidOperationException($"Cannot redirect native stderr: {Marshal.GetLastPInvokeError()}");
+        }
+        finally
+        {
+            if (descriptor != 2) close(descriptor);
+        }
+
+        byte[] marker = Encoding.UTF8.GetBytes($"NATIVE CAPTURE pid={pid} utc={DateTimeOffset.UtcNow:O}\n");
+        if (write(2, marker, (nuint)marker.Length) != marker.Length)
+            throw new InvalidOperationException("Cannot write native capture marker.");
+        File.WriteAllText(Path.Combine(directory, $"testhost-{pid}.json"), JsonSerializer.Serialize(new
+        {
+            pid, path, runtime = RuntimeEnvironment.GetRuntimeDirectory(), utc = DateTimeOffset.UtcNow
+        }));
+    }
+
+    [DllImport("libc", SetLastError = true)]
+    private static extern int open(string path, int flags, int mode);
+    [DllImport("libc", SetLastError = true)]
+    private static extern int dup2(int oldDescriptor, int newDescriptor);
+    [DllImport("libc", SetLastError = true)]
+    private static extern int close(int descriptor);
+    [DllImport("libc", SetLastError = true)]
+    private static extern nint write(int descriptor, byte[] bytes, nuint count);
+}

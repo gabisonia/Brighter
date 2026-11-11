@@ -1,0 +1,530 @@
+{
+  "all_case_identities_retained": true,
+  "full_case_count": 512,
+  "unchanged_main_source_count": 6614,
+  "changed_main_sources": [],
+  "original_shutdown_observations": [
+    {
+      "run": "focus-net9.0",
+      "test": "Paramore.Brighter.Gcp.Tests.MessagingGateway.Stream.GcpStreamDisposeWithBufferedRedeliveryTests.When_a_gcp_stream_channel_is_disposed_with_a_redelivery_buffered_after_requeue_should_return_promptly",
+      "outcome": "Passed",
+      "start": "2026-11-09T19:51:43.9682372+00:00",
+      "end": "2026-11-09T19:51:46.2630934+00:00",
+      "providers": [
+        {
+          "id": "4473d5e0d6564b558b6a29ba42fff8f2",
+          "original_deliveries": [
+            {
+              "native_id": "2",
+              "ack_id": "projects/brighter-test/subscriptions/gen-stream-0cc70ca9bd964337bb24ca2b4769e4d7:4",
+              "application_id": "01a1c1dd-d84d-706e-a7a7-f57646e7f464",
+              "time": "2026-11-09T19:51:44.090823+00:00"
+            },
+            {
+              "native_id": "2",
+              "ack_id": "projects/brighter-test/subscriptions/gen-stream-0cc70ca9bd964337bb24ca2b4769e4d7:5",
+              "application_id": "01a1c1dd-d84d-706e-a7a7-f57646e7f464",
+              "time": "2026-11-09T19:51:44.104018+00:00"
+            }
+          ],
+          "replacement_deliveries": [
+            {
+              "native_id": "2",
+              "ack_id": "projects/brighter-test/subscriptions/gen-stream-0cc70ca9bd964337bb24ca2b4769e4d7:6",
+              "application_id": "01a1c1dd-d84d-706e-a7a7-f57646e7f464",
+              "time": "2026-11-09T19:51:46.236325+00:00"
+            }
+          ],
+          "completed_nacks": [
+            {
+              "generation": 1,
+              "time": "2026-11-09T19:51:44.104589+00:00",
+              "ack_ids": [
+                "projects/brighter-test/subscriptions/gen-stream-0cc70ca9bd964337bb24ca2b4769e4d7:4"
+              ]
+            },
+            {
+              "generation": 1,
+              "time": "2026-11-09T19:51:46.142821+00:00",
+              "ack_ids": [
+                "projects/brighter-test/subscriptions/gen-stream-0cc70ca9bd964337bb24ca2b4769e4d7:5"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "run": "focus-net9.0",
+      "test": "Paramore.Brighter.Gcp.Tests.MessagingGateway.Stream.GcpStreamDisposeWithBufferedRedeliveryAsyncTests.When_a_gcp_stream_channel_is_disposed_with_a_redelivery_buffered_after_requeue_async_should_return_promptly",
+      "outcome": "Passed",
+      "start": "2026-11-09T19:51:39.6221252+00:00",
+      "end": "2026-11-09T19:51:43.9473216+00:00",
+      "providers": [
+        {
+          "id": "dcc99c5bd1f74150b981a82471e6bbe9",
+          "original_deliveries": [
+            {
+              "native_id": "1",
+              "ack_id": "projects/brighter-test/subscriptions/gen-stream-370c486ec618446094f06ac1387bc94c:1",
+              "application_id": "01a1c1dd-cd48-7c8c-ab8a-cc17ac6e4cba",
+              "time": "2026-11-09T19:51:41.673123+00:00"
+            },
+            {
+              "native_id": "1",
+              "ack_id": "projects/brighter-test/subscriptions/gen-stream-370c486ec618446094f06ac1387bc94c:2",
+              "application_id": "01a1c1dd-cd48-7c8c-ab8a-cc17ac6e4cba",
+              "time": "2026-11-09T19:51:41.720500+00:00"
+            }
+          ],
+          "replacement_deliveries": [
+            {
+              "native_id": "1",
+              "ack_id": "projects/brighter-test/subscriptions/gen-stream-370c486ec618446094f06ac1387bc94c:3",
+              "application_id": "01a1c1dd-cd48-7c8c-ab8a-cc17ac6e4cba",
+              "time": "2026-11-09T19:51:43.888463+00:00"
+            }
+          ],
+          "completed_nacks": [
+            {
+              "generation": 1,
+              "time": "2026-11-09T19:51:41.694224+00:00",
+              "ack_ids": [
+                "projects/brighter-test/subscriptions/gen-stream-370c486ec618446094f06ac1387bc94c:1"
+              ]
+            },
+            {
+              "generation": 1,
+              "time": "2026-11-09T19:51:43.774616+00:00",
+              "ack_ids": [
+                "projects/brighter-test/subscriptions/gen-stream-370c486ec618446094f06ac1387bc94c:2"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "run": "focus-net9.0",
+      "test": "Paramore.Brighter.Gcp.Tests.MessagingGateway.Stream.GcpStreamDisposeWithUnsettledMessageAsyncTests.When_a_gcp_stream_channel_is_disposed_holding_an_unsettled_message_async_should_return_promptly",
+      "outcome": "Passed",
+      "start": "2026-11-09T19:51:46.2660709+00:00",
+      "end": "2026-11-09T19:51:46.4966972+00:00",
+      "providers": [
+        {
+          "id": "49c866cd8fe942aca6a6a485079c3ae5",
+          "original_deliveries": [
+            {
+              "native_id": "3",
+              "ack_id": "projects/brighter-test/subscriptions/gen-stream-1b0de3e0897d4f76a3bc93653935205c:7",
+              "application_id": "01a1c1dd-e158-7ae1-ae2b-e35280c5105f",
+              "time": "2026-11-09T19:51:46.356580+00:00"
+            }
+          ],
+          "replacement_deliveries": [
+            {
+              "native_id": "3",
+              "ack_id": "projects/brighter-test/subscriptions/gen-stream-1b0de3e0897d4f76a3bc93653935205c:8",
+              "application_id": "01a1c1dd-e158-7ae1-ae2b-e35280c5105f",
+              "time": "2026-11-09T19:51:46.468958+00:00"
+            }
+          ],
+          "completed_nacks": [
+            {
+              "generation": 1,
+              "time": "2026-11-09T19:51:46.369626+00:00",
+              "ack_ids": [
+                "projects/brighter-test/subscriptions/gen-stream-1b0de3e0897d4f76a3bc93653935205c:7"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "run": "focus-net9.0",
+      "test": "Paramore.Brighter.Gcp.Tests.MessagingGateway.Stream.GcpStreamDisposeWithUnsettledMessageTests.When_a_gcp_stream_channel_is_disposed_holding_an_unsettled_message_should_return_promptly",
+      "outcome": "Passed",
+      "start": "2026-11-09T19:51:46.4982804+00:00",
+      "end": "2026-11-09T19:51:46.7137570+00:00",
+      "providers": [
+        {
+          "id": "b490f4f60b754bb7891cfaa4e4e08315",
+          "original_deliveries": [
+            {
+              "native_id": "4",
+              "ack_id": "projects/brighter-test/subscriptions/gen-stream-4b5d6b3e59ae40b38375089596a1b0ec:9",
+              "application_id": "01a1c1dd-e241-7d52-b386-1ed574da0a6a",
+              "time": "2026-11-09T19:51:46.597133+00:00"
+            }
+          ],
+          "replacement_deliveries": [
+            {
+              "native_id": "4",
+              "ack_id": "projects/brighter-test/subscriptions/gen-stream-4b5d6b3e59ae40b38375089596a1b0ec:10",
+              "application_id": "01a1c1dd-e241-7d52-b386-1ed574da0a6a",
+              "time": "2026-11-09T19:51:46.683946+00:00"
+            }
+          ],
+          "completed_nacks": [
+            {
+              "generation": 1,
+              "time": "2026-11-09T19:51:46.615373+00:00",
+              "ack_ids": [
+                "projects/brighter-test/subscriptions/gen-stream-4b5d6b3e59ae40b38375089596a1b0ec:9"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "run": "focus-net10.0",
+      "test": "Paramore.Brighter.Gcp.Tests.MessagingGateway.Stream.GcpStreamDisposeWithUnsettledMessageTests.When_a_gcp_stream_channel_is_disposed_holding_an_unsettled_message_should_return_promptly",
+      "outcome": "Passed",
+      "start": "2026-11-09T19:52:00.6691697+00:00",
+      "end": "2026-11-09T19:52:00.8883726+00:00",
+      "providers": [
+        {
+          "id": "486512bdba904a3eb48811a6d483b18e",
+          "original_deliveries": [
+            {
+              "native_id": "4",
+              "ack_id": "projects/brighter-test/subscriptions/gen-stream-3031d7e5b1e94607b107f22ae3969ddc:9",
+              "application_id": "01a1c1de-199c-7e93-953e-c7967b90a5b8",
+              "time": "2026-11-09T19:52:00.766003+00:00"
+            }
+          ],
+          "replacement_deliveries": [
+            {
+              "native_id": "4",
+              "ack_id": "projects/brighter-test/subscriptions/gen-stream-3031d7e5b1e94607b107f22ae3969ddc:10",
+              "application_id": "01a1c1de-199c-7e93-953e-c7967b90a5b8",
+              "time": "2026-11-09T19:52:00.854619+00:00"
+            }
+          ],
+          "completed_nacks": [
+            {
+              "generation": 1,
+              "time": "2026-11-09T19:52:00.788590+00:00",
+              "ack_ids": [
+                "projects/brighter-test/subscriptions/gen-stream-3031d7e5b1e94607b107f22ae3969ddc:9"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "run": "focus-net10.0",
+      "test": "Paramore.Brighter.Gcp.Tests.MessagingGateway.Stream.GcpStreamDisposeWithBufferedRedeliveryAsyncTests.When_a_gcp_stream_channel_is_disposed_with_a_redelivery_buffered_after_requeue_async_should_return_promptly",
+      "outcome": "Passed",
+      "start": "2026-11-09T19:51:55.3477456+00:00",
+      "end": "2026-11-09T19:51:58.1088723+00:00",
+      "providers": [
+        {
+          "id": "d099dec59a9749929e755232349b3988",
+          "original_deliveries": [
+            {
+              "native_id": "1",
+              "ack_id": "projects/brighter-test/subscriptions/gen-stream-2881901dbd8040c9b1dd47cbea2665b9:1",
+              "application_id": "01a1c1de-04e2-798b-8b3e-ff1edaf59790",
+              "time": "2026-11-09T19:51:55.785663+00:00"
+            },
+            {
+              "native_id": "1",
+              "ack_id": "projects/brighter-test/subscriptions/gen-stream-2881901dbd8040c9b1dd47cbea2665b9:2",
+              "application_id": "01a1c1de-04e2-798b-8b3e-ff1edaf59790",
+              "time": "2026-11-09T19:51:55.829660+00:00"
+            }
+          ],
+          "replacement_deliveries": [
+            {
+              "native_id": "1",
+              "ack_id": "projects/brighter-test/subscriptions/gen-stream-2881901dbd8040c9b1dd47cbea2665b9:3",
+              "application_id": "01a1c1de-04e2-798b-8b3e-ff1edaf59790",
+              "time": "2026-11-09T19:51:58.042140+00:00"
+            }
+          ],
+          "completed_nacks": [
+            {
+              "generation": 1,
+              "time": "2026-11-09T19:51:55.802203+00:00",
+              "ack_ids": [
+                "projects/brighter-test/subscriptions/gen-stream-2881901dbd8040c9b1dd47cbea2665b9:1"
+              ]
+            },
+            {
+              "generation": 1,
+              "time": "2026-11-09T19:51:57.877541+00:00",
+              "ack_ids": [
+                "projects/brighter-test/subscriptions/gen-stream-2881901dbd8040c9b1dd47cbea2665b9:2"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "run": "focus-net10.0",
+      "test": "Paramore.Brighter.Gcp.Tests.MessagingGateway.Stream.GcpStreamDisposeWithUnsettledMessageAsyncTests.When_a_gcp_stream_channel_is_disposed_holding_an_unsettled_message_async_should_return_promptly",
+      "outcome": "Passed",
+      "start": "2026-11-09T19:52:00.4301622+00:00",
+      "end": "2026-11-09T19:52:00.6673120+00:00",
+      "providers": [
+        {
+          "id": "1568111a32744213b27c7f2cf7d1cbcb",
+          "original_deliveries": [
+            {
+              "native_id": "3",
+              "ack_id": "projects/brighter-test/subscriptions/gen-stream-21a3148ee8894376bc93b9c26556bcd7:7",
+              "application_id": "01a1c1de-18ac-78c9-bcee-964f6258e86f",
+              "time": "2026-11-09T19:52:00.548132+00:00"
+            }
+          ],
+          "replacement_deliveries": [
+            {
+              "native_id": "3",
+              "ack_id": "projects/brighter-test/subscriptions/gen-stream-21a3148ee8894376bc93b9c26556bcd7:8",
+              "application_id": "01a1c1de-18ac-78c9-bcee-964f6258e86f",
+              "time": "2026-11-09T19:52:00.642089+00:00"
+            }
+          ],
+          "completed_nacks": [
+            {
+              "generation": 1,
+              "time": "2026-11-09T19:52:00.567173+00:00",
+              "ack_ids": [
+                "projects/brighter-test/subscriptions/gen-stream-21a3148ee8894376bc93b9c26556bcd7:7"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "run": "focus-net10.0",
+      "test": "Paramore.Brighter.Gcp.Tests.MessagingGateway.Stream.GcpStreamDisposeWithBufferedRedeliveryTests.When_a_gcp_stream_channel_is_disposed_with_a_redelivery_buffered_after_requeue_should_return_promptly",
+      "outcome": "Passed",
+      "start": "2026-11-09T19:51:58.1251090+00:00",
+      "end": "2026-11-09T19:52:00.4269520+00:00",
+      "providers": [
+        {
+          "id": "dde2500add954708bd9250236670fc9c",
+          "original_deliveries": [
+            {
+              "native_id": "2",
+              "ack_id": "projects/brighter-test/subscriptions/gen-stream-ce7c02fe0a134aa3bba812df1fc110f6:4",
+              "application_id": "01a1c1de-0f9e-7a17-973c-f4addfcaa199",
+              "time": "2026-11-09T19:51:58.264324+00:00"
+            },
+            {
+              "native_id": "2",
+              "ack_id": "projects/brighter-test/subscriptions/gen-stream-ce7c02fe0a134aa3bba812df1fc110f6:5",
+              "application_id": "01a1c1de-0f9e-7a17-973c-f4addfcaa199",
+              "time": "2026-11-09T19:51:58.276520+00:00"
+            }
+          ],
+          "replacement_deliveries": [
+            {
+              "native_id": "2",
+              "ack_id": "projects/brighter-test/subscriptions/gen-stream-ce7c02fe0a134aa3bba812df1fc110f6:6",
+              "application_id": "01a1c1de-0f9e-7a17-973c-f4addfcaa199",
+              "time": "2026-11-09T19:52:00.390695+00:00"
+            }
+          ],
+          "completed_nacks": [
+            {
+              "generation": 1,
+              "time": "2026-11-09T19:51:58.275954+00:00",
+              "ack_ids": [
+                "projects/brighter-test/subscriptions/gen-stream-ce7c02fe0a134aa3bba812df1fc110f6:4"
+              ]
+            },
+            {
+              "generation": 1,
+              "time": "2026-11-09T19:52:00.290710+00:00",
+              "ack_ids": [
+                "projects/brighter-test/subscriptions/gen-stream-ce7c02fe0a134aa3bba812df1fc110f6:5"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "run": "observed-full-net9.0",
+      "test": "Paramore.Brighter.Gcp.Tests.MessagingGateway.Stream.GcpStreamDisposeWithBufferedRedeliveryAsyncTests.When_a_gcp_stream_channel_is_disposed_with_a_redelivery_buffered_after_requeue_async_should_return_promptly",
+      "outcome": "Passed",
+      "start": "2026-11-09T19:59:00.7374365+00:00",
+      "end": "2026-11-09T19:59:02.8215523+00:00",
+      "providers": [
+        {
+          "id": "2b745d8ac2d04981801302225e9fd7cb",
+          "original_deliveries": [
+            {
+              "native_id": "2304",
+              "ack_id": "projects/brighter-test/subscriptions/gen-stream-abad7919d01b45999a11b70b4e19086c:200690",
+              "application_id": "01a1c1e4-8282-710f-950f-0e70b518b90a",
+              "time": "2026-11-09T19:59:00.767350+00:00"
+            },
+            {
+              "native_id": "2304",
+              "ack_id": "projects/brighter-test/subscriptions/gen-stream-abad7919d01b45999a11b70b4e19086c:200691",
+              "application_id": "01a1c1e4-8282-710f-950f-0e70b518b90a",
+              "time": "2026-11-09T19:59:00.816754+00:00"
+            }
+          ],
+          "replacement_deliveries": [
+            {
+              "native_id": "2304",
+              "ack_id": "projects/brighter-test/subscriptions/gen-stream-abad7919d01b45999a11b70b4e19086c:200692",
+              "application_id": "01a1c1e4-8282-710f-950f-0e70b518b90a",
+              "time": "2026-11-09T19:59:02.809196+00:00"
+            }
+          ],
+          "completed_nacks": [
+            {
+              "generation": 1,
+              "time": "2026-11-09T19:59:00.769665+00:00",
+              "ack_ids": [
+                "projects/brighter-test/subscriptions/gen-stream-abad7919d01b45999a11b70b4e19086c:200690"
+              ]
+            },
+            {
+              "generation": 1,
+              "time": "2026-11-09T19:59:02.782770+00:00",
+              "ack_ids": [
+                "projects/brighter-test/subscriptions/gen-stream-abad7919d01b45999a11b70b4e19086c:200691"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "run": "observed-full-net9.0",
+      "test": "Paramore.Brighter.Gcp.Tests.MessagingGateway.Stream.GcpStreamDisposeWithUnsettledMessageAsyncTests.When_a_gcp_stream_channel_is_disposed_holding_an_unsettled_message_async_should_return_promptly",
+      "outcome": "Passed",
+      "start": "2026-11-09T19:59:05.0043789+00:00",
+      "end": "2026-11-09T19:59:05.0851552+00:00",
+      "providers": [
+        {
+          "id": "7d4176c190424529be6c94ddc80eb12f",
+          "original_deliveries": [
+            {
+              "native_id": "2309",
+              "ack_id": "projects/brighter-test/subscriptions/gen-stream-6e98de90b1784c8f9885451d0e6780bd:200698",
+              "application_id": "01a1c1e4-9329-777d-bb28-3ddda60d1442",
+              "time": "2026-11-09T19:59:05.066020+00:00"
+            }
+          ],
+          "replacement_deliveries": [
+            {
+              "native_id": "2309",
+              "ack_id": "projects/brighter-test/subscriptions/gen-stream-6e98de90b1784c8f9885451d0e6780bd:200699",
+              "application_id": "01a1c1e4-9329-777d-bb28-3ddda60d1442",
+              "time": "2026-11-09T19:59:05.074503+00:00"
+            }
+          ],
+          "completed_nacks": [
+            {
+              "generation": 1,
+              "time": "2026-11-09T19:59:05.070417+00:00",
+              "ack_ids": [
+                "projects/brighter-test/subscriptions/gen-stream-6e98de90b1784c8f9885451d0e6780bd:200698"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "run": "observed-full-net9.0",
+      "test": "Paramore.Brighter.Gcp.Tests.MessagingGateway.Stream.GcpStreamDisposeWithBufferedRedeliveryTests.When_a_gcp_stream_channel_is_disposed_with_a_redelivery_buffered_after_requeue_should_return_promptly",
+      "outcome": "Passed",
+      "start": "2026-11-09T19:59:02.8228147+00:00",
+      "end": "2026-11-09T19:59:04.9257374+00:00",
+      "providers": [
+        {
+          "id": "3888603816884eef9f763226a8d03c83",
+          "original_deliveries": [
+            {
+              "native_id": "2305",
+              "ack_id": "projects/brighter-test/subscriptions/gen-stream-8eb91090bb3a447ea3eca008a296fde1:200693",
+              "application_id": "01a1c1e4-8aa6-7359-9313-4dcdd2340f52",
+              "time": "2026-11-09T19:59:02.893636+00:00"
+            },
+            {
+              "native_id": "2305",
+              "ack_id": "projects/brighter-test/subscriptions/gen-stream-8eb91090bb3a447ea3eca008a296fde1:200694",
+              "application_id": "01a1c1e4-8aa6-7359-9313-4dcdd2340f52",
+              "time": "2026-11-09T19:59:02.944817+00:00"
+            }
+          ],
+          "replacement_deliveries": [
+            {
+              "native_id": "2305",
+              "ack_id": "projects/brighter-test/subscriptions/gen-stream-8eb91090bb3a447ea3eca008a296fde1:200696",
+              "application_id": "01a1c1e4-8aa6-7359-9313-4dcdd2340f52",
+              "time": "2026-11-09T19:59:04.906885+00:00"
+            }
+          ],
+          "completed_nacks": [
+            {
+              "generation": 1,
+              "time": "2026-11-09T19:59:02.895029+00:00",
+              "ack_ids": [
+                "projects/brighter-test/subscriptions/gen-stream-8eb91090bb3a447ea3eca008a296fde1:200693"
+              ]
+            },
+            {
+              "generation": 1,
+              "time": "2026-11-09T19:59:04.900234+00:00",
+              "ack_ids": [
+                "projects/brighter-test/subscriptions/gen-stream-8eb91090bb3a447ea3eca008a296fde1:200694"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "run": "observed-full-net9.0",
+      "test": "Paramore.Brighter.Gcp.Tests.MessagingGateway.Stream.GcpStreamDisposeWithUnsettledMessageTests.When_a_gcp_stream_channel_is_disposed_holding_an_unsettled_message_should_return_promptly",
+      "outcome": "Passed",
+      "start": "2026-11-09T19:59:05.0866109+00:00",
+      "end": "2026-11-09T19:59:05.2104484+00:00",
+      "providers": [
+        {
+          "id": "56859b559ebc4124a6a0a72f97fbd04f",
+          "original_deliveries": [
+            {
+              "native_id": "2310",
+              "ack_id": "projects/brighter-test/subscriptions/gen-stream-46493b3eab304be5a3e6db48cc01fa0d:200700",
+              "application_id": "01a1c1e4-937d-7a96-996e-53e2aa14f84f",
+              "time": "2026-11-09T19:59:05.145161+00:00"
+            }
+          ],
+          "replacement_deliveries": [
+            {
+              "native_id": "2310",
+              "ack_id": "projects/brighter-test/subscriptions/gen-stream-46493b3eab304be5a3e6db48cc01fa0d:200701",
+              "application_id": "01a1c1e4-937d-7a96-996e-53e2aa14f84f",
+              "time": "2026-11-09T19:59:05.202989+00:00"
+            }
+          ],
+          "completed_nacks": [
+            {
+              "generation": 1,
+              "time": "2026-11-09T19:59:05.148567+00:00",
+              "ack_ids": [
+                "projects/brighter-test/subscriptions/gen-stream-46493b3eab304be5a3e6db48cc01fa0d:200700"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

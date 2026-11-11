@@ -1,0 +1,18 @@
+{
+  "exit": 1,
+  "wall_seconds": 559.806911945343,
+  "monotonic_seconds": 559.8308966248296,
+  "clock_discontinuity": false,
+  "counts": {
+    "Passed": 456,
+    "Failed": 1,
+    "NotExecuted": 55
+  },
+  "failures": [
+    {
+      "name": "Paramore.Brighter.Gcp.Tests.MessagingGateway.GcpOrderedNackRpcRecoveryTests.When_nacking_an_ordered_gcp_delivery_should_send_a_native_nack_and_recover_both_messages(useAsync: True, clientCount: 0)",
+      "message": "Assert.Contains() Failure: Item not found in set\nSet:       [\"01a1c1de-533f-7e39-908a-689086873a5b\"]\nNot found: \"01a1c1de-533f-7bc2-853c-208e23fe4ded\"",
+      "stack": "   at Paramore.Brighter.Gcp.Tests.MessagingGateway.GcpOrderedNackRpcRecoveryTests.When_nacking_an_ordered_gcp_delivery_should_send_a_native_nack_and_recover_both_messages(Boolean useAsync, Int32 clientCount) in /private/tmp/brighter-4170-rmq-scheduled-selection/workspace/tests/Paramore.Brighter.Gcp.Tests/MessagingGateway/When_nacking_an_ordered_gcp_delivery_should_send_a_native_nack_and_recover_both_messages.cs:line 190\n   at Paramore.Brighter.Gcp.Tests.MessagingGateway.GcpOrderedNackRpcRecoveryTests.When_nacking_an_ordered_gcp_delivery_should_send_a_native_nack_and_recover_both_messages(Boolean useAsync, Int32 clientCount) in /private/tmp/brighter-4170-rmq-scheduled-selection/workspace/tests/Paramore.Brighter.Gcp.Tests/MessagingGateway/When_nacking_an_ordered_gcp_delivery_should_send_a_native_nack_and_recover_both_messages.cs:line 192\n   at Paramore.Brighter.Gcp.Tests.MessagingGateway.GcpOrderedNackRpcRecoveryTests.When_nacking_an_ordered_gcp_delivery_should_send_a_native_nack_and_recover_both_messages(Boolean useAsync, Int32 clientCount) in /private/tmp/brighter-4170-rmq-scheduled-selection/workspace/tests/Paramore.Brighter.Gcp.Tests/MessagingGateway/When_nacking_an_ordered_gcp_delivery_should_send_a_native_nack_and_recover_both_messages.cs:line 222\n--- End of stack trace from previous location ---"
+    }
+  ]
+}

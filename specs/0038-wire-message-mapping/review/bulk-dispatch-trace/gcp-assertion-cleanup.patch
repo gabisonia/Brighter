@@ -1,0 +1,11 @@
+--- full-matrix/tests/Paramore.Brighter.Gcp.Tests/MessagingGateway/When_gcp_bulk_dispatches_outbox_messages_should_map_the_current_producer_context.cs
++++ final/tests/Paramore.Brighter.Gcp.Tests/MessagingGateway/When_gcp_bulk_dispatches_outbox_messages_should_map_the_current_producer_context.cs
+@@ -130,7 +130,7 @@
+             Assert.Equal(custom ? sources.Length : 0, writer.Calls);
+             foreach (var source in sources)
+             {
+-                var native = Assert.Single(received.Where(delivery => delivery.Message.Attributes[HeaderNames.Id] == source.Id.Value)).Message;
++                var native = Assert.Single(received, delivery => delivery.Message.Attributes[HeaderNames.Id] == source.Id.Value).Message;
+                 Assert.Equal(span.Id, native.Attributes[HeaderNames.TraceParent]);
+                 Assert.Equal("vendor=dispatch", native.Attributes[HeaderNames.TraceState]);
+                 Assert.Contains("bulk=dispatch", native.Attributes[HeaderNames.Baggage]);

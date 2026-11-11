@@ -32,8 +32,8 @@ public class AzureServiceBusSingleMessageBatch : IAmAMessageBatch<ServiceBusMess
     public RoutingKey RoutingKey { get; }
 
     public static AzureServiceBusSingleMessageBatch CreateBatch(Message message)
-        => CreateBatch(message, null);
+        => CreateBatch(message, AzureServiceBusMessagePublisher.ConvertToServiceBusMessage(message));
 
-    internal static AzureServiceBusSingleMessageBatch CreateBatch(Message message, TimeSpan? timeToLive)
-        => new(AzureServiceBusMessagePublisher.ConvertToServiceBusMessage(message, timeToLive), message.Header.Topic, message.Id);
+    internal static AzureServiceBusSingleMessageBatch CreateBatch(Message message, ServiceBusMessage nativeMessage)
+        => new(nativeMessage, message.Header.Topic, message.Id);
 }

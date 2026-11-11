@@ -1,0 +1,19 @@
+{
+  "variant": "baseline",
+  "framework": "net10.0",
+  "image": "gcr.io/google.com/cloudsdktool/cloud-sdk@sha256:3797a874fae6b75aa25260b5bd40fa0397c2f1102f18ae3ac7dc887732fbe449",
+  "exit": 0,
+  "wall_seconds": 31.57628607749939,
+  "monotonic_seconds": 31.576302375178784,
+  "clock_discontinuity": false,
+  "results": [
+    "RESULT addStream=False acknowledgeSecondFirst=False firstReturnedWithin30Seconds=True",
+    "RESULT addStream=False acknowledgeSecondFirst=True firstReturnedWithin30Seconds=True",
+    "RESULT addStream=True acknowledgeSecondFirst=False firstReturnedWithin30Seconds=True",
+    "RESULT addStream=True acknowledgeSecondFirst=True firstReturnedWithin30Seconds=False"
+  ],
+  "recoveries": [
+    "RECOVERY afterRepeatedSecondAck=True"
+  ],
+  "errors": []
+}

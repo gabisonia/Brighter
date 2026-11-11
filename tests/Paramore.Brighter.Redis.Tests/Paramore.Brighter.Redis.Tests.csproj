@@ -25,6 +25,7 @@
 
     <ItemGroup>
     <ProjectReference Include="..\..\src\Paramore.Brighter.ServiceActivator\Paramore.Brighter.ServiceActivator.csproj" />
+      <ProjectReference Include="../Paramore.Brighter.Redis.SchedulerFailureProbe/Paramore.Brighter.Redis.SchedulerFailureProbe.csproj" />
       <ProjectReference Include="..\..\src\Paramore.Brighter.MessagingGateway.Redis\Paramore.Brighter.MessagingGateway.Redis.csproj" />
     </ItemGroup>
 </Project>

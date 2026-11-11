@@ -1,0 +1,590 @@
+[
+  {
+    "File": "src/Paramore.Brighter.MessageScheduler.AWS.V4/AwsScheduler.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessageScheduler.AWS/AwsScheduler.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessageScheduler.Azure/AzureServiceBusRequeueScheduler.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessageScheduler.Azure/AzureServiceBusSchedulerFactory.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": [
+      "Paramore.Brighter.MessageScheduler.Azure.AzureServiceBusSchedulerFactory::public property IAmAWireMessageWriter\u003CServiceBusMessage\u003E? RequeueWireMessageWriter [get,set]"
+    ]
+  },
+  {
+    "File": "src/Paramore.Brighter.MessageScheduler.Quartz/QuartzBrighterJob.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessageScheduler.TickerQ/TickerQBrighterJob.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.AWSSQS.V4/SnsMessageProducer.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.AWSSQS.V4/SnsMessagePublisher.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": [
+      "Paramore.Brighter.MessagingGateway.AWSSQS.V4.SnsMessagePublisher::public ctor SnsMessagePublisher(string topicArn, AmazonSimpleNotificationServiceClient client, IAmAWireMessageWriter\u003CSnsWireMessage\u003E? wireMessageWriter)"
+    ]
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.AWSSQS.V4/SnsPublication.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": [
+      "Paramore.Brighter.MessagingGateway.AWSSQS.V4.SnsPublication::public property IAmAWireMessageWriter\u003CSnsWireMessage\u003E? WireMessageWriter [get,set]"
+    ]
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.AWSSQS.V4/SqsInlineMessageCreator.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.AWSSQS.V4/SqsMessageConsumer.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.AWSSQS.V4/SqsMessageConsumerFactory.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.AWSSQS.V4/SqsMessageCreator.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.AWSSQS.V4/SqsMessageProducer.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.AWSSQS.V4/SqsMessageSender.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": [
+      "Paramore.Brighter.MessagingGateway.AWSSQS.V4.SqsMessageSender::public ctor SqsMessageSender(string queueUrl, AmazonSQSClient client, IAmAWireMessageWriter\u003CSqsWireMessage\u003E? wireMessageWriter)"
+    ]
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.AWSSQS.V4/SqsPublication.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": [
+      "Paramore.Brighter.MessagingGateway.AWSSQS.V4.SqsPublication::public property IAmAWireMessageWriter\u003CSqsWireMessage\u003E? WireMessageWriter [get,set]"
+    ]
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.AWSSQS.V4/SqsSubscription.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": [
+      "Paramore.Brighter.MessagingGateway.AWSSQS.V4.SqsSubscription::public property IAmAWireMessageReader\u003CAmazon.SQS.Model.Message\u003E? WireMessageReader [get,set]",
+      "Paramore.Brighter.MessagingGateway.AWSSQS.V4.SqsSubscription::public property IAmAWireMessageWriter\u003CSqsWireMessage\u003E? InvalidMessageWireMessageWriter [get,set]",
+      "Paramore.Brighter.MessagingGateway.AWSSQS.V4.SqsSubscription::public property IAmAWireMessageWriter\u003CSqsWireMessage\u003E? DeadLetterWireMessageWriter [get,set]"
+    ]
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.AWSSQS/SnsMessageProducer.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.AWSSQS/SnsMessagePublisher.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": [
+      "Paramore.Brighter.MessagingGateway.AWSSQS.SnsMessagePublisher::public ctor SnsMessagePublisher(string topicArn, AmazonSimpleNotificationServiceClient client, IAmAWireMessageWriter\u003CSnsWireMessage\u003E? wireMessageWriter)"
+    ]
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.AWSSQS/SnsPublication.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": [
+      "Paramore.Brighter.MessagingGateway.AWSSQS.SnsPublication::public property IAmAWireMessageWriter\u003CSnsWireMessage\u003E? WireMessageWriter [get,set]"
+    ]
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.AWSSQS/SqsInlineMessageCreator.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.AWSSQS/SqsMessageConsumer.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.AWSSQS/SqsMessageConsumerFactory.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.AWSSQS/SqsMessageCreator.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.AWSSQS/SqsMessageProducer.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.AWSSQS/SqsMessageSender.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": [
+      "Paramore.Brighter.MessagingGateway.AWSSQS.SqsMessageSender::public ctor SqsMessageSender(string queueUrl, AmazonSQSClient client, IAmAWireMessageWriter\u003CSqsWireMessage\u003E? wireMessageWriter)"
+    ]
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.AWSSQS/SqsPublication.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": [
+      "Paramore.Brighter.MessagingGateway.AWSSQS.SqsPublication::public property IAmAWireMessageWriter\u003CSqsWireMessage\u003E? WireMessageWriter [get,set]"
+    ]
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.AWSSQS/SqsSubscription.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": [
+      "Paramore.Brighter.MessagingGateway.AWSSQS.SqsSubscription::public property IAmAWireMessageReader\u003CAmazon.SQS.Model.Message\u003E? WireMessageReader [get,set]",
+      "Paramore.Brighter.MessagingGateway.AWSSQS.SqsSubscription::public property IAmAWireMessageWriter\u003CSqsWireMessage\u003E? InvalidMessageWireMessageWriter [get,set]",
+      "Paramore.Brighter.MessagingGateway.AWSSQS.SqsSubscription::public property IAmAWireMessageWriter\u003CSqsWireMessage\u003E? DeadLetterWireMessageWriter [get,set]"
+    ]
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.AzureServiceBus/AzureServiceBusConsumer.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.AzureServiceBus/AzureServiceBusConsumerFactory.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.AzureServiceBus/AzureServiceBusForwardingConsumer.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.AzureServiceBus/AzureServiceBusMessageBatch.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.AzureServiceBus/AzureServiceBusMessageBatches.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.AzureServiceBus/AzureServiceBusMessageProducer.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.AzureServiceBus/AzureServiceBusPublication.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": [
+      "Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusPublication::public property IAmAWireMessageWriter\u003CServiceBusMessage\u003E? WireMessageWriter [get,set]"
+    ]
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.AzureServiceBus/AzureServiceBusQueueConsumer.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.AzureServiceBus/AzureServiceBusRequeueScheduler.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": [
+      "Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusRequeueScheduler::public property IAmAWireMessageWriter\u003CServiceBusMessage\u003E? WireMessageWriter [get,init]"
+    ]
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.AzureServiceBus/AzureServiceBusSingleMessageBatch.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.AzureServiceBus/AzureServiceBusSubscription.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": [
+      "Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusSubscription::public property IAmAWireMessageReader\u003CServiceBusReceivedMessage\u003E? WireMessageReader [get,set]"
+    ]
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.AzureServiceBus/AzureServiceBusTopicConsumer.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.AzureServiceBus/AzureServiceBusWrappers/BrokeredMessageWrapper.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.AzureServiceBus/AzureServiceBusWrappers/ServiceBusReceiverProvider.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.AzureServiceBus/AzureServiceBusWrappers/ServiceBusReceiverWrapper.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.GcpPubSub/GcpMessageProducer.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.GcpPubSub/GcpPubSubConsumerFactory.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.GcpPubSub/GcpPubSubStreamMessageConsumer.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.GcpPubSub/GcpPubSubSubscription.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": [
+      "Paramore.Brighter.MessagingGateway.GcpPubSub.GcpPubSubSubscription::public property IAmAWireMessageReader\u003CReceivedMessage\u003E? PullWireMessageReader [get,set]",
+      "Paramore.Brighter.MessagingGateway.GcpPubSub.GcpPubSubSubscription::public property IAmAWireMessageReader\u003CGcpStreamMessage\u003E? StreamWireMessageReader [get,set]",
+      "Paramore.Brighter.MessagingGateway.GcpPubSub.GcpPubSubSubscription::public property IAmAWireMessageWriter\u003CPubsubMessage\u003E? DeadLetterWireMessageWriter [get,set]",
+      "Paramore.Brighter.MessagingGateway.GcpPubSub.GcpPubSubSubscription::public property IAmAWireMessageWriter\u003CPubsubMessage\u003E? InvalidMessageWireMessageWriter [get,set]"
+    ]
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.GcpPubSub/GcpPublication.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": [
+      "Paramore.Brighter.MessagingGateway.GcpPubSub.GcpPublication::public property IAmAWireMessageWriter\u003CPubsubMessage\u003E? WireMessageWriter [get,set]"
+    ]
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.GcpPubSub/GcpPullMessageConsumer.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.GcpPubSub/GcpRejectionRouter.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.GcpPubSub/Parser.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.Kafka/KafkaDefaultMessageHeaderBuilder.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.Kafka/KafkaMessageConsumer.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.Kafka/KafkaMessageConsumerFactory.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.Kafka/KafkaMessageCreator.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.Kafka/KafkaMessageProducer.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.Kafka/KafkaMessagePublisher.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.Kafka/KafkaPublication.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": [
+      "Paramore.Brighter.MessagingGateway.Kafka.KafkaPublication::public property IAmAWireMessageWriter\u003CConfluent.Kafka.Message\u003Cstring, byte[]\u003E\u003E? WireMessageWriter [get,set]"
+    ]
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.Kafka/KafkaSubscription.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": [
+      "Paramore.Brighter.MessagingGateway.Kafka.KafkaSubscription::public property IAmAWireMessageReader\u003CConsumeResult\u003Cstring, byte[]\u003E\u003E? WireMessageReader [get,set]",
+      "Paramore.Brighter.MessagingGateway.Kafka.KafkaSubscription::public property IAmAWireMessageWriter\u003CMessage\u003Cstring, byte[]\u003E\u003E? InvalidMessageWireMessageWriter [get,set]",
+      "Paramore.Brighter.MessagingGateway.Kafka.KafkaSubscription::public property IAmAWireMessageWriter\u003CMessage\u003Cstring, byte[]\u003E\u003E? DeadLetterWireMessageWriter [get,set]",
+      "Paramore.Brighter.MessagingGateway.Kafka.KafkaSubscription::public property IAmAWireMessageWriter\u003CMessage\u003Cstring, byte[]\u003E\u003E? RequeueWireMessageWriter [get,set]",
+      "Paramore.Brighter.MessagingGateway.Kafka.KafkaSubscription::public property RoutingKey? ScheduledRequeuePublicationTopic [get,set]"
+    ]
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.MQTT/MQTTMessageConsumer.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.MQTT/MQTTMessageProducer.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.MQTT/MQTTMessagePublisher.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.MQTT/MqttMessageConsumerFactory.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.MQTT/MqttSubscription.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": [
+      "Paramore.Brighter.MessagingGateway.MQTT.MqttSubscription::public property IAmAWireMessageReader\u003CMqttApplicationMessage\u003E? WireMessageReader [get,set]",
+      "Paramore.Brighter.MessagingGateway.MQTT.MqttSubscription::public property IAmAWireMessageWriter\u003CMqttApplicationMessage\u003E? RequeueWireMessageWriter [get,set]",
+      "Paramore.Brighter.MessagingGateway.MQTT.MqttSubscription::public property IAmAWireMessageWriter\u003CMqttApplicationMessage\u003E? DeadLetterWireMessageWriter [get,set]",
+      "Paramore.Brighter.MessagingGateway.MQTT.MqttSubscription::public property IAmAWireMessageWriter\u003CMqttApplicationMessage\u003E? InvalidMessageWireMessageWriter [get,set]",
+      "Paramore.Brighter.MessagingGateway.MQTT.MqttSubscription::public property RoutingKey? ScheduledRequeuePublicationTopic [get,set]"
+    ]
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.MsSql/MsSqlMessageConsumer.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.MsSql/MsSqlMessageConsumerFactory.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.MsSql/MsSqlMessageProducer.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.MsSql/MsSqlSubscription.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": [
+      "Paramore.Brighter.MessagingGateway.MsSql.MsSqlSubscription::public property IAmAWireMessageReader\u003Cstring\u003E? WireMessageReader [get,set]",
+      "Paramore.Brighter.MessagingGateway.MsSql.MsSqlSubscription::public property IAmAWireMessageWriter\u003Cstring\u003E? RequeueWireMessageWriter [get,set]",
+      "Paramore.Brighter.MessagingGateway.MsSql.MsSqlSubscription::public property IAmAWireMessageWriter\u003Cstring\u003E? DeadLetterWireMessageWriter [get,set]",
+      "Paramore.Brighter.MessagingGateway.MsSql.MsSqlSubscription::public property IAmAWireMessageWriter\u003Cstring\u003E? InvalidMessageWireMessageWriter [get,set]",
+      "Paramore.Brighter.MessagingGateway.MsSql.MsSqlSubscription::public property RoutingKey? ScheduledRequeuePublicationTopic [get,set]"
+    ]
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.MsSql/SqlQueues/MsSqlMessageQueue.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.Postgres/PostgresMessageConsumer.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.Postgres/PostgresMessageProducer.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.Postgres/PostgresPublication.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": [
+      "Paramore.Brighter.MessagingGateway.Postgres.PostgresPublication::public property IAmAWireMessageWriter\u003Cstring\u003E? WireMessageWriter [get,set]"
+    ]
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.Postgres/PostgresSubscription.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": [
+      "Paramore.Brighter.MessagingGateway.Postgres.PostgresSubscription::public property IAmAWireMessageReader\u003Cstring\u003E? WireMessageReader [get,set]",
+      "Paramore.Brighter.MessagingGateway.Postgres.PostgresSubscription::public property IAmAWireMessageWriter\u003Cstring\u003E? RequeueWireMessageWriter [get,set]",
+      "Paramore.Brighter.MessagingGateway.Postgres.PostgresSubscription::public property IAmAWireMessageWriter\u003Cstring\u003E? DeadLetterWireMessageWriter [get,set]",
+      "Paramore.Brighter.MessagingGateway.Postgres.PostgresSubscription::public property IAmAWireMessageWriter\u003Cstring\u003E? InvalidMessageWireMessageWriter [get,set]"
+    ]
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.RMQ.Async/RmqMessageConsumer.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.RMQ.Async/RmqMessageConsumerFactory.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.RMQ.Async/RmqMessageCreator.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.RMQ.Async/RmqMessageProducer.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.RMQ.Async/RmqMessagePublisher.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.RMQ.Async/RmqPublication.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": [
+      "Paramore.Brighter.MessagingGateway.RMQ.Async.RmqPublication::public property ChannelName? DestinationQueue [get,set]",
+      "Paramore.Brighter.MessagingGateway.RMQ.Async.RmqPublication::public property IAmAWireMessageWriter\u003CRmqWireMessage\u003E? WireMessageWriter [get,set]"
+    ]
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.RMQ.Async/RmqSubscription.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": [
+      "Paramore.Brighter.MessagingGateway.RMQ.Async.RmqSubscription::public property RoutingKey? ScheduledRequeuePublicationTopic [get,set]",
+      "Paramore.Brighter.MessagingGateway.RMQ.Async.RmqSubscription::public property IAmAWireMessageReader\u003CBasicDeliverEventArgs\u003E? WireMessageReader [get,set]",
+      "Paramore.Brighter.MessagingGateway.RMQ.Async.RmqSubscription::public property IAmAWireMessageWriter\u003CRmqWireMessage\u003E? RequeueWireMessageWriter [get,set]",
+      "Paramore.Brighter.MessagingGateway.RMQ.Async.RmqSubscription::public property IAmAWireMessageWriter\u003CRmqWireMessage\u003E? InvalidMessageWireMessageWriter [get,set]"
+    ]
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.RMQ.Sync/RmqMessageConsumer.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.RMQ.Sync/RmqMessageConsumerFactory.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.RMQ.Sync/RmqMessageCreator.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.RMQ.Sync/RmqMessageProducer.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.RMQ.Sync/RmqMessagePublisher.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.RMQ.Sync/RmqPublication.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": [
+      "Paramore.Brighter.MessagingGateway.RMQ.Sync.RmqPublication::public property ChannelName? DestinationQueue [get,set]",
+      "Paramore.Brighter.MessagingGateway.RMQ.Sync.RmqPublication::public property IAmAWireMessageWriter\u003CRmqWireMessage\u003E? WireMessageWriter [get,set]"
+    ]
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.RMQ.Sync/RmqSubscription.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": [
+      "Paramore.Brighter.MessagingGateway.RMQ.Sync.RmqSubscription::public property RoutingKey? ScheduledRequeuePublicationTopic [get,set]",
+      "Paramore.Brighter.MessagingGateway.RMQ.Sync.RmqSubscription::public property IAmAWireMessageReader\u003CBasicDeliverEventArgs\u003E? WireMessageReader [get,set]",
+      "Paramore.Brighter.MessagingGateway.RMQ.Sync.RmqSubscription::public property IAmAWireMessageWriter\u003CRmqWireMessage\u003E? InvalidMessageWireMessageWriter [get,set]",
+      "Paramore.Brighter.MessagingGateway.RMQ.Sync.RmqSubscription::public property IAmAWireMessageWriter\u003CRmqWireMessage\u003E? RequeueWireMessageWriter [get,set]"
+    ]
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.Redis/RedisMessageConsumer.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.Redis/RedisMessageConsumerFactory.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.Redis/RedisMessageProducer.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.Redis/RedisMessagePublication.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": [
+      "Paramore.Brighter.MessagingGateway.Redis.RedisMessagePublication::public property IAmAWireMessageWriter\u003Cstring\u003E? WireMessageWriter [get,set]",
+      "Paramore.Brighter.MessagingGateway.Redis.RedisMessagePublication::public property RoutingKey? DestinationTopic [get,set]",
+      "Paramore.Brighter.MessagingGateway.Redis.RedisMessagePublication::public property ChannelName? ChannelName [get,set]"
+    ]
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.Redis/RedisSubscription.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": [
+      "Paramore.Brighter.MessagingGateway.Redis.RedisSubscription::public property IAmAWireMessageReader\u003Cstring\u003E? WireMessageReader [get,set]",
+      "Paramore.Brighter.MessagingGateway.Redis.RedisSubscription::public property IAmAWireMessageWriter\u003Cstring\u003E? RequeueWireMessageWriter [get,set]",
+      "Paramore.Brighter.MessagingGateway.Redis.RedisSubscription::public property RoutingKey? ScheduledRequeuePublicationTopic [get,set]",
+      "Paramore.Brighter.MessagingGateway.Redis.RedisSubscription::public property IAmAWireMessageWriter\u003Cstring\u003E? InvalidMessageWireMessageWriter [get,set]",
+      "Paramore.Brighter.MessagingGateway.Redis.RedisSubscription::public property IAmAWireMessageWriter\u003Cstring\u003E? DeadLetterWireMessageWriter [get,set]"
+    ]
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.RocketMQ/RocketMessageConsumer.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.RocketMQ/RocketMessageConsumerFactory.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.RocketMQ/RocketMqMessagePublisher.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.RocketMQ/RocketMqPublication.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": [
+      "Paramore.Brighter.MessagingGateway.RocketMQ.RocketMqPublication::public property IAmAWireMessageWriter\u003CRocketMqWireMessage\u003E? WireMessageWriter [get,set]"
+    ]
+  },
+  {
+    "File": "src/Paramore.Brighter.MessagingGateway.RocketMQ/RocketMqSubscription.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": [
+      "Paramore.Brighter.MessagingGateway.RocketMQ.RocketSubscription::public property IAmAWireMessageWriter\u003CRocketMqWireMessage\u003E? DeadLetterWireMessageWriter [get,set]",
+      "Paramore.Brighter.MessagingGateway.RocketMQ.RocketSubscription::public property IAmAWireMessageWriter\u003CRocketMqWireMessage\u003E? InvalidMessageWireMessageWriter [get,set]",
+      "Paramore.Brighter.MessagingGateway.RocketMQ.RocketSubscription::public property IAmAWireMessageReader\u003CMessageView\u003E? WireMessageReader [get,set]"
+    ]
+  },
+  {
+    "File": "src/Paramore.Brighter/InMemoryScheduler.cs",
+    "RemovedOrChanged": [],
+    "AddedOrChanged": []
+  }
+]

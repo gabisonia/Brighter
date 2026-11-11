@@ -1,0 +1,14 @@
+{
+  "Release": {
+    "exit": 0,
+    "wall_seconds": 57.155094146728516,
+    "monotonic_seconds": 57.1538822920993,
+    "clock_discontinuity": false
+  },
+  "Debug": {
+    "exit": 0,
+    "wall_seconds": 30.19948410987854,
+    "monotonic_seconds": 30.1988441250287,
+    "clock_discontinuity": false
+  }
+}

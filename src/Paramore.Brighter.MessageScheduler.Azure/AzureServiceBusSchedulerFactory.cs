@@ -30,6 +30,10 @@ public class AzureServiceBusSchedulerFactory(IServiceBusClientProvider client, R
     /// <summary>The verbosity of queue retry telemetry.</summary>
     public InstrumentationOptions InstrumentationOptions { get; set; } = InstrumentationOptions.All;
 
+    /// <summary>Gets or sets the writer used for queue-targeted retries.</summary>
+    /// <remarks>Captured when creating the scheduler; null preserves the existing retry format. Ordinary scheduler callback payloads are unchanged.</remarks>
+    public IAmAWireMessageWriter<ServiceBusMessage>? RequeueWireMessageWriter { get; set; }
+
     /// <summary>
     /// The topic or queue that the azure scheduler should use
     /// </summary>
@@ -63,6 +67,6 @@ public class AzureServiceBusSchedulerFactory(IServiceBusClientProvider client, R
             }
         }
         
-        return new AzureServiceBusRequeueScheduler(_sender, Topic, TimeProvider, ClientProvider, SenderOptions, InstrumentationOptions);
+        return new AzureServiceBusRequeueScheduler(_sender, Topic, TimeProvider, ClientProvider, SenderOptions, InstrumentationOptions, RequeueWireMessageWriter);
     }
 }

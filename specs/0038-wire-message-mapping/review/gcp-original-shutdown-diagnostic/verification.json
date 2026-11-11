@@ -1,0 +1,10 @@
+{
+  "main_sources_unchanged": 6614,
+  "diagnostic_input_files_match_main": 974,
+  "all_512_test_identities_retained": true,
+  "original_shutdown_native_observations_verified": 12,
+  "source_manifest_sha256": "04a7d80e5db0e45ef8b3a4ba6fca020a472374653f9aab19050d03f8624f37d7",
+  "production_changed": false,
+  "committed": false,
+  "pushed": false
+}

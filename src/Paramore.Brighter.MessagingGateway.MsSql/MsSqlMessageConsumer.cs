@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Globalization;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
@@ -14,6 +16,12 @@ namespace Paramore.Brighter.MessagingGateway.MsSql
         /// <inheritdoc />
         public MessagingSystem MessagingSystem => MessagingSystem.MsSql;
 
+        private static readonly DefaultMsSqlWireMessageWriter s_defaultWireMessageWriter = new();
+        private static readonly DefaultMsSqlWireMessageReader s_defaultWireMessageReader = new();
+        private readonly IAmAWireMessageReader<string>? _wireMessageReader;
+        private readonly IAmAWireMessageWriter<string> _requeueWireMessageWriter;
+        private readonly IAmAWireMessageWriter<string>? _deadLetterWireMessageWriter;
+        private readonly IAmAWireMessageWriter<string>? _invalidMessageWireMessageWriter;
         private readonly string _topic;
         private static readonly ILogger s_logger = ApplicationLogging.CreateLogger<MsSqlMessageConsumer>();
         private readonly MsSqlMessageQueue<Message> _sqlMessageQueue;
@@ -23,6 +31,7 @@ namespace Paramore.Brighter.MessagingGateway.MsSql
         private readonly Lazy<MsSqlMessageProducer?>? _deadLetterProducer;
         private readonly Lazy<MsSqlMessageProducer?>? _invalidMessageProducer;
         private readonly IAmAMessageScheduler? _scheduler;
+        private readonly RoutingKey? _scheduledRequeuePublicationTopic;
         private MsSqlMessageProducer? _requeueProducer;
         private bool _requeueProducerInitialized;
         private object? _requeueProducerLock;
@@ -34,11 +43,29 @@ namespace Paramore.Brighter.MessagingGateway.MsSql
             IAmAMessageScheduler? scheduler = null,
             RoutingKey? deadLetterRoutingKey = null,
             RoutingKey? invalidMessageRoutingKey = null)
+            : this(msSqlConfiguration, topic, connectionProvider, scheduler, deadLetterRoutingKey,
+                invalidMessageRoutingKey, null, null)
         {
+        }
+
+        internal MsSqlMessageConsumer(RelationalDatabaseConfiguration msSqlConfiguration,
+            string topic, RelationalDbConnectionProvider connectionProvider,
+            IAmAMessageScheduler? scheduler, RoutingKey? deadLetterRoutingKey,
+            RoutingKey? invalidMessageRoutingKey, IAmAWireMessageReader<string>? wireMessageReader,
+            IAmAWireMessageWriter<string>? requeueWireMessageWriter,
+            IAmAWireMessageWriter<string>? deadLetterWireMessageWriter = null,
+            IAmAWireMessageWriter<string>? invalidMessageWireMessageWriter = null,
+            RoutingKey? scheduledRequeuePublicationTopic = null)
+        {
+            _wireMessageReader = wireMessageReader;
+            _deadLetterWireMessageWriter = deadLetterWireMessageWriter;
+            _invalidMessageWireMessageWriter = invalidMessageWireMessageWriter;
+            _requeueWireMessageWriter = requeueWireMessageWriter ?? s_defaultWireMessageWriter;
             _topic = topic ?? throw new ArgumentNullException(nameof(topic));
             _msSqlConfiguration = msSqlConfiguration ?? throw new ArgumentNullException(nameof(msSqlConfiguration));
-            _sqlMessageQueue = new MsSqlMessageQueue<Message>(msSqlConfiguration, connectionProvider);
+            _sqlMessageQueue = new MsSqlMessageQueue<Message>(msSqlConfiguration, connectionProvider, MapRequeueMessage, ReadMessage);
             _scheduler = scheduler;
+            _scheduledRequeuePublicationTopic = scheduledRequeuePublicationTopic;
             _deadLetterRoutingKey = deadLetterRoutingKey;
             _invalidMessageRoutingKey = invalidMessageRoutingKey;
 
@@ -275,6 +302,8 @@ namespace Paramore.Brighter.MessagingGateway.MsSql
         public bool Requeue(Message message, TimeSpan? delay = null)
         {
             delay ??= TimeSpan.Zero;
+            if (delay > TimeSpan.Zero)
+                message = PrepareScheduledRequeue(message);
 
             var topic = message.Header.Topic;
             Log.RequeuingMessage(s_logger, topic.Value, message.Id.ToString());
@@ -305,6 +334,8 @@ namespace Paramore.Brighter.MessagingGateway.MsSql
         public async Task<bool> RequeueAsync(Message message, TimeSpan? delay = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             delay ??= TimeSpan.Zero;
+            if (delay > TimeSpan.Zero)
+                message = PrepareScheduledRequeue(message);
 
             var topic = message.Header.Topic;
             Log.RequeuingMessage(s_logger, topic.Value, message.Id.ToString());
@@ -340,6 +371,66 @@ namespace Paramore.Brighter.MessagingGateway.MsSql
             GC.SuppressFinalize(this);
         }
 
+        private string MapRequeueMessage(Message message) =>
+            _requeueWireMessageWriter.WriteMessage(message)
+            ?? throw new InvalidOperationException("The SQL Server requeue wire message writer returned null.");
+
+        private Message ReadMessage(string payload, long nativeId)
+        {
+            if (_wireMessageReader == null)
+                return s_defaultWireMessageReader.ReadMessage(payload);
+
+            try
+            {
+                return _wireMessageReader.ReadMessage(payload) ?? CreateMappingFailure(payload, nativeId);
+            }
+            catch (Exception)
+            {
+                return CreateMappingFailure(payload, nativeId);
+            }
+        }
+
+        private Message CreateMappingFailure(string payload, long nativeId) =>
+            new(MessageHeader.FailureMessageHeader(new RoutingKey(_topic),
+                new Id(nativeId.ToString(CultureInfo.InvariantCulture))), new MessageBody(payload));
+
+        private Message PrepareScheduledRequeue(Message message)
+        {
+            if (_scheduledRequeuePublicationTopic == null)
+                return message;
+
+            var header = CopyScheduledHeader(message.Header);
+            header.Bag[Message.ProducerTopicHeaderName] = _scheduledRequeuePublicationTopic.Value;
+            var body = new MessageBody(message.Body.Memory,
+                message.Body.ContentType == null ? null : new System.Net.Mime.ContentType(message.Body.ContentType.ToString()),
+                message.Body.CharacterEncoding);
+            return new Message(header, body) { Persist = message.Persist };
+        }
+
+        private static MessageHeader CopyScheduledHeader(MessageHeader source)
+        {
+            var baggage = new Baggage();
+            foreach (var entry in source.Baggage)
+                baggage.Add(entry.Key, entry.Value!);
+
+            return new MessageHeader(source.MessageId, source.Topic,
+    #pragma warning disable CS0618 // Preserve the legacy message type for transport compatibility.
+                source.MessageType,
+    #pragma warning restore CS0618
+                source: source.Source, type: source.Type, timeStamp: source.TimeStamp,
+                correlationId: source.CorrelationId, replyTo: source.ReplyTo,
+                contentType: new System.Net.Mime.ContentType(source.ContentType.ToString()),
+                partitionKey: source.PartitionKey, dataSchema: source.DataSchema, subject: source.Subject,
+                handledCount: source.HandledCount, workflowId: source.WorkflowId, jobId: source.JobId,
+                delayed: source.Delayed, traceParent: source.TraceParent, traceState: source.TraceState,
+                baggage: baggage)
+            {
+                Bag = new Dictionary<string, object>(source.Bag, source.Bag.Comparer),
+                DataRef = source.DataRef,
+                SpecVersion = source.SpecVersion
+            };
+        }
+
         private void EnsureRequeueProducer()
         {
             LazyInitializer.EnsureInitialized(ref _requeueProducer, ref _requeueProducerInitialized,
@@ -356,7 +447,7 @@ namespace Paramore.Brighter.MessagingGateway.MsSql
             try
             {
                 return new MsSqlMessageProducer(_msSqlConfiguration,
-                    new Publication { Topic = _deadLetterRoutingKey });
+                    new MsSqlPublication { Topic = _deadLetterRoutingKey, WireMessageWriter = _deadLetterWireMessageWriter });
             }
             catch (Exception e)
             {
@@ -372,7 +463,7 @@ namespace Paramore.Brighter.MessagingGateway.MsSql
             try
             {
                 return new MsSqlMessageProducer(_msSqlConfiguration,
-                    new Publication { Topic = _invalidMessageRoutingKey });
+                    new MsSqlPublication { Topic = _invalidMessageRoutingKey, WireMessageWriter = _invalidMessageWireMessageWriter });
             }
             catch (Exception e)
             {

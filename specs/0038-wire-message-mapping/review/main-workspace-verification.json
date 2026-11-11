@@ -1,0 +1,239 @@
+{
+  "results": {
+    "RMQ.Async": {
+      "net9.0": {
+        "exit": 0,
+        "counts": {
+          "Passed": 10,
+          "Failed": 0,
+          "NotExecuted": 0
+        },
+        "host_clock_discontinuity": false
+      },
+      "net10.0": {
+        "exit": 0,
+        "counts": {
+          "Passed": 10,
+          "Failed": 0,
+          "NotExecuted": 0
+        },
+        "host_clock_discontinuity": false
+      }
+    },
+    "RMQ.Sync": {
+      "net9.0": {
+        "exit": 0,
+        "counts": {
+          "Passed": 8,
+          "Failed": 0,
+          "NotExecuted": 0
+        },
+        "host_clock_discontinuity": false
+      },
+      "net10.0": {
+        "exit": 0,
+        "counts": {
+          "Passed": 8,
+          "Failed": 0,
+          "NotExecuted": 0
+        },
+        "host_clock_discontinuity": false
+      }
+    },
+    "Kafka": {
+      "net9.0": {
+        "exit": 0,
+        "counts": {
+          "Passed": 14,
+          "Failed": 0,
+          "NotExecuted": 0
+        },
+        "host_clock_discontinuity": false
+      },
+      "net10.0": {
+        "exit": 0,
+        "counts": {
+          "Passed": 14,
+          "Failed": 0,
+          "NotExecuted": 0
+        },
+        "host_clock_discontinuity": false
+      }
+    },
+    "Hangfire": {
+      "net9.0": {
+        "exit": 0,
+        "counts": {
+          "Passed": 2,
+          "Failed": 0,
+          "NotExecuted": 0
+        },
+        "host_clock_discontinuity": false
+      },
+      "net10.0": {
+        "exit": 0,
+        "counts": {
+          "Passed": 2,
+          "Failed": 0,
+          "NotExecuted": 0
+        },
+        "host_clock_discontinuity": false
+      }
+    },
+    "TickerQ": {
+      "net9.0": {
+        "exit": 0,
+        "counts": {
+          "Passed": 6,
+          "Failed": 0,
+          "NotExecuted": 0
+        },
+        "host_clock_discontinuity": false
+      },
+      "net10.0": {
+        "exit": 0,
+        "counts": {
+          "Passed": 6,
+          "Failed": 0,
+          "NotExecuted": 0
+        },
+        "host_clock_discontinuity": false
+      }
+    },
+    "MSSQL": {
+      "net9.0": {
+        "exit": 0,
+        "counts": {
+          "Passed": 16,
+          "Failed": 0,
+          "NotExecuted": 0
+        },
+        "host_clock_discontinuity": false
+      },
+      "net10.0": {
+        "exit": 0,
+        "counts": {
+          "Passed": 16,
+          "Failed": 0,
+          "NotExecuted": 0
+        },
+        "host_clock_discontinuity": false
+      }
+    },
+    "PostgresSQL": {
+      "net10.0": {
+        "exit": 0,
+        "counts": {
+          "Passed": 24,
+          "Failed": 0,
+          "NotExecuted": 0
+        },
+        "host_clock_discontinuity": false
+      }
+    },
+    "RocketMQ": {
+      "net9.0": {
+        "exit": 0,
+        "counts": {
+          "Passed": 12,
+          "Failed": 0,
+          "NotExecuted": 0
+        },
+        "host_clock_discontinuity": false
+      },
+      "net10.0": {
+        "exit": 0,
+        "counts": {
+          "Passed": 12,
+          "Failed": 0,
+          "NotExecuted": 0
+        },
+        "host_clock_discontinuity": false
+      }
+    },
+    "MQTT": {
+      "net9.0": {
+        "exit": 0,
+        "counts": {
+          "Passed": 22,
+          "Failed": 0,
+          "NotExecuted": 0
+        },
+        "host_clock_discontinuity": false
+      },
+      "net10.0": {
+        "exit": 0,
+        "counts": {
+          "Passed": 22,
+          "Failed": 0,
+          "NotExecuted": 0
+        },
+        "host_clock_discontinuity": false
+      }
+    },
+    "AWS": {
+      "net9.0": {
+        "exit": 0,
+        "counts": {
+          "Passed": 8,
+          "Failed": 0,
+          "NotExecuted": 0
+        },
+        "host_clock_discontinuity": false
+      },
+      "net10.0": {
+        "exit": 0,
+        "counts": {
+          "Passed": 8,
+          "Failed": 0,
+          "NotExecuted": 0
+        },
+        "host_clock_discontinuity": false
+      }
+    },
+    "AWS.V4": {
+      "net9.0": {
+        "exit": 0,
+        "counts": {
+          "Passed": 8,
+          "Failed": 0,
+          "NotExecuted": 0
+        },
+        "host_clock_discontinuity": false
+      },
+      "net10.0": {
+        "exit": 0,
+        "counts": {
+          "Passed": 8,
+          "Failed": 0,
+          "NotExecuted": 0
+        },
+        "host_clock_discontinuity": false
+      }
+    },
+    "Gcp": {
+      "net9.0": {
+        "exit": 0,
+        "counts": {
+          "Passed": 24,
+          "Failed": 0,
+          "NotExecuted": 0
+        },
+        "host_clock_discontinuity": false
+      },
+      "net10.0": {
+        "exit": 0,
+        "counts": {
+          "Passed": 24,
+          "Failed": 0,
+          "NotExecuted": 0
+        },
+        "host_clock_discontinuity": false
+      }
+    }
+  },
+  "all_test_inputs_match_isolated": true,
+  "committed": false,
+  "pushed": false,
+  "whole_feature_production_ready": false
+}

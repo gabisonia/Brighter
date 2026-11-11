@@ -48,11 +48,16 @@ namespace Paramore.Brighter.MessagingGateway.MQTT
         private static readonly TimeSpan DefaultTimeout = TimeSpan.FromMilliseconds(300);
         private readonly IMqttClient _mqttClient;
         private readonly MqttClientOptions _mqttClientOptions;
+        private readonly IAmAWireMessageReader<MqttApplicationMessage>? _wireMessageReader;
+        private readonly IAmAWireMessageWriter<MqttApplicationMessage>? _requeueWireMessageWriter;
+        private readonly IAmAWireMessageWriter<MqttApplicationMessage>? _deadLetterWireMessageWriter;
+        private readonly IAmAWireMessageWriter<MqttApplicationMessage>? _invalidMessageWireMessageWriter;
         private readonly RoutingKey? _deadLetterRoutingKey;
         private readonly RoutingKey? _invalidMessageRoutingKey;
         private readonly Lazy<MqttMessageProducer?>? _deadLetterProducer;
         private readonly Lazy<MqttMessageProducer?>? _invalidMessageProducer;
         private readonly IAmAMessageScheduler? _scheduler;
+        private readonly RoutingKey? _scheduledRequeuePublicationTopic;
         private MqttMessageProducer? _requeueProducer;
         private bool _requeueProducerInitialized;
         private object? _requeueProducerLock;
@@ -92,8 +97,28 @@ namespace Paramore.Brighter.MessagingGateway.MQTT
             RoutingKey? deadLetterRoutingKey = null,
             RoutingKey? invalidMessageRoutingKey = null,
             int? batchSize = null)
+            : this(configuration, scheduler, deadLetterRoutingKey, invalidMessageRoutingKey, batchSize, null)
+        {
+        }
+
+        internal MqttMessageConsumer(
+            MqttMessagingGatewayConsumerConfiguration configuration,
+            IAmAMessageScheduler? scheduler,
+            RoutingKey? deadLetterRoutingKey,
+            RoutingKey? invalidMessageRoutingKey,
+            int? batchSize,
+            IAmAWireMessageReader<MqttApplicationMessage>? wireMessageReader,
+            IAmAWireMessageWriter<MqttApplicationMessage>? requeueWireMessageWriter = null,
+            IAmAWireMessageWriter<MqttApplicationMessage>? deadLetterWireMessageWriter = null,
+            IAmAWireMessageWriter<MqttApplicationMessage>? invalidMessageWireMessageWriter = null,
+            RoutingKey? scheduledRequeuePublicationTopic = null)
         {
             _configuration = configuration;
+            _wireMessageReader = wireMessageReader;
+            _requeueWireMessageWriter = requeueWireMessageWriter;
+            _deadLetterWireMessageWriter = deadLetterWireMessageWriter;
+            _invalidMessageWireMessageWriter = invalidMessageWireMessageWriter;
+            _scheduledRequeuePublicationTopic = scheduledRequeuePublicationTopic;
             if (batchSize is <= 0)
             {
                 throw new ArgumentOutOfRangeException(nameof(batchSize), batchSize,
@@ -142,8 +167,7 @@ namespace Paramore.Brighter.MessagingGateway.MQTT
             {
                 Log.MqttMessageConsumerReceivedMessage(s_logger, configuration.TopicPrefix);
 
-                var message = MqttMessageCreator.CreateMessage(
-                    e.ApplicationMessage.PayloadSegment.ToArray(), configuration.TopicPrefix);
+                var message = ReadWireMessage(e.ApplicationMessage);
 
                 if (message is not null)
                 {
@@ -437,7 +461,7 @@ namespace Paramore.Brighter.MessagingGateway.MQTT
 
             if (delay > TimeSpan.Zero)
             {
-                _requeueProducer!.SendWithDelay(message, delay);
+                _requeueProducer!.SendWithDelay(PrepareScheduledRequeue(message), delay);
             }
             else
             {
@@ -469,7 +493,7 @@ namespace Paramore.Brighter.MessagingGateway.MQTT
 
             if (delay > TimeSpan.Zero)
             {
-                await _requeueProducer!.SendWithDelayAsync(message, delay, cancellationToken);
+                await _requeueProducer!.SendWithDelayAsync(PrepareScheduledRequeue(message), delay, cancellationToken);
             }
             else
             {
@@ -478,6 +502,43 @@ namespace Paramore.Brighter.MessagingGateway.MQTT
             }
 
             return true;
+        }
+
+        private Message PrepareScheduledRequeue(Message message)
+        {
+            if (_scheduledRequeuePublicationTopic == null)
+                return message;
+
+            var header = CopyScheduledHeader(message.Header);
+            header.Bag[Message.ProducerTopicHeaderName] = _scheduledRequeuePublicationTopic.Value;
+            var body = new MessageBody(message.Body.Memory,
+                message.Body.ContentType == null ? null : new System.Net.Mime.ContentType(message.Body.ContentType.ToString()),
+                message.Body.CharacterEncoding);
+            return new Message(header, body) { Persist = message.Persist };
+        }
+
+        private static MessageHeader CopyScheduledHeader(MessageHeader source)
+        {
+            var baggage = new Baggage();
+            foreach (var entry in source.Baggage)
+                baggage.Add(entry.Key, entry.Value!);
+
+            return new MessageHeader(source.MessageId, source.Topic,
+    #pragma warning disable CS0618 // Preserve the legacy message type for transport compatibility.
+                source.MessageType,
+    #pragma warning restore CS0618
+                source: source.Source, type: source.Type, timeStamp: source.TimeStamp,
+                correlationId: source.CorrelationId, replyTo: source.ReplyTo,
+                contentType: new System.Net.Mime.ContentType(source.ContentType.ToString()),
+                partitionKey: source.PartitionKey, dataSchema: source.DataSchema, subject: source.Subject,
+                handledCount: source.HandledCount, workflowId: source.WorkflowId, jobId: source.JobId,
+                delayed: source.Delayed, traceParent: source.TraceParent, traceState: source.TraceState,
+                baggage: baggage)
+            {
+                Bag = new Dictionary<string, object>(source.Bag, source.Bag.Comparer),
+                DataRef = source.DataRef,
+                SpecVersion = source.SpecVersion
+            };
         }
 
         /// <summary>
@@ -498,7 +559,7 @@ namespace Paramore.Brighter.MessagingGateway.MQTT
                         Username = _configuration.Username,
                         Password = _configuration.Password
                     });
-                    return new MqttMessageProducer(publisher, new Publication(), _instrumentationOptions)
+                    return new MqttMessageProducer(publisher, new MqttPublication { WireMessageWriter = _requeueWireMessageWriter }, _instrumentationOptions)
                     {
                         Scheduler = _scheduler
                     };
@@ -553,7 +614,7 @@ namespace Paramore.Brighter.MessagingGateway.MQTT
                     TopicPrefix = _deadLetterRoutingKey.Value
                 };
                 var publisher = new MqttMessagePublisher(config);
-                return new MqttMessageProducer(publisher, new Publication { Topic = _deadLetterRoutingKey }, _instrumentationOptions);
+                return new MqttMessageProducer(publisher, new MqttPublication { Topic = _deadLetterRoutingKey, WireMessageWriter = _deadLetterWireMessageWriter }, _instrumentationOptions);
             }
             catch (Exception ex)
             {
@@ -579,7 +640,7 @@ namespace Paramore.Brighter.MessagingGateway.MQTT
                     TopicPrefix = _invalidMessageRoutingKey.Value
                 };
                 var publisher = new MqttMessagePublisher(config);
-                return new MqttMessageProducer(publisher, new Publication { Topic = _invalidMessageRoutingKey }, _instrumentationOptions);
+                return new MqttMessageProducer(publisher, new MqttPublication { Topic = _invalidMessageRoutingKey, WireMessageWriter = _invalidMessageWireMessageWriter }, _instrumentationOptions);
             }
             catch (Exception ex)
             {
@@ -587,6 +648,11 @@ namespace Paramore.Brighter.MessagingGateway.MQTT
                 return null;
             }
         }
+
+        private Message? ReadWireMessage(MqttApplicationMessage delivery)
+            => _wireMessageReader is null
+                ? MqttMessageCreator.CreateMessage(delivery.PayloadSegment.ToArray(), _configuration.TopicPrefix)
+                : _wireMessageReader.ReadMessage(delivery);
 
         private async Task Connect(int connectionAttempts)
         {

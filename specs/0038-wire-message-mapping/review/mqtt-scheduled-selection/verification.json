@@ -1,0 +1,25 @@
+{
+  "matrices": {
+    "net9.0": {
+      "Passed": 121,
+      "Failed": 0,
+      "NotExecuted": 4
+    },
+    "net10.0": {
+      "Passed": 121,
+      "Failed": 0,
+      "NotExecuted": 4
+    }
+  },
+  "actual_intended_red_failures_each_framework": 4,
+  "intended_selector_mutation_failures": 4,
+  "all_121_prior_identities_and_outcomes_preserved": true,
+  "final_source_hashes": {
+    "src/Paramore.Brighter.MessagingGateway.MQTT/MQTTMessageConsumer.cs": "2e0a9640e1c6dac9ee436185baa25ba525e14d241183f17df9fb7381b163a0ef",
+    "src/Paramore.Brighter.MessagingGateway.MQTT/MqttMessageConsumerFactory.cs": "4c1ec32070f6d379efcfdb6e9946b86cd4dc943c6b908db03383126a810a20ff",
+    "src/Paramore.Brighter.MessagingGateway.MQTT/MqttSubscription.cs": "ec5ed53294cd4ad64f1f5f2b5ef9291dbd1a6e47531a851862921b4d524776e7",
+    "tests/Paramore.Brighter.MQTT.Tests/MessagingGateway/When_mqtt_schedules_a_retry_should_use_the_registered_writer_without_changing_the_source.cs": "54d4cbaab179e1797bca9e33ed30bf132d75f10cf09cb37f65a19dab44b8ad83"
+  },
+  "integrated_into_main_workspace": true,
+  "whole_feature_production_ready": false
+}

@@ -1,0 +1,42 @@
+{
+  "builds": {
+    "Release": {
+      "exit": 0,
+      "wall_seconds": 78.93972301483154,
+      "monotonic_seconds": 78.9386485000141,
+      "clock_discontinuity": false,
+      "warnings": 22073,
+      "errors": 0
+    },
+    "Debug": {
+      "exit": 0,
+      "wall_seconds": 57.83299469947815,
+      "monotonic_seconds": 57.832207874860615,
+      "clock_discontinuity": false,
+      "warnings": 20517,
+      "errors": 0
+    }
+  },
+  "source_verification": {
+    "all_recorded_inputs_unchanged": true,
+    "changed": [],
+    "source_count": 7244,
+    "committed": false,
+    "pushed": false
+  },
+  "dependency_dedup": {
+    "removed_only_duplicate_references": [
+      "OpenTelemetry",
+      "OpenTelemetry.Exporter.InMemory"
+    ],
+    "before_project_sha256": "97958ed0625cb2b26168bf6f8711934d3db8e8dbddf4370094d77e3227a0ef4c",
+    "after_project_sha256": "a1f1c20fcde2fa2f40904051c94beed2017c2252ab4d9c1f7305cb04603b2222",
+    "project_has_lock_file": false,
+    "resolved_targets_identical": true,
+    "resolved_libraries_identical": true,
+    "test_sources_changed": false
+  },
+  "whole_feature_production_ready": false,
+  "committed": false,
+  "pushed": false
+}

@@ -42,6 +42,12 @@ namespace Paramore.Brighter;
 /// <summary>
 /// The In-Memory scheduler
 /// </summary>
+/// <remarks>
+/// Message and request timer callbacks log dispatch exceptions and release their scheduler entries.
+/// Failed callbacks are not retried automatically. Failed local requests are not retained for recovery.
+/// Messages already deposited in an outbox can be recovered through that outbox after correcting
+/// the dispatch configuration or failure.
+/// </remarks>
 /// <param name="processor">The <see cref="IAmACommandProcessor"/>.</param>
 /// <param name="timeProvider">The <see cref="TimeProvider"/>.</param>
 /// <param name="getOrCreateRequestSchedulerId">The get or create request scheduler id</param>
@@ -309,8 +315,18 @@ public class InMemoryScheduler(
         if (fireMessage != null)
         {
             var (processor, message) = (fireMessage.Value.Item1, fireMessage.Value.Item2);
-            BrighterAsyncContext.Run(() => processor.SendAsync(message));
-            CleanupTimer(message.Id.Value, generation);
+            try
+            {
+                BrighterAsyncContext.Run(() => processor.SendAsync(message));
+            }
+            catch (Exception error)
+            {
+                s_logger.LogError(error, "Error executing scheduled message {SchedulerId}", message.Id.Value);
+            }
+            finally
+            {
+                CleanupTimer(message.Id.Value, generation);
+            }
             return;
         }
 
@@ -318,8 +334,18 @@ public class InMemoryScheduler(
         if (fireRequest != null)
         {
             var (processor, request) = (fireRequest.Value.Item1, fireRequest.Value.Item2);
-            BrighterAsyncContext.Run(() => processor.SendAsync(request));
-            CleanupTimer(request.Id.Value, generation);
+            try
+            {
+                BrighterAsyncContext.Run(() => processor.SendAsync(request));
+            }
+            catch (Exception error)
+            {
+                s_logger.LogError(error, "Error executing scheduled request {SchedulerId}", request.Id.Value);
+            }
+            finally
+            {
+                CleanupTimer(request.Id.Value, generation);
+            }
             return;
         }
 

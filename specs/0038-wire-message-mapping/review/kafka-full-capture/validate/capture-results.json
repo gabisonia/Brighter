@@ -1,0 +1,12 @@
+[
+  {
+    "label": "healthy-validation",
+    "proc_exit": 0,
+    "dump_exit": 0,
+    "core_bytes": 439771136,
+    "elf_core": true,
+    "report_exists": true,
+    "threads": 28,
+    "librdkafka_threads": 8
+  }
+]

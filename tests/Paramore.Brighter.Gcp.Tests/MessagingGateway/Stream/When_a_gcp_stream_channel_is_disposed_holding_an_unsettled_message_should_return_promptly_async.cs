@@ -75,6 +75,7 @@ public class GcpStreamDisposeWithUnsettledMessageAsyncTests
 
             // Assert — dispose returns promptly, and the unsettled message is still redeliverable
             Assert.True(disposed, $"Disposing the stream channel did not return within {s_disposeBound}");
+            await disposing;
 
             // a fresh subscription instance, so the factory builds a new stream consumer
             redeliveryChannel = await provider.CreateChannelAsync(

@@ -1,0 +1,36 @@
+[
+  {
+    "framework": "net9.0",
+    "all_512_prior_identities_retained": true,
+    "new_bulk_trace_cases": 2,
+    "result": {
+      "exit": 0,
+      "wall_seconds": 567.5236690044403,
+      "monotonic_seconds": 567.517793583218,
+      "clock_discontinuity": false,
+      "counts": {
+        "Passed": 459,
+        "Failed": 0,
+        "NotExecuted": 55
+      },
+      "failures": []
+    }
+  },
+  {
+    "framework": "net10.0",
+    "all_512_prior_identities_retained": true,
+    "new_bulk_trace_cases": 2,
+    "result": {
+      "exit": 0,
+      "wall_seconds": 562.3473670482635,
+      "monotonic_seconds": 562.3415500828996,
+      "clock_discontinuity": false,
+      "counts": {
+        "Passed": 459,
+        "Failed": 0,
+        "NotExecuted": 55
+      },
+      "failures": []
+    }
+  }
+]

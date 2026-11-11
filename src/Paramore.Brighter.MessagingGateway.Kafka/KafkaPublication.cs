@@ -52,6 +52,18 @@ namespace Paramore.Brighter.MessagingGateway.Kafka
     public class KafkaPublication: Publication
     {
         /// <summary>
+        /// Gets or sets the strategy for mapping messages to native Kafka keys, bodies and headers.
+        /// </summary>
+        /// <remarks>
+        /// Null preserves the default mapping and <see cref="MessageHeaderBuilder"/>.
+        /// An explicit writer replaces that mapping and may compose <see cref="DefaultKafkaWireMessageWriter"/>.
+        /// The producer captures the selection at construction and invokes it after dispatch tracing.
+        /// Writers must support the producer's concurrency and must not modify source messages.
+        /// The gateway retains topic selection and confirms the original source message identity.
+        /// </remarks>
+        public IAmAWireMessageWriter<Confluent.Kafka.Message<string, byte[]>>? WireMessageWriter { get; set; }
+
+        /// <summary>
         /// The acks parameter controls how many ISR nodes must receive the 
         /// record before the producer can consider the write successful.
         /// </summary>

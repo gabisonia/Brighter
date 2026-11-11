@@ -1,0 +1,31 @@
+{
+  "exit": 1,
+  "clock_discontinuity": false,
+  "counts": {
+    "Passed": 0,
+    "Failed": 4,
+    "NotExecuted": 0
+  },
+  "failures": [
+    {
+      "name": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusBulkDispatchTraceTests.When_asb_bulk_dispatches_outbox_messages_should_map_the_current_producer_context(useQueue: False, custom: True)",
+      "message": "Assert.Equal() Failure: Values differ\nExpected: 00-9ab439123dba12f0977f44a53767c470-7ed1faa35397b204-01\nActual:   00-4bf92f3577b34da6a3ce929d0e0e4736-00f067aa0ba902b7-01",
+      "stack": "   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusBulkDispatchTraceTests.When_asb_bulk_dispatches_outbox_messages_should_map_the_current_producer_context(Boolean useQueue, Boolean custom) in /private/tmp/brighter-4170-rmq-scheduled-selection/workspace/tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_asb_bulk_dispatches_outbox_messages_should_map_the_current_producer_context.cs:line 111\n   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusBulkDispatchTraceTests.When_asb_bulk_dispatches_outbox_messages_should_map_the_current_producer_context(Boolean useQueue, Boolean custom) in /private/tmp/brighter-4170-rmq-scheduled-selection/workspace/tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_asb_bulk_dispatches_outbox_messages_should_map_the_current_producer_context.cs:line 120\n--- End of stack trace from previous location ---"
+    },
+    {
+      "name": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusBulkDispatchTraceTests.When_asb_bulk_dispatches_outbox_messages_should_map_the_current_producer_context(useQueue: True, custom: True)",
+      "message": "Assert.Equal() Failure: Values differ\nExpected: 00-0235eaeed46ef3310e4d2acbac73eab4-2de97b3b212b8355-01\nActual:   00-4bf92f3577b34da6a3ce929d0e0e4736-00f067aa0ba902b7-01",
+      "stack": "   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusBulkDispatchTraceTests.When_asb_bulk_dispatches_outbox_messages_should_map_the_current_producer_context(Boolean useQueue, Boolean custom) in /private/tmp/brighter-4170-rmq-scheduled-selection/workspace/tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_asb_bulk_dispatches_outbox_messages_should_map_the_current_producer_context.cs:line 111\n   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusBulkDispatchTraceTests.When_asb_bulk_dispatches_outbox_messages_should_map_the_current_producer_context(Boolean useQueue, Boolean custom) in /private/tmp/brighter-4170-rmq-scheduled-selection/workspace/tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_asb_bulk_dispatches_outbox_messages_should_map_the_current_producer_context.cs:line 120\n--- End of stack trace from previous location ---"
+    },
+    {
+      "name": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusBulkDispatchTraceTests.When_asb_bulk_dispatches_outbox_messages_should_map_the_current_producer_context(useQueue: True, custom: False)",
+      "message": "Assert.Equal() Failure: Values differ\nExpected: 00-84b49426c6b164644df0e55e1bed2009-e36f9e50d569d4c4-01\nActual:   00-4bf92f3577b34da6a3ce929d0e0e4736-00f067aa0ba902b7-01",
+      "stack": "   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusBulkDispatchTraceTests.When_asb_bulk_dispatches_outbox_messages_should_map_the_current_producer_context(Boolean useQueue, Boolean custom) in /private/tmp/brighter-4170-rmq-scheduled-selection/workspace/tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_asb_bulk_dispatches_outbox_messages_should_map_the_current_producer_context.cs:line 111\n   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusBulkDispatchTraceTests.When_asb_bulk_dispatches_outbox_messages_should_map_the_current_producer_context(Boolean useQueue, Boolean custom) in /private/tmp/brighter-4170-rmq-scheduled-selection/workspace/tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_asb_bulk_dispatches_outbox_messages_should_map_the_current_producer_context.cs:line 120\n--- End of stack trace from previous location ---"
+    },
+    {
+      "name": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusBulkDispatchTraceTests.When_asb_bulk_dispatches_outbox_messages_should_map_the_current_producer_context(useQueue: False, custom: False)",
+      "message": "Assert.Equal() Failure: Values differ\nExpected: 00-0b3b6743d44acc874950fd509704040a-baba3c4d18543fa1-01\nActual:   00-4bf92f3577b34da6a3ce929d0e0e4736-00f067aa0ba902b7-01",
+      "stack": "   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusBulkDispatchTraceTests.When_asb_bulk_dispatches_outbox_messages_should_map_the_current_producer_context(Boolean useQueue, Boolean custom) in /private/tmp/brighter-4170-rmq-scheduled-selection/workspace/tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_asb_bulk_dispatches_outbox_messages_should_map_the_current_producer_context.cs:line 111\n   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusBulkDispatchTraceTests.When_asb_bulk_dispatches_outbox_messages_should_map_the_current_producer_context(Boolean useQueue, Boolean custom) in /private/tmp/brighter-4170-rmq-scheduled-selection/workspace/tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_asb_bulk_dispatches_outbox_messages_should_map_the_current_producer_context.cs:line 120\n--- End of stack trace from previous location ---"
+    }
+  ]
+}

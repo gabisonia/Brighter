@@ -1,0 +1,8 @@
+VSTest version 17.14.1 (arm64)
+
+Starting test execution, please wait...
+A total of 1 test files matched the specified pattern.
+Data collector 'Blame' message: All tests finished running, Sequence file will not be generated.
+Results File: /capture/full/results.trx
+
+Passed!  - Failed:     0, Passed:   412, Skipped:     0, Total:   412, Duration: 14 m 57 s - Paramore.Brighter.Kafka.Tests.dll (net9.0)

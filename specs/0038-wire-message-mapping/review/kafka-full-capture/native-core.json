@@ -1,0 +1,7 @@
+{
+  "path": "/private/tmp/brighter-4170-kafka-full-capture/validate/healthy-validation.core",
+  "bytes": 439771136,
+  "sha256": "20ed8720581fbee78ae08f618dfa3c2caf1c85fe291e6c8fb813908376e1d5e2",
+  "purpose": "Healthy full-memory capture validation; never a failing-hang dump.",
+  "copied_into_review": false
+}

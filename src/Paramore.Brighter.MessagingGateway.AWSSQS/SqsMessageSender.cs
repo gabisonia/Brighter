@@ -1,17 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
 using System.Net;
-using System.Net.Mime;
-using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.SQS;
 using Amazon.SQS.Model;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
-using Paramore.Brighter.Extensions;
-using Paramore.Brighter.JsonConverters;
 using Paramore.Brighter.Logging;
 
 namespace Paramore.Brighter.MessagingGateway.AWSSQS;
@@ -26,6 +19,7 @@ public partial class SqsMessageSender
     
     private readonly string _queueUrl;
     private readonly AmazonSQSClient _client;
+    private readonly IAmAWireMessageWriter<SqsWireMessage> _wireMessageWriter;
 
     /// <summary>
     /// Initialize the <see cref="SqsMessageSender"/>
@@ -33,9 +27,22 @@ public partial class SqsMessageSender
     /// <param name="queueUrl">The queue ARN</param>
     /// <param name="client">The SQS Client</param>
     public SqsMessageSender(string queueUrl, AmazonSQSClient client)
+        : this(queueUrl, client, null)
+    {
+    }
+
+    /// <summary>
+    /// Initializes a sender with an optional wire message writer.
+    /// </summary>
+    /// <param name="queueUrl">The destination queue URL.</param>
+    /// <param name="client">The SQS client.</param>
+    /// <param name="wireMessageWriter">The writer, or null to use the default mapping.</param>
+    public SqsMessageSender(string queueUrl, AmazonSQSClient client,
+        IAmAWireMessageWriter<SqsWireMessage>? wireMessageWriter)
     {
         _queueUrl = queueUrl;
         _client = client;
+        _wireMessageWriter = wireMessageWriter ?? new DefaultSqsWireMessageWriter(queueUrl);
     }
     
     /// <summary>
@@ -61,15 +68,16 @@ public partial class SqsMessageSender
 
     private SendMessageRequest CreateSendMessageRequest(Message message, TimeSpan? delay)
     {
+        var wireMessage = _wireMessageWriter.WriteMessage(message);
         var request = new SendMessageRequest
         {
             QueueUrl = _queueUrl,
-            MessageBody = message.Body.Value
+            MessageBody = wireMessage.Body,
+            MessageAttributes = wireMessage.MessageAttributes
         };
 
         SetMessageDelay(request, delay);
         SetFifoQueueProperties(request, message);
-        SetMessageAttributes(request, message);
 
         return request;
     }
@@ -101,73 +109,6 @@ public partial class SqsMessageSender
         {
             request.MessageDeduplicationId = (string)deduplicationId;
         }
-    }
-
-    private void SetMessageAttributes(SendMessageRequest request, Message message)
-    {
-        string cloudEventHeadersJson = CreateCloudEventHeadersJson(message);
-
-        var contentType = message.Header.ContentType ?? new ContentType(MediaTypeNames.Text.Plain);
-        var messageAttributes = new Dictionary<string, MessageAttributeValue>
-        {
-            [HeaderNames.Id] = new() { StringValue = message.Header.MessageId, DataType = "String" },
-            [HeaderNames.CloudEventHeaders] = new() { StringValue = cloudEventHeadersJson, DataType = "String" },
-            [HeaderNames.Topic] = new() { StringValue = _queueUrl, DataType = "String" },
-#pragma warning disable CS0618 // Preserve the legacy message type for transport compatibility.
-            [HeaderNames.MessageType] = new() { StringValue = message.Header.MessageType.ToString(), DataType = "String" },
-#pragma warning restore CS0618
-            [HeaderNames.ContentType] = new() { StringValue = contentType.ToString(), DataType = "String" },
-            [HeaderNames.Timestamp] = new() { StringValue = Convert.ToString(message.Header.TimeStamp.ToRfc3339()), DataType = "String" }
-        };
-
-        if (!RoutingKey.IsNullOrEmpty(message.Header.ReplyTo))
-            messageAttributes.Add(HeaderNames.ReplyTo, new MessageAttributeValue { StringValue = message.Header.ReplyTo, DataType = "String" });
-
-        if (!string.IsNullOrEmpty(message.Header.Subject))
-            messageAttributes.Add(HeaderNames.Subject, new MessageAttributeValue { StringValue = message.Header.Subject, DataType = "String" });
-
-        if (!Id.IsNullOrEmpty(message.Header.CorrelationId))
-            messageAttributes.Add(HeaderNames.CorrelationId, new MessageAttributeValue { StringValue = message.Header.CorrelationId, DataType = "String" });
-
-        message.Header.Bag[HeaderNames.HandledCount] = message.Header.HandledCount.ToString(CultureInfo.InvariantCulture);
-
-        var bagJson = System.Text.Json.JsonSerializer.Serialize(message.Header.BagWithoutLocalHeaders(), JsonSerialisationOptions.Options);
-        messageAttributes[HeaderNames.Bag] = new() { StringValue = bagJson, DataType = "String" };
-        request.MessageAttributes = messageAttributes;
-    }
-
-    private static string CreateCloudEventHeadersJson(Message message)
-    {
-        var contentType = message.Header.ContentType ?? new ContentType(MediaTypeNames.Text.Plain);
-        var cloudEventHeaders = new Dictionary<string, string>
-        {
-            [HeaderNames.Id] = Convert.ToString(message.Header.MessageId),
-            [HeaderNames.DataContentType] = contentType.ToString(),
-            [HeaderNames.DataSchema] = message.Header.DataSchema?.ToString() ?? string.Empty,
-            [HeaderNames.SpecVersion] = message.Header.SpecVersion,
-            [HeaderNames.Type] = message.Header.Type.Value,
-            [HeaderNames.Source] = message.Header.Source.ToString(),
-            [HeaderNames.Time] = message.Header.TimeStamp.ToRfc3339(),
-            [HeaderNames.Baggage] = message.Header.Baggage.ToString()
-        };
-
-        if (!string.IsNullOrEmpty(message.Header.Subject))
-            cloudEventHeaders[HeaderNames.Subject] = message.Header.Subject!;
-
-        if (message.Header.DataSchema != null)
-            cloudEventHeaders[HeaderNames.DataSchema] = message.Header.DataSchema.ToString();
-
-        if (message.Header.DataRef != null)
-            cloudEventHeaders[HeaderNames.DataRef] = message.Header.DataRef;
-        
-        if (message.Header.TraceParent != null)
-            cloudEventHeaders[HeaderNames.TraceParent] = message.Header.TraceParent.Value;
-
-        if (message.Header.TraceState != null)
-            cloudEventHeaders[HeaderNames.TraceState] = message.Header.TraceState.Value;
-
-        var cloudEventHeadersJson = System.Text.Json.JsonSerializer.Serialize(cloudEventHeaders, JsonSerialisationOptions.Options);
-        return cloudEventHeadersJson;
     }
 
     private static partial class Log

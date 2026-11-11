@@ -1,0 +1,8 @@
+{
+  "elf_type": "ET_CORE",
+  "machine": 183,
+  "program_headers": 511,
+  "load_segments": 510,
+  "writable_load_segments": 270,
+  "file_bytes": 439771136
+}

@@ -46,6 +46,7 @@ namespace Paramore.Brighter.MessagingGateway.AzureServiceBus;
 /// </summary>
 public abstract partial class AzureServiceBusMessageProducer : IAmAMessageProducerSync, IAmAMessageProducerAsync, IAmABulkMessageProducerAsync
 {
+    private static readonly DefaultAzureServiceBusWireMessageWriter s_defaultWireMessageWriter = new();
     private readonly IServiceBusSenderProvider _serviceBusSenderProvider;
     private readonly InstrumentationOptions _options;
     private AzureServiceBusPublication _publication;
@@ -129,6 +130,8 @@ public abstract partial class AzureServiceBusMessageProducer : IAmAMessageProduc
 
 
     /// <inheritdoc/>
+    /// <exception cref="InvalidOperationException">The configured wire message writer returned null.</exception>
+    /// <exception cref="OperationCanceledException">Batch creation was cancelled.</exception>
     public async ValueTask<IEnumerable<IAmAMessageBatch>> CreateBatchesAsync(
         IEnumerable<Message> messages, CancellationToken cancellationToken)
     {
@@ -148,7 +151,15 @@ public abstract partial class AzureServiceBusMessageProducer : IAmAMessageProduc
         try
         {
             foreach (Message message in messages)
-                await azureServiceBusMessageBatches.AddMessageToBatchAsync(message, _publication.TimeToLive, cancellationToken);
+            {
+                BrighterTracer.WriteProducerEvent(Span, "azure_service_bus", message, _options);
+                var nativeMessage = (_publication.WireMessageWriter ?? s_defaultWireMessageWriter).WriteMessage(message)
+                    ?? throw new InvalidOperationException("The wire message writer returned null.");
+                cancellationToken.ThrowIfCancellationRequested();
+                if (_publication.TimeToLive.HasValue)
+                    nativeMessage.TimeToLive = _publication.TimeToLive.Value;
+                await azureServiceBusMessageBatches.AddMessageToBatchAsync(message, nativeMessage, cancellationToken);
+            }
 
             Log.SendingMessagesInBatches(Logger, topic, azureServiceBusMessageBatches.Batches.Count(), _bulkSendBatchSize);
 
@@ -204,6 +215,7 @@ public abstract partial class AzureServiceBusMessageProducer : IAmAMessageProduc
     /// <param name="message">The message.</param>
     /// <param name="delay">Delay delivery of the message.</param>
     /// <param name="cancellationToken">Cancel the in-flight send operation</param>
+    /// <exception cref="ChannelFailureException">Mapping or sending failed. A null writer result is reported as an inner InvalidOperationException.</exception>
     public async Task SendWithDelayAsync(Message message, TimeSpan? delay = null, CancellationToken cancellationToken = default)
     {
         Log.PreparingToSendMessage(Logger, message.Header.Topic);
@@ -220,7 +232,10 @@ public abstract partial class AzureServiceBusMessageProducer : IAmAMessageProduc
             Log.PublishingMessage(Logger, message.Header.Topic, delay, message.Body.Value, message.Id.Value);
 
             BrighterTracer.WriteProducerEvent(Span, "azure_service_bus", message, _options);
-            var azureServiceBusMessage = AzureServiceBusMessagePublisher.ConvertToServiceBusMessage(message, _publication.TimeToLive);
+            var azureServiceBusMessage = (_publication.WireMessageWriter ?? s_defaultWireMessageWriter).WriteMessage(message)
+                ?? throw new InvalidOperationException("The wire message writer returned null.");
+            if (_publication.TimeToLive.HasValue)
+                azureServiceBusMessage.TimeToLive = _publication.TimeToLive.Value;
             if (delay == TimeSpan.Zero)
             {
                 await serviceBusSenderWrapper.SendAsync(azureServiceBusMessage, cancellationToken);

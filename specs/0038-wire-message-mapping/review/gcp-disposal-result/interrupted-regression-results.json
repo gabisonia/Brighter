@@ -1,0 +1,39 @@
+[
+  {
+    "framework": "net9.0",
+    "exit": 1,
+    "wall_seconds": 598.7936499118805,
+    "monotonic_seconds": 554.476502333302,
+    "clock_discontinuity": true,
+    "counts": {
+      "Passed": 455,
+      "Failed": 2,
+      "NotExecuted": 55
+    },
+    "failures": [
+      {
+        "name": "Paramore.Brighter.Gcp.Tests.MessagingGateway.StreamOrdering.Proactor.WhenNackingAMessageItShouldBeRedeliveredAsync.When_nacking_first_of_two_messages_should_redeliver_nacked_then_receive_second_async",
+        "message": "Assert.Contains() Failure: Item not found in set\nSet:       [\"01a1c1f4-3ce3-7f21-a0a7-4b560d9ed0fb\"]\nNot found: \"01a1c1f4-3ce3-7e6a-bb79-2265c90f9117\"",
+        "stack": "   at Paramore.Brighter.Gcp.Tests.MessagingGateway.StreamOrdering.Proactor.WhenNackingAMessageItShouldBeRedeliveredAsync.When_nacking_first_of_two_messages_should_redeliver_nacked_then_receive_second_async() in /private/tmp/brighter-4170-rmq-scheduled-selection/workspace/tests/Paramore.Brighter.Gcp.Tests/MessagingGateway/StreamOrdering/Generated/Proactor/When_nacking_a_message_it_should_be_redelivered.cs:line 158\n--- End of stack trace from previous location ---"
+      },
+      {
+        "name": "Paramore.Brighter.Gcp.Tests.MessagingGateway.GcpOrderedNackRpcRecoveryTests.When_nacking_an_ordered_gcp_delivery_should_send_a_native_nack_and_recover_both_messages(useAsync: False, clientCount: 0)",
+        "message": "Assert.Contains() Failure: Item not found in set\nSet:       [\"01a1c1f2-ad11-7309-85a8-b4db14bf980f\"]\nNot found: \"01a1c1f2-ad11-7e25-abfe-4211c12b9965\"",
+        "stack": "   at Paramore.Brighter.Gcp.Tests.MessagingGateway.GcpOrderedNackRpcRecoveryTests.When_nacking_an_ordered_gcp_delivery_should_send_a_native_nack_and_recover_both_messages(Boolean useAsync, Int32 clientCount) in /private/tmp/brighter-4170-rmq-scheduled-selection/workspace/tests/Paramore.Brighter.Gcp.Tests/MessagingGateway/When_nacking_an_ordered_gcp_delivery_should_send_a_native_nack_and_recover_both_messages.cs:line 190\n   at Paramore.Brighter.Gcp.Tests.MessagingGateway.GcpOrderedNackRpcRecoveryTests.When_nacking_an_ordered_gcp_delivery_should_send_a_native_nack_and_recover_both_messages(Boolean useAsync, Int32 clientCount) in /private/tmp/brighter-4170-rmq-scheduled-selection/workspace/tests/Paramore.Brighter.Gcp.Tests/MessagingGateway/When_nacking_an_ordered_gcp_delivery_should_send_a_native_nack_and_recover_both_messages.cs:line 192\n   at Paramore.Brighter.Gcp.Tests.MessagingGateway.GcpOrderedNackRpcRecoveryTests.When_nacking_an_ordered_gcp_delivery_should_send_a_native_nack_and_recover_both_messages(Boolean useAsync, Int32 clientCount) in /private/tmp/brighter-4170-rmq-scheduled-selection/workspace/tests/Paramore.Brighter.Gcp.Tests/MessagingGateway/When_nacking_an_ordered_gcp_delivery_should_send_a_native_nack_and_recover_both_messages.cs:line 222\n--- End of stack trace from previous location ---"
+      }
+    ]
+  },
+  {
+    "framework": "net10.0",
+    "exit": 0,
+    "wall_seconds": 606.8793358802795,
+    "monotonic_seconds": 562.5577967907302,
+    "clock_discontinuity": true,
+    "counts": {
+      "Passed": 457,
+      "Failed": 0,
+      "NotExecuted": 55
+    },
+    "failures": []
+  }
+]

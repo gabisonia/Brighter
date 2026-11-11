@@ -1,0 +1,11 @@
+{
+  "exit": 0,
+  "clock_discontinuity": false,
+  "results": [
+    "RESULT addStream=False extendAfterNack=False firstReturnedWithin30Seconds=True",
+    "RESULT addStream=False extendAfterNack=True firstReturnedWithin30Seconds=True",
+    "RESULT addStream=True extendAfterNack=False firstReturnedWithin30Seconds=False",
+    "RESULT addStream=True extendAfterNack=True firstReturnedWithin30Seconds=False"
+  ],
+  "errors": []
+}

@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>net9.0;net10.0</TargetFrameworks>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+    <BrighterRoot Condition="'$(BrighterRoot)' == ''">../../../..</BrighterRoot>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="$(BrighterRoot)/src/Paramore.Brighter.MessageScheduler.TickerQ/Paramore.Brighter.MessageScheduler.TickerQ.csproj" />
+    <ProjectReference Include="$(BrighterRoot)/src/Paramore.Brighter.MessagingGateway.RMQ.Async/Paramore.Brighter.MessagingGateway.RMQ.Async.csproj" />
+    <PackageReference Include="TickerQ.EntityFrameworkCore" Version="9.3.0" Condition="'$(TargetFramework)' == 'net9.0'" />
+    <PackageReference Include="TickerQ.EntityFrameworkCore" Version="10.4.0" Condition="'$(TargetFramework)' == 'net10.0'" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="9.0.20" Condition="'$(TargetFramework)' == 'net9.0'" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="10.0.12" Condition="'$(TargetFramework)' == 'net10.0'" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="10.0.12" />
+    <PackageReference Include="OpenTelemetry" Version="1.19.1" />
+  </ItemGroup>
+</Project>

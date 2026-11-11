@@ -1,0 +1,64 @@
+{
+  "net9.0": {
+    "result": {
+      "exit": 0,
+      "clock_discontinuity": false,
+      "counts": {
+        "Passed": 540,
+        "Failed": 0,
+        "NotExecuted": 0
+      },
+      "failures": []
+    },
+    "lost_or_changed_prior_outcomes": [],
+    "new_outcomes": [
+      [
+        "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusBulkDispatchTraceTests.When_asb_bulk_dispatches_outbox_messages_should_map_the_current_producer_context(useQueue: True, custom: True)",
+        "Passed"
+      ],
+      [
+        "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusBulkDispatchTraceTests.When_asb_bulk_dispatches_outbox_messages_should_map_the_current_producer_context(useQueue: False, custom: True)",
+        "Passed"
+      ],
+      [
+        "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusBulkDispatchTraceTests.When_asb_bulk_dispatches_outbox_messages_should_map_the_current_producer_context(useQueue: True, custom: False)",
+        "Passed"
+      ],
+      [
+        "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusBulkDispatchTraceTests.When_asb_bulk_dispatches_outbox_messages_should_map_the_current_producer_context(useQueue: False, custom: False)",
+        "Passed"
+      ]
+    ]
+  },
+  "net10.0": {
+    "result": {
+      "exit": 0,
+      "clock_discontinuity": false,
+      "counts": {
+        "Passed": 540,
+        "Failed": 0,
+        "NotExecuted": 0
+      },
+      "failures": []
+    },
+    "lost_or_changed_prior_outcomes": [],
+    "new_outcomes": [
+      [
+        "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusBulkDispatchTraceTests.When_asb_bulk_dispatches_outbox_messages_should_map_the_current_producer_context(useQueue: False, custom: True)",
+        "Passed"
+      ],
+      [
+        "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusBulkDispatchTraceTests.When_asb_bulk_dispatches_outbox_messages_should_map_the_current_producer_context(useQueue: False, custom: False)",
+        "Passed"
+      ],
+      [
+        "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusBulkDispatchTraceTests.When_asb_bulk_dispatches_outbox_messages_should_map_the_current_producer_context(useQueue: True, custom: False)",
+        "Passed"
+      ],
+      [
+        "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusBulkDispatchTraceTests.When_asb_bulk_dispatches_outbox_messages_should_map_the_current_producer_context(useQueue: True, custom: True)",
+        "Passed"
+      ]
+    ]
+  }
+}

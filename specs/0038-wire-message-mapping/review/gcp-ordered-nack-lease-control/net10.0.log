@@ -1,0 +1,68 @@
+CASE addStream=False extendAfterNack=False
+2026-11-09T19:18:32.2745055+00:00 STREAM OPEN 0
+2026-11-09T19:18:32.3689211+00:00 STREAM 0 DELIVERY { "ackId": "projects/brighter-test/subscriptions/ordered-protocol-0df781a77804402fbf6160a7ca260f26:1", "message": { "data": "Zmlyc3Q=", "messageId": "1", "publishTime": "2026-11-09T19:18:32.296Z", "orderingKey": "ordered-race-0" } }
+2026-11-09T19:18:32.4760800+00:00 STREAM 0 DELIVERY { "ackId": "projects/brighter-test/subscriptions/ordered-protocol-0df781a77804402fbf6160a7ca260f26:2", "message": { "data": "c2Vjb25k", "messageId": "2", "publishTime": "2026-11-09T19:18:32.297Z", "orderingKey": "ordered-race-0" } }
+2026-11-09T19:18:32.4779384+00:00 ACK START projects/brighter-test/subscriptions/ordered-protocol-0df781a77804402fbf6160a7ca260f26:2
+2026-11-09T19:18:32.4847728+00:00 ACK SUCCESS projects/brighter-test/subscriptions/ordered-protocol-0df781a77804402fbf6160a7ca260f26:2
+2026-11-09T19:18:32.4850604+00:00 EXTEND START projects/brighter-test/subscriptions/ordered-protocol-0df781a77804402fbf6160a7ca260f26:1 projects/brighter-test/subscriptions/ordered-protocol-0df781a77804402fbf6160a7ca260f26:2
+2026-11-09T19:18:32.4937114+00:00 EXTEND SUCCESS projects/brighter-test/subscriptions/ordered-protocol-0df781a77804402fbf6160a7ca260f26:1 projects/brighter-test/subscriptions/ordered-protocol-0df781a77804402fbf6160a7ca260f26:2
+2026-11-09T19:18:32.4940470+00:00 NACK START projects/brighter-test/subscriptions/ordered-protocol-0df781a77804402fbf6160a7ca260f26:1
+2026-11-09T19:18:32.4975925+00:00 NACK SUCCESS projects/brighter-test/subscriptions/ordered-protocol-0df781a77804402fbf6160a7ca260f26:1
+2026-11-09T19:18:32.5192647+00:00 STREAM 0 DELIVERY { "ackId": "projects/brighter-test/subscriptions/ordered-protocol-0df781a77804402fbf6160a7ca260f26:3", "message": { "data": "Zmlyc3Q=", "messageId": "1", "publishTime": "2026-11-09T19:18:32.296Z", "orderingKey": "ordered-race-0" } }
+2026-11-09T19:18:32.5195456+00:00 ACK START projects/brighter-test/subscriptions/ordered-protocol-0df781a77804402fbf6160a7ca260f26:3
+2026-11-09T19:18:32.5238455+00:00 ACK SUCCESS projects/brighter-test/subscriptions/ordered-protocol-0df781a77804402fbf6160a7ca260f26:3
+RESULT addStream=False extendAfterNack=False firstReturnedWithin30Seconds=True
+CASE addStream=False extendAfterNack=True
+2026-11-09T19:18:32.5751237+00:00 STREAM OPEN 0
+2026-11-09T19:18:32.6286304+00:00 STREAM 0 DELIVERY { "ackId": "projects/brighter-test/subscriptions/ordered-protocol-9738e423d6c34ff3bf1b53e3bb2bbafb:4", "message": { "data": "Zmlyc3Q=", "messageId": "3", "publishTime": "2026-11-09T19:18:32.577Z", "orderingKey": "ordered-race-0" } }
+2026-11-09T19:18:32.6286813+00:00 STREAM 0 DELIVERY { "ackId": "projects/brighter-test/subscriptions/ordered-protocol-9738e423d6c34ff3bf1b53e3bb2bbafb:5", "message": { "data": "c2Vjb25k", "messageId": "4", "publishTime": "2026-11-09T19:18:32.577Z", "orderingKey": "ordered-race-0" } }
+2026-11-09T19:18:32.6287253+00:00 ACK START projects/brighter-test/subscriptions/ordered-protocol-9738e423d6c34ff3bf1b53e3bb2bbafb:5
+2026-11-09T19:18:32.6328060+00:00 ACK SUCCESS projects/brighter-test/subscriptions/ordered-protocol-9738e423d6c34ff3bf1b53e3bb2bbafb:5
+2026-11-09T19:18:32.6328113+00:00 NACK START projects/brighter-test/subscriptions/ordered-protocol-9738e423d6c34ff3bf1b53e3bb2bbafb:4
+2026-11-09T19:18:32.6355016+00:00 NACK SUCCESS projects/brighter-test/subscriptions/ordered-protocol-9738e423d6c34ff3bf1b53e3bb2bbafb:4
+2026-11-09T19:18:32.6355051+00:00 EXTEND START projects/brighter-test/subscriptions/ordered-protocol-9738e423d6c34ff3bf1b53e3bb2bbafb:4 projects/brighter-test/subscriptions/ordered-protocol-9738e423d6c34ff3bf1b53e3bb2bbafb:5
+2026-11-09T19:18:32.6379415+00:00 EXTEND SUCCESS projects/brighter-test/subscriptions/ordered-protocol-9738e423d6c34ff3bf1b53e3bb2bbafb:4 projects/brighter-test/subscriptions/ordered-protocol-9738e423d6c34ff3bf1b53e3bb2bbafb:5
+2026-11-09T19:18:32.6829626+00:00 STREAM 0 DELIVERY { "ackId": "projects/brighter-test/subscriptions/ordered-protocol-9738e423d6c34ff3bf1b53e3bb2bbafb:6", "message": { "data": "Zmlyc3Q=", "messageId": "3", "publishTime": "2026-11-09T19:18:32.577Z", "orderingKey": "ordered-race-0" } }
+2026-11-09T19:18:32.6830342+00:00 ACK START projects/brighter-test/subscriptions/ordered-protocol-9738e423d6c34ff3bf1b53e3bb2bbafb:6
+2026-11-09T19:18:32.6866765+00:00 ACK SUCCESS projects/brighter-test/subscriptions/ordered-protocol-9738e423d6c34ff3bf1b53e3bb2bbafb:6
+RESULT addStream=False extendAfterNack=True firstReturnedWithin30Seconds=True
+CASE addStream=True extendAfterNack=False
+2026-11-09T19:18:32.7110353+00:00 STREAM OPEN 0
+2026-11-09T19:18:32.7665832+00:00 STREAM 0 DELIVERY { "ackId": "projects/brighter-test/subscriptions/ordered-protocol-4e03851310254d41b28891f9aeab952d:7", "message": { "data": "Zmlyc3Q=", "messageId": "5", "publishTime": "2026-11-09T19:18:32.712Z", "orderingKey": "ordered-race-0" } }
+2026-11-09T19:18:32.7666399+00:00 STREAM 0 DELIVERY { "ackId": "projects/brighter-test/subscriptions/ordered-protocol-4e03851310254d41b28891f9aeab952d:8", "message": { "data": "c2Vjb25k", "messageId": "6", "publishTime": "2026-11-09T19:18:32.712Z", "orderingKey": "ordered-race-0" } }
+2026-11-09T19:18:32.7668242+00:00 STREAM OPEN 1
+2026-11-09T19:18:32.8182673+00:00 STREAM 0 DELIVERY { "ackId": "projects/brighter-test/subscriptions/ordered-protocol-4e03851310254d41b28891f9aeab952d:9", "message": { "data": "cmVhZHk=", "messageId": "7", "publishTime": "2026-11-09T19:18:32.770Z", "orderingKey": "probe-marker-3" } }
+2026-11-09T19:18:32.8183891+00:00 ACK START projects/brighter-test/subscriptions/ordered-protocol-4e03851310254d41b28891f9aeab952d:9
+2026-11-09T19:18:32.8232486+00:00 ACK SUCCESS projects/brighter-test/subscriptions/ordered-protocol-4e03851310254d41b28891f9aeab952d:9
+READINESS: marker acknowledged on original stream; awaiting stream 1 assignment
+2026-11-09T19:18:32.8731661+00:00 STREAM 1 DELIVERY { "ackId": "projects/brighter-test/subscriptions/ordered-protocol-4e03851310254d41b28891f9aeab952d:10", "message": { "data": "cmVhZHk=", "messageId": "8", "publishTime": "2026-11-09T19:18:32.826Z", "orderingKey": "probe-marker-3" } }
+2026-11-09T19:18:32.8733113+00:00 ACK START projects/brighter-test/subscriptions/ordered-protocol-4e03851310254d41b28891f9aeab952d:10
+2026-11-09T19:18:32.8780790+00:00 ACK SUCCESS projects/brighter-test/subscriptions/ordered-protocol-4e03851310254d41b28891f9aeab952d:10
+SECOND STREAM READY: observed marker delivery and completed acknowledgement
+2026-11-09T19:18:32.8781082+00:00 ACK START projects/brighter-test/subscriptions/ordered-protocol-4e03851310254d41b28891f9aeab952d:8
+2026-11-09T19:18:32.8869413+00:00 ACK SUCCESS projects/brighter-test/subscriptions/ordered-protocol-4e03851310254d41b28891f9aeab952d:8
+2026-11-09T19:18:32.8869596+00:00 EXTEND START projects/brighter-test/subscriptions/ordered-protocol-4e03851310254d41b28891f9aeab952d:7 projects/brighter-test/subscriptions/ordered-protocol-4e03851310254d41b28891f9aeab952d:8
+2026-11-09T19:18:32.8950955+00:00 EXTEND SUCCESS projects/brighter-test/subscriptions/ordered-protocol-4e03851310254d41b28891f9aeab952d:7 projects/brighter-test/subscriptions/ordered-protocol-4e03851310254d41b28891f9aeab952d:8
+2026-11-09T19:18:32.8951130+00:00 NACK START projects/brighter-test/subscriptions/ordered-protocol-4e03851310254d41b28891f9aeab952d:7
+2026-11-09T19:18:32.9008065+00:00 NACK SUCCESS projects/brighter-test/subscriptions/ordered-protocol-4e03851310254d41b28891f9aeab952d:7
+RESULT addStream=True extendAfterNack=False firstReturnedWithin30Seconds=False
+CASE addStream=True extendAfterNack=True
+2026-11-09T19:19:03.0209515+00:00 STREAM OPEN 0
+2026-11-09T19:19:03.0836305+00:00 STREAM 0 DELIVERY { "ackId": "projects/brighter-test/subscriptions/ordered-protocol-a269afee0b23478cb69a980367d4ec0d:11", "message": { "data": "Zmlyc3Q=", "messageId": "9", "publishTime": "2026-11-09T19:19:03.024Z", "orderingKey": "ordered-race-0" } }
+2026-11-09T19:19:03.0837425+00:00 STREAM 0 DELIVERY { "ackId": "projects/brighter-test/subscriptions/ordered-protocol-a269afee0b23478cb69a980367d4ec0d:12", "message": { "data": "c2Vjb25k", "messageId": "10", "publishTime": "2026-11-09T19:19:03.024Z", "orderingKey": "ordered-race-0" } }
+2026-11-09T19:19:03.0843269+00:00 STREAM OPEN 1
+2026-11-09T19:19:03.1354909+00:00 STREAM 0 DELIVERY { "ackId": "projects/brighter-test/subscriptions/ordered-protocol-a269afee0b23478cb69a980367d4ec0d:13", "message": { "data": "cmVhZHk=", "messageId": "11", "publishTime": "2026-11-09T19:19:03.090Z", "orderingKey": "probe-marker-3" } }
+2026-11-09T19:19:03.1356820+00:00 ACK START projects/brighter-test/subscriptions/ordered-protocol-a269afee0b23478cb69a980367d4ec0d:13
+2026-11-09T19:19:03.1452980+00:00 ACK SUCCESS projects/brighter-test/subscriptions/ordered-protocol-a269afee0b23478cb69a980367d4ec0d:13
+READINESS: marker acknowledged on original stream; awaiting stream 1 assignment
+2026-11-09T19:19:03.1921570+00:00 STREAM 1 DELIVERY { "ackId": "projects/brighter-test/subscriptions/ordered-protocol-a269afee0b23478cb69a980367d4ec0d:14", "message": { "data": "cmVhZHk=", "messageId": "12", "publishTime": "2026-11-09T19:19:03.147Z", "orderingKey": "probe-marker-3" } }
+2026-11-09T19:19:03.1922762+00:00 ACK START projects/brighter-test/subscriptions/ordered-protocol-a269afee0b23478cb69a980367d4ec0d:14
+2026-11-09T19:19:03.1982757+00:00 ACK SUCCESS projects/brighter-test/subscriptions/ordered-protocol-a269afee0b23478cb69a980367d4ec0d:14
+SECOND STREAM READY: observed marker delivery and completed acknowledgement
+2026-11-09T19:19:03.1982930+00:00 ACK START projects/brighter-test/subscriptions/ordered-protocol-a269afee0b23478cb69a980367d4ec0d:12
+2026-11-09T19:19:03.2016785+00:00 ACK SUCCESS projects/brighter-test/subscriptions/ordered-protocol-a269afee0b23478cb69a980367d4ec0d:12
+2026-11-09T19:19:03.2016860+00:00 NACK START projects/brighter-test/subscriptions/ordered-protocol-a269afee0b23478cb69a980367d4ec0d:11
+2026-11-09T19:19:03.2073301+00:00 NACK SUCCESS projects/brighter-test/subscriptions/ordered-protocol-a269afee0b23478cb69a980367d4ec0d:11
+2026-11-09T19:19:03.2073427+00:00 EXTEND START projects/brighter-test/subscriptions/ordered-protocol-a269afee0b23478cb69a980367d4ec0d:11 projects/brighter-test/subscriptions/ordered-protocol-a269afee0b23478cb69a980367d4ec0d:12
+2026-11-09T19:19:03.2102780+00:00 EXTEND SUCCESS projects/brighter-test/subscriptions/ordered-protocol-a269afee0b23478cb69a980367d4ec0d:11 projects/brighter-test/subscriptions/ordered-protocol-a269afee0b23478cb69a980367d4ec0d:12
+RESULT addStream=True extendAfterNack=True firstReturnedWithin30Seconds=False

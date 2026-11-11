@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>net9.0;net10.0</TargetFrameworks>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+    <BrighterRoot Condition="'$(BrighterRoot)' == ''">../../../..</BrighterRoot>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="$(BrighterRoot)/src/Paramore.Brighter.MessageScheduler.Quartz/Paramore.Brighter.MessageScheduler.Quartz.csproj" />
+    <ProjectReference Include="$(BrighterRoot)/src/Paramore.Brighter.MessagingGateway.RMQ.Async/Paramore.Brighter.MessagingGateway.RMQ.Async.csproj" />
+    <PackageReference Include="Quartz.Serialization.SystemTextJson" Version="3.22.4" />
+    <PackageReference Include="Npgsql" Version="10.0.3" />
+    <PackageReference Include="OpenTelemetry" Version="1.19.1" />
+    <None Update="tables_postgres.sql" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

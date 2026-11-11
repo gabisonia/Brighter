@@ -9,6 +9,14 @@ namespace Paramore.Brighter.MessagingGateway.Postgres;
 /// </summary>
 public class PostgresPublication : Publication
 {
+    /// <summary>Gets or sets the writer for this publication's JSON content.</summary>
+    /// <remarks>
+    /// Null selects the default JSON mapping. Writers must return valid JSON for the
+    /// existing JSON or JSONB column. Queue selection and visibility remain gateway-owned.
+    /// Writer exceptions and null results fail sending before a row is inserted.
+    /// </remarks>
+    public IAmAWireMessageWriter<string>? WireMessageWriter { get; set; }
+
     /// <summary>
     /// Gets or sets the schema name where the queue store table resides in the PostgreSQL database.
     /// If not explicitly set, the default schema name configured in the

@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="caad4127-354c-4fd4-b4af-25b8e263247b" name="@brighter-4170-kafka-default-body-ownership 2026-11-10 08:39:16" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-11-10T08:39:16.6131235+00:00" queuing="2026-11-10T08:39:16.6131235+00:00" start="2026-11-10T08:39:08.0026391+00:00" finish="2026-11-10T08:39:24.5834748+00:00" />
+  <TestSettings name="default" id="b5623c94-5f2c-445b-98a3-1a96bafcf291">
+    <Deployment runDeploymentRoot="_brighter-4170-kafka-default-body-ownership_2026-11-10_08_39_16" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="4c1c508a-c659-48e5-8c79-c82af0c76332" testId="a0cfd20c-2098-ee74-f354-5125c0e33e7b" testName="Paramore.Brighter.Kafka.Tests.MessagingGateway.Reactor.KafkaMessageConsumerCommitRevokeConcurrency.When_committing_offsets_during_revoke_should_not_race_with_background_commit(partitionAssignmentStrategy: RoundRobin)" computerName="brighter-4170-kafka-default-body-ownership" duration="00:00:08.0327939" startTime="2026-11-10T08:39:08.5673180+00:00" endTime="2026-11-10T08:39:16.5828615+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4c1c508a-c659-48e5-8c79-c82af0c76332">
+      <Output>
+        <StdOut>NATIVE CLOSE DIAGNOSTIC strategy=RoundRobin topic=b8ce25ac-950f-4128-b508-07abcfe663ae group=b2bd4c74-8169-4f9e-a846-4e1cc1d776ce
+Consumer A established, starting rapid consume + acknowledge
+Adding consumer B to trigger rebalance
+NATIVE CLOSE DIAGNOSTIC strategy=RoundRobin topic=b8ce25ac-950f-4128-b508-07abcfe663ae group=b2bd4c74-8169-4f9e-a846-4e1cc1d776ce
+Test completed - no race condition errors</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="60f3587c-b4ca-4c00-80cb-c8295852ed5f" testId="3c8700ae-2b5e-c352-0ea2-9548d99ba524" testName="Paramore.Brighter.Kafka.Tests.MessagingGateway.Reactor.KafkaMessageConsumerCommitRevokeConcurrency.When_committing_offsets_during_revoke_should_not_race_with_background_commit(partitionAssignmentStrategy: CooperativeSticky)" computerName="brighter-4170-kafka-default-body-ownership" duration="00:00:07.9409207" startTime="2026-11-10T08:39:16.6061559+00:00" endTime="2026-11-10T08:39:24.5248306+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="60f3587c-b4ca-4c00-80cb-c8295852ed5f">
+      <Output>
+        <StdOut>NATIVE CLOSE DIAGNOSTIC strategy=CooperativeSticky topic=a2acde81-aaaa-498f-9b31-ac04372e12d2 group=50802e07-d8d4-4a37-b0a2-c992a2e33eac
+Consumer A established, starting rapid consume + acknowledge
+Adding consumer B to trigger rebalance
+NATIVE CLOSE DIAGNOSTIC strategy=CooperativeSticky topic=a2acde81-aaaa-498f-9b31-ac04372e12d2 group=50802e07-d8d4-4a37-b0a2-c992a2e33eac
+Test completed - no race condition errors</StdOut>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="Paramore.Brighter.Kafka.Tests.MessagingGateway.Reactor.KafkaMessageConsumerCommitRevokeConcurrency.When_committing_offsets_during_revoke_should_not_race_with_background_commit(partitionAssignmentStrategy: CooperativeSticky)" storage="/tests/release/net10.0/paramore.brighter.kafka.tests.dll" id="3c8700ae-2b5e-c352-0ea2-9548d99ba524">
+      <Execution id="60f3587c-b4ca-4c00-80cb-c8295852ed5f" />
+      <TestMethod codeBase="/tests/Release/net10.0/Paramore.Brighter.Kafka.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Paramore.Brighter.Kafka.Tests.MessagingGateway.Reactor.KafkaMessageConsumerCommitRevokeConcurrency" name="When_committing_offsets_during_revoke_should_not_race_with_background_commit" />
+    </UnitTest>
+    <UnitTest name="Paramore.Brighter.Kafka.Tests.MessagingGateway.Reactor.KafkaMessageConsumerCommitRevokeConcurrency.When_committing_offsets_during_revoke_should_not_race_with_background_commit(partitionAssignmentStrategy: RoundRobin)" storage="/tests/release/net10.0/paramore.brighter.kafka.tests.dll" id="a0cfd20c-2098-ee74-f354-5125c0e33e7b">
+      <Execution id="4c1c508a-c659-48e5-8c79-c82af0c76332" />
+      <TestMethod codeBase="/tests/Release/net10.0/Paramore.Brighter.Kafka.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Paramore.Brighter.Kafka.Tests.MessagingGateway.Reactor.KafkaMessageConsumerCommitRevokeConcurrency" name="When_committing_offsets_during_revoke_should_not_race_with_background_commit" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="a0cfd20c-2098-ee74-f354-5125c0e33e7b" executionId="4c1c508a-c659-48e5-8c79-c82af0c76332" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3c8700ae-2b5e-c352-0ea2-9548d99ba524" executionId="60f3587c-b4ca-4c00-80cb-c8295852ed5f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="2" executed="2" passed="2" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v4.0.0+05679a7ab5 (64-bit .NET 10.0.14)
+[xUnit.net 00:00:00.06]   Discovering: Paramore.Brighter.Kafka.Tests
+[xUnit.net 00:00:00.12]   Discovered:  Paramore.Brighter.Kafka.Tests
+[xUnit.net 00:00:00.13]   Starting:    Paramore.Brighter.Kafka.Tests
+[xUnit.net 00:00:16.13]   Finished:    Paramore.Brighter.Kafka.Tests
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="brighter-4170-kafka-default-body-ownership" outcome="Warning" timestamp="2026-11-10T08:39:24.5563032+00:00">
+        <Text>Data collector 'Blame' message: All tests finished running, Sequence file will not be generated.</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

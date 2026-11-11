@@ -1,0 +1,18 @@
+[
+  {
+    "consumer": "Kafka Consumer Test#consumer-1229",
+    "close_ms_at_log_resolution": 5.0
+  },
+  {
+    "consumer": "Kafka Consumer Test#consumer-1227",
+    "close_ms_at_log_resolution": 13.0
+  },
+  {
+    "consumer": "Kafka Consumer Test#consumer-1236",
+    "close_ms_at_log_resolution": 7.0
+  },
+  {
+    "consumer": "Kafka Consumer Test#consumer-1234",
+    "close_ms_at_log_resolution": 12.0
+  }
+]

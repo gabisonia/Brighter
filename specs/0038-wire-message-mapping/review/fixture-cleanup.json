@@ -1,0 +1,18 @@
+{
+  "exit": 0,
+  "states": {
+    "brighter-4170-rmq-scheduled-selection": "exited",
+    "brighter-4170-rmq-sync-scheduled-selection": "exited",
+    "brighter-4170-aws-callback-pump": "exited",
+    "brighter-4170-mqtt-consumer-writers": "exited",
+    "brighter-4170-kafka-default-body-ownership-schema": "exited",
+    "brighter-4170-kafka-default-body-ownership": "exited",
+    "brighter-4170-gcp-rejection-selection": "exited",
+    "brighter-4170-gcp-rejection-selection-baseline-net9-0": "exited",
+    "brighter-4170-gcp-rejection-selection-baseline-net10-0": "exited",
+    "brighter-4170-gcp-rejection-selection-final-net9-0": "exited",
+    "brighter-4170-gcp-rejection-selection-final-net10-0": "exited"
+  },
+  "removed": false,
+  "unrelated_containers_touched": false
+}

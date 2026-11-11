@@ -1,0 +1,26 @@
+{
+  "purpose": "Validate durable native stderr and nonterminating native/managed capture, not reproduce or clear the historical stall.",
+  "live_capture": {
+    "pid": 54,
+    "bytes_before_test_completion": 21462,
+    "runner_still_running": true
+  },
+  "createdump_exit": 0,
+  "exit": 0,
+  "crashreport_exists": true,
+  "cases": [
+    {
+      "testName": "Paramore.Brighter.Kafka.Tests.MessagingGateway.Reactor.KafkaMessageConsumerCommitRevokeConcurrency.When_committing_offsets_during_revoke_should_not_race_with_background_commit(partitionAssignmentStrategy: RoundRobin)",
+      "outcome": "Passed",
+      "duration": "00:00:08.0327939"
+    },
+    {
+      "testName": "Paramore.Brighter.Kafka.Tests.MessagingGateway.Reactor.KafkaMessageConsumerCommitRevokeConcurrency.When_committing_offsets_during_revoke_should_not_race_with_background_commit(partitionAssignmentStrategy: CooperativeSticky)",
+      "outcome": "Passed",
+      "duration": "00:00:07.9409207"
+    }
+  ],
+  "fixture_stop_exit": 0,
+  "input_count": 6616,
+  "unchanged_inputs": true
+}

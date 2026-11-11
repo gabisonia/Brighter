@@ -61,6 +61,7 @@ namespace Paramore.Brighter.MessagingGateway.Redis
     {
 
         private static readonly ILogger s_logger = ApplicationLogging.CreateLogger<RedisMessageProducer>();
+        private static readonly DefaultRedisWireMessageWriter s_defaultWireMessageWriter = new();
         private Publication _publication = publication; 
         private const string NEXT_ID = "nextid";
         private const string QUEUES = "queues";
@@ -141,21 +142,16 @@ namespace Paramore.Brighter.MessagingGateway.Redis
             }
 
             using var client = Pool.Value.GetClient();
-            Topic = message.Header.Topic;
+            Topic = (Publication as RedisMessagePublication)?.DestinationTopic ?? message.Header.Topic;
 
             BrighterTracer.WriteProducerEvent(Span, "redis", message, instrumentation);
             Log.PreparingToSend(s_logger);
   
-            var redisMessage = CreateRedisMessage(message);
+            var redisMessage = ((Publication as RedisMessagePublication)?.WireMessageWriter ?? s_defaultWireMessageWriter)
+                .WriteMessage(message)
+                ?? throw new InvalidOperationException("The Redis wire message writer returned null.");
 
-            Log.PublishingMessage(s_logger, message.Header.Topic.Value, message.Id.ToString(), message.Body.Value);
-            //increment a counter to get the next message id
-            var nextMsgId = IncrementMessageCounter(client);
-            //store the message, against that id
-            StoreMessage(client, redisMessage, nextMsgId);
-            //If there are subscriber queues, push the message to the subscriber queues
-            var pushedTo = PushToQueues(client, nextMsgId);
-            Log.PublishedMessage(s_logger, message.Header.Topic.Value, message.Id.ToString(), message.Body.Value, string.Join(", ", pushedTo));
+            PublishMessage(client, message, redisMessage);
         }
 
         /// <summary>
@@ -190,19 +186,50 @@ namespace Paramore.Brighter.MessagingGateway.Redis
             }
 
             await using var client = await Pool.Value.GetClientAsync(token: cancellationToken);
-            Topic = message.Header.Topic;
+            Topic = (Publication as RedisMessagePublication)?.DestinationTopic ?? message.Header.Topic;
 
             BrighterTracer.WriteProducerEvent(Span, "redis", message, instrumentation);
             Log.PreparingToSend(s_logger);
 
-            var redisMessage = CreateRedisMessage(message);
+            var redisMessage = ((Publication as RedisMessagePublication)?.WireMessageWriter ?? s_defaultWireMessageWriter)
+                .WriteMessage(message)
+                ?? throw new InvalidOperationException("The Redis wire message writer returned null.");
 
+            await PublishMessageAsync(client, message, redisMessage, cancellationToken);
+        }
+
+        internal void SendMapped(Message message, string redisMessage)
+        {
+            using var client = Pool.Value.GetClient();
+            Topic = message.Header.Topic;
+            BrighterTracer.WriteProducerEvent(Span, "redis", message, instrumentation);
+            Log.PreparingToSend(s_logger);
+            PublishMessage(client, message, redisMessage);
+        }
+
+        internal async Task SendMappedAsync(Message message, string redisMessage, CancellationToken cancellationToken)
+        {
+            await using var client = await Pool.Value.GetClientAsync(token: cancellationToken);
+            Topic = message.Header.Topic;
+            BrighterTracer.WriteProducerEvent(Span, "redis", message, instrumentation);
+            Log.PreparingToSend(s_logger);
+            await PublishMessageAsync(client, message, redisMessage, cancellationToken);
+        }
+
+        private void PublishMessage(IRedisClient client, Message message, string redisMessage)
+        {
             Log.PublishingMessage(s_logger, message.Header.Topic.Value, message.Id.ToString(), message.Body.Value);
-            //increment a counter to get the next message id
+            var nextMsgId = IncrementMessageCounter(client);
+            StoreMessage(client, redisMessage, nextMsgId);
+            var pushedTo = PushToQueues(client, nextMsgId);
+            Log.PublishedMessage(s_logger, message.Header.Topic.Value, message.Id.ToString(), message.Body.Value, string.Join(", ", pushedTo));
+        }
+
+        private async Task PublishMessageAsync(IRedisClientAsync client, Message message, string redisMessage, CancellationToken cancellationToken)
+        {
+            Log.PublishingMessage(s_logger, message.Header.Topic.Value, message.Id.ToString(), message.Body.Value);
             var nextMsgId = await IncrementMessageCounterAsync(client, cancellationToken);
-            //store the message, against that id
             await StoreMessageAsync(client, redisMessage, nextMsgId);
-            //If there are subscriber queues, push the message to the subscriber queues
             var pushedTo = await PushToQueuesAsync(client, nextMsgId, cancellationToken);
             Log.PublishedMessage(s_logger, message.Header.Topic.Value, message.Id.ToString(), message.Body.Value, string.Join(", ", pushedTo));
         }
@@ -210,7 +237,10 @@ namespace Paramore.Brighter.MessagingGateway.Redis
         private HashSet<string> PushToQueues(IRedisClient client, long nextMsgId)
         {
             var key = Topic + "." + QUEUES;
-            var queues = client.GetAllItemsFromSet(key);
+            var destination = (Publication as RedisMessagePublication)?.ChannelName;
+            var queues = destination == null
+                ? client.GetAllItemsFromSet(key)
+                : new HashSet<string> { destination.Value };
             foreach (var queue in queues)
             {
                 //First add to the queue itself
@@ -222,7 +252,10 @@ namespace Paramore.Brighter.MessagingGateway.Redis
         private async Task<HashSet<string>> PushToQueuesAsync(IRedisClientAsync client, long nextMsgId, CancellationToken cancellationToken = default)
         {
             var key = Topic + "." + QUEUES;
-            var queues = await client.GetAllItemsFromSetAsync(key, cancellationToken);
+            var destination = (Publication as RedisMessagePublication)?.ChannelName;
+            var queues = destination == null
+                ? await client.GetAllItemsFromSetAsync(key, cancellationToken)
+                : new HashSet<string> { destination.Value };
             foreach (var queue in queues)
             {
                 //First add to the queue itself

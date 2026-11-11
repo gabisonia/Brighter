@@ -1,0 +1,14 @@
+[
+  {
+    "variant": "asb-sdk-dlq",
+    "executed_program_sha256": "a71405d9d82e3f1cc46fed4341320f74d7d821ea98354aa015173cebfd3820da",
+    "retained_program_sha256": "4b4711f5a13acced4a2ac03580af61cf772a72814d1a6cf6ea88dab990ac9ae2",
+    "retained_source_only_difference": "MIT license header; executable statements unchanged"
+  },
+  {
+    "variant": "asb-sdk-dlq-warmup",
+    "executed_program_sha256": "34b060228686d6b0e3ee2f3df9a6797ccdf8de953afc56441e3a258325a70d6a",
+    "retained_program_sha256": "fd2a78ad970106d1a2dfb0a647027ac3834fe44c0da3a22ed2e9509596a4db63",
+    "retained_source_only_difference": "MIT license header; executable statements unchanged"
+  }
+]

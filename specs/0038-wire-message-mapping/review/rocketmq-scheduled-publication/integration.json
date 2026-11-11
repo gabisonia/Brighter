@@ -1,0 +1,5 @@
+{
+  "file": "tests/Paramore.Brighter.RocketMQ.Tests/MessagingGateway/When_rocket_dispatches_a_delayed_publication_should_use_its_selected_writer.cs",
+  "sha256": "35e1fb86b23299e7d4fc3f382788c5ace8d1a97448315c21faa23173763df23c",
+  "production_unchanged": true
+}

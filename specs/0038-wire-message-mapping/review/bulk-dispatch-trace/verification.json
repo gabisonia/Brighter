@@ -1,0 +1,171 @@
+{
+  "date": "2026-11-10",
+  "preexisting_source_files_checked": 6614,
+  "changed_existing_sources": [
+    {
+      "path": "src/Paramore.Brighter.MessagingGateway.AzureServiceBus/AzureServiceBusMessageProducer.cs",
+      "before_sha256": "bbc1331556a06af9a7d63a32f63382333c769555217693cd63fafdb124005486",
+      "after_sha256": "614282f3c55379076ce696a86f958497686e0317f1b52719c6b89f9fb1e0a4f9"
+    },
+    {
+      "path": "src/Paramore.Brighter.MessagingGateway.AzureServiceBus/AzureServiceBusPublication.cs",
+      "before_sha256": "70138ab768e093b4724d0319112b5966a2d7ba169f8f37a69dedc37d56205a56",
+      "after_sha256": "4e2ac55190c1710665278c92f24046fbf7efc01732ffc5bced7db2543ae4bc13"
+    },
+    {
+      "path": "src/Paramore.Brighter.MessagingGateway.GcpPubSub/GcpMessageProducer.cs",
+      "before_sha256": "8e8c6fe09bb89a73fbd41447ea0626304597d130b81c6a3dcc2d3f609ff58272",
+      "after_sha256": "74f0100529bf3b1aee266b871344a278a27e27edcbca373dc9262789b2b5cd9f"
+    }
+  ],
+  "new_sources": [
+    {
+      "path": "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_asb_bulk_dispatches_outbox_messages_should_map_the_current_producer_context.cs",
+      "sha256": "6fbb6516148d7fc99b9a49495c297ff4306e790c242ebbd5675eb8f49ac2fc6d"
+    },
+    {
+      "path": "tests/Paramore.Brighter.AzureServiceBus.Tests/TestDoubles/InMemoryBatchServiceBusClient.cs",
+      "sha256": "0f3c3fd4c36a214bf8ff04e4106fabaac5a0eca2f2527e693c3caf88ae3699bc"
+    },
+    {
+      "path": "tests/Paramore.Brighter.AzureServiceBus.Tests/TestDoubles/InMemoryBatchServiceBusSender.cs",
+      "sha256": "3e960b0d23567df370fa1b26df74b1f38e213cbcc1eedbbe39a23e27312ef188"
+    },
+    {
+      "path": "tests/Paramore.Brighter.Gcp.Tests/MessagingGateway/When_gcp_bulk_dispatches_outbox_messages_should_map_the_current_producer_context.cs",
+      "sha256": "092e717e26d766686168416e2eaee2eae91c64c60447cdc29c59e461dcb63ec0"
+    }
+  ],
+  "removed_sources": [],
+  "all_other_existing_sources_unchanged": true,
+  "results": {
+    "gcp": {
+      "red": {
+        "net9.0": {
+          "Passed": 0,
+          "Failed": 2,
+          "NotExecuted": 0
+        },
+        "net10.0": {
+          "Passed": 0,
+          "Failed": 2,
+          "NotExecuted": 0
+        }
+      },
+      "green": {
+        "net9.0": {
+          "Passed": 2,
+          "Failed": 0,
+          "NotExecuted": 0
+        },
+        "net10.0": {
+          "Passed": 2,
+          "Failed": 0,
+          "NotExecuted": 0
+        }
+      },
+      "full": {
+        "net9.0": {
+          "Passed": 459,
+          "Failed": 0,
+          "NotExecuted": 55
+        },
+        "net10.0": {
+          "Passed": 459,
+          "Failed": 0,
+          "NotExecuted": 55
+        }
+      },
+      "main": {
+        "net9.0": {
+          "Passed": 2,
+          "Failed": 0,
+          "NotExecuted": 0
+        },
+        "net10.0": {
+          "Passed": 2,
+          "Failed": 0,
+          "NotExecuted": 0
+        }
+      },
+      "main_build": {
+        "errors": [
+          "0"
+        ],
+        "warnings": [
+          "3320"
+        ]
+      },
+      "new_test_warnings_in_main_build": 0
+    },
+    "asb": {
+      "red": {
+        "net9.0": {
+          "Passed": 0,
+          "Failed": 4,
+          "NotExecuted": 0
+        },
+        "net10.0": {
+          "Passed": 0,
+          "Failed": 4,
+          "NotExecuted": 0
+        }
+      },
+      "green": {
+        "net9.0": {
+          "Passed": 4,
+          "Failed": 0,
+          "NotExecuted": 0
+        },
+        "net10.0": {
+          "Passed": 4,
+          "Failed": 0,
+          "NotExecuted": 0
+        }
+      },
+      "full": {
+        "net9.0": {
+          "Passed": 540,
+          "Failed": 0,
+          "NotExecuted": 0
+        },
+        "net10.0": {
+          "Passed": 540,
+          "Failed": 0,
+          "NotExecuted": 0
+        }
+      },
+      "main": {
+        "net9.0": {
+          "Passed": 4,
+          "Failed": 0,
+          "NotExecuted": 0
+        },
+        "net10.0": {
+          "Passed": 4,
+          "Failed": 0,
+          "NotExecuted": 0
+        }
+      },
+      "main_build": {
+        "errors": [
+          "0"
+        ],
+        "warnings": [
+          "718"
+        ]
+      },
+      "new_test_warnings_in_main_build": 0
+    }
+  },
+  "native_asb_acceptance": "deferred; SDK-I/O only",
+  "historical_lifecycle_findings": "remain open",
+  "committed": false,
+  "pushed": false,
+  "owned_emulators_verified_exited": [
+    "brighter-4170-gcp-bulk-dispatch-trace",
+    "brighter-4170-gcp-bulk-dispatch-trace-broker-awake-full-net9-0",
+    "brighter-4170-gcp-bulk-dispatch-trace-broker-awake-full-net10-0"
+  ],
+  "unchanged_build_configuration_inputs": 265
+}

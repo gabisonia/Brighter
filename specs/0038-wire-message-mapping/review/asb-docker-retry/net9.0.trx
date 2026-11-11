@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="c56dbd9a-6adb-4bb3-a2bd-948b88522174" name="@ip-192-168-178-66 2026-11-10 12:46:47" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-11-10T12:46:47.4665130+01:00" queuing="2026-11-10T12:46:47.4665130+01:00" start="2026-11-10T12:46:45.4748050+01:00" finish="2026-11-10T12:46:47.6841400+01:00" />
+  <TestSettings name="default" id="a5f174d1-0b66-412f-9813-b75407144c1f">
+    <Deployment runDeploymentRoot="_ip-192-168-178-66_2026-11-10_12_46_47" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="015d6482-f4bd-4dd5-9e3d-1e542d8e720d" testId="d089da3e-65b6-97be-ee18-746b16909f5b" testName="Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: True, useAsync: False, returnNull: True)" computerName="ip-192-168-178-66" duration="00:00:00.0772645" startTime="2026-11-10T12:46:47.5635390+01:00" endTime="2026-11-10T12:46:47.6399230+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="015d6482-f4bd-4dd5-9e3d-1e542d8e720d" />
+    <UnitTestResult executionId="48eea261-6960-438a-afb3-850d54d588a5" testId="61054a17-412b-666c-9209-13008fc613e0" testName="Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: True, useAsync: False, returnNull: False)" computerName="ip-192-168-178-66" duration="00:00:00.0795778" startTime="2026-11-10T12:46:47.4836130+01:00" endTime="2026-11-10T12:46:47.5622410+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="48eea261-6960-438a-afb3-850d54d588a5" />
+    <UnitTestResult executionId="a0fcbf0d-9900-40e2-955a-cc122be9316f" testId="3e2fb93c-58fa-4f79-32b9-9441c66994cb" testName="Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: True, useAsync: True, returnNull: False)" computerName="ip-192-168-178-66" duration="00:00:00.2390052" startTime="2026-11-10T12:46:46.9489770+01:00" endTime="2026-11-10T12:46:47.1852450+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a0fcbf0d-9900-40e2-955a-cc122be9316f" />
+    <UnitTestResult executionId="cb53269c-941c-440a-be3d-144804b59b66" testId="05c64783-7dbb-156b-697a-17286cc943c1" testName="Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: False, useAsync: True, returnNull: True)" computerName="ip-192-168-178-66" duration="00:00:00.6933214" startTime="2026-11-10T12:46:46.1798740+01:00" endTime="2026-11-10T12:46:46.8502550+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cb53269c-941c-440a-be3d-144804b59b66" />
+    <UnitTestResult executionId="dd704452-f03e-4af4-acc9-f9a68789797e" testId="637fb932-d839-f555-1341-e8d16dfe2ffb" testName="Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: True, useAsync: True, returnNull: True)" computerName="ip-192-168-178-66" duration="00:00:00.0798287" startTime="2026-11-10T12:46:47.2925340+01:00" endTime="2026-11-10T12:46:47.3712900+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="dd704452-f03e-4af4-acc9-f9a68789797e" />
+    <UnitTestResult executionId="2a73dd07-4686-45cf-be77-61b8cf94ba24" testId="788c4a94-fce0-7073-a11c-6b932e51d9f0" testName="Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: False, useAsync: True, returnNull: False)" computerName="ip-192-168-178-66" duration="00:00:00.1100862" startTime="2026-11-10T12:46:47.3727130+01:00" endTime="2026-11-10T12:46:47.4823810+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2a73dd07-4686-45cf-be77-61b8cf94ba24" />
+    <UnitTestResult executionId="50adeaf9-50f6-4701-b0da-f8cde2c79411" testId="c04ae747-5b59-28cc-7cb2-28f631a31481" testName="Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: False, useAsync: False, returnNull: False)" computerName="ip-192-168-178-66" duration="00:00:00.0954089" startTime="2026-11-10T12:46:46.8647600+01:00" endTime="2026-11-10T12:46:46.9459460+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="50adeaf9-50f6-4701-b0da-f8cde2c79411" />
+    <UnitTestResult executionId="1ba5db71-3d62-4c6a-a889-0d4667d3b2ee" testId="cf0921fa-f9ae-4303-6e88-90cdba153579" testName="Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: False, useAsync: False, returnNull: True)" computerName="ip-192-168-178-66" duration="00:00:00.1057579" startTime="2026-11-10T12:46:47.1867970+01:00" endTime="2026-11-10T12:46:47.2911920+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1ba5db71-3d62-4c6a-a889-0d4667d3b2ee" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: False, useAsync: True, returnNull: False)" storage="/private/tmp/brighter-4170-asb-bulk-dispatch-trace/main-bin/release/net9.0/paramore.brighter.azureservicebus.tests.dll" id="788c4a94-fce0-7073-a11c-6b932e51d9f0">
+      <Execution id="2a73dd07-4686-45cf-be77-61b8cf94ba24" />
+      <TestMethod codeBase="/private/tmp/brighter-4170-asb-bulk-dispatch-trace/main-bin/Release/net9.0/Paramore.Brighter.AzureServiceBus.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests" name="When_an_asb_reader_fails_should_preserve_native_rejection_and_recover" />
+    </UnitTest>
+    <UnitTest name="Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: True, useAsync: True, returnNull: False)" storage="/private/tmp/brighter-4170-asb-bulk-dispatch-trace/main-bin/release/net9.0/paramore.brighter.azureservicebus.tests.dll" id="3e2fb93c-58fa-4f79-32b9-9441c66994cb">
+      <Execution id="a0fcbf0d-9900-40e2-955a-cc122be9316f" />
+      <TestMethod codeBase="/private/tmp/brighter-4170-asb-bulk-dispatch-trace/main-bin/Release/net9.0/Paramore.Brighter.AzureServiceBus.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests" name="When_an_asb_reader_fails_should_preserve_native_rejection_and_recover" />
+    </UnitTest>
+    <UnitTest name="Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: True, useAsync: False, returnNull: True)" storage="/private/tmp/brighter-4170-asb-bulk-dispatch-trace/main-bin/release/net9.0/paramore.brighter.azureservicebus.tests.dll" id="d089da3e-65b6-97be-ee18-746b16909f5b">
+      <Execution id="015d6482-f4bd-4dd5-9e3d-1e542d8e720d" />
+      <TestMethod codeBase="/private/tmp/brighter-4170-asb-bulk-dispatch-trace/main-bin/Release/net9.0/Paramore.Brighter.AzureServiceBus.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests" name="When_an_asb_reader_fails_should_preserve_native_rejection_and_recover" />
+    </UnitTest>
+    <UnitTest name="Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: False, useAsync: True, returnNull: True)" storage="/private/tmp/brighter-4170-asb-bulk-dispatch-trace/main-bin/release/net9.0/paramore.brighter.azureservicebus.tests.dll" id="05c64783-7dbb-156b-697a-17286cc943c1">
+      <Execution id="cb53269c-941c-440a-be3d-144804b59b66" />
+      <TestMethod codeBase="/private/tmp/brighter-4170-asb-bulk-dispatch-trace/main-bin/Release/net9.0/Paramore.Brighter.AzureServiceBus.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests" name="When_an_asb_reader_fails_should_preserve_native_rejection_and_recover" />
+    </UnitTest>
+    <UnitTest name="Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: False, useAsync: False, returnNull: False)" storage="/private/tmp/brighter-4170-asb-bulk-dispatch-trace/main-bin/release/net9.0/paramore.brighter.azureservicebus.tests.dll" id="c04ae747-5b59-28cc-7cb2-28f631a31481">
+      <Execution id="50adeaf9-50f6-4701-b0da-f8cde2c79411" />
+      <TestMethod codeBase="/private/tmp/brighter-4170-asb-bulk-dispatch-trace/main-bin/Release/net9.0/Paramore.Brighter.AzureServiceBus.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests" name="When_an_asb_reader_fails_should_preserve_native_rejection_and_recover" />
+    </UnitTest>
+    <UnitTest name="Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: False, useAsync: False, returnNull: True)" storage="/private/tmp/brighter-4170-asb-bulk-dispatch-trace/main-bin/release/net9.0/paramore.brighter.azureservicebus.tests.dll" id="cf0921fa-f9ae-4303-6e88-90cdba153579">
+      <Execution id="1ba5db71-3d62-4c6a-a889-0d4667d3b2ee" />
+      <TestMethod codeBase="/private/tmp/brighter-4170-asb-bulk-dispatch-trace/main-bin/Release/net9.0/Paramore.Brighter.AzureServiceBus.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests" name="When_an_asb_reader_fails_should_preserve_native_rejection_and_recover" />
+    </UnitTest>
+    <UnitTest name="Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: True, useAsync: True, returnNull: True)" storage="/private/tmp/brighter-4170-asb-bulk-dispatch-trace/main-bin/release/net9.0/paramore.brighter.azureservicebus.tests.dll" id="637fb932-d839-f555-1341-e8d16dfe2ffb">
+      <Execution id="dd704452-f03e-4af4-acc9-f9a68789797e" />
+      <TestMethod codeBase="/private/tmp/brighter-4170-asb-bulk-dispatch-trace/main-bin/Release/net9.0/Paramore.Brighter.AzureServiceBus.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests" name="When_an_asb_reader_fails_should_preserve_native_rejection_and_recover" />
+    </UnitTest>
+    <UnitTest name="Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: True, useAsync: False, returnNull: False)" storage="/private/tmp/brighter-4170-asb-bulk-dispatch-trace/main-bin/release/net9.0/paramore.brighter.azureservicebus.tests.dll" id="61054a17-412b-666c-9209-13008fc613e0">
+      <Execution id="48eea261-6960-438a-afb3-850d54d588a5" />
+      <TestMethod codeBase="/private/tmp/brighter-4170-asb-bulk-dispatch-trace/main-bin/Release/net9.0/Paramore.Brighter.AzureServiceBus.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests" name="When_an_asb_reader_fails_should_preserve_native_rejection_and_recover" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="d089da3e-65b6-97be-ee18-746b16909f5b" executionId="015d6482-f4bd-4dd5-9e3d-1e542d8e720d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="61054a17-412b-666c-9209-13008fc613e0" executionId="48eea261-6960-438a-afb3-850d54d588a5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3e2fb93c-58fa-4f79-32b9-9441c66994cb" executionId="a0fcbf0d-9900-40e2-955a-cc122be9316f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="05c64783-7dbb-156b-697a-17286cc943c1" executionId="cb53269c-941c-440a-be3d-144804b59b66" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="637fb932-d839-f555-1341-e8d16dfe2ffb" executionId="dd704452-f03e-4af4-acc9-f9a68789797e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="788c4a94-fce0-7073-a11c-6b932e51d9f0" executionId="2a73dd07-4686-45cf-be77-61b8cf94ba24" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c04ae747-5b59-28cc-7cb2-28f631a31481" executionId="50adeaf9-50f6-4701-b0da-f8cde2c79411" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="cf0921fa-f9ae-4303-6e88-90cdba153579" executionId="1ba5db71-3d62-4c6a-a889-0d4667d3b2ee" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="8" executed="8" passed="8" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v4.0.0+05679a7ab5 (64-bit .NET 9.0.20)
+[xUnit.net 00:00:00.06]   Discovering: Paramore.Brighter.AzureServiceBus.Tests
+[xUnit.net 00:00:00.16]   Discovered:  Paramore.Brighter.AzureServiceBus.Tests
+[xUnit.net 00:00:00.17]   Starting:    Paramore.Brighter.AzureServiceBus.Tests
+[xUnit.net 00:00:01.68]   Finished:    Paramore.Brighter.AzureServiceBus.Tests
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="ip-192-168-178-66" outcome="Warning" timestamp="2026-11-10T12:46:47.6629130+01:00">
+        <Text>Data collector 'Blame' message: All tests finished running, Sequence file will not be generated.</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

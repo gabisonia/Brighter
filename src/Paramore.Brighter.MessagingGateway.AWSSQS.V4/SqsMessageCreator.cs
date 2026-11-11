@@ -58,13 +58,16 @@ internal sealed partial class SqsMessageCreator : SqsMessageCreatorBase, ISqsMes
     {
         var topic = HeaderResult<RoutingKey>.Empty();
         var messageId = HeaderResult<Id?>.Empty();
+        var bag = new Dictionary<string, object>();
+        var handledCount = HeaderResult<int>.Empty();
 
         try
         {
             topic = ReadTopic(sqsMessage);
             messageId = ReadMessageId(sqsMessage);
             var cloudEventHeaders = ReadCloudEventHeaders(sqsMessage);
-            var bag = ReadMessageBag(sqsMessage);
+            bag = ReadMessageBag(sqsMessage);
+            handledCount = ReadHandledCount(sqsMessage, bag);
             var contentType = ReadContentType(sqsMessage, cloudEventHeaders);
             var correlationId = ReadCorrelationId(sqsMessage);
             var messageType = ReadMessageType(sqsMessage);
@@ -74,7 +77,6 @@ internal sealed partial class SqsMessageCreator : SqsMessageCreatorBase, ISqsMes
             var partitionKey = ReadPartitionKey(sqsMessage);
             var deduplicationId = ReadDeduplicationId(sqsMessage);
             var subject = ReadSubject(sqsMessage, cloudEventHeaders);
-            var handledCount = ReadHandledCount(sqsMessage, bag);
             var source = ReadCloudEventSource(cloudEventHeaders);
             var type = ReadCloudEventType(cloudEventHeaders);
             var dataSchema = ReadCloudEventsDataSchema(cloudEventHeaders);
@@ -115,7 +117,11 @@ internal sealed partial class SqsMessageCreator : SqsMessageCreatorBase, ISqsMes
         catch (Exception e)
         {
             Log.FailedToCreateMessageFromAmqpMessage(s_logger, e);
-            return Message.FailureMessage(topic.Result, messageId.Success ? messageId.Result : Id.Empty);
+            var failure = Message.FailureMessage(topic.Result, messageId.Success ? messageId.Result : Id.Empty);
+            bag.Remove("ReceiptHandle");
+            failure.Header.Bag = bag;
+            failure.Header.HandledCount = handledCount.Result;
+            return failure;
         }
     }
 

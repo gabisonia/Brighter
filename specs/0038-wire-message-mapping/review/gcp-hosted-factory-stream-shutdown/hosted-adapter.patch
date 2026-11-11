@@ -1,0 +1,78 @@
+--- existing-approved-factory-diagnostic
++++ hosted-execution-adapter
+@@ -37,7 +37,6 @@
+ using Google.Cloud.PubSub.V1;
+ using Google.Protobuf;
+ using Grpc.Core;
+-using Grpc.Net.Client;
+ using Paramore.Brighter.Gcp.Tests.TestDoubles;
+ using Paramore.Brighter.MessagingGateway.GcpPubSub;
+ using Xunit;
+@@ -45,35 +44,22 @@
+ 
+ namespace Paramore.Brighter.Gcp.Tests.MessagingGateway;
+ 
+-[Trait("Category", "GcpNativeStreamLifecycle")]
+-[Trait("Requires", "PubSubEmulator")]
+-public class GcpFactoryStreamShutdownRecoveryTests(ITestOutputHelper output)
++public class GcpHostedFactoryStreamShutdownRecoveryTests(ITestOutputHelper output)
+ {
+-    [Theory]
+-    [InlineData(false, 1, false)]
+-    [InlineData(false, 1, true)]
+-    [InlineData(false, 2, false)]
+-    [InlineData(false, 2, true)]
+-    [InlineData(true, 1, false)]
+-    [InlineData(true, 1, true)]
+-    [InlineData(true, 2, false)]
+-    [InlineData(true, 2, true)]
+     public async Task When_disposing_a_factory_stream_channel_should_release_the_delivery_and_replace_a_stopped_client(
+         bool useAsync, int clientCount, bool nativeRecovery)
+     {
+         //Arrange
+-        var host = Environment.GetEnvironmentVariable("PUBSUB_EMULATOR_HOST");
+-        Assert.False(string.IsNullOrWhiteSpace(host), "An explicit Pub/Sub emulator is required.");
+-        var project = Environment.GetEnvironmentVariable("GOOGLE_CLOUD_PROJECT") ?? "brighter-test";
+-        var name = "factory-shutdown-" + Guid.NewGuid().ToString("N");
++        Assert.True(string.IsNullOrWhiteSpace(Environment.GetEnvironmentVariable("PUBSUB_EMULATOR_HOST")),
++            "Hosted execution rejects PUBSUB_EMULATOR_HOST.");
++        const string project = "brighter-pubsub-validation";
++        var name = "hosted-factory-shutdown-" + Guid.NewGuid().ToString("N");
+         var topic = TopicName.FromProjectTopic(project, name);
+         var nativeSubscription = Google.Cloud.PubSub.V1.SubscriptionName.FromProjectSubscription(project, name);
+-        using var adminTransport = GrpcChannel.ForAddress("http://" + host,
+-            new Grpc.Net.Client.GrpcChannelOptions { Credentials = ChannelCredentials.Insecure });
+-        var adminInvoker = adminTransport.CreateCallInvoker();
+-        var native = new SubscriberServiceApiClientBuilder { CallInvoker = adminInvoker }.Build();
+-        var topics = new PublisherServiceApiClientBuilder { CallInvoker = adminInvoker }.Build();
++        var native = new SubscriberServiceApiClientBuilder { EmulatorDetection = EmulatorDetection.ProductionOnly }.Build();
++        var topics = new PublisherServiceApiClientBuilder { EmulatorDetection = EmulatorDetection.ProductionOnly }.Build();
+         var trace = new ConcurrentQueue<string>();
++        trace.Enqueue($"RESOURCE {topic} {nativeSubscription}");
+         var starts = new ConcurrentDictionary<object, long>(ReferenceEqualityComparer.Instance);
+         var completed = new ConcurrentQueue<(long Started, int Generation, string Method,
+             string Subscription, int? Deadline, string[] AckIds)>();
+@@ -81,11 +67,11 @@
+         var connection = new GcpMessagingGatewayConnection
+         {
+             ProjectId = project,
+-            TopicManagerConfiguration = builder => builder.CallInvoker = adminInvoker,
+-            SubscriptionManagerConfiguration = builder => builder.CallInvoker = adminInvoker,
++            TopicManagerConfiguration = builder => builder.EmulatorDetection = EmulatorDetection.ProductionOnly,
++            SubscriptionManagerConfiguration = builder => builder.EmulatorDetection = EmulatorDetection.ProductionOnly,
+             StreamConfiguration = builder =>
+             {
+-                builder.EmulatorDetection = EmulatorDetection.EmulatorOnly;
++                builder.EmulatorDetection = EmulatorDetection.ProductionOnly;
+                 builder.ClientCount = clientCount;
+                 var generation = Interlocked.Increment(ref streamBuilds);
+                 trace.Enqueue($"{DateTimeOffset.UtcNow:O} BUILD {generation} CLIENTS {clientCount}");
+@@ -114,7 +100,7 @@
+         var factory = new GcpPubSubChannelFactory(connection);
+         var subscription = new GcpPubSubSubscription(
+             new SubscriptionName(name), new ChannelName(name), new RoutingKey(name),
+-            requestType: typeof(TestDoubles.MyCommand),
++            requestType: typeof(HostedFactoryShutdownCommand),
+             messagePumpType: useAsync ? MessagePumpType.Proactor : MessagePumpType.Reactor,
+             makeChannels: OnMissingChannel.Assume, projectId: project,
+             ackDeadlineSeconds: 30, subscriptionMode: SubscriptionMode.Stream);

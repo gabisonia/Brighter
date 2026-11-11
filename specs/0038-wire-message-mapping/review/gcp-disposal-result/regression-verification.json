@@ -1,0 +1,40 @@
+[
+  {
+    "framework": "net9.0",
+    "all_512_identities_retained": true,
+    "result": {
+      "exit": 0,
+      "wall_seconds": 561.619537115097,
+      "monotonic_seconds": 561.6120504587889,
+      "clock_discontinuity": false,
+      "counts": {
+        "Passed": 457,
+        "Failed": 0,
+        "NotExecuted": 55
+      },
+      "failures": []
+    }
+  },
+  {
+    "framework": "net10.0",
+    "all_512_identities_retained": true,
+    "result": {
+      "exit": 1,
+      "wall_seconds": 558.2204160690308,
+      "monotonic_seconds": 558.212982959114,
+      "clock_discontinuity": false,
+      "counts": {
+        "Passed": 456,
+        "Failed": 1,
+        "NotExecuted": 55
+      },
+      "failures": [
+        {
+          "name": "Paramore.Brighter.Gcp.Tests.MessagingGateway.StreamOrdering.Proactor.WhenNackingAMessageItShouldBeRedeliveredAsync.When_nacking_first_of_two_messages_should_redeliver_nacked_then_receive_second_async",
+          "message": "Assert.Contains() Failure: Item not found in set\nSet:       [\"01a1c1fe-6dc8-7f94-813d-4e2322abe040\"]\nNot found: \"01a1c1fe-6dc8-77fa-83ba-b8b7fb5008d2\"",
+          "stack": "   at Paramore.Brighter.Gcp.Tests.MessagingGateway.StreamOrdering.Proactor.WhenNackingAMessageItShouldBeRedeliveredAsync.When_nacking_first_of_two_messages_should_redeliver_nacked_then_receive_second_async() in /private/tmp/brighter-4170-rmq-scheduled-selection/workspace/tests/Paramore.Brighter.Gcp.Tests/MessagingGateway/StreamOrdering/Generated/Proactor/When_nacking_a_message_it_should_be_redelivered.cs:line 158\n--- End of stack trace from previous location ---"
+        }
+      ]
+    }
+  }
+]

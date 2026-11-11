@@ -29,6 +29,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
+using Google.Cloud.PubSub.V1;
 using Paramore.Brighter.Logging;
 
 namespace Paramore.Brighter.MessagingGateway.GcpPubSub;
@@ -53,40 +54,27 @@ internal sealed partial class GcpRejectionRouter : IDisposable, IAsyncDisposable
     private readonly OnMissingChannel _makeChannels;
     private readonly string _projectId;
     private readonly TimeProvider _timeProvider;
+    private readonly IAmAWireMessageWriter<PubsubMessage>? _deadLetterWireMessageWriter;
+    private readonly IAmAWireMessageWriter<PubsubMessage>? _invalidMessageWireMessageWriter;
 
     /// <summary>
-    /// Cached producers, one per destination topic: each GCP producer is bound to the single topic it
+    /// Cached producers, one per destination and rejection route: each GCP producer is bound to the single topic it
     /// was built for, so a producer for the dead-letter topic cannot publish to the invalid-message topic.
+    /// Invalid and dead-letter mappings remain independent even when their topic is shared.
     /// A missing entry means not yet created or the last attempt for that destination failed. Only success
     /// is cached: a <see cref="RoutingOutcome.Failed"/> outcome disposes and evicts that destination's entry.
     /// </summary>
-    private readonly Dictionary<RoutingKey, IAmAMessageProducer> _producers = new();
+    private readonly Dictionary<(RoutingKey Destination, bool Invalid), IAmAMessageProducer> _producers = new();
 
-    /// <summary>
-    /// Initialises a new <see cref="GcpRejectionRouter"/>.
-    /// </summary>
-    /// <param name="connection">The GCP connection used to build the destination producer.</param>
-    /// <param name="deadLetterRoutingKey">
-    /// The Brighter-managed dead-letter topic. <see langword="null"/> disables DLQ routing.
-    /// </param>
-    /// <param name="invalidMessageRoutingKey">
-    /// The Brighter-managed invalid-message topic. <see langword="null"/> disables invalid-message
-    /// routing, in which case an <see cref="RejectionReason.Unacceptable"/> reason falls back to the DLQ.
-    /// </param>
-    /// <param name="makeChannels">
-    /// Inherited from the subscription. Controls whether the destination topic is created on first use.
-    /// </param>
-    /// <param name="projectId">
-    /// The GCP project id for the destination producer, inherited from the subscription.
-    /// </param>
-    /// <param name="timeProvider">Used to stamp <c>rejectionTimestamp</c>.</param>
     internal GcpRejectionRouter(
         GcpMessagingGatewayConnection connection,
         RoutingKey? deadLetterRoutingKey,
         RoutingKey? invalidMessageRoutingKey,
         OnMissingChannel makeChannels,
         string projectId,
-        TimeProvider timeProvider)
+        TimeProvider timeProvider,
+        IAmAWireMessageWriter<PubsubMessage>? deadLetterWireMessageWriter = null,
+        IAmAWireMessageWriter<PubsubMessage>? invalidMessageWireMessageWriter = null)
     {
         _connection = connection;
         _deadLetterRoutingKey = deadLetterRoutingKey;
@@ -94,6 +82,8 @@ internal sealed partial class GcpRejectionRouter : IDisposable, IAsyncDisposable
         _makeChannels = makeChannels;
         _projectId = projectId;
         _timeProvider = timeProvider;
+        _deadLetterWireMessageWriter = deadLetterWireMessageWriter;
+        _invalidMessageWireMessageWriter = invalidMessageWireMessageWriter;
     }
 
     /// <summary>
@@ -121,13 +111,14 @@ internal sealed partial class GcpRejectionRouter : IDisposable, IAsyncDisposable
         }
 
         StampMetadata(message, reason, destination, _timeProvider);
+        var route = (Destination: destination, Invalid: reason?.RejectionReason == RejectionReason.Unacceptable && _invalidMessageRoutingKey != null);
 
         try
         {
-            if (!_producers.TryGetValue(destination, out var producer))
+            if (!_producers.TryGetValue(route, out var producer))
             {
-                producer = CreateProducer(destination);
-                _producers[destination] = producer;
+                producer = CreateProducer(route);
+                _producers[route] = producer;
             }
 
             ((IAmAMessageProducerSync)producer).Send(message);
@@ -140,7 +131,7 @@ internal sealed partial class GcpRejectionRouter : IDisposable, IAsyncDisposable
                 message.Id.Value,
                 reason?.RejectionReason.ToString() ?? RejectionReason.None.ToString(),
                 destination.Value);
-            DisposeProducerSync(destination);
+            DisposeProducerSync(route);
             return RoutingOutcome.Failed;
         }
     }
@@ -171,13 +162,14 @@ internal sealed partial class GcpRejectionRouter : IDisposable, IAsyncDisposable
         }
 
         StampMetadata(message, reason, destination, _timeProvider);
+        var route = (Destination: destination, Invalid: reason?.RejectionReason == RejectionReason.Unacceptable && _invalidMessageRoutingKey != null);
 
         try
         {
-            if (!_producers.TryGetValue(destination, out var producer))
+            if (!_producers.TryGetValue(route, out var producer))
             {
-                producer = await CreateProducerAsync(destination, ct);
-                _producers[destination] = producer;
+                producer = await CreateProducerAsync(route, ct);
+                _producers[route] = producer;
             }
 
             await ((IAmAMessageProducerAsync)producer).SendAsync(message, ct);
@@ -190,7 +182,7 @@ internal sealed partial class GcpRejectionRouter : IDisposable, IAsyncDisposable
                 message.Id.Value,
                 reason?.RejectionReason.ToString() ?? RejectionReason.None.ToString(),
                 destination.Value);
-            await DisposeProducerAsync(destination);
+            await DisposeProducerAsync(route);
             return RoutingOutcome.Failed;
         }
     }
@@ -247,9 +239,9 @@ internal sealed partial class GcpRejectionRouter : IDisposable, IAsyncDisposable
     /// Creates the destination producer synchronously via <see cref="GcpPubSubMessageProducerFactory"/>.
     /// Throws on failure; the caller catches and turns the throw into a <see cref="RoutingOutcome.Failed"/>.
     /// </summary>
-    private IAmAMessageProducer CreateProducer(RoutingKey destination)
+    private IAmAMessageProducer CreateProducer((RoutingKey Destination, bool Invalid) route)
     {
-        var publication = BuildPublication(destination);
+        var publication = BuildPublication(route);
         var factory = new GcpPubSubMessageProducerFactory(_connection, [publication]);
         var producers = factory.Create();
         return producers.Values.First();
@@ -259,9 +251,9 @@ internal sealed partial class GcpRejectionRouter : IDisposable, IAsyncDisposable
     /// Creates the destination producer asynchronously via <see cref="GcpPubSubMessageProducerFactory"/>.
     /// Throws on failure; the caller catches and turns the throw into a <see cref="RoutingOutcome.Failed"/>.
     /// </summary>
-    private async Task<IAmAMessageProducer> CreateProducerAsync(RoutingKey destination, CancellationToken ct)
+    private async Task<IAmAMessageProducer> CreateProducerAsync((RoutingKey Destination, bool Invalid) route, CancellationToken ct)
     {
-        var publication = BuildPublication(destination);
+        var publication = BuildPublication(route);
         var factory = new GcpPubSubMessageProducerFactory(_connection, [publication]);
         var producers = await factory.CreateAsync();
         return producers.Values.First();
@@ -271,37 +263,38 @@ internal sealed partial class GcpRejectionRouter : IDisposable, IAsyncDisposable
     /// Builds the <see cref="GcpPublication"/> for the destination topic, inheriting
     /// <c>MakeChannels</c> and project id from the subscription, and always enabling message ordering.
     /// </summary>
-    private GcpPublication BuildPublication(RoutingKey destination) =>
+    private GcpPublication BuildPublication((RoutingKey Destination, bool Invalid) route) =>
         new GcpPublication
         {
-            Topic = destination,
+            Topic = route.Destination,
+            WireMessageWriter = route.Invalid ? _invalidMessageWireMessageWriter : _deadLetterWireMessageWriter,
             MakeChannels = _makeChannels,
             TopicAttributes = new TopicAttributes { ProjectId = _projectId },
             EnableMessageOrdering = true,
         };
 
-    private void DisposeProducerSync(RoutingKey destination)
+    private void DisposeProducerSync((RoutingKey Destination, bool Invalid) route)
     {
-        if (!_producers.TryGetValue(destination, out var producer))
+        if (!_producers.TryGetValue(route, out var producer))
             return;
 
-        _producers.Remove(destination);
+        _producers.Remove(route);
         try
         {
             if (producer is IDisposable d) d.Dispose();
         }
         catch (Exception ex)
         {
-            s_logger.LogError(ex, "GcpRejectionRouter: error disposing producer for {Destination}", destination.Value);
+            s_logger.LogError(ex, "GcpRejectionRouter: error disposing producer for {Destination}", route.Destination.Value);
         }
     }
 
-    private async Task DisposeProducerAsync(RoutingKey destination)
+    private async Task DisposeProducerAsync((RoutingKey Destination, bool Invalid) route)
     {
-        if (!_producers.TryGetValue(destination, out var producer))
+        if (!_producers.TryGetValue(route, out var producer))
             return;
 
-        _producers.Remove(destination);
+        _producers.Remove(route);
         try
         {
             if (producer is IAsyncDisposable ad)
@@ -311,22 +304,22 @@ internal sealed partial class GcpRejectionRouter : IDisposable, IAsyncDisposable
         }
         catch (Exception ex)
         {
-            s_logger.LogError(ex, "GcpRejectionRouter: error disposing producer for {Destination}", destination.Value);
+            s_logger.LogError(ex, "GcpRejectionRouter: error disposing producer for {Destination}", route.Destination.Value);
         }
     }
 
     /// <inheritdoc/>
     public void Dispose()
     {
-        foreach (var destination in _producers.Keys.ToList())
-            DisposeProducerSync(destination);
+        foreach (var route in _producers.Keys.ToList())
+            DisposeProducerSync(route);
     }
 
     /// <inheritdoc/>
     public async ValueTask DisposeAsync()
     {
-        foreach (var destination in _producers.Keys.ToList())
-            await DisposeProducerAsync(destination);
+        foreach (var route in _producers.Keys.ToList())
+            await DisposeProducerAsync(route);
     }
 
     private static partial class Log

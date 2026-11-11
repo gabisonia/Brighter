@@ -11,7 +11,7 @@ namespace Paramore.Brighter.AWSScheduler.V4.Tests.Scheduler.Messages.Sns;
 [Collection("Scheduler SNS")]
 public class SnsSchedulingAsyncMessageTest : IAsyncDisposable
 {
-    private readonly ContentType _contentType = new(MediaTypeNames.Text.Plain);
+    private readonly ContentType _contentType = new(MediaTypeNames.Text.Plain) { CharSet = "utf-8" };
     private const int BufferSize = 3;
     private readonly SnsMessageProducer _messageProducer;
     private readonly SqsMessageConsumer _consumer;
@@ -76,7 +76,7 @@ public class SnsSchedulingAsyncMessageTest : IAsyncDisposable
         var stopAt = DateTimeOffset.UtcNow.AddMinutes(2);
         while (stopAt > DateTimeOffset.UtcNow)
         {
-            var messages = await _consumer.ReceiveAsync(TimeSpan.FromMinutes(1));
+            var messages = await _consumer.ReceiveAsync(TimeSpan.FromSeconds(20));
             Assert.Single(messages);
 
             if (messages[0].Header.MessageType != MessageType.MT_NONE)

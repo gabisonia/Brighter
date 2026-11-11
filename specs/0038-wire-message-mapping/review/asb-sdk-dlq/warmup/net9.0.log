@@ -1,0 +1,10 @@
+{"phase":"empty-DLQ-warmup","queue":false,"empty":true}
+{"phase":"empty-DLQ-warmup","queue":true,"empty":true}
+{"queue":false,"iteration":0,"phase":"receive-DLQ","expectedId":"e70494de-f66f-4b53-91a6-66f920c60deb","observedId":null,"sequence":1,"deadSequence":null,"error":"Exception: Native DLQ receive returned null after successful dead-letter settlement.","elapsedMs":410}
+{"queue":false,"iteration":1,"phase":"receive-DLQ","expectedId":"f55884b6-d45b-4379-97b8-4a7bd5cbd003","observedId":"e70494de-f66f-4b53-91a6-66f920c60deb","sequence":2,"deadSequence":1,"error":"Exception: Native DLQ identity mismatch.","elapsedMs":292}
+{"queue":false,"iteration":2,"phase":"receive-DLQ","expectedId":"776d8e0e-f366-49ec-8e63-8c5251f9abfa","observedId":"f55884b6-d45b-4379-97b8-4a7bd5cbd003","sequence":3,"deadSequence":2,"error":"Exception: Native DLQ identity mismatch.","elapsedMs":57}
+{"queue":false,"iteration":3,"phase":"receive-DLQ","expectedId":"75dce2b9-da2c-4b6b-9acd-eea901de37cf","observedId":"776d8e0e-f366-49ec-8e63-8c5251f9abfa","sequence":4,"deadSequence":3,"error":"Exception: Native DLQ identity mismatch.","elapsedMs":61}
+{"queue":true,"iteration":0,"phase":"complete","expectedId":"ec834356-9b65-49a2-95bd-edf0c81458ad","observedId":"ec834356-9b65-49a2-95bd-edf0c81458ad","sequence":1,"deadSequence":1,"error":null,"elapsedMs":366}
+{"queue":true,"iteration":1,"phase":"complete","expectedId":"fb4b5183-5677-437e-9cea-cbf85ceffde9","observedId":"fb4b5183-5677-437e-9cea-cbf85ceffde9","sequence":3,"deadSequence":3,"error":null,"elapsedMs":172}
+{"queue":true,"iteration":2,"phase":"complete","expectedId":"ef01b9ec-62f8-4bff-843a-a6e25f83dba6","observedId":"ef01b9ec-62f8-4bff-843a-a6e25f83dba6","sequence":5,"deadSequence":5,"error":null,"elapsedMs":118}
+{"queue":true,"iteration":3,"phase":"complete","expectedId":"a465e949-7014-4fac-856f-0f97ce80856a","observedId":"a465e949-7014-4fac-856f-0f97ce80856a","sequence":7,"deadSequence":7,"error":null,"elapsedMs":107}

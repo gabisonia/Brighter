@@ -9,6 +9,33 @@ namespace Paramore.Brighter.MessagingGateway.Postgres;
 /// </summary>
 public class PostgresSubscription : Subscription, IUseBrighterDeadLetterSupport, IUseBrighterInvalidMessageSupport
 {
+    /// <summary>Gets or sets the reader for this subscription's JSON content.</summary>
+    /// <remarks>
+    /// Null preserves the default parser, including streaming for large messages.
+    /// A custom reader receives materialized JSON text and is captured when the consumer
+    /// is created. The gateway replaces receipt metadata with the actual row identity.
+    /// Reader exceptions or null results produce rejectable messages retaining that identity.
+    /// </remarks>
+    public IAmAWireMessageReader<string>? WireMessageReader { get; set; }
+
+    /// <summary>Gets or sets the writer used when requeue updates a row's JSON content.</summary>
+    /// <remarks>
+    /// Null selects the default JSON mapping. The consumer captures this selection on
+    /// creation. The reader must understand the selected writer's output. The gateway
+    /// retains row identity and controls visibility independently of the mapping.
+    /// </remarks>
+    public IAmAWireMessageWriter<string>? RequeueWireMessageWriter { get; set; }
+
+    /// <summary>Gets or sets the writer for consumer-created dead-letter forwarding.</summary>
+    /// <remarks>Null preserves default JSON. Selection is captured at consumer creation.
+    /// Rejection retains its existing settlement behavior, including deletion after forwarding failure.</remarks>
+    public IAmAWireMessageWriter<string>? DeadLetterWireMessageWriter { get; set; }
+
+    /// <summary>Gets or sets the writer for consumer-created invalid-message forwarding.</summary>
+    /// <remarks>Null preserves default JSON. Selection is captured at consumer creation.
+    /// Rejection retains its existing settlement behavior, including deletion after forwarding failure.</remarks>
+    public IAmAWireMessageWriter<string>? InvalidMessageWireMessageWriter { get; set; }
+
     /// <inheritdoc />
     public override Type ChannelFactoryType => typeof(PostgresChannelFactory);
 

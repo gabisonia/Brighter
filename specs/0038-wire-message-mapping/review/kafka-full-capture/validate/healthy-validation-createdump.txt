@@ -1,0 +1,7 @@
+[createdump] Gathering state for process 54 dotnet
+[createdump] Writing crash report to file /capture/validate/healthy-validation.core.crashreport.json
+[createdump] Crash report successfully written
+[createdump] Writing full dump to file /capture/validate/healthy-validation.core
+[createdump] Written 439685120 bytes (107345 pages) to core file
+[createdump] Target process is alive
+[createdump] Dump successfully written in 1614ms

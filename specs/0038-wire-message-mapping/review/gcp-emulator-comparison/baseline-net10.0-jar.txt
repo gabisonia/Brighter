@@ -1,0 +1,1 @@
+[{"path": "/google-cloud-sdk/platform/pubsub-emulator/lib/cloud-pubsub-emulator-0.8.36-all.jar", "sha256": "51f87210e624d28d7473f3cfa6eb2d4538a7362c8c4948ef08498cdd7595d25a"}]

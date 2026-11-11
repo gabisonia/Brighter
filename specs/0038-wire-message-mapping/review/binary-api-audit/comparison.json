@@ -1,0 +1,546 @@
+[
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter",
+    "framework": "net8.0",
+    "exit": 0,
+    "baseline_sha256": "5172b10289b8540df728ee8e43b7d6d29840b15d706afef450dd9dcc2dca2767",
+    "current_sha256": "7d91137cfa5290677ec0eddc8ed7d866929c6cc5b892370a39483fe35dba60ea"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter",
+    "framework": "netstandard2.0",
+    "exit": 0,
+    "baseline_sha256": "6826b0e131b994a0bfb5bfe2a490872f26368f365e44742dd2199b7dd873890c",
+    "current_sha256": "f5ee063d1fa9b17a5e6cfcf142564591392d33d87503c73595ff1b2946350f07"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessageScheduler.AWS",
+    "framework": "net10.0",
+    "exit": 0,
+    "baseline_sha256": "0fb11edd7b6683c6551bfc9bec9ea384a4d6291dc8dba817b0482e68037cadd7",
+    "current_sha256": "ba5e76e911d689789778af2a7a42e61f4decc8af42f034120310501bffa33e24"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessageScheduler.AWS",
+    "framework": "net8.0",
+    "exit": 0,
+    "baseline_sha256": "ea49ee3f1afe7c88405b539bd6116a60d85eb880a8a5dea09448cc51f73c77c5",
+    "current_sha256": "451c22a5e9176ac7891f5698f6f7f3349f948857429e70a042d189cf4d3b5c60"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessageScheduler.AWS",
+    "framework": "net9.0",
+    "exit": 0,
+    "baseline_sha256": "ca8472c63035c63a4a324e20501a17603563aaec438898804fed30f331368023",
+    "current_sha256": "9c227cdef23438544ad970cb38344a73d452dbfbf167874b8cc684b8588675b8"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessageScheduler.AWS",
+    "framework": "netstandard2.0",
+    "exit": 0,
+    "baseline_sha256": "6f58e19157def737c5a0623ac386307689413f040465ec6f3d9310ccd54129ae",
+    "current_sha256": "48317184756e979fba313a2130da6b2346a437812731a3ad5c43a59b3be18833"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessageScheduler.AWS.V4",
+    "framework": "net10.0",
+    "exit": 0,
+    "baseline_sha256": "552a63e60dd6445eeb442d8193e15dafa9add76412b94a30f2d2c419a2db9133",
+    "current_sha256": "96784b36bf91adab4c048c4992db59da1e2b173badf6a30f2238101072c3f725"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessageScheduler.AWS.V4",
+    "framework": "net8.0",
+    "exit": 0,
+    "baseline_sha256": "539fc9f7b120e23fba6f988d9ca39c3a15ea1328131ba79d1a272512701fa6ad",
+    "current_sha256": "d80212ec21fec98d644b6779f9a04848e851a8c8df177d787fd48efc8c07a491"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessageScheduler.AWS.V4",
+    "framework": "net9.0",
+    "exit": 0,
+    "baseline_sha256": "4fcb8806d836e522dd33fe5a50f71eb625031057b3d91f0991356c46618256c1",
+    "current_sha256": "404c1452c4aa083be202e981f44e02a926fb32da4eb9bddbe7e14a574c725b9c"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessageScheduler.AWS.V4",
+    "framework": "netstandard2.0",
+    "exit": 0,
+    "baseline_sha256": "149c3d849c9b0ae0e3f85d9e6f937f6e47e934a55559e159210bf62be4367b82",
+    "current_sha256": "2cc7d5118cc5cba10bf4f7a819d52807b749e2786060831091bd9c682a0760c0"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessageScheduler.Azure",
+    "framework": "net10.0",
+    "exit": 0,
+    "baseline_sha256": "ed7efd3f19ae65c6fb55c65b74182efb44d867bef787ab253e84f302a3e3cb64",
+    "current_sha256": "8a61179ee042389ad84bd2b14bdfd12dacade5e4d4e9edb1dbe4d3c4c2a71a8c"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessageScheduler.Azure",
+    "framework": "net8.0",
+    "exit": 0,
+    "baseline_sha256": "0737ddc7aa3df12cbde4f01e44d961c71c0dddc30a1691702f03d414793d1eae",
+    "current_sha256": "891bc2c6cd40773c3118403eb4a14240a17cf33271be37176a1c7266817d9586"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessageScheduler.Azure",
+    "framework": "net9.0",
+    "exit": 0,
+    "baseline_sha256": "f6b4169bdf9c7023c855eaad1a31d6fe5db0e6367675bea9431adaeaf141eeb0",
+    "current_sha256": "c78ad86a340df362a7c08c71e21c3e5078fabdbe37ec301a94ce2de3ee7ac78e"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessageScheduler.Azure",
+    "framework": "netstandard2.0",
+    "exit": 0,
+    "baseline_sha256": "c20395ad35df7d25bd064d004870839a7c433cacdc62e98cd083822c1848699b",
+    "current_sha256": "b0002657a2e525c7aacbb05c4059de3b7a49e77f7da903e22d4018b613dd91af"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessageScheduler.Quartz",
+    "framework": "net10.0",
+    "exit": 0,
+    "baseline_sha256": "9c06f5c8ac126b0ec9ed92046871cc7a0e9569d103b3f81be4f8ee9777cd36e1",
+    "current_sha256": "05660f496c5f3ced37f2a9b79d2ede58a8df36c69a4aff00df7ec013a56727e8"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessageScheduler.Quartz",
+    "framework": "net8.0",
+    "exit": 0,
+    "baseline_sha256": "9470e405dc4ad1f49c6e3aac23141c0cc208d10bc9662a8bb982b92468de895a",
+    "current_sha256": "edbcfafaeaaedc1848c7b161c2c61019c4574c75f0bf616e56a3502dd71566d3"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessageScheduler.Quartz",
+    "framework": "net9.0",
+    "exit": 0,
+    "baseline_sha256": "566ce7e40f06c3194501a7693ac4f862515f6cdfffdfb596380923ee0da6ac8d",
+    "current_sha256": "dc29e36937466fd46213961ade34413d557df755600903ef8a2ead6e4ff5f21f"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessageScheduler.Quartz",
+    "framework": "netstandard2.0",
+    "exit": 0,
+    "baseline_sha256": "1edb00a3944f4acae6033544fd0243a7debe755ea5403663a0c36031946ff262",
+    "current_sha256": "edf909b9d6d9a912f572d7c5f63068eb8bcb1be09d22a78920443070d07dc8a8"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessageScheduler.TickerQ",
+    "framework": "net10.0",
+    "exit": 0,
+    "baseline_sha256": "a98e53ffac006b31d37011b4b25448909dbbf59937bff9ddcee70b5af52322bd",
+    "current_sha256": "8dea0b2f65eb27e2174fd07e496d04753a7d7c55b8c9dd44c15a80adba76a346"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessageScheduler.TickerQ",
+    "framework": "net8.0",
+    "exit": 0,
+    "baseline_sha256": "552f0baa29f46236487faa9c8567ae7a1d3214ad384e0186abf4c1eff53511f5",
+    "current_sha256": "c6b014d341596d3c69c89838c534596282eb464dc9d89ec448258d326ba2af0b"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessageScheduler.TickerQ",
+    "framework": "net9.0",
+    "exit": 0,
+    "baseline_sha256": "e3edc0e03094638a2d42385720edce5517895e30d78aee1f5d333906ab24a2cd",
+    "current_sha256": "b9265627817b35e0ab3e109d7e7ffb3e959e8b198029578d27352bb22c67f23a"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessagingGateway.AWSSQS",
+    "framework": "net8.0",
+    "exit": 0,
+    "baseline_sha256": "ee54365414d72a53f6656951b5e36248d1054d15ef57f3c3771f053e8162672b",
+    "current_sha256": "b9d8cd0deffda18fd2424cca3bcb0f1a38c1e1b60f1e79cc0d6cec65d3319029"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessagingGateway.AWSSQS",
+    "framework": "netstandard2.0",
+    "exit": 0,
+    "baseline_sha256": "f52a55dc8fbc29fb62ec806801df57d186526fc9b2b13984831f5e7eb8f295cc",
+    "current_sha256": "5559196968f877ce2f1b1dec6e7d48825eadc6e16f8a51ab0cbd3e6202c6ad61"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessagingGateway.AWSSQS.V4",
+    "framework": "net8.0",
+    "exit": 0,
+    "baseline_sha256": "e6008af6d48a15d0e2acc7c9a803cb9bc9d5e690530affa177c0a3d77faf017d",
+    "current_sha256": "55ec5632746820bbe91e033e8e5c16b4a10fbc5533685ae764823224929ba617"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessagingGateway.AWSSQS.V4",
+    "framework": "netstandard2.0",
+    "exit": 0,
+    "baseline_sha256": "c1fc2c1a630d2c77d18bdda5f14b8dafdea5c231bcce26852b344de89ca35365",
+    "current_sha256": "f46d00cb2fe926128d7004466ec0b693c8fddea2289bd7773cd038fdac000ea0"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessagingGateway.AzureServiceBus",
+    "framework": "net8.0",
+    "exit": 0,
+    "baseline_sha256": "9ae88d7e6092ca881cc58fd00891471c8f0f374570c22057aa0604f34f9afda9",
+    "current_sha256": "a5747d82e1efcd926125d4e49457b5863e93815934bca1cde046baefa2a0c370"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessagingGateway.AzureServiceBus",
+    "framework": "netstandard2.0",
+    "exit": 0,
+    "baseline_sha256": "e26e6e9675166d2678a078b547a001f1890b08c6fff9f40902a88d16ff0f997a",
+    "current_sha256": "2449d449e0d389187a9d3b89df45b275cea879340f5cfcdb6a98ccb71762165f"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessagingGateway.GcpPubSub",
+    "framework": "net8.0",
+    "exit": 0,
+    "baseline_sha256": "da3bfc97766e36cfeffc679eb0d2a2c5b93d7478c057d9a6f6dd8d582fb035bc",
+    "current_sha256": "20d8b08a7a0ba7745d9cc91faad2025332c517421c2d20d27be96ccfa49f00f9"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessagingGateway.GcpPubSub",
+    "framework": "netstandard2.0",
+    "exit": 0,
+    "baseline_sha256": "684af08e83b83d7fa97906f59a43ee1554b6e0151052952743b3b4aa8d7095d5",
+    "current_sha256": "2b2b3408f970443aa001b534eec1a0dab0c649931f4a0abae01aac5b52b48990"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessagingGateway.Kafka",
+    "framework": "net8.0",
+    "exit": 0,
+    "baseline_sha256": "ec1dcefab73e9d75d9ac4a5f70d774613b833933796f478af63d55d457287472",
+    "current_sha256": "a8489588656e3141b3ea080f5f3ff4a5e8b146ff97f28aaefe2e8d9a1558329f"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessagingGateway.Kafka",
+    "framework": "netstandard2.0",
+    "exit": 0,
+    "baseline_sha256": "18cc412925ca8050aeab790b6923a2f944b6d97062af47f988f8263ad7c8fa93",
+    "current_sha256": "2b56047b882b7813c6972ce09ad09a028c6f876ef86c872cda378e4f6217db00"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessagingGateway.MQTT",
+    "framework": "net10.0",
+    "exit": 0,
+    "baseline_sha256": "2323356a5b8d6becb0fe824c9c1049bcb458bdac4449c6ffdcf862c10989a333",
+    "current_sha256": "a34328b84013b2cb607a238bc6e15f0e4c6876a92422a6997853d212a3bc77ef"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessagingGateway.MQTT",
+    "framework": "net8.0",
+    "exit": 0,
+    "baseline_sha256": "fa8921e999f3150be839e5bbcc2bb4f72c29ac1afc400cf8ff3ae3253e0a20cb",
+    "current_sha256": "0300353b0fbaf26067c31885c564364654c457893e906b85183678838b5dcdc0"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessagingGateway.MsSql",
+    "framework": "net462",
+    "exit": 0,
+    "baseline_sha256": "36b293623baef7c25653b9f26d9c138c00d1ffa8250ecd20da02c86da1fd364e",
+    "current_sha256": "b581c7f37e250f5834b61d2debf94a768bc38a29bd970239fe690783c2b68789"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessagingGateway.MsSql",
+    "framework": "net8.0",
+    "exit": 0,
+    "baseline_sha256": "0f642c84b7557813ba344766dd48bb17fc0a89d2dbf7b4fc1a92263a30b26603",
+    "current_sha256": "dbe26a4dce5358fe0571821833e1f66bcdb8889f1a05b35d5b422af30ba6e4b0"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessagingGateway.Postgres",
+    "framework": "net8.0",
+    "exit": 0,
+    "baseline_sha256": "6dce7888d8f2ad1595b8c4654565ee20e2980e0268e5bcbcc196ba5b9e89202a",
+    "current_sha256": "67376052de99d4b70f4e7a442bbdb85e346842670074d149dc3efefe6fa4a2d7"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessagingGateway.RMQ.Async",
+    "framework": "net8.0",
+    "exit": 0,
+    "baseline_sha256": "057dff02f4109acc356302d36e99e0c8e92fc67def9583c41c82b181623a6622",
+    "current_sha256": "06bc188f2e97ace37b79b9b3073f76f158e00e950cdaeea1a2967a37c3635f5e"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessagingGateway.RMQ.Async",
+    "framework": "netstandard2.0",
+    "exit": 0,
+    "baseline_sha256": "9f26468314e3abbead2d2c7b148233eaf26a45aebae5cec76b528661486d900c",
+    "current_sha256": "72292b2c677bcb1b6127afc758ced4dfcb2f525a39eaf5f7cc094733b0136862"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessagingGateway.RMQ.Sync",
+    "framework": "net8.0",
+    "exit": 0,
+    "baseline_sha256": "9ed34c2eaa16b37bdc3c121e4bec22ccda6fc1c15bcbd1317ca5a556b3e0e4dd",
+    "current_sha256": "e8545c6c901eeec6af29de227d89dd904fe520f57b260dad39a6ade5af7537cd"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessagingGateway.RMQ.Sync",
+    "framework": "netstandard2.0",
+    "exit": 0,
+    "baseline_sha256": "8fbe4eb985ec803e2085bc38452834a4c1c22351499d73eedb08876a3b1fc53c",
+    "current_sha256": "47ec61beb477dafd041f781571142d08eb1578c20d2f098d82f8b38a155aba8a"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessagingGateway.Redis",
+    "framework": "net10.0",
+    "exit": 0,
+    "baseline_sha256": "74f0f9977c1148a876807f53029f5a339c6bf4ec0a991f9ef113aa124e5540ce",
+    "current_sha256": "5d551a66d96b812a60725247e5149a065336acca044e0bb14e912e3405d9667f"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessagingGateway.Redis",
+    "framework": "net8.0",
+    "exit": 0,
+    "baseline_sha256": "ed55998f70874416034236fb448cfe577087262fd5ea6e48d5b3aca272779c52",
+    "current_sha256": "abafdac30bcbf52cdc8de378cabcb7d0d268b35185bb9ea0f078fe9c861ef816"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessagingGateway.Redis",
+    "framework": "netstandard2.0",
+    "exit": 0,
+    "baseline_sha256": "eee1514c2402b0842625a162931a01bc73af4b5b777bf794c4db9f494a63835c",
+    "current_sha256": "145678687510fe234d84a74fff85ca981ccb4a1a934a6398c7dd939ed6df60c0"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessagingGateway.RocketMQ",
+    "framework": "net8.0",
+    "exit": 0,
+    "baseline_sha256": "773c871fd7abeff0f369c16f11495e1c35a0d08fd2331d1f8d57c598a4e4d627",
+    "current_sha256": "90ece92f9dc5924b9c6c4f8bdb0ad52facf35b2d18ccbdc75c326ce152d496cf"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter",
+    "framework": "net10.0",
+    "exit": 0,
+    "baseline_sha256": "c01717225af138765308a94d62d250d2d91d3c0b50a6888b9836534b7cd56aa3",
+    "current_sha256": "657f4da4bbb2ee73c97d76d4b0461164da279cdda062981db5cdd614856e9e34"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter",
+    "framework": "net9.0",
+    "exit": 0,
+    "baseline_sha256": "23d4f51f634adfe072e29b797d4e33a853672fff3475681633462d125eede23d",
+    "current_sha256": "1c1c506f0601ee9eb680b4ae15b95e9f48958eef6baa9fb47f28813ad7ab2d7a"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessagingGateway.AWSSQS",
+    "framework": "net10.0",
+    "exit": 0,
+    "baseline_sha256": "877791c2b5b62204754362af6da8c785b999aa7f8ad9788e61bc44d9a024804f",
+    "current_sha256": "77582cfcb6624fa3e2f3c71f2a0051538cf53c2a5737b301d93b05898ab450f1"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessagingGateway.AWSSQS",
+    "framework": "net9.0",
+    "exit": 0,
+    "baseline_sha256": "edaf38658508de6870e06e8c58778f0c5dd99b578a5c4e4e426262f7a4cee16f",
+    "current_sha256": "a44bfda1f135740c78ebd2e801966143f44712c057e99fadf34d3da2f943af94"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessagingGateway.AWSSQS.V4",
+    "framework": "net10.0",
+    "exit": 0,
+    "baseline_sha256": "82b436018366b002515e3c9c56dbdbe333ef04d4f4c527ef09adef20fe37dbc8",
+    "current_sha256": "57632fa17e6611d0c254ea5534286c6c06280540b3e0e1451257bbaa02a1751a"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessagingGateway.AWSSQS.V4",
+    "framework": "net9.0",
+    "exit": 0,
+    "baseline_sha256": "b707b29f0674876fa01a12781a11f5219f12a790f21901fcf9ca1d1c14a3e6e1",
+    "current_sha256": "209b2ec7c292c49f6df2f73ff9a6076e108f0aa6b36c69038887daf7b08762ad"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessagingGateway.AzureServiceBus",
+    "framework": "net10.0",
+    "exit": 0,
+    "baseline_sha256": "27f007b2794a2058eec585015191fbb430189df9e857c2c9959f71279c7b4866",
+    "current_sha256": "336a41bb078f52cc540b02a40ed629126d78699d3b350ddac9c32a09b0661ee6"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessagingGateway.AzureServiceBus",
+    "framework": "net9.0",
+    "exit": 0,
+    "baseline_sha256": "15dfa036f6b67d79188e1838ae92438d7a7efaa7388ba4966f29f94d17874f9f",
+    "current_sha256": "91d866602796a73705d25b5ba46d57f14efa6babea65d42e885427aaba7f6bc7"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessagingGateway.GcpPubSub",
+    "framework": "net10.0",
+    "exit": 0,
+    "baseline_sha256": "6403fb4ad05b2f566684efa1754d47d1c4d25199babaa1f4ab476af251a31475",
+    "current_sha256": "0b43880e06677b77656677c3d93c74317e0b985a3e8e7cea9a1f3514a6cd665a"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessagingGateway.GcpPubSub",
+    "framework": "net9.0",
+    "exit": 0,
+    "baseline_sha256": "0bb02dafbd8cd5cd5f549a917570f6653103120506bcc1476fdb6d2e154f4d0f",
+    "current_sha256": "6b5107142e7321b0a844c4ae9cbc2a6ff31b01b76763700912766afde7a8291f"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessagingGateway.Kafka",
+    "framework": "net10.0",
+    "exit": 0,
+    "baseline_sha256": "1a123d032cbf2be68af2a7d063b37146813381a29fc5a3db724381905f1d58d2",
+    "current_sha256": "2468f35c6f0595cdbe617d35f3de58d0b0f4ef04f9c3c5524f8e270278f98df4"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessagingGateway.Kafka",
+    "framework": "net9.0",
+    "exit": 0,
+    "baseline_sha256": "edab32c8be3474182ec8c617d8f98b5a7a93845eba6018c7c2673ba44c54ee4a",
+    "current_sha256": "aeffd53b371febdff16746f1c6bd8ec8495e281c7e6980b675c32e7773c10a3b"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessagingGateway.MQTT",
+    "framework": "net9.0",
+    "exit": 0,
+    "baseline_sha256": "fed3f9d40bf990f957ead9558c0b7a73270cb3b5b25467eac42b63d698a1059d",
+    "current_sha256": "5a2b3c8c22278b4972ea89958898d14751d25e7befdf93d2df40516eedd4fff9"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessagingGateway.MsSql",
+    "framework": "net10.0",
+    "exit": 0,
+    "baseline_sha256": "d5eb85c6ea7a26b60449f5312c6803bf38a6a45f8aff00caf48a328c30070784",
+    "current_sha256": "6cf3a14b1935a41059a9b069f2e105a300ea78e0650d713ef272e569a2703824"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessagingGateway.MsSql",
+    "framework": "net9.0",
+    "exit": 0,
+    "baseline_sha256": "7452383f8922f710f005deec7ac2f458a1cd30ac277a9396c95d2474ee0aeb3a",
+    "current_sha256": "eb804f61b5ebe43419576fe5cc3fb9c3b23565be6833e43ad0b64abef7fa9cf8"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessagingGateway.Postgres",
+    "framework": "net10.0",
+    "exit": 0,
+    "baseline_sha256": "85328cb80360c00fb5cb35c1bde1d9de8e118d8270e33305638ef18f98272612",
+    "current_sha256": "83eb1f0d80455347f2630b7d2011d9b25a9a903a950ed3790047b80a6f1b8a5a"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessagingGateway.Postgres",
+    "framework": "net9.0",
+    "exit": 0,
+    "baseline_sha256": "b215a1c1fefc4589e4e606333af815f8997b232f3a5038a7adc1234c32d93a88",
+    "current_sha256": "ec3dd5197cbc47946b03d091cde6990357c6046a452cefc3d0aaf23550ffc366"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessagingGateway.RMQ.Async",
+    "framework": "net10.0",
+    "exit": 0,
+    "baseline_sha256": "e096bd1764b319ba0b6b2642cb3cc9c3ef4ab7c14f17c0325813986f28942d15",
+    "current_sha256": "b47a0083d3e9a0b731cc094ee8f2c222c8802c3618511b423ceae7c55a87cb33"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessagingGateway.RMQ.Async",
+    "framework": "net9.0",
+    "exit": 0,
+    "baseline_sha256": "db1e4dd71e22abe00152d9c12fb134d637e89b877fa4e532c05707f0f43b89d9",
+    "current_sha256": "84f4902041bb7ce0133dbd3da110b5727015f476bda6e9ce9977f13766c3d188"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessagingGateway.RMQ.Sync",
+    "framework": "net10.0",
+    "exit": 0,
+    "baseline_sha256": "ec454ba08213e70ee8ca19f66648a67fb61ed254b24e6b311e60b0c191cc520d",
+    "current_sha256": "c2501416abf60b5d810a27c7ef4195e0fefdeb2392b76ced802d52fc5a281298"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessagingGateway.RMQ.Sync",
+    "framework": "net9.0",
+    "exit": 0,
+    "baseline_sha256": "5aadb8e763f573857bf885c08da8e8de54875d3069fe6319c5f33fd27f6df6f6",
+    "current_sha256": "e885de2ce2740995eab4a279601966c90b61c8259981e0db2a1bff9a0f16f788"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessagingGateway.Redis",
+    "framework": "net9.0",
+    "exit": 0,
+    "baseline_sha256": "caca1ca65bbdc397f4ecf68d0a5edc8af704051d906374aea9b2c5608ee38047",
+    "current_sha256": "fbab179d3ed98f05ac65869a120f1cb432c3aae82c6235c3696c8a7bb06b95ec"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessagingGateway.RocketMQ",
+    "framework": "net10.0",
+    "exit": 0,
+    "baseline_sha256": "a35aedd7a90c173655dc09da5e9cf45b9f510eb85407d93f3d4af5b0c7476ac1",
+    "current_sha256": "436f7b7aed21d4a7e28903674bdc63d7ad1062f25dca5bf43d81b3c860fb48f2"
+  },
+  {
+    "unresolved_references": 0,
+    "project": "Paramore.Brighter.MessagingGateway.RocketMQ",
+    "framework": "net9.0",
+    "exit": 0,
+    "baseline_sha256": "eb990f7cd6c731f2c73b4d0871f7d0113023cc78c93490dae3ac48bb216a19ea",
+    "current_sha256": "86f68538e3fe50a0683bfc1abf6047cca790ed4561db3087bf56f36f56e9e601"
+  }
+]

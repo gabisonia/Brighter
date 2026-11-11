@@ -1,0 +1,214 @@
+[
+  {
+    "framework": "net9.0",
+    "sql_image": "mcr.microsoft.com/mssql/server@sha256:cf8f0ab2ebe61feec2eed2629061a07d247f791c2a8ddda74a4ac9f06a291718",
+    "broker_image": "mcr.microsoft.com/azure-messaging/servicebus-emulator@sha256:5a96d893b245031740f7d46e0fe5ff282d24b78c4b7d761dd57590f3f010a9b3",
+    "host_architecture": "aarch64",
+    "sql_emulated": true,
+    "test_filter": "FullyQualifiedName~AsbReaderFailureRecoveryTests",
+    "assembly_sha256": "c6fced943537b27646ff756b9224388eb7ac9be392bbe96ccf5e9f3730b8f098",
+    "exit_code": 0,
+    "wall_seconds": 2.58782696723938,
+    "monotonic_seconds": 2.5877895830199122,
+    "clock_discontinuity": false,
+    "counts": {
+      "Passed": 8,
+      "Failed": 0,
+      "NotExecuted": 0
+    },
+    "cases": [
+      {
+        "name": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: True, useAsync: False, returnNull: True)",
+        "outcome": "Passed",
+        "message": null,
+        "stack": null
+      },
+      {
+        "name": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: True, useAsync: False, returnNull: False)",
+        "outcome": "Passed",
+        "message": null,
+        "stack": null
+      },
+      {
+        "name": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: True, useAsync: True, returnNull: False)",
+        "outcome": "Passed",
+        "message": null,
+        "stack": null
+      },
+      {
+        "name": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: False, useAsync: True, returnNull: True)",
+        "outcome": "Passed",
+        "message": null,
+        "stack": null
+      },
+      {
+        "name": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: True, useAsync: True, returnNull: True)",
+        "outcome": "Passed",
+        "message": null,
+        "stack": null
+      },
+      {
+        "name": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: False, useAsync: True, returnNull: False)",
+        "outcome": "Passed",
+        "message": null,
+        "stack": null
+      },
+      {
+        "name": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: False, useAsync: False, returnNull: False)",
+        "outcome": "Passed",
+        "message": null,
+        "stack": null
+      },
+      {
+        "name": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: False, useAsync: False, returnNull: True)",
+        "outcome": "Passed",
+        "message": null,
+        "stack": null
+      }
+    ],
+    "containers": [
+      {
+        "name": "brighter-4170-asb-docker-retry-broker-net9-0",
+        "state_before_stop": {
+          "Status": "running",
+          "Running": true,
+          "Paused": false,
+          "Restarting": false,
+          "OOMKilled": false,
+          "Dead": false,
+          "Pid": 77697,
+          "ExitCode": 0,
+          "Error": "",
+          "StartedAt": "2026-11-10T11:46:20.006884835Z",
+          "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "stop_exit_code": 0,
+        "running_after_stop": "false"
+      },
+      {
+        "name": "brighter-4170-asb-docker-retry-sql-net9-0",
+        "state_before_stop": {
+          "Status": "running",
+          "Running": true,
+          "Paused": false,
+          "Restarting": false,
+          "OOMKilled": false,
+          "Dead": false,
+          "Pid": 77201,
+          "ExitCode": 0,
+          "Error": "",
+          "StartedAt": "2026-11-10T11:46:11.465085596Z",
+          "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "stop_exit_code": 0,
+        "running_after_stop": "false"
+      }
+    ]
+  },
+  {
+    "framework": "net10.0",
+    "sql_image": "mcr.microsoft.com/mssql/server@sha256:cf8f0ab2ebe61feec2eed2629061a07d247f791c2a8ddda74a4ac9f06a291718",
+    "broker_image": "mcr.microsoft.com/azure-messaging/servicebus-emulator@sha256:5a96d893b245031740f7d46e0fe5ff282d24b78c4b7d761dd57590f3f010a9b3",
+    "host_architecture": "aarch64",
+    "sql_emulated": true,
+    "test_filter": "FullyQualifiedName~AsbReaderFailureRecoveryTests",
+    "assembly_sha256": "070f30ff936c2aac575a1e677da0d8921ee56f2f0a9c704b922e3a3373a59251",
+    "exit_code": 1,
+    "wall_seconds": 2.6432979106903076,
+    "monotonic_seconds": 2.6432583751156926,
+    "clock_discontinuity": false,
+    "counts": {
+      "Passed": 4,
+      "Failed": 4,
+      "NotExecuted": 0
+    },
+    "cases": [
+      {
+        "name": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: False, useAsync: False, returnNull: False)",
+        "outcome": "Failed",
+        "message": "Assert.Equal() Failure: Strings differ\n                     \u2193 (pos 10)\nExpected: \"01a1c549-0d26-7f87-a9d9-21e00308a3bd\"\nActual:   \"01a1c549-0ada-7236-a2d2-9399d2bafd97\"\n                     \u2191 (pos 10)",
+        "stack": "   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(Boolean useQueue, Boolean useAsync, Boolean returnNull) in /Users/gabisonia/RiderProjects/Brighter/tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_an_asb_reader_fails_should_preserve_native_rejection_and_recover.cs:line 118\n   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(Boolean useQueue, Boolean useAsync, Boolean returnNull) in /Users/gabisonia/RiderProjects/Brighter/tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_an_asb_reader_fails_should_preserve_native_rejection_and_recover.cs:line 148\n   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(Boolean useQueue, Boolean useAsync, Boolean returnNull) in /Users/gabisonia/RiderProjects/Brighter/tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_an_asb_reader_fails_should_preserve_native_rejection_and_recover.cs:line 148\n   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(Boolean useQueue, Boolean useAsync, Boolean returnNull) in /Users/gabisonia/RiderProjects/Brighter/tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_an_asb_reader_fails_should_preserve_native_rejection_and_recover.cs:line 148\n   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(Boolean useQueue, Boolean useAsync, Boolean returnNull) in /Users/gabisonia/RiderProjects/Brighter/tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_an_asb_reader_fails_should_preserve_native_rejection_and_recover.cs:line 148\n   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(Boolean useQueue, Boolean useAsync, Boolean returnNull) in /Users/gabisonia/RiderProjects/Brighter/tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_an_asb_reader_fails_should_preserve_native_rejection_and_recover.cs:line 148\n--- End of stack trace from previous location ---"
+      },
+      {
+        "name": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: False, useAsync: True, returnNull: False)",
+        "outcome": "Failed",
+        "message": "Assert.Equal() Failure: Strings differ\n                    \u2193 (pos 9)\nExpected: \"01a1c549-102f-72d3-a7d1-f991a3800965\"\nActual:   \"01a1c549-0f98-740a-a27e-af7a9669913d\"\n                    \u2191 (pos 9)",
+        "stack": "   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(Boolean useQueue, Boolean useAsync, Boolean returnNull) in /Users/gabisonia/RiderProjects/Brighter/tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_an_asb_reader_fails_should_preserve_native_rejection_and_recover.cs:line 118\n   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(Boolean useQueue, Boolean useAsync, Boolean returnNull) in /Users/gabisonia/RiderProjects/Brighter/tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_an_asb_reader_fails_should_preserve_native_rejection_and_recover.cs:line 148\n   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(Boolean useQueue, Boolean useAsync, Boolean returnNull) in /Users/gabisonia/RiderProjects/Brighter/tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_an_asb_reader_fails_should_preserve_native_rejection_and_recover.cs:line 148\n   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(Boolean useQueue, Boolean useAsync, Boolean returnNull) in /Users/gabisonia/RiderProjects/Brighter/tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_an_asb_reader_fails_should_preserve_native_rejection_and_recover.cs:line 148\n   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(Boolean useQueue, Boolean useAsync, Boolean returnNull) in /Users/gabisonia/RiderProjects/Brighter/tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_an_asb_reader_fails_should_preserve_native_rejection_and_recover.cs:line 148\n   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(Boolean useQueue, Boolean useAsync, Boolean returnNull) in /Users/gabisonia/RiderProjects/Brighter/tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_an_asb_reader_fails_should_preserve_native_rejection_and_recover.cs:line 148\n--- End of stack trace from previous location ---"
+      },
+      {
+        "name": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: False, useAsync: True, returnNull: True)",
+        "outcome": "Failed",
+        "message": "Assert.IsType() Failure: Value is null\nExpected: typeof(Azure.Messaging.ServiceBus.ServiceBusReceivedMessage)\nActual:   null",
+        "stack": "   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(Boolean useQueue, Boolean useAsync, Boolean returnNull) in /Users/gabisonia/RiderProjects/Brighter/tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_an_asb_reader_fails_should_preserve_native_rejection_and_recover.cs:line 116\n   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(Boolean useQueue, Boolean useAsync, Boolean returnNull) in /Users/gabisonia/RiderProjects/Brighter/tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_an_asb_reader_fails_should_preserve_native_rejection_and_recover.cs:line 148\n   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(Boolean useQueue, Boolean useAsync, Boolean returnNull) in /Users/gabisonia/RiderProjects/Brighter/tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_an_asb_reader_fails_should_preserve_native_rejection_and_recover.cs:line 148\n   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(Boolean useQueue, Boolean useAsync, Boolean returnNull) in /Users/gabisonia/RiderProjects/Brighter/tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_an_asb_reader_fails_should_preserve_native_rejection_and_recover.cs:line 148\n   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(Boolean useQueue, Boolean useAsync, Boolean returnNull) in /Users/gabisonia/RiderProjects/Brighter/tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_an_asb_reader_fails_should_preserve_native_rejection_and_recover.cs:line 148\n   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(Boolean useQueue, Boolean useAsync, Boolean returnNull) in /Users/gabisonia/RiderProjects/Brighter/tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_an_asb_reader_fails_should_preserve_native_rejection_and_recover.cs:line 148\n--- End of stack trace from previous location ---"
+      },
+      {
+        "name": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: True, useAsync: False, returnNull: True)",
+        "outcome": "Passed",
+        "message": null,
+        "stack": null
+      },
+      {
+        "name": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: True, useAsync: True, returnNull: True)",
+        "outcome": "Passed",
+        "message": null,
+        "stack": null
+      },
+      {
+        "name": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: False, useAsync: False, returnNull: True)",
+        "outcome": "Failed",
+        "message": "Assert.Equal() Failure: Strings differ\n                     \u2193 (pos 10)\nExpected: \"01a1c549-0f98-740a-a27e-af7a9669913d\"\nActual:   \"01a1c549-0d26-7f87-a9d9-21e00308a3bd\"\n                     \u2191 (pos 10)",
+        "stack": "   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(Boolean useQueue, Boolean useAsync, Boolean returnNull) in /Users/gabisonia/RiderProjects/Brighter/tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_an_asb_reader_fails_should_preserve_native_rejection_and_recover.cs:line 118\n   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(Boolean useQueue, Boolean useAsync, Boolean returnNull) in /Users/gabisonia/RiderProjects/Brighter/tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_an_asb_reader_fails_should_preserve_native_rejection_and_recover.cs:line 148\n   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(Boolean useQueue, Boolean useAsync, Boolean returnNull) in /Users/gabisonia/RiderProjects/Brighter/tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_an_asb_reader_fails_should_preserve_native_rejection_and_recover.cs:line 148\n   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(Boolean useQueue, Boolean useAsync, Boolean returnNull) in /Users/gabisonia/RiderProjects/Brighter/tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_an_asb_reader_fails_should_preserve_native_rejection_and_recover.cs:line 148\n   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(Boolean useQueue, Boolean useAsync, Boolean returnNull) in /Users/gabisonia/RiderProjects/Brighter/tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_an_asb_reader_fails_should_preserve_native_rejection_and_recover.cs:line 148\n   at Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(Boolean useQueue, Boolean useAsync, Boolean returnNull) in /Users/gabisonia/RiderProjects/Brighter/tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_an_asb_reader_fails_should_preserve_native_rejection_and_recover.cs:line 148\n--- End of stack trace from previous location ---"
+      },
+      {
+        "name": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: True, useAsync: False, returnNull: False)",
+        "outcome": "Passed",
+        "message": null,
+        "stack": null
+      },
+      {
+        "name": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: True, useAsync: True, returnNull: False)",
+        "outcome": "Passed",
+        "message": null,
+        "stack": null
+      }
+    ],
+    "containers": [
+      {
+        "name": "brighter-4170-asb-docker-retry-broker-net10-0",
+        "state_before_stop": {
+          "Status": "running",
+          "Running": true,
+          "Paused": false,
+          "Restarting": false,
+          "OOMKilled": false,
+          "Dead": false,
+          "Pid": 79293,
+          "ExitCode": 0,
+          "Error": "",
+          "StartedAt": "2026-11-10T11:47:15.008048833Z",
+          "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "stop_exit_code": 0,
+        "running_after_stop": "false"
+      },
+      {
+        "name": "brighter-4170-asb-docker-retry-sql-net10-0",
+        "state_before_stop": {
+          "Status": "running",
+          "Running": true,
+          "Paused": false,
+          "Restarting": false,
+          "OOMKilled": false,
+          "Dead": false,
+          "Pid": 78865,
+          "ExitCode": 0,
+          "Error": "",
+          "StartedAt": "2026-11-10T11:47:08.522326803Z",
+          "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "stop_exit_code": 0,
+        "running_after_stop": "false"
+      }
+    ]
+  }
+]

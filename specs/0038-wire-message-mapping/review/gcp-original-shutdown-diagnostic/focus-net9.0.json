@@ -1,0 +1,12 @@
+{
+  "exit": 0,
+  "wall_seconds": 8.269706964492798,
+  "monotonic_seconds": 8.26953125,
+  "clock_discontinuity": false,
+  "counts": {
+    "Passed": 4,
+    "Failed": 0,
+    "NotExecuted": 0
+  },
+  "failures": []
+}

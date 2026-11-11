@@ -1,0 +1,417 @@
+{
+  "included": [
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/AzureServiceBusChannelFactoryTests.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.AzureServiceBusChannelFactoryTests",
+      "sha256": "c2816d98405bac8a7c5a5891f5deccea849a3a32e458c41c9f9b4b34c67918d4"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/Configuration/When_binding_service_bus_publication_options_should_apply_queue_selection.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.Configuration.AzurePublicationConfigurationBindingTests",
+      "sha256": "c81ca73a13e8aa0c390a63b84bdf512438018130b43f488463a2df4a629af0f5"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/Configuration/When_binding_service_bus_subscription_options_should_apply_filter_and_queue_selection.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.Configuration.AzureSubscriptionConfigurationBindingTests",
+      "sha256": "98e1001bba5dc85be795336d2797ac78bdb383d7d6d5cbf2ee97a58701d40797"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/Configuration/When_inspecting_azure_configuration_should_find_public_read_write_properties.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.Configuration.AzureConfigurationPropertyDiscoveryTests",
+      "sha256": "a52e0a74b7720ae51746658e5760a28de2d30cb67252202f1ffd68e227a64150"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/Configuration/When_setting_blob_archive_location_as_a_property_should_preserve_defaults_and_allow_replacement.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.Configuration.AzureArchiveLocationConfigurationTests",
+      "sha256": "3792509b439aaf45e1a6f9e8ae567c90fd036ae1d7b8144efd62993f60918bd2"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/Configuration/When_setting_blob_archive_tags_as_a_property_should_preserve_defaults_and_allow_replacement.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.Configuration.AzureArchiveTagsConfigurationTests",
+      "sha256": "51ef4aa8ac94fb2aa23cb8205e9f58fdbe933187179b94c9740a036f3862d035"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/Configuration/When_setting_blob_lock_location_as_a_property_should_preserve_defaults_and_allow_replacement.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.Configuration.AzureLockLocationConfigurationTests",
+      "sha256": "be2b330868dac832322dc42bed3e9dc1834d93fa461941a50653ea240bdbdd35"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/Generated/Conformance/When_sweeping_the_gateway_assembly_should_find_no_invalid_channel_factory_declaration.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.Generated.Conformance.GatewayChannelFactoryDeclarationTests",
+      "sha256": "03ad4d071522deda16c91c819a3aba76b6159f7a43e760198ede730748f559d3"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/Proactor/AzureServiceBusBulkMessageProducerTestsAsync.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.Proactor.AzureServiceBusBulkMessageProducerTestsAsync",
+      "sha256": "4807abfc2473adcbb4dee6da6124393adcd5934cd258f0fec04ba1f1e9591a0c"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/Proactor/AzureServiceBusConsumerTestsAsync.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.Proactor.AzureServiceBusConsumerTestsAsync",
+      "sha256": "4aafebcbf0e6b9a29ea9e3f2b5bc2cbb25236431254a0700578412ede7a3da89"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/Proactor/AzureServiceBusMessageProducerTestsAsync.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.Proactor.AzureServiceBusMessageProducerTestsAsync",
+      "sha256": "fe578e3a9fe7befe14823a208094f937b78edb10f9434fac41ab5becf65665d5"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/Reactor/AzureServiceBusConsumerTests.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.Reactor.AzureServiceBusConsumerTests",
+      "sha256": "4e7158dfc3ff5d5509a66a0d3ce05c5ecf679077287dfedc4a1d64422876f9f7"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/Reactor/AzureServiceBusMessageProducerTests.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.Reactor.AzureServiceBusMessageProducerTests",
+      "sha256": "46e1b2244d198e9dc6755f9312a76e584bf0ea731ccaa7d1669c1fc1aced5407"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_A_Deferred_Message_Is_Redelivered.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.When_A_Deferred_Message_Is_Redelivered",
+      "sha256": "b678f770afbd55e26edee39ad1f0abe48bdaea31f28222c9fb24441b9b5693f4"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_Converting_A_Message_With_A_Session_Id.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.SerializationPolicyCollection",
+      "sha256": "dc2609ff2938807c88ef30d6034c955d158052e1da29e6f69780425e595d3a6b"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_Converting_A_Message_With_Local_Headers.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusMessagePublisherLocalHeaderTests",
+      "sha256": "7b120bcda6866b403db9126dd04024c20d5fb0e1e5d0aa2bfc45abae790fbf5c"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_Creating_Message_From_ServiceBus_Should_Use_Memory.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusMessageMemoryTests",
+      "sha256": "47cc91686e2c7745f4b1c78b4ffa16f9d138867315806ffadc4650c04cb15e5b"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_Mapping_Message_SequenceNumber_Is_Added_To_Bag.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusMessageSequenceNumberTests",
+      "sha256": "eca9d97ecb756bc61e57711c499b4173173d486dc31098040d55f0811a7939aa"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_a_direct_retry_receiver_lacks_property_preserving_abandon_should_report_failure.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusDirectRetryReceiverCapabilityTests",
+      "sha256": "feae065fd0c4a26ec8313fab1310f9d0d24728d5da01380f64a732edb4e60e7f"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_abandoning_a_direct_retry_fails_should_report_failure_without_completing.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusDirectRetryAbandonFailureTests",
+      "sha256": "09bf4b67aaf37c172db4f3b34e93502472ceb785f92b35c35f16b2420b777499"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_an_existing_subscription_should_apply_its_configured_rule.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusSubscriptionRuleTests",
+      "sha256": "f1253218037b6751ce1b98271df6889870da49445909103a67a84f324d26a489"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_another_caller_creates_the_destination_should_send_and_cache_its_availability.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusProducerCreationRaceTests",
+      "sha256": "0dfd537214fe9d7756260e1e22f91fbf5f9bdfb3ca3ae599c8576bd1d4307cb5"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_asb_retries_with_selected_writers_should_preserve_native_controls_and_recover.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusRetryWireSelectionTests",
+      "sha256": "b656a0affc44e9f0f54203f2b8193fa9eee4fa3029f8573f96a9181ee48b729e"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_buffered_message_lock_expires_should_skip_dispatch.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusExpiredLockTests",
+      "sha256": "815222aed689149f2c7a7194ded95ac6e74ca6214e04c74afe5be5c2f230dd91"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_constructing_a_queue_consumer_with_an_incompatible_scheduler_should_reject_configuration.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusManualRetrySchedulerValidationTests",
+      "sha256": "965249e6771c3bbc2e4cf36f5336a043d4d91920f0ed670bfc11c75b85e0a2d6"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_creating_a_channel_with_assume_should_make_no_administration_requests.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusChannelAssumeTests",
+      "sha256": "b14fe2de3de6e30065391b5b31995cf68f92ef20448487deb987b9b69a0874ad"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_creating_a_channel_with_validate_for_a_missing_subscription_should_throw.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusChannelValidationTests",
+      "sha256": "e4d02f7d0e81b928ed71f4fe5f1002dd55f10ad3720c8f3082d93d87964fbb2b"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_creating_a_queue_channel_with_create_should_create_the_queue.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusQueueChannelProvisioningTests",
+      "sha256": "a605de5a6d8b7ee6f6058c69bc1eebe863a773ba3a1768a7349d0611ce631b3c"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_creating_a_queue_should_apply_subscription_configuration.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusQueueConfigurationTests",
+      "sha256": "b02031f5736513ed7096379ae3f55b3c2bb2f802914f329fd01e64ead1f7152d"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_creating_a_sync_channel_with_create_should_create_the_topic_subscription.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusChannelProvisioningTests",
+      "sha256": "64e2ab94a46d82fbec06f647841e943f2ba26a5c93f4d48dd94cadab8fe78620"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_creating_an_async_channel_asynchronously_with_create_should_create_the_topic_subscription.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusAsyncChannelAsyncProvisioningTests",
+      "sha256": "b923fb2ef7e1393560cbf64393d923226750c62a93223a616c3f34cce7080b6e"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_creating_an_async_channel_with_create_should_create_the_topic_subscription.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusAsyncChannelProvisioningTests",
+      "sha256": "a64a48cf4c7ecbdf8cba644901bfbbc46a759f38d0c48b87e4cfd59d92b80611"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_forwarding_to_a_subscription_path_should_reject_configuration.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusForwardingDestinationValidationTests",
+      "sha256": "d851f7b0d679aae7ba50e6962e3342d06522d5ebe0d2b8bb9983cb0631189e1b"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_global_retry_scheduling_has_no_compatible_scheduler_should_reject_configuration.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusRetrySchedulerConfigurationTests",
+      "sha256": "3ba6c83d494a08574cbbf08a58ab8fc97121c46a56adc79041bf32066687b5a6"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_lock_renewal_stops_should_log_the_reason.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusLockLoggingTests",
+      "sha256": "18e0ef686dabd66d22aca22a3c12423d143873158de08c2349e0e20a80371963"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_mapping_a_received_batch_fails_should_release_its_locks.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusFailedBatchMappingTests",
+      "sha256": "be76aa33e9dbf1fe89b2605a5501f94344b5a826d0d61f4cc3675dbccc9f241f"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_processing_past_the_original_lock_should_complete_each_message.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusLockRenewalTests",
+      "sha256": "6050fedee044411c997b3fc7a8f62b81f8d66fcdb35c304053667093eab2087a"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_publishing_a_message_should_map_its_native_partition_key.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusNativePartitionKeyPublishingTests",
+      "sha256": "ab506081ee6a823f7c4126357056f06e1855591279fce195d1ac22b24a350f24"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_publishing_a_message_should_map_its_native_subject.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusNativeSubjectPublishingTests",
+      "sha256": "7bb7718c0a56696335137435a80cfedcbec3a182617954c8858d1d00d37bb8b3"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_publishing_a_message_with_a_relative_dataschema_should_write_it_as_a_string.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusRelativeDataSchemaPublishTests",
+      "sha256": "6b910928d6692d7da8f26264c0227b44104f1c12ea88ace7af9039f0f898e22f"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_queue_settings_are_invalid_should_return_a_faulted_task.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusQueueValidationTests",
+      "sha256": "63b3464e78fe844c1a6777871376e06834ca1f30dd451681394390f749296b70"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_receiving_a_legacy_session_wrapper_should_keep_it_open_until_settlement.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusLegacySessionReceiverTests",
+      "sha256": "869b0240387e8198fb9a837a57741f9edd2b1f355259ba26c0d2e38b7342f57e"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_receiving_a_legacy_wrapper_should_preserve_partition_key_mapping.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusLegacyWrapperPartitionKeyTests",
+      "sha256": "10aa8fe04c7b0c89e4fdeb16f1c21dc269dcbd5d1c0998ea048a45464c9b77ae"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_receiving_a_legacy_wrapper_should_preserve_subject_mapping.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusLegacyWrapperSubjectTests",
+      "sha256": "95163c11eaf35e3b94f469978a5c5d4407669ef6a0ce5874b8956020c7f05aa1"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_receiving_a_message_should_prefer_its_cloud_events_partition_key.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusCloudEventsPartitionKeyPrecedenceTests",
+      "sha256": "5a546641f8f3d9993b7d120bc2d73c399008b0c12f0b79a3b2eedbd5b99fc003"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_receiving_a_message_should_prefer_its_cloud_events_subject.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusCloudEventsSubjectPrecedenceTests",
+      "sha256": "cfa11bcaeb2951a50cd60695367f49ee04587074f14368fe187aacc4a125c729"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_receiving_a_message_should_prefer_its_cloud_events_traceparent.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusCloudEventsTraceParentPrecedenceTests",
+      "sha256": "2d69916e3606216a35cc1aba68a0911f1d06a10dd0781bad0bb34a06eff36a0a"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_receiving_a_message_should_use_a_valid_diagnostic_id_when_cloud_events_traceparent_is_absent.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusDiagnosticIdFallbackTests",
+      "sha256": "e5e79356267ba1dc7114b4a25af85f465e6304d7ed557f06b59995509b8a07c4"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_receiving_a_message_should_use_its_native_partition_key.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusNativePartitionKeyReceivingTests",
+      "sha256": "990b5e43bb6cd30fcfa6f68f72229afab072c6f743cf7f0898d03b5f478ffd48"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_receiving_a_message_should_use_its_native_subject.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusNativeSubjectReceivingTests",
+      "sha256": "3644d14af6654b66e3fe1cf5cbd81a4979f51fe629e40c2a7ae28f2fe6264f65"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_receiving_a_message_with_a_null_dataschema_property_should_leave_it_null.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusNullDataSchemaPropertyTests",
+      "sha256": "aa3c69d319c7c84fb209723a10a047ac1f44815bc467502e5a9490be5eb8887a"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_receiving_a_message_with_no_dataschema_should_leave_it_null.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusAbsentDataSchemaTests",
+      "sha256": "ae8f74ee2832654256a9c3b88d2793ce4c358e9a85ce42a6b4da61ea4b03b23a"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_receiving_a_message_with_relative_cloud_events_uris_should_preserve_them.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusRelativeCloudEventsUriTests",
+      "sha256": "85702c918f79a2e5ab909de513a8b21281782b1cd0e03262ecca8bb918829762"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_receiving_an_invalid_diagnostic_id_should_leave_the_traceparent_empty.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusInvalidDiagnosticIdTests",
+      "sha256": "4ee231cc9033634342ae113a8476fe2434804156e1ea391bc734973f64cffe18"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_retry_scheduling_fails_should_leave_the_original_unacknowledged.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusScheduledRetryFailureTests",
+      "sha256": "ebb0954051ba235ce3aa1c9ecccf3fd9ca34899ec6fc620cc09ba7319da2bc46"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_retry_sender_creation_fails_should_leave_the_original_unacknowledged.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusRetrySenderFailureTests",
+      "sha256": "6451ed2be91d1d11a4a78078560999a1b11ea5f1e810dc31daa49be2f7f12b18"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_retrying_should_respect_instrumentation_options.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusRetryInstrumentationOptionsTests",
+      "sha256": "56667900efddd91fbd61850da34fe81b29bbf8792c9a2455fea5db6cced55761"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_retrying_without_an_activity_should_preserve_the_original_trace_context.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusRetryWithoutActivityTests",
+      "sha256": "61f305c51ac139ee83398f3676a248993847ce15d36aa13fe8c41b074f1ce0bd"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_round_tripping_a_message_should_preserve_its_native_partition_key.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusNativePartitionKeyRoundTripTests",
+      "sha256": "d4f62813b8adcf54599a9be9963db782584cc218519e5c1645bf5c27e4095dbd"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_round_tripping_a_message_should_preserve_its_native_subject.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusSubjectRoundTripTests",
+      "sha256": "bf2398e65d23abbd9c0ab54b38ef792ff77e24763812bacb818530cca115784d"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_round_tripping_a_message_with_relative_cloud_events_uris_should_preserve_them.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusRelativeCloudEventsUriRoundTripTests",
+      "sha256": "af383bedddbec93fd916b01b3c52d41c0bf6b63bc813e498dd1e6b4e6289af11"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_sending_a_message_should_apply_publication_time_to_live.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusPublicationTimeToLiveTests",
+      "sha256": "0b41b3be0b2e8544a98dcb74b4347a6a291b7546b5884d2a22aa99b6ff2e4e7b"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_sending_a_message_should_preserve_the_context_partition_key.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusContextPartitionKeyTests",
+      "sha256": "2568a61e2627c472ee928263b8fcff3c0233efb3d148ee5cf055563c100d18c3"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_service_bus_acknowledgement_fails_should_report_failure_to_the_caller.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.ServiceBusAcknowledgementFailureTests",
+      "sha256": "e80f99e16ff30c245e87c2c8baa9a0e69d6c59b67250e1191176e1ad5125e309"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_settling_a_message_should_stop_lock_renewal.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusLockRenewalLifetimeTests",
+      "sha256": "5a55d30a036bf18b9a9e2ed1212df9de864afa931814a46ddabda80ec906cb7b"
+    },
+    {
+      "file": "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_subscription_matches_should_create_sync_channel.cs",
+      "class": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusChannelFactorySubscriptionTests",
+      "sha256": "7b58b82b8d0615dca57e49769b477a7dc2e32230b9226ce10ffd277574e5b0e4"
+    }
+  ],
+  "requires_native_service": [
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/Generated/Proactor/When_a_message_consumer_reads_multiple_messages_should_receive_all_messages_async.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/Generated/Proactor/When_infrastructure_missing_and_assume_channel_should_throw_exception.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/Generated/Proactor/When_infrastructure_missing_and_validate_channel_should_throw_exception.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/Generated/Proactor/When_multiple_threads_try_to_post_a_message_at_the_same_time_should_not_throw_exception.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/Generated/Proactor/When_nacking_a_message_it_should_be_redelivered.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/Generated/Proactor/When_posting_a_message_but_no_broker_created_should_throw_exception.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/Generated/Proactor/When_posting_a_message_via_the_messaging_gateway_should_be_received.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/Generated/Proactor/When_rejecting_message_should_include_metadata.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/Generated/Proactor/When_rejecting_message_with_delivery_error_should_send_to_dlq.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/Generated/Proactor/When_rejecting_message_with_no_channels_configured_should_acknowledge_and_log.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/Generated/Proactor/When_rejecting_message_with_unacceptable_and_no_invalid_channel_should_fallback_to_dlq.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/Generated/Proactor/When_rejecting_message_with_unacceptable_reason_should_send_to_invalid_channel.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/Generated/Proactor/When_rejecting_message_with_unknown_reason_should_send_to_dlq.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/Generated/Proactor/When_requeuing_a_failed_message_should_be_redelivered.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/Generated/Proactor/When_requeuing_a_failed_message_with_delay_should_redeliver_after_delay.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/Generated/Proactor/When_requeuing_a_failed_message_with_zero_delay_should_redeliver_immediately.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/Generated/Proactor/When_requeuing_a_message_too_many_times_should_move_to_dead_letter_queue.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/Generated/Proactor/When_sending_a_delayed_message_should_deliver_after_delay.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/Generated/Proactor/When_sending_a_message_should_propagate_activity_context.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/Generated/Reactor/When_a_message_consumer_reads_multiple_messages_should_receive_all_messages.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/Generated/Reactor/When_infrastructure_missing_and_assume_channel_should_throw_exception.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/Generated/Reactor/When_infrastructure_missing_and_validate_channel_should_throw_exception.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/Generated/Reactor/When_multiple_threads_try_to_post_a_message_at_the_same_time_should_not_throw_exception.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/Generated/Reactor/When_nacking_a_message_it_should_be_redelivered.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/Generated/Reactor/When_posting_a_message_but_no_broker_created_should_throw_exception.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/Generated/Reactor/When_posting_a_message_via_the_messaging_gateway_should_be_received.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/Generated/Reactor/When_rejecting_message_should_include_metadata.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/Generated/Reactor/When_rejecting_message_with_delivery_error_should_send_to_dlq.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/Generated/Reactor/When_rejecting_message_with_no_channels_configured_should_acknowledge_and_log.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/Generated/Reactor/When_rejecting_message_with_unacceptable_and_no_invalid_channel_should_fallback_to_dlq.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/Generated/Reactor/When_rejecting_message_with_unacceptable_reason_should_send_to_invalid_channel.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/Generated/Reactor/When_rejecting_message_with_unknown_reason_should_send_to_dlq.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/Generated/Reactor/When_requeuing_a_failed_message_should_be_redelivered.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/Generated/Reactor/When_requeuing_a_failed_message_with_delay_should_redeliver_after_delay.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/Generated/Reactor/When_requeuing_a_failed_message_with_zero_delay_should_redeliver_immediately.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/Generated/Reactor/When_requeuing_a_message_too_many_times_should_move_to_dead_letter_queue.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/Generated/Reactor/When_sending_a_delayed_message_should_deliver_after_delay.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/Generated/Reactor/When_sending_a_message_should_propagate_activity_context.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_an_asb_acknowledgement_is_cancelled_before_entry_should_preserve_delivery_and_allow_retry.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_an_asb_batch_selects_a_wire_writer_should_preserve_native_mapping_and_source_ids.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_an_asb_batch_writer_fails_should_report_failure_without_sending_and_recover.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_an_asb_buffered_receive_is_cancelled_during_mapping_should_release_all_mapped_deliveries.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_an_asb_individual_writer_fails_should_report_failure_and_recover.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_an_asb_message_exceeds_batch_capacity_should_preserve_custom_fallback_and_remaining_messages.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_an_asb_nack_is_cancelled_before_entry_should_keep_the_lock_and_allow_retry.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_an_asb_oversized_send_fails_should_report_failure_and_allow_a_healthy_batch.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_an_asb_publication_schedules_with_a_custom_writer_should_preserve_mapping_and_delay.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_an_asb_publication_selects_a_wire_writer_should_preserve_native_mapping_and_delivery_controls.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_an_asb_reader_fails_should_preserve_native_rejection_and_recover.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_an_asb_receive_is_cancelled_before_entry_should_preserve_delivery_and_recover.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_an_asb_receive_is_cancelled_before_mapping_the_last_delivery_should_release_the_entire_batch.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_an_asb_receive_is_cancelled_during_mapping_should_release_delivery_and_recover.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_an_asb_receive_is_cancelled_while_waiting_should_stop_promptly_and_recover.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_an_asb_rejection_is_cancelled_before_entry_should_preserve_delivery_and_allow_acknowledgement.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_an_asb_send_is_cancelled_after_mapping_should_report_cancellation_and_recover.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_an_asb_subscription_selects_a_wire_reader_should_preserve_native_settlement.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_an_existing_subscription_does_not_forward_should_require_explicit_migration.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_asb_abandons_one_session_delivery_should_preserve_renewal_and_redeliver_it.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_asb_batches_split_should_map_each_source_once_and_preserve_native_deliveries.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_asb_bulk_operations_are_cancelled_should_report_cancellation_and_recover.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_asb_consumers_share_a_concurrent_reader_should_keep_messages_and_settlement_isolated.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_asb_publications_select_different_writers_should_keep_mapping_and_ttl_isolated.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_asb_publications_share_a_concurrent_writer_should_keep_native_messages_and_ttl_isolated.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_asb_renews_a_native_session_should_preserve_mapping_and_complete_after_the_original_lock.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_asb_session_acquisition_is_cancelled_should_stop_promptly_and_recover.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_asb_session_renewal_budget_expires_should_allow_mapped_redelivery_on_the_same_consumer.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_asb_settles_one_session_delivery_should_keep_renewing_the_remaining_delivery.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_completion_fails_should_deduplicate_retry_after_broker_redelivery.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_configuring_delayed_topic_retries_should_allow_startup.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_consuming_a_message_via_the_consumer.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_posting_a_large_message_via_the_producer.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_posting_a_message_via_the_producer.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_processing_beyond_the_broker_lock_should_remove_the_message.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_purging_an_externally_managed_forwarding_queue_should_reject_before_deleting.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_requeuing_a_forwarded_topic_message_should_only_redeliver_to_its_queue.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_requeuing_a_topic_message_without_delay_should_only_redeliver_to_its_subscription.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_retry_baggage_is_full_should_deliver_with_trace_context_and_preserve_the_original.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_retry_telemetry_cannot_serialize_headers_should_still_deliver_with_trace_context.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_retrying_a_queue_with_a_subscriptions_segment_should_deliver_to_that_queue.cs",
+    "tests/Paramore.Brighter.AzureServiceBus.Tests/MessagingGateway/When_scheduling_a_retry_should_target_its_queue_and_survive_duplicate_detection.cs"
+  ],
+  "filter": "FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.AzureServiceBusChannelFactoryTests.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.Configuration.AzurePublicationConfigurationBindingTests.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.Configuration.AzureSubscriptionConfigurationBindingTests.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.Configuration.AzureConfigurationPropertyDiscoveryTests.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.Configuration.AzureArchiveLocationConfigurationTests.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.Configuration.AzureArchiveTagsConfigurationTests.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.Configuration.AzureLockLocationConfigurationTests.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.Generated.Conformance.GatewayChannelFactoryDeclarationTests.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.Proactor.AzureServiceBusBulkMessageProducerTestsAsync.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.Proactor.AzureServiceBusConsumerTestsAsync.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.Proactor.AzureServiceBusMessageProducerTestsAsync.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.Reactor.AzureServiceBusConsumerTests.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.Reactor.AzureServiceBusMessageProducerTests.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.When_A_Deferred_Message_Is_Redelivered.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.SerializationPolicyCollection.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusMessagePublisherLocalHeaderTests.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusMessageMemoryTests.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusMessageSequenceNumberTests.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusDirectRetryReceiverCapabilityTests.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusDirectRetryAbandonFailureTests.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusSubscriptionRuleTests.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusProducerCreationRaceTests.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusRetryWireSelectionTests.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusExpiredLockTests.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusManualRetrySchedulerValidationTests.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusChannelAssumeTests.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusChannelValidationTests.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusQueueChannelProvisioningTests.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusQueueConfigurationTests.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusChannelProvisioningTests.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusAsyncChannelAsyncProvisioningTests.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusAsyncChannelProvisioningTests.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusForwardingDestinationValidationTests.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusRetrySchedulerConfigurationTests.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusLockLoggingTests.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusFailedBatchMappingTests.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusLockRenewalTests.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusNativePartitionKeyPublishingTests.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusNativeSubjectPublishingTests.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusRelativeDataSchemaPublishTests.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusQueueValidationTests.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusLegacySessionReceiverTests.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusLegacyWrapperPartitionKeyTests.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusLegacyWrapperSubjectTests.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusCloudEventsPartitionKeyPrecedenceTests.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusCloudEventsSubjectPrecedenceTests.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusCloudEventsTraceParentPrecedenceTests.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusDiagnosticIdFallbackTests.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusNativePartitionKeyReceivingTests.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusNativeSubjectReceivingTests.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusNullDataSchemaPropertyTests.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusAbsentDataSchemaTests.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusRelativeCloudEventsUriTests.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusInvalidDiagnosticIdTests.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusScheduledRetryFailureTests.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusRetrySenderFailureTests.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusRetryInstrumentationOptionsTests.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusRetryWithoutActivityTests.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusNativePartitionKeyRoundTripTests.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusSubjectRoundTripTests.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusRelativeCloudEventsUriRoundTripTests.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusPublicationTimeToLiveTests.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusContextPartitionKeyTests.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.ServiceBusAcknowledgementFailureTests.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusLockRenewalLifetimeTests.|FullyQualifiedName~Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AzureServiceBusChannelFactorySubscriptionTests."
+}

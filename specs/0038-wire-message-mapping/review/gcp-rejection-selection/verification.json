@@ -1,0 +1,60 @@
+{
+  "matrices": {
+    "net9.0": {
+      "counts": {
+        "Passed": 452,
+        "Failed": 1,
+        "NotExecuted": 55
+      },
+      "outcome_changes": [
+        {
+          "name": "Paramore.Brighter.Gcp.Tests.MessagingGateway.StreamOrdering.Proactor.WhenNackingAMessageItShouldBeRedeliveredAsync.When_nacking_first_of_two_messages_should_redeliver_nacked_then_receive_second_async",
+          "outcome": "Failed",
+          "count": 1
+        }
+      ],
+      "failures": [
+        {
+          "name": "Paramore.Brighter.Gcp.Tests.MessagingGateway.StreamOrdering.Proactor.WhenNackingAMessageItShouldBeRedeliveredAsync.When_nacking_first_of_two_messages_should_redeliver_nacked_then_receive_second_async",
+          "message": "Assert.Contains() Failure: Item not found in set\nSet:       [\"01a1c170-40f2-78ff-9b3f-098f13f3bc30\"]\nNot found: \"01a1c170-40f2-7bb8-9d25-e27fdfe7cee1\"",
+          "stack": "   at Paramore.Brighter.Gcp.Tests.MessagingGateway.StreamOrdering.Proactor.WhenNackingAMessageItShouldBeRedeliveredAsync.When_nacking_first_of_two_messages_should_redeliver_nacked_then_receive_second_async() in /private/tmp/brighter-4170-rmq-scheduled-selection/workspace/tests/Paramore.Brighter.Gcp.Tests/MessagingGateway/StreamOrdering/Generated/Proactor/When_nacking_a_message_it_should_be_redelivered.cs:line 158\n--- End of stack trace from previous location ---"
+        }
+      ]
+    },
+    "net10.0": {
+      "counts": {
+        "Passed": 452,
+        "Failed": 1,
+        "NotExecuted": 55
+      },
+      "outcome_changes": [
+        {
+          "name": "Paramore.Brighter.Gcp.Tests.MessagingGateway.StreamOrdering.Proactor.WhenNackingAMessageItShouldBeRedeliveredAsync.When_nacking_first_of_two_messages_should_redeliver_nacked_then_receive_second_async",
+          "outcome": "Failed",
+          "count": 1
+        }
+      ],
+      "failures": [
+        {
+          "name": "Paramore.Brighter.Gcp.Tests.MessagingGateway.StreamOrdering.Proactor.WhenNackingAMessageItShouldBeRedeliveredAsync.When_nacking_first_of_two_messages_should_redeliver_nacked_then_receive_second_async",
+          "message": "Assert.Contains() Failure: Item not found in set\nSet:       [\"01a1c170-191a-701e-89f8-882ba37f3fbb\"]\nNot found: \"01a1c170-191a-7cae-b3c4-e3fb6739fd56\"",
+          "stack": "   at Paramore.Brighter.Gcp.Tests.MessagingGateway.StreamOrdering.Proactor.WhenNackingAMessageItShouldBeRedeliveredAsync.When_nacking_first_of_two_messages_should_redeliver_nacked_then_receive_second_async() in /private/tmp/brighter-4170-rmq-scheduled-selection/workspace/tests/Paramore.Brighter.Gcp.Tests/MessagingGateway/StreamOrdering/Generated/Proactor/When_nacking_a_message_it_should_be_redelivered.cs:line 158\n--- End of stack trace from previous location ---"
+        }
+      ]
+    }
+  },
+  "actual_intended_red_failures_each_framework": 24,
+  "intended_route_cache_mutation_failures": 12,
+  "all_prior_case_identities_preserved": true,
+  "final_source_hashes": {
+    "src/Paramore.Brighter.MessagingGateway.GcpPubSub/GcpPubSubSubscription.cs": "1d2aa6e8963a49609a74079688f290fa4cc2c78f3ce7e0c639af79f12491a425",
+    "src/Paramore.Brighter.MessagingGateway.GcpPubSub/GcpPubSubConsumerFactory.cs": "cb10b450de8cfd176450b4cbe994417dac445688560bd3dfafe97f05ba3e59ec",
+    "src/Paramore.Brighter.MessagingGateway.GcpPubSub/GcpPullMessageConsumer.cs": "9c1f24ab8112dfebd9897ecfecdec36d8184e2482f9d608ffd10f97e9fc9ef9e",
+    "src/Paramore.Brighter.MessagingGateway.GcpPubSub/GcpPubSubStreamMessageConsumer.cs": "b449721da7dcce237616cfd3f8dde81588bc3be62ae9de27f38dd3554093c661",
+    "src/Paramore.Brighter.MessagingGateway.GcpPubSub/GcpRejectionRouter.cs": "dfaa7b8591e71d07de67d26aa00d8db38550939d1324fc24c4e52d947f841c0d",
+    "tests/Paramore.Brighter.Gcp.Tests/MessagingGateway/When_gcp_rejects_with_selected_writers_should_preserve_route_selection_and_recover.cs": "5aad51bfaae28f67dacc70bc85be0a169287e30ddd827378de4e6093435c349a",
+    "tests/Paramore.Brighter.Gcp.Tests/TestDoubles/GcpRejectionSelectedWireWriter.cs": "dc41520135c042da6e0494487c830c010165d6525aa60f0db9f0a7e39f424921"
+  },
+  "integrated_into_main_workspace": true,
+  "whole_feature_production_ready": false
+}

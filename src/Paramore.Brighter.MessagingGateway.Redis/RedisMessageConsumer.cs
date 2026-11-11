@@ -46,6 +46,13 @@ namespace Paramore.Brighter.MessagingGateway.Redis
         /* see RedisMessageProducer to understand how we are using a dynamic recipient list model with Redis */
 
         private static readonly ILogger s_logger = ApplicationLogging.CreateLogger<RedisMessageConsumer>();
+        private static readonly DefaultRedisWireMessageReader s_defaultWireMessageReader = new();
+        private static readonly DefaultRedisWireMessageWriter s_defaultRequeueWireMessageWriter = new();
+        private static readonly DefaultRedisWireMessageWriter s_defaultRejectionWireMessageWriter = new();
+        private readonly IAmAWireMessageReader<string>? _wireMessageReader;
+        private readonly IAmAWireMessageWriter<string> _requeueWireMessageWriter;
+        private readonly IAmAWireMessageWriter<string> _invalidMessageWireMessageWriter;
+        private readonly IAmAWireMessageWriter<string> _deadLetterWireMessageWriter;
         private const string QUEUES = "queues";
 
         private readonly ChannelName _queueName;
@@ -53,6 +60,7 @@ namespace Paramore.Brighter.MessagingGateway.Redis
         private readonly RoutingKey? _deadLetterRoutingKey;
         private readonly RoutingKey? _invalidMessageRoutingKey;
         private readonly IAmAMessageScheduler? _scheduler;
+        private readonly RoutingKey? _scheduledRequeuePublicationTopic;
         private RedisMessageProducer? _requeueProducer;
         private bool _requeueProducerInitialized;
         private object? _requeueProducerLock;
@@ -76,11 +84,33 @@ namespace Paramore.Brighter.MessagingGateway.Redis
             IAmAMessageScheduler? scheduler = null,
             RoutingKey? deadLetterRoutingKey = null,
             RoutingKey? invalidMessageRoutingKey = null)
-            :base(redisMessagingGatewayConfiguration, topic)
+            : this(redisMessagingGatewayConfiguration, queueName, topic, scheduler, deadLetterRoutingKey,
+                invalidMessageRoutingKey, null, null, null, null, null)
         {
+        }
+
+        internal RedisMessageConsumer(
+            RedisMessagingGatewayConfiguration redisMessagingGatewayConfiguration,
+            ChannelName queueName,
+            RoutingKey topic,
+            IAmAMessageScheduler? scheduler,
+            RoutingKey? deadLetterRoutingKey,
+            RoutingKey? invalidMessageRoutingKey,
+            IAmAWireMessageReader<string>? wireMessageReader,
+            IAmAWireMessageWriter<string>? requeueWireMessageWriter,
+            IAmAWireMessageWriter<string>? invalidMessageWireMessageWriter,
+            IAmAWireMessageWriter<string>? deadLetterWireMessageWriter,
+            RoutingKey? scheduledRequeuePublicationTopic)
+            : base(redisMessagingGatewayConfiguration, topic)
+        {
+            _wireMessageReader = wireMessageReader;
+            _requeueWireMessageWriter = requeueWireMessageWriter ?? s_defaultRequeueWireMessageWriter;
+            _invalidMessageWireMessageWriter = invalidMessageWireMessageWriter ?? s_defaultRejectionWireMessageWriter;
+            _deadLetterWireMessageWriter = deadLetterWireMessageWriter ?? s_defaultRejectionWireMessageWriter;
             _queueName = queueName;
             _redisConfiguration = redisMessagingGatewayConfiguration;
             _scheduler = scheduler;
+            _scheduledRequeuePublicationTopic = scheduledRequeuePublicationTopic;
             _deadLetterRoutingKey = deadLetterRoutingKey;
             _invalidMessageRoutingKey = invalidMessageRoutingKey;
 
@@ -253,7 +283,7 @@ namespace Paramore.Brighter.MessagingGateway.Redis
                 if (redisMessage.msgId == null || string.IsNullOrEmpty(redisMessage.rawMsg))
                     return [];
                 
-                var message = RedisMessageCreator.CreateMessage(redisMessage.rawMsg);
+                var message = MapMessage(redisMessage.msgId, redisMessage.rawMsg);
 #pragma warning disable CS0618 // Preserve the legacy message type for transport compatibility.
                 if (message.Header.MessageType != MessageType.MT_NONE && message.Header.MessageType != MessageType.MT_UNACCEPTABLE)
 #pragma warning restore CS0618
@@ -303,7 +333,7 @@ namespace Paramore.Brighter.MessagingGateway.Redis
                 if (redisMessage.msgId == null || string.IsNullOrEmpty(redisMessage.rawMsg))
                     return [];
                 
-                var message = RedisMessageCreator.CreateMessage(redisMessage.rawMsg);
+                var message = MapMessage(redisMessage.msgId, redisMessage.rawMsg);
 
 #pragma warning disable CS0618 // Preserve the legacy message type for transport compatibility.
                 if (message.Header.MessageType != MessageType.MT_NONE && message.Header.MessageType != MessageType.MT_UNACCEPTABLE)
@@ -329,6 +359,11 @@ namespace Paramore.Brighter.MessagingGateway.Redis
         /// <summary>
         /// Reject the message, routing it to a DLQ or invalid message channel if configured
         /// </summary>
+        /// <remarks>
+        /// Writer failures propagate and retain the original topic and in-flight entry for retry.
+        /// Native publication failures are logged and release the in-flight entry; the original
+        /// Redis delivery has already been destructively removed.
+        /// </remarks>
         /// <param name="message">The message to reject</param>
         /// <param name="reason">The <see cref="MessageRejectionReason"/> that explains why we rejected the message</param>
         public bool Reject(Message message, MessageRejectionReason? reason = null)
@@ -343,44 +378,35 @@ namespace Paramore.Brighter.MessagingGateway.Redis
             }
 
             var rejectionReason = reason?.RejectionReason ?? RejectionReason.None;
-
+            var originalTopic = message.Header.Topic;
+            RedisMessageProducer? producer;
             try
             {
-                RefreshMetadata(message, reason);
-
-                var (routingKey, shouldRoute, isFallingBackToDlq) = DetermineRejectionRoute(
-                    rejectionReason, _invalidMessageProducer != null, _deadLetterProducer != null);
-
-                RedisMessageProducer? producer = null;
-                if (shouldRoute)
-                {
-                    message.Header.Topic = routingKey!;
-                    if (isFallingBackToDlq)
-                        Log.FallingBackToDlq(s_logger, message.Id.Value);
-
-                    if (routingKey == _invalidMessageRoutingKey)
-                        producer = _invalidMessageProducer?.Value;
-                    else if (routingKey == _deadLetterRoutingKey)
-                        producer = _deadLetterProducer?.Value;
-                }
-
-                if (producer != null)
-                {
-                    producer.Send(message);
-                    Log.MessageSentToRejectionChannel(s_logger, message.Id.Value, rejectionReason.ToString());
-                }
-                else
-                {
-                    Log.NoChannelsConfiguredForRejection(s_logger, message.Id.Value, rejectionReason.ToString());
-                }
+                producer = PrepareRejection(message, reason);
             }
             catch (Exception ex)
             {
-                // DLQ send failed — the message was already popped from Redis so we cannot
-                // requeue it. Remove from inflight to prevent blocking subsequent receives.
                 Log.ErrorSendingToRejectionChannel(s_logger, ex, message.Id.Value, rejectionReason.ToString());
                 _inflight.Remove(message.Id.Value);
                 return true;
+            }
+
+            if (producer != null)
+            {
+                var redisMessage = MapRejectionMessage(message, originalTopic);
+                try
+                {
+                    producer.SendMapped(message, redisMessage);
+                    Log.MessageSentToRejectionChannel(s_logger, message.Id.Value, rejectionReason.ToString());
+                }
+                catch (Exception ex)
+                {
+                    Log.ErrorSendingToRejectionChannel(s_logger, ex, message.Id.Value, rejectionReason.ToString());
+                }
+            }
+            else
+            {
+                Log.NoChannelsConfiguredForRejection(s_logger, message.Id.Value, rejectionReason.ToString());
             }
 
             _inflight.Remove(message.Id.Value);
@@ -390,6 +416,11 @@ namespace Paramore.Brighter.MessagingGateway.Redis
         /// <summary>
         /// Reject the message asynchronously, routing it to a DLQ or invalid message channel if configured
         /// </summary>
+        /// <remarks>
+        /// Writer failures propagate and retain the original topic and in-flight entry for retry.
+        /// Native publication failures are logged and release the in-flight entry; the original
+        /// Redis delivery has already been destructively removed.
+        /// </remarks>
         /// <param name="message">The message to reject</param>
         /// <param name="reason">The <see cref="MessageRejectionReason"/> that explains why we rejected the message</param>
         /// <param name="cancellationToken">The cancellation token</param>
@@ -405,44 +436,35 @@ namespace Paramore.Brighter.MessagingGateway.Redis
             }
 
             var rejectionReason = reason?.RejectionReason ?? RejectionReason.None;
-
+            var originalTopic = message.Header.Topic;
+            RedisMessageProducer? producer;
             try
             {
-                RefreshMetadata(message, reason);
-
-                var (routingKey, shouldRoute, isFallingBackToDlq) = DetermineRejectionRoute(
-                    rejectionReason, _invalidMessageProducer != null, _deadLetterProducer != null);
-
-                RedisMessageProducer? producer = null;
-                if (shouldRoute)
-                {
-                    message.Header.Topic = routingKey!;
-                    if (isFallingBackToDlq)
-                        Log.FallingBackToDlq(s_logger, message.Id.Value);
-
-                    if (routingKey == _invalidMessageRoutingKey)
-                        producer = _invalidMessageProducer?.Value;
-                    else if (routingKey == _deadLetterRoutingKey)
-                        producer = _deadLetterProducer?.Value;
-                }
-
-                if (producer != null)
-                {
-                    await producer.SendAsync(message, cancellationToken);
-                    Log.MessageSentToRejectionChannel(s_logger, message.Id.Value, rejectionReason.ToString());
-                }
-                else
-                {
-                    Log.NoChannelsConfiguredForRejection(s_logger, message.Id.Value, rejectionReason.ToString());
-                }
+                producer = PrepareRejection(message, reason);
             }
             catch (Exception ex)
             {
-                // DLQ send failed — the message was already popped from Redis so we cannot
-                // requeue it. Remove from inflight to prevent blocking subsequent receives.
                 Log.ErrorSendingToRejectionChannel(s_logger, ex, message.Id.Value, rejectionReason.ToString());
                 _inflight.Remove(message.Id.Value);
                 return true;
+            }
+
+            if (producer != null)
+            {
+                var redisMessage = MapRejectionMessage(message, originalTopic);
+                try
+                {
+                    await producer.SendMappedAsync(message, redisMessage, cancellationToken);
+                    Log.MessageSentToRejectionChannel(s_logger, message.Id.Value, rejectionReason.ToString());
+                }
+                catch (Exception ex)
+                {
+                    Log.ErrorSendingToRejectionChannel(s_logger, ex, message.Id.Value, rejectionReason.ToString());
+                }
+            }
+            else
+            {
+                Log.NoChannelsConfiguredForRejection(s_logger, message.Id.Value, rejectionReason.ToString());
             }
 
             _inflight.Remove(message.Id.Value);
@@ -472,7 +494,7 @@ namespace Paramore.Brighter.MessagingGateway.Redis
                 try
                 {
                     EnsureRequeueProducer();
-                    _requeueProducer!.SendWithDelay(message, delay);
+                    _requeueProducer!.SendWithDelay(PrepareScheduledRequeue(message), delay);
                     return true;
                 }
                 catch
@@ -489,9 +511,9 @@ namespace Paramore.Brighter.MessagingGateway.Redis
 
             if (_inflight.TryGetValue(message.Id.Value, out string? msgId))
             {
-                client.AddItemToList(_queueName, msgId);
-                var redisMsg = CreateRedisMessage(message);
+                var redisMsg = MapRequeueMessage(message);
                 StoreMessage(client, redisMsg, long.Parse(msgId));
+                client.AddItemToList(_queueName, msgId);
                 _inflight.Remove(message.Id.Value);
                 return true;
             }
@@ -515,6 +537,8 @@ namespace Paramore.Brighter.MessagingGateway.Redis
 
             if (delay > TimeSpan.Zero)
             {
+                cancellationToken.ThrowIfCancellationRequested();
+
                 if (_scheduler == null)
                 {
                     throw new ConfigurationException(
@@ -526,7 +550,7 @@ namespace Paramore.Brighter.MessagingGateway.Redis
                 try
                 {
                     EnsureRequeueProducer();
-                    await _requeueProducer!.SendWithDelayAsync(message, delay, cancellationToken);
+                    await _requeueProducer!.SendWithDelayAsync(PrepareScheduledRequeue(message), delay, cancellationToken);
                     return true;
                 }
                 catch
@@ -543,9 +567,9 @@ namespace Paramore.Brighter.MessagingGateway.Redis
 
             if (_inflight.TryGetValue(message.Id.Value, out string? msgId))
             {
-                await client.AddItemToListAsync(_queueName, msgId, cancellationToken);
-                var redisMsg = CreateRedisMessage(message);
+                var redisMsg = MapRequeueMessage(message);
                 await StoreMessageAsync(client, redisMsg, long.Parse(msgId));
+                await client.AddItemToListAsync(_queueName, msgId, cancellationToken);
                 _inflight.Remove(message.Id.Value);
                 return true;
             }
@@ -556,6 +580,47 @@ namespace Paramore.Brighter.MessagingGateway.Redis
             }
         }
         
+        private string MapRequeueMessage(Message message) =>
+            _requeueWireMessageWriter.WriteMessage(message)
+            ?? throw new InvalidOperationException("The Redis requeue wire message writer returned null.");
+
+        private Message PrepareScheduledRequeue(Message message)
+        {
+            if (_scheduledRequeuePublicationTopic == null)
+                return message;
+
+            var header = CopyScheduledHeader(message.Header);
+            header.Bag[Message.ProducerTopicHeaderName] = _scheduledRequeuePublicationTopic.Value;
+            var body = new MessageBody(message.Body.Memory,
+                message.Body.ContentType == null ? null : new System.Net.Mime.ContentType(message.Body.ContentType.ToString()),
+                message.Body.CharacterEncoding);
+            return new Message(header, body) { Persist = message.Persist };
+        }
+
+        private static MessageHeader CopyScheduledHeader(MessageHeader source)
+        {
+            var baggage = new Baggage();
+            foreach (var entry in source.Baggage)
+                baggage.Add(entry.Key, entry.Value!);
+
+            return new MessageHeader(source.MessageId, source.Topic,
+#pragma warning disable CS0618 // Preserve the legacy message type for transport compatibility.
+                source.MessageType,
+#pragma warning restore CS0618
+                source: source.Source, type: source.Type, timeStamp: source.TimeStamp,
+                correlationId: source.CorrelationId, replyTo: source.ReplyTo,
+                contentType: new System.Net.Mime.ContentType(source.ContentType.ToString()),
+                partitionKey: source.PartitionKey, dataSchema: source.DataSchema, subject: source.Subject,
+                handledCount: source.HandledCount, workflowId: source.WorkflowId, jobId: source.JobId,
+                delayed: source.Delayed, traceParent: source.TraceParent, traceState: source.TraceState,
+                baggage: baggage)
+            {
+                Bag = new Dictionary<string, object>(source.Bag, source.Bag.Comparer),
+                DataRef = source.DataRef,
+                SpecVersion = source.SpecVersion
+            };
+        }
+
         private void EnsureRequeueProducer()
         {
             LazyInitializer.EnsureInitialized(ref _requeueProducer, ref _requeueProducerInitialized,
@@ -596,6 +661,38 @@ namespace Paramore.Brighter.MessagingGateway.Redis
             {
                 Log.ErrorCreatingInvalidMessageProducer(s_logger, e, _invalidMessageRoutingKey.Value);
                 return null;
+            }
+        }
+
+        private RedisMessageProducer? PrepareRejection(Message message, MessageRejectionReason? reason)
+        {
+            RefreshMetadata(message, reason);
+            var (routingKey, shouldRoute, isFallingBackToDlq) = DetermineRejectionRoute(
+                reason?.RejectionReason ?? RejectionReason.None, _invalidMessageProducer != null, _deadLetterProducer != null);
+            if (!shouldRoute)
+                return null;
+
+            message.Header.Topic = routingKey!;
+            if (isFallingBackToDlq)
+                Log.FallingBackToDlq(s_logger, message.Id.Value);
+
+            return routingKey == _invalidMessageRoutingKey ? _invalidMessageProducer?.Value : _deadLetterProducer?.Value;
+        }
+
+        private string MapRejectionMessage(Message message, RoutingKey originalTopic)
+        {
+            var writer = message.Header.Topic == _invalidMessageRoutingKey
+                ? _invalidMessageWireMessageWriter
+                : _deadLetterWireMessageWriter;
+            try
+            {
+                return writer.WriteMessage(message)
+                    ?? throw new InvalidOperationException("The Redis rejection wire message writer returned null.");
+            }
+            catch
+            {
+                message.Header.Topic = originalTopic;
+                throw;
             }
         }
 
@@ -695,6 +792,26 @@ namespace Paramore.Brighter.MessagingGateway.Redis
             var key = Topic + "." + QUEUES;
             //subscribe us 
             await client.AddItemToSetAsync(key, _queueName);
+        }
+
+        private Message MapMessage(string nativeId, string rawMessage)
+        {
+            if (_wireMessageReader == null)
+                return s_defaultWireMessageReader.ReadMessage(rawMessage);
+
+            try
+            {
+                return _wireMessageReader.ReadMessage(rawMessage) ?? CreateMappingFailure(nativeId, rawMessage);
+            }
+            catch (Exception)
+            {
+                return CreateMappingFailure(nativeId, rawMessage);
+            }
+        }
+
+        private Message CreateMappingFailure(string nativeId, string rawMessage)
+        {
+            return new Message(MessageHeader.FailureMessageHeader(Topic, new Id(nativeId)), new MessageBody(rawMessage));
         }
 
         private (string? msgId, string rawMsg) ReadMessage(IRedisClient client, TimeSpan timeOut)

@@ -33,24 +33,26 @@ namespace Paramore.Brighter.MessagingGateway.Kafka
 {
     internal sealed partial class KafkaMessagePublisher(
         IProducer<string, byte[]> producer,
-        IKafkaMessageHeaderBuilder headerBuilder)
+        IAmAWireMessageWriter<Message<string, byte[]>> wireMessageWriter)
     {
         private static readonly ILogger s_logger = ApplicationLogging.CreateLogger<KafkaMessagePublisher>();
 
         public void PublishMessage(Message message, Action<DeliveryReport<string, byte[]>> deliveryReport)
         {
-            var kafkaMessage = BuildMessage(message);
+            var topic = message.Header.Topic;
+            var kafkaMessage = wireMessageWriter.WriteMessage(message);
             
-            producer.Produce(message.Header.Topic, kafkaMessage, deliveryReport);
+            producer.Produce(topic, kafkaMessage, deliveryReport);
         }
 
         public async Task PublishMessageAsync(Message message, Action<DeliveryResult<string, byte[]>> deliveryReport, CancellationToken cancellationToken = default)
         {
-            var kafkaMessage = BuildMessage(message);
+            var topic = message.Header.Topic;
+            var kafkaMessage = wireMessageWriter.WriteMessage(message);
 
             try
             { 
-                var deliveryResult = await producer.ProduceAsync(message.Header.Topic, kafkaMessage, cancellationToken);
+                var deliveryResult = await producer.ProduceAsync(topic, kafkaMessage, cancellationToken);
                 deliveryReport(deliveryResult);
             }
             catch (ProduceException<string, byte[]> pe)
@@ -67,20 +69,6 @@ namespace Paramore.Brighter.MessagingGateway.Kafka
                 deliveryReport(deliveryResult);
             }
 
-        }
-
-        private Message<string, byte[]> BuildMessage(Message message)
-        {
-            var headers = headerBuilder.Build(message);
-
-            var kafkaMessage = new Message<string, byte[]>
-            {
-                Headers = headers,
-                Key = message.Header.PartitionKey.Value,
-                Value = message.Body.ToByteArray()
-            };
-
-            return kafkaMessage;
         }
 
         private static partial class Log

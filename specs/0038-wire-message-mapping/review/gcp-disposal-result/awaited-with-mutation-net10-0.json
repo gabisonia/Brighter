@@ -1,0 +1,23 @@
+{
+  "exit": 1,
+  "wall_seconds": 3.708890199661255,
+  "monotonic_seconds": 3.7088464172556996,
+  "clock_discontinuity": false,
+  "counts": {
+    "Passed": 0,
+    "Failed": 2,
+    "NotExecuted": 0
+  },
+  "failures": [
+    {
+      "name": "Paramore.Brighter.Gcp.Tests.MessagingGateway.Stream.GcpStreamDisposeWithUnsettledMessageAsyncTests.When_a_gcp_stream_channel_is_disposed_holding_an_unsettled_message_async_should_return_promptly",
+      "message": "System.InvalidOperationException : disposal-result-mutation",
+      "stack": "   at Paramore.Brighter.MessagingGateway.GcpPubSub.GcpPubSubStreamMessageConsumer.DisposeAsync() in /private/tmp/brighter-4170-rmq-scheduled-selection/workspace/src/Paramore.Brighter.MessagingGateway.GcpPubSub/GcpPubSubStreamMessageConsumer.cs:line 399\n   at Paramore.Brighter.ChannelAsync.DisposeAsync() in /private/tmp/brighter-4170-rmq-scheduled-selection/workspace/src/Paramore.Brighter/ChannelAsync.cs:line 207\n   at Paramore.Brighter.Gcp.Tests.MessagingGateway.Stream.GcpStreamDisposeWithUnsettledMessageAsyncTests.When_a_gcp_stream_channel_is_disposed_holding_an_unsettled_message_async_should_return_promptly() in /private/tmp/brighter-4170-rmq-scheduled-selection/workspace/tests/Paramore.Brighter.Gcp.Tests/MessagingGateway/Stream/When_a_gcp_stream_channel_is_disposed_holding_an_unsettled_message_should_return_promptly_async.cs:line 78\n   at Paramore.Brighter.Gcp.Tests.MessagingGateway.Stream.GcpStreamDisposeWithUnsettledMessageAsyncTests.When_a_gcp_stream_channel_is_disposed_holding_an_unsettled_message_async_should_return_promptly() in /private/tmp/brighter-4170-rmq-scheduled-selection/workspace/tests/Paramore.Brighter.Gcp.Tests/MessagingGateway/Stream/When_a_gcp_stream_channel_is_disposed_holding_an_unsettled_message_should_return_promptly_async.cs:line 94\n--- End of stack trace from previous location ---"
+    },
+    {
+      "name": "Paramore.Brighter.Gcp.Tests.MessagingGateway.Stream.GcpStreamDisposeWithBufferedRedeliveryAsyncTests.When_a_gcp_stream_channel_is_disposed_with_a_redelivery_buffered_after_requeue_async_should_return_promptly",
+      "message": "System.InvalidOperationException : disposal-result-mutation",
+      "stack": "   at Paramore.Brighter.MessagingGateway.GcpPubSub.GcpPubSubStreamMessageConsumer.DisposeAsync() in /private/tmp/brighter-4170-rmq-scheduled-selection/workspace/src/Paramore.Brighter.MessagingGateway.GcpPubSub/GcpPubSubStreamMessageConsumer.cs:line 399\n   at Paramore.Brighter.ChannelAsync.DisposeAsync() in /private/tmp/brighter-4170-rmq-scheduled-selection/workspace/src/Paramore.Brighter/ChannelAsync.cs:line 207\n   at Paramore.Brighter.Gcp.Tests.MessagingGateway.Stream.GcpStreamDisposeWithBufferedRedeliveryAsyncTests.When_a_gcp_stream_channel_is_disposed_with_a_redelivery_buffered_after_requeue_async_should_return_promptly() in /private/tmp/brighter-4170-rmq-scheduled-selection/workspace/tests/Paramore.Brighter.Gcp.Tests/MessagingGateway/Stream/When_a_gcp_stream_channel_is_disposed_with_a_redelivery_buffered_after_requeue_should_return_promptly_async.cs:line 82\n   at Paramore.Brighter.Gcp.Tests.MessagingGateway.Stream.GcpStreamDisposeWithBufferedRedeliveryAsyncTests.When_a_gcp_stream_channel_is_disposed_with_a_redelivery_buffered_after_requeue_async_should_return_promptly() in /private/tmp/brighter-4170-rmq-scheduled-selection/workspace/tests/Paramore.Brighter.Gcp.Tests/MessagingGateway/Stream/When_a_gcp_stream_channel_is_disposed_with_a_redelivery_buffered_after_requeue_should_return_promptly_async.cs:line 98\n--- End of stack trace from previous location ---"
+    }
+  ]
+}

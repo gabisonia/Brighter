@@ -23,11 +23,33 @@ THE SOFTWARE. */
 #endregion
 
 using System;
+using RabbitMQ.Client.Events;
 
 namespace Paramore.Brighter.MessagingGateway.RMQ.Sync
 {
     public class RmqSubscription : Subscription, IUseBrighterInvalidMessageSupport
     {
+        /// <summary>
+        /// Gets or sets the registered publication selected for scheduler-backed retries.
+        /// </summary>
+        /// <remarks>
+        /// Configure before creating the consumer. The setting is captured per consumer and used only
+        /// when delay requires a scheduler. The registered publication owns writer selection at dispatch;
+        /// configure its destination queue to return only to this subscription. Null preserves existing
+        /// publication lookup. This setting does not affect direct or native delayed retry mapping.
+        /// </remarks>
+        public RoutingKey? ScheduledRequeuePublicationTopic { get; set; }
+
+        /// <summary>
+        /// Gets or sets the wire reader. Null uses Brighter's default RabbitMQ format.
+        /// </summary>
+        /// <remarks>
+        /// Compose <see cref="DefaultRmqWireMessageReader"/> to customize the default format.
+        /// The gateway applies native delivery metadata and handled count after mapping.
+        /// </remarks>
+        public IAmAWireMessageReader<BasicDeliverEventArgs>? WireMessageReader { get; set; }
+
+
         /// <summary>
         /// The name of  the queue to send rejects messages to
         /// </summary>
@@ -46,6 +68,32 @@ namespace Paramore.Brighter.MessagingGateway.RMQ.Sync
         /// to the subscription's exchange. Forwarding is confirmed before the original message is acknowledged.
         /// </remarks>
         public RoutingKey? InvalidMessageRoutingKey { get; set; }
+
+        /// <summary>
+        /// Gets or sets the wire writer for forwarding unacceptable messages to the invalid-message route.
+        /// Null uses <see cref="DefaultRmqWireMessageWriter"/>.
+        /// </summary>
+        /// <remarks>
+        /// The consumer factory captures this selection for each consumer. The writer receives the rejection
+        /// metadata and invalid topic; compose the default writer to retain the standard wire format.
+        /// The gateway controls routing, persistence and delivery headers, and acknowledges the source only
+        /// after confirmed forwarding. Mapping or native-properties callback failures leave the source
+        /// unacknowledged. Native dead-letter rejection bypasses this writer.
+        /// </remarks>
+        public IAmAWireMessageWriter<RmqWireMessage>? InvalidMessageWireMessageWriter { get; set; }
+
+        /// <summary>
+        /// Gets or sets the writer used when the consumer republishes a message directly to RabbitMQ for retry.
+        /// Null uses <see cref="DefaultRmqWireMessageWriter"/>.
+        /// </summary>
+        /// <remarks>
+        /// The consumer factory captures this selection for each consumer. The gateway supplies routing,
+        /// persistence, retry identity, handled count, delivery and delay metadata. Mapping or native-properties
+        /// callback failures leave the source unacknowledged. Publication and acknowledgement are separate
+        /// operations, so consumers must tolerate duplicates. Scheduler-backed retries use the scheduler's
+        /// publication mapping. This writer does not apply to invalid-message forwarding.
+        /// </remarks>
+        public IAmAWireMessageWriter<RmqWireMessage>? RequeueWireMessageWriter { get; set; }
 
         /// <summary>
         /// Is the channel mirrored across node in the cluster

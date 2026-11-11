@@ -1,0 +1,23 @@
+{
+  "exit": 1,
+  "wall_seconds": 9.763880968093872,
+  "monotonic_seconds": 9.76366816693917,
+  "clock_discontinuity": false,
+  "counts": {
+    "Passed": 2,
+    "Failed": 2,
+    "NotExecuted": 0
+  },
+  "failures": [
+    {
+      "name": "Paramore.Brighter.Gcp.Tests.MessagingGateway.GcpScheduledPublicationSelectionTests.When_gcp_dispatches_a_scheduled_publication_should_use_its_selected_writer(useAsync: True, custom: True)",
+      "message": "Assert.Equal() Failure: Strings differ\n            \u2193 (pos 1)\nExpected: \"selected:scheduled-\u03c0\"\nActual:   \"scheduled-\u03c0\"\n            \u2191 (pos 1)",
+      "stack": "   at Paramore.Brighter.Gcp.Tests.MessagingGateway.GcpScheduledPublicationSelectionTests.When_gcp_dispatches_a_scheduled_publication_should_use_its_selected_writer(Boolean useAsync, Boolean custom) in /private/tmp/brighter-4170-rmq-scheduled-selection/workspace/tests/Paramore.Brighter.Gcp.Tests/MessagingGateway/When_gcp_dispatches_a_scheduled_publication_should_use_its_selected_writer.cs:line 155\n   at Paramore.Brighter.Gcp.Tests.MessagingGateway.GcpScheduledPublicationSelectionTests.When_gcp_dispatches_a_scheduled_publication_should_use_its_selected_writer(Boolean useAsync, Boolean custom) in /private/tmp/brighter-4170-rmq-scheduled-selection/workspace/tests/Paramore.Brighter.Gcp.Tests/MessagingGateway/When_gcp_dispatches_a_scheduled_publication_should_use_its_selected_writer.cs:line 171\n   at Paramore.Brighter.Gcp.Tests.MessagingGateway.GcpScheduledPublicationSelectionTests.When_gcp_dispatches_a_scheduled_publication_should_use_its_selected_writer(Boolean useAsync, Boolean custom) in /private/tmp/brighter-4170-rmq-scheduled-selection/workspace/tests/Paramore.Brighter.Gcp.Tests/MessagingGateway/When_gcp_dispatches_a_scheduled_publication_should_use_its_selected_writer.cs:line 178\n--- End of stack trace from previous location ---"
+    },
+    {
+      "name": "Paramore.Brighter.Gcp.Tests.MessagingGateway.GcpScheduledPublicationSelectionTests.When_gcp_dispatches_a_scheduled_publication_should_use_its_selected_writer(useAsync: False, custom: True)",
+      "message": "Assert.Equal() Failure: Strings differ\n            \u2193 (pos 1)\nExpected: \"selected:scheduled-\u03c0\"\nActual:   \"scheduled-\u03c0\"\n            \u2191 (pos 1)",
+      "stack": "   at Paramore.Brighter.Gcp.Tests.MessagingGateway.GcpScheduledPublicationSelectionTests.When_gcp_dispatches_a_scheduled_publication_should_use_its_selected_writer(Boolean useAsync, Boolean custom) in /private/tmp/brighter-4170-rmq-scheduled-selection/workspace/tests/Paramore.Brighter.Gcp.Tests/MessagingGateway/When_gcp_dispatches_a_scheduled_publication_should_use_its_selected_writer.cs:line 155\n   at Paramore.Brighter.Gcp.Tests.MessagingGateway.GcpScheduledPublicationSelectionTests.When_gcp_dispatches_a_scheduled_publication_should_use_its_selected_writer(Boolean useAsync, Boolean custom) in /private/tmp/brighter-4170-rmq-scheduled-selection/workspace/tests/Paramore.Brighter.Gcp.Tests/MessagingGateway/When_gcp_dispatches_a_scheduled_publication_should_use_its_selected_writer.cs:line 171\n   at Paramore.Brighter.Gcp.Tests.MessagingGateway.GcpScheduledPublicationSelectionTests.When_gcp_dispatches_a_scheduled_publication_should_use_its_selected_writer(Boolean useAsync, Boolean custom) in /private/tmp/brighter-4170-rmq-scheduled-selection/workspace/tests/Paramore.Brighter.Gcp.Tests/MessagingGateway/When_gcp_dispatches_a_scheduled_publication_should_use_its_selected_writer.cs:line 178\n--- End of stack trace from previous location ---"
+    }
+  ]
+}

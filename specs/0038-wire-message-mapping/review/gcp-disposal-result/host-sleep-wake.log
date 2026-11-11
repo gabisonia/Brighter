@@ -1,0 +1,2 @@
+2026-11-09 21:16:32 +0100 Sleep               	Entering Sleep state due to 'Idle Sleep':TCPKeepAlive=active Using Batt (Charge:100%) 47 secs   
+2026-11-09 21:17:19 +0100 Wake                	Wake from Deep Idle [CDNVA] : due to MTP.DOCK.CHANNELS.AP0.IRQ RTP.keyboard/UserActivity Assertion Using BATT (Charge:100%)           

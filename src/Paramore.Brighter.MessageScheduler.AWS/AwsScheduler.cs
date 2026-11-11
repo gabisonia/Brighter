@@ -1,4 +1,5 @@
 ﻿using System.Collections.Concurrent;
+using System.Globalization;
 using System.Text.Json;
 using Amazon;
 using Amazon.Scheduler;
@@ -251,7 +252,7 @@ public class AwsScheduler(
             };
         }
 
-        var messageSchedulerTopicArn = await GetTopicAsync(message);
+        var messageSchedulerTopicArn = await GetTopicAsync(schedulerMessage);
         if (!string.IsNullOrEmpty(messageSchedulerTopicArn))
         {
             return new Target
@@ -263,7 +264,7 @@ public class AwsScheduler(
             };
         }
 
-        var messageSchedulerQueueUrl = await GetQueueAsync(message);
+        var messageSchedulerQueueUrl = await GetQueueAsync(schedulerMessage);
         if (!string.IsNullOrWhiteSpace(messageSchedulerQueueUrl))
         {
             return new Target
@@ -336,10 +337,9 @@ public class AwsScheduler(
 
     private static Dictionary<string, object?> ToPublishRequest(string topicArn, Message message)
     {
-        if (Id.IsNullOrEmpty(message.Header.CorrelationId))
-        {
-            message.Header.CorrelationId = Id.Random();
-        }
+        var correlationId = Id.IsNullOrEmpty(message.Header.CorrelationId)
+            ? Id.Random()
+            : message.Header.CorrelationId;
 
         var messageAttributes = new Dictionary<string, object>
         {
@@ -350,8 +350,8 @@ public class AwsScheduler(
 #pragma warning disable CS0618 // Preserve the legacy message type for transport compatibility.
             [HeaderNames.MessageType] = new { StringValue = message.Header.MessageType.ToString(), DataType = "String" },
 #pragma warning restore CS0618
-            [HeaderNames.Timestamp] = new { StringValue = Convert.ToString(message.Header.TimeStamp), DataType = "String" },
-            [HeaderNames.CorrelationId] = new { StringValue = Convert.ToString(message.Header.CorrelationId), DataType = "String" }
+            [HeaderNames.Timestamp] = new { StringValue = message.Header.TimeStamp.ToString("O", CultureInfo.InvariantCulture), DataType = "String" },
+            [HeaderNames.CorrelationId] = new { StringValue = Convert.ToString(correlationId), DataType = "String" }
         };
 
         if (!RoutingKey.IsNullOrEmpty(message.Header.ReplyTo))
@@ -394,7 +394,7 @@ public class AwsScheduler(
 #pragma warning disable CS0618 // Preserve the legacy message type for transport compatibility.
             [HeaderNames.MessageType] = new { StringValue = message.Header.MessageType.ToString(), DataType = "String" },
 #pragma warning restore CS0618
-            [HeaderNames.Timestamp] = new { StringValue = Convert.ToString(message.Header.TimeStamp), DataType = "String" }
+            [HeaderNames.Timestamp] = new { StringValue = message.Header.TimeStamp.ToString("O", CultureInfo.InvariantCulture), DataType = "String" }
         };
 
         if (!RoutingKey.IsNullOrEmpty(message.Header.ReplyTo))

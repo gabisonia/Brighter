@@ -19,6 +19,8 @@ namespace Paramore.Brighter.MessagingGateway.MsSql.SqlQueues
     {
         private const int RetryDelay = 100;
         private static readonly ILogger s_logger = ApplicationLogging.CreateLogger<MsSqlMessageQueue<T>>();
+        private readonly Func<T, string> _serialize;
+        private readonly Func<string, long, T?> _deserialize;
         private readonly RelationalDatabaseConfiguration _configuration;
         private readonly IAmARelationalDbConnectionProvider _connectionProvider;
 
@@ -28,7 +30,16 @@ namespace Paramore.Brighter.MessagingGateway.MsSql.SqlQueues
         /// <param name="configuration"></param>
         /// <param name="connectionProvider"></param>
         public MsSqlMessageQueue(RelationalDatabaseConfiguration configuration, IAmARelationalDbConnectionProvider  connectionProvider)
+            : this(configuration, connectionProvider, null, null)
         {
+        }
+
+        internal MsSqlMessageQueue(RelationalDatabaseConfiguration configuration,
+            IAmARelationalDbConnectionProvider connectionProvider,
+            Func<T, string>? serialize, Func<string, long, T?>? deserialize)
+        {
+            _serialize = serialize ?? (message => JsonSerializer.Serialize(message, JsonSerialisationOptions.Options));
+            _deserialize = deserialize ?? ((json, _) => JsonSerializer.Deserialize<T>(json, JsonSerialisationOptions.Options));
             _configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
             _connectionProvider = connectionProvider;
             if (s_logger.IsEnabled(LogLevel.Debug))
@@ -133,7 +144,7 @@ namespace Paramore.Brighter.MessagingGateway.MsSql.SqlQueues
             var json = (string) reader[0];
             var messageType = (string) reader[1];
             var id = (long) reader[3];
-            var message = JsonSerializer.Deserialize<T>(json, JsonSerialisationOptions.Options);
+            var message = _deserialize(json, id);
             return new ReceivedResult<T>(true, json, topic, messageType, id, message);
         }
 
@@ -159,7 +170,7 @@ namespace Paramore.Brighter.MessagingGateway.MsSql.SqlQueues
             var json = (string) reader[0];
             var messageType = (string) reader[1];
             var id = (long) reader[3];
-            var message = JsonSerializer.Deserialize<T>(json, JsonSerialisationOptions.Options);
+            var message = _deserialize(json, id);
             return new ReceivedResult<T>(true, json, topic, messageType, id, message);
         }
 
@@ -199,7 +210,7 @@ namespace Paramore.Brighter.MessagingGateway.MsSql.SqlQueues
             return new SqlParameter(parameterName, value);
         }
 
-        private static IDbDataParameter[] InitAddDbParameters(string topic, T message)
+        private IDbDataParameter[] InitAddDbParameters(string topic, T message)
         {
             string? fullName = typeof(T).FullName;
             //not sure how we would ever get here.
@@ -209,7 +220,7 @@ namespace Paramore.Brighter.MessagingGateway.MsSql.SqlQueues
             {
                 CreateDbDataParameter("topic", topic),
                 CreateDbDataParameter("messageType", fullName),
-                CreateDbDataParameter("payload", JsonSerializer.Serialize(message, JsonSerialisationOptions.Options))
+                CreateDbDataParameter("payload", _serialize(message))
             };
             return parameters;
         }

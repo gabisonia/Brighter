@@ -110,19 +110,22 @@ namespace Paramore.Brighter.MessagingGateway.Kafka
 
         private Message CreateMessageFromHeaders(MessageHeaderResults headers, ConsumeResult<string, byte[]> consumeResult)
         {
-            if (!(headers.Topic.Success && headers.MessageId.Success && headers.MessageType.Success && headers.TimeStamp.Success))
+            var message = MapMessage(headers, consumeResult);
+            if (!(headers.Topic.Success && headers.MessageId.Success && headers.MessageType.Success
+                && headers.TimeStamp.Success && headers.ContentType.Success))
             {
-                return Message.FailureMessage(headers.Topic.Result, headers.MessageId.Result);
+#pragma warning disable CS0618
+                message.Header.MessageType = MessageType.MT_UNACCEPTABLE;
+#pragma warning restore CS0618
             }
 
-            var message = SuccessMessage(headers, consumeResult);
             AddPartitionOffset(message, consumeResult);
             AddCustomHeaders(message, consumeResult.Message.Headers);
             
             return message;
         }
 
-        private static Message SuccessMessage(MessageHeaderResults headers, ConsumeResult<string, byte[]> consumeResult)
+        private static Message MapMessage(MessageHeaderResults headers, ConsumeResult<string, byte[]> consumeResult)
         {
             var messageHeader = new MessageHeader(
                 messageId: (headers.MessageId.Success ? headers.MessageId.Result : Id.Empty)!,
@@ -155,7 +158,22 @@ namespace Paramore.Brighter.MessagingGateway.Kafka
 
         private void AddCustomHeaders(Message message, Headers headers)
         {
-            headers.Each(header => ReadBagEntry(header, message));
+            headers.Each(header => ReadCustomHeader(header, message));
+        }
+
+        private void ReadCustomHeader(IHeader header, Message message)
+        {
+            try
+            {
+                ReadBagEntry(header, message);
+            }
+            catch (Exception e)
+            {
+                Log.FailedToCreateMessageFromKafkaOffset(s_logger, e);
+#pragma warning disable CS0618 // Preserve rejection classification after a custom-header failure.
+                message.Header.MessageType = MessageType.MT_UNACCEPTABLE;
+#pragma warning restore CS0618
+            }
         }
 
         private static HeaderResult<ContentType?> ReadContentType(Headers headers)
@@ -163,13 +181,26 @@ namespace Paramore.Brighter.MessagingGateway.Kafka
             var contentType = ReadHeader(headers, HeaderNames.CLOUD_EVENTS_DATA_CONTENT_TYPE, true);
             
             if (contentType.Success && !string.IsNullOrEmpty(contentType.Result))
-                return new HeaderResult<ContentType?>( new ContentType(contentType.Result!), true);
+                return ParseContentType(contentType.Result!);
 
             contentType = ReadHeader(headers, HeaderNames.CONTENT_TYPE);
             if (contentType.Success && !string.IsNullOrEmpty(contentType.Result))
-                return new HeaderResult<ContentType?>(new ContentType(contentType.Result!), true);
+                return ParseContentType(contentType.Result!);
 
-            return new HeaderResult<ContentType?>(null, false);
+            return new HeaderResult<ContentType?>(new ContentType(MediaTypeNames.Text.Plain), true);
+        }
+
+        private static HeaderResult<ContentType?> ParseContentType(string contentType)
+        {
+            try
+            {
+                return new HeaderResult<ContentType?>(new ContentType(contentType), true);
+            }
+            catch (FormatException e)
+            {
+                Log.FailedToCreateMessageFromKafkaOffset(s_logger, e);
+                return new HeaderResult<ContentType?>(null, false);
+            }
         }
 
         private static HeaderResult<Id?> ReadCorrelationId(Headers headers)

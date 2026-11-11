@@ -9,6 +9,17 @@ namespace Paramore.Brighter.MessagingGateway.GcpPubSub;
 public class GcpPublication : Publication
 {
     /// <summary>
+    /// Gets or sets the native message writer used for individual and bulk sends.
+    /// </summary>
+    /// <value>The writer, or null to use the default Pub/Sub mapping.</value>
+    /// <remarks>
+    /// A null value selects <see cref="DefaultGcpPubSubWireMessageWriter"/>.
+    /// The writer owns the message data and attributes. The gateway sets the native ordering key
+    /// from the source partition key when the publisher client enables ordering, or clears it otherwise.
+    /// </remarks>
+    public IAmAWireMessageWriter<PubsubMessage>? WireMessageWriter { get; set; }
+
+    /// <summary>
     /// Gets or sets the attributes for the Google Cloud Pub/Sub Topic.
     /// This includes settings such as the ProjectId, Topic Name, and potentially more advanced configurations.
     /// </summary>
@@ -21,8 +32,8 @@ public class GcpPublication : Publication
     /// <remarks>
     /// Brighter sends a message's partition key as the Pub/Sub ordering key only when the publisher client has message
     /// ordering enabled, either by this property or by a <see cref="PublisherClientConfiguration"/>, as the Google client
-    /// refuses an ordering key otherwise. The partition key always travels in its own attribute as well, so a consumer
-    /// receives it whether or not the publication is ordered.
+    /// refuses an ordering key otherwise. The default writer also includes the partition key in an attribute, so a consumer
+    /// receives it whether or not the publication is ordered. Custom writers control their own attributes.
     /// </remarks>
     public bool EnableMessageOrdering { get; set; }
 

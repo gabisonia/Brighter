@@ -1,0 +1,154 @@
+{
+  "date": "2026-11-10",
+  "scope": "Bounded existing native ASB reader/DLQ recovery tests in fresh Docker fixtures; not full release acceptance",
+  "broker_published_latest_matches_cached": true,
+  "frameworks": [
+    {
+      "framework": "net9.0",
+      "counts": {
+        "Passed": 8,
+        "Failed": 0,
+        "NotExecuted": 0
+      },
+      "wall_seconds": 2.58782696723938,
+      "monotonic_seconds": 2.5877895830199122,
+      "clock_discontinuity": false,
+      "assembly_sha256": "c6fced943537b27646ff756b9224388eb7ac9be392bbe96ccf5e9f3730b8f098",
+      "cases_in_start_order": [
+        {
+          "name": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: False, useAsync: True, returnNull: True)",
+          "outcome": "Passed",
+          "startTime": "2026-11-10T12:46:46.1798740+01:00",
+          "message": null
+        },
+        {
+          "name": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: False, useAsync: False, returnNull: False)",
+          "outcome": "Passed",
+          "startTime": "2026-11-10T12:46:46.8647600+01:00",
+          "message": null
+        },
+        {
+          "name": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: True, useAsync: True, returnNull: False)",
+          "outcome": "Passed",
+          "startTime": "2026-11-10T12:46:46.9489770+01:00",
+          "message": null
+        },
+        {
+          "name": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: False, useAsync: False, returnNull: True)",
+          "outcome": "Passed",
+          "startTime": "2026-11-10T12:46:47.1867970+01:00",
+          "message": null
+        },
+        {
+          "name": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: True, useAsync: True, returnNull: True)",
+          "outcome": "Passed",
+          "startTime": "2026-11-10T12:46:47.2925340+01:00",
+          "message": null
+        },
+        {
+          "name": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: False, useAsync: True, returnNull: False)",
+          "outcome": "Passed",
+          "startTime": "2026-11-10T12:46:47.3727130+01:00",
+          "message": null
+        },
+        {
+          "name": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: True, useAsync: False, returnNull: False)",
+          "outcome": "Passed",
+          "startTime": "2026-11-10T12:46:47.4836130+01:00",
+          "message": null
+        },
+        {
+          "name": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: True, useAsync: False, returnNull: True)",
+          "outcome": "Passed",
+          "startTime": "2026-11-10T12:46:47.5635390+01:00",
+          "message": null
+        }
+      ]
+    },
+    {
+      "framework": "net10.0",
+      "counts": {
+        "Passed": 4,
+        "Failed": 4,
+        "NotExecuted": 0
+      },
+      "wall_seconds": 2.6432979106903076,
+      "monotonic_seconds": 2.6432583751156926,
+      "clock_discontinuity": false,
+      "assembly_sha256": "070f30ff936c2aac575a1e677da0d8921ee56f2f0a9c704b922e3a3373a59251",
+      "cases_in_start_order": [
+        {
+          "name": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: False, useAsync: True, returnNull: True)",
+          "outcome": "Failed",
+          "startTime": "2026-11-10T12:47:40.8869390+01:00",
+          "message": "Assert.IsType() Failure: Value is null\nExpected: typeof(Azure.Messaging.ServiceBus.ServiceBusReceivedMessage)\nActual:   null"
+        },
+        {
+          "name": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: False, useAsync: False, returnNull: False)",
+          "outcome": "Failed",
+          "startTime": "2026-11-10T12:47:41.4943450+01:00",
+          "message": "Assert.Equal() Failure: Strings differ\n                     \u2193 (pos 10)\nExpected: \"01a1c549-0d26-7f87-a9d9-21e00308a3bd\"\nActual:   \"01a1c549-0ada-7236-a2d2-9399d2bafd97\"\n                     \u2191 (pos 10)"
+        },
+        {
+          "name": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: True, useAsync: True, returnNull: False)",
+          "outcome": "Passed",
+          "startTime": "2026-11-10T12:47:41.8102990+01:00",
+          "message": null
+        },
+        {
+          "name": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: False, useAsync: False, returnNull: True)",
+          "outcome": "Failed",
+          "startTime": "2026-11-10T12:47:42.1064240+01:00",
+          "message": "Assert.Equal() Failure: Strings differ\n                     \u2193 (pos 10)\nExpected: \"01a1c549-0f98-740a-a27e-af7a9669913d\"\nActual:   \"01a1c549-0d26-7f87-a9d9-21e00308a3bd\"\n                     \u2191 (pos 10)"
+        },
+        {
+          "name": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: True, useAsync: True, returnNull: True)",
+          "outcome": "Passed",
+          "startTime": "2026-11-10T12:47:42.1701450+01:00",
+          "message": null
+        },
+        {
+          "name": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: False, useAsync: True, returnNull: False)",
+          "outcome": "Failed",
+          "startTime": "2026-11-10T12:47:42.2557210+01:00",
+          "message": "Assert.Equal() Failure: Strings differ\n                    \u2193 (pos 9)\nExpected: \"01a1c549-102f-72d3-a7d1-f991a3800965\"\nActual:   \"01a1c549-0f98-740a-a27e-af7a9669913d\"\n                    \u2191 (pos 9)"
+        },
+        {
+          "name": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: True, useAsync: False, returnNull: False)",
+          "outcome": "Passed",
+          "startTime": "2026-11-10T12:47:42.3220560+01:00",
+          "message": null
+        },
+        {
+          "name": "Paramore.Brighter.AzureServiceBus.Tests.MessagingGateway.AsbReaderFailureRecoveryTests.When_an_asb_reader_fails_should_preserve_native_rejection_and_recover(useQueue: True, useAsync: False, returnNull: True)",
+          "outcome": "Passed",
+          "startTime": "2026-11-10T12:47:42.4211110+01:00",
+          "message": null
+        }
+      ]
+    }
+  ],
+  "production_changes": false,
+  "test_changes": false,
+  "cloud_resources_created": false,
+  "committed": false,
+  "pushed": false,
+  "source_inputs_verified": 691,
+  "raw_sql_logs_directory": "/private/tmp/brighter-4170-asb-docker-retry",
+  "initial_setup_failure": "Docker automatic address pools exhausted before any containers or tests started; used checked explicit 10.254.241.0/28 subnet",
+  "fixture_limit": "SQL Server 2022 backend runs amd64 under ARM64 Docker emulation; does not close native-x64 SQL gate",
+  "all_owned_containers_stopped": true,
+  "artifacts": {
+    "Config.json": "d9c0bcd2ffd78f4f1dbdf1631db0684243eb81cb66aa0263308536613f896d8c",
+    "brighter-4170-asb-docker-retry-broker-net10-0.log": "1e07d5877ee9e5f630350417bfae1d51afe63f7e71d30a75403b2306799afa2f",
+    "brighter-4170-asb-docker-retry-broker-net9-0.log": "1dbf8ae052b96e05120bccbe3d77068f215416b4713543b9673064659582e043",
+    "net10.0.log": "5b83c8216bd13086829a050357ff1a9005332614173245ba19bc12c33aba6481",
+    "net10.0.trx": "a69fe3b19919fdbdd4b5f3f9d8e45bcc4b24f6cba9c6e71f1ad45007643f67d2",
+    "net9.0.log": "f53ce4b85cce39b68eb44f0b9215a9289e1e52233ec2d676068884116328b42a",
+    "net9.0.trx": "a0d2b3f2d64e80ff8b1fb2ef06282b56be77300d5c383c3031735ebd8657a884",
+    "network-preflight.json": "e2ea15d8aae04300a3824c63c7b0a091e7691fcbb49877456680736970091e26",
+    "results.json": "252d3694a0b362417c356ccea5e5737f6db0582679122160fbee88d759920a57",
+    "run.py": "588d8b5a97ef1ef811a7b665353e440bebd43a15987142f4837d234f8282bf24",
+    "source-verification.json": "7891bc44a7c41c85f93ae82c6dc64910582031eb99ea4abb0835f336c5cac030"
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "net9.0": {
+    "lost_or_changed_prior_outcomes": [],
+    "new_outcomes": [
+      [
+        "Paramore.Brighter.RocketMQ.Tests.MessagingGateway.RocketScheduledPublicationSelectionTests.When_rocket_dispatches_a_delayed_publication_should_use_its_selected_writer(useAsync: False, nativeDelay: False, custom: True)",
+        "Passed"
+      ],
+      [
+        "Paramore.Brighter.RocketMQ.Tests.MessagingGateway.RocketScheduledPublicationSelectionTests.When_rocket_dispatches_a_delayed_publication_should_use_its_selected_writer(useAsync: True, nativeDelay: False, custom: True)",
+        "Passed"
+      ],
+      [
+        "Paramore.Brighter.RocketMQ.Tests.MessagingGateway.RocketScheduledPublicationSelectionTests.When_rocket_dispatches_a_delayed_publication_should_use_its_selected_writer(useAsync: True, nativeDelay: True, custom: False)",
+        "Passed"
+      ],
+      [
+        "Paramore.Brighter.RocketMQ.Tests.MessagingGateway.RocketScheduledPublicationSelectionTests.When_rocket_dispatches_a_delayed_publication_should_use_its_selected_writer(useAsync: False, nativeDelay: True, custom: False)",
+        "Passed"
+      ],
+      [
+        "Paramore.Brighter.RocketMQ.Tests.MessagingGateway.RocketScheduledPublicationSelectionTests.When_rocket_dispatches_a_delayed_publication_should_use_its_selected_writer(useAsync: False, nativeDelay: True, custom: True)",
+        "Passed"
+      ],
+      [
+        "Paramore.Brighter.RocketMQ.Tests.MessagingGateway.RocketScheduledPublicationSelectionTests.When_rocket_dispatches_a_delayed_publication_should_use_its_selected_writer(useAsync: True, nativeDelay: False, custom: False)",
+        "Passed"
+      ],
+      [
+        "Paramore.Brighter.RocketMQ.Tests.MessagingGateway.RocketScheduledPublicationSelectionTests.When_rocket_dispatches_a_delayed_publication_should_use_its_selected_writer(useAsync: True, nativeDelay: True, custom: True)",
+        "Passed"
+      ],
+      [
+        "Paramore.Brighter.RocketMQ.Tests.MessagingGateway.RocketScheduledPublicationSelectionTests.When_rocket_dispatches_a_delayed_publication_should_use_its_selected_writer(useAsync: False, nativeDelay: False, custom: False)",
+        "Passed"
+      ]
+    ]
+  },
+  "net10.0": {
+    "lost_or_changed_prior_outcomes": [],
+    "new_outcomes": [
+      [
+        "Paramore.Brighter.RocketMQ.Tests.MessagingGateway.RocketScheduledPublicationSelectionTests.When_rocket_dispatches_a_delayed_publication_should_use_its_selected_writer(useAsync: False, nativeDelay: False, custom: False)",
+        "Passed"
+      ],
+      [
+        "Paramore.Brighter.RocketMQ.Tests.MessagingGateway.RocketScheduledPublicationSelectionTests.When_rocket_dispatches_a_delayed_publication_should_use_its_selected_writer(useAsync: False, nativeDelay: False, custom: True)",
+        "Passed"
+      ],
+      [
+        "Paramore.Brighter.RocketMQ.Tests.MessagingGateway.RocketScheduledPublicationSelectionTests.When_rocket_dispatches_a_delayed_publication_should_use_its_selected_writer(useAsync: True, nativeDelay: True, custom: True)",
+        "Passed"
+      ],
+      [
+        "Paramore.Brighter.RocketMQ.Tests.MessagingGateway.RocketScheduledPublicationSelectionTests.When_rocket_dispatches_a_delayed_publication_should_use_its_selected_writer(useAsync: True, nativeDelay: False, custom: True)",
+        "Passed"
+      ],
+      [
+        "Paramore.Brighter.RocketMQ.Tests.MessagingGateway.RocketScheduledPublicationSelectionTests.When_rocket_dispatches_a_delayed_publication_should_use_its_selected_writer(useAsync: False, nativeDelay: True, custom: False)",
+        "Passed"
+      ],
+      [
+        "Paramore.Brighter.RocketMQ.Tests.MessagingGateway.RocketScheduledPublicationSelectionTests.When_rocket_dispatches_a_delayed_publication_should_use_its_selected_writer(useAsync: True, nativeDelay: False, custom: False)",
+        "Passed"
+      ],
+      [
+        "Paramore.Brighter.RocketMQ.Tests.MessagingGateway.RocketScheduledPublicationSelectionTests.When_rocket_dispatches_a_delayed_publication_should_use_its_selected_writer(useAsync: True, nativeDelay: True, custom: False)",
+        "Passed"
+      ],
+      [
+        "Paramore.Brighter.RocketMQ.Tests.MessagingGateway.RocketScheduledPublicationSelectionTests.When_rocket_dispatches_a_delayed_publication_should_use_its_selected_writer(useAsync: False, nativeDelay: True, custom: True)",
+        "Passed"
+      ]
+    ]
+  },
+  "source_restored": true
+}

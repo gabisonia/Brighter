@@ -1,0 +1,39 @@
+--- before/src/Paramore.Brighter.MessagingGateway.AzureServiceBus/AzureServiceBusMessageProducer.cs
++++ after/src/Paramore.Brighter.MessagingGateway.AzureServiceBus/AzureServiceBusMessageProducer.cs
+@@ -152,6 +152,7 @@
+         {
+             foreach (Message message in messages)
+             {
++                BrighterTracer.WriteProducerEvent(Span, "azure_service_bus", message, _options);
+                 var nativeMessage = (_publication.WireMessageWriter ?? s_defaultWireMessageWriter).WriteMessage(message)
+                     ?? throw new InvalidOperationException("The wire message writer returned null.");
+                 cancellationToken.ThrowIfCancellationRequested();
+--- before/src/Paramore.Brighter.MessagingGateway.AzureServiceBus/AzureServiceBusPublication.cs
++++ after/src/Paramore.Brighter.MessagingGateway.AzureServiceBus/AzureServiceBusPublication.cs
+@@ -35,13 +35,13 @@
+     private TimeSpan? _timeToLive;
+ 
+     /// <summary>
+-    /// Gets or sets the native message writer used for individual sends.
++    /// Gets or sets the native message writer used for individual and bulk sends.
+     /// </summary>
+     /// <value>The writer, or null to use the default mapping.</value>
+     /// <remarks>
+     /// A null value selects <see cref="DefaultAzureServiceBusWireMessageWriter"/>.
+     /// The writer owns the body and application metadata; configured publication TTL
+-    /// overrides the writer's TTL. Bulk sends do not use this writer.
++    /// overrides the writer's TTL. Bulk sends map each message during batch creation.
+     /// </remarks>
+     public IAmAWireMessageWriter<ServiceBusMessage>? WireMessageWriter { get; set; }
+ 
+--- before/src/Paramore.Brighter.MessagingGateway.GcpPubSub/GcpMessageProducer.cs
++++ after/src/Paramore.Brighter.MessagingGateway.GcpPubSub/GcpMessageProducer.cs
+@@ -177,7 +177,7 @@
+         {
+             cancellationToken.ThrowIfCancellationRequested();
+ 
+-            // No explicit trace for bulk individual sends; rely on underlying client instrumentation
++            BrighterTracer.WriteProducerEvent(Span, MessagingSystem.PubSub, message, instrumentation);
+             var pubSubMessage = CreateWireMessage(message);
+             cancellationToken.ThrowIfCancellationRequested();
+             await client.PublishAsync(pubSubMessage);

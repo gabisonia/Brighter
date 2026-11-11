@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using Npgsql;
 using NpgsqlTypes;
-using Paramore.Brighter.JsonConverters;
 using Paramore.Brighter.Logging;
 using Paramore.Brighter.Observability;
 using Paramore.Brighter.PostgreSql;
@@ -23,6 +21,7 @@ public partial class PostgresMessageProducer(
     PostgresPublication publication,
     InstrumentationOptions instrumentations = InstrumentationOptions.All) : IAmAMessageProducerAsync, IAmAMessageProducerSync
 {
+    private static readonly DefaultPostgresWireMessageWriter s_defaultWireMessageWriter = new();
     private static readonly ILogger s_logger = ApplicationLogging.CreateLogger<PostgresMessageProducer>();
     private readonly PostgreSqlConnectionProvider _connectionProvider = new(configuration);
     private PostgresPublication _publication = publication;
@@ -63,7 +62,7 @@ public partial class PostgresMessageProducer(
 
         command.CommandText = $"INSERT INTO \"{SchemaName}\".\"{TableName}\"(\"visible_timeout\", \"queue\", \"content\") VALUES (CURRENT_TIMESTAMP, $1, $2) RETURNING \"id\"";
         command.Parameters.Add(new NpgsqlParameter { Value = QueueName });
-        command.Parameters.Add(new NpgsqlParameter { Value = JsonSerializer.Serialize(message, JsonSerialisationOptions.Options), NpgsqlDbType = MessagePayloadDbType});
+        command.Parameters.Add(new NpgsqlParameter { Value = MapMessage(message), NpgsqlDbType = MessagePayloadDbType});
         var id = await command.ExecuteScalarAsync(cancellationToken);
         
         Log.PublishedMessage(s_logger, message.Header.Topic.Value, message.Id.Value, Convert.ToInt64(id));
@@ -92,7 +91,7 @@ public partial class PostgresMessageProducer(
         command.CommandText = $"INSERT INTO \"{SchemaName}\".\"{TableName}\"(\"visible_timeout\", \"queue\", \"content\") VALUES (CURRENT_TIMESTAMP + $1, $2, $3) RETURNING \"id\"";
         command.Parameters.Add(new NpgsqlParameter { Value = delay.Value });
         command.Parameters.Add(new NpgsqlParameter { Value = QueueName });
-        command.Parameters.Add(new NpgsqlParameter { Value = JsonSerializer.Serialize(message, JsonSerialisationOptions.Options), NpgsqlDbType = MessagePayloadDbType});
+        command.Parameters.Add(new NpgsqlParameter { Value = MapMessage(message), NpgsqlDbType = MessagePayloadDbType});
         var id = await command.ExecuteScalarAsync(cancellationToken);
         
         Log.PublishedMessage(s_logger, message.Header.Topic.Value, message.Id.Value, Convert.ToInt64(id));
@@ -114,7 +113,7 @@ public partial class PostgresMessageProducer(
 
         command.CommandText = $"INSERT INTO \"{SchemaName}\".\"{TableName}\"(\"visible_timeout\", \"queue\", \"content\") VALUES (CURRENT_TIMESTAMP, $1, $2) RETURNING \"id\"";
         command.Parameters.Add(new NpgsqlParameter { Value = QueueName });
-        command.Parameters.Add(new NpgsqlParameter { Value = JsonSerializer.Serialize(message, JsonSerialisationOptions.Options), NpgsqlDbType = MessagePayloadDbType});
+        command.Parameters.Add(new NpgsqlParameter { Value = MapMessage(message), NpgsqlDbType = MessagePayloadDbType});
         var id = command.ExecuteScalar();
         
         Log.PublishedMessage(s_logger, message.Header.Topic.Value, message.Id.Value, Convert.ToInt64(id));
@@ -143,7 +142,7 @@ public partial class PostgresMessageProducer(
         command.CommandText = $"INSERT INTO \"{SchemaName}\".\"{TableName}\"(\"visible_timeout\", \"queue\", \"content\") VALUES (CURRENT_TIMESTAMP + $1, $2, $3) RETURNING \"id\"";
         command.Parameters.Add(new NpgsqlParameter { Value = delay.Value });
         command.Parameters.Add(new NpgsqlParameter { Value = QueueName });
-        command.Parameters.Add(new NpgsqlParameter { Value = JsonSerializer.Serialize(message, JsonSerialisationOptions.Options), NpgsqlDbType = MessagePayloadDbType});
+        command.Parameters.Add(new NpgsqlParameter { Value = MapMessage(message), NpgsqlDbType = MessagePayloadDbType});
         var id = command.ExecuteScalar();
         
         Log.PublishedMessage(s_logger, message.Header.Topic.Value, message.Id.Value, Convert.ToInt64(id));
@@ -159,6 +158,10 @@ public partial class PostgresMessageProducer(
     
     /// <inheritdoc />
     public void Dispose() => Span?.Dispose();
+
+    private string MapMessage(Message message) =>
+        (_publication.WireMessageWriter ?? s_defaultWireMessageWriter).WriteMessage(message)
+        ?? throw new InvalidOperationException("The PostgreSQL wire message writer returned null.");
 
     private static partial class Log
     {

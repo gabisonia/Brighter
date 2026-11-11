@@ -1,0 +1,92 @@
+{
+  "Paramore.Brighter": {
+    "exit": 0,
+    "seconds": 3.2915481668896973,
+    "clock_discontinuity": false
+  },
+  "Paramore.Brighter.MessageScheduler.AWS": {
+    "exit": 0,
+    "seconds": 2.594786500092596,
+    "clock_discontinuity": false
+  },
+  "Paramore.Brighter.MessageScheduler.AWS.V4": {
+    "exit": 0,
+    "seconds": 2.578027999959886,
+    "clock_discontinuity": false
+  },
+  "Paramore.Brighter.MessageScheduler.Azure": {
+    "exit": 0,
+    "seconds": 2.872905041091144,
+    "clock_discontinuity": false
+  },
+  "Paramore.Brighter.MessageScheduler.Quartz": {
+    "exit": 0,
+    "seconds": 1.5981881250627339,
+    "clock_discontinuity": false
+  },
+  "Paramore.Brighter.MessageScheduler.TickerQ": {
+    "exit": 0,
+    "seconds": 1.6823141248896718,
+    "clock_discontinuity": false
+  },
+  "Paramore.Brighter.MessagingGateway.AWSSQS": {
+    "exit": 0,
+    "seconds": 1.2613146249204874,
+    "clock_discontinuity": false
+  },
+  "Paramore.Brighter.MessagingGateway.AWSSQS.V4": {
+    "exit": 0,
+    "seconds": 1.19979845918715,
+    "clock_discontinuity": false
+  },
+  "Paramore.Brighter.MessagingGateway.AzureServiceBus": {
+    "exit": 0,
+    "seconds": 1.4141833749599755,
+    "clock_discontinuity": false
+  },
+  "Paramore.Brighter.MessagingGateway.GcpPubSub": {
+    "exit": 0,
+    "seconds": 1.777252582833171,
+    "clock_discontinuity": false
+  },
+  "Paramore.Brighter.MessagingGateway.Kafka": {
+    "exit": 0,
+    "seconds": 2.312049916945398,
+    "clock_discontinuity": false
+  },
+  "Paramore.Brighter.MessagingGateway.MQTT": {
+    "exit": 0,
+    "seconds": 1.5233740843832493,
+    "clock_discontinuity": false
+  },
+  "Paramore.Brighter.MessagingGateway.MsSql": {
+    "exit": 0,
+    "seconds": 2.2244946248829365,
+    "clock_discontinuity": false
+  },
+  "Paramore.Brighter.MessagingGateway.Postgres": {
+    "exit": 0,
+    "seconds": 1.803473750129342,
+    "clock_discontinuity": false
+  },
+  "Paramore.Brighter.MessagingGateway.RMQ.Async": {
+    "exit": 0,
+    "seconds": 1.9617533753626049,
+    "clock_discontinuity": false
+  },
+  "Paramore.Brighter.MessagingGateway.RMQ.Sync": {
+    "exit": 0,
+    "seconds": 1.9969584997743368,
+    "clock_discontinuity": false
+  },
+  "Paramore.Brighter.MessagingGateway.Redis": {
+    "exit": 0,
+    "seconds": 1.7997308750636876,
+    "clock_discontinuity": false
+  },
+  "Paramore.Brighter.MessagingGateway.RocketMQ": {
+    "exit": 0,
+    "seconds": 2.012781457975507,
+    "clock_discontinuity": false
+  }
+}

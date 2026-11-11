@@ -1,4 +1,4 @@
-﻿using Amazon;
+using Amazon;
 using Amazon.Runtime;
 using Paramore.Brighter.MessagingGateway.AWSSQS;
 
@@ -28,11 +28,11 @@ public class GatewayFactory
             {
                 config?.Invoke(cfg);
 
-                /*var serviceURL = Environment.GetEnvironmentVariable("AWS_SERVICE_URL");
+                var serviceURL = Environment.GetEnvironmentVariable("AWS_SERVICE_URL");
                 if (!string.IsNullOrWhiteSpace(serviceURL))
                 {
                     cfg.ServiceURL = serviceURL;
-                }*/
+                }
             });
     }
 }

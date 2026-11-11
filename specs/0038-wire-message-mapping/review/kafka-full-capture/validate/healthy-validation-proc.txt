@@ -1,0 +1,2601 @@
+aaaac57a0000-aaaac57a7000 r--p 00000000 00:4b 870777                     /usr/share/dotnet/dotnet
+aaaac57b6000-aaaac57c0000 r-xp 00006000 00:4b 870777                     /usr/share/dotnet/dotnet
+aaaac57cf000-aaaac57d1000 r--p 0000f000 00:4b 870777                     /usr/share/dotnet/dotnet
+aaaac57e0000-aaaac57e1000 rw-p 00010000 00:4b 870777                     /usr/share/dotnet/dotnet
+aaaaf4a9e000-aaaaf4c7d000 rw-p 00000000 00:00 0                          [heap]
+ffbe20000000-ffbe20029000 rw-p 00000000 00:00 0 
+ffbe20029000-ffbe24000000 ---p 00000000 00:00 0 
+ffbe28000000-ffbe28021000 rw-p 00000000 00:00 0 
+ffbe28021000-ffbe2c000000 ---p 00000000 00:00 0 
+ffbe2c000000-ffbe2c021000 rw-p 00000000 00:00 0 
+ffbe2c021000-ffbe30000000 ---p 00000000 00:00 0 
+ffbe30000000-ffbe30021000 rw-p 00000000 00:00 0 
+ffbe30021000-ffbe34000000 ---p 00000000 00:00 0 
+ffbe34000000-ffbe34021000 rw-p 00000000 00:00 0 
+ffbe34021000-ffbe38000000 ---p 00000000 00:00 0 
+ffbe38000000-ffbe38021000 rw-p 00000000 00:00 0 
+ffbe38021000-ffbe3c000000 ---p 00000000 00:00 0 
+ffbe3c000000-ffbe3c099000 rw-p 00000000 00:00 0 
+ffbe3c099000-ffbe40000000 ---p 00000000 00:00 0 
+ffbe40790000-ffbe407a0000 ---p 00000000 00:00 0 
+ffbe407a0000-ffbe40fa0000 rw-p 00000000 00:00 0 
+ffbe417b0000-ffbe417c0000 ---p 00000000 00:00 0 
+ffbe417c0000-ffbe41fc0000 rw-p 00000000 00:00 0 
+ffbe41fc0000-ffbe41fd0000 ---p 00000000 00:00 0 
+ffbe41fd0000-ffbe427d0000 rw-p 00000000 00:00 0 
+ffbe427d0000-ffbe427e0000 ---p 00000000 00:00 0 
+ffbe427e0000-ffbe42fe0000 rw-p 00000000 00:00 0 
+ffbe42fe0000-ffbe42ff0000 ---p 00000000 00:00 0 
+ffbe42ff0000-ffbe437f0000 rw-p 00000000 00:00 0 
+ffbe437f0000-ffbe43800000 ---p 00000000 00:00 0 
+ffbe43800000-ffbe44000000 rw-p 00000000 00:00 0 
+ffbe44000000-ffbe44021000 rw-p 00000000 00:00 0 
+ffbe44021000-ffbe48000000 ---p 00000000 00:00 0 
+ffbe48000000-ffbe48021000 rw-p 00000000 00:00 0 
+ffbe48021000-ffbe4c000000 ---p 00000000 00:00 0 
+ffbe4c000000-ffbe4c021000 rw-p 00000000 00:00 0 
+ffbe4c021000-ffbe50000000 ---p 00000000 00:00 0 
+ffbe50000000-ffbe50027000 rw-p 00000000 00:00 0 
+ffbe50027000-ffbe54000000 ---p 00000000 00:00 0 
+ffbe54000000-ffbe54021000 rw-p 00000000 00:00 0 
+ffbe54021000-ffbe58000000 ---p 00000000 00:00 0 
+ffbe58000000-ffbe58059000 rw-p 00000000 00:00 0 
+ffbe58059000-ffbe5c000000 ---p 00000000 00:00 0 
+ffbe5c050000-ffbe5c060000 ---p 00000000 00:00 0 
+ffbe5c060000-ffbe5c860000 rw-p 00000000 00:00 0 
+ffbe5c860000-ffbe5c870000 ---p 00000000 00:00 0 
+ffbe5c870000-ffbe5d070000 rw-p 00000000 00:00 0 
+ffbe5d070000-ffbe5d080000 ---p 00000000 00:00 0 
+ffbe5d080000-ffbe5d880000 rw-p 00000000 00:00 0 
+ffbe5def8000-ffbe5e041000 r--s 00000000 00:33 82057                      /tests/Release/net9.0/System.Reactive.dll
+ffbe5e041000-ffbe5e059000 r--s 00000000 00:4b 870798                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Collections.Specialized.dll
+ffbe5e059000-ffbe5e090000 r--s 00000000 00:33 82054                      /tests/Release/net9.0/Polly.Core.dll
+ffbe5e090000-ffbe5e0a0000 ---p 00000000 00:00 0 
+ffbe5e0a0000-ffbe5e8a0000 rw-p 00000000 00:00 0 
+ffbe5e8a0000-ffbe5e95d000 r--p 00000000 00:33 82000                      /tests/Release/net9.0/runtimes/linux-arm64/native/librdkafka.so
+ffbe5e95d000-ffbe5e960000 ---p 000bd000 00:33 82000                      /tests/Release/net9.0/runtimes/linux-arm64/native/librdkafka.so
+ffbe5e960000-ffbe5eeaa000 r-xp 000c0000 00:33 82000                      /tests/Release/net9.0/runtimes/linux-arm64/native/librdkafka.so
+ffbe5eeaa000-ffbe5eeb0000 ---p 0060a000 00:33 82000                      /tests/Release/net9.0/runtimes/linux-arm64/native/librdkafka.so
+ffbe5eeb0000-ffbe5f136000 r--p 00610000 00:33 82000                      /tests/Release/net9.0/runtimes/linux-arm64/native/librdkafka.so
+ffbe5f136000-ffbe5f141000 ---p 00896000 00:33 82000                      /tests/Release/net9.0/runtimes/linux-arm64/native/librdkafka.so
+ffbe5f141000-ffbe5f1e0000 r--p 008a1000 00:33 82000                      /tests/Release/net9.0/runtimes/linux-arm64/native/librdkafka.so
+ffbe5f1e0000-ffbe5f1e8000 rw-p 00940000 00:33 82000                      /tests/Release/net9.0/runtimes/linux-arm64/native/librdkafka.so
+ffbe5f1e8000-ffbe5f1f3000 rw-p 00000000 00:00 0 
+ffbe5f1fb000-ffbe5f2d0000 r--s 00000000 00:4b 870804                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.ComponentModel.TypeConverter.dll
+ffbe5f2d0000-ffbe5f2e0000 ---p 00000000 00:00 0 
+ffbe5f2e0000-ffbe5fae0000 rw-p 00000000 00:00 0 
+ffbe5fae0000-ffbe5fecd000 r-xp 00000000 00:4b 870501                     /usr/lib/aarch64-linux-gnu/libcrypto.so.3
+ffbe5fecd000-ffbe5fed5000 ---p 003ed000 00:4b 870501                     /usr/lib/aarch64-linux-gnu/libcrypto.so.3
+ffbe5fed5000-ffbe5ff30000 r--p 003f5000 00:4b 870501                     /usr/lib/aarch64-linux-gnu/libcrypto.so.3
+ffbe5ff30000-ffbe5ff33000 rw-p 00450000 00:4b 870501                     /usr/lib/aarch64-linux-gnu/libcrypto.so.3
+ffbe5ff33000-ffbe5ff36000 rw-p 00000000 00:00 0 
+ffbe5ff40000-ffbe5ffdc000 r-xp 00000000 00:4b 870512                     /usr/lib/aarch64-linux-gnu/libssl.so.3
+ffbe5ffdc000-ffbe5ffe6000 ---p 0009c000 00:4b 870512                     /usr/lib/aarch64-linux-gnu/libssl.so.3
+ffbe5ffe6000-ffbe5fff0000 r--p 000a6000 00:4b 870512                     /usr/lib/aarch64-linux-gnu/libssl.so.3
+ffbe5fff0000-ffbe5fff4000 rw-p 000b0000 00:4b 870512                     /usr/lib/aarch64-linux-gnu/libssl.so.3
+ffbe60000000-ffbe60021000 rw-p 00000000 00:00 0 
+ffbe60021000-ffbe64000000 ---p 00000000 00:00 0 
+ffbe64000000-ffbe640a4000 rw-p 00000000 00:00 0 
+ffbe640a4000-ffbe68000000 ---p 00000000 00:00 0 
+ffbe68000000-ffbe68037000 rw-p 00000000 00:00 0 
+ffbe68037000-ffbe6c000000 ---p 00000000 00:00 0 
+ffbe6c000000-ffbe6c021000 rw-p 00000000 00:00 0 
+ffbe6c021000-ffbe70000000 ---p 00000000 00:00 0 
+ffbe70000000-ffbe70021000 rw-p 00000000 00:00 0 
+ffbe70021000-ffbe74000000 ---p 00000000 00:00 0 
+ffbe74000000-ffbe74021000 rw-p 00000000 00:00 0 
+ffbe74021000-ffbe78000000 ---p 00000000 00:00 0 
+ffbe78003000-ffbe7804a000 r--s 00000000 00:33 82053                      /tests/Release/net9.0/Polly.dll
+ffbe7804a000-ffbe78078000 r--s 00000000 00:33 82048                      /tests/Release/net9.0/xunit.assert.dll
+ffbe78078000-ffbe78088000 r--s 00000000 00:33 82047                      /tests/Release/net9.0/Microsoft.Extensions.Options.dll
+ffbe78088000-ffbe780b0000 r--s 00000000 00:33 81898                      /tests/Release/net9.0/Serilog.dll
+ffbe780b0000-ffbe780c8000 r--p 00000000 00:4b 870955                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/libSystem.Security.Cryptography.Native.OpenSsl.so
+ffbe780c8000-ffbe780d7000 ---p 00018000 00:4b 870955                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/libSystem.Security.Cryptography.Native.OpenSsl.so
+ffbe780d7000-ffbe780ee000 r-xp 00017000 00:4b 870955                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/libSystem.Security.Cryptography.Native.OpenSsl.so
+ffbe780ee000-ffbe780fd000 ---p 0003e000 00:4b 870955                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/libSystem.Security.Cryptography.Native.OpenSsl.so
+ffbe780fd000-ffbe78100000 r--p 0002d000 00:4b 870955                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/libSystem.Security.Cryptography.Native.OpenSsl.so
+ffbe78100000-ffbe7810f000 ---p 00050000 00:4b 870955                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/libSystem.Security.Cryptography.Native.OpenSsl.so
+ffbe7810f000-ffbe78110000 rw-p 0002f000 00:4b 870955                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/libSystem.Security.Cryptography.Native.OpenSsl.so
+ffbe78110000-ffbe78111000 rw-p 00000000 00:00 0 
+ffbe78118000-ffbe78119000 ---p 00000000 00:00 0 
+ffbe78119000-ffbe7811e000 rw-p 00000000 00:00 0 
+ffbe7811e000-ffbe783a7000 r--s 00000000 00:4b 870910                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Security.Cryptography.dll
+ffbe783a7000-ffbe783fe000 r--s 00000000 00:4b 870894                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Runtime.Numerics.dll
+ffbe783fe000-ffbe78473000 r--s 00000000 00:4b 870854                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Net.Mail.dll
+ffbe78473000-ffbe78483000 ---p 00000000 00:00 0 
+ffbe78483000-ffbe78c83000 rw-p 00000000 00:00 0 
+ffbe78c83000-ffbe78c93000 ---p 00000000 00:00 0 
+ffbe78c93000-ffbe79493000 rw-p 00000000 00:00 0 
+ffbe79493000-ffbe794a3000 ---p 00000000 00:00 0 
+ffbe794a3000-ffbe79ca3000 rw-p 00000000 00:00 0 
+ffbe79ca3000-ffbe79ce8000 r--s 00000000 00:33 82045                      /tests/Release/net9.0/xunit.execution.dotnet.dll
+ffbe79ce8000-ffbe79cfa000 r--s 00000000 00:33 82044                      /tests/Release/net9.0/xunit.core.dll
+ffbe79cfa000-ffbe79d6b000 r--s 00000000 00:33 82042                      /tests/Release/net9.0/Confluent.Kafka.dll
+ffbe79d6b000-ffbe79e44000 r--s 00000000 00:33 82041                      /tests/Release/net9.0/Paramore.Brighter.dll
+ffbe79e44000-ffbe79f0d000 r--s 00000000 00:33 81884                      /tests/Release/net9.0/Paramore.Brighter.Kafka.Tests.dll
+ffbe79f0d000-ffbe7a7d0000 r--s 00000000 00:4b 862513                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Private.Xml.dll
+ffbe7a7d0000-ffbe7a7e0000 ---p 00000000 00:00 0 
+ffbe7a7e0000-ffbe7afe0000 rw-p 00000000 00:00 0 
+ffbe7afe0000-ffbe7aff0000 ---p 00000000 00:00 0 
+ffbe7aff0000-ffbe7b7f0000 rw-p 00000000 00:00 0 
+ffbe7b7f0000-ffbe7b800000 ---p 00000000 00:00 0 
+ffbe7b800000-ffbe7c000000 rw-p 00000000 00:00 0 
+ffbe7c000000-ffbe7c682000 rw-p 00000000 00:00 0 
+ffbe7c682000-ffbe80000000 ---p 00000000 00:00 0 
+ffbe80000000-ffbe80021000 rw-p 00000000 00:00 0 
+ffbe80021000-ffbe84000000 ---p 00000000 00:00 0 
+ffbe84000000-ffbe84060000 rw-p 00000000 00:00 0 
+ffbe84060000-ffbe88000000 ---p 00000000 00:00 0 
+ffbe88000000-ffbe88021000 rw-p 00000000 00:00 0 
+ffbe88021000-ffbe8c000000 ---p 00000000 00:00 0 
+ffbe8c000000-ffbe8c09d000 rw-p 00000000 00:00 0 
+ffbe8c09d000-ffbe90000000 ---p 00000000 00:00 0 
+ffbe90000000-ffbe90436000 rw-p 00000000 00:00 0 
+ffbe90436000-ffbe94000000 ---p 00000000 00:00 0 
+ffbe94000000-ffbe94021000 rw-p 00000000 00:00 0 
+ffbe94021000-ffbe98000000 ---p 00000000 00:00 0 
+ffbe98006000-ffbe9800d000 r--s 00000000 00:33 82046                      /tests/Release/net9.0/Serilog.Extensions.Logging.dll
+ffbe9800d000-ffbe98036000 r--s 00000000 00:33 82043                      /tests/Release/net9.0/Paramore.Brighter.MessagingGateway.Kafka.dll
+ffbe98036000-ffbe98037000 ---p 00000000 00:00 0 
+ffbe98037000-ffbe9803c000 rw-p 00000000 00:00 0 
+ffbe9803c000-ffbe9804d000 r--s 00000000 00:33 81903                      /tests/Release/net9.0/Microsoft.Extensions.Logging.Abstractions.dll
+ffbe9804d000-ffbe9805a000 r--s 00000000 00:33 81896                      /tests/Release/net9.0/Microsoft.Extensions.Logging.dll
+ffbe9805a000-ffbe9805b000 ---p 00000000 00:00 0 
+ffbe9805b000-ffbe98060000 rw-p 00000000 00:00 0 
+ffbe98060000-ffbe98061000 ---p 00000000 00:00 0 
+ffbe98061000-ffbe98066000 rw-p 00000000 00:00 0 
+ffbe98066000-ffbe980d2000 r--s 00000000 00:4b 862512                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Private.Xml.Linq.dll
+ffbe980d2000-ffbe981e6000 r--s 00000000 00:4b 870922                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Text.RegularExpressions.dll
+ffbe981e6000-ffbe983c5000 r--s 00000000 00:4b 870852                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Net.Http.dll
+ffbe983c5000-ffbe984bd000 r--s 00000000 00:4b 870796                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Collections.Immutable.dll
+ffbe984bd000-ffbe98607000 r--s 00000000 00:33 82039                      /tests/Release/net9.0/xunit.runner.visualstudio.testadapter.dll
+ffbe98607000-ffbe98740000 r--s 00000000 00:4b 870878                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Reflection.Metadata.dll
+ffbe98740000-ffbe98750000 ---p 00000000 00:00 0 
+ffbe98750000-ffbe98f50000 rw-p 00000000 00:00 0 
+ffbe98f50000-ffbe98f60000 ---p 00000000 00:00 0 
+ffbe98f60000-ffbe99760000 rw-p 00000000 00:00 0 
+ffbe99760000-ffbe9b52f000 r-xp 00000000 00:4b 870506                     /usr/lib/aarch64-linux-gnu/libicudata.so.72.1
+ffbe9b52f000-ffbe9b53f000 ---p 01dcf000 00:4b 870506                     /usr/lib/aarch64-linux-gnu/libicudata.so.72.1
+ffbe9b53f000-ffbe9b540000 r--p 01dcf000 00:4b 870506                     /usr/lib/aarch64-linux-gnu/libicudata.so.72.1
+ffbe9b540000-ffbe9b541000 rw-p 01dd0000 00:4b 870506                     /usr/lib/aarch64-linux-gnu/libicudata.so.72.1
+ffbe9b543000-ffbe9b545000 r--s 00000000 00:4b 870919                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Text.Encoding.dll
+ffbe9b547000-ffbe9b54b000 r--s 00000000 00:33 81886                      /tests/Release/net9.0/Serilog.Sinks.TestCorrelator.dll
+ffbe9b54d000-ffbe9b54f000 rw-s 012d8000 00:01 28845                      /memfd:doublemapper (deleted)
+ffbe9b54f000-ffbe9b563000 rw-p 00000000 00:00 0 
+ffbe9b563000-ffbea354f000 ---p 00000000 00:00 0 
+ffbea354f000-ffbea3563000 rw-p 00000000 00:00 0 
+ffbea3563000-ffbeab54f000 ---p 00000000 00:00 0 
+ffbeab54f000-ffbeab550000 rw-p 00000000 00:00 0 
+ffbeab550000-ffbeab56f000 ---p 00000000 00:00 0 
+ffbeab56f000-ffbeab579000 rw-p 00000000 00:00 0 
+ffbeab579000-ffbeaf56f000 ---p 00000000 00:00 0 
+ffbeaf56f000-ffbeaf570000 rw-p 00000000 00:00 0 
+ffbeaf570000-ffbeaf57f000 ---p 00000000 00:00 0 
+ffbeaf57f000-ffbeaf581000 rw-p 00000000 00:00 0 
+ffbeaf581000-ffbf30000000 ---p 00000000 00:00 0 
+ffbf30000000-ffbf30011000 rw-p 00000000 00:00 0 
+ffbf30011000-ffbf32000000 ---p 00000000 00:00 0 
+ffbf32000000-ffbf32111000 rw-p 00000000 00:00 0 
+ffbf32111000-ffbf32400000 ---p 00000000 00:00 0 
+ffbf32400000-ffbf32800000 rw-p 00000000 00:00 0 
+ffbf32800000-ffbf32c00000 rw-p 00000000 00:00 0 
+ffbf32c00000-ffbf32c5c000 rw-p 00000000 00:00 0 
+ffbf32c5c000-ffbf34c00000 ---p 00000000 00:00 0 
+ffbf34c00000-ffbf34f11000 rw-p 00000000 00:00 0 
+ffbf34f11000-ffbf35000000 ---p 00000000 00:00 0 
+ffbf35000000-ffbf35001000 rw-p 00000000 00:00 0 
+ffbf35001000-ffff30000000 ---p 00000000 00:00 0 
+ffff30000000-ffff30021000 rw-p 00000000 00:00 0 
+ffff30021000-ffff34000000 ---p 00000000 00:00 0 
+ffff34000000-ffff34001000 ---p 00000000 00:00 0 
+ffff34001000-ffff34006000 rw-p 00000000 00:00 0 
+ffff34006000-ffff3400c000 r--s 00000000 00:33 81897                      /tests/Release/net9.0/xunit.abstractions.dll
+ffff3400c000-ffff34021000 r--s 00000000 00:4b 870840                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.IO.MemoryMappedFiles.dll
+ffff34021000-ffff34056000 rw-p 00000000 00:00 0 
+ffff34056000-ffff34057000 ---p 00000000 00:00 0 
+ffff34057000-ffff3405c000 rw-p 00000000 00:00 0 
+ffff3405c000-ffff3405d000 ---p 00000000 00:00 0 
+ffff3405d000-ffff34062000 rw-p 00000000 00:00 0 
+ffff34062000-ffff34094000 r--s 00000000 00:33 81893                      /tests/Release/net9.0/System.Diagnostics.DiagnosticSource.dll
+ffff34094000-ffff34095000 ---p 00000000 00:00 0 
+ffff34095000-ffff3409a000 rw-p 00000000 00:00 0 
+ffff3409a000-ffff34144000 r--s 00000000 00:4b 870863                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Net.Sockets.dll
+ffff34144000-ffff34145000 ---p 00000000 00:00 0 
+ffff34145000-ffff3414a000 rw-p 00000000 00:00 0 
+ffff3414a000-ffff34162000 r--s 00000000 00:4b 870797                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Collections.NonGeneric.dll
+ffff34162000-ffff3419f000 r--s 00000000 00:4b 870858                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Net.Primitives.dll
+ffff3419f000-ffff341a0000 ---p 00000000 00:00 0 
+ffff341a0000-ffff341a5000 rw-p 00000000 00:00 0 
+ffff341a5000-ffff341b5000 ---p 00000000 00:00 0 
+ffff341b5000-ffff341f5000 rw-p 00000000 00:00 0 
+ffff341f5000-ffff34205000 ---p 00000000 00:00 0 
+ffff34205000-ffff34245000 rw-p 00000000 00:00 0 
+ffff34245000-ffff34255000 ---p 00000000 00:00 0 
+ffff34255000-ffff34a55000 rw-p 00000000 00:00 0 
+ffff34a55000-ffff34a79000 r--s 00000000 00:4b 870820                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Diagnostics.TraceSource.dll
+ffff34a79000-ffff34a89000 ---p 00000000 00:00 0 
+ffff34a89000-ffff35289000 rw-p 00000000 00:00 0 
+ffff35289000-ffff352a0000 r--s 00000000 00:4b 870965                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/netstandard.dll
+ffff352a0000-ffff352de000 r--s 00000000 00:33 82035                      /tests/Release/net9.0/Microsoft.VisualStudio.TestPlatform.Common.dll
+ffff352de000-ffff3532f000 r--s 00000000 00:33 82034                      /tests/Release/net9.0/Microsoft.VisualStudio.TestPlatform.ObjectModel.dll
+ffff3532f000-ffff353b0000 r--s 00000000 00:33 82033                      /tests/Release/net9.0/Microsoft.TestPlatform.CommunicationUtilities.dll
+ffff353b0000-ffff35403000 r--s 00000000 00:33 82032                      /tests/Release/net9.0/Microsoft.TestPlatform.CrossPlatEngine.dll
+ffff35403000-ffff35415000 r--s 00000000 00:4b 870803                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.ComponentModel.Primitives.dll
+ffff35415000-ffff35460000 r--s 00000000 00:4b 870816                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Diagnostics.Process.dll
+ffff35460000-ffff3576c000 r-xp 00000000 00:4b 862501                     /usr/lib/aarch64-linux-gnu/libicui18n.so.72.1
+ffff3576c000-ffff3577e000 ---p 0030c000 00:4b 862501                     /usr/lib/aarch64-linux-gnu/libicui18n.so.72.1
+ffff3577e000-ffff35790000 r--p 0030e000 00:4b 862501                     /usr/lib/aarch64-linux-gnu/libicui18n.so.72.1
+ffff35790000-ffff35791000 rw-p 00320000 00:4b 862501                     /usr/lib/aarch64-linux-gnu/libicui18n.so.72.1
+ffff35791000-ffff35792000 rw-p 00000000 00:00 0 
+ffff35792000-ffff35794000 r--s 00000000 00:4b 870845                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.IO.dll
+ffff35794000-ffff35795000 ---p 00000000 00:00 0 
+ffff35795000-ffff3579a000 rw-p 00000000 00:00 0 
+ffff3579a000-ffff3579b000 ---p 00000000 00:00 0 
+ffff3579b000-ffff357a0000 rw-p 00000000 00:00 0 
+ffff357a0000-ffff35986000 r-xp 00000000 00:4b 870511                     /usr/lib/aarch64-linux-gnu/libicuuc.so.72.1
+ffff35986000-ffff3599d000 ---p 001e6000 00:4b 870511                     /usr/lib/aarch64-linux-gnu/libicuuc.so.72.1
+ffff3599d000-ffff359b0000 r--p 001ed000 00:4b 870511                     /usr/lib/aarch64-linux-gnu/libicuuc.so.72.1
+ffff359b0000-ffff359b1000 rw-p 00200000 00:4b 870511                     /usr/lib/aarch64-linux-gnu/libicuuc.so.72.1
+ffff359b1000-ffff359b3000 rw-p 00000000 00:00 0 
+ffff359b4000-ffff359b6000 r--s 00000000 00:4b 870877                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Reflection.Extensions.dll
+ffff359b6000-ffff359f7000 r--s 00000000 00:4b 862492                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Private.Uri.dll
+ffff359f7000-ffff35a4f000 r--s 00000000 00:4b 870799                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Collections.dll
+ffff35a4f000-ffff35a9d000 r--s 00000000 00:4b 870795                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Collections.Concurrent.dll
+ffff35a9d000-ffff35b3c000 r--s 00000000 00:33 82036                      /tests/Release/net9.0/System.Text.Json.dll
+ffff35b3c000-ffff35bf0000 r--s 00000000 00:4b 870849                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Linq.dll
+ffff35bf0000-ffff35c00000 ---p 00000000 00:00 0 
+ffff35c00000-ffff36400000 rw-p 00000000 00:00 0 
+ffff36400000-ffff36450000 rw-p 00000000 00:00 0 
+ffff36450000-ffff36800000 ---p 00000000 00:00 0 
+ffff36801000-ffff36803000 r--s 00000000 00:4b 870829                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Globalization.dll
+ffff36803000-ffff3681c000 r--s 00000000 00:33 81890                      /tests/Release/net9.0/Microsoft.TestPlatform.CoreUtilities.dll
+ffff3681c000-ffff36830000 r--s 00000000 00:33 82038                      /tests/Release/net9.0/System.IO.Pipelines.dll
+ffff36830000-ffff36857000 r--s 00000000 00:4b 870850                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Memory.dll
+ffff36857000-ffff36868000 r--s 00000000 00:33 82037                      /tests/Release/net9.0/System.Text.Encodings.Web.dll
+ffff36868000-ffff377f0000 r--s 00000000 00:4b 870873                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Private.CoreLib.dll
+ffff377f0000-ffff37800000 ---p 00000000 00:00 0 
+ffff37800000-ffff38000000 rw-p 00000000 00:00 0 
+ffff38000000-ffff38021000 rw-p 00000000 00:00 0 
+ffff38021000-ffff3c000000 ---p 00000000 00:00 0 
+ffff3c000000-ffff3c021000 rw-p 00000000 00:00 0 
+ffff3c021000-ffff40000000 ---p 00000000 00:00 0 
+ffff40000000-ffff40021000 rw-p 00000000 00:00 0 
+ffff40021000-ffff44000000 ---p 00000000 00:00 0 
+ffff44000000-ffff44005000 r--s 00000000 00:4b 870897                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Runtime.Serialization.Primitives.dll
+ffff44005000-ffff44017000 r--s 00000000 00:4b 870932                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Threading.dll
+ffff44017000-ffff44030000 r--s 00000000 00:4b 870891                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Runtime.InteropServices.dll
+ffff44030000-ffff440b0000 r--p 00000000 00:4b 870958                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/libclrjit.so
+ffff440b0000-ffff440bf000 ---p 00080000 00:4b 870958                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/libclrjit.so
+ffff440bf000-ffff4434f000 r-xp 0007f000 00:4b 870958                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/libclrjit.so
+ffff4434f000-ffff4435e000 ---p 0031f000 00:4b 870958                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/libclrjit.so
+ffff4435e000-ffff44373000 r--p 0030e000 00:4b 870958                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/libclrjit.so
+ffff44373000-ffff44382000 ---p 00343000 00:4b 870958                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/libclrjit.so
+ffff44382000-ffff44383000 rw-p 00322000 00:4b 870958                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/libclrjit.so
+ffff44383000-ffff443bc000 rw-p 00000000 00:00 0 
+ffff443bd000-ffff443c0000 r--s 00000000 00:4b 870940                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Xml.ReaderWriter.dll
+ffff443c0000-ffff443d0000 ---p 00000000 00:00 0 
+ffff443d0000-ffff44bd0000 rw-p 00000000 00:00 0 
+ffff44bd0000-ffff44be0000 ---p 00000000 00:00 0 
+ffff44be0000-ffff453e0000 rw-p 00000000 00:00 0 
+ffff453e0000-ffff453f0000 ---p 00000000 00:00 0 
+ffff453f0000-ffff45bf0000 rw-p 00000000 00:00 0 
+ffff45bf0000-ffff45c00000 ---p 00000000 00:00 0 
+ffff45c00000-ffff46400000 rw-p 00000000 00:00 0 
+ffff46400000-ffff46430000 ---p 00000000 00:00 0 
+ffff46430000-ffff46431000 r-xs 00000000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff46431000-ffff46440000 ---p 00000000 00:00 0 
+ffff46440000-ffff46443000 rw-s 00001000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff46443000-ffff46444000 r-xs 00004000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff46444000-ffff4644c000 rw-s 00005000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4644c000-ffff4644d000 ---s 0000d000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4644d000-ffff46450000 r-xs 0000e000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff46450000-ffff46454000 rw-s 00011000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff46454000-ffff46456000 ---s 00015000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff46456000-ffff46459000 rw-s 00017000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff46459000-ffff46460000 ---s 0001a000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff46460000-ffff46461000 r--p 00000000 00:4b 870873                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Private.CoreLib.dll
+ffff46461000-ffff46470000 ---p 00000000 00:00 0 
+ffff46470000-ffff470d9000 r-xp 00000000 00:4b 870873                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Private.CoreLib.dll
+ffff470d9000-ffff470f8000 ---p 00000000 00:00 0 
+ffff470f8000-ffff4740e000 rw-p 00c68000 00:4b 870873                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Private.CoreLib.dll
+ffff4740e000-ffff4742d000 ---p 00000000 00:00 0 
+ffff4742d000-ffff47438000 r--p 00f7d000 00:4b 870873                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Private.CoreLib.dll
+ffff47438000-ffff47440000 ---p 00000000 00:00 0 
+ffff47440000-ffff474c0000 rw-s 00021000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff474c0000-ffff474c4000 r-xs 000a1000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff474c4000-ffff474c8000 rw-s 000a5000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff474c8000-ffff474cc000 r-xs 000a9000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff474cc000-ffff474d0000 rw-s 000ad000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff474d0000-ffff474d4000 r-xs 000b1000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff474d4000-ffff474d8000 rw-s 000b5000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff474d8000-ffff474dc000 r-xs 000b9000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff474dc000-ffff47550000 rw-s 000bd000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff47550000-ffff475cf000 r-xs 00131000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff475cf000-ffff475d0000 ---s 001b0000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff475d0000-ffff4765e000 rw-s 001b1000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4765e000-ffff47660000 ---s 0023f000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff47660000-ffff47690000 rw-s 00241000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff47690000-ffff47691000 r--p 00000000 00:4b 870849                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Linq.dll
+ffff47691000-ffff476a0000 ---p 00000000 00:00 0 
+ffff476a0000-ffff47727000 r-xp 00000000 00:4b 870849                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Linq.dll
+ffff47727000-ffff47746000 ---p 00000000 00:00 0 
+ffff47746000-ffff47772000 rw-p 00086000 00:4b 870849                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Linq.dll
+ffff47772000-ffff47792000 ---p 00000000 00:00 0 
+ffff47792000-ffff47794000 r--p 000b2000 00:4b 870849                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Linq.dll
+ffff47794000-ffff477a0000 ---p 00000000 00:00 0 
+ffff477a0000-ffff477b0000 rw-s 00271000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff477b0000-ffff477b1000 r--p 00000000 00:4b 870891                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Runtime.InteropServices.dll
+ffff477b1000-ffff477c0000 ---p 00000000 00:00 0 
+ffff477c0000-ffff477d5000 r-xp 00000000 00:4b 870891                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Runtime.InteropServices.dll
+ffff477d5000-ffff477f4000 ---p 00000000 00:00 0 
+ffff477f4000-ffff477f9000 rw-p 00014000 00:4b 870891                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Runtime.InteropServices.dll
+ffff477f9000-ffff47818000 ---p 00000000 00:00 0 
+ffff47818000-ffff47819000 r--p 00018000 00:4b 870891                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Runtime.InteropServices.dll
+ffff47819000-ffff47820000 ---p 00000000 00:00 0 
+ffff47820000-ffff47821000 rw-s 00281000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff47821000-ffff47830000 ---s 00282000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff47830000-ffff47860000 rw-s 00291000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff47860000-ffff47864000 r-xs 002c1000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff47864000-ffff47868000 rw-s 002c5000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff47868000-ffff4786c000 r-xs 002c9000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4786c000-ffff47880000 rw-s 002cd000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff47880000-ffff47881000 r--p 00000000 00:4b 870932                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Threading.dll
+ffff47881000-ffff47890000 ---p 00000000 00:00 0 
+ffff47890000-ffff4789f000 r-xp 00000000 00:4b 870932                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Threading.dll
+ffff4789f000-ffff478be000 ---p 00000000 00:00 0 
+ffff478be000-ffff478c2000 rw-p 0000e000 00:4b 870932                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Threading.dll
+ffff478c2000-ffff478e1000 ---p 00000000 00:00 0 
+ffff478e1000-ffff478e2000 r--p 00011000 00:4b 870932                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Threading.dll
+ffff478e2000-ffff478f0000 ---p 00000000 00:00 0 
+ffff478f0000-ffff47900000 rw-s 002e1000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff47900000-ffff47901000 r--p 00000000 00:4b 870850                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Memory.dll
+ffff47901000-ffff47910000 ---p 00000000 00:00 0 
+ffff47910000-ffff4792f000 r-xp 00000000 00:4b 870850                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Memory.dll
+ffff4792f000-ffff4794e000 ---p 00000000 00:00 0 
+ffff4794e000-ffff47957000 rw-p 0001e000 00:4b 870850                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Memory.dll
+ffff47957000-ffff47976000 ---p 00000000 00:00 0 
+ffff47976000-ffff47977000 r--p 00026000 00:4b 870850                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Memory.dll
+ffff47977000-ffff47980000 ---p 00000000 00:00 0 
+ffff47980000-ffff479c0000 rw-s 002f1000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff479c0000-ffff479c1000 r--p 00000000 00:4b 870795                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Collections.Concurrent.dll
+ffff479c1000-ffff479d0000 ---p 00000000 00:00 0 
+ffff479d0000-ffff47a0b000 r-xp 00000000 00:4b 870795                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Collections.Concurrent.dll
+ffff47a0b000-ffff47a2a000 ---p 00000000 00:00 0 
+ffff47a2a000-ffff47a3e000 rw-p 0003a000 00:4b 870795                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Collections.Concurrent.dll
+ffff47a3e000-ffff47a5d000 ---p 00000000 00:00 0 
+ffff47a5d000-ffff47a5e000 r--p 0004d000 00:4b 870795                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Collections.Concurrent.dll
+ffff47a5e000-ffff47a60000 ---p 00000000 00:00 0 
+ffff47a60000-ffff47a70000 rw-s 00331000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff47a70000-ffff47a71000 r--p 00000000 00:4b 870799                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Collections.dll
+ffff47a71000-ffff47a80000 ---p 00000000 00:00 0 
+ffff47a80000-ffff47ac5000 r-xp 00000000 00:4b 870799                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Collections.dll
+ffff47ac5000-ffff47ae5000 ---p 00000000 00:00 0 
+ffff47ae5000-ffff47af8000 rw-p 00045000 00:4b 870799                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Collections.dll
+ffff47af8000-ffff47b17000 ---p 00000000 00:00 0 
+ffff47b17000-ffff47b18000 r--p 00057000 00:4b 870799                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Collections.dll
+ffff47b18000-ffff47b20000 ---p 00000000 00:00 0 
+ffff47b20000-ffff47b50000 rw-s 00341000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff47b50000-ffff47b51000 r--p 00000000 00:4b 862492                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Private.Uri.dll
+ffff47b51000-ffff47b60000 ---p 00000000 00:00 0 
+ffff47b60000-ffff47b95000 r-xp 00000000 00:4b 862492                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Private.Uri.dll
+ffff47b95000-ffff47bb4000 ---p 00000000 00:00 0 
+ffff47bb4000-ffff47bc0000 rw-p 00034000 00:4b 862492                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Private.Uri.dll
+ffff47bc0000-ffff47bd0000 ---p 00000000 00:00 0 
+ffff47bd0000-ffff47bd1000 r--p 00040000 00:4b 862492                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Private.Uri.dll
+ffff47bd1000-ffff47be0000 ---p 00000000 00:00 0 
+ffff47be0000-ffff47be4000 r-xs 00371000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff47be4000-ffff47be8000 rw-s 00375000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff47be8000-ffff47bec000 r-xs 00379000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff47bec000-ffff47c40000 rw-s 0037d000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff47c40000-ffff47c44000 r-xs 003d1000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff47c44000-ffff47c48000 rw-s 003d5000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff47c48000-ffff47c4c000 r-xs 003d9000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff47c4c000-ffff47c80000 rw-s 003dd000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff47c80000-ffff47c83000 r-xs 00411000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff47c83000-ffff47c90000 ---s 00414000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff47c90000-ffff47cb0000 rw-s 00421000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff47cb0000-ffff47cb4000 r-xs 00441000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff47cb4000-ffff47cb8000 rw-s 00445000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff47cb8000-ffff47cbc000 r-xs 00449000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff47cbc000-ffff47cf0000 rw-s 0044d000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff47cf0000-ffff47cf1000 r--p 00000000 00:4b 870816                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Diagnostics.Process.dll
+ffff47cf1000-ffff47d00000 ---p 00000000 00:00 0 
+ffff47d00000-ffff47d3d000 r-xp 00000000 00:4b 870816                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Diagnostics.Process.dll
+ffff47d3d000-ffff47d5c000 ---p 00000000 00:00 0 
+ffff47d5c000-ffff47d6b000 rw-p 0003c000 00:4b 870816                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Diagnostics.Process.dll
+ffff47d6b000-ffff47d8a000 ---p 00000000 00:00 0 
+ffff47d8a000-ffff47d8b000 r--p 0004a000 00:4b 870816                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Diagnostics.Process.dll
+ffff47d8b000-ffff47d90000 ---p 00000000 00:00 0 
+ffff47d90000-ffff47d91000 r--p 00000000 00:4b 870803                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.ComponentModel.Primitives.dll
+ffff47d91000-ffff47da0000 ---p 00000000 00:00 0 
+ffff47da0000-ffff47daf000 r-xp 00000000 00:4b 870803                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.ComponentModel.Primitives.dll
+ffff47daf000-ffff47dce000 ---p 00000000 00:00 0 
+ffff47dce000-ffff47dd1000 rw-p 0000e000 00:4b 870803                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.ComponentModel.Primitives.dll
+ffff47dd1000-ffff47df1000 ---p 00000000 00:00 0 
+ffff47df1000-ffff47df2000 r--p 00011000 00:4b 870803                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.ComponentModel.Primitives.dll
+ffff47df2000-ffff47e00000 ---p 00000000 00:00 0 
+ffff47e00000-ffff47e1e000 rw-s 00481000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff47e1e000-ffff47e20000 ---s 0049f000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff47e20000-ffff47e2f000 rw-s 004a1000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff47e2f000-ffff47e30000 ---s 004b0000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff47e30000-ffff47e3d000 rw-s 004b1000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff47e3d000-ffff47e40000 ---s 004be000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff47e40000-ffff47e5d000 rw-s 004c1000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff47e5d000-ffff47e60000 ---s 004de000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff47e60000-ffff47ea0000 rw-s 004e1000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff47ea0000-ffff47ea1000 r--p 00000000 00:4b 870820                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Diagnostics.TraceSource.dll
+ffff47ea1000-ffff47eb0000 ---p 00000000 00:00 0 
+ffff47eb0000-ffff47ece000 r-xp 00000000 00:4b 870820                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Diagnostics.TraceSource.dll
+ffff47ece000-ffff47eed000 ---p 00000000 00:00 0 
+ffff47eed000-ffff47ef4000 rw-p 0001d000 00:4b 870820                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Diagnostics.TraceSource.dll
+ffff47ef4000-ffff47f13000 ---p 00000000 00:00 0 
+ffff47f13000-ffff47f14000 r--p 00023000 00:4b 870820                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Diagnostics.TraceSource.dll
+ffff47f14000-ffff47f20000 ---p 00000000 00:00 0 
+ffff47f20000-ffff47f50000 rw-s 00521000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff47f50000-ffff47f51000 r--p 00000000 00:4b 870858                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Net.Primitives.dll
+ffff47f51000-ffff47f60000 ---p 00000000 00:00 0 
+ffff47f60000-ffff47f92000 r-xp 00000000 00:4b 870858                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Net.Primitives.dll
+ffff47f92000-ffff47fb1000 ---p 00000000 00:00 0 
+ffff47fb1000-ffff47fbd000 rw-p 00031000 00:4b 870858                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Net.Primitives.dll
+ffff47fbd000-ffff47fdc000 ---p 00000000 00:00 0 
+ffff47fdc000-ffff47fdd000 r--p 0003c000 00:4b 870858                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Net.Primitives.dll
+ffff47fdd000-ffff47fe0000 ---p 00000000 00:00 0 
+ffff47fe0000-ffff47fe4000 r-xs 00551000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff47fe4000-ffff47fe8000 rw-s 00555000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff47fe8000-ffff47fec000 r-xs 00559000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff47fec000-ffff47ff0000 rw-s 0055d000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff47ff0000-ffff47ff1000 r--p 00000000 00:4b 870797                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Collections.NonGeneric.dll
+ffff47ff1000-ffff48000000 ---p 00000000 00:00 0 
+ffff48000000-ffff48014000 r-xp 00000000 00:4b 870797                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Collections.NonGeneric.dll
+ffff48014000-ffff48033000 ---p 00000000 00:00 0 
+ffff48033000-ffff48038000 rw-p 00013000 00:4b 870797                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Collections.NonGeneric.dll
+ffff48038000-ffff48057000 ---p 00000000 00:00 0 
+ffff48057000-ffff48058000 r--p 00017000 00:4b 870797                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Collections.NonGeneric.dll
+ffff48058000-ffff48060000 ---p 00000000 00:00 0 
+ffff48060000-ffff4808f000 rw-s 00561000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4808f000-ffff48090000 ---s 00590000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff48090000-ffff48091000 r--p 00000000 00:4b 870863                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Net.Sockets.dll
+ffff48091000-ffff480a0000 ---p 00000000 00:00 0 
+ffff480a0000-ffff4812b000 r-xp 00000000 00:4b 870863                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Net.Sockets.dll
+ffff4812b000-ffff4814a000 ---p 00000000 00:00 0 
+ffff4814a000-ffff4816a000 rw-p 0008a000 00:4b 870863                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Net.Sockets.dll
+ffff4816a000-ffff48189000 ---p 00000000 00:00 0 
+ffff48189000-ffff4818a000 r--p 000a9000 00:4b 870863                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Net.Sockets.dll
+ffff4818a000-ffff48190000 ---p 00000000 00:00 0 
+ffff48190000-ffff48210000 rw-s 00591000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff48210000-ffff48214000 r-xs 00611000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff48214000-ffff48218000 rw-s 00615000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff48218000-ffff4821c000 r-xs 00619000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4821c000-ffff48280000 rw-s 0061d000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff48280000-ffff48284000 r-xs 00681000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff48284000-ffff48288000 rw-s 00685000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff48288000-ffff4828c000 r-xs 00689000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4828c000-ffff482d0000 rw-s 0068d000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff482d0000-ffff482d1000 r--p 00000000 00:4b 870897                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Runtime.Serialization.Primitives.dll
+ffff482d1000-ffff482e0000 ---p 00000000 00:00 0 
+ffff482e0000-ffff482e5000 r-xp 00000000 00:4b 870897                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Runtime.Serialization.Primitives.dll
+ffff482e5000-ffff48304000 ---p 00000000 00:00 0 
+ffff48304000-ffff48305000 rw-p 00004000 00:4b 870897                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Runtime.Serialization.Primitives.dll
+ffff48305000-ffff48324000 ---p 00000000 00:00 0 
+ffff48324000-ffff48325000 r--p 00004000 00:4b 870897                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Runtime.Serialization.Primitives.dll
+ffff48325000-ffff48330000 ---p 00000000 00:00 0 
+ffff48330000-ffff48347000 rw-s 006d1000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff48347000-ffff48350000 ---s 006e8000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff48350000-ffff483cf000 r-xs 006f1000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff483cf000-ffff483d0000 ---s 00770000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff483d0000-ffff483d4000 r-xs 00771000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff483d4000-ffff483d8000 rw-s 00775000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff483d8000-ffff483dc000 r-xs 00779000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff483dc000-ffff483f0000 rw-s 0077d000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff483f0000-ffff483f1000 r--p 00000000 00:4b 870878                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Reflection.Metadata.dll
+ffff483f1000-ffff48400000 ---p 00000000 00:00 0 
+ffff48400000-ffff48501000 r-xp 00000000 00:4b 870878                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Reflection.Metadata.dll
+ffff48501000-ffff48520000 ---p 00000000 00:00 0 
+ffff48520000-ffff48558000 rw-p 00100000 00:4b 870878                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Reflection.Metadata.dll
+ffff48558000-ffff48577000 ---p 00000000 00:00 0 
+ffff48577000-ffff48579000 r--p 00137000 00:4b 870878                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Reflection.Metadata.dll
+ffff48579000-ffff48580000 ---p 00000000 00:00 0 
+ffff48580000-ffff485a0000 rw-s 00791000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff485a0000-ffff485a1000 r--p 00000000 00:4b 870840                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.IO.MemoryMappedFiles.dll
+ffff485a1000-ffff485b0000 ---p 00000000 00:00 0 
+ffff485b0000-ffff485c1000 r-xp 00000000 00:4b 870840                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.IO.MemoryMappedFiles.dll
+ffff485c1000-ffff485e0000 ---p 00000000 00:00 0 
+ffff485e0000-ffff485e4000 rw-p 00010000 00:4b 870840                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.IO.MemoryMappedFiles.dll
+ffff485e4000-ffff48604000 ---p 00000000 00:00 0 
+ffff48604000-ffff48605000 r--p 00014000 00:4b 870840                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.IO.MemoryMappedFiles.dll
+ffff48605000-ffff48610000 ---p 00000000 00:00 0 
+ffff48610000-ffff48620000 rw-s 007b1000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff48620000-ffff48621000 r--p 00000000 00:4b 870796                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Collections.Immutable.dll
+ffff48621000-ffff48630000 ---p 00000000 00:00 0 
+ffff48630000-ffff486e9000 r-xp 00000000 00:4b 870796                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Collections.Immutable.dll
+ffff486e9000-ffff48708000 ---p 00000000 00:00 0 
+ffff48708000-ffff48746000 rw-p 000b8000 00:4b 870796                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Collections.Immutable.dll
+ffff48746000-ffff48765000 ---p 00000000 00:00 0 
+ffff48765000-ffff48768000 r--p 000f5000 00:4b 870796                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Collections.Immutable.dll
+ffff48768000-ffff48770000 ---p 00000000 00:00 0 
+ffff48770000-ffff48773000 rw-s 007c1000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff48773000-ffff48780000 ---s 007c4000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff48780000-ffff487c7000 rw-s 007d1000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff487c7000-ffff487d0000 ---s 00818000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff487d0000-ffff48836000 rw-s 00821000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff48836000-ffff48840000 ---s 00887000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff48840000-ffff48870000 rw-s 00891000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff48870000-ffff48871000 r--p 00000000 00:4b 870852                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Net.Http.dll
+ffff48871000-ffff48880000 ---p 00000000 00:00 0 
+ffff48880000-ffff48a05000 r-xp 00000000 00:4b 870852                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Net.Http.dll
+ffff48a05000-ffff48a25000 ---p 00000000 00:00 0 
+ffff48a25000-ffff48a7d000 rw-p 00185000 00:4b 870852                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Net.Http.dll
+ffff48a7d000-ffff48a9c000 ---p 00000000 00:00 0 
+ffff48a9c000-ffff48a9f000 r--p 001dc000 00:4b 870852                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Net.Http.dll
+ffff48a9f000-ffff48aa0000 ---p 00000000 00:00 0 
+ffff48aa0000-ffff48ad0000 rw-s 008c1000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff48ad0000-ffff48ad4000 r-xs 008f1000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff48ad4000-ffff48ad8000 rw-s 008f5000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff48ad8000-ffff48adc000 r-xs 008f9000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff48adc000-ffff48b68000 rw-s 008fd000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff48b68000-ffff48b70000 ---s 00989000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff48b70000-ffff48b80000 rw-s 00991000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff48b80000-ffff48b81000 r--p 00000000 00:4b 862513                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Private.Xml.dll
+ffff48b81000-ffff48b90000 ---p 00000000 00:00 0 
+ffff48b90000-ffff492fc000 r-xp 00000000 00:4b 862513                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Private.Xml.dll
+ffff492fc000-ffff4931b000 ---p 00000000 00:00 0 
+ffff4931b000-ffff4946c000 rw-p 0076b000 00:4b 862513                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Private.Xml.dll
+ffff4946c000-ffff4948b000 ---p 00000000 00:00 0 
+ffff4948b000-ffff49493000 r--p 008bb000 00:4b 862513                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Private.Xml.dll
+ffff49493000-ffff494a0000 ---p 00000000 00:00 0 
+ffff494a0000-ffff49500000 rw-s 009a1000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff49500000-ffff49504000 r-xs 00a01000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff49504000-ffff49508000 rw-s 00a05000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff49508000-ffff4950c000 r-xs 00a09000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4950c000-ffff4952e000 rw-s 00a0d000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4952e000-ffff49530000 ---s 00a2f000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff49530000-ffff49570000 rw-s 00a31000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff49570000-ffff49574000 r-xs 00a71000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff49574000-ffff49578000 rw-s 00a75000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff49578000-ffff4957c000 r-xs 00a79000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4957c000-ffff495ac000 rw-s 00a7d000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff495ac000-ffff495b0000 ---s 00aad000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff495b0000-ffff495d0000 rw-s 00ab1000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff495d0000-ffff495d1000 r--p 00000000 00:4b 870922                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Text.RegularExpressions.dll
+ffff495d1000-ffff495e0000 ---p 00000000 00:00 0 
+ffff495e0000-ffff496be000 r-xp 00000000 00:4b 870922                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Text.RegularExpressions.dll
+ffff496be000-ffff496dd000 ---p 00000000 00:00 0 
+ffff496dd000-ffff49713000 rw-p 000dd000 00:4b 870922                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Text.RegularExpressions.dll
+ffff49713000-ffff49732000 ---p 00000000 00:00 0 
+ffff49732000-ffff49734000 r--p 00112000 00:4b 870922                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Text.RegularExpressions.dll
+ffff49734000-ffff49740000 ---p 00000000 00:00 0 
+ffff49740000-ffff4977f000 rw-s 00ad1000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4977f000-ffff49780000 ---s 00b10000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff49780000-ffff497a0000 rw-s 00b11000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff497a0000-ffff497a1000 r--p 00000000 00:4b 862512                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Private.Xml.Linq.dll
+ffff497a1000-ffff497b0000 ---p 00000000 00:00 0 
+ffff497b0000-ffff49807000 r-xp 00000000 00:4b 862512                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Private.Xml.Linq.dll
+ffff49807000-ffff49826000 ---p 00000000 00:00 0 
+ffff49826000-ffff4983b000 rw-p 00056000 00:4b 862512                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Private.Xml.Linq.dll
+ffff4983b000-ffff4985b000 ---p 00000000 00:00 0 
+ffff4985b000-ffff4985c000 r--p 0006b000 00:4b 862512                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Private.Xml.Linq.dll
+ffff4985c000-ffff49860000 ---p 00000000 00:00 0 
+ffff49860000-ffff49890000 rw-s 00b31000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff49890000-ffff49894000 r-xs 00b61000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff49894000-ffff49898000 rw-s 00b65000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff49898000-ffff4989c000 r-xs 00b69000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4989c000-ffff498e0000 rw-s 00b6d000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff498e0000-ffff4995f000 r-xs 00bb1000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4995f000-ffff49960000 ---s 00c30000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff49960000-ffff4996c000 rw-s 00c31000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4996c000-ffff49970000 ---s 00c3d000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff49970000-ffff49990000 rw-s 00c41000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff49990000-ffff49994000 r-xs 00c61000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff49994000-ffff49998000 rw-s 00c65000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff49998000-ffff4999c000 r-xs 00c69000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4999c000-ffff499ba000 rw-s 00c6d000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff499ba000-ffff499c0000 ---s 00c8b000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff499c0000-ffff499e3000 rw-s 00c91000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff499e3000-ffff499f0000 ---s 00cb4000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff499f0000-ffff49a7f000 rw-s 00cc1000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff49a7f000-ffff49a80000 ---s 00d50000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff49a80000-ffff49b10000 rw-s 00d51000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff49b10000-ffff49b14000 r-xs 00de1000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff49b14000-ffff49b18000 rw-s 00de5000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff49b18000-ffff49b1c000 r-xs 00de9000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff49b1c000-ffff49b20000 rw-s 00ded000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff49b20000-ffff49b21000 r--p 00000000 00:4b 870854                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Net.Mail.dll
+ffff49b21000-ffff49b30000 ---p 00000000 00:00 0 
+ffff49b30000-ffff49b91000 r-xp 00000000 00:4b 870854                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Net.Mail.dll
+ffff49b91000-ffff49bb0000 ---p 00000000 00:00 0 
+ffff49bb0000-ffff49bc5000 rw-p 00060000 00:4b 870854                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Net.Mail.dll
+ffff49bc5000-ffff49be4000 ---p 00000000 00:00 0 
+ffff49be4000-ffff49be5000 r--p 00074000 00:4b 870854                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Net.Mail.dll
+ffff49be5000-ffff49bf0000 ---p 00000000 00:00 0 
+ffff49bf0000-ffff49c00000 rw-s 00df1000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff49c00000-ffff49c01000 r--p 00000000 00:4b 870894                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Runtime.Numerics.dll
+ffff49c01000-ffff49c10000 ---p 00000000 00:00 0 
+ffff49c10000-ffff49c59000 r-xp 00000000 00:4b 870894                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Runtime.Numerics.dll
+ffff49c59000-ffff49c78000 ---p 00000000 00:00 0 
+ffff49c78000-ffff49c86000 rw-p 00048000 00:4b 870894                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Runtime.Numerics.dll
+ffff49c86000-ffff49ca5000 ---p 00000000 00:00 0 
+ffff49ca5000-ffff49ca7000 r--p 00055000 00:4b 870894                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Runtime.Numerics.dll
+ffff49ca7000-ffff49cb0000 ---p 00000000 00:00 0 
+ffff49cb0000-ffff49cb5000 rw-s 00e01000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff49cb5000-ffff49cc0000 ---s 00e06000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff49cc0000-ffff49cd0000 rw-s 00e11000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff49cd0000-ffff49cd1000 r--p 00000000 00:4b 870910                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Security.Cryptography.dll
+ffff49cd1000-ffff49ce0000 ---p 00000000 00:00 0 
+ffff49ce0000-ffff49f02000 r-xp 00000000 00:4b 870910                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Security.Cryptography.dll
+ffff49f02000-ffff49f21000 ---p 00000000 00:00 0 
+ffff49f21000-ffff49f87000 rw-p 00221000 00:4b 870910                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Security.Cryptography.dll
+ffff49f87000-ffff49fa6000 ---p 00000000 00:00 0 
+ffff49fa6000-ffff49fa9000 r--p 00286000 00:4b 870910                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Security.Cryptography.dll
+ffff49fa9000-ffff49fb0000 ---p 00000000 00:00 0 
+ffff49fb0000-ffff49ffa000 rw-s 00e21000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff49ffa000-ffff4a000000 ---s 00e6b000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a000000-ffff4a020000 rw-s 00e71000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a020000-ffff4a021000 r--p 00000000 00:4b 870804                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.ComponentModel.TypeConverter.dll
+ffff4a021000-ffff4a030000 ---p 00000000 00:00 0 
+ffff4a030000-ffff4a0df000 r-xp 00000000 00:4b 870804                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.ComponentModel.TypeConverter.dll
+ffff4a0df000-ffff4a0ff000 ---p 00000000 00:00 0 
+ffff4a0ff000-ffff4a124000 rw-p 000af000 00:4b 870804                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.ComponentModel.TypeConverter.dll
+ffff4a124000-ffff4a144000 ---p 00000000 00:00 0 
+ffff4a144000-ffff4a145000 r--p 000d4000 00:4b 870804                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.ComponentModel.TypeConverter.dll
+ffff4a145000-ffff4a150000 ---p 00000000 00:00 0 
+ffff4a150000-ffff4a160000 rw-s 00e91000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a160000-ffff4a164000 r-xs 00ea1000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a164000-ffff4a168000 rw-s 00ea5000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a168000-ffff4a16c000 r-xs 00ea9000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a16c000-ffff4a1e0000 rw-s 00ead000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a1e0000-ffff4a25f000 r-xs 00f21000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a25f000-ffff4a260000 ---s 00fa0000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a260000-ffff4a280000 rw-s 00fa1000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a280000-ffff4a284000 r-xs 00fc1000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a284000-ffff4a288000 rw-s 00fc5000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a288000-ffff4a28c000 r-xs 00fc9000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a28c000-ffff4a2af000 rw-s 00fcd000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a2af000-ffff4a2b0000 ---s 00ff0000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a2b0000-ffff4a360000 rw-s 00ff1000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a360000-ffff4a364000 r-xs 010a1000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a364000-ffff4a368000 rw-s 010a5000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a368000-ffff4a370000 ---s 010a9000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a370000-ffff4a390000 rw-s 010b1000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a390000-ffff4a394000 r-xs 010d1000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a394000-ffff4a398000 rw-s 010d5000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a398000-ffff4a39c000 r-xs 010d9000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a39c000-ffff4a400000 rw-s 010dd000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a400000-ffff4a404000 r-xs 01141000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a404000-ffff4a408000 rw-s 01145000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a408000-ffff4a40c000 r-xs 01149000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a40c000-ffff4a42c000 rw-s 0114d000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a42c000-ffff4a430000 ---s 0116d000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a430000-ffff4a440000 rw-s 01171000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a440000-ffff4a444000 r-xs 01181000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a444000-ffff4a448000 rw-s 01185000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a448000-ffff4a44c000 r-xs 01189000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a44c000-ffff4a450000 rw-s 0118d000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a450000-ffff4a454000 r-xs 01191000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a454000-ffff4a458000 rw-s 01195000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a458000-ffff4a45c000 r-xs 01199000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a45c000-ffff4a460000 rw-s 0119d000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a460000-ffff4a464000 r-xs 011a1000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a464000-ffff4a468000 rw-s 011a5000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a468000-ffff4a46c000 r-xs 011a9000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a46c000-ffff4a470000 rw-s 011ad000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a470000-ffff4a474000 r-xs 011b1000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a474000-ffff4a478000 rw-s 011b5000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a478000-ffff4a47c000 r-xs 011b9000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a47c000-ffff4a480000 rw-s 011bd000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a480000-ffff4a484000 r-xs 011c1000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a484000-ffff4a488000 rw-s 011c5000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a488000-ffff4a48c000 r-xs 011c9000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a48c000-ffff4a490000 rw-s 011cd000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a490000-ffff4a494000 r-xs 011d1000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a494000-ffff4a498000 rw-s 011d5000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a498000-ffff4a49c000 r-xs 011d9000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a49c000-ffff4a4a0000 rw-s 011dd000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a4a0000-ffff4a4a4000 r-xs 011e1000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a4a4000-ffff4a4a8000 rw-s 011e5000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a4a8000-ffff4a4ac000 r-xs 011e9000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a4ac000-ffff4a4b0000 rw-s 011ed000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a4b0000-ffff4a4b4000 r-xs 011f1000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a4b4000-ffff4a4b8000 rw-s 011f5000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a4b8000-ffff4a4bc000 r-xs 011f9000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a4bc000-ffff4a4c0000 rw-s 011fd000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a4c0000-ffff4a4c4000 r-xs 01201000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a4c4000-ffff4a4c8000 rw-s 01205000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a4c8000-ffff4a4cc000 r-xs 01209000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a4cc000-ffff4a4d0000 rw-s 0120d000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a4d0000-ffff4a4d4000 r-xs 01211000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a4d4000-ffff4a4d8000 rw-s 01215000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a4d8000-ffff4a4dc000 r-xs 01219000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a4dc000-ffff4a4e0000 rw-s 0121d000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a4e0000-ffff4a4e4000 r-xs 01221000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a4e4000-ffff4a4e8000 rw-s 01225000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a4e8000-ffff4a4ec000 r-xs 01229000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a4ec000-ffff4a4f0000 rw-s 0122d000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a4f0000-ffff4a4f4000 r-xs 01231000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a4f4000-ffff4a4f8000 rw-s 01235000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a4f8000-ffff4a4fc000 r-xs 01239000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a4fc000-ffff4a500000 rw-s 0123d000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a500000-ffff4a504000 r-xs 01241000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a504000-ffff4a508000 rw-s 01245000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a508000-ffff4a50c000 r-xs 01249000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a50c000-ffff4a536000 rw-s 0124d000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a536000-ffff4a540000 ---s 01277000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a540000-ffff4a599000 r-xs 01281000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a599000-ffff4a5c0000 ---s 012da000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a5c0000-ffff4a5c4000 r-xs 01301000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a5c4000-ffff4a5c8000 rw-s 01305000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a5c8000-ffff4a5d0000 ---s 01309000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a5d0000-ffff4a5ff000 rw-s 01311000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a5ff000-ffff4a600000 ---s 01340000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a600000-ffff4a610000 rw-s 01341000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a610000-ffff4a611000 r--p 00000000 00:4b 870798                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Collections.Specialized.dll
+ffff4a611000-ffff4a620000 ---p 00000000 00:00 0 
+ffff4a620000-ffff4a634000 r-xp 00000000 00:4b 870798                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Collections.Specialized.dll
+ffff4a634000-ffff4a653000 ---p 00000000 00:00 0 
+ffff4a653000-ffff4a658000 rw-p 00013000 00:4b 870798                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Collections.Specialized.dll
+ffff4a658000-ffff4a677000 ---p 00000000 00:00 0 
+ffff4a677000-ffff4a678000 r--p 00017000 00:4b 870798                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Collections.Specialized.dll
+ffff4a678000-ffff4a680000 ---p 00000000 00:00 0 
+ffff4a680000-ffff4a69a000 rw-s 01351000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a69a000-ffff4a6a0000 ---s 0136b000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a6a0000-ffff4a6a4000 r-xs 01371000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a6a4000-ffff4a6a8000 rw-s 01375000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a6a8000-ffff4a6ac000 r-xs 01379000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a6ac000-ffff4a790000 rw-s 0137d000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a790000-ffff4a794000 r-xs 01461000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a794000-ffff4a798000 rw-s 01465000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a798000-ffff4a7a0000 ---s 01469000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a7a0000-ffff4a7b5000 rw-s 01471000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a7b5000-ffff4a7c0000 ---s 01486000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a7c0000-ffff4a7c4000 rw-s 01491000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a7c4000-ffff4a7d0000 ---s 01495000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff4a7d0000-ffff86400000 ---p 00000000 00:00 0 
+ffff86400000-ffff86402000 r--s 00000000 00:4b 870881                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Reflection.dll
+ffff86402000-ffff86410000 r--s 00000000 00:33 82031                      /tests/Release/net9.0/Microsoft.TestPlatform.PlatformAbstractions.dll
+ffff86410000-ffff8641b000 r--p 00000000 00:4b 870953                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/libSystem.Native.so
+ffff8641b000-ffff8642a000 ---p 0000b000 00:4b 870953                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/libSystem.Native.so
+ffff8642a000-ffff86437000 r-xp 0000a000 00:4b 870953                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/libSystem.Native.so
+ffff86437000-ffff86446000 ---p 00027000 00:4b 870953                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/libSystem.Native.so
+ffff86446000-ffff86447000 r--p 00016000 00:4b 870953                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/libSystem.Native.so
+ffff86447000-ffff86456000 ---p 00037000 00:4b 870953                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/libSystem.Native.so
+ffff86456000-ffff86457000 rw-p 00016000 00:4b 870953                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/libSystem.Native.so
+ffff86457000-ffff86459000 r--s 00000000 00:4b 870928                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Threading.Tasks.dll
+ffff86459000-ffff8645b000 r--s 00000000 00:4b 870942                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Xml.XDocument.dll
+ffff8645b000-ffff8645c000 ---p 00000000 00:00 0 
+ffff8645c000-ffff86461000 rw-p 00000000 00:00 0 
+ffff86461000-ffff865a4000 rw-p 00000000 00:00 0 
+ffff865a4000-ffff865b0000 ---p 00000000 00:00 0 
+ffff865b0000-ffff865b1000 r-xp 00000000 00:4b 864138                     /usr/lib/aarch64-linux-gnu/librt.so.1
+ffff865b1000-ffff865cf000 ---p 00001000 00:4b 864138                     /usr/lib/aarch64-linux-gnu/librt.so.1
+ffff865cf000-ffff865d0000 r--p 0000f000 00:4b 864138                     /usr/lib/aarch64-linux-gnu/librt.so.1
+ffff865d0000-ffff865d1000 rw-p 00010000 00:4b 864138                     /usr/lib/aarch64-linux-gnu/librt.so.1
+ffff865d1000-ffff865d3000 r--s 00000000 00:4b 870887                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Runtime.Extensions.dll
+ffff865d3000-ffff865e0000 r--s 00000000 00:33 81894                      /tests/Release/net9.0/testhost.dll
+ffff865e0000-ffff866c6000 r--p 00000000 00:4b 870959                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/libcoreclr.so
+ffff866c6000-ffff866c7000 r--p 000e6000 00:4b 870959                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/libcoreclr.so
+ffff866c7000-ffff867c4000 r--p 000e7000 00:4b 870959                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/libcoreclr.so
+ffff867c4000-ffff867d3000 ---p 001e4000 00:4b 870959                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/libcoreclr.so
+ffff867d3000-ffff86c63000 r-xp 001e3000 00:4b 870959                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/libcoreclr.so
+ffff86c63000-ffff86c72000 ---p 00683000 00:4b 870959                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/libcoreclr.so
+ffff86c72000-ffff86c9c000 r--p 00672000 00:4b 870959                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/libcoreclr.so
+ffff86c9c000-ffff86cab000 ---p 006bc000 00:4b 870959                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/libcoreclr.so
+ffff86cab000-ffff86cd3000 rw-p 0069b000 00:4b 870959                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/libcoreclr.so
+ffff86cd3000-ffff86d3d000 rw-p 00000000 00:00 0 
+ffff86d3e000-ffff86d40000 r--s 00000000 00:4b 870893                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Runtime.Loader.dll
+ffff86d40000-ffff86d54000 r--p 00000000 00:4b 870961                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/libhostpolicy.so
+ffff86d54000-ffff86d63000 ---p 00014000 00:4b 870961                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/libhostpolicy.so
+ffff86d63000-ffff86d96000 r-xp 00013000 00:4b 870961                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/libhostpolicy.so
+ffff86d96000-ffff86da5000 ---p 00056000 00:4b 870961                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/libhostpolicy.so
+ffff86da5000-ffff86da7000 r--p 00045000 00:4b 870961                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/libhostpolicy.so
+ffff86da7000-ffff86db6000 ---p 00067000 00:4b 870961                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/libhostpolicy.so
+ffff86db6000-ffff86db7000 rw-p 00046000 00:4b 870961                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/libhostpolicy.so
+ffff86db8000-ffff86dba000 r--s 00000000 00:4b 870929                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Threading.Thread.dll
+ffff86dba000-ffff86dbb000 ---p 00000000 00:00 0 
+ffff86dbb000-ffff86dc0000 rw-p 00000000 00:00 0 
+ffff86dc0000-ffff86dd4000 r--p 00000000 00:4b 870781                     /usr/share/dotnet/host/fxr/9.0.22/libhostfxr.so
+ffff86dd4000-ffff86de3000 ---p 00014000 00:4b 870781                     /usr/share/dotnet/host/fxr/9.0.22/libhostfxr.so
+ffff86de3000-ffff86e13000 r-xp 00013000 00:4b 870781                     /usr/share/dotnet/host/fxr/9.0.22/libhostfxr.so
+ffff86e13000-ffff86e22000 ---p 00053000 00:4b 870781                     /usr/share/dotnet/host/fxr/9.0.22/libhostfxr.so
+ffff86e22000-ffff86e24000 r--p 00042000 00:4b 870781                     /usr/share/dotnet/host/fxr/9.0.22/libhostfxr.so
+ffff86e24000-ffff86e33000 ---p 00064000 00:4b 870781                     /usr/share/dotnet/host/fxr/9.0.22/libhostfxr.so
+ffff86e33000-ffff86e34000 rw-p 00043000 00:4b 870781                     /usr/share/dotnet/host/fxr/9.0.22/libhostfxr.so
+ffff86e34000-ffff86e36000 r--s 00000000 00:4b 870892                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Runtime.Intrinsics.dll
+ffff86e36000-ffff86e38000 r--s 00000000 00:4b 870791                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/Microsoft.Win32.Primitives.dll
+ffff86e38000-ffff86e3a000 r--s 00000000 00:4b 870930                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Threading.ThreadPool.dll
+ffff86e3a000-ffff86e3c000 r--s 00000000 00:4b 870879                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Reflection.Primitives.dll
+ffff86e3c000-ffff86e3e000 r--s 00000000 00:4b 870875                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Reflection.Emit.Lightweight.dll
+ffff86e3e000-ffff86e40000 r--s 00000000 00:4b 870874                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Reflection.Emit.ILGeneration.dll
+ffff86e40000-ffff86fcc000 r-xp 00000000 00:4b 863896                     /usr/lib/aarch64-linux-gnu/libc.so.6
+ffff86fcc000-ffff86fdc000 ---p 0018c000 00:4b 863896                     /usr/lib/aarch64-linux-gnu/libc.so.6
+ffff86fdc000-ffff86fe0000 r--p 0018c000 00:4b 863896                     /usr/lib/aarch64-linux-gnu/libc.so.6
+ffff86fe0000-ffff86fe2000 rw-p 00190000 00:4b 863896                     /usr/lib/aarch64-linux-gnu/libc.so.6
+ffff86fe2000-ffff86fef000 rw-p 00000000 00:00 0 
+ffff86ff0000-ffff87004000 r-xp 00000000 00:4b 864010                     /usr/lib/aarch64-linux-gnu/libgcc_s.so.1
+ffff87004000-ffff8701f000 ---p 00014000 00:4b 864010                     /usr/lib/aarch64-linux-gnu/libgcc_s.so.1
+ffff8701f000-ffff87020000 r--p 0001f000 00:4b 864010                     /usr/lib/aarch64-linux-gnu/libgcc_s.so.1
+ffff87020000-ffff87021000 rw-p 00020000 00:4b 864010                     /usr/lib/aarch64-linux-gnu/libgcc_s.so.1
+ffff87021000-ffff8702a000 r--s 00000000 00:4b 870900                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Runtime.dll
+ffff8702a000-ffff8702b000 ---p 00000000 00:00 0 
+ffff8702b000-ffff87030000 rw-p 00000000 00:00 0 
+ffff87030000-ffff870b2000 r-xp 00000000 00:4b 864086                     /usr/lib/aarch64-linux-gnu/libm.so.6
+ffff870b2000-ffff870cf000 ---p 00082000 00:4b 864086                     /usr/lib/aarch64-linux-gnu/libm.so.6
+ffff870cf000-ffff870d0000 r--p 0008f000 00:4b 864086                     /usr/lib/aarch64-linux-gnu/libm.so.6
+ffff870d0000-ffff870d1000 rw-p 00090000 00:4b 864086                     /usr/lib/aarch64-linux-gnu/libm.so.6
+ffff870d2000-ffff870d4000 r--s 00000000 00:4b 870926                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Threading.Tasks.Extensions.dll
+ffff870d4000-ffff870d5000 ---p 00000000 00:00 0 
+ffff870d5000-ffff870da000 rw-p 00000000 00:00 0 
+ffff870da000-ffff870db000 ---p 00000000 00:00 0 
+ffff870db000-ffff870e0000 rw-p 00000000 00:00 0 
+ffff870e0000-ffff872db000 r-xp 00000000 00:4b 864149                     /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.30
+ffff872db000-ffff872e5000 ---p 001fb000 00:4b 864149                     /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.30
+ffff872e5000-ffff872f0000 r--p 00205000 00:4b 864149                     /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.30
+ffff872f0000-ffff872f3000 rw-p 00210000 00:4b 864149                     /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.30
+ffff872f3000-ffff872f6000 rw-p 00000000 00:00 0 
+ffff872f6000-ffff872f8000 r--s 00000000 00:4b 870821                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Diagnostics.Tracing.dll
+ffff872f8000-ffff872fa000 r--s 00000000 00:4b 870918                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Text.Encoding.Extensions.dll
+ffff872fa000-ffff872fb000 ---p 00000000 00:00 0 
+ffff872fb000-ffff87300000 rw-p 00000000 00:00 0 
+ffff87300000-ffff87301000 r-xp 00000000 00:4b 864136                     /usr/lib/aarch64-linux-gnu/libpthread.so.0
+ffff87301000-ffff8731f000 ---p 00001000 00:4b 864136                     /usr/lib/aarch64-linux-gnu/libpthread.so.0
+ffff8731f000-ffff87320000 r--p 0000f000 00:4b 864136                     /usr/lib/aarch64-linux-gnu/libpthread.so.0
+ffff87320000-ffff87321000 rw-p 00010000 00:4b 864136                     /usr/lib/aarch64-linux-gnu/libpthread.so.0
+ffff87321000-ffff87322000 ---p 00000000 00:00 0 
+ffff87322000-ffff87327000 rw-p 00000000 00:00 0 
+ffff87327000-ffff87328000 ---p 00000000 00:00 0 
+ffff87328000-ffff87330000 rw-p 00000000 00:00 0 
+ffff87330000-ffff87331000 r-xp 00000000 00:4b 863988                     /usr/lib/aarch64-linux-gnu/libdl.so.2
+ffff87331000-ffff8734f000 ---p 00001000 00:4b 863988                     /usr/lib/aarch64-linux-gnu/libdl.so.2
+ffff8734f000-ffff87350000 r--p 0000f000 00:4b 863988                     /usr/lib/aarch64-linux-gnu/libdl.so.2
+ffff87350000-ffff87351000 rw-p 00010000 00:4b 863988                     /usr/lib/aarch64-linux-gnu/libdl.so.2
+ffff87351000-ffff87353000 r--s 00000000 00:4b 870870                     /usr/share/dotnet/shared/Microsoft.NETCore.App/9.0.22/System.Numerics.Vectors.dll
+ffff87353000-ffff87355000 r--s 00000000 00:33 84774                      /hook/NativeCapture.dll
+ffff87355000-ffff8737c000 r-xp 00000000 00:4b 863814                     /usr/lib/aarch64-linux-gnu/ld-linux-aarch64.so.1
+ffff8737c000-ffff8737d000 rw-p 00000000 00:00 0 
+ffff8737d000-ffff8737e000 rw-s 012d5000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff8737e000-ffff8737f000 rw-p 00000000 00:00 0 
+ffff8737f000-ffff87380000 ---p 00000000 00:00 0 
+ffff87380000-ffff87385000 rw-p 00000000 00:00 0 
+ffff87385000-ffff8738b000 rw-p 00000000 00:00 0 
+ffff8738b000-ffff8738c000 rw-s 00004000 00:01 28845                      /memfd:doublemapper (deleted)
+ffff8738d000-ffff8738f000 rw-p 00000000 00:00 0 
+ffff8738f000-ffff87391000 r--p 00000000 00:00 0                          [vvar]
+ffff87391000-ffff87393000 r-xp 00000000 00:00 0                          [vdso]
+ffff87393000-ffff87395000 r--p 0002e000 00:4b 863814                     /usr/lib/aarch64-linux-gnu/ld-linux-aarch64.so.1
+ffff87395000-ffff87397000 rw-p 00030000 00:4b 863814                     /usr/lib/aarch64-linux-gnu/ld-linux-aarch64.so.1
+ffffcc5d7000-ffffcc5f8000 rw-p 00000000 00:00 0                          [stack]
+
+TASK /proc/54/task/101
+rdk:broker-1
+Name:	rdk:broker-1
+Umask:	0022
+State:	S (sleeping)
+Tgid:	54
+Ngid:	0
+Pid:	101
+PPid:	24
+TracerPid:	0
+Uid:	0	0	0	0
+Gid:	0	0	0	0
+FDSize:	256
+Groups:	0 
+NStgid:	54
+NSpid:	101
+NSpgid:	1
+NSsid:	1
+Kthread:	0
+VmPeak:	274308264 kB
+VmSize:	274234396 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	  114100 kB
+VmRSS:	  114100 kB
+RssAnon:	   34052 kB
+RssFile:	   60736 kB
+RssShmem:	   19312 kB
+VmData:	  263988 kB
+VmStk:	     132 kB
+VmExe:	      40 kB
+VmLib:	   92820 kB
+VmPTE:	     672 kB
+VmSwap:	       0 kB
+HugetlbPages:	       0 kB
+CoreDumping:	0
+THP_enabled:	1
+untag_mask:	0xffffffffffffff
+Threads:	28
+SigQ:	0/31321
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	fffffffe7ffbfeff
+SigIgn:	0000000000001000
+SigCgt:	00000003000044fe
+CapInh:	0000000000000000
+CapPrm:	00000000a80c25fb
+CapEff:	00000000a80c25fb
+CapBnd:	00000000a80c25fb
+CapAmb:	0000000000000000
+NoNewPrivs:	0
+Seccomp:	2
+Seccomp_filters:	1
+Speculation_Store_Bypass:	vulnerable
+SpeculationIndirectBranch:	unknown
+Cpus_allowed:	7ff
+Cpus_allowed_list:	0-10
+Mems_allowed:	1
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	44
+nonvoluntary_ctxt_switches:	0
+do_sys_poll
+TASK /proc/54/task/102
+rdk:main
+Name:	rdk:main
+Umask:	0022
+State:	S (sleeping)
+Tgid:	54
+Ngid:	0
+Pid:	102
+PPid:	24
+TracerPid:	0
+Uid:	0	0	0	0
+Gid:	0	0	0	0
+FDSize:	256
+Groups:	0 
+NStgid:	54
+NSpid:	102
+NSpgid:	1
+NSsid:	1
+Kthread:	0
+VmPeak:	274308264 kB
+VmSize:	274234396 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	  114100 kB
+VmRSS:	  114100 kB
+RssAnon:	   34052 kB
+RssFile:	   60736 kB
+RssShmem:	   19312 kB
+VmData:	  263988 kB
+VmStk:	     132 kB
+VmExe:	      40 kB
+VmLib:	   92820 kB
+VmPTE:	     672 kB
+VmSwap:	       0 kB
+HugetlbPages:	       0 kB
+CoreDumping:	0
+THP_enabled:	1
+untag_mask:	0xffffffffffffff
+Threads:	28
+SigQ:	0/31321
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	fffffffe7ffbfeff
+SigIgn:	0000000000001000
+SigCgt:	00000003000044fe
+CapInh:	0000000000000000
+CapPrm:	00000000a80c25fb
+CapEff:	00000000a80c25fb
+CapBnd:	00000000a80c25fb
+CapAmb:	0000000000000000
+NoNewPrivs:	0
+Seccomp:	2
+Seccomp_filters:	1
+Speculation_Store_Bypass:	vulnerable
+SpeculationIndirectBranch:	unknown
+Cpus_allowed:	7ff
+Cpus_allowed_list:	0-10
+Mems_allowed:	1
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	188
+nonvoluntary_ctxt_switches:	0
+futex_wait_queue
+TASK /proc/54/task/103
+rdk:broker-1
+Name:	rdk:broker-1
+Umask:	0022
+State:	S (sleeping)
+Tgid:	54
+Ngid:	0
+Pid:	103
+PPid:	24
+TracerPid:	0
+Uid:	0	0	0	0
+Gid:	0	0	0	0
+FDSize:	256
+Groups:	0 
+NStgid:	54
+NSpid:	103
+NSpgid:	1
+NSsid:	1
+Kthread:	0
+VmPeak:	274308264 kB
+VmSize:	274234396 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	  114100 kB
+VmRSS:	  114100 kB
+RssAnon:	   34052 kB
+RssFile:	   60736 kB
+RssShmem:	   19312 kB
+VmData:	  263988 kB
+VmStk:	     132 kB
+VmExe:	      40 kB
+VmLib:	   92820 kB
+VmPTE:	     672 kB
+VmSwap:	       0 kB
+HugetlbPages:	       0 kB
+CoreDumping:	0
+THP_enabled:	1
+untag_mask:	0xffffffffffffff
+Threads:	28
+SigQ:	0/31321
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	fffffffe7ffbfeff
+SigIgn:	0000000000001000
+SigCgt:	00000003000044fe
+CapInh:	0000000000000000
+CapPrm:	00000000a80c25fb
+CapEff:	00000000a80c25fb
+CapBnd:	00000000a80c25fb
+CapAmb:	0000000000000000
+NoNewPrivs:	0
+Seccomp:	2
+Seccomp_filters:	1
+Speculation_Store_Bypass:	vulnerable
+SpeculationIndirectBranch:	unknown
+Cpus_allowed:	7ff
+Cpus_allowed_list:	0-10
+Mems_allowed:	1
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	1
+nonvoluntary_ctxt_switches:	0
+futex_wait_queue
+TASK /proc/54/task/105
+rdk:broker1
+Name:	rdk:broker1
+Umask:	0022
+State:	S (sleeping)
+Tgid:	54
+Ngid:	0
+Pid:	105
+PPid:	24
+TracerPid:	0
+Uid:	0	0	0	0
+Gid:	0	0	0	0
+FDSize:	256
+Groups:	0 
+NStgid:	54
+NSpid:	105
+NSpgid:	1
+NSsid:	1
+Kthread:	0
+VmPeak:	274308264 kB
+VmSize:	274234396 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	  114100 kB
+VmRSS:	  114100 kB
+RssAnon:	   34052 kB
+RssFile:	   60736 kB
+RssShmem:	   19312 kB
+VmData:	  263988 kB
+VmStk:	     132 kB
+VmExe:	      40 kB
+VmLib:	   92820 kB
+VmPTE:	     672 kB
+VmSwap:	       0 kB
+HugetlbPages:	       0 kB
+CoreDumping:	0
+THP_enabled:	1
+untag_mask:	0xffffffffffffff
+Threads:	28
+SigQ:	0/31321
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	fffffffe7ffbfeff
+SigIgn:	0000000000001000
+SigCgt:	00000003000044fe
+CapInh:	0000000000000000
+CapPrm:	00000000a80c25fb
+CapEff:	00000000a80c25fb
+CapBnd:	00000000a80c25fb
+CapAmb:	0000000000000000
+NoNewPrivs:	0
+Seccomp:	2
+Seccomp_filters:	1
+Speculation_Store_Bypass:	vulnerable
+SpeculationIndirectBranch:	unknown
+Cpus_allowed:	7ff
+Cpus_allowed_list:	0-10
+Mems_allowed:	1
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	56
+nonvoluntary_ctxt_switches:	0
+do_sys_poll
+TASK /proc/54/task/54
+dotnet
+Name:	dotnet
+Umask:	0022
+State:	S (sleeping)
+Tgid:	54
+Ngid:	0
+Pid:	54
+PPid:	24
+TracerPid:	0
+Uid:	0	0	0	0
+Gid:	0	0	0	0
+FDSize:	256
+Groups:	0 
+NStgid:	54
+NSpid:	54
+NSpgid:	1
+NSsid:	1
+Kthread:	0
+VmPeak:	274308264 kB
+VmSize:	274234396 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	  114100 kB
+VmRSS:	  114100 kB
+RssAnon:	   34052 kB
+RssFile:	   60736 kB
+RssShmem:	   19312 kB
+VmData:	  263988 kB
+VmStk:	     132 kB
+VmExe:	      40 kB
+VmLib:	   92820 kB
+VmPTE:	     672 kB
+VmSwap:	       0 kB
+HugetlbPages:	       0 kB
+CoreDumping:	0
+THP_enabled:	1
+untag_mask:	0xffffffffffffff
+Threads:	28
+SigQ:	0/31321
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	0000000000000000
+SigIgn:	0000000000001000
+SigCgt:	00000003000044fe
+CapInh:	0000000000000000
+CapPrm:	00000000a80c25fb
+CapEff:	00000000a80c25fb
+CapBnd:	00000000a80c25fb
+CapAmb:	0000000000000000
+NoNewPrivs:	0
+Seccomp:	2
+Seccomp_filters:	1
+Speculation_Store_Bypass:	vulnerable
+SpeculationIndirectBranch:	unknown
+Cpus_allowed:	7ff
+Cpus_allowed_list:	0-10
+Mems_allowed:	1
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	105
+nonvoluntary_ctxt_switches:	102
+futex_wait_queue
+TASK /proc/54/task/56
+.NET SynchManag
+Name:	.NET SynchManag
+Umask:	0022
+State:	S (sleeping)
+Tgid:	54
+Ngid:	0
+Pid:	56
+PPid:	24
+TracerPid:	0
+Uid:	0	0	0	0
+Gid:	0	0	0	0
+FDSize:	256
+Groups:	0 
+NStgid:	54
+NSpid:	56
+NSpgid:	1
+NSsid:	1
+Kthread:	0
+VmPeak:	274308264 kB
+VmSize:	274234396 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	  114100 kB
+VmRSS:	  114100 kB
+RssAnon:	   34052 kB
+RssFile:	   60736 kB
+RssShmem:	   19312 kB
+VmData:	  263988 kB
+VmStk:	     132 kB
+VmExe:	      40 kB
+VmLib:	   92820 kB
+VmPTE:	     672 kB
+VmSwap:	       0 kB
+HugetlbPages:	       0 kB
+CoreDumping:	0
+THP_enabled:	1
+untag_mask:	0xffffffffffffff
+Threads:	28
+SigQ:	0/31321
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	0000000000000000
+SigIgn:	0000000000001000
+SigCgt:	00000003000044fe
+CapInh:	0000000000000000
+CapPrm:	00000000a80c25fb
+CapEff:	00000000a80c25fb
+CapBnd:	00000000a80c25fb
+CapAmb:	0000000000000000
+NoNewPrivs:	0
+Seccomp:	2
+Seccomp_filters:	1
+Speculation_Store_Bypass:	vulnerable
+SpeculationIndirectBranch:	unknown
+Cpus_allowed:	7ff
+Cpus_allowed_list:	0-10
+Mems_allowed:	1
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	1
+nonvoluntary_ctxt_switches:	0
+do_sys_poll
+TASK /proc/54/task/57
+.NET EventPipe
+Name:	.NET EventPipe
+Umask:	0022
+State:	S (sleeping)
+Tgid:	54
+Ngid:	0
+Pid:	57
+PPid:	24
+TracerPid:	0
+Uid:	0	0	0	0
+Gid:	0	0	0	0
+FDSize:	256
+Groups:	0 
+NStgid:	54
+NSpid:	57
+NSpgid:	1
+NSsid:	1
+Kthread:	0
+VmPeak:	274308264 kB
+VmSize:	274234396 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	  114100 kB
+VmRSS:	  114100 kB
+RssAnon:	   34052 kB
+RssFile:	   60736 kB
+RssShmem:	   19312 kB
+VmData:	  263988 kB
+VmStk:	     132 kB
+VmExe:	      40 kB
+VmLib:	   92820 kB
+VmPTE:	     672 kB
+VmSwap:	       0 kB
+HugetlbPages:	       0 kB
+CoreDumping:	0
+THP_enabled:	1
+untag_mask:	0xffffffffffffff
+Threads:	28
+SigQ:	0/31321
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	0000000000000000
+SigIgn:	0000000000001000
+SigCgt:	00000003000044fe
+CapInh:	0000000000000000
+CapPrm:	00000000a80c25fb
+CapEff:	00000000a80c25fb
+CapBnd:	00000000a80c25fb
+CapAmb:	0000000000000000
+NoNewPrivs:	0
+Seccomp:	2
+Seccomp_filters:	1
+Speculation_Store_Bypass:	vulnerable
+SpeculationIndirectBranch:	unknown
+Cpus_allowed:	7ff
+Cpus_allowed_list:	0-10
+Mems_allowed:	1
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	1
+nonvoluntary_ctxt_switches:	0
+do_sys_poll
+TASK /proc/54/task/58
+.NET DebugPipe
+Name:	.NET DebugPipe
+Umask:	0022
+State:	S (sleeping)
+Tgid:	54
+Ngid:	0
+Pid:	58
+PPid:	24
+TracerPid:	0
+Uid:	0	0	0	0
+Gid:	0	0	0	0
+FDSize:	256
+Groups:	0 
+NStgid:	54
+NSpid:	58
+NSpgid:	1
+NSsid:	1
+Kthread:	0
+VmPeak:	274308264 kB
+VmSize:	274234396 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	  114100 kB
+VmRSS:	  114100 kB
+RssAnon:	   34052 kB
+RssFile:	   60736 kB
+RssShmem:	   19312 kB
+VmData:	  263988 kB
+VmStk:	     132 kB
+VmExe:	      40 kB
+VmLib:	   92820 kB
+VmPTE:	     672 kB
+VmSwap:	       0 kB
+HugetlbPages:	       0 kB
+CoreDumping:	0
+THP_enabled:	1
+untag_mask:	0xffffffffffffff
+Threads:	28
+SigQ:	0/31321
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	0000000000000000
+SigIgn:	0000000000001000
+SigCgt:	00000003000044fe
+CapInh:	0000000000000000
+CapPrm:	00000000a80c25fb
+CapEff:	00000000a80c25fb
+CapBnd:	00000000a80c25fb
+CapAmb:	0000000000000000
+NoNewPrivs:	0
+Seccomp:	2
+Seccomp_filters:	1
+Speculation_Store_Bypass:	vulnerable
+SpeculationIndirectBranch:	unknown
+Cpus_allowed:	7ff
+Cpus_allowed_list:	0-10
+Mems_allowed:	1
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	1
+nonvoluntary_ctxt_switches:	0
+wait_for_partner
+TASK /proc/54/task/59
+.NET Debugger
+Name:	.NET Debugger
+Umask:	0022
+State:	S (sleeping)
+Tgid:	54
+Ngid:	0
+Pid:	59
+PPid:	24
+TracerPid:	0
+Uid:	0	0	0	0
+Gid:	0	0	0	0
+FDSize:	256
+Groups:	0 
+NStgid:	54
+NSpid:	59
+NSpgid:	1
+NSsid:	1
+Kthread:	0
+VmPeak:	274308264 kB
+VmSize:	274234396 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	  114100 kB
+VmRSS:	  114100 kB
+RssAnon:	   34052 kB
+RssFile:	   60736 kB
+RssShmem:	   19312 kB
+VmData:	  263988 kB
+VmStk:	     132 kB
+VmExe:	      40 kB
+VmLib:	   92820 kB
+VmPTE:	     672 kB
+VmSwap:	       0 kB
+HugetlbPages:	       0 kB
+CoreDumping:	0
+THP_enabled:	1
+untag_mask:	0xffffffffffffff
+Threads:	28
+SigQ:	0/31321
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	0000000000000000
+SigIgn:	0000000000001000
+SigCgt:	00000003000044fe
+CapInh:	0000000000000000
+CapPrm:	00000000a80c25fb
+CapEff:	00000000a80c25fb
+CapBnd:	00000000a80c25fb
+CapAmb:	0000000000000000
+NoNewPrivs:	0
+Seccomp:	2
+Seccomp_filters:	1
+Speculation_Store_Bypass:	vulnerable
+SpeculationIndirectBranch:	unknown
+Cpus_allowed:	7ff
+Cpus_allowed_list:	0-10
+Mems_allowed:	1
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	2
+nonvoluntary_ctxt_switches:	0
+futex_wait_queue
+TASK /proc/54/task/60
+.NET Finalizer
+Name:	.NET Finalizer
+Umask:	0022
+State:	S (sleeping)
+Tgid:	54
+Ngid:	0
+Pid:	60
+PPid:	24
+TracerPid:	0
+Uid:	0	0	0	0
+Gid:	0	0	0	0
+FDSize:	256
+Groups:	0 
+NStgid:	54
+NSpid:	60
+NSpgid:	1
+NSsid:	1
+Kthread:	0
+VmPeak:	274308264 kB
+VmSize:	274234396 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	  114100 kB
+VmRSS:	  114100 kB
+RssAnon:	   34052 kB
+RssFile:	   60736 kB
+RssShmem:	   19312 kB
+VmData:	  263988 kB
+VmStk:	     132 kB
+VmExe:	      40 kB
+VmLib:	   92820 kB
+VmPTE:	     672 kB
+VmSwap:	       0 kB
+HugetlbPages:	       0 kB
+CoreDumping:	0
+THP_enabled:	1
+untag_mask:	0xffffffffffffff
+Threads:	28
+SigQ:	0/31321
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	0000000000000000
+SigIgn:	0000000000001000
+SigCgt:	00000003000044fe
+CapInh:	0000000000000000
+CapPrm:	00000000a80c25fb
+CapEff:	00000000a80c25fb
+CapBnd:	00000000a80c25fb
+CapAmb:	0000000000000000
+NoNewPrivs:	0
+Seccomp:	2
+Seccomp_filters:	1
+Speculation_Store_Bypass:	vulnerable
+SpeculationIndirectBranch:	unknown
+Cpus_allowed:	7ff
+Cpus_allowed_list:	0-10
+Mems_allowed:	1
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	9
+nonvoluntary_ctxt_switches:	0
+futex_wait_queue
+TASK /proc/54/task/61
+.NET Tiered Com
+Name:	.NET Tiered Com
+Umask:	0022
+State:	S (sleeping)
+Tgid:	54
+Ngid:	0
+Pid:	61
+PPid:	24
+TracerPid:	0
+Uid:	0	0	0	0
+Gid:	0	0	0	0
+FDSize:	256
+Groups:	0 
+NStgid:	54
+NSpid:	61
+NSpgid:	1
+NSsid:	1
+Kthread:	0
+VmPeak:	274308264 kB
+VmSize:	274234396 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	  114100 kB
+VmRSS:	  114100 kB
+RssAnon:	   34052 kB
+RssFile:	   60736 kB
+RssShmem:	   19312 kB
+VmData:	  263988 kB
+VmStk:	     132 kB
+VmExe:	      40 kB
+VmLib:	   92820 kB
+VmPTE:	     672 kB
+VmSwap:	       0 kB
+HugetlbPages:	       0 kB
+CoreDumping:	0
+THP_enabled:	1
+untag_mask:	0xffffffffffffff
+Threads:	28
+SigQ:	0/31321
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	0000000000000000
+SigIgn:	0000000000001000
+SigCgt:	00000003000044fe
+CapInh:	0000000000000000
+CapPrm:	00000000a80c25fb
+CapEff:	00000000a80c25fb
+CapBnd:	00000000a80c25fb
+CapAmb:	0000000000000000
+NoNewPrivs:	0
+Seccomp:	2
+Seccomp_filters:	1
+Speculation_Store_Bypass:	vulnerable
+SpeculationIndirectBranch:	unknown
+Cpus_allowed:	7ff
+Cpus_allowed_list:	0-10
+Mems_allowed:	1
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	24
+nonvoluntary_ctxt_switches:	0
+futex_wait_queue
+TASK /proc/54/task/62
+.NET Long Runni
+Name:	.NET Long Runni
+Umask:	0022
+State:	S (sleeping)
+Tgid:	54
+Ngid:	0
+Pid:	62
+PPid:	24
+TracerPid:	0
+Uid:	0	0	0	0
+Gid:	0	0	0	0
+FDSize:	256
+Groups:	0 
+NStgid:	54
+NSpid:	62
+NSpgid:	1
+NSsid:	1
+Kthread:	0
+VmPeak:	274308264 kB
+VmSize:	274234396 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	  114100 kB
+VmRSS:	  114100 kB
+RssAnon:	   34052 kB
+RssFile:	   60736 kB
+RssShmem:	   19312 kB
+VmData:	  263988 kB
+VmStk:	     132 kB
+VmExe:	      40 kB
+VmLib:	   92820 kB
+VmPTE:	     672 kB
+VmSwap:	       0 kB
+HugetlbPages:	       0 kB
+CoreDumping:	0
+THP_enabled:	1
+untag_mask:	0xffffffffffffff
+Threads:	28
+SigQ:	0/31321
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	0000000000000000
+SigIgn:	0000000000001000
+SigCgt:	00000003000044fe
+CapInh:	0000000000000000
+CapPrm:	00000000a80c25fb
+CapEff:	00000000a80c25fb
+CapBnd:	00000000a80c25fb
+CapAmb:	0000000000000000
+NoNewPrivs:	0
+Seccomp:	2
+Seccomp_filters:	1
+Speculation_Store_Bypass:	vulnerable
+SpeculationIndirectBranch:	unknown
+Cpus_allowed:	7ff
+Cpus_allowed_list:	0-10
+Mems_allowed:	1
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	89
+nonvoluntary_ctxt_switches:	18
+futex_wait_queue
+TASK /proc/54/task/63
+.NET TP Worker
+Name:	.NET TP Worker
+Umask:	0022
+State:	S (sleeping)
+Tgid:	54
+Ngid:	0
+Pid:	63
+PPid:	24
+TracerPid:	0
+Uid:	0	0	0	0
+Gid:	0	0	0	0
+FDSize:	256
+Groups:	0 
+NStgid:	54
+NSpid:	63
+NSpgid:	1
+NSsid:	1
+Kthread:	0
+VmPeak:	274308264 kB
+VmSize:	274234396 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	  114100 kB
+VmRSS:	  114100 kB
+RssAnon:	   34052 kB
+RssFile:	   60736 kB
+RssShmem:	   19312 kB
+VmData:	  263988 kB
+VmStk:	     132 kB
+VmExe:	      40 kB
+VmLib:	   92820 kB
+VmPTE:	     672 kB
+VmSwap:	       0 kB
+HugetlbPages:	       0 kB
+CoreDumping:	0
+THP_enabled:	1
+untag_mask:	0xffffffffffffff
+Threads:	28
+SigQ:	0/31321
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	0000000000000000
+SigIgn:	0000000000001000
+SigCgt:	00000003000044fe
+CapInh:	0000000000000000
+CapPrm:	00000000a80c25fb
+CapEff:	00000000a80c25fb
+CapBnd:	00000000a80c25fb
+CapAmb:	0000000000000000
+NoNewPrivs:	0
+Seccomp:	2
+Seccomp_filters:	1
+Speculation_Store_Bypass:	vulnerable
+SpeculationIndirectBranch:	unknown
+Cpus_allowed:	7ff
+Cpus_allowed_list:	0-10
+Mems_allowed:	1
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	28
+nonvoluntary_ctxt_switches:	1
+do_sys_poll
+TASK /proc/54/task/64
+.NET TP Gate
+Name:	.NET TP Gate
+Umask:	0022
+State:	S (sleeping)
+Tgid:	54
+Ngid:	0
+Pid:	64
+PPid:	24
+TracerPid:	0
+Uid:	0	0	0	0
+Gid:	0	0	0	0
+FDSize:	256
+Groups:	0 
+NStgid:	54
+NSpid:	64
+NSpgid:	1
+NSsid:	1
+Kthread:	0
+VmPeak:	274308264 kB
+VmSize:	274234396 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	  114100 kB
+VmRSS:	  114100 kB
+RssAnon:	   34052 kB
+RssFile:	   60736 kB
+RssShmem:	   19312 kB
+VmData:	  263988 kB
+VmStk:	     132 kB
+VmExe:	      40 kB
+VmLib:	   92820 kB
+VmPTE:	     672 kB
+VmSwap:	       0 kB
+HugetlbPages:	       0 kB
+CoreDumping:	0
+THP_enabled:	1
+untag_mask:	0xffffffffffffff
+Threads:	28
+SigQ:	0/31321
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	0000000000000000
+SigIgn:	0000000000001000
+SigCgt:	00000003000044fe
+CapInh:	0000000000000000
+CapPrm:	00000000a80c25fb
+CapEff:	00000000a80c25fb
+CapBnd:	00000000a80c25fb
+CapAmb:	0000000000000000
+NoNewPrivs:	0
+Seccomp:	2
+Seccomp_filters:	1
+Speculation_Store_Bypass:	vulnerable
+SpeculationIndirectBranch:	unknown
+Cpus_allowed:	7ff
+Cpus_allowed_list:	0-10
+Mems_allowed:	1
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	13
+nonvoluntary_ctxt_switches:	0
+futex_wait_queue
+TASK /proc/54/task/65
+.NET TP Worker
+Name:	.NET TP Worker
+Umask:	0022
+State:	S (sleeping)
+Tgid:	54
+Ngid:	0
+Pid:	65
+PPid:	24
+TracerPid:	0
+Uid:	0	0	0	0
+Gid:	0	0	0	0
+FDSize:	256
+Groups:	0 
+NStgid:	54
+NSpid:	65
+NSpgid:	1
+NSsid:	1
+Kthread:	0
+VmPeak:	274308264 kB
+VmSize:	274234396 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	  114100 kB
+VmRSS:	  114100 kB
+RssAnon:	   34052 kB
+RssFile:	   60736 kB
+RssShmem:	   19312 kB
+VmData:	  263988 kB
+VmStk:	     132 kB
+VmExe:	      40 kB
+VmLib:	   92820 kB
+VmPTE:	     672 kB
+VmSwap:	       0 kB
+HugetlbPages:	       0 kB
+CoreDumping:	0
+THP_enabled:	1
+untag_mask:	0xffffffffffffff
+Threads:	28
+SigQ:	0/31321
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	0000000000000000
+SigIgn:	0000000000001000
+SigCgt:	00000003000044fe
+CapInh:	0000000000000000
+CapPrm:	00000000a80c25fb
+CapEff:	00000000a80c25fb
+CapBnd:	00000000a80c25fb
+CapAmb:	0000000000000000
+NoNewPrivs:	0
+Seccomp:	2
+Seccomp_filters:	1
+Speculation_Store_Bypass:	vulnerable
+SpeculationIndirectBranch:	unknown
+Cpus_allowed:	7ff
+Cpus_allowed_list:	0-10
+Mems_allowed:	1
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	166
+nonvoluntary_ctxt_switches:	305
+futex_wait_queue
+TASK /proc/54/task/66
+.NET TP Wait
+Name:	.NET TP Wait
+Umask:	0022
+State:	S (sleeping)
+Tgid:	54
+Ngid:	0
+Pid:	66
+PPid:	24
+TracerPid:	0
+Uid:	0	0	0	0
+Gid:	0	0	0	0
+FDSize:	256
+Groups:	0 
+NStgid:	54
+NSpid:	66
+NSpgid:	1
+NSsid:	1
+Kthread:	0
+VmPeak:	274308264 kB
+VmSize:	274234396 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	  114100 kB
+VmRSS:	  114100 kB
+RssAnon:	   34052 kB
+RssFile:	   60736 kB
+RssShmem:	   19312 kB
+VmData:	  263988 kB
+VmStk:	     132 kB
+VmExe:	      40 kB
+VmLib:	   92820 kB
+VmPTE:	     672 kB
+VmSwap:	       0 kB
+HugetlbPages:	       0 kB
+CoreDumping:	0
+THP_enabled:	1
+untag_mask:	0xffffffffffffff
+Threads:	28
+SigQ:	0/31321
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	0000000000000000
+SigIgn:	0000000000001000
+SigCgt:	00000003000044fe
+CapInh:	0000000000000000
+CapPrm:	00000000a80c25fb
+CapEff:	00000000a80c25fb
+CapBnd:	00000000a80c25fb
+CapAmb:	0000000000000000
+NoNewPrivs:	0
+Seccomp:	2
+Seccomp_filters:	1
+Speculation_Store_Bypass:	vulnerable
+SpeculationIndirectBranch:	unknown
+Cpus_allowed:	7ff
+Cpus_allowed_list:	0-10
+Mems_allowed:	1
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	3
+nonvoluntary_ctxt_switches:	0
+futex_wait_queue
+TASK /proc/54/task/67
+.NET Timer
+Name:	.NET Timer
+Umask:	0022
+State:	S (sleeping)
+Tgid:	54
+Ngid:	0
+Pid:	67
+PPid:	24
+TracerPid:	0
+Uid:	0	0	0	0
+Gid:	0	0	0	0
+FDSize:	256
+Groups:	0 
+NStgid:	54
+NSpid:	67
+NSpgid:	1
+NSsid:	1
+Kthread:	0
+VmPeak:	274308264 kB
+VmSize:	274234396 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	  114100 kB
+VmRSS:	  114100 kB
+RssAnon:	   34052 kB
+RssFile:	   60736 kB
+RssShmem:	   19312 kB
+VmData:	  263988 kB
+VmStk:	     132 kB
+VmExe:	      40 kB
+VmLib:	   92820 kB
+VmPTE:	     672 kB
+VmSwap:	       0 kB
+HugetlbPages:	       0 kB
+CoreDumping:	0
+THP_enabled:	1
+untag_mask:	0xffffffffffffff
+Threads:	28
+SigQ:	0/31321
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	0000000000000000
+SigIgn:	0000000000001000
+SigCgt:	00000003000044fe
+CapInh:	0000000000000000
+CapPrm:	00000000a80c25fb
+CapEff:	00000000a80c25fb
+CapBnd:	00000000a80c25fb
+CapAmb:	0000000000000000
+NoNewPrivs:	0
+Seccomp:	2
+Seccomp_filters:	1
+Speculation_Store_Bypass:	vulnerable
+SpeculationIndirectBranch:	unknown
+Cpus_allowed:	7ff
+Cpus_allowed_list:	0-10
+Mems_allowed:	1
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	61
+nonvoluntary_ctxt_switches:	0
+futex_wait_queue
+TASK /proc/54/task/68
+.NET Sockets
+Name:	.NET Sockets
+Umask:	0022
+State:	S (sleeping)
+Tgid:	54
+Ngid:	0
+Pid:	68
+PPid:	24
+TracerPid:	0
+Uid:	0	0	0	0
+Gid:	0	0	0	0
+FDSize:	256
+Groups:	0 
+NStgid:	54
+NSpid:	68
+NSpgid:	1
+NSsid:	1
+Kthread:	0
+VmPeak:	274308264 kB
+VmSize:	274234396 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	  114100 kB
+VmRSS:	  114100 kB
+RssAnon:	   34052 kB
+RssFile:	   60736 kB
+RssShmem:	   19312 kB
+VmData:	  263988 kB
+VmStk:	     132 kB
+VmExe:	      40 kB
+VmLib:	   92820 kB
+VmPTE:	     672 kB
+VmSwap:	       0 kB
+HugetlbPages:	       0 kB
+CoreDumping:	0
+THP_enabled:	1
+untag_mask:	0xffffffffffffff
+Threads:	28
+SigQ:	0/31321
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	0000000000000000
+SigIgn:	0000000000001000
+SigCgt:	00000003000044fe
+CapInh:	0000000000000000
+CapPrm:	00000000a80c25fb
+CapEff:	00000000a80c25fb
+CapBnd:	00000000a80c25fb
+CapAmb:	0000000000000000
+NoNewPrivs:	0
+Seccomp:	2
+Seccomp_filters:	1
+Speculation_Store_Bypass:	vulnerable
+SpeculationIndirectBranch:	unknown
+Cpus_allowed:	7ff
+Cpus_allowed_list:	0-10
+Mems_allowed:	1
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	9
+nonvoluntary_ctxt_switches:	0
+do_epoll_wait
+TASK /proc/54/task/69
+.NET TP Worker
+Name:	.NET TP Worker
+Umask:	0022
+State:	S (sleeping)
+Tgid:	54
+Ngid:	0
+Pid:	69
+PPid:	24
+TracerPid:	0
+Uid:	0	0	0	0
+Gid:	0	0	0	0
+FDSize:	256
+Groups:	0 
+NStgid:	54
+NSpid:	69
+NSpgid:	1
+NSsid:	1
+Kthread:	0
+VmPeak:	274308264 kB
+VmSize:	274234396 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	  114100 kB
+VmRSS:	  114100 kB
+RssAnon:	   34052 kB
+RssFile:	   60736 kB
+RssShmem:	   19312 kB
+VmData:	  263988 kB
+VmStk:	     132 kB
+VmExe:	      40 kB
+VmLib:	   92820 kB
+VmPTE:	     672 kB
+VmSwap:	       0 kB
+HugetlbPages:	       0 kB
+CoreDumping:	0
+THP_enabled:	1
+untag_mask:	0xffffffffffffff
+Threads:	28
+SigQ:	0/31321
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	0000000000000000
+SigIgn:	0000000000001000
+SigCgt:	00000003000044fe
+CapInh:	0000000000000000
+CapPrm:	00000000a80c25fb
+CapEff:	00000000a80c25fb
+CapBnd:	00000000a80c25fb
+CapAmb:	0000000000000000
+NoNewPrivs:	0
+Seccomp:	2
+Seccomp_filters:	1
+Speculation_Store_Bypass:	vulnerable
+SpeculationIndirectBranch:	unknown
+Cpus_allowed:	7ff
+Cpus_allowed_list:	0-10
+Mems_allowed:	1
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	79
+nonvoluntary_ctxt_switches:	6
+futex_wait_queue
+TASK /proc/54/task/70
+.NET Long Runni
+Name:	.NET Long Runni
+Umask:	0022
+State:	S (sleeping)
+Tgid:	54
+Ngid:	0
+Pid:	70
+PPid:	24
+TracerPid:	0
+Uid:	0	0	0	0
+Gid:	0	0	0	0
+FDSize:	256
+Groups:	0 
+NStgid:	54
+NSpid:	70
+NSpgid:	1
+NSsid:	1
+Kthread:	0
+VmPeak:	274308264 kB
+VmSize:	274234396 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	  114100 kB
+VmRSS:	  114100 kB
+RssAnon:	   34052 kB
+RssFile:	   60736 kB
+RssShmem:	   19312 kB
+VmData:	  263988 kB
+VmStk:	     132 kB
+VmExe:	      40 kB
+VmLib:	   92820 kB
+VmPTE:	     672 kB
+VmSwap:	       0 kB
+HugetlbPages:	       0 kB
+CoreDumping:	0
+THP_enabled:	1
+untag_mask:	0xffffffffffffff
+Threads:	28
+SigQ:	0/31321
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	0000000000000000
+SigIgn:	0000000000001000
+SigCgt:	00000003000044fe
+CapInh:	0000000000000000
+CapPrm:	00000000a80c25fb
+CapEff:	00000000a80c25fb
+CapBnd:	00000000a80c25fb
+CapAmb:	0000000000000000
+NoNewPrivs:	0
+Seccomp:	2
+Seccomp_filters:	1
+Speculation_Store_Bypass:	vulnerable
+SpeculationIndirectBranch:	unknown
+Cpus_allowed:	7ff
+Cpus_allowed_list:	0-10
+Mems_allowed:	1
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	2
+nonvoluntary_ctxt_switches:	0
+futex_wait_queue
+TASK /proc/54/task/71
+.NET TP Worker
+Name:	.NET TP Worker
+Umask:	0022
+State:	S (sleeping)
+Tgid:	54
+Ngid:	0
+Pid:	71
+PPid:	24
+TracerPid:	0
+Uid:	0	0	0	0
+Gid:	0	0	0	0
+FDSize:	256
+Groups:	0 
+NStgid:	54
+NSpid:	71
+NSpgid:	1
+NSsid:	1
+Kthread:	0
+VmPeak:	274308264 kB
+VmSize:	274234396 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	  114100 kB
+VmRSS:	  114100 kB
+RssAnon:	   34052 kB
+RssFile:	   60736 kB
+RssShmem:	   19312 kB
+VmData:	  263988 kB
+VmStk:	     132 kB
+VmExe:	      40 kB
+VmLib:	   92820 kB
+VmPTE:	     672 kB
+VmSwap:	       0 kB
+HugetlbPages:	       0 kB
+CoreDumping:	0
+THP_enabled:	1
+untag_mask:	0xffffffffffffff
+Threads:	28
+SigQ:	0/31321
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	0000000000000000
+SigIgn:	0000000000001000
+SigCgt:	00000003000044fe
+CapInh:	0000000000000000
+CapPrm:	00000000a80c25fb
+CapEff:	00000000a80c25fb
+CapBnd:	00000000a80c25fb
+CapAmb:	0000000000000000
+NoNewPrivs:	0
+Seccomp:	2
+Seccomp_filters:	1
+Speculation_Store_Bypass:	vulnerable
+SpeculationIndirectBranch:	unknown
+Cpus_allowed:	7ff
+Cpus_allowed_list:	0-10
+Mems_allowed:	1
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	13
+nonvoluntary_ctxt_switches:	0
+futex_wait_queue
+TASK /proc/54/task/74
+.NET TP Worker
+Name:	.NET TP Worker
+Umask:	0022
+State:	S (sleeping)
+Tgid:	54
+Ngid:	0
+Pid:	74
+PPid:	24
+TracerPid:	0
+Uid:	0	0	0	0
+Gid:	0	0	0	0
+FDSize:	256
+Groups:	0 
+NStgid:	54
+NSpid:	74
+NSpgid:	1
+NSsid:	1
+Kthread:	0
+VmPeak:	274308264 kB
+VmSize:	274234396 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	  114100 kB
+VmRSS:	  114100 kB
+RssAnon:	   34052 kB
+RssFile:	   60736 kB
+RssShmem:	   19312 kB
+VmData:	  263988 kB
+VmStk:	     132 kB
+VmExe:	      40 kB
+VmLib:	   92820 kB
+VmPTE:	     672 kB
+VmSwap:	       0 kB
+HugetlbPages:	       0 kB
+CoreDumping:	0
+THP_enabled:	1
+untag_mask:	0xffffffffffffff
+Threads:	28
+SigQ:	0/31321
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	0000000000000000
+SigIgn:	0000000000001000
+SigCgt:	00000003000044fe
+CapInh:	0000000000000000
+CapPrm:	00000000a80c25fb
+CapEff:	00000000a80c25fb
+CapBnd:	00000000a80c25fb
+CapAmb:	0000000000000000
+NoNewPrivs:	0
+Seccomp:	2
+Seccomp_filters:	1
+Speculation_Store_Bypass:	vulnerable
+SpeculationIndirectBranch:	unknown
+Cpus_allowed:	7ff
+Cpus_allowed_list:	0-10
+Mems_allowed:	1
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	25
+nonvoluntary_ctxt_switches:	276
+futex_wait_queue
+TASK /proc/54/task/75
+.NET Long Runni
+Name:	.NET Long Runni
+Umask:	0022
+State:	S (sleeping)
+Tgid:	54
+Ngid:	0
+Pid:	75
+PPid:	24
+TracerPid:	0
+Uid:	0	0	0	0
+Gid:	0	0	0	0
+FDSize:	256
+Groups:	0 
+NStgid:	54
+NSpid:	75
+NSpgid:	1
+NSsid:	1
+Kthread:	0
+VmPeak:	274308264 kB
+VmSize:	274234396 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	  114100 kB
+VmRSS:	  114100 kB
+RssAnon:	   34052 kB
+RssFile:	   60736 kB
+RssShmem:	   19312 kB
+VmData:	  263988 kB
+VmStk:	     132 kB
+VmExe:	      40 kB
+VmLib:	   92820 kB
+VmPTE:	     672 kB
+VmSwap:	       0 kB
+HugetlbPages:	       0 kB
+CoreDumping:	0
+THP_enabled:	1
+untag_mask:	0xffffffffffffff
+Threads:	28
+SigQ:	0/31321
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	0000000000000000
+SigIgn:	0000000000001000
+SigCgt:	00000003000044fe
+CapInh:	0000000000000000
+CapPrm:	00000000a80c25fb
+CapEff:	00000000a80c25fb
+CapBnd:	00000000a80c25fb
+CapAmb:	0000000000000000
+NoNewPrivs:	0
+Seccomp:	2
+Seccomp_filters:	1
+Speculation_Store_Bypass:	vulnerable
+SpeculationIndirectBranch:	unknown
+Cpus_allowed:	7ff
+Cpus_allowed_list:	0-10
+Mems_allowed:	1
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	38
+nonvoluntary_ctxt_switches:	0
+futex_wait_queue
+TASK /proc/54/task/76
+rdk:main
+Name:	rdk:main
+Umask:	0022
+State:	S (sleeping)
+Tgid:	54
+Ngid:	0
+Pid:	76
+PPid:	24
+TracerPid:	0
+Uid:	0	0	0	0
+Gid:	0	0	0	0
+FDSize:	256
+Groups:	0 
+NStgid:	54
+NSpid:	76
+NSpgid:	1
+NSsid:	1
+Kthread:	0
+VmPeak:	274308264 kB
+VmSize:	274234396 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	  114100 kB
+VmRSS:	  114100 kB
+RssAnon:	   34052 kB
+RssFile:	   60736 kB
+RssShmem:	   19312 kB
+VmData:	  263988 kB
+VmStk:	     132 kB
+VmExe:	      40 kB
+VmLib:	   92820 kB
+VmPTE:	     672 kB
+VmSwap:	       0 kB
+HugetlbPages:	       0 kB
+CoreDumping:	0
+THP_enabled:	1
+untag_mask:	0xffffffffffffff
+Threads:	28
+SigQ:	0/31321
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	fffffffe7ffbfeff
+SigIgn:	0000000000001000
+SigCgt:	00000003000044fe
+CapInh:	0000000000000000
+CapPrm:	00000000a80c25fb
+CapEff:	00000000a80c25fb
+CapBnd:	00000000a80c25fb
+CapAmb:	0000000000000000
+NoNewPrivs:	0
+Seccomp:	2
+Seccomp_filters:	1
+Speculation_Store_Bypass:	vulnerable
+SpeculationIndirectBranch:	unknown
+Cpus_allowed:	7ff
+Cpus_allowed_list:	0-10
+Mems_allowed:	1
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	19
+nonvoluntary_ctxt_switches:	0
+futex_wait_queue
+TASK /proc/54/task/77
+rdk:broker-1
+Name:	rdk:broker-1
+Umask:	0022
+State:	S (sleeping)
+Tgid:	54
+Ngid:	0
+Pid:	77
+PPid:	24
+TracerPid:	0
+Uid:	0	0	0	0
+Gid:	0	0	0	0
+FDSize:	256
+Groups:	0 
+NStgid:	54
+NSpid:	77
+NSpgid:	1
+NSsid:	1
+Kthread:	0
+VmPeak:	274308264 kB
+VmSize:	274234396 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	  114100 kB
+VmRSS:	  114100 kB
+RssAnon:	   34052 kB
+RssFile:	   60736 kB
+RssShmem:	   19312 kB
+VmData:	  263988 kB
+VmStk:	     132 kB
+VmExe:	      40 kB
+VmLib:	   92820 kB
+VmPTE:	     672 kB
+VmSwap:	       0 kB
+HugetlbPages:	       0 kB
+CoreDumping:	0
+THP_enabled:	1
+untag_mask:	0xffffffffffffff
+Threads:	28
+SigQ:	0/31321
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	fffffffe7ffbfeff
+SigIgn:	0000000000001000
+SigCgt:	00000003000044fe
+CapInh:	0000000000000000
+CapPrm:	00000000a80c25fb
+CapEff:	00000000a80c25fb
+CapBnd:	00000000a80c25fb
+CapAmb:	0000000000000000
+NoNewPrivs:	0
+Seccomp:	2
+Seccomp_filters:	1
+Speculation_Store_Bypass:	vulnerable
+SpeculationIndirectBranch:	unknown
+Cpus_allowed:	7ff
+Cpus_allowed_list:	0-10
+Mems_allowed:	1
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	2
+nonvoluntary_ctxt_switches:	0
+futex_wait_queue
+TASK /proc/54/task/79
+.NET Long Runni
+Name:	.NET Long Runni
+Umask:	0022
+State:	S (sleeping)
+Tgid:	54
+Ngid:	0
+Pid:	79
+PPid:	24
+TracerPid:	0
+Uid:	0	0	0	0
+Gid:	0	0	0	0
+FDSize:	256
+Groups:	0 
+NStgid:	54
+NSpid:	79
+NSpgid:	1
+NSsid:	1
+Kthread:	0
+VmPeak:	274308264 kB
+VmSize:	274234396 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	  114100 kB
+VmRSS:	  114100 kB
+RssAnon:	   34052 kB
+RssFile:	   60736 kB
+RssShmem:	   19312 kB
+VmData:	  263988 kB
+VmStk:	     132 kB
+VmExe:	      40 kB
+VmLib:	   92820 kB
+VmPTE:	     672 kB
+VmSwap:	       0 kB
+HugetlbPages:	       0 kB
+CoreDumping:	0
+THP_enabled:	1
+untag_mask:	0xffffffffffffff
+Threads:	28
+SigQ:	0/31321
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	0000000000000000
+SigIgn:	0000000000001000
+SigCgt:	00000003000044fe
+CapInh:	0000000000000000
+CapPrm:	00000000a80c25fb
+CapEff:	00000000a80c25fb
+CapBnd:	00000000a80c25fb
+CapAmb:	0000000000000000
+NoNewPrivs:	0
+Seccomp:	2
+Seccomp_filters:	1
+Speculation_Store_Bypass:	vulnerable
+SpeculationIndirectBranch:	unknown
+Cpus_allowed:	7ff
+Cpus_allowed_list:	0-10
+Mems_allowed:	1
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	37
+nonvoluntary_ctxt_switches:	0
+futex_wait_queue
+TASK /proc/54/task/80
+rdk:broker1
+Name:	rdk:broker1
+Umask:	0022
+State:	S (sleeping)
+Tgid:	54
+Ngid:	0
+Pid:	80
+PPid:	24
+TracerPid:	0
+Uid:	0	0	0	0
+Gid:	0	0	0	0
+FDSize:	256
+Groups:	0 
+NStgid:	54
+NSpid:	80
+NSpgid:	1
+NSsid:	1
+Kthread:	0
+VmPeak:	274308264 kB
+VmSize:	274234396 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	  114100 kB
+VmRSS:	  114100 kB
+RssAnon:	   34052 kB
+RssFile:	   60736 kB
+RssShmem:	   19312 kB
+VmData:	  263988 kB
+VmStk:	     132 kB
+VmExe:	      40 kB
+VmLib:	   92820 kB
+VmPTE:	     672 kB
+VmSwap:	       0 kB
+HugetlbPages:	       0 kB
+CoreDumping:	0
+THP_enabled:	1
+untag_mask:	0xffffffffffffff
+Threads:	28
+SigQ:	0/31321
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	fffffffe7ffbfeff
+SigIgn:	0000000000001000
+SigCgt:	00000003000044fe
+CapInh:	0000000000000000
+CapPrm:	00000000a80c25fb
+CapEff:	00000000a80c25fb
+CapBnd:	00000000a80c25fb
+CapAmb:	0000000000000000
+NoNewPrivs:	0
+Seccomp:	2
+Seccomp_filters:	1
+Speculation_Store_Bypass:	vulnerable
+SpeculationIndirectBranch:	unknown
+Cpus_allowed:	7ff
+Cpus_allowed_list:	0-10
+Mems_allowed:	1
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	18
+nonvoluntary_ctxt_switches:	0
+do_sys_poll
+TASK /proc/54/task/94
+Brighter Confir
+Name:	Brighter Confir
+Umask:	0022
+State:	S (sleeping)
+Tgid:	54
+Ngid:	0
+Pid:	94
+PPid:	24
+TracerPid:	0
+Uid:	0	0	0	0
+Gid:	0	0	0	0
+FDSize:	256
+Groups:	0 
+NStgid:	54
+NSpid:	94
+NSpgid:	1
+NSsid:	1
+Kthread:	0
+VmPeak:	274308264 kB
+VmSize:	274234396 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	  114100 kB
+VmRSS:	  114100 kB
+RssAnon:	   34052 kB
+RssFile:	   60736 kB
+RssShmem:	   19312 kB
+VmData:	  263988 kB
+VmStk:	     132 kB
+VmExe:	      40 kB
+VmLib:	   92820 kB
+VmPTE:	     672 kB
+VmSwap:	       0 kB
+HugetlbPages:	       0 kB
+CoreDumping:	0
+THP_enabled:	1
+untag_mask:	0xffffffffffffff
+Threads:	28
+SigQ:	0/31321
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	0000000000000000
+SigIgn:	0000000000001000
+SigCgt:	00000003000044fe
+CapInh:	0000000000000000
+CapPrm:	00000000a80c25fb
+CapEff:	00000000a80c25fb
+CapBnd:	00000000a80c25fb
+CapAmb:	0000000000000000
+NoNewPrivs:	0
+Seccomp:	2
+Seccomp_filters:	1
+Speculation_Store_Bypass:	vulnerable
+SpeculationIndirectBranch:	unknown
+Cpus_allowed:	7ff
+Cpus_allowed_list:	0-10
+Mems_allowed:	1
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	2
+nonvoluntary_ctxt_switches:	0
+futex_wait_queue

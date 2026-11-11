@@ -1,0 +1,95 @@
+{
+  "framework": ".NET 10.0.11",
+  "sdk": "7.21.0.0",
+  "failures": 4,
+  "results": [
+    {
+      "queue": false,
+      "iteration": 0,
+      "phase": "receive-DLQ",
+      "expectedId": "48282115-9e86-4606-b723-cd20ccd99abf",
+      "observedId": null,
+      "sequence": 1,
+      "deadSequence": null,
+      "error": "Exception: Native DLQ receive returned null after successful dead-letter settlement.",
+      "elapsedMs": 672
+    },
+    {
+      "queue": false,
+      "iteration": 1,
+      "phase": "receive-DLQ",
+      "expectedId": "57fd5d5a-00ff-4a08-9acc-edc3c73e02d0",
+      "observedId": "48282115-9e86-4606-b723-cd20ccd99abf",
+      "sequence": 2,
+      "deadSequence": 1,
+      "error": "Exception: Native DLQ identity mismatch.",
+      "elapsedMs": 271
+    },
+    {
+      "queue": false,
+      "iteration": 2,
+      "phase": "receive-DLQ",
+      "expectedId": "08fda23c-fce3-4b28-90bf-3492a32e7329",
+      "observedId": "57fd5d5a-00ff-4a08-9acc-edc3c73e02d0",
+      "sequence": 3,
+      "deadSequence": 2,
+      "error": "Exception: Native DLQ identity mismatch.",
+      "elapsedMs": 60
+    },
+    {
+      "queue": false,
+      "iteration": 3,
+      "phase": "receive-DLQ",
+      "expectedId": "2288d8d6-f066-4b02-9266-511ecd10cee8",
+      "observedId": "08fda23c-fce3-4b28-90bf-3492a32e7329",
+      "sequence": 4,
+      "deadSequence": 3,
+      "error": "Exception: Native DLQ identity mismatch.",
+      "elapsedMs": 53
+    },
+    {
+      "queue": true,
+      "iteration": 0,
+      "phase": "complete",
+      "expectedId": "b43867f0-4c7a-4850-9ce5-325c0b9b9003",
+      "observedId": "b43867f0-4c7a-4850-9ce5-325c0b9b9003",
+      "sequence": 1,
+      "deadSequence": 1,
+      "error": null,
+      "elapsedMs": 263
+    },
+    {
+      "queue": true,
+      "iteration": 1,
+      "phase": "complete",
+      "expectedId": "07dd3fef-582c-4622-a898-1aa3fe050afb",
+      "observedId": "07dd3fef-582c-4622-a898-1aa3fe050afb",
+      "sequence": 3,
+      "deadSequence": 3,
+      "error": null,
+      "elapsedMs": 80
+    },
+    {
+      "queue": true,
+      "iteration": 2,
+      "phase": "complete",
+      "expectedId": "c5959d37-dbe4-4bcd-8f6a-b518f75325ea",
+      "observedId": "c5959d37-dbe4-4bcd-8f6a-b518f75325ea",
+      "sequence": 5,
+      "deadSequence": 5,
+      "error": null,
+      "elapsedMs": 75
+    },
+    {
+      "queue": true,
+      "iteration": 3,
+      "phase": "complete",
+      "expectedId": "230ba908-18db-40f3-9a14-ac0804c61df6",
+      "observedId": "230ba908-18db-40f3-9a14-ac0804c61df6",
+      "sequence": 7,
+      "deadSequence": 7,
+      "error": null,
+      "elapsedMs": 75
+    }
+  ]
+}

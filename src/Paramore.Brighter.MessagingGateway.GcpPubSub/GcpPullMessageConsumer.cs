@@ -23,6 +23,28 @@ public partial class GcpPullMessageConsumer(
     OnMissingChannel makeChannels = OnMissingChannel.Assume)
     : IAmAMessageConsumerAsync, IAmAMessageConsumerSync, IHaveAMessagingSystem
 {
+    private readonly IAmAWireMessageReader<ReceivedMessage> _wireMessageReader =
+        new DefaultGcpPubSubPullWireMessageReader();
+
+    internal GcpPullMessageConsumer(
+        GcpMessagingGatewayConnection connection,
+        Google.Cloud.PubSub.V1.SubscriptionName subscriptionName,
+        int batchSize,
+        TimeProvider timeProvider,
+        RoutingKey? deadLetterRoutingKey,
+        RoutingKey? invalidMessageRoutingKey,
+        OnMissingChannel makeChannels,
+        IAmAWireMessageReader<ReceivedMessage>? wireMessageReader,
+        IAmAWireMessageWriter<PubsubMessage>? deadLetterWireMessageWriter = null,
+        IAmAWireMessageWriter<PubsubMessage>? invalidMessageWireMessageWriter = null)
+        : this(connection, subscriptionName, batchSize, timeProvider,
+            deadLetterRoutingKey, invalidMessageRoutingKey, makeChannels)
+    {
+        _wireMessageReader = wireMessageReader ?? _wireMessageReader;
+        _router = new GcpRejectionRouter(connection, deadLetterRoutingKey, invalidMessageRoutingKey,
+            makeChannels, subscriptionName.ProjectId, timeProvider, deadLetterWireMessageWriter, invalidMessageWireMessageWriter);
+    }
+
     /// <inheritdoc />
     public MessagingSystem MessagingSystem => MessagingSystem.PubSub;
 
@@ -175,6 +197,10 @@ public partial class GcpPullMessageConsumer(
     /// <summary>
     /// Asynchronously receives a batch of messages from the subscription using the Pull API.
     /// </summary>
+    /// <remarks>
+    /// A throwing or null-returning wire reader yields an unacceptable message with the native
+    /// payload and receipt. The caller remains responsible for settling that delivery.
+    /// </remarks>
     /// <param name="timeOut">
     /// How long to wait for messages. Bounds the Pull call, so an empty subscription returns after
     /// this window rather than long-polling until a message arrives — raised to
@@ -246,7 +272,7 @@ public partial class GcpPullMessageConsumer(
             throw;
         }
 
-        return response.ReceivedMessages.Select(Parser.ToBrighterMessage).ToArray();
+        return response.ReceivedMessages.Select(ReadWireMessage).ToArray();
     }
 
     // A floor below ~2s risks losing a message to a real Pub/Sub race (#4321): the server can
@@ -275,6 +301,10 @@ public partial class GcpPullMessageConsumer(
     /// <summary>
     /// Synchronously receives a batch of messages from the subscription using the Pull API.
     /// </summary>
+    /// <remarks>
+    /// A throwing or null-returning wire reader yields an unacceptable message with the native
+    /// payload and receipt. The caller remains responsible for settling that delivery.
+    /// </remarks>
     /// <param name="timeOut">
     /// How long to wait for messages. Bounds the Pull call, so an empty subscription returns after
     /// this window rather than long-polling until a message arrives — raised to
@@ -333,7 +363,7 @@ public partial class GcpPullMessageConsumer(
             throw;
         }
 
-        return response.ReceivedMessages.Select(Parser.ToBrighterMessage).ToArray();
+        return response.ReceivedMessages.Select(ReadWireMessage).ToArray();
     }
 
     /// <summary>
@@ -509,6 +539,34 @@ public partial class GcpPullMessageConsumer(
         }
     }
 
+    private Message ReadWireMessage(ReceivedMessage delivery)
+    {
+        Message message;
+        try
+        {
+            message = _wireMessageReader.ReadMessage(delivery)
+                ?? throw new InvalidOperationException("The wire message reader returned null.");
+        }
+        catch (Exception exception)
+        {
+            Log.WireMappingFailed(s_logger, exception, delivery.Message.MessageId);
+            message = CreateUnacceptableMessage(delivery);
+        }
+
+        message.Header.Bag["ReceiptHandle"] = delivery.AckId;
+        message.Header.HandledCount = Parser.ReadDeliveryCount(delivery);
+        return message;
+    }
+
+    private static Message CreateUnacceptableMessage(ReceivedMessage delivery)
+    {
+        var topic = delivery.Message.Attributes.TryGetValue(HeaderNames.Topic, out var value)
+            ? new RoutingKey(value)
+            : RoutingKey.Empty;
+        var header = new MessageHeader(new Id(delivery.Message.MessageId), topic, MessageType.MT_UNACCEPTABLE);
+        return new Message(header, new MessageBody(delivery.Message.Data.ToByteArray()));
+    }
+
     public async ValueTask DisposeAsync()
     {
         await _router.DisposeAsync();
@@ -564,6 +622,9 @@ public partial class GcpPullMessageConsumer(
 
     private static partial class Log
     {
+        [LoggerMessage(LogLevel.Warning, "GcpPullMessageConsumer: Wire mapping failed for message {Id}")]
+        public static partial void WireMappingFailed(ILogger logger, Exception exception, string id);
+
         [LoggerMessage(LogLevel.Information,
             "GcpPullMessageConsumer: The message {Id} acknowledged with the receipt handle {ReceiptHandle} on the subscription {SubscriptionName}")]
         public static partial void AcknowledgeSuccess(ILogger logger, string id, string receiptHandle,
