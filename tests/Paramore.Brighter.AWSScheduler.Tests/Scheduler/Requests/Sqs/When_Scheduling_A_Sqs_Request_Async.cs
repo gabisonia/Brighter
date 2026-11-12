@@ -53,7 +53,7 @@ public class SqsSchedulingRequestAsyncTest : IAsyncDisposable
         //in principle, for point-to-point, we don't need both sides to create the queue;  whoever does not own the API can just validate
         _messageProducer = new SqsMessageProducer(
             awsConnection,
-            new SqsPublication{ QueueAttributes = sqsAttributes,  MakeChannels = OnMissingChannel.Create });
+            new SqsPublication{ ChannelName = new ChannelName(_queueName),  QueueAttributes = sqsAttributes,  MakeChannels = OnMissingChannel.Create });
         
         _scheduler = new AWSClientFactory(awsConnection).CreateSchedulerClient();
         _factory = new AwsSchedulerFactory(awsConnection, "brighter-scheduler")
@@ -80,7 +80,7 @@ public class SqsSchedulingRequestAsyncTest : IAsyncDisposable
         var stopAt = DateTimeOffset.UtcNow.AddMinutes(2);
         while (stopAt > DateTimeOffset.UtcNow)
         {
-            var messages = await _consumer.ReceiveAsync(TimeSpan.FromMinutes(1));
+            var messages = await _consumer.ReceiveAsync(TimeSpan.FromSeconds(20));
             Assert.Single(messages);
 
             if (messages[0].Header.MessageType != MessageType.MT_NONE)

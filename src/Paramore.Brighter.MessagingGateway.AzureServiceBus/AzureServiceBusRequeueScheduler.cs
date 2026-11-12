@@ -24,6 +24,7 @@ THE SOFTWARE. */
 
 using System;
 using System.Diagnostics;
+using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.Json;
@@ -78,6 +79,13 @@ public sealed partial class AzureServiceBusRequeueScheduler : IAmAMessageRequeue
         _instrumentationOptions = instrumentationOptions;
     }
 
+    /// <summary>Gets or initializes the writer used for queue-targeted retries.</summary>
+    /// <remarks>
+    /// Null preserves the existing retry format. Mapping runs after retry trace propagation.
+    /// The scheduler owns the retry ID, original identity, session, partition and handled count.
+    /// </remarks>
+    public IAmAWireMessageWriter<ServiceBusMessage>? WireMessageWriter { get; init; }
+
     /// <inheritdoc />
     public async Task RequeueAsync(Message message, ChannelName destination, TimeSpan delay,
         CancellationToken cancellationToken = default)
@@ -105,8 +113,7 @@ public sealed partial class AzureServiceBusRequeueScheduler : IAmAMessageRequeue
             message.Header.Bag.TryGetValue(ASBConstants.CloudEventsId, out var eventId)
             && !string.IsNullOrEmpty(eventId?.ToString()) ? eventId!.ToString()! : originalId;
         WriteRetryTelemetry(outgoing, destination, retryId, cloudEventId);
-        var retry = AzureServiceBusMessagePublisher.ConvertToServiceBusMessage(outgoing);
-        retry.Body = new BinaryData(message.Body.Memory);
+        var retry = CreateRetryMessage(outgoing);
         retry.MessageId = retryId;
         retry.ApplicationProperties[Message.OriginalMessageIdHeaderName] = originalId;
         retry.ApplicationProperties[ASBConstants.CloudEventsId] = cloudEventId;
@@ -142,6 +149,26 @@ public sealed partial class AzureServiceBusRequeueScheduler : IAmAMessageRequeue
                 }
             }
         }
+    }
+
+    private ServiceBusMessage CreateRetryMessage(Message outgoing)
+    {
+        if (WireMessageWriter is null)
+        {
+            var retry = AzureServiceBusMessagePublisher.ConvertToServiceBusMessage(outgoing);
+            retry.Body = new BinaryData(outgoing.Body.Memory);
+            return retry;
+        }
+
+        var mapped = WireMessageWriter.WriteMessage(outgoing)
+            ?? throw new InvalidOperationException("The retry wire message writer returned null.");
+        mapped.SessionId = null;
+        mapped.PartitionKey = outgoing.Header.PartitionKey.Value;
+        mapped.SessionId = outgoing.Header.Bag
+            .FirstOrDefault(header => ASBConstants.IsBagKey(header.Key, ASBConstants.SessionIdKey))
+            .Value?.ToString();
+        mapped.ApplicationProperties[ASBConstants.HandledCountHeaderBagKey] = outgoing.Header.HandledCount;
+        return mapped;
     }
 
     private void WriteRetryTelemetry(Message outgoing, ChannelName destination, string retryId, string cloudEventId)

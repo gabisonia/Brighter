@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>$(BrighterTestTargetFrameworks)</TargetFrameworks>
+    <OutputType>Exe</OutputType>
+    <IsTestProject>false</IsTestProject>
+    <Nullable>enable</Nullable>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../../src/Paramore.Brighter/Paramore.Brighter.csproj" />
+  </ItemGroup>
+</Project>

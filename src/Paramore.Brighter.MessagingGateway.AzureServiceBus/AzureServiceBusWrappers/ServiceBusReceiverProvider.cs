@@ -22,6 +22,7 @@ THE SOFTWARE. */
 #endregion
 
 using System;
+using System.Threading;
 using System.Threading.Tasks;
 using Azure.Messaging.ServiceBus;
 using Paramore.Brighter.MessagingGateway.AzureServiceBus.ClientProvider;
@@ -39,14 +40,17 @@ namespace Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusWrap
         /// <param name="queueName">The name of the Topic.</param>
         /// <param name="sessionEnabled">Use Sessions for Processing</param>
         /// <returns>A ServiceBusReceiverWrapper.</returns>
-        public async Task<IServiceBusReceiverWrapper?> GetAsync(string queueName, bool sessionEnabled)
+        public Task<IServiceBusReceiverWrapper?> GetAsync(string queueName, bool sessionEnabled)
+            => GetAsync(queueName, sessionEnabled, CancellationToken.None);
+
+        internal async Task<IServiceBusReceiverWrapper?> GetAsync(string queueName, bool sessionEnabled, CancellationToken cancellationToken)
         {
             if (sessionEnabled)
             {
                 try
                 {
                     return new ServiceBusReceiverWrapper(await _client.AcceptNextSessionAsync(queueName,
-                        new ServiceBusSessionReceiverOptions() {ReceiveMode = ServiceBusReceiveMode.PeekLock}), maxAutoLockRenewalDuration);
+                        new ServiceBusSessionReceiverOptions() {ReceiveMode = ServiceBusReceiveMode.PeekLock}, cancellationToken), maxAutoLockRenewalDuration);
                 }
                 catch (ServiceBusException e)
                 {
@@ -74,14 +78,17 @@ namespace Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusWrap
         /// <param name="subscriptionName">The name of the Subscription on the Topic.</param>
         /// <param name="sessionEnabled">Use Sessions for Processing</param>
         /// <returns>A ServiceBusReceiverWrapper.</returns>
-        public async Task<IServiceBusReceiverWrapper?> GetAsync(string topicName, string subscriptionName, bool sessionEnabled)
+        public Task<IServiceBusReceiverWrapper?> GetAsync(string topicName, string subscriptionName, bool sessionEnabled)
+            => GetAsync(topicName, subscriptionName, sessionEnabled, CancellationToken.None);
+
+        internal async Task<IServiceBusReceiverWrapper?> GetAsync(string topicName, string subscriptionName, bool sessionEnabled, CancellationToken cancellationToken)
         {
             if (sessionEnabled)
             {
                 try
                 {
                     return new ServiceBusReceiverWrapper(await _client.AcceptNextSessionAsync(topicName, subscriptionName,
-                        new ServiceBusSessionReceiverOptions() {ReceiveMode = ServiceBusReceiveMode.PeekLock}), maxAutoLockRenewalDuration);
+                        new ServiceBusSessionReceiverOptions() {ReceiveMode = ServiceBusReceiveMode.PeekLock}, cancellationToken), maxAutoLockRenewalDuration);
                 }
                 catch (ServiceBusException e)
                 {

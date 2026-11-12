@@ -48,6 +48,41 @@ namespace Paramore.Brighter.MessagingGateway.MsSql
         /// </remarks>
         public bool IsIndependentSubscriber { get; set; }
 
+        /// <summary>Gets or sets the reader for this subscription's native string payload.</summary>
+        /// <remarks>
+        /// Null preserves the default JSON parser. Consumers capture this selection on creation.
+        /// Custom-reader failures return rejectable messages containing the raw payload and
+        /// native row ID. SQL Server atomically removes the row before payload mapping.
+        /// </remarks>
+        public IAmAWireMessageReader<string>? WireMessageReader { get; set; }
+
+        /// <summary>Gets or sets the writer for immediate requeue payloads.</summary>
+        /// <remarks>
+        /// Null selects the default JSON mapping. The consumer captures this selection on creation.
+        /// Requeue inserts a new row because receipt already removed the original row atomically.
+        /// The reader must understand the selected retry format.
+        /// </remarks>
+        public IAmAWireMessageWriter<string>? RequeueWireMessageWriter { get; set; }
+
+        /// <summary>Gets or sets the writer for this consumer's dead-letter forwarding.</summary>
+        /// <remarks>Null preserves default JSON. Selection is captured at consumer creation.
+        /// Receipt already deleted the source row; a forwarding failure is logged and settled.</remarks>
+        public IAmAWireMessageWriter<string>? DeadLetterWireMessageWriter { get; set; }
+
+        /// <summary>Gets or sets the writer for this consumer's invalid-message forwarding.</summary>
+        /// <remarks>Null preserves default JSON. Selection is captured at consumer creation.
+        /// Receipt already deleted the source row; a forwarding failure is logged and settled.</remarks>
+        public IAmAWireMessageWriter<string>? InvalidMessageWireMessageWriter { get; set; }
+
+        /// <summary>Gets or sets the registered publication used for scheduler-backed retries.</summary>
+        /// <remarks>
+        /// Null retains the original publication selector. Consumers capture this setting at creation.
+        /// Configure that publication's writer for the retry format. The logical message topic
+        /// remains the SQL destination; the publication selector only chooses dispatch configuration.
+        /// Immediate retries continue to use RequeueWireMessageWriter.
+        /// </remarks>
+        public RoutingKey? ScheduledRequeuePublicationTopic { get; set; }
+
         /// <inheritdoc />
         public override Type ChannelFactoryType => typeof(ChannelFactory);
 

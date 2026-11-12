@@ -61,14 +61,18 @@ public class RmqCollidingDeliveryTagAsyncTests : IAsyncDisposable
     public async Task When_sends_collide_on_a_delivery_tag_should_not_confirm_either_message()
     {
         //Arrange
+        await _messageProducer.PrepareAsync();
         var first = NewMessage();
         var second = NewMessage();
 
-        //Act — both sends read the same delivery tag before either of them publishes
+        //Act — both sends register the same delivery tag before either native publish starts
         await Task.WhenAll(_messageProducer.SendAsync(first), _messageProducer.SendAsync(second));
 
         //Assert — a tag that two messages claim cannot say which was acked, so neither is confirmed
         //and the sweeper resends both; the client raises a confirmation before its publish returns
+        var tags = _messageProducer.ReadTags;
+        Assert.Equal(2, tags.Length);
+        Assert.Equal(tags[0], tags[1]);
         Assert.Empty(_confirmed);
     }
 

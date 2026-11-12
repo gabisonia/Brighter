@@ -41,7 +41,7 @@ public class SqsSchedulingAsyncMessageViaFireSchedulerTest : IAsyncDisposable
         //just for the tests, so create a new consumer from the properties
         _consumer = new SqsMessageConsumer(awsConnection, channel.Name.ToValidSQSQueueName(), BufferSize);
         _messageProducer = new SqsMessageProducer(awsConnection,
-            new SqsPublication { MakeChannels = OnMissingChannel.Create, QueueAttributes = new SqsAttributes(tags: new Dictionary<string, string> { { "Environment", "Test" } }) });
+            new SqsPublication { ChannelName = new ChannelName(_queueName), MakeChannels = OnMissingChannel.Create, QueueAttributes = new SqsAttributes(tags: new Dictionary<string, string> { { "Environment", "Test" } }) });
 
         _factory = new AwsSchedulerFactory(awsConnection, "brighter-scheduler")
         {
@@ -69,7 +69,7 @@ public class SqsSchedulingAsyncMessageViaFireSchedulerTest : IAsyncDisposable
         var stopAt = DateTimeOffset.UtcNow.AddMinutes(2);
         while (stopAt > DateTimeOffset.UtcNow)
         {
-            var messages = await _consumer.ReceiveAsync(TimeSpan.FromMinutes(1));
+            var messages = await _consumer.ReceiveAsync(TimeSpan.FromSeconds(20));
             Assert.Single(messages);
 
             if (messages[0].Header.MessageType != MessageType.MT_NONE)

@@ -64,6 +64,9 @@ internal sealed partial class RmqMessageCreator
         {
             Log.FailedToCreateMessageFromAmqpMessage(s_logger, e);
             message = Message.FailureMessage(topic.Result, messageId.Result);
+            message.Body = new MessageBody(fromQueue.Body);
+            message.Header.HandledCount = ReadHandledCount(headers).Result;
+            SetMessageMetadata(fromQueue, message);
         }
 
         return message;
@@ -202,7 +205,7 @@ internal sealed partial class RmqMessageCreator
             });
     }
 
-    private static HeaderResult<int> ReadHandledCount(IDictionary<string, object?> headers)
+    internal static HeaderResult<int> ReadHandledCount(IDictionary<string, object?> headers)
     {
         if (headers.TryGetValue(HeaderNames.HANDLED_COUNT, out object? header) == false)
         {

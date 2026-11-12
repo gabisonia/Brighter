@@ -8,6 +8,16 @@ namespace Paramore.Brighter.MessagingGateway.AWSSQS;
 public class SqsPublication : Publication
 {
     /// <summary>
+    /// Gets or sets the writer for outgoing SQS body and application attributes.
+    /// A null value preserves the default wire format.
+    /// </summary>
+    /// <remarks>
+    /// Configure before creating producers. Compose <see cref="DefaultSqsWireMessageWriter"/>
+    /// to retain default fields. The gateway owns destinations and delivery controls.
+    /// </remarks>
+    public IAmAWireMessageWriter<SqsWireMessage>? WireMessageWriter { get; set; }
+
+    /// <summary>
     /// Creates a new SQS Publication for a point-to-point channel
     /// </summary>
     public SqsPublication()

@@ -10,6 +10,35 @@ namespace Paramore.Brighter.MessagingGateway.GcpPubSub;
 public class GcpPubSubSubscription : Subscription, IUseBrighterDeadLetterSupport, IUseBrighterInvalidMessageSupport, IAmADeliveryCountingSubscription
 {
     /// <summary>
+    /// Gets or sets the native reader used by pull consumers.
+    /// </summary>
+    /// <value>The reader, or null to use the default Pub/Sub pull mapping.</value>
+    /// <remarks>
+    /// A null value selects <see cref="DefaultGcpPubSubPullWireMessageReader"/>.
+    /// The reader owns the body and application metadata. The gateway attaches the native receipt
+    /// handle and resolves delivery counts from the native delivery. Streaming consumers do not use this reader.
+    /// </remarks>
+    public IAmAWireMessageReader<ReceivedMessage>? PullWireMessageReader { get; set; }
+
+    /// <summary>
+    /// Gets or sets the reader used to map streaming deliveries to Brighter messages.
+    /// </summary>
+    /// <remarks>
+    /// Null uses the default streaming wire reader. The reader controls the body and application metadata;
+    /// the gateway retains the native callback receipt and delivery count. This does not affect pull consumers.
+    /// </remarks>
+    public IAmAWireMessageReader<GcpStreamMessage>? StreamWireMessageReader { get; set; }
+
+    /// <summary>Gets or sets the writer for Brighter-managed dead-letter forwarding.</summary>
+    /// <remarks>Captured at consumer creation; null retains the default format. Also used for invalid-message fallback when no invalid destination is configured.</remarks>
+    public IAmAWireMessageWriter<PubsubMessage>? DeadLetterWireMessageWriter { get; set; }
+
+    /// <summary>Gets or sets the writer for Brighter-managed invalid-message forwarding.</summary>
+    /// <remarks>Captured at consumer creation; null retains the default format. This selection does not configure native broker dead-lettering.</remarks>
+    public IAmAWireMessageWriter<PubsubMessage>? InvalidMessageWireMessageWriter { get; set; }
+
+
+    /// <summary>
     /// Gets the Google Cloud Project ID where the subscription and its topic reside.
     /// If null, the default project ID from the connection will be used.
     /// </summary>

@@ -13,6 +13,8 @@ namespace Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusWrap
             _brokeredMessage = brokeredMessage;
         }
 
+        internal ServiceBusReceivedMessage NativeMessage => _brokeredMessage;
+
         public byte[] MessageBodyValue => _brokeredMessage.Body.ToArray();
 
         public ReadOnlyMemory<byte> MessageBodyMemory => _brokeredMessage.Body.ToMemory();

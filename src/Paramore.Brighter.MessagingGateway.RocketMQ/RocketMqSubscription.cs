@@ -9,6 +9,20 @@ namespace Paramore.Brighter.MessagingGateway.RocketMQ;
 /// </summary>
 public class RocketSubscription : Subscription, IUseBrighterDeadLetterSupport, IUseBrighterInvalidMessageSupport, IAmADeliveryCountingSubscription
 {
+    /// <summary>Gets or sets the writer for consumer-created dead-letter forwarding.</summary>
+    /// <remarks>Null preserves the default mapping. Consumers capture this selection at creation.
+    /// Existing rejection settlement still acknowledges the source after forwarding failure.</remarks>
+    public IAmAWireMessageWriter<RocketMqWireMessage>? DeadLetterWireMessageWriter { get; set; }
+
+    /// <summary>Gets or sets the writer for consumer-created invalid-message forwarding.</summary>
+    /// <remarks>Null preserves the default mapping. Consumers capture this selection at creation.
+    /// Existing rejection settlement still acknowledges the source after forwarding failure.</remarks>
+    public IAmAWireMessageWriter<RocketMqWireMessage>? InvalidMessageWireMessageWriter { get; set; }
+
+    /// <summary>Gets or sets the native payload reader captured when the consumer is created.</summary>
+    /// <remarks>Null selects the default mapping. The consumer attaches the actual native receipt and delivery count.</remarks>
+    public IAmAWireMessageReader<MessageView>? WireMessageReader { get; set; }
+
     /// <summary>
     /// Gets or sets the routing key for the dead letter queue topic.
     /// When set, rejected messages with <see cref="RejectionReason.DeliveryError"/> are forwarded to this topic.

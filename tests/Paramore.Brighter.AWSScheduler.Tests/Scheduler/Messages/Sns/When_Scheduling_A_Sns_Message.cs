@@ -11,7 +11,7 @@ namespace Paramore.Brighter.AWSScheduler.Tests.Scheduler.Messages.Sns;
 [Collection("Scheduler SNS")]
 public class SnsSchedulingMessageTest : IDisposable
 {
-    private readonly ContentType _contentType = new ContentType(MediaTypeNames.Text.Plain);
+    private readonly ContentType _contentType = new ContentType(MediaTypeNames.Text.Plain) { CharSet = "utf-8" };
     private const int BufferSize = 3;
     private readonly SnsMessageProducer _messageProducer;
     private readonly SqsMessageConsumer _consumer;

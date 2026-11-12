@@ -201,7 +201,10 @@ public partial class RmqMessageProducer : RmqMessageGateway, IAmAMessageProducer
 
             if (PublishesOnChannel(delay.Value))
             {
-                var rmqMessagePublisher = new RmqMessagePublisher(channel, Connection);
+                if (_publication.DestinationQueue is { } destinationQueue && delay > TimeSpan.Zero && DelaySupported)
+                    await RmqDelayedRequeue.EnsureTopologyAsync(channel, Connection, destinationQueue, _publication.MakeChannels, cancellationToken);
+
+                var rmqMessagePublisher = new RmqMessagePublisher(channel, Connection, _publication.WireMessageWriter, _publication.DestinationQueue);
                 var deliveryTag = await channel.GetNextPublishSequenceNumberAsync(cancellationToken);
                 pendingConfirmation = new PendingConfirmation(message.Id, message.Header.Topic, publishContext);
                 RecordPendingConfirmation(deliveryTag, pendingConfirmation);

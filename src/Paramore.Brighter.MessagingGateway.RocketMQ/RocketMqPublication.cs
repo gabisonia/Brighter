@@ -37,6 +37,10 @@ public enum TopicType
 /// </summary>
 public class RocketMqPublication : Publication
 {
+    /// <summary>Gets or sets the body and application property writer used at dispatch.</summary>
+    /// <remarks>Null selects the default mapping. Native delivery controls remain gateway-owned.</remarks>
+    public IAmAWireMessageWriter<RocketMqWireMessage>? WireMessageWriter { get; set; }
+
     /// <summary>
     /// Gets or sets the message tag for filtering in RocketMQ topics.
     /// Tags help categorize messages within the same topic for selective consumption.

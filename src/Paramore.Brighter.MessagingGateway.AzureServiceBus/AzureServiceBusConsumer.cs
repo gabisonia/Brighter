@@ -24,6 +24,7 @@ THE SOFTWARE. */
 
 using System;
 using System.Collections.Generic;
+using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using Azure.Messaging.ServiceBus;
@@ -49,6 +50,9 @@ public abstract partial class AzureServiceBusConsumer : IAmAMessageConsumerSync,
     protected readonly string Topic;
     private readonly IAmAMessageScheduler? _requeueScheduler;
     private int _retryDelayWarningLogged;
+    private readonly AsyncLocal<CancellationToken> _receiverAcquisitionCancellation = new();
+
+    internal CancellationToken ReceiverAcquisitionCancellationToken => _receiverAcquisitionCancellation.Value;
     protected readonly IAdministrationClientWrapper AdministrationClientWrapper;
     private readonly int _batchSize;
     protected IServiceBusReceiverWrapper? ServiceBusReceiver;
@@ -102,8 +106,10 @@ public abstract partial class AzureServiceBusConsumer : IAmAMessageConsumerSync,
     /// </summary>
     /// <param name="message">The message.</param>
     /// <param name="cancellationToken">Cancels the acknowledge operation</param>
+    /// <exception cref="OperationCanceledException">The token was cancelled before acknowledging the message.</exception>
     public async Task AcknowledgeAsync(Message message, CancellationToken cancellationToken = default(CancellationToken))
     {
+        cancellationToken.ThrowIfCancellationRequested();
         try
         {
             await EnsureChannelAsync();
@@ -175,8 +181,10 @@ public abstract partial class AzureServiceBusConsumer : IAmAMessageConsumerSync,
     /// <param name="timeOut">The timeout for a message being available. Defaults to 300ms.</param>
     /// <param name="cancellationToken">Cancel the receive</param>
     /// <returns>Message.</returns>
+    /// <exception cref="OperationCanceledException">The token was cancelled before receiving, while acquiring a native session or waiting on the native receiver, or during message mapping.</exception>
     public async Task<Message[]> ReceiveAsync(TimeSpan? timeOut = null, CancellationToken cancellationToken = default(CancellationToken))
     {
+        cancellationToken.ThrowIfCancellationRequested();
         Log.PreparingToRetrieveNextMessages(Logger, Topic, SubscriptionName, timeOut, _batchSize);
 
         IEnumerable<IBrokeredMessageWrapper> messages;
@@ -190,7 +198,7 @@ public abstract partial class AzureServiceBusConsumer : IAmAMessageConsumerSync,
                 ServiceBusReceiver is not ServiceBusReceiverWrapper { HasPendingMessages: true }))
             {
                 if (ServiceBusReceiver is not null) await ServiceBusReceiver.CloseAsync();
-                await GetMessageReceiverProviderAsync();
+                await AcquireReceiverAsync(cancellationToken);
                 if (ServiceBusReceiver == null)
                 {
                     Log.CouldNotGetSessionLock(Logger, Topic);
@@ -200,7 +208,14 @@ public abstract partial class AzureServiceBusConsumer : IAmAMessageConsumerSync,
 
             timeOut ??= TimeSpan.FromMilliseconds(300);
 
-            messages = await ServiceBusReceiver.ReceiveAsync(_batchSize, timeOut.Value);
+            messages = ServiceBusReceiver is ServiceBusReceiverWrapper receiver
+                ? await receiver.ReceiveAsync(_batchSize, timeOut.Value, cancellationToken)
+                : await ServiceBusReceiver.ReceiveAsync(_batchSize, timeOut.Value);
+        }
+        catch (OperationCanceledException) when (cancellationToken.IsCancellationRequested)
+        {
+            await ResetReceiverAsync();
+            throw;
         }
         catch (Exception e)
         {
@@ -218,22 +233,25 @@ public abstract partial class AzureServiceBusConsumer : IAmAMessageConsumerSync,
 
             //The connection to Azure Service bus may have failed so we re-establish the connection.
             await ResetReceiverAsync();
-            await GetMessageReceiverProviderAsync();
+            await AcquireReceiverAsync(cancellationToken);
 
             throw new ChannelFailureException("Failing to receive messages.", e);
         }
 
         try
         {
-            foreach (IBrokeredMessageWrapper azureServiceBusMessage in messages)
-            {
-                Message message = _azureServiceBusMesssageCreator.MapToBrighterMessage(azureServiceBusMessage);
-                if (await CanDispatchAsync(message)) messagesToReturn.Add(message);
-            }
+            await MapMessagesAsync(messages, messagesToReturn, cancellationToken);
         }
         catch
         {
-            await ResetReceiverAsync();
+            try
+            {
+                await ResetReceiverAsync();
+            }
+            catch (Exception exception)
+            {
+                Log.FailedToCloseReceiver(Logger, exception);
+            }
             throw;
         }
 
@@ -254,8 +272,10 @@ public abstract partial class AzureServiceBusConsumer : IAmAMessageConsumerSync,
     /// </summary>
     /// <param name="message">The message.</param>
     /// <param name="cancellationToken">Cancel the nack operation</param>
+    /// <exception cref="OperationCanceledException">The token was cancelled before abandoning the message.</exception>
     public async Task NackAsync(Message message, CancellationToken cancellationToken = default)
     {
+        cancellationToken.ThrowIfCancellationRequested();
         try
         {
             await EnsureChannelAsync();
@@ -310,8 +330,10 @@ public abstract partial class AzureServiceBusConsumer : IAmAMessageConsumerSync,
     /// <param name="reason">The <see cref="MessageRejectionReason"/> that explains why we rejected the message</param>
     /// <param name="cancellationToken">Cancel the rejection</param>
     /// <returns>True if the message has been removed from the channel, false otherwise</returns>
+    /// <exception cref="OperationCanceledException">The token was cancelled before rejecting the message.</exception>
     public async Task<bool> RejectAsync(Message message, MessageRejectionReason? reason = null, CancellationToken cancellationToken = default(CancellationToken))
     {
+        cancellationToken.ThrowIfCancellationRequested();
         try
         {
             await EnsureChannelAsync();
@@ -436,11 +458,75 @@ public abstract partial class AzureServiceBusConsumer : IAmAMessageConsumerSync,
         await CloseSessionIfIdleAsync();
     }
 
+    private async Task MapMessagesAsync(IEnumerable<IBrokeredMessageWrapper> messages,
+        List<Message> messagesToReturn, CancellationToken cancellationToken)
+    {
+        try
+        {
+            foreach (var delivery in messages)
+            {
+                Message message = ReadMessage(delivery);
+                cancellationToken.ThrowIfCancellationRequested();
+                if (await CanDispatchAsync(message)) messagesToReturn.Add(message);
+            }
+        }
+        catch (OperationCanceledException)
+        {
+            await ReleaseMessagesAsync(messages);
+            throw;
+        }
+    }
+
+    // A lost lock must not prevent release of the rest of the batch.
+    private async Task ReleaseMessagesAsync(IEnumerable<IBrokeredMessageWrapper> messages)
+    {
+        ExceptionDispatchInfo? firstFailure = null;
+        foreach (var message in messages)
+        {
+            try
+            {
+                await ServiceBusReceiver!.AbandonAsync(message.LockToken);
+            }
+            catch (Exception exception)
+            {
+                firstFailure ??= ExceptionDispatchInfo.Capture(exception);
+            }
+        }
+        firstFailure?.Throw();
+    }
+
     internal async Task ResetReceiverAsync()
     {
         var receiver = ServiceBusReceiver;
         ServiceBusReceiver = null;
         if (receiver is not null) await receiver.CloseAsync().ConfigureAwait(false);
+    }
+
+    private Message ReadMessage(IBrokeredMessageWrapper delivery)
+    {
+        var reader = Subscription.WireMessageReader;
+        if (reader is null)
+            return _azureServiceBusMesssageCreator.MapToBrighterMessage(delivery);
+
+        if (delivery is not BrokeredMessageWrapper nativeDelivery)
+            throw new ConfigurationException("A configured wire reader requires a native Service Bus delivery.");
+
+        Message message;
+        try
+        {
+            message = reader.ReadMessage(nativeDelivery.NativeMessage)
+                ?? throw new InvalidOperationException("The wire message reader returned null.");
+        }
+        catch (Exception exception) when (exception is not OperationCanceledException)
+        {
+            Log.ErrorMappingNativeMessage(Logger, exception, delivery.Id, Topic);
+            message = Message.FailureMessage(new RoutingKey(Topic), new Id(delivery.Id));
+            message.Body = new MessageBody(delivery.MessageBodyMemory);
+        }
+
+        message.Header.Bag[ASBConstants.LockTokenHeaderBagKey] = delivery.LockToken;
+        message.Header.Bag[ASBConstants.SequenceNumberBagKey] = delivery.SequenceNumber;
+        return message;
     }
 
     internal async Task<bool> CanDispatchAsync(Message message)
@@ -465,6 +551,21 @@ public abstract partial class AzureServiceBusConsumer : IAmAMessageConsumerSync,
             await ServiceBusReceiver.CloseAsync().ConfigureAwait(false);
     }
 
+    // Carries cancellation through the existing subclass hook without changing its signature.
+    private async Task AcquireReceiverAsync(CancellationToken cancellationToken)
+    {
+        var previous = _receiverAcquisitionCancellation.Value;
+        _receiverAcquisitionCancellation.Value = cancellationToken;
+        try
+        {
+            await GetMessageReceiverProviderAsync().ConfigureAwait(false);
+        }
+        finally
+        {
+            _receiverAcquisitionCancellation.Value = previous;
+        }
+    }
+
     protected abstract Task GetMessageReceiverProviderAsync();
 
     protected abstract Task EnsureChannelAsync();
@@ -487,6 +588,9 @@ public abstract partial class AzureServiceBusConsumer : IAmAMessageConsumerSync,
 
     private static partial class Log
     {
+        [LoggerMessage(LogLevel.Error, "Failed to map native Service Bus message {Id} from {Topic}")]
+        public static partial void ErrorMappingNativeMessage(ILogger logger, Exception exception, string id, string topic);
+
         [LoggerMessage(LogLevel.Warning, "Cannot honor retry delay {Delay} for message {Id} on topic {Topic} subscription {ChannelName}; abandoning immediately. Configure ForwardTo to a dedicated queue to retain delayed retries")]
         public static partial void RetryDelayRequiresForwarding(ILogger logger, TimeSpan delay, string id, string topic, string channelName);
 
@@ -507,6 +611,9 @@ public abstract partial class AzureServiceBusConsumer : IAmAMessageConsumerSync,
 
         [LoggerMessage(LogLevel.Debug, "Message Receiver is closing...")]
         public static partial void MessageReceiverClosing(ILogger logger);
+
+        [LoggerMessage(LogLevel.Error, "Failed to close receiver after a message processing failure")]
+        public static partial void FailedToCloseReceiver(ILogger logger, Exception exception);
 
         [LoggerMessage(LogLevel.Error, "Failing to receive messages")]
         public static partial void FailingToReceiveMessages(ILogger logger, Exception e);

@@ -87,7 +87,10 @@ public class SqsMessageConsumerFactory : IAmAMessageConsumerFactory
             makeChannels: sqsSubscription.MakeChannels,
             isQueueUrl: (sqsSubscription.FindQueueBy == QueueFindBy.Url),
             rawMessageDelivery: sqsSubscription.QueueAttributes.RawMessageDelivery,
-            queueAttributes: sqsSubscription.QueueAttributes
+            queueAttributes: sqsSubscription.QueueAttributes,
+            wireMessageReader: sqsSubscription.WireMessageReader,
+            invalidMessageWireMessageWriter: sqsSubscription.InvalidMessageWireMessageWriter,
+            deadLetterWireMessageWriter: sqsSubscription.DeadLetterWireMessageWriter
         );
     }
 }

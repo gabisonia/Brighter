@@ -36,7 +36,7 @@ namespace Paramore.Brighter.MessagingGateway.MsSql;
 /// Copies retain their logical topic. Receivers sharing a channel compete for its copy.
 /// Use a plain <see cref="Publication"/> for the existing single-queue behavior.
 /// </remarks>
-public class MsSqlPublication : Publication
+public class MsSqlPublication : MsSqlWirePublication
 {
     /// <summary>
     /// Gets or sets the SQL command timeout for an atomic fan-out send.

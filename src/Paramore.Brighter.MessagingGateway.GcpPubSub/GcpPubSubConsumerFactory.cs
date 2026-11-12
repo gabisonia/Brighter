@@ -88,7 +88,10 @@ public class GcpPubSubConsumerFactory(GcpMessagingGatewayConnection connection)
                 pubSubSubscription.TimeProvider,
                 deadLetterRoutingKey: pubSubSubscription.DeadLetterRoutingKey,
                 invalidMessageRoutingKey: pubSubSubscription.InvalidMessageRoutingKey,
-                makeChannels: pubSubSubscription.MakeChannels);
+                makeChannels: pubSubSubscription.MakeChannels,
+                wireMessageReader: pubSubSubscription.PullWireMessageReader,
+                deadLetterWireMessageWriter: pubSubSubscription.DeadLetterWireMessageWriter,
+                invalidMessageWireMessageWriter: pubSubSubscription.InvalidMessageWireMessageWriter);
         }
 
         // If not Pull, use Stream mode. Stream mode consumers are shared per subscription to manage
@@ -113,7 +116,10 @@ public class GcpPubSubConsumerFactory(GcpMessagingGatewayConnection connection)
             pubSubSubscription.TimeProvider,
             deadLetterRoutingKey: pubSubSubscription.DeadLetterRoutingKey,
             invalidMessageRoutingKey: pubSubSubscription.InvalidMessageRoutingKey,
-            makeChannels: pubSubSubscription.MakeChannels);
+            makeChannels: pubSubSubscription.MakeChannels,
+            wireMessageReader: pubSubSubscription.StreamWireMessageReader,
+            deadLetterWireMessageWriter: pubSubSubscription.DeadLetterWireMessageWriter,
+            invalidMessageWireMessageWriter: pubSubSubscription.InvalidMessageWireMessageWriter);
     }
 
     private GcpStreamConsumer CreateStreamConsumer(GcpPubSubSubscription subscription,

@@ -71,6 +71,7 @@ namespace Paramore.Brighter.MessagingGateway.Kafka
 
         private IProducer<string, byte[]>? _producer;
         private readonly IKafkaMessageHeaderBuilder _headerBuilder;
+        private readonly IAmAWireMessageWriter<Message<string, byte[]>>? _wireMessageWriter;
         private readonly ProducerConfig _producerConfig;
         private KafkaMessagePublisher? _publisher;
         private bool _hasFatalProducerError;
@@ -147,6 +148,7 @@ namespace Paramore.Brighter.MessagingGateway.Kafka
             ReplicationFactor = publication.ReplicationFactor;
             TopicFindTimeout = TimeSpan.FromMilliseconds(publication.TopicFindTimeoutMs);
             _headerBuilder = publication.MessageHeaderBuilder;
+            _wireMessageWriter = publication.WireMessageWriter;
             _instrumentation = instrumentation;
         }
         
@@ -204,7 +206,7 @@ namespace Paramore.Brighter.MessagingGateway.Kafka
             _producer = new ProducerBuilder<string, byte[]>(_producerConfig)
                 .SetErrorHandler((_, error) => HandleError(error))
                 .Build();
-            _publisher = new KafkaMessagePublisher(_producer, _headerBuilder);
+            _publisher = new KafkaMessagePublisher(_producer, _wireMessageWriter ?? new DefaultKafkaWireMessageWriter(_headerBuilder));
 
             EnsureTopic();
         }
@@ -264,6 +266,12 @@ namespace Paramore.Brighter.MessagingGateway.Kafka
         /// <param name="message">The message to send</param>
         /// <param name="delay">The delay to use</param>
         public void SendWithDelay(Message message, TimeSpan? delay = null)
+            => SendWithDelay(message, delay, null);
+
+        internal void SendWithConfirmation(Message message, Action<PublishConfirmationResult> confirmation)
+            => SendWithDelay(message, TimeSpan.Zero, confirmation);
+
+        private void SendWithDelay(Message message, TimeSpan? delay, Action<PublishConfirmationResult>? confirmation)
         {
             if (message is null)
                 throw new ArgumentNullException(nameof(message));
@@ -298,9 +306,11 @@ namespace Paramore.Brighter.MessagingGateway.Kafka
                 //Capture the publish span context synchronously, before any closure runs, so the
                 //confirmation can be linked back to the original publish even on the synthetic path.
                 var publishContext = Activity.Current?.Context;
+                var sourceMessageId = _wireMessageWriter is null ? null : message.Id;
+                var topic = message.Header.Topic;
                 BrighterTracer.WriteProducerEvent(Span, MessagingSystem.Kafka, message, _instrumentation);
                 Log.SendingMessageToKafka(s_logger, _producerConfig.BootstrapServers, message.Header.Topic.Value, message.Body.Value);
-                _publisher.PublishMessage(message, report => PublishResults(report.Status, report.Headers, message.Header.Topic, publishContext));
+                _publisher.PublishMessage(message, report => PublishResults(report.Status, report.Headers, topic, publishContext, sourceMessageId, confirmation));
             }
             catch (ProduceException<string, string> pe)
             {
@@ -339,7 +349,13 @@ namespace Paramore.Brighter.MessagingGateway.Kafka
         /// <param name="message">The message to send</param>
         /// <param name="delay">The delay to use</param>
         /// <param name="cancellationToken">Cancels the send operation</param>
-        public async Task SendWithDelayAsync(Message message, TimeSpan? delay, CancellationToken cancellationToken = default)
+        public Task SendWithDelayAsync(Message message, TimeSpan? delay, CancellationToken cancellationToken = default)
+            => SendWithDelayAsync(message, delay, null, cancellationToken);
+
+        internal Task SendWithConfirmationAsync(Message message, Action<PublishConfirmationResult> confirmation, CancellationToken cancellationToken)
+            => SendWithDelayAsync(message, TimeSpan.Zero, confirmation, cancellationToken);
+
+        private async Task SendWithDelayAsync(Message message, TimeSpan? delay, Action<PublishConfirmationResult>? confirmation, CancellationToken cancellationToken)
         {
              if (message is null)
                  throw new ArgumentNullException(nameof(message));
@@ -374,9 +390,11 @@ namespace Paramore.Brighter.MessagingGateway.Kafka
                  //Capture the publish span context synchronously, before any closure runs, so the
                  //confirmation can be linked back to the original publish even on the synthetic path.
                  var publishContext = Activity.Current?.Context;
+                 var sourceMessageId = _wireMessageWriter is null ? null : message.Id;
+                 var topic = message.Header.Topic;
                  BrighterTracer.WriteProducerEvent(Span, MessagingSystem.Kafka, message, _instrumentation);
                  Log.SendingMessageToKafka(s_logger, _producerConfig.BootstrapServers, message.Header.Topic.Value, message.Body.Value);
-                 await _publisher.PublishMessageAsync(message, result => PublishResults(result.Status, result.Headers, message.Header.Topic, publishContext), cancellationToken);
+                 await _publisher.PublishMessageAsync(message, result => PublishResults(result.Status, result.Headers, topic, publishContext, sourceMessageId, confirmation), cancellationToken);
 
              }
              catch (ProduceException<string, string> pe)
@@ -412,8 +430,14 @@ namespace Paramore.Brighter.MessagingGateway.Kafka
             cleanup.ThrowIfFailed();
         }
         
-        private void PublishResults(PersistenceStatus status, Headers headers, RoutingKey topic, ActivityContext? publishContext)
+        private void PublishResults(PersistenceStatus status, Headers headers, RoutingKey topic, ActivityContext? publishContext, Id? sourceMessageId, Action<PublishConfirmationResult>? confirmation)
         {
+            if (sourceMessageId is not null)
+            {
+                RaisePublishConfirmation(new PublishConfirmationResult(status == PersistenceStatus.Persisted, sourceMessageId, topic, publishContext), confirmation);
+                return;
+            }
+
             if (status == PersistenceStatus.Persisted)
             {
                 // A Persisted report is always a success: the broker accepted the message. The id is
@@ -435,7 +459,7 @@ namespace Paramore.Brighter.MessagingGateway.Kafka
                 if (Id.IsNullOrEmpty(persistedId))
                     Log.PersistedReportMissingId(s_logger, topic.Value);
 
-                RaisePublishConfirmation(new PublishConfirmationResult(true, persistedId, topic, publishContext));
+                RaisePublishConfirmation(new PublishConfirmationResult(true, persistedId, topic, publishContext), confirmation);
                 return;
             }
 
@@ -452,10 +476,10 @@ namespace Paramore.Brighter.MessagingGateway.Kafka
                     failureId = new Id(val);
             }
 
-            RaisePublishConfirmation(new PublishConfirmationResult(false, failureId, topic, publishContext));
+            RaisePublishConfirmation(new PublishConfirmationResult(false, failureId, topic, publishContext), confirmation);
         }
 
-        private void RaisePublishConfirmation(PublishConfirmationResult result)
+        private void RaisePublishConfirmation(PublishConfirmationResult result, Action<PublishConfirmationResult>? confirmation)
         {
             // Raise on the confirmation queue's worker so we never block Confluent's delivery-report handler,
             // and confirmations reach subscribers in batches started in delivery order. Wrap the invoke so a
@@ -473,6 +497,7 @@ namespace Paramore.Brighter.MessagingGateway.Kafka
                     Log.PublishConfirmationRaiseFault(s_logger, ex);
                 }
             });
+            confirmation?.Invoke(result);
         }
 
         private void WaitForConfirmationCallbacks()

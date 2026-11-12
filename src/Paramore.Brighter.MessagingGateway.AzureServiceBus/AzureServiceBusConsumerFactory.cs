@@ -114,7 +114,8 @@ public class AzureServiceBusConsumerFactory : IAmAMessageConsumerFactory
 
         IAmAMessageScheduler? scheduler = _publication.RequeueScheduler switch
         {
-            RequeueSchedulerMode.Native => usesQueue ? new AzureServiceBusRequeueScheduler(_clientProvider, instrumentationOptions: _instrumentationOptions) : null,
+            RequeueSchedulerMode.Native => usesQueue ? new AzureServiceBusRequeueScheduler(_clientProvider, instrumentationOptions: _instrumentationOptions)
+            { WireMessageWriter = _publication.WireMessageWriter } : null,
             RequeueSchedulerMode.Global when !usesQueue => throw new ConfigurationException(
                 "Global retry scheduling requires UseServiceBusQueue or ForwardTo to identify a physical queue."),
             RequeueSchedulerMode.Global => Scheduler ?? throw new ConfigurationException(

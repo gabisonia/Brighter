@@ -35,18 +35,37 @@ namespace Paramore.Brighter.MessageScheduler.TickerQ
     /// <param name="processor"></param>
     public class BrighterTickerQSchedulerJob(IAmACommandProcessor processor)
     {
+        /// <summary>Dispatches a scheduled message no earlier than its native scheduled time.</summary>
+        /// <param name="tickerContext">The native job context containing the serialized message and scheduled time.</param>
+        /// <param name="cancellationToken">Cancels waiting for the scheduled time.</param>
+        /// <returns>A task representing the wait and message dispatch.</returns>
         [TickerFunction(nameof(FireSchedulerMessageAsync))]
         public async Task FireSchedulerMessageAsync(TickerFunctionContext<string> tickerContext, CancellationToken cancellationToken)
         {
             var schedulerRequest = JsonSerializer.Deserialize<FireSchedulerMessage>(tickerContext.Request, JsonSerialisationOptions.Options)!;
+            await WaitUntilScheduledAsync(tickerContext.ScheduledFor, cancellationToken);
             await processor.SendAsync(schedulerRequest);
         }
 
+        /// <summary>Dispatches a scheduled request no earlier than its native scheduled time.</summary>
+        /// <param name="tickerContext">The native job context containing the serialized request and scheduled time.</param>
+        /// <param name="cancellationToken">Cancels waiting for the scheduled time.</param>
+        /// <returns>A task representing the wait and request dispatch.</returns>
         [TickerFunction(nameof(FireSchedulerRequestAsync))]
         public async Task FireSchedulerRequestAsync(TickerFunctionContext<string> tickerContext, CancellationToken cancellationToken)
         {
             var schedulerRequest = JsonSerializer.Deserialize<FireSchedulerRequest>(tickerContext.Request, JsonSerialisationOptions.Options)!;
+            await WaitUntilScheduledAsync(tickerContext.ScheduledFor, cancellationToken);
             await processor.SendAsync(schedulerRequest);
+        }
+        private static async Task WaitUntilScheduledAsync(DateTime scheduledFor, CancellationToken cancellationToken)
+        {
+            var remaining = scheduledFor - DateTime.UtcNow;
+            while (remaining > TimeSpan.Zero)
+            {
+                await Task.Delay(remaining, cancellationToken);
+                remaining = scheduledFor - DateTime.UtcNow;
+            }
         }
     }
 }

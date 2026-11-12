@@ -18,6 +18,7 @@ namespace Paramore.Brighter.MessagingGateway.MQTT
     public partial class MqttMessagePublisher : IDisposable, IAsyncDisposable
     {
         private static readonly ILogger s_logger = ApplicationLogging.CreateLogger<MqttMessageProducer>();
+        private static readonly DefaultMqttWireMessageWriter s_defaultWireMessageWriter = new();
         private readonly MqttMessagingGatewayConfiguration _config;
         private readonly IMqttClient _mqttClient;
         private readonly MqttClientOptions _mqttClientOptions;
@@ -94,15 +95,25 @@ namespace Paramore.Brighter.MessagingGateway.MQTT
         /// <param name="message">The message.</param>
         public void PublishMessage(Message message) => BrighterAsyncContext.Run(() => PublishMessageAsync(message));
 
+        internal void PublishMessage(Message message, IAmAWireMessageWriter<MqttApplicationMessage>? wireMessageWriter)
+            => BrighterAsyncContext.Run(() => PublishMessageAsync(message, wireMessageWriter, CancellationToken.None));
+
         /// <summary>
         /// Sends the specified message asynchronously.
         /// </summary>
         /// <param name="message">The message.</param>
         /// <param name="cancellationToken">Allows cancellation of the operation</param>
         /// <returns>Task.</returns>
-        public async Task PublishMessageAsync(Message message, CancellationToken cancellationToken = default)
+        public Task PublishMessageAsync(Message message, CancellationToken cancellationToken = default)
+            => PublishMessageAsync(message, null, cancellationToken);
+
+        internal async Task PublishMessageAsync(Message message,
+            IAmAWireMessageWriter<MqttApplicationMessage>? wireMessageWriter, CancellationToken cancellationToken)
         {
-            MqttApplicationMessage mqttMessage = CreateMqttMessage(message, _config.TopicPrefix);
+            MqttApplicationMessage mqttMessage = (wireMessageWriter ?? s_defaultWireMessageWriter).WriteMessage(message)
+                ?? throw new InvalidOperationException("The MQTT wire message writer returned null.");
+            mqttMessage.Topic = _config.TopicPrefix != null ? $"{_config.TopicPrefix}/{message.Header.Topic}" : message.Header.Topic;
+            mqttMessage.QualityOfServiceLevel = MqttQualityOfServiceLevel.AtLeastOnce;
             await _mqttClient.PublishAsync(mqttMessage, cancellationToken);
         }
 

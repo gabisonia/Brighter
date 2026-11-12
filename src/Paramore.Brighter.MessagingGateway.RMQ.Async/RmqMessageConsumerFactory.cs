@@ -70,7 +70,7 @@ namespace Paramore.Brighter.MessagingGateway.RMQ.Async
             return new RmqMessageConsumer(
                 _rmqConnection,
                 rmqSubscription.ChannelName, //RMQ Queue Name
-                rmqSubscription.RoutingKey,
+                new RoutingKeys(rmqSubscription.RoutingKey),
                 rmqSubscription.IsDurable,
                 rmqSubscription.HighAvailability,
                 rmqSubscription.BufferSize,
@@ -80,7 +80,11 @@ namespace Paramore.Brighter.MessagingGateway.RMQ.Async
                 rmqSubscription.MaxQueueLength,
                 subscription.MakeChannels,
                 rmqSubscription.QueueType,
-                scheduler: _scheduler)
+                scheduler: _scheduler,
+                wireMessageReader: rmqSubscription.WireMessageReader,
+                requeueWireMessageWriter: rmqSubscription.RequeueWireMessageWriter,
+                invalidMessageWireMessageWriter: rmqSubscription.InvalidMessageWireMessageWriter,
+                scheduledRequeuePublicationTopic: rmqSubscription.ScheduledRequeuePublicationTopic)
             {
                 InvalidMessageRoutingKey = rmqSubscription.InvalidMessageRoutingKey
             };
@@ -95,7 +99,7 @@ namespace Paramore.Brighter.MessagingGateway.RMQ.Async
             return new RmqMessageConsumer(
                 _rmqConnection,
                 rmqSubscription.ChannelName, //RMQ Queue Name
-                rmqSubscription.RoutingKey,
+                new RoutingKeys(rmqSubscription.RoutingKey),
                 rmqSubscription.IsDurable,
                 rmqSubscription.HighAvailability,
                 rmqSubscription.BufferSize,
@@ -105,7 +109,11 @@ namespace Paramore.Brighter.MessagingGateway.RMQ.Async
                 rmqSubscription.MaxQueueLength,
                 subscription.MakeChannels,
                 rmqSubscription.QueueType,
-                scheduler: _scheduler)
+                scheduler: _scheduler,
+                wireMessageReader: rmqSubscription.WireMessageReader,
+                requeueWireMessageWriter: rmqSubscription.RequeueWireMessageWriter,
+                invalidMessageWireMessageWriter: rmqSubscription.InvalidMessageWireMessageWriter,
+                scheduledRequeuePublicationTopic: rmqSubscription.ScheduledRequeuePublicationTopic)
             {
                 InvalidMessageRoutingKey = rmqSubscription.InvalidMessageRoutingKey
             };

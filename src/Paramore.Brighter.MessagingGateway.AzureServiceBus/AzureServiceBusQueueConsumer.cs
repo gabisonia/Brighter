@@ -73,7 +73,13 @@ public partial class AzureServiceBusQueueConsumer : AzureServiceBusConsumer
         Log.GettingMessageReceiverProviderAsync(s_logger, Topic);
         try
         {
-            ServiceBusReceiver = await _serviceBusReceiverProvider.GetAsync(Topic, SubscriptionConfiguration.RequireSession);
+            ServiceBusReceiver = _serviceBusReceiverProvider is ServiceBusReceiverProvider provider
+                ? await provider.GetAsync(Topic, SubscriptionConfiguration.RequireSession, ReceiverAcquisitionCancellationToken)
+                : await _serviceBusReceiverProvider.GetAsync(Topic, SubscriptionConfiguration.RequireSession);
+        }
+        catch (OperationCanceledException) when (ReceiverAcquisitionCancellationToken.IsCancellationRequested)
+        {
+            throw;
         }
         catch (Exception e)
         {

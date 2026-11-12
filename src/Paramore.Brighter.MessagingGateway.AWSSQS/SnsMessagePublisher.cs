@@ -24,29 +24,50 @@ THE SOFTWARE. */
 #endregion
 
 using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Net.Mime;
-using System.Text.Json;
 using System.Threading.Tasks;
 using Amazon.SimpleNotificationService;
 using Amazon.SimpleNotificationService.Model;
-using Paramore.Brighter.Extensions;
-using Paramore.Brighter.JsonConverters;
 
 namespace Paramore.Brighter.MessagingGateway.AWSSQS;
 
+/// <summary>
+/// Publishes messages with native SNS content and gateway-owned delivery controls.
+/// </summary>
 public class SnsMessagePublisher
 {
     private readonly string _topicArn;
     private readonly AmazonSimpleNotificationServiceClient _client;
+    private readonly IAmAWireMessageWriter<SnsWireMessage> _wireMessageWriter;
 
+    /// <summary>
+    /// Initializes a publisher using the default wire mapping.
+    /// </summary>
+    /// <param name="topicArn">The destination topic ARN.</param>
+    /// <param name="client">The SNS client.</param>
     public SnsMessagePublisher(string topicArn, AmazonSimpleNotificationServiceClient client)
+        : this(topicArn, client, null)
+    {
+    }
+
+    /// <summary>
+    /// Initializes a publisher with an optional wire message writer.
+    /// </summary>
+    /// <param name="topicArn">The destination topic ARN.</param>
+    /// <param name="client">The SNS client.</param>
+    /// <param name="wireMessageWriter">The writer, or null to use the default mapping.</param>
+    public SnsMessagePublisher(string topicArn, AmazonSimpleNotificationServiceClient client,
+        IAmAWireMessageWriter<SnsWireMessage>? wireMessageWriter)
     {
         _topicArn = topicArn;
         _client = client;
+        _wireMessageWriter = wireMessageWriter ?? new DefaultSnsWireMessageWriter(topicArn);
     }
 
+    /// <summary>
+    /// Publishes the configured wire content with the message's FIFO controls.
+    /// </summary>
+    /// <param name="message">The message to publish.</param>
+    /// <returns>The native message ID, or null if SNS did not accept the publication.</returns>
     public async Task<string?> PublishAsync(Message message)
     {
         var publishRequest = CreatePublishRequest(message);
@@ -63,12 +84,13 @@ public class SnsMessagePublisher
 
     private PublishRequest CreatePublishRequest(Message message)
     {
-        var publishRequest = new PublishRequest(_topicArn, message.Body.Value, message.Header.Subject);
+        var wireMessage = _wireMessageWriter.WriteMessage(message);
+        var publishRequest = new PublishRequest(_topicArn, wireMessage.Body, wireMessage.Subject)
+        {
+            MessageAttributes = wireMessage.MessageAttributes
+        };
         
         ConfigureFifoSettings(message, publishRequest);
-
-        var cloudEventHeadersJson = CreateCloudEventHeadersJson(message);
-        publishRequest.MessageAttributes = BuildMessageAttributes(message, cloudEventHeadersJson);
 
         return publishRequest;
     }
@@ -87,66 +109,4 @@ public class SnsMessagePublisher
         }
     }
 
-    private Dictionary<string, MessageAttributeValue> BuildMessageAttributes(Message message, string cloudEventHeadersJson)
-    {
-        var contentType = message.Header.ContentType ?? new ContentType(MediaTypeNames.Text.Plain);
-        var messageAttributes = new Dictionary<string, MessageAttributeValue>
-        {
-            [HeaderNames.Id] = new (){ StringValue = message.Header.MessageId, DataType = "String" },
-            [HeaderNames.CloudEventHeaders] = new() { StringValue = cloudEventHeadersJson, DataType = "String" },
-            [HeaderNames.Topic] = new() { StringValue = _topicArn, DataType = "String" },
-#pragma warning disable CS0618 // Preserve the legacy message type for transport compatibility.
-            [HeaderNames.MessageType] = new() { StringValue = message.Header.MessageType.ToString(), DataType = "String" },
-#pragma warning restore CS0618
-            [HeaderNames.ContentType] = new() { StringValue = contentType.ToString(), DataType = "String" },
-            [HeaderNames.Timestamp] = new() { StringValue = Convert.ToString(message.Header.TimeStamp.ToRfc3339()), DataType = "String" },
-        };
-
-        if (!Id.IsNullOrEmpty(message.Header.CorrelationId))
-            messageAttributes[HeaderNames.CorrelationId] = new MessageAttributeValue 
-                { StringValue = Convert.ToString(message.Header.CorrelationId), DataType = "String" };
-        
-        if (!RoutingKey.IsNullOrEmpty(message.Header.ReplyTo))
-            messageAttributes.Add(HeaderNames.ReplyTo, new MessageAttributeValue { StringValue = Convert.ToString(message.Header.ReplyTo), DataType = "String" });
-        
-        message.Header.Bag[HeaderNames.HandledCount] = message.Header.HandledCount.ToString(CultureInfo.InvariantCulture);
-
-        var bagJson = JsonSerializer.Serialize(message.Header.BagWithoutLocalHeaders(), JsonSerialisationOptions.Options);
-        messageAttributes[HeaderNames.Bag] = new MessageAttributeValue { StringValue = Convert.ToString(bagJson), DataType = "String" };
-
-        return messageAttributes;
-    }
-
-    private static string CreateCloudEventHeadersJson(Message message)
-    {
-        var contentType = message.Header.ContentType ?? new ContentType(MediaTypeNames.Text.Plain);
-        var cloudEventHeaders = new Dictionary<string, string>
-        {
-            [HeaderNames.DataContentType] = contentType.ToString(),
-            [HeaderNames.DataSchema] = message.Header.DataSchema?.ToString() ?? string.Empty,
-            [HeaderNames.SpecVersion] = message.Header.SpecVersion,
-            [HeaderNames.Type] = message.Header.Type.Value,
-            [HeaderNames.Source] = message.Header.Source.ToString(),
-            [HeaderNames.Time] = message.Header.TimeStamp.ToRfc3339(),
-            [HeaderNames.Baggage] = message.Header.Baggage.ToString()
-        };
-
-        if (!string.IsNullOrEmpty(message.Header.Subject))
-            cloudEventHeaders[HeaderNames.Subject] = message.Header.Subject!;
-
-        if (message.Header.DataSchema != null)
-            cloudEventHeaders[HeaderNames.DataSchema] = message.Header.DataSchema.ToString();
-
-        if (message.Header.DataRef != null)
-            cloudEventHeaders[HeaderNames.DataRef] = message.Header.DataRef;
-        
-        if (message.Header.TraceParent != null)
-            cloudEventHeaders[HeaderNames.TraceParent] = message.Header.TraceParent.Value;
-
-        if (message.Header.TraceState != null)
-            cloudEventHeaders[HeaderNames.TraceState] = message.Header.TraceState.Value;
-
-        var cloudEventHeadersJson = JsonSerializer.Serialize(cloudEventHeaders, JsonSerialisationOptions.Options);
-        return cloudEventHeadersJson;
-    }
 }

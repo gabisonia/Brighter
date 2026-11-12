@@ -78,7 +78,7 @@ public class SnsSchedulingMessageViaFireSchedulerTest : IDisposable
         var stopAt = DateTimeOffset.UtcNow.AddMinutes(2);
         while (stopAt > DateTimeOffset.UtcNow)
         {
-            var messages = _consumer.Receive(TimeSpan.FromMinutes(1));
+            var messages = _consumer.Receive(TimeSpan.FromSeconds(20));
             Assert.Single(messages);
 
             if (messages[0].Header.MessageType != MessageType.MT_NONE)

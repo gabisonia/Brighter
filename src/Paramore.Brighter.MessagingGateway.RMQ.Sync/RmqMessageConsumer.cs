@@ -78,6 +78,12 @@ namespace Paramore.Brighter.MessagingGateway.RMQ.Sync
 
         internal RoutingKey? InvalidMessageRoutingKey { get; set; }
 
+        internal IAmAWireMessageWriter<RmqWireMessage>? InvalidMessageWireMessageWriter { get; set; }
+        internal IAmAWireMessageWriter<RmqWireMessage>? RequeueWireMessageWriter { get; set; }
+        internal RoutingKey? ScheduledRequeuePublicationTopic { get; set; }
+
+        internal IAmAWireMessageReader<BasicDeliverEventArgs>? WireMessageReader { get; set; }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="RmqMessageGateway" /> class.
         /// </summary>
@@ -238,8 +244,12 @@ namespace Paramore.Brighter.MessagingGateway.RMQ.Sync
         }
 
         /// <summary>
-        /// Receives the specified queue name.
+        /// Receives messages from the configured queue.
         /// </summary>
+        /// <remarks>
+        /// Configured wire-reader exceptions and null results become unacceptable messages retaining
+        /// the native identity, body and delivery metadata. Other deliveries in the batch are still returned.
+        /// </remarks>
         /// <param name="timeOut">The timeout in milliseconds. We retry on timeout 5 ms intervals, with a min of 5ms
         /// until the timeout value is reached. </param>
         /// <returns>Message.</returns>
@@ -269,7 +279,7 @@ namespace Paramore.Brighter.MessagingGateway.RMQ.Sync
                     var messages = new Message[resultCount];
                     for (var i = 0; i < resultCount; i++)
                     {
-                        var message = RmqMessageCreator.CreateMessage(results[i]);
+                        var message = ReadMessage(results[i]);
                         messages[i] = message;
 
                         Log.ReceivedMessage(s_logger, _queueName.Value, string.Join(";", _routingKeys.Select(rk => rk.Value)), Connection.Exchange.Name, Connection.AmpqUri.GetSanitizedUri(), JsonSerializer.Serialize(message, JsonSerialisationOptions.Options));
@@ -380,13 +390,13 @@ namespace Paramore.Brighter.MessagingGateway.RMQ.Sync
                 // timeout is guaranteed non-null here due to the ??= TimeSpan.Zero coalescing at the top of this method
                 if (DelaySupported || timeout <= TimeSpan.Zero)
                 {
-                    var rmqMessagePublisher = new RmqMessagePublisher(Channel!, Connection);
+                    var rmqMessagePublisher = new RmqMessagePublisher(Channel!, Connection, RequeueWireMessageWriter);
                     rmqMessagePublisher.RequeueMessage(message, _queueName, timeout.Value);
                 }
                 else
                 {
                     EnsureProducer();
-                    _requeueProducer!.SendWithDelay(message, timeout);
+                    _requeueProducer!.SendWithDelay(PrepareScheduledRequeue(message), timeout);
                 }
 
                 // Step 2: Ack the original message to remove it from the queue.
@@ -407,6 +417,43 @@ namespace Paramore.Brighter.MessagingGateway.RMQ.Sync
         }
 
 
+
+        private Message PrepareScheduledRequeue(Message message)
+        {
+            if (ScheduledRequeuePublicationTopic == null)
+                return message;
+
+            var header = CopyScheduledHeader(message.Header);
+            header.Bag[Message.ProducerTopicHeaderName] = ScheduledRequeuePublicationTopic.Value;
+            var body = new MessageBody(message.Body.Memory,
+                message.Body.ContentType == null ? null : new System.Net.Mime.ContentType(message.Body.ContentType.ToString()),
+                message.Body.CharacterEncoding);
+            return new Message(header, body) { Persist = message.Persist };
+        }
+
+        private static MessageHeader CopyScheduledHeader(MessageHeader source)
+        {
+            var baggage = new Baggage();
+            foreach (var entry in source.Baggage)
+                baggage.Add(entry.Key, entry.Value!);
+
+            return new MessageHeader(source.MessageId, source.Topic,
+#pragma warning disable CS0618 // Preserve the legacy message type for transport compatibility.
+                source.MessageType,
+#pragma warning restore CS0618
+                source: source.Source, type: source.Type, timeStamp: source.TimeStamp,
+                correlationId: source.CorrelationId, replyTo: source.ReplyTo,
+                contentType: new System.Net.Mime.ContentType(source.ContentType.ToString()),
+                partitionKey: source.PartitionKey, dataSchema: source.DataSchema, subject: source.Subject,
+                handledCount: source.HandledCount, workflowId: source.WorkflowId, jobId: source.JobId,
+                delayed: source.Delayed, traceParent: source.TraceParent, traceState: source.TraceState,
+                baggage: baggage)
+            {
+                Bag = new Dictionary<string, object>(source.Bag, source.Bag.Comparer),
+                DataRef = source.DataRef,
+                SpecVersion = source.SpecVersion
+            };
+        }
 
         private void EnsureProducer()
         {
@@ -466,6 +513,32 @@ namespace Paramore.Brighter.MessagingGateway.RMQ.Sync
             EnsureChannel();
         }
 
+        private Message ReadMessage(BasicDeliverEventArgs delivery)
+        {
+            if (WireMessageReader is null)
+                return RmqMessageCreator.CreateMessage(delivery);
+
+            Message message;
+            try
+            {
+                message = WireMessageReader.ReadMessage(delivery)
+                    ?? throw new InvalidOperationException("The wire message reader returned null.");
+            }
+            catch (Exception exception)
+            {
+                Log.ErrorMappingNativeMessage(s_logger, exception, _queueName.Value);
+                message = Message.FailureMessage(new RoutingKey(delivery.RoutingKey), new Id(delivery.BasicProperties.MessageId ?? string.Empty));
+                message.Body = new MessageBody(delivery.Body);
+            }
+
+            if (delivery.BasicProperties.Headers is { } headers && headers.ContainsKey(HeaderNames.HANDLED_COUNT))
+                message.Header.HandledCount = RmqMessageCreator.ReadHandledCount(headers).Result;
+            message.DeliveryTag = delivery.DeliveryTag;
+            message.Redelivered = delivery.Redelivered;
+            message.Persist = delivery.BasicProperties.DeliveryMode == 2;
+            return message;
+        }
+
         private void CancelConsumer()
         {
             var consumer = _consumer;
@@ -515,7 +588,7 @@ namespace Paramore.Brighter.MessagingGateway.RMQ.Sync
                 message.Header.Bag[HeaderNames.REJECTION_TIMESTAMP] = DateTimeOffset.UtcNow.ToString("o");
                 message.Header.Topic = InvalidMessageRoutingKey!;
                 channel.ConfirmSelect();
-                var publisher = new RmqMessagePublisher(channel, Connection);
+                var publisher = new RmqMessagePublisher(channel, Connection, InvalidMessageWireMessageWriter);
                 publisher.PublishMessage(message, mandatory: true);
                 channel.WaitForConfirmsOrDie(TimeSpan.FromSeconds(Connection.ContinuationTimeout));
                 if (Volatile.Read(ref returned) != null)
@@ -668,6 +741,9 @@ namespace Paramore.Brighter.MessagingGateway.RMQ.Sync
 
         private static partial class Log
         {
+            [LoggerMessage(LogLevel.Error, "RmqMessageConsumer: Error mapping a native message from queue {QueueName}")]
+            public static partial void ErrorMappingNativeMessage(ILogger logger, Exception exception, string queueName);
+
             [LoggerMessage(LogLevel.Information, "RmqMessageConsumer: Acknowledging message {Id} as completed with delivery tag {DeliveryTag}")]
             public static partial void AcknowledgingMessage(ILogger logger, string id, ulong deliveryTag);
 

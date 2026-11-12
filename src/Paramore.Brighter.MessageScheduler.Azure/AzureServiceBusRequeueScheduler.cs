@@ -34,12 +34,13 @@ internal sealed class AzureServiceBusRequeueScheduler(
     TimeProvider timeProvider,
     IServiceBusClientProvider clientProvider,
     ServiceBusSenderOptions? senderOptions,
-    InstrumentationOptions instrumentationOptions)
+    InstrumentationOptions instrumentationOptions,
+    IAmAWireMessageWriter<ServiceBusMessage>? wireMessageWriter)
     : AzureServiceBusScheduler(sender, schedulerTopic, timeProvider),
         IAmAMessageRequeueSchedulerAsync, IAmAMessageRequeueSchedulerSync
 {
     private readonly MessagingGateway.AzureServiceBus.AzureServiceBusRequeueScheduler _requeueScheduler =
-        new(clientProvider, timeProvider, senderOptions, instrumentationOptions);
+        new(clientProvider, timeProvider, senderOptions, instrumentationOptions) { WireMessageWriter = wireMessageWriter };
 
     public Task RequeueAsync(Message message, ChannelName destination, TimeSpan delay,
         CancellationToken cancellationToken = default)

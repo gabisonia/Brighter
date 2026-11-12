@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Data.Common;
 using System.IO;
+using System.Globalization;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
@@ -29,6 +31,11 @@ public partial class PostgresMessageConsumer(
     /// <inheritdoc />
     public MessagingSystem MessagingSystem => MessagingSystem.PostgreSql;
 
+    private static readonly DefaultPostgresWireMessageWriter s_defaultWireMessageWriter = new();
+    private readonly IAmAWireMessageReader<string>? _wireMessageReader = subscription.WireMessageReader;
+    private readonly IAmAWireMessageWriter<string> _requeueWireMessageWriter =
+        subscription.RequeueWireMessageWriter ?? s_defaultWireMessageWriter;
+
     private static readonly ILogger s_logger = ApplicationLogging.CreateLogger<PostgresMessageConsumer>();
     private readonly RelationalDatabaseConfiguration _configuration = configuration;
     private readonly PostgreSqlConnectionProvider _connectionProvider = new(configuration);
@@ -38,9 +45,9 @@ public partial class PostgresMessageConsumer(
     // thread-safety mode is needed. None does not cache exceptions, allowing the factory
     // to retry on the next .Value access after a transient failure.
     private readonly Lazy<PostgresMessageProducer?>? _deadLetterProducer =
-        deadLetterRoutingKey != null ? new Lazy<PostgresMessageProducer?>(() => CreateProducer(configuration, deadLetterRoutingKey), LazyThreadSafetyMode.None) : null;
+        CreateForwardingProducer(configuration, deadLetterRoutingKey, subscription.DeadLetterWireMessageWriter);
     private readonly Lazy<PostgresMessageProducer?>? _invalidMessageProducer =
-        invalidMessageRoutingKey != null ? new Lazy<PostgresMessageProducer?>(() => CreateProducer(configuration, invalidMessageRoutingKey), LazyThreadSafetyMode.None) : null;
+        CreateForwardingProducer(configuration, invalidMessageRoutingKey, subscription.InvalidMessageWireMessageWriter);
 
     private string SchemaName => subscription.SchemaName ?? _configuration.SchemaName ?? "public";
     private string TableName => subscription.QueueStoreTable ?? _configuration.QueueStoreTable;
@@ -349,7 +356,7 @@ public partial class PostgresMessageConsumer(
 
             command.CommandText = $"UPDATE \"{SchemaName}\".\"{TableName}\" SET \"visible_timeout\" = CURRENT_TIMESTAMP + $1, \"content\" = $2 WHERE \"id\" = $3";
             command.Parameters.Add(new NpgsqlParameter { Value = delay ?? TimeSpan.Zero });
-            command.Parameters.Add(new NpgsqlParameter { Value = JsonSerializer.Serialize(message, JsonSerialisationOptions.Options), NpgsqlDbType = DbType});
+            command.Parameters.Add(new NpgsqlParameter { Value = MapRequeueMessage(message), NpgsqlDbType = DbType});
             command.Parameters.Add(new NpgsqlParameter { Value = receiptHandle });
             await command.ExecuteNonQueryAsync(cancellationToken);
             
@@ -462,7 +469,7 @@ public partial class PostgresMessageConsumer(
             command.CommandText = $"UPDATE \"{SchemaName}\".\"{TableName}\" SET \"visible_timeout\" = CURRENT_TIMESTAMP + $1, \"content\" = $2 WHERE \"id\" = $3";
 
             command.Parameters.Add(new NpgsqlParameter { Value = delay ?? TimeSpan.Zero });
-            command.Parameters.Add(new NpgsqlParameter { Value = JsonSerializer.Serialize(message, JsonSerialisationOptions.Options), NpgsqlDbType = DbType });
+            command.Parameters.Add(new NpgsqlParameter { Value = MapRequeueMessage(message), NpgsqlDbType = DbType });
             command.Parameters.Add(new NpgsqlParameter { Value = receiptHandle });
             command.ExecuteNonQuery();
             
@@ -487,11 +494,13 @@ public partial class PostgresMessageConsumer(
     /// <inheritdoc />
     public void Dispose() => _connectionProvider.Dispose();
 
-    private static Message ToMessage(DbDataReader reader)
+    private Message ToMessage(DbDataReader reader)
     {
         var id = reader.GetInt64(0);
         var content = reader.GetFieldValue<byte[]>(3);
-        var message = JsonSerializer.Deserialize<Message>(content, JsonSerialisationOptions.Options)!;
+        var message = _wireMessageReader == null
+            ? JsonSerializer.Deserialize<Message>(content, JsonSerialisationOptions.Options)!
+            : ReadConfiguredMessage(id, Encoding.UTF8.GetString(content));
         
         message.Header.Bag["ReceiptHandle"] = id;
         return message;
@@ -508,7 +517,14 @@ public partial class PostgresMessageConsumer(
             content.Position = 1;
         }
         
-        var message = JsonSerializer.Deserialize<Message>(content, JsonSerialisationOptions.Options)!;
+        Message message;
+        if (_wireMessageReader == null)
+            message = JsonSerializer.Deserialize<Message>(content, JsonSerialisationOptions.Options)!;
+        else
+        {
+            using var text = new StreamReader(content, Encoding.UTF8);
+            message = ReadConfiguredMessage(id, text.ReadToEnd());
+        }
         
         message.Header.Bag["ReceiptHandle"] = id;
         return message;
@@ -525,17 +541,54 @@ public partial class PostgresMessageConsumer(
             content.Position = 1;
         }
         
-        var message = await JsonSerializer.DeserializeAsync<Message>(content, JsonSerialisationOptions.Options, cancellationToken);
+        Message? message;
+        if (_wireMessageReader == null)
+            message = await JsonSerializer.DeserializeAsync<Message>(content, JsonSerialisationOptions.Options, cancellationToken);
+        else
+        {
+            using var buffer = new MemoryStream();
+            await content.CopyToAsync(buffer, 81920, cancellationToken);
+            message = ReadConfiguredMessage(id, Encoding.UTF8.GetString(buffer.ToArray()));
+        }
         
         message!.Header.Bag["ReceiptHandle"] = id;
         return message;
     }
     
-    private static PostgresMessageProducer? CreateProducer(RelationalDatabaseConfiguration config, RoutingKey routingKey)
+    private Message ReadConfiguredMessage(long id, string content)
     {
         try
         {
-            return new PostgresMessageProducer(config, new PostgresPublication { Topic = routingKey });
+            return _wireMessageReader!.ReadMessage(content) ?? CreateMappingFailure(id, content);
+        }
+        catch (Exception)
+        {
+            return CreateMappingFailure(id, content);
+        }
+    }
+
+    private Message CreateMappingFailure(long id, string content) =>
+        new(MessageHeader.FailureMessageHeader(new RoutingKey(QueueName),
+            new Id(id.ToString(CultureInfo.InvariantCulture))), new MessageBody(content));
+
+    private string MapRequeueMessage(Message message) =>
+        _requeueWireMessageWriter.WriteMessage(message)
+        ?? throw new InvalidOperationException("The PostgreSQL requeue wire message writer returned null.");
+
+    private static Lazy<PostgresMessageProducer?>? CreateForwardingProducer(
+        RelationalDatabaseConfiguration config, RoutingKey? routingKey, IAmAWireMessageWriter<string>? writer)
+    {
+        // Capture the configured writer now, before the lazy producer is first needed.
+        return routingKey == null ? null : new Lazy<PostgresMessageProducer?>(
+            () => CreateProducer(config, routingKey, writer), LazyThreadSafetyMode.None);
+    }
+
+    private static PostgresMessageProducer? CreateProducer(RelationalDatabaseConfiguration config,
+        RoutingKey routingKey, IAmAWireMessageWriter<string>? writer)
+    {
+        try
+        {
+            return new PostgresMessageProducer(config, new PostgresPublication { Topic = routingKey, WireMessageWriter = writer });
         }
         catch (Exception e)
         {

@@ -17,12 +17,14 @@ public class QuartzBrighterJob(IAmACommandProcessor processor) : IJob
         {
             var scheduler = JsonSerializer.Deserialize<FireSchedulerMessage>(message!, JsonSerialisationOptions.Options)!;
             await processor.SendAsync(scheduler);
+            return;
         }
 
         if (context.JobDetail.JobDataMap.TryGetString("request", out var request))
         {
             var scheduler = JsonSerializer.Deserialize<FireSchedulerRequest>(request!, JsonSerialisationOptions.Options)!;
             await processor.SendAsync(scheduler);
+            return;
         }
 
         throw new InvalidOperationException(

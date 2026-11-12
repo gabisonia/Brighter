@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using Azure.Messaging.ServiceBus;
 using Paramore.Brighter.MessagingGateway.AzureServiceBus.AzureServiceBusWrappers;
 
 namespace Paramore.Brighter.MessagingGateway.AzureServiceBus
@@ -24,21 +25,21 @@ namespace Paramore.Brighter.MessagingGateway.AzureServiceBus
         /// <param name="cancellationToken">cancellation token</param>
         /// <returns></returns>
         public Task AddMessageToBatch(Message message, CancellationToken cancellationToken)
-            => AddMessageToBatchAsync(message, null, cancellationToken);
+            => AddMessageToBatchAsync(message, AzureServiceBusMessagePublisher.ConvertToServiceBusMessage(message), cancellationToken);
 
-        internal async Task AddMessageToBatchAsync(Message message, TimeSpan? timeToLive, CancellationToken cancellationToken)
+        internal async Task AddMessageToBatchAsync(Message message, ServiceBusMessage nativeMessage, CancellationToken cancellationToken)
         {
-            if (!await TryAddToAzureServiceBusMessageBatch(message, timeToLive, cancellationToken))
+            if (!await TryAddToAzureServiceBusMessageBatch(message, nativeMessage, cancellationToken))
             {
-                Add(AzureServiceBusSingleMessageBatch.CreateBatch(message, timeToLive));
+                Add(AzureServiceBusSingleMessageBatch.CreateBatch(message, nativeMessage));
             }
         }
 
-        private async Task<bool> TryAddToAzureServiceBusMessageBatch(Message message, TimeSpan? timeToLive, CancellationToken cancellationToken)
+        private async Task<bool> TryAddToAzureServiceBusMessageBatch(Message message, ServiceBusMessage nativeMessage, CancellationToken cancellationToken)
         {
             _currentBatch ??= await CreateAzureServiceBusMessageBatch(cancellationToken);
             
-            if (_currentBatch.TryAddMessage(message, timeToLive))
+            if (_currentBatch.TryAddMessage(message, nativeMessage))
             {
                 return true;
             }
@@ -50,7 +51,7 @@ namespace Paramore.Brighter.MessagingGateway.AzureServiceBus
 
             _currentBatch = await CreateAzureServiceBusMessageBatch(cancellationToken);
 
-            return _currentBatch.TryAddMessage(message, timeToLive);
+            return _currentBatch.TryAddMessage(message, nativeMessage);
         }
 
         private async Task<AzureServiceBusMessageBatch> CreateAzureServiceBusMessageBatch(CancellationToken cancellationToken)

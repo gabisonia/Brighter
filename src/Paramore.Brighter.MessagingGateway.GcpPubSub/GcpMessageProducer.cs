@@ -24,6 +24,8 @@ public class GcpMessageProducer(
     bool? enableMessageOrdering = null)
     : IAmAMessageProducerAsync, IAmAMessageProducerSync, IAmABulkMessageProducerAsync
 {
+    private readonly IAmAWireMessageWriter<PubsubMessage> _wireMessageWriter =
+        publication.WireMessageWriter ?? new DefaultGcpPubSubWireMessageWriter();
     private readonly bool _enableMessageOrdering = enableMessageOrdering ?? publication.EnableMessageOrdering;
 
     /// <summary>
@@ -44,9 +46,16 @@ public class GcpMessageProducer(
     /// <summary>
     /// Asynchronously sends a message without a delay.
     /// </summary>
+    /// <remarks>
+    /// Wire mapping failures propagate before publication. A null writer result raises
+    /// <see cref="InvalidOperationException"/>. The same producer can be used after the writer recovers.
+    /// Cancellation is checked before mapping and before native submission. Once submitted,
+    /// publication is awaited to completion; cancellation cannot recall the message.
+    /// </remarks>
     /// <param name="message">The message to send.</param>
     /// <param name="cancellationToken">The cancellation token.</param>
     /// <returns>A task that represents the asynchronous send operation.</returns>
+    /// <exception cref="OperationCanceledException">The caller's token was cancelled before mapping or native submission.</exception>
     public Task SendAsync(Message message, CancellationToken cancellationToken = default)
     {
         return SendWithDelayAsync(message, null, cancellationToken);
@@ -56,20 +65,30 @@ public class GcpMessageProducer(
     /// Asynchronously sends a message with an optional delay.
     /// If a delay is specified, it schedules the message using the configured scheduler.
     /// </summary>
+    /// <remarks>
+    /// For immediate sends, wire mapping failures propagate before publication. A null writer result
+    /// raises <see cref="InvalidOperationException"/>. Delayed mapping occurs when the scheduler dispatches.
+    /// Immediate sends check cancellation before mapping and before native submission. Once submitted,
+    /// publication is awaited to completion; cancellation cannot recall the message.
+    /// </remarks>
     /// <param name="message">The message to send.</param>
     /// <param name="delay">The time span to delay the message sending. If null or zero, the message is sent immediately.</param>
     /// <param name="cancellationToken">The cancellation token.</param>
     /// <returns>A task that represents the asynchronous send or schedule operation.</returns>
+    /// <exception cref="OperationCanceledException">The caller's token was cancelled before immediate mapping or native submission.</exception>
     /// <exception cref="InvalidOperationException">Thrown if a delay is specified but the scheduler is not an <see cref="IAmAMessageSchedulerAsync"/>.</exception>
     public async Task SendWithDelayAsync(Message message, TimeSpan? delay, CancellationToken cancellationToken = default)
     {
         if (delay == null || delay == TimeSpan.Zero)
         {
+            cancellationToken.ThrowIfCancellationRequested();
+
             // Write instrumentation event for the producer
             BrighterTracer.WriteProducerEvent(Span, MessagingSystem.PubSub, message, instrumentation);
             
             // Convert the Brighter message to a Google Pub/Sub message
-            var pubSubMessage = Parser.ToPubSubMessage(message, _enableMessageOrdering);
+            var pubSubMessage = CreateWireMessage(message);
+            cancellationToken.ThrowIfCancellationRequested();
 
             // Publish the message to Google Cloud Pub/Sub
             await client.PublishAsync(pubSubMessage);
@@ -88,6 +107,10 @@ public class GcpMessageProducer(
     /// <summary>
     /// Synchronously sends a message without a delay.
     /// </summary>
+    /// <remarks>
+    /// Wire mapping failures propagate before publication. A null writer result raises
+    /// <see cref="InvalidOperationException"/>. The same producer can be used after the writer recovers.
+    /// </remarks>
     /// <param name="message">The message to send.</param>
     public void Send(Message message)
     {
@@ -98,6 +121,10 @@ public class GcpMessageProducer(
     /// Synchronously sends a message with an optional delay.
     /// It wraps the asynchronous method using <see cref="BrighterAsyncContext.Run"/>.
     /// </summary>
+    /// <remarks>
+    /// For immediate sends, wire mapping failures propagate before publication. A null writer result
+    /// raises <see cref="InvalidOperationException"/>. Delayed mapping occurs when the scheduler dispatches.
+    /// </remarks>
     /// <param name="message">The message to send.</param>
     /// <param name="delay">The time span to delay the message sending. If null or zero, the message is sent immediately.</param>
     public void SendWithDelay(Message message, TimeSpan? delay)
@@ -126,9 +153,16 @@ public class GcpMessageProducer(
     /// Note: The current implementation iterates and publishes messages individually.
     /// The Google Pub/Sub <see cref="PublisherClient"/> handles internal batching for performance.
     /// </summary>
+    /// <remarks>
+    /// Wire mapping failures propagate before publishing the affected message. A null writer result
+    /// raises <see cref="InvalidOperationException"/>. Earlier messages in the batch may already be published.
+    /// Cancellation is checked before mapping each message and before its native submission.
+    /// Once submitted, publication is awaited to completion; cancellation cannot recall that message.
+    /// </remarks>
     /// <param name="batch">The message batch to send.</param>
     /// <param name="cancellationToken">The cancellation token.</param>
     /// <returns>A task that represents the asynchronous bulk send operation.</returns>
+    /// <exception cref="OperationCanceledException">The caller's token was cancelled before mapping a message or submitting it.</exception>
     /// <exception cref="InvalidOperationException">Thrown if the batch is not of type <see cref="MessageBatch"/>.</exception>
     public async Task SendAsync(IAmAMessageBatch batch, CancellationToken cancellationToken)
     {
@@ -141,9 +175,21 @@ public class GcpMessageProducer(
         // The underlying Google PublisherClient will buffer and batch these calls efficiently.
         foreach (var message in messageBatch.Content)
         {
-            // No explicit trace for bulk individual sends; rely on underlying client instrumentation
-            await client.PublishAsync(Parser.ToPubSubMessage(message, _enableMessageOrdering));
+            cancellationToken.ThrowIfCancellationRequested();
+
+            BrighterTracer.WriteProducerEvent(Span, MessagingSystem.PubSub, message, instrumentation);
+            var pubSubMessage = CreateWireMessage(message);
+            cancellationToken.ThrowIfCancellationRequested();
+            await client.PublishAsync(pubSubMessage);
         }
+    }
+
+    private PubsubMessage CreateWireMessage(Message message)
+    {
+        var native = _wireMessageWriter.WriteMessage(message)
+            ?? throw new InvalidOperationException("The wire message writer returned null.");
+        native.OrderingKey = _enableMessageOrdering ? message.Header.PartitionKey : string.Empty;
+        return native;
     }
 
     /// <summary>

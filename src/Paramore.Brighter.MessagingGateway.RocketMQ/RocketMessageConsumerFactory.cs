@@ -41,6 +41,8 @@ public class RocketMessageConsumerFactory(RocketMessagingGatewayConnection conne
 
         var consumer = await builder.Build();
         return new RocketMessageConsumer(consumer, rocketSubscription.BufferSize,
-            rocketSubscription.InvisibilityTimeout, connection, deadLetterRoutingKey, invalidMessageRoutingKey);
+            rocketSubscription.InvisibilityTimeout, connection, deadLetterRoutingKey, invalidMessageRoutingKey,
+            rocketSubscription.WireMessageReader, rocketSubscription.DeadLetterWireMessageWriter,
+            rocketSubscription.InvalidMessageWireMessageWriter);
     }
 }

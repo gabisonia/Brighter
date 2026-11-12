@@ -35,6 +35,16 @@ namespace Paramore.Brighter.MessagingGateway.AWSSQS;
 public class SnsPublication : Publication
 {
     /// <summary>
+    /// Gets or sets the writer for outgoing SNS body and application attributes.
+    /// A null value preserves the default wire format.
+    /// </summary>
+    /// <remarks>
+    /// Configure before creating producers. Compose <see cref="DefaultSnsWireMessageWriter"/>
+    /// to retain default fields. The gateway owns destinations and delivery controls.
+    /// </remarks>
+    public IAmAWireMessageWriter<SnsWireMessage>? WireMessageWriter { get; set; }
+
+    /// <summary>
     /// Creates a publication for an SNS Topic
     /// </summary>
     /// <remarks>

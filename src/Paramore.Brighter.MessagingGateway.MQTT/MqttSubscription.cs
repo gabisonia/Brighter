@@ -23,6 +23,7 @@ THE SOFTWARE. */
 #endregion
 
 using System;
+using MQTTnet;
 
 namespace Paramore.Brighter.MessagingGateway.MQTT
 {
@@ -31,6 +32,38 @@ namespace Paramore.Brighter.MessagingGateway.MQTT
     /// </summary>
     public class MqttSubscription : Subscription, IUseBrighterDeadLetterSupport, IUseBrighterInvalidMessageSupport
     {
+        /// <summary>
+        /// Gets or sets the reader used to map native deliveries for this subscription.
+        /// </summary>
+        /// <value>The reader, or null to use the existing JSON decoding and unreadable-payload handling.</value>
+        /// <remarks>
+        /// Readers run synchronously in the MQTT receive callback and must not modify the native delivery.
+        /// They must return a fresh message and support concurrent calls when shared between consumers.
+        /// Compose <see cref="DefaultMqttWireMessageReader"/> to customize the default representation.
+        /// MQTT protocol acknowledgement remains owned by the SDK.
+        /// </remarks>
+        public IAmAWireMessageReader<MqttApplicationMessage>? WireMessageReader { get; set; }
+
+        /// <summary>Gets or sets the writer selected for immediate requeue.</summary>
+        /// <remarks>Captured when the consumer is created; null preserves the default JSON format.</remarks>
+        public IAmAWireMessageWriter<MqttApplicationMessage>? RequeueWireMessageWriter { get; set; }
+
+        /// <summary>Gets or sets the writer selected for dead-letter forwarding.</summary>
+        /// <remarks>Captured when the consumer is created; null preserves the default JSON format.</remarks>
+        public IAmAWireMessageWriter<MqttApplicationMessage>? DeadLetterWireMessageWriter { get; set; }
+
+        /// <summary>Gets or sets the writer selected for invalid-message forwarding.</summary>
+        /// <remarks>Captured when the consumer is created; null preserves the default JSON format.</remarks>
+        public IAmAWireMessageWriter<MqttApplicationMessage>? InvalidMessageWireMessageWriter { get; set; }
+
+        /// <summary>Gets or sets the registered publication selected for scheduled retries.</summary>
+        /// <remarks>
+        /// Captured at consumer creation. Null preserves ordinary publication lookup.
+        /// Register the publication with the original event type and native topic prefix.
+        /// Immediate retries use RequeueWireMessageWriter instead.
+        /// </remarks>
+        public RoutingKey? ScheduledRequeuePublicationTopic { get; set; }
+
         /// <inheritdoc />
         public override Type ChannelFactoryType => typeof(ChannelFactory);
 

@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
-using System.Net.Mime;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
@@ -35,6 +33,23 @@ public partial class RocketMessageConsumer(SimpleConsumer consumer,
     public MessagingSystem MessagingSystem => MessagingSystem.RocketMQ;
 
     private static readonly ILogger s_logger = ApplicationLogging.CreateLogger<RocketMessageConsumer>();
+    private static readonly DefaultRocketMqWireMessageReader s_defaultWireMessageReader = new();
+    private readonly IAmAWireMessageReader<MessageView>? _wireMessageReader;
+    private readonly IAmAWireMessageWriter<RocketMqWireMessage>? _deadLetterWireMessageWriter;
+    private readonly IAmAWireMessageWriter<RocketMqWireMessage>? _invalidMessageWireMessageWriter;
+
+    internal RocketMessageConsumer(SimpleConsumer consumer, int bufferSize, TimeSpan invisibilityTimeout,
+        RocketMessagingGatewayConnection? connection, RoutingKey? deadLetterRoutingKey,
+        RoutingKey? invalidMessageRoutingKey, IAmAWireMessageReader<MessageView>? wireMessageReader,
+        IAmAWireMessageWriter<RocketMqWireMessage>? deadLetterWireMessageWriter = null,
+        IAmAWireMessageWriter<RocketMqWireMessage>? invalidMessageWireMessageWriter = null)
+        : this(consumer, bufferSize, invisibilityTimeout, connection, deadLetterRoutingKey, invalidMessageRoutingKey)
+    {
+        _wireMessageReader = wireMessageReader;
+        _deadLetterWireMessageWriter = deadLetterWireMessageWriter;
+        _invalidMessageWireMessageWriter = invalidMessageWireMessageWriter;
+    }
+
     // The broker rejects a longer invisible duration (response code 40011)
     private static readonly TimeSpan s_maxInvisibleDuration = TimeSpan.FromHours(12);
 
@@ -259,13 +274,14 @@ public partial class RocketMessageConsumer(SimpleConsumer consumer,
     private async Task<RocketMqMessageProducer?> GetProducerForRouteAsync(RoutingKey routingKey)
     {
         if (routingKey == _invalidMessageRoutingKey)
-            return _invalidMessageProducer ??= await CreateProducerAsync(_invalidMessageRoutingKey);
+            return _invalidMessageProducer ??= await CreateProducerAsync(_invalidMessageRoutingKey, _invalidMessageWireMessageWriter);
         if (routingKey == _deadLetterRoutingKey)
-            return _deadLetterProducer ??= await CreateProducerAsync(_deadLetterRoutingKey);
+            return _deadLetterProducer ??= await CreateProducerAsync(_deadLetterRoutingKey, _deadLetterWireMessageWriter);
         return null;
     }
 
-    private async Task<RocketMqMessageProducer?> CreateProducerAsync(RoutingKey? routingKey)
+    private async Task<RocketMqMessageProducer?> CreateProducerAsync(RoutingKey? routingKey,
+        IAmAWireMessageWriter<RocketMqWireMessage>? writer)
     {
         if (routingKey == null || _connection == null)
             return null;
@@ -281,7 +297,7 @@ public partial class RocketMessageConsumer(SimpleConsumer consumer,
             return new RocketMqMessageProducer(
                 _connection,
                 rocketProducer,
-                new RocketMqPublication { Topic = routingKey });
+                new RocketMqPublication { Topic = routingKey, WireMessageWriter = writer });
         }
         catch (Exception ex)
         {
@@ -330,270 +346,32 @@ public partial class RocketMessageConsumer(SimpleConsumer consumer,
         }
     }
 
-    private static Message CreateMessage(MessageView message)
+    private Message CreateMessage(MessageView message)
     {
-        var topic = ReadTopic(message);
-        var messageId = ReadMessageId(message);
-        var timeStamp = ReadTimeStamp(message);
-        var messageType = ReadMessageType(message);
-        var correlationId = ReadCorrelationId(message);
-        var partitionKey = ReadPartitionKey(message);
-        var replyTo = ReadReplyTo(message);
-        var contentType = ReadContentType(message) ?? new ContentType("plain/text");
-        var handledCount = ReadHandledCount(message);
-        var delay = ReadDelay(message);
-        var source = ReadSource(message);
-        var specVersion = ReadSpecVersion(message);
-        var type = ReadType(message);
-        var dateSchema = ReadDataSchema(message);
-        var subject = ReadSubject(message);
-        var dataRef = ReadDataRef(message);
-        var traceParent = ReadTraceParent(message);
-        var traceState = ReadTraceState(message);
-        var baggage = ReadBaggage(message);
-        
-        var header = new MessageHeader(
-            messageId: messageId,
-            topic: topic,
-            messageType,
-            source: source,
-            type: type,
-            timeStamp: timeStamp,
-            contentType: contentType,
-            correlationId: correlationId,
-            replyTo: replyTo,
-            partitionKey: partitionKey,
-            handledCount: handledCount,
-            dataSchema: dateSchema,
-            subject: subject,
-            delayed: delay,
-            traceParent: traceParent,
-            traceState: traceState
-        )
-        {
-            DataRef = dataRef,
-            SpecVersion = specVersion,
-            Baggage = baggage
-        };
+        var mapped = ReadWireMessage(message);
+        mapped.Header.Bag["ReceiptHandle"] = message;
+        mapped.Header.HandledCount = DeliveryCount.Resolve(mapped.Header.HandledCount, message.DeliveryAttempt, mapped.Header.Bag);
+        return mapped;
+    }
 
-        foreach (var property in message.Properties)
+    private Message ReadWireMessage(MessageView message)
+    {
+        if (_wireMessageReader == null)
+            return s_defaultWireMessageReader.ReadMessage(message);
+
+        try
         {
-            header.Bag[property.Key] = property.Value;
+            return _wireMessageReader.ReadMessage(message) ?? CreateMappingFailure(message);
         }
-
-        header.Bag["ReceiptHandle"] = message;
-
-        // R-1/R-2/R-3 (ADR 0077): present the broker's own delivery counter, normalised so a first
-        // delivery reads 0, unless the message is a Brighter-routed rejection copy (R-28), in which
-        // case the stamped header count is kept. Runs after the bag is filled so the rejectionReason
-        // discriminator (if present) is visible to Resolve. No allocation, no RPC (NFR-1, NFR-2):
-        // DeliveryAttempt is already on the MessageView this Receive call returned.
-        header.HandledCount = DeliveryCount.Resolve(header.HandledCount, message.DeliveryAttempt, header.Bag);
-
-        var body = new MessageBody(message.Body, header.ContentType);
-        
-        return new Message(header, body);
-
-        static RoutingKey ReadTopic(MessageView message) => new(message.Topic);
-        static Id ReadMessageId(MessageView message)
+        catch (Exception)
         {
-            return message.Properties.TryGetValue(HeaderNames.MessageId, out var messageId)
-                ? Id.Create(messageId)
-                : Id.Create(message.MessageId);
-        }
-
-        static DateTimeOffset ReadTimeStamp(MessageView message)
-        {
-            if (message.Properties.TryGetValue(HeaderNames.TimeStamp, out var timestamp) 
-                && DateTimeOffset.TryParse(timestamp, DateTimeFormatInfo.InvariantInfo, DateTimeStyles.AdjustToUniversal, out var datetime))
-            {
-                return datetime;
-            }
-            
-            if (message.DeliveryTimestamp != null)
-            {
-                return message.DeliveryTimestamp.Value;
-            }
-
-            return DateTimeOffset.UtcNow;
-        }
-        
-        static MessageType ReadMessageType(MessageView message)
-        {
-            if (message.Properties.TryGetValue(HeaderNames.MessageType, out var type) && Enum.TryParse<MessageType>(type, true, out var messageType))
-            {
-                return messageType;
-            }
-
-            return MessageType.MT_EVENT;
-        }
-
-        static Id? ReadCorrelationId(MessageView message)
-        {
-            var val = message.Properties.GetValueOrDefault(HeaderNames.CorrelationId);
-            if (string.IsNullOrEmpty(val))
-            {
-                return null;
-            }
-
-            return Id.Create(val);
-        }
-
-        static PartitionKey? ReadPartitionKey(MessageView message)
-        {
-            if (string.IsNullOrEmpty(message.MessageGroup))
-            {
-                return null;
-            }
-            
-            return new PartitionKey(message.MessageGroup);
-        }
-
-        static RoutingKey? ReadReplyTo(MessageView message)
-        {
-            var val = message.Properties.GetValueOrDefault(HeaderNames.ReplyTo);
-            if (string.IsNullOrEmpty(val))
-            {
-                return null;
-            }
-
-            return new RoutingKey(val);
-        }
-
-        static ContentType? ReadContentType(MessageView message)
-        {
-            var val = message.Properties.GetValueOrDefault(HeaderNames.DataContentType);
-            if (!string.IsNullOrEmpty(val))
-            {
-                return new ContentType(val);
-            }
-            
-            val = message.Properties.GetValueOrDefault(HeaderNames.ContentType);
-            if (!string.IsNullOrEmpty(val))
-            {
-                return new ContentType(val);
-            }
-
-            return null;
-        }
-
-        static int ReadHandledCount(MessageView message)
-        {
-            if (message.Properties.TryGetValue(HeaderNames.HandledCount, out var handledCount) 
-                && int.TryParse(handledCount, out var count))
-            {
-                return count;
-            }
-
-            return 0;
-        }
-
-        static TimeSpan ReadDelay(MessageView message)
-        {
-            if (message.Properties.TryGetValue(HeaderNames.HandledCount, out var delayString) 
-                && TimeSpan.TryParse(delayString, out var delay))
-            {
-                return delay;
-            }
-
-            return TimeSpan.Zero;
-        }
-        
-        static Uri ReadSource(MessageView message)
-        {
-            var val = message.Properties.GetValueOrDefault(HeaderNames.Source);
-            if (!string.IsNullOrEmpty(val) && Uri.TryCreate(val, UriKind.RelativeOrAbsolute, out var source))
-            {
-                return source;
-            }
-
-            return new Uri(MessageHeader.DefaultSource);
-        }
-        
-        static string ReadSpecVersion(MessageView message)
-        {
-            var val = message.Properties.GetValueOrDefault(HeaderNames.SpecVersion);
-            if (!string.IsNullOrEmpty(val))
-            {
-                return val;
-            }
-
-            return MessageHeader.DefaultSpecVersion;
-        }
-        
-        static CloudEventsType ReadType(MessageView message)
-        {
-            var val = message.Properties.GetValueOrDefault(HeaderNames.Type);
-            return string.IsNullOrEmpty(val) ? CloudEventsType.Empty : new CloudEventsType(val);
-        }
-        
-        static Uri? ReadDataSchema(MessageView message)
-        {
-            var val = message.Properties.GetValueOrDefault(HeaderNames.DataSchema);
-            if (!string.IsNullOrEmpty(val) && Uri.TryCreate(val, UriKind.RelativeOrAbsolute, out var source))
-            {
-                return source;
-            }
-
-            return null;
-        }
-        
-        static string? ReadSubject(MessageView message)
-        {
-            var val = message.Properties.GetValueOrDefault(HeaderNames.Subject);
-            if (!string.IsNullOrEmpty(val))
-            {
-                return val;
-            }
-
-            return null;
-        }
-        
-        static string? ReadDataRef(MessageView message)
-        {
-            var val = message.Properties.GetValueOrDefault(HeaderNames.DataRef);
-            if (!string.IsNullOrEmpty(val))
-            {
-                return val;
-            }
-
-            return null;
-        }
-        
-        static TraceParent? ReadTraceParent(MessageView message)
-        {
-            var val = message.Properties.GetValueOrDefault(HeaderNames.TraceParent);
-            if (!string.IsNullOrEmpty(val))
-            {
-                return new TraceParent(val);
-            }
-
-            return null;
-        }
-        
-        static TraceState? ReadTraceState(MessageView message)
-        {
-            var val = message.Properties.GetValueOrDefault(HeaderNames.TraceState);
-            if (!string.IsNullOrEmpty(val))
-            {
-                return new TraceState(val);
-            }
-
-            return null;
-        }
-        
-        static Baggage ReadBaggage(MessageView message)
-        {
-            var baggage = new Baggage();
-            var val = message.Properties.GetValueOrDefault(HeaderNames.Baggage);
-            if (!string.IsNullOrEmpty(val))
-            {
-                baggage.LoadBaggage(val);
-            }
-
-            return baggage;
+            return CreateMappingFailure(message);
         }
     }
+
+    private static Message CreateMappingFailure(MessageView message) =>
+        new(MessageHeader.FailureMessageHeader(new RoutingKey(message.Topic), new Id(message.MessageId)),
+            new MessageBody(message.Body));
 
     /// <inheritdoc />
     public void Dispose() => consumer.Dispose();

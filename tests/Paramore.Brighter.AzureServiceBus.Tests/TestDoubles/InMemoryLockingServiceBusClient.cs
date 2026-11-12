@@ -42,11 +42,19 @@ public class InMemoryLockingServiceBusClient(ServiceBusReceiver receiver, Servic
 
     public override Task<ServiceBusSessionReceiver> AcceptNextSessionAsync(string queueName,
         ServiceBusSessionReceiverOptions? options = null, CancellationToken cancellationToken = default)
-        => Task.FromResult((ServiceBusSessionReceiver)receiver);
+        => AcceptSession(cancellationToken);
 
     public override Task<ServiceBusSessionReceiver> AcceptNextSessionAsync(string topicName, string subscriptionName,
         ServiceBusSessionReceiverOptions? options = null, CancellationToken cancellationToken = default)
-        => Task.FromResult((ServiceBusSessionReceiver)receiver);
+        => AcceptSession(cancellationToken);
+
+    private Task<ServiceBusSessionReceiver> AcceptSession(CancellationToken cancellationToken)
+    {
+        cancellationToken.ThrowIfCancellationRequested();
+        if (receiver is InMemoryLockingServiceBusSessionReceiver session)
+            session.AcquireSession();
+        return Task.FromResult((ServiceBusSessionReceiver)receiver);
+    }
 
     public ServiceBusClient GetServiceBusClient() => this;
 

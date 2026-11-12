@@ -36,6 +36,40 @@ namespace Paramore.Brighter.MessagingGateway.AWSSQS.V4;
 /// </summary>
 public class SqsSubscription : Subscription, IUseBrighterDeadLetterSupport, IUseBrighterInvalidMessageSupport, IAmADeliveryCountingSubscription
 {
+    /// <summary>
+    /// Gets or sets the reader used to map a native SQS delivery to a Brighter message.
+    /// </summary>
+    /// <remarks>
+    /// Null uses the existing raw or SNS envelope mapping. A custom reader receives the original SQS
+    /// delivery, including any SNS envelope, and replaces that mapping. The gateway attaches the receipt
+    /// handle and resolves the delivery count. Reader exceptions or null results produce an unacceptable message with
+    /// the native body, native message ID and delivery metadata preserved for rejection.
+    /// Readers may be shared by concurrent consumers.
+    /// </remarks>
+    public IAmAWireMessageReader<Amazon.SQS.Model.Message>? WireMessageReader { get; set; }
+
+    /// <summary>
+    /// Gets or sets the writer for Brighter-managed invalid-message forwarding.
+    /// Null preserves the default wire format.
+    /// </summary>
+    /// <remarks>
+    /// Configure before creating consumers. This writer is used only when the invalid-message
+    /// route is selected. Fallback to the dead-letter route uses its own writer instead.
+    /// The writer receives refreshed rejection metadata; the gateway owns routing and settlement.
+    /// </remarks>
+    public IAmAWireMessageWriter<SqsWireMessage>? InvalidMessageWireMessageWriter { get; set; }
+
+    /// <summary>
+    /// Gets or sets the writer for Brighter-managed dead-letter forwarding.
+    /// Null preserves the default wire format.
+    /// </summary>
+    /// <remarks>
+    /// Configure before creating consumers. This includes invalid-message fallback to the
+    /// dead-letter route, but does not configure broker-managed redrive.
+    /// The writer receives refreshed rejection metadata; the gateway owns routing and settlement.
+    /// </remarks>
+    public IAmAWireMessageWriter<SqsWireMessage>? DeadLetterWireMessageWriter { get; set; }
+
     /// <inheritdoc />
     public override Type ChannelFactoryType => typeof(ChannelFactory);
 

@@ -10,7 +10,7 @@ namespace Paramore.Brighter.AWSScheduler.Tests.Scheduler.Messages.Sqs;
 [Collection("Scheduler SQS")]
 public class SqsSchedulingMessageTest : IDisposable
 {
-    private readonly ContentType _contentType = new(MediaTypeNames.Text.Plain);
+    private readonly ContentType _contentType = new(MediaTypeNames.Text.Plain) { CharSet = "utf-8" };
     private const int BufferSize = 3;
     private readonly SqsMessageProducer _messageProducer;
     private readonly SqsMessageConsumer _consumer;
@@ -39,7 +39,7 @@ public class SqsSchedulingMessageTest : IDisposable
         //just for the tests, so create a new consumer from the properties
         _consumer = new SqsMessageConsumer(awsConnection, channel.Name.ToValidSQSQueueName(), BufferSize);
         _messageProducer = new SqsMessageProducer(awsConnection,
-            new SqsPublication { MakeChannels = OnMissingChannel.Create, QueueAttributes = new SqsAttributes(tags: new Dictionary<string, string> { { "Environment", "Test" } }) });
+            new SqsPublication { ChannelName = new ChannelName(_queueName), MakeChannels = OnMissingChannel.Create, QueueAttributes = new SqsAttributes(tags: new Dictionary<string, string> { { "Environment", "Test" } }) });
 
         _factory = new AwsSchedulerFactory(awsConnection, "brighter-scheduler")
         {
@@ -66,7 +66,7 @@ public class SqsSchedulingMessageTest : IDisposable
         var stopAt = DateTimeOffset.UtcNow.AddMinutes(2);
         while (stopAt > DateTimeOffset.UtcNow)
         {
-            var messages = _consumer.Receive(TimeSpan.FromMinutes(1));
+            var messages = _consumer.Receive(TimeSpan.FromSeconds(20));
             Assert.Single(messages);
 
             if (messages[0].Header.MessageType != MessageType.MT_NONE)

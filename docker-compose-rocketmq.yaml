@@ -221,6 +221,11 @@ services:
             $$MQADMIN updateTopic -n nameserver:9876 -t rmq_broker_call_fails_r -c DefaultCluster -r 1 -w 1 -a +message.type=NORMAL &&
             $$MQADMIN updateTopic -n nameserver:9876 -t rmq_broker_call_fails_p -c DefaultCluster -r 1 -w 1 -a +message.type=NORMAL &&
 
+            $$MQADMIN updateTopic -n nameserver:9876 -t rmq_mapping_r -c DefaultCluster -r 1 -w 1 -a +message.type=NORMAL &&
+            $$MQADMIN updateTopic -n nameserver:9876 -t rmq_mapping_p -c DefaultCluster -r 1 -w 1 -a +message.type=NORMAL &&
+            $$MQADMIN updateTopic -n nameserver:9876 -t rmq_mapping_failure_r -c DefaultCluster -r 1 -w 1 -a +message.type=NORMAL &&
+            $$MQADMIN updateTopic -n nameserver:9876 -t rmq_mapping_failure_p -c DefaultCluster -r 1 -w 1 -a +message.type=NORMAL &&
+
             echo 'done'
         "
     depends_on: # Ensure broker is healthy before attempting topic creation

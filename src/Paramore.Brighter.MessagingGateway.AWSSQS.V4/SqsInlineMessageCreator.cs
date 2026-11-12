@@ -46,6 +46,8 @@ internal sealed partial class SqsInlineMessageCreator : SqsMessageCreatorBase, I
     {
         var topic = HeaderResult<RoutingKey>.Empty();
         var messageId = HeaderResult<Id?>.Empty();
+        var bag = new Dictionary<string, object>();
+        var handledCount = HeaderResult<int>.Empty();
 
         try
         {
@@ -54,11 +56,11 @@ internal sealed partial class SqsInlineMessageCreator : SqsMessageCreatorBase, I
 
             topic = ReadTopic();
             messageId = ReadMessageId();
+            bag = ReadMessageBag();
+            handledCount = ReadHandledCount(sqsMessage, bag);
             var cloudEvents = ReadMessageCloudEvents(); 
             var contentType = ReadContentType(cloudEvents);
             var correlationId = ReadCorrelationId();
-            var bag = ReadMessageBag();
-            var handledCount = ReadHandledCount(sqsMessage, bag);
             var messageType = ReadMessageType();
             var timeStamp = ReadTimestamp(cloudEvents);
             var replyTo = ReadReplyTo();
@@ -113,7 +115,11 @@ internal sealed partial class SqsInlineMessageCreator : SqsMessageCreatorBase, I
         catch (Exception e)
         {
             Log.FailedToCreateMessageFromAwsSqsMessage(s_logger, e);
-            return Message.FailureMessage(topic.Result, messageId.Result);
+            var failure = Message.FailureMessage(topic.Result, messageId.Result);
+            bag.Remove("ReceiptHandle");
+            failure.Header.Bag = bag;
+            failure.Header.HandledCount = handledCount.Result;
+            return failure;
         }
     }
 

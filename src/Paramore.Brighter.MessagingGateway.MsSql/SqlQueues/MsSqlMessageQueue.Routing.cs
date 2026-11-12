@@ -26,11 +26,9 @@ using System;
 using System.Data;
 using System.Data.Common;
 using System.Linq;
-using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Data.SqlClient;
-using Paramore.Brighter.JsonConverters;
 
 namespace Paramore.Brighter.MessagingGateway.MsSql.SqlQueues;
 
@@ -116,7 +114,7 @@ public partial class MsSqlMessageQueue<T>
         command.Parameters.Add(new SqlParameter("@messageType", SqlDbType.NVarChar, 1024)
         { Value = typeof(T).FullName ?? throw new InvalidOperationException("The message type must have a full name.") });
         command.Parameters.Add(new SqlParameter("@payload", SqlDbType.NVarChar, -1)
-        { Value = JsonSerializer.Serialize(message, JsonSerialisationOptions.Options) });
+        { Value = _serialize(message) });
         return command;
     }
 

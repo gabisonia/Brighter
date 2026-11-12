@@ -25,6 +25,7 @@ THE SOFTWARE. */
 
 
 using System;
+using Azure.Messaging.ServiceBus;
 
 namespace Paramore.Brighter.MessagingGateway.AzureServiceBus;
 
@@ -33,6 +34,14 @@ namespace Paramore.Brighter.MessagingGateway.AzureServiceBus;
 /// </summary>
 public class AzureServiceBusSubscription : Subscription
 {
+    /// <summary>Gets or sets the reader for native Service Bus deliveries.</summary>
+    /// <value>The reader, or null to retain the default mapping.</value>
+    /// <remarks>
+    /// The consumer attaches native lock and sequence metadata after reading.
+    /// Custom readers require native SDK deliveries; legacy wrappers cannot supply them.
+    /// </remarks>
+    public IAmAWireMessageReader<ServiceBusReceivedMessage>? WireMessageReader { get; set; }
+
     public AzureServiceBusSubscriptionConfiguration Configuration { get; }
 
     /// <inheritdoc />

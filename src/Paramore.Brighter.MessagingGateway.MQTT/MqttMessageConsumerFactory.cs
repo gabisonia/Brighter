@@ -65,7 +65,12 @@ namespace Paramore.Brighter.MessagingGateway.MQTT
             var deadLetterRoutingKey = (subscription as IUseBrighterDeadLetterSupport)?.DeadLetterRoutingKey;
             var invalidMessageRoutingKey = (subscription as IUseBrighterInvalidMessageSupport)?.InvalidMessageRoutingKey;
 
-            return new MqttMessageConsumer(_configuration, _scheduler, deadLetterRoutingKey, invalidMessageRoutingKey, subscription.BufferSize);
+            return new MqttMessageConsumer(_configuration, _scheduler, deadLetterRoutingKey, invalidMessageRoutingKey,
+                subscription.BufferSize, (subscription as MqttSubscription)?.WireMessageReader,
+                (subscription as MqttSubscription)?.RequeueWireMessageWriter,
+                (subscription as MqttSubscription)?.DeadLetterWireMessageWriter,
+                (subscription as MqttSubscription)?.InvalidMessageWireMessageWriter,
+                (subscription as MqttSubscription)?.ScheduledRequeuePublicationTopic);
         }
 
         /// <summary>
@@ -78,7 +83,12 @@ namespace Paramore.Brighter.MessagingGateway.MQTT
             var deadLetterRoutingKey = (subscription as IUseBrighterDeadLetterSupport)?.DeadLetterRoutingKey;
             var invalidMessageRoutingKey = (subscription as IUseBrighterInvalidMessageSupport)?.InvalidMessageRoutingKey;
 
-            return new MqttMessageConsumer(_configuration, _scheduler, deadLetterRoutingKey, invalidMessageRoutingKey, subscription.BufferSize);
+            return new MqttMessageConsumer(_configuration, _scheduler, deadLetterRoutingKey, invalidMessageRoutingKey,
+                subscription.BufferSize, (subscription as MqttSubscription)?.WireMessageReader,
+                (subscription as MqttSubscription)?.RequeueWireMessageWriter,
+                (subscription as MqttSubscription)?.DeadLetterWireMessageWriter,
+                (subscription as MqttSubscription)?.InvalidMessageWireMessageWriter,
+                (subscription as MqttSubscription)?.ScheduledRequeuePublicationTopic);
         }
     }
 }

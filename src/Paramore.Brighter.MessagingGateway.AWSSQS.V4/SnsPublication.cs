@@ -33,6 +33,17 @@ namespace Paramore.Brighter.MessagingGateway.AWSSQS.V4;
 public class SnsPublication : Publication
 {
     /// <summary>
+    /// Gets or sets the writer used to map the message body, subject and attributes to SNS.
+    /// </summary>
+    /// <remarks>
+    /// When null, the gateway uses its default mapping. A custom writer replaces the body,
+    /// subject and application attributes while the gateway retains routing, scheduling and FIFO controls.
+    /// The writer may be called concurrently and must not mutate the source message.
+    /// Compose <see cref="DefaultSnsWireMessageWriter"/> with a custom writer to retain default attributes.
+    /// </remarks>
+    public IAmAWireMessageWriter<SnsWireMessage>? WireMessageWriter { get; set; }
+
+    /// <summary>
     /// Creates a publication for an SNS Topic
     /// </summary>
     /// <remarks>

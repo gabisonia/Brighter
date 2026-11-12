@@ -36,6 +36,8 @@ using Paramore.Brighter.Logging;
 using Paramore.Brighter.Tasks;
 using Paramore.Brighter.Observability;
 using Polly.CircuitBreaker;
+using RabbitMQ.Client;
+using RabbitMQ.Client.Events;
 using RabbitMQ.Client.Exceptions;
 
 namespace Paramore.Brighter.MessagingGateway.RMQ.Async;
@@ -59,6 +61,7 @@ public partial class RmqMessageConsumer : RmqMessageGateway, IAmAMessageConsumer
     private volatile bool _requeueProducerInitialized;
     private object? _requeueProducerLock;
     private readonly IAmAMessageScheduler? _scheduler;
+    private readonly RoutingKey? _scheduledRequeuePublicationTopic;
     private readonly ChannelName _queueName;
     private readonly RoutingKeys _routingKeys;
     private readonly bool _isDurable;
@@ -73,6 +76,9 @@ public partial class RmqMessageConsumer : RmqMessageGateway, IAmAMessageConsumer
     private readonly TimeSpan? _ttl;
     private readonly int? _maxQueueLength;
     private readonly QueueType _queueType;
+    private readonly IAmAWireMessageReader<BasicDeliverEventArgs>? _wireMessageReader;
+    private readonly IAmAWireMessageWriter<RmqWireMessage>? _requeueWireMessageWriter;
+    private readonly IAmAWireMessageWriter<RmqWireMessage>? _invalidMessageWireMessageWriter;
 
     internal RoutingKey? InvalidMessageRoutingKey { get; set; }
 
@@ -141,6 +147,30 @@ public partial class RmqMessageConsumer : RmqMessageGateway, IAmAMessageConsumer
         OnMissingChannel makeChannels = OnMissingChannel.Create,
         QueueType queueType = QueueType.Classic,
         IAmAMessageScheduler? scheduler = null)
+        : this(connection, queueName, routingKeys, isDurable, highAvailability,
+            batchSize, deadLetterQueueName, deadLetterRoutingKey, ttl, maxQueueLength,
+            makeChannels, queueType, scheduler, null, null)
+    {
+    }
+
+    internal RmqMessageConsumer(
+        RmqMessagingGatewayConnection connection,
+        ChannelName queueName,
+        RoutingKeys routingKeys,
+        bool isDurable,
+        bool highAvailability,
+        int batchSize,
+        ChannelName? deadLetterQueueName,
+        RoutingKey? deadLetterRoutingKey,
+        TimeSpan? ttl,
+        int? maxQueueLength,
+        OnMissingChannel makeChannels,
+        QueueType queueType,
+        IAmAMessageScheduler? scheduler,
+        IAmAWireMessageReader<BasicDeliverEventArgs>? wireMessageReader,
+        IAmAWireMessageWriter<RmqWireMessage>? requeueWireMessageWriter,
+        IAmAWireMessageWriter<RmqWireMessage>? invalidMessageWireMessageWriter = null,
+        RoutingKey? scheduledRequeuePublicationTopic = null)
         : base(connection)
     {
         _queueName = queueName;
@@ -157,6 +187,10 @@ public partial class RmqMessageConsumer : RmqMessageGateway, IAmAMessageConsumer
         _maxQueueLength = maxQueueLength;
         _queueType = queueType;
         _scheduler = scheduler;
+        _scheduledRequeuePublicationTopic = scheduledRequeuePublicationTopic;
+        _wireMessageReader = wireMessageReader;
+        _requeueWireMessageWriter = requeueWireMessageWriter;
+        _invalidMessageWireMessageWriter = invalidMessageWireMessageWriter;
 
         // Validate quorum queue requirements
         if (_queueType == QueueType.Quorum)
@@ -293,7 +327,7 @@ public partial class RmqMessageConsumer : RmqMessageGateway, IAmAMessageConsumer
             var messages = new Message[resultCount];
             for (var i = 0; i < resultCount; i++)
             {
-                var message = RmqMessageCreator.CreateMessage(results![i]);
+                var message = ReadMessage(results![i]);
                 messages[i] = message;
 
                 Log.ReceivedMessage(s_logger, _queueName.Value,
@@ -480,13 +514,13 @@ public partial class RmqMessageConsumer : RmqMessageGateway, IAmAMessageConsumer
             // timeout is guaranteed non-null here due to the ??= TimeSpan.Zero coalescing at the top of this method
             if (DelaySupported || timeout <= TimeSpan.Zero)
             {
-                var rmqMessagePublisher = new RmqMessagePublisher(Channel, Connection);
+                var rmqMessagePublisher = new RmqMessagePublisher(Channel, Connection, _requeueWireMessageWriter);
                 await rmqMessagePublisher.RequeueMessageAsync(message, _queueName, timeout.Value, cancellationToken);
             }
             else
             {
                 EnsureProducer();
-                await _requeueProducer!.SendWithDelayAsync(message, timeout, cancellationToken);
+                await _requeueProducer!.SendWithDelayAsync(PrepareScheduledRequeue(message), timeout, cancellationToken);
             }
 
             // Step 2: Ack the original message to remove it from the queue.
@@ -550,6 +584,32 @@ public partial class RmqMessageConsumer : RmqMessageGateway, IAmAMessageConsumer
     internal Task EnsureChannelExistsAsync(CancellationToken cancellationToken = default)
         => _makeChannels == OnMissingChannel.Assume ? Task.CompletedTask : EnsureChannelAsync(cancellationToken);
 
+    private Message ReadMessage(BasicDeliverEventArgs delivery)
+    {
+        if (_wireMessageReader is null)
+            return RmqMessageCreator.CreateMessage(delivery);
+
+        Message message;
+        try
+        {
+            message = _wireMessageReader.ReadMessage(delivery)
+                ?? throw new InvalidOperationException("The wire message reader returned null.");
+        }
+        catch (Exception exception)
+        {
+            Log.ErrorMappingNativeMessage(s_logger, exception, _queueName.Value);
+            message = Message.FailureMessage(new RoutingKey(delivery.RoutingKey), new Id(delivery.BasicProperties.MessageId ?? string.Empty));
+            message.Body = new MessageBody(delivery.Body);
+        }
+
+        if (delivery.BasicProperties.Headers is { } headers && headers.ContainsKey(HeaderNames.HANDLED_COUNT))
+            message.Header.HandledCount = RmqMessageCreator.ReadHandledCount(headers).Result;
+        message.DeliveryTag = delivery.DeliveryTag;
+        message.Redelivered = delivery.Redelivered;
+        message.Persist = delivery.BasicProperties.DeliveryMode == DeliveryModes.Persistent;
+        return message;
+    }
+
     private async Task CancelConsumerAsync(CancellationToken cancellationToken)
     {
         var consumer = _consumer;
@@ -602,7 +662,7 @@ public partial class RmqMessageConsumer : RmqMessageGateway, IAmAMessageConsumer
             message.Header.Bag[HeaderNames.REJECTION_MESSAGE] = reason.Description ?? string.Empty;
             message.Header.Bag[HeaderNames.REJECTION_TIMESTAMP] = DateTimeOffset.UtcNow.ToString("o");
             message.Header.Topic = InvalidMessageRoutingKey!;
-            var publisher = new RmqMessagePublisher(Channel!, Connection);
+            var publisher = new RmqMessagePublisher(Channel!, Connection, _invalidMessageWireMessageWriter);
             await publisher.PublishMessageAsync(message, cancellationToken: cancellationToken, mandatory: true);
         }
         finally
@@ -731,6 +791,43 @@ public partial class RmqMessageConsumer : RmqMessageGateway, IAmAMessageConsumer
         return arguments;
     }
 
+    private Message PrepareScheduledRequeue(Message message)
+    {
+        if (_scheduledRequeuePublicationTopic == null)
+            return message;
+
+        var header = CopyScheduledHeader(message.Header);
+        header.Bag[Message.ProducerTopicHeaderName] = _scheduledRequeuePublicationTopic.Value;
+        var body = new MessageBody(message.Body.Memory,
+            message.Body.ContentType == null ? null : new System.Net.Mime.ContentType(message.Body.ContentType.ToString()),
+            message.Body.CharacterEncoding);
+        return new Message(header, body) { Persist = message.Persist };
+    }
+
+    private static MessageHeader CopyScheduledHeader(MessageHeader source)
+    {
+        var baggage = new Baggage();
+        foreach (var entry in source.Baggage)
+            baggage.Add(entry.Key, entry.Value!);
+
+        return new MessageHeader(source.MessageId, source.Topic,
+#pragma warning disable CS0618 // Preserve the legacy message type for transport compatibility.
+            source.MessageType,
+#pragma warning restore CS0618
+            source: source.Source, type: source.Type, timeStamp: source.TimeStamp,
+            correlationId: source.CorrelationId, replyTo: source.ReplyTo,
+            contentType: new System.Net.Mime.ContentType(source.ContentType.ToString()),
+            partitionKey: source.PartitionKey, dataSchema: source.DataSchema, subject: source.Subject,
+            handledCount: source.HandledCount, workflowId: source.WorkflowId, jobId: source.JobId,
+            delayed: source.Delayed, traceParent: source.TraceParent, traceState: source.TraceState,
+            baggage: baggage)
+        {
+            Bag = new Dictionary<string, object>(source.Bag, source.Bag.Comparer),
+            DataRef = source.DataRef,
+            SpecVersion = source.SpecVersion
+        };
+    }
+
     private void EnsureProducer()
     {
 #pragma warning disable CS0420 // LazyInitializer handles the memory barrier for the volatile field
@@ -809,6 +906,9 @@ public partial class RmqMessageConsumer : RmqMessageGateway, IAmAMessageConsumer
 
     private static partial class Log
     {
+        [LoggerMessage(LogLevel.Error, "RmqMessageConsumer: Error mapping native message from queue {QueueName}")]
+        public static partial void ErrorMappingNativeMessage(ILogger logger, Exception exception, string queueName);
+
         [LoggerMessage(LogLevel.Information, "RmqMessageConsumer: Acknowledging message {Id} as completed with delivery tag {DeliveryTag}")]
         public static partial void AcknowledgingMessage(ILogger logger, string id, ulong deliveryTag);
 

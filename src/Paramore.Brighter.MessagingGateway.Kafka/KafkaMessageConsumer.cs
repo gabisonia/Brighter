@@ -52,10 +52,18 @@ namespace Paramore.Brighter.MessagingGateway.Kafka
 
         private readonly KafkaMessagingGatewayConfiguration _configuration;
         private readonly IConsumer<string, byte[]> _consumer;
-        private readonly KafkaMessageCreator _creator;
+        private readonly DefaultKafkaWireMessageReader _defaultWireMessageReader = new();
+        internal IAmAWireMessageReader<ConsumeResult<string, byte[]>>? WireMessageReader { private get; init; }
+        internal IAmAWireMessageWriter<Message<string, byte[]>>? InvalidMessageWireMessageWriter { private get; init; }
+        internal IAmAWireMessageWriter<Message<string, byte[]>>? DeadLetterWireMessageWriter { private get; init; }
+        internal IAmAWireMessageWriter<Message<string, byte[]>>? RequeueWireMessageWriter { private get; init; }
+        internal RoutingKey? ScheduledRequeuePublicationTopic { private get; init; }
         private readonly ConsumerConfig _consumerConfig;
         private List<TopicPartition> _partitions = [];
         private readonly ConcurrentBag<TopicPartitionOffset> _offsetStorage = [];
+        private readonly Dictionary<TopicPartition, SortedSet<Offset>> _failedForwardOffsets = new();
+        private readonly Dictionary<TopicPartition, Offset> _acknowledgedForwardOffsets = new();
+        private readonly object _forwardOffsetLock = new();
         private readonly long _maxBatchSize;
         private readonly TimeSpan _readCommittedOffsetsTimeout;
         private DateTime _lastFlushAt;
@@ -64,6 +72,7 @@ namespace Paramore.Brighter.MessagingGateway.Kafka
         private readonly SemaphoreSlim _flushToken = new(1, 1);
         // The Kafka revoke window is ~10s; we use half to leave time for cleanup
         private static readonly TimeSpan s_commitSyncTimeout = TimeSpan.FromSeconds(5);
+        private static readonly TimeSpan s_forwardingConfirmationTimeout = TimeSpan.FromSeconds(5);
         private readonly ITimer _sweeperTimer;
         private bool _hasFatalError;
         private readonly Func<Error, LogLevel>? _errorLogLevel;
@@ -159,13 +168,13 @@ namespace Paramore.Brighter.MessagingGateway.Kafka
             if (_deadLetterRoutingKey != null)
             {
                 _deadLetterProducer = new Lazy<KafkaMessageProducer?>(
-                    () => CreateProducer(_deadLetterRoutingKey, Log.ErrorCreatingDLQ), LazyThreadSafetyMode.None);
+                    () => CreateProducer(_deadLetterRoutingKey, Log.ErrorCreatingDLQ, DeadLetterWireMessageWriter), LazyThreadSafetyMode.None);
             }
 
             if (_invalidMessageRoutingKey != null)
             {
                 _invalidMessageProducer = new Lazy<KafkaMessageProducer?>(
-                    () => CreateProducer(_invalidMessageRoutingKey, Log.ErrorCreatingInvalidMessage), LazyThreadSafetyMode.None);
+                    () => CreateProducer(_invalidMessageRoutingKey, Log.ErrorCreatingInvalidMessage, InvalidMessageWireMessageWriter), LazyThreadSafetyMode.None);
             }
             
             sessionTimeout ??= TimeSpan.FromSeconds(10);
@@ -263,6 +272,7 @@ namespace Paramore.Brighter.MessagingGateway.Kafka
                 {
                     //We should commit any offsets we have stored for these partitions
                     CommitOffsetsFor(list);
+                    ResetForwardOffsets(list);
 
                     var revokedPartitionInfo = list.Select(tpo => $"{tpo.Topic} : {tpo.Partition}").ToList();
 
@@ -272,6 +282,7 @@ namespace Paramore.Brighter.MessagingGateway.Kafka
                 })
                 .SetPartitionsLostHandler((_, list) =>
                 {
+                    ResetForwardOffsets(list);
                     var lostPartitions = list.Select(tpo => $"{tpo.Topic} : {tpo.Partition}").ToList();
 
                     Log.PartitionsLost(s_logger, string.Join(",", lostPartitions));
@@ -284,7 +295,6 @@ namespace Paramore.Brighter.MessagingGateway.Kafka
             Log.SubscribingToTopic(s_logger, Topic);
             _consumer.Subscribe([Topic.Value]);
 
-            _creator = new KafkaMessageCreator();
         }
 
         /// <summary>
@@ -436,8 +446,24 @@ namespace Paramore.Brighter.MessagingGateway.Kafka
             }
             finally
             {
-                _consumer.Close();
-                _isClosed = true;
+                try
+                {
+                    DrainSubscriptionEvents();
+                }
+                finally
+                {
+                    _consumer.Close();
+                    _isClosed = true;
+                }
+            }
+        }
+
+        // Serve queued rebalance callbacks while the native group can still answer their requests.
+        private void DrainSubscriptionEvents()
+        {
+            _consumer.Unsubscribe();
+            while (_consumer.Consume(TimeSpan.Zero) != null)
+            {
             }
         }
 
@@ -497,6 +523,8 @@ namespace Paramore.Brighter.MessagingGateway.Kafka
         /// <remarks>
         /// We consume the next offset from the stream, and turn it into a Brighter message; we store the offset in the partition into the Brighter message
         /// headers for use in storing and committing offsets. If the stream is EOF or we are not allocated partitions, returns an empty message.
+        /// Configured reader exceptions or null results produce an unacceptable message for that delivery.
+        /// Its native body, topic, key and offset are retained, along with metadata readable by the default parser.
         /// With the consumer protocol and <see cref="OnMissingChannel.Assume"/>, a missing topic may return
         /// an empty message without a subscription error. No infrastructure check is performed.
         /// </remarks>
@@ -534,7 +562,7 @@ namespace Paramore.Brighter.MessagingGateway.Kafka
                 Log.UsableMessageRetrieved(s_logger, consumeResult.Message.Value);
                 Log.PartitionOffsetValue(s_logger, consumeResult.Partition, consumeResult.Offset, consumeResult.Message.Value);
 
-                return [_creator.CreateMessage(consumeResult)];
+                return [ReadMessage(consumeResult)];
             }
             catch (ConsumeException consumeException)
             {
@@ -564,6 +592,7 @@ namespace Paramore.Brighter.MessagingGateway.Kafka
         /// We consume the next offset from the stream, and turn it into a Brighter message; we store the offset in the partition into the Brighter message
         /// headers for use in storing and committing offsets. If the stream is EOF or we are not allocated partitions, returns an empty message.
         /// Kafka does not support an async consumer, and probably never will. See <a href="https://github.com/confluentinc/confluent-kafka-dotnet/issues/487">Confluent Kafka</a>
+        /// Configured reader failures return an unacceptable message with the native payload and offset for rejection or acknowledgement.
         /// The poll timeout defaults to zero. Missing-topic behavior follows <see cref="Receive"/>.
         /// </remarks>
         /// <param name="timeOut">The poll timeout for receiving a message. Defaults to zero.</param>
@@ -600,7 +629,12 @@ namespace Paramore.Brighter.MessagingGateway.Kafka
         /// <remarks>
         /// Routes rejected messages to the invalid message channel or dead letter channel, based on
         /// <paramref name="reason"/> and channel availability, then acknowledges the consumed offset.
+        /// Waits up to five seconds for the forwarding confirmation before acknowledging the source.
+        /// Failed confirmations or forwarding exceptions return false and restore the source offset without acknowledging it.
+        /// Subsequent commits on that partition are capped at the earliest unresolved source offset, including forwarding in progress.
+        /// A successful retry releases only that record's limit, retaining other failures and later acknowledgements.
         /// If no rejection channel is configured, this falls back to acknowledging the message.
+        /// The source topic is restored after forwarding.
         /// </remarks>
         /// <param name="message">The message.</param>
         /// <param name="reason">The <see cref="MessageRejectionReason"/> that explains why we rejected the message</param>
@@ -620,6 +654,8 @@ namespace Paramore.Brighter.MessagingGateway.Kafka
 
               var rejectionReason = reason?.RejectionReason ?? RejectionReason.None;
               var partitionOffset = ExtractPartitionOffset(message);
+              var originalTopic = message.Header.Topic;
+              RecordUnresolvedForward(partitionOffset);
 
               try
               {
@@ -629,7 +665,7 @@ namespace Paramore.Brighter.MessagingGateway.Kafka
                   var (routingKey, shouldRoute, isFallingBackToDlq) = DetermineRejectionRoute(
                       rejectionReason, _invalidMessageProducer != null, _deadLetterProducer != null);
 
-                  IAmAMessageProducerSync? producer = null;
+                  KafkaMessageProducer? producer = null;
                   if (shouldRoute)
                   {
                       message.Header.Topic = routingKey!;
@@ -642,7 +678,7 @@ namespace Paramore.Brighter.MessagingGateway.Kafka
 
                   if (producer != null)
                   {
-                      producer.Send(message);
+                      SendWithPersistenceConfirmation(producer, message);
                       Log.MessageSentToRejectionChannel(s_logger, message.Header.MessageId.Value, rejectionReason.ToString());
                   }
                   else
@@ -653,10 +689,15 @@ namespace Paramore.Brighter.MessagingGateway.Kafka
               catch (Exception ex)
               {
                   Log.ErrorSendingToRejectionChannel(s_logger, ex, message.Header.MessageId.Value, rejectionReason.ToString());
-                  Acknowledge(message);
-                  return true;
+                  if (partitionOffset != null) message.Header.Bag[HeaderNames.PARTITION_OFFSET] = partitionOffset;
+                  return false;
+              }
+              finally
+              {
+                  message.Header.Topic = originalTopic;
               }
 
+              ReleaseFailedForward(partitionOffset);
               AcknowledgeOffset(partitionOffset);
               return true;
         }
@@ -666,8 +707,13 @@ namespace Paramore.Brighter.MessagingGateway.Kafka
         /// </summary>
         /// <remarks>
         /// Routes rejected messages to dead letter queue or invalid message channel based on rejection reason.
-        /// Enriches message with metadata and acknowledges after sending to error channel (or on failure).
+        /// Enriches message with metadata and acknowledges after sending to the error channel.
+        /// Waits up to five seconds for the forwarding confirmation before acknowledging the source.
+        /// Failed confirmations or forwarding exceptions return false and restore the source offset without acknowledging it.
+        /// Subsequent commits on that partition are capped at the earliest unresolved source offset, including forwarding in progress.
+        /// A successful retry releases only that record's limit, retaining other failures and later acknowledgements.
         /// If no rejection channel is configured, this falls back to acknowledging the message.
+        /// The source topic is restored after forwarding.
         /// </remarks>
         /// <param name="message">The message.</param>
         /// <param name="reason">The <see cref="MessageRejectionReason"/> that explains why we rejected the message</param>
@@ -687,6 +733,8 @@ namespace Paramore.Brighter.MessagingGateway.Kafka
 
             var rejectionReason = reason?.RejectionReason ?? RejectionReason.None;
             var partitionOffset = ExtractPartitionOffset(message);
+            var originalTopic = message.Header.Topic;
+            RecordUnresolvedForward(partitionOffset);
 
             try
             {
@@ -696,7 +744,7 @@ namespace Paramore.Brighter.MessagingGateway.Kafka
                 var (routingKey, shouldRoute, isFallingBackToDlq) = DetermineRejectionRoute(
                     rejectionReason, _invalidMessageProducer != null, _deadLetterProducer != null);
 
-                IAmAMessageProducerAsync? producer = null;
+                KafkaMessageProducer? producer = null;
                 if (shouldRoute)
                 {
                     message.Header.Topic = routingKey!;
@@ -709,7 +757,7 @@ namespace Paramore.Brighter.MessagingGateway.Kafka
 
                 if (producer != null)
                 {
-                    await producer.SendAsync(message, cancellationToken);
+                    await SendWithPersistenceConfirmationAsync(producer, message, cancellationToken);
                     Log.MessageSentToRejectionChannel(s_logger, message.Header.MessageId.Value, rejectionReason.ToString());
                 }
                 else
@@ -720,10 +768,15 @@ namespace Paramore.Brighter.MessagingGateway.Kafka
             catch (Exception ex)
             {
                 Log.ErrorSendingToRejectionChannel(s_logger, ex, message.Header.MessageId.Value, rejectionReason.ToString());
-                await AcknowledgeAsync(message, cancellationToken);
-                return true;
+                if (partitionOffset != null) message.Header.Bag[HeaderNames.PARTITION_OFFSET] = partitionOffset;
+                return false;
+            }
+            finally
+            {
+                message.Header.Topic = originalTopic;
             }
 
+            ReleaseFailedForward(partitionOffset);
             AcknowledgeOffset(partitionOffset);
             return true;
         }
@@ -732,8 +785,14 @@ namespace Paramore.Brighter.MessagingGateway.Kafka
         /// Requeues the specified message. Kafka streams are immutable, so requeue publishes a new
         /// message to the same topic via a lazily-created producer. When a delay is specified and a
         /// scheduler is configured, the producer delegates to the scheduler for delayed redelivery.
-        /// For immediate requeue (zero or null delay) the message is produced directly and flushed.
+        /// For immediate requeue (zero or null delay), waits up to five seconds for persistence confirmation before acknowledging the source.
         /// </summary>
+        /// <remarks>
+        /// Negative persistence confirmation, confirmation timeout or a non-cancellation forwarding exception for an immediate retry returns false and restores the source offset.
+        /// The confirmation deadline does not interrupt a blocked synchronous writer; a timed-out attempt may still publish.
+        /// Commits on that partition stop at the earliest unresolved forward; a successful retry releases its limit
+        /// while retaining later acknowledgements. Delayed retries retain their scheduler dispatch behavior.
+        /// </remarks>
         /// <param name="message">The message to requeue.</param>
         /// <param name="delay">Delay before the message should be redelivered.</param>
         /// <returns>True if the message was successfully requeued.</returns>
@@ -746,14 +805,23 @@ namespace Paramore.Brighter.MessagingGateway.Kafka
             if (delay > TimeSpan.Zero)
             {
                 EnsureRequeueProducer();
-                _requeueProducer!.SendWithDelay(message, delay);
+                _requeueProducer!.SendWithDelay(PrepareScheduledRequeue(message), delay);
             }
             else
             {
-                // Kafka streams are immutable — immediate requeue must produce a new message
-                EnsureRequeueProducer();
-                _requeueProducer!.Send(message);
-                _requeueProducer.Flush();
+                RecordUnresolvedForward(partitionOffset);
+                try
+                {
+                    EnsureRequeueProducer();
+                    SendWithPersistenceConfirmation(_requeueProducer!, message);
+                }
+                catch (Exception ex) when (ex is not OperationCanceledException)
+                {
+                    Log.ErrorPersistingRetry(s_logger, ex, message.Id.Value);
+                    if (partitionOffset != null) message.Header.Bag[HeaderNames.PARTITION_OFFSET] = partitionOffset;
+                    return false;
+                }
+                ReleaseFailedForward(partitionOffset);
             }
 
             AcknowledgeOffset(partitionOffset);
@@ -764,8 +832,16 @@ namespace Paramore.Brighter.MessagingGateway.Kafka
         /// Requeues the specified message. Kafka streams are immutable, so requeue publishes a new
         /// message to the same topic via a lazily-created producer. When a delay is specified and a
         /// scheduler is configured, the producer delegates to the scheduler for delayed redelivery.
-        /// For immediate requeue (zero or null delay) the message is produced directly and flushed.
+        /// For immediate requeue (zero or null delay), waits up to five seconds for persistence confirmation before acknowledging the source.
         /// </summary>
+        /// <remarks>
+        /// Negative persistence confirmation, confirmation timeout or a non-cancellation forwarding exception for an immediate retry returns false and restores the source offset.
+        /// The confirmation deadline does not interrupt a blocked synchronous writer; a timed-out attempt may still publish.
+        /// Caller cancellation during immediate forwarding restores the source offset and propagates to the caller.
+        /// Retrying may produce a duplicate if Kafka persisted the cancelled attempt.
+        /// Commits on that partition stop at the earliest unresolved forward; a successful retry releases its limit
+        /// while retaining later acknowledgements. Delayed retries retain their scheduler dispatch behavior.
+        /// </remarks>
         /// <param name="message">The message to requeue.</param>
         /// <param name="delay">Delay before the message should be redelivered.</param>
         /// <param name="cancellationToken">A cancellation token.</param>
@@ -779,14 +855,28 @@ namespace Paramore.Brighter.MessagingGateway.Kafka
             if (delay > TimeSpan.Zero)
             {
                 EnsureRequeueProducer();
-                await _requeueProducer!.SendWithDelayAsync(message, delay, cancellationToken);
+                await _requeueProducer!.SendWithDelayAsync(PrepareScheduledRequeue(message), delay, cancellationToken);
             }
             else
             {
-                // Kafka streams are immutable — immediate requeue must produce a new message
-                EnsureRequeueProducer();
-                await _requeueProducer!.SendAsync(message, cancellationToken);
-                _requeueProducer.Flush(cancellationToken);
+                RecordUnresolvedForward(partitionOffset);
+                try
+                {
+                    EnsureRequeueProducer();
+                    await SendWithPersistenceConfirmationAsync(_requeueProducer!, message, cancellationToken);
+                }
+                catch (OperationCanceledException)
+                {
+                    if (partitionOffset != null) message.Header.Bag[HeaderNames.PARTITION_OFFSET] = partitionOffset;
+                    throw;
+                }
+                catch (Exception ex) when (ex is not OperationCanceledException)
+                {
+                    Log.ErrorPersistingRetry(s_logger, ex, message.Id.Value);
+                    if (partitionOffset != null) message.Header.Bag[HeaderNames.PARTITION_OFFSET] = partitionOffset;
+                    return false;
+                }
+                ReleaseFailedForward(partitionOffset);
             }
 
             AcknowledgeOffset(partitionOffset);
@@ -864,25 +954,111 @@ namespace Paramore.Brighter.MessagingGateway.Kafka
             return _offsetStorage.Count;
         }
 
-        /// <summary>
-        /// Reduces a set of stored offsets to at most one entry per <see cref="TopicPartition"/>, keeping the
-        /// highest offset. We may store several offsets for the same partition between commits (one per
-        /// acknowledged message); committing more than one for the same partition in a single request is
-        /// undefined, so we always commit the highest.
-        /// </summary>
-        private static List<TopicPartitionOffset> ReduceToHighestOffsetPerPartition(IEnumerable<TopicPartitionOffset> offsets)
+        private void ResetForwardOffsets(IEnumerable<TopicPartitionOffset> partitions)
+        {
+            lock (_forwardOffsetLock)
+            {
+                foreach (var partition in partitions)
+                {
+                    _failedForwardOffsets.Remove(partition.TopicPartition);
+                    _acknowledgedForwardOffsets.Remove(partition.TopicPartition);
+                }
+            }
+        }
+
+        private void RecordUnresolvedForward(TopicPartitionOffset? partitionOffset)
+        {
+            if (partitionOffset == null) return;
+
+            lock (_forwardOffsetLock)
+            {
+                if (!_failedForwardOffsets.TryGetValue(partitionOffset.TopicPartition, out var failedOffsets))
+                {
+                    failedOffsets = new SortedSet<Offset>(Comparer<Offset>.Create((left, right) => left.Value.CompareTo(right.Value)));
+                    _failedForwardOffsets.Add(partitionOffset.TopicPartition, failedOffsets);
+                }
+
+                failedOffsets.Add(partitionOffset.Offset);
+                if (!_acknowledgedForwardOffsets.ContainsKey(partitionOffset.TopicPartition))
+                    _acknowledgedForwardOffsets.Add(partitionOffset.TopicPartition, partitionOffset.Offset);
+            }
+        }
+
+        private void ReleaseFailedForward(TopicPartitionOffset? partitionOffset)
+        {
+            if (partitionOffset == null) return;
+
+            lock (_forwardOffsetLock)
+            {
+                if (!_failedForwardOffsets.TryGetValue(partitionOffset.TopicPartition, out var failedOffsets)) return;
+
+                failedOffsets.Remove(partitionOffset.Offset);
+                if (failedOffsets.Count == 0)
+                    _failedForwardOffsets.Remove(partitionOffset.TopicPartition);
+            }
+        }
+
+        private TopicPartitionOffset LimitToFailedForward(TopicPartitionOffset offset)
+        {
+            lock (_forwardOffsetLock)
+            {
+                if (_acknowledgedForwardOffsets.TryGetValue(offset.TopicPartition, out var previous))
+                {
+                    var highest = previous.Value > offset.Offset.Value ? previous : offset.Offset;
+                    _acknowledgedForwardOffsets[offset.TopicPartition] = highest;
+                    offset = new TopicPartitionOffset(offset.TopicPartition, highest);
+                }
+
+                if (!_failedForwardOffsets.TryGetValue(offset.TopicPartition, out var failedOffsets)
+                    || offset.Offset.Value <= failedOffsets.Min.Value)
+                    return offset;
+
+                return new TopicPartitionOffset(offset.TopicPartition, failedOffsets.Min);
+            }
+        }
+
+        private List<TopicPartitionOffset> ReduceToHighestOffsetPerPartition(IEnumerable<TopicPartitionOffset> offsets)
         {
             return offsets
                 .GroupBy(tpo => tpo.TopicPartition)
                 .Select(group => group.OrderByDescending(tpo => tpo.Offset.Value).First())
+                .Select(LimitToFailedForward)
                 .ToList();
         }
 
-        /// <summary>
-        /// We commit a batch size worth at a time; this may be called from the sweeper thread, and we don't want it to
-        /// loop endlessly over the offset list as new items are added, which will trigger a commit anyway. So we limit
-        /// the trigger to only commit a batch size worth
-        /// </summary>
+        private Message ReadMessage(ConsumeResult<string, byte[]> native)
+        {
+            if (WireMessageReader is null)
+                return _defaultWireMessageReader.ReadMessage(native);
+
+            try
+            {
+                var message = WireMessageReader.ReadMessage(native)
+                    ?? throw new InvalidOperationException("The configured Kafka wire reader returned null.");
+                message.Header.Bag[HeaderNames.PARTITION_OFFSET] = native.TopicPartitionOffset;
+                return message;
+            }
+            catch (Exception exception)
+            {
+                Log.FailedToMapDelivery(s_logger, exception, native.Topic, native.Partition.Value, native.Offset.Value);
+                return CreateUnacceptableMessage(native);
+            }
+        }
+
+        private Message CreateUnacceptableMessage(ConsumeResult<string, byte[]> native)
+        {
+            var message = _defaultWireMessageReader.ReadMessage(native);
+#pragma warning disable CS0618
+            message.Header.MessageType = MessageType.MT_UNACCEPTABLE;
+#pragma warning restore CS0618
+            message.Header.Topic = new RoutingKey(native.Topic);
+            message.Header.PartitionKey = new PartitionKey(native.Message.Key ?? string.Empty);
+            message.Body = new MessageBody(native.Message.Value, message.Header.ContentType);
+            message.Header.Bag[HeaderNames.PARTITION_OFFSET] = native.TopicPartitionOffset;
+            return message;
+        }
+
+        // Bound each sweep so concurrently added offsets cannot keep it running indefinitely.
         private void CommitOffsets()
         {
             try
@@ -1027,6 +1203,43 @@ namespace Paramore.Brighter.MessagingGateway.Kafka
             }
         }
         
+        private Message PrepareScheduledRequeue(Message message)
+        {
+            if (ScheduledRequeuePublicationTopic == null)
+                return message;
+
+            var header = CopyScheduledHeader(message.Header);
+            header.Bag[Message.ProducerTopicHeaderName] = ScheduledRequeuePublicationTopic.Value;
+            var body = new MessageBody(message.Body.Memory,
+                message.Body.ContentType == null ? null : new System.Net.Mime.ContentType(message.Body.ContentType.ToString()),
+                message.Body.CharacterEncoding);
+            return new Message(header, body) { Persist = message.Persist };
+        }
+
+        private static MessageHeader CopyScheduledHeader(MessageHeader source)
+        {
+            var baggage = new Baggage();
+            foreach (var entry in source.Baggage)
+                baggage.Add(entry.Key, entry.Value!);
+
+            return new MessageHeader(source.MessageId, source.Topic,
+    #pragma warning disable CS0618 // Preserve the legacy message type for transport compatibility.
+                source.MessageType,
+    #pragma warning restore CS0618
+                source: source.Source, type: source.Type, timeStamp: source.TimeStamp,
+                correlationId: source.CorrelationId, replyTo: source.ReplyTo,
+                contentType: new System.Net.Mime.ContentType(source.ContentType.ToString()),
+                partitionKey: source.PartitionKey, dataSchema: source.DataSchema, subject: source.Subject,
+                handledCount: source.HandledCount, workflowId: source.WorkflowId, jobId: source.JobId,
+                delayed: source.Delayed, traceParent: source.TraceParent, traceState: source.TraceState,
+                baggage: baggage)
+            {
+                Bag = new Dictionary<string, object>(source.Bag, source.Bag.Comparer),
+                DataRef = source.DataRef,
+                SpecVersion = source.SpecVersion
+            };
+        }
+
         private void EnsureRequeueProducer()
         {
             LazyInitializer.EnsureInitialized(ref _requeueProducer, ref _requeueProducerInitialized,
@@ -1035,7 +1248,7 @@ namespace Paramore.Brighter.MessagingGateway.Kafka
                     if (Topic is null)
                         throw new ConfigurationException("Cannot create requeue producer: Topic is not configured.");
 
-                    var producer = CreateProducer(Topic)
+                    var producer = CreateProducer(Topic, wireMessageWriter: RequeueWireMessageWriter)
                         ?? throw new ConfigurationException(
                             $"Failed to create requeue producer for topic {Topic}. Check broker connectivity and configuration.");
                     producer.Scheduler = _scheduler;
@@ -1043,7 +1256,8 @@ namespace Paramore.Brighter.MessagingGateway.Kafka
                 });
         }
 
-        private KafkaMessageProducer? CreateProducer(RoutingKey topic, Action<ILogger, Exception>? logError = null)
+        private KafkaMessageProducer? CreateProducer(RoutingKey topic, Action<ILogger, Exception>? logError = null,
+            IAmAWireMessageWriter<Message<string, byte[]>>? wireMessageWriter = null)
         {
             var publication = new KafkaPublication
             {
@@ -1052,7 +1266,8 @@ namespace Paramore.Brighter.MessagingGateway.Kafka
                 ReplicationFactor = ReplicationFactor,
                 MessageTimeoutMs = 2000,
                 RequestTimeoutMs = 2000,
-                MakeChannels = MakeChannels
+                MakeChannels = MakeChannels,
+                WireMessageWriter = wireMessageWriter
             };
 
             try
@@ -1065,6 +1280,43 @@ namespace Paramore.Brighter.MessagingGateway.Kafka
             {
                 logError?.Invoke(s_logger, e);
                 return null;
+            }
+        }
+
+        private static void SendWithPersistenceConfirmation(KafkaMessageProducer producer, Message message)
+        {
+            using var timeout = new CancellationTokenSource(s_forwardingConfirmationTimeout);
+            var confirmation = new TaskCompletionSource<bool>(TaskCreationOptions.RunContinuationsAsynchronously);
+            using var registration = timeout.Token.Register(() => confirmation.TrySetCanceled());
+
+            try
+            {
+                producer.SendWithConfirmation(message, result => confirmation.TrySetResult(result.Success));
+                if (!confirmation.Task.GetAwaiter().GetResult())
+                    throw new ChannelFailureException("Kafka did not confirm persistence of the forwarded message.");
+            }
+            catch (OperationCanceledException ex) when (timeout.IsCancellationRequested)
+            {
+                throw new ChannelFailureException("Kafka forwarding persistence confirmation timed out.", ex);
+            }
+        }
+
+        private static async Task SendWithPersistenceConfirmationAsync(KafkaMessageProducer producer, Message message, CancellationToken cancellationToken)
+        {
+            using var timeout = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
+            timeout.CancelAfter(s_forwardingConfirmationTimeout);
+            var confirmation = new TaskCompletionSource<bool>(TaskCreationOptions.RunContinuationsAsynchronously);
+            using var registration = timeout.Token.Register(() => confirmation.TrySetCanceled());
+
+            try
+            {
+                await producer.SendWithConfirmationAsync(message, result => confirmation.TrySetResult(result.Success), timeout.Token).ConfigureAwait(false);
+                if (!await confirmation.Task.ConfigureAwait(false))
+                    throw new ChannelFailureException("Kafka did not confirm persistence of the forwarded message.");
+            }
+            catch (OperationCanceledException ex) when (timeout.IsCancellationRequested && !cancellationToken.IsCancellationRequested)
+            {
+                throw new ChannelFailureException("Kafka forwarding persistence confirmation timed out.", ex);
             }
         }
 
@@ -1309,6 +1561,9 @@ namespace Paramore.Brighter.MessagingGateway.Kafka
         
         private static partial class Log
         {
+            [LoggerMessage(LogLevel.Warning, "Configured Kafka wire reader failed for topic {Topic}, partition {Partition}, offset {Offset}")]
+            public static partial void FailedToMapDelivery(ILogger logger, Exception exception, string topic, int partition, long offset);
+
             [LoggerMessage(LogLevel.Information, "Partition Added {Channels}")]
             public static partial void PartitionAdded(ILogger logger, string channels);
             
@@ -1426,6 +1681,9 @@ namespace Paramore.Brighter.MessagingGateway.Kafka
 
             [LoggerMessage(LogLevel.Error, "Error sending message {MessageId} to rejection channel with reason {RejectionReason}")]
             public static partial void ErrorSendingToRejectionChannel(ILogger logger, Exception exception, string messageId, string rejectionReason);
+
+            [LoggerMessage(LogLevel.Error, "Failed to persist retry for message {MessageId}")]
+            public static partial void ErrorPersistingRetry(ILogger logger, Exception exception, string messageId);
 
             [LoggerMessage(LogLevel.Error, "Error Creating DLQ")]
             public static partial void ErrorCreatingDLQ(ILogger logger, Exception exception);

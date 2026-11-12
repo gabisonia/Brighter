@@ -23,11 +23,57 @@ THE SOFTWARE. */
 #endregion
 
 using System;
+using RabbitMQ.Client.Events;
 
 namespace Paramore.Brighter.MessagingGateway.RMQ.Async
 {
     public class RmqSubscription : Subscription, IUseBrighterInvalidMessageSupport
     {
+        /// <summary>
+        /// Gets or sets the registered publication selected for scheduler-backed retries.
+        /// </summary>
+        /// <remarks>
+        /// Configure before creating the consumer. The setting is captured per consumer and used only
+        /// when delay requires a scheduler. The registered publication owns writer selection at dispatch;
+        /// configure its destination queue to return only to this subscription. Null preserves existing
+        /// publication lookup. This setting does not affect direct or native delayed retry mapping.
+        /// </remarks>
+        public RoutingKey? ScheduledRequeuePublicationTopic { get; set; }
+
+        /// <summary>
+        /// Gets or sets the reader used to map native deliveries into Brighter messages.
+        /// A null value uses the default Brighter message format.
+        /// </summary>
+        /// <remarks>
+        /// The gateway supplies delivery tag, redelivery and persistence metadata from the broker.
+        /// A canonical handled-count header overrides the reader's count using the default parser's rules.
+        /// Without that header, the reader's count is retained.
+        /// Configure the reader before creating the consumer.
+        /// </remarks>
+        public IAmAWireMessageReader<BasicDeliverEventArgs>? WireMessageReader { get; set; }
+
+        /// <summary>
+        /// Gets or sets the writer used when the consumer republishes a message directly to RabbitMQ for retry.
+        /// A null value uses the default Brighter message format.
+        /// </summary>
+        /// <remarks>
+        /// The gateway supplies persistence, retry identity, handled count, delivery and delay metadata.
+        /// Configure the writer before creating the consumer. Scheduler-backed retries use the scheduler's
+        /// publication mapping. This writer does not apply to invalid-message forwarding.
+        /// </remarks>
+        public IAmAWireMessageWriter<RmqWireMessage>? RequeueWireMessageWriter { get; set; }
+
+        /// <summary>
+        /// Gets or sets the writer used to forward unacceptable messages to the invalid-message route.
+        /// A null value uses the default Brighter message format.
+        /// </summary>
+        /// <remarks>
+        /// Configure the writer before creating the consumer. The gateway supplies rejection metadata
+        /// before mapping and retains routing, persistence and delivery controls. Mapping or publication
+        /// failures leave the original unacknowledged. This setting does not apply to broker-managed
+        /// dead-lettering, retries or ordinary producer publications.
+        /// </remarks>
+        public IAmAWireMessageWriter<RmqWireMessage>? InvalidMessageWireMessageWriter { get; set; }
 
         /// <summary>
         /// The name of  the queue to send rejects messages to

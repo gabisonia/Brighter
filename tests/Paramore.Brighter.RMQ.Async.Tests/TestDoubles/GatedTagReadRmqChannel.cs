@@ -26,6 +26,7 @@ THE SOFTWARE. */
 #nullable enable
 
 using System;
+using System.Collections.Concurrent;
 using System.Reflection;
 using System.Runtime.ExceptionServices;
 using System.Threading;
@@ -34,16 +35,18 @@ using RabbitMQ.Client;
 
 namespace Paramore.Brighter.RMQ.Async.Tests.TestDoubles;
 
-// Forward everything to the real channel, but hold each caller of GetNextPublishSequenceNumberAsync
-// after it has read its tag until a second caller has read one too (or the gate times out). Two
-// concurrent sends are then both holding a tag before either of them publishes.
+// Read both tags and register both pending sends before either native publish can complete.
 public class GatedTagReadRmqChannel : DispatchProxy
 {
-    private static readonly TimeSpan s_gateTimeout = TimeSpan.FromSeconds(2);
+    private static readonly TimeSpan s_gateTimeout = TimeSpan.FromSeconds(10);
 
     private IChannel _channel = null!;
     private readonly TaskCompletionSource _bothHaveReadATag = new(TaskCreationOptions.RunContinuationsAsynchronously);
+    private readonly TaskCompletionSource _bothArePublishing = new(TaskCreationOptions.RunContinuationsAsynchronously);
     private int _tagReads;
+    private int _publishCalls;
+
+    public ConcurrentQueue<ulong> ReadTags { get; } = new();
 
     public static GatedTagReadRmqChannel Wrap(IChannel channel)
     {
@@ -59,6 +62,9 @@ public class GatedTagReadRmqChannel : DispatchProxy
 
         try
         {
+            if (method.Name == nameof(IChannel.BasicPublishAsync))
+                return PublishAfterBothAreRegistered(method, args);
+
             var result = method.Invoke(_channel, args);
             return method.Name == nameof(IChannel.GetNextPublishSequenceNumberAsync)
                 ? HoldUntilBothHaveReadATag((ValueTask<ulong>)result!)
@@ -74,10 +80,31 @@ public class GatedTagReadRmqChannel : DispatchProxy
     private async ValueTask<ulong> HoldUntilBothHaveReadATag(ValueTask<ulong> read)
     {
         var tag = await read;
+        ReadTags.Enqueue(tag);
 
         if (Interlocked.Increment(ref _tagReads) >= 2) _bothHaveReadATag.TrySetResult();
-        await Task.WhenAny(_bothHaveReadATag.Task, Task.Delay(s_gateTimeout));
+        await _bothHaveReadATag.Task.WaitAsync(s_gateTimeout);
 
         return tag;
     }
+
+    private async ValueTask PublishAfterBothAreRegistered(MethodInfo method, object?[]? args)
+    {
+        if (Interlocked.Increment(ref _publishCalls) == 2) _bothArePublishing.TrySetResult();
+        await _bothArePublishing.Task.WaitAsync(s_gateTimeout);
+
+        ValueTask publish;
+        try
+        {
+            publish = (ValueTask)method.Invoke(_channel, args)!;
+        }
+        catch (TargetInvocationException error) when (error.InnerException != null)
+        {
+            ExceptionDispatchInfo.Capture(error.InnerException).Throw();
+            throw;
+        }
+
+        await publish;
+    }
+
 }

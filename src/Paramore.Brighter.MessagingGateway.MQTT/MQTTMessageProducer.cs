@@ -137,7 +137,7 @@ namespace Paramore.Brighter.MessagingGateway.MQTT
             ArgumentNullException.ThrowIfNull(message);
 
             BrighterTracer.WriteProducerEvent(Span, "mqtt", message, _instrumentationOptions);
-            _mqttMessagePublisher.PublishMessage(message);
+            _mqttMessagePublisher.PublishMessage(message, (Publication as MqttPublication)?.WireMessageWriter);
         }
 
         /// <summary>
@@ -170,7 +170,7 @@ namespace Paramore.Brighter.MessagingGateway.MQTT
             ArgumentNullException.ThrowIfNull(message);
 
             BrighterTracer.WriteProducerEvent(Span, "mqtt", message, _instrumentationOptions);
-            await _mqttMessagePublisher.PublishMessageAsync(message, cancellationToken);
+            await _mqttMessagePublisher.PublishMessageAsync(message, (Publication as MqttPublication)?.WireMessageWriter, cancellationToken);
         }
     }
 }

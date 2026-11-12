@@ -157,7 +157,7 @@ namespace Paramore.Brighter.MessagingGateway.Kafka
                     headers.Add(key, longValue.ToString().ToByteArray());
                     break;
                 case byte[] byteArray:
-                    headers.Add(key, byteArray);
+                    headers.Add(key, byteArray.ToArray());
                     break;
                 default:
                     headers.Add(key, value.ToString()!.ToByteArray());

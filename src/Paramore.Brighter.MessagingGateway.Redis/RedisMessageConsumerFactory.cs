@@ -69,7 +69,12 @@ namespace Paramore.Brighter.MessagingGateway.Redis
                 subscription.RoutingKey,
                 _scheduler,
                 deadLetterRoutingKey,
-                invalidMessageRoutingKey);
+                invalidMessageRoutingKey,
+                (subscription as RedisSubscription)?.WireMessageReader,
+                (subscription as RedisSubscription)?.RequeueWireMessageWriter,
+                (subscription as RedisSubscription)?.InvalidMessageWireMessageWriter,
+                (subscription as RedisSubscription)?.DeadLetterWireMessageWriter,
+                (subscription as RedisSubscription)?.ScheduledRequeuePublicationTopic);
         }
 
         private static void RequireQueueName(Subscription subscription)
@@ -96,7 +101,12 @@ namespace Paramore.Brighter.MessagingGateway.Redis
                 subscription.RoutingKey,
                 _scheduler,
                 deadLetterRoutingKey,
-                invalidMessageRoutingKey);
+                invalidMessageRoutingKey,
+                (subscription as RedisSubscription)?.WireMessageReader,
+                (subscription as RedisSubscription)?.RequeueWireMessageWriter,
+                (subscription as RedisSubscription)?.InvalidMessageWireMessageWriter,
+                (subscription as RedisSubscription)?.DeadLetterWireMessageWriter,
+                (subscription as RedisSubscription)?.ScheduledRequeuePublicationTopic);
         }
     }
 }

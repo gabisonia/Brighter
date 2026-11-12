@@ -55,8 +55,13 @@ namespace Paramore.Brighter.MessagingGateway.MsSql
 
             Log.MsSqlMessageConsumerFactoryCreate(s_logger, subscription.ChannelName);
             return new MsSqlMessageConsumer(_msSqlConfiguration, subscription.ChannelName!,
-                (subscription as MsSqlSubscription)?.IsIndependentSubscriber ?? false,
-                scheduler: _scheduler, deadLetterRoutingKey: deadLetterRoutingKey, invalidMessageRoutingKey: invalidMessageRoutingKey);
+                new MsSqlConnectionProvider(_msSqlConfiguration), _scheduler, deadLetterRoutingKey, invalidMessageRoutingKey,
+                (subscription as MsSqlSubscription)?.WireMessageReader,
+                (subscription as MsSqlSubscription)?.RequeueWireMessageWriter,
+                (subscription as MsSqlSubscription)?.DeadLetterWireMessageWriter,
+                (subscription as MsSqlSubscription)?.InvalidMessageWireMessageWriter,
+                (subscription as MsSqlSubscription)?.ScheduledRequeuePublicationTopic,
+                (subscription as MsSqlSubscription)?.IsIndependentSubscriber ?? false);
         }
 
         public IAmAMessageConsumerAsync CreateAsync(Subscription subscription)
@@ -68,8 +73,13 @@ namespace Paramore.Brighter.MessagingGateway.MsSql
 
             Log.MsSqlMessageConsumerFactoryCreateAsync(s_logger, subscription.ChannelName);
             return new MsSqlMessageConsumer(_msSqlConfiguration, subscription.ChannelName!,
-                (subscription as MsSqlSubscription)?.IsIndependentSubscriber ?? false,
-                scheduler: _scheduler, deadLetterRoutingKey: deadLetterRoutingKey, invalidMessageRoutingKey: invalidMessageRoutingKey);
+                new MsSqlConnectionProvider(_msSqlConfiguration), _scheduler, deadLetterRoutingKey, invalidMessageRoutingKey,
+                (subscription as MsSqlSubscription)?.WireMessageReader,
+                (subscription as MsSqlSubscription)?.RequeueWireMessageWriter,
+                (subscription as MsSqlSubscription)?.DeadLetterWireMessageWriter,
+                (subscription as MsSqlSubscription)?.InvalidMessageWireMessageWriter,
+                (subscription as MsSqlSubscription)?.ScheduledRequeuePublicationTopic,
+                (subscription as MsSqlSubscription)?.IsIndependentSubscriber ?? false);
         }
 
         internal void ValidateSubscription(Subscription subscription, bool async)

@@ -24,14 +24,11 @@ THE SOFTWARE. */
 #endregion
 
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Mime;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
-using Paramore.Brighter.Extensions;
 using Paramore.Brighter.Logging;
 using RabbitMQ.Client;
 
@@ -44,17 +41,11 @@ internal sealed partial class RmqMessagePublisher
 {
     private static readonly ILogger s_logger = ApplicationLogging.CreateLogger<RmqMessagePublisher>();
 
-    private static readonly HashSet<string> _headersToReset =
-    [
-        HeaderNames.DELAY_MILLISECONDS,
-        HeaderNames.MESSAGE_TYPE,
-        HeaderNames.TOPIC,
-        HeaderNames.HANDLED_COUNT,
-        HeaderNames.DELIVERY_TAG,
-        HeaderNames.CORRELATION_ID
-    ];
+    private static readonly DefaultRmqWireMessageWriter s_defaultWireMessageWriter = new();
 
+    private readonly IAmAWireMessageWriter<RmqWireMessage> _wireMessageWriter;
     private readonly IChannel _channel;
+    private readonly ChannelName? _destinationQueue;
     private readonly RmqMessagingGatewayConnection _connection;
 
     /// <summary>
@@ -68,6 +59,12 @@ internal sealed partial class RmqMessagePublisher
     /// exchangeName
     /// </exception>
     public RmqMessagePublisher(IChannel channel, RmqMessagingGatewayConnection connection)
+        : this(channel, connection, null)
+    {
+    }
+
+    public RmqMessagePublisher(IChannel channel, RmqMessagingGatewayConnection connection,
+        IAmAWireMessageWriter<RmqWireMessage>? wireMessageWriter, ChannelName? destinationQueue = null)
     {
         if (channel is null)
         {
@@ -80,8 +77,10 @@ internal sealed partial class RmqMessagePublisher
         }
 
         _connection = connection;
+        _destinationQueue = destinationQueue;
 
         _channel = channel;
+        _wireMessageWriter = wireMessageWriter ?? s_defaultWireMessageWriter;
     }
 
     /// <summary>
@@ -96,28 +95,19 @@ internal sealed partial class RmqMessagePublisher
         if (_connection.Exchange is null)
             throw new InvalidOperationException("RMQMessagingGateway: No Exchange specified");
 
-        var messageId = message.Id;
         var deliveryTag = message.Header.Bag.ContainsKey(HeaderNames.DELIVERY_TAG) ? message.DeliveryTag.ToString() : null;
-
-        Dictionary<string, object?> headers = AddCloudEventsHeaders(message);
-
-        AddUserDefinedHeaders(message, headers);
-
-        AddDeliveryHeaders(delay, deliveryTag, headers);
+        var wireMessage = _wireMessageWriter.WriteMessage(message);
+        wireMessage.Properties.DeliveryMode = message.Persist ? DeliveryModes.Persistent : DeliveryModes.Transient;
+        wireMessage.Properties.Headers ??= new Dictionary<string, object?>();
+        AddDeliveryHeaders(delay, deliveryTag, wireMessage.Properties.Headers);
 
         await _channel.BasicPublishAsync(
-            _connection.Exchange.Name,
-            message.Header.Topic.Value,
+            PublicationExchange(delay),
+            _destinationQueue?.Value ?? message.Header.Topic.Value,
             mandatory,
-            CreateBasicProperties(
-                messageId.Value,
-                message.Header.TimeStamp,
-                message.Body.ContentType is not null ? message.Body.ContentType.ToString() : MediaTypeNames.Text.Plain,
-                message.Header.ContentType is not null ? message.Header.ContentType.ToString() : MediaTypeNames.Text.Plain,
-                message.Header.ReplyTo?.Value ?? string.Empty,
-                message.Persist,
-                headers),
-            message.Body.Memory, cancellationToken);
+            wireMessage.Properties,
+            wireMessage.Body,
+            cancellationToken);
     }
 
     /// <summary>
@@ -134,12 +124,12 @@ internal sealed partial class RmqMessagePublisher
 
         Log.RegeneratingMessage(s_logger, message.Id.Value, deliveryTag, messageId, 1);
 
-        Dictionary<string, object?> headers = AddCloudEventsHeaders(message);
-
-        AddUserDefinedHeaders(message, headers);
-
+        var wireMessage = _wireMessageWriter.WriteMessage(message);
+        wireMessage.Properties.MessageId = messageId;
+        wireMessage.Properties.DeliveryMode = message.Persist ? DeliveryModes.Persistent : DeliveryModes.Transient;
+        var headers = wireMessage.Properties.Headers ??= new Dictionary<string, object?>();
+        headers[HeaderNames.HANDLED_COUNT] = message.Header.HandledCount;
         AddDeliveryHeaders(timeOut, deliveryTag, headers);
-
         AddOriginalMessageIdOnRepublish(message, headers);
 
         // Immediate retries use the default exchange; delayed retries use queue-specific bindings.
@@ -147,155 +137,53 @@ internal sealed partial class RmqMessagePublisher
             timeOut > TimeSpan.Zero ? RmqDelayedRequeue.ExchangeName(_connection) : string.Empty,
             queueName.Value,
             false,
-            CreateBasicProperties(
-                messageId,
-                message.Header.TimeStamp,
-                message.Body.ContentType is not null ? message.Body.ContentType.ToString() : MediaTypeNames.Text.Plain,
-                message.Header.ContentType is not null ? message.Header.ContentType.ToString() : MediaTypeNames.Text.Plain,
-                message.Header.ReplyTo?.Value ?? string.Empty,
-                message.Persist,
-                headers),
-            message.Body.Memory, cancellationToken);
+            wireMessage.Properties,
+            wireMessage.Body, cancellationToken);
     }
 
-    private static Dictionary<string, object?> AddCloudEventsHeaders(Message message)
+    private string PublicationExchange(TimeSpan? delay)
     {
-        var headers = new Dictionary<string, object?>
-        {
-            // Cloud event
-            [HeaderNames.CLOUD_EVENTS_ID] = message.Header.MessageId.Value,
-            [HeaderNames.CLOUD_EVENTS_SPEC_VERSION] = message.Header.SpecVersion,
-            [HeaderNames.CLOUD_EVENTS_TYPE] = message.Header.Type.Value,
-            [HeaderNames.CLOUD_EVENTS_SOURCE] = message.Header.Source.ToString(),
-            [HeaderNames.CLOUD_EVENTS_TIME] = message.Header.TimeStamp.ToRfc3339(),
+        if (_destinationQueue == null)
+            return _connection.Exchange!.Name;
 
-            // Brighter custom headers
-#pragma warning disable CS0618 // Preserve the legacy message type for transport compatibility.
-            [HeaderNames.MESSAGE_TYPE] = message.Header.MessageType.ToString(),
-#pragma warning restore CS0618
-            [HeaderNames.TOPIC] = message.Header.Topic.Value,
-            [HeaderNames.HANDLED_COUNT] = message.Header.HandledCount,
-        };
-
-        if (!string.IsNullOrEmpty(message.Header.Subject))
-        {
-            headers.Add(HeaderNames.CLOUD_EVENTS_SUBJECT, message.Header.Subject);
-        }
-
-        if (message.Header.DataSchema != null)
-        {
-            headers.Add(HeaderNames.CLOUD_EVENTS_DATA_SCHEMA, message.Header.DataSchema.ToString());
-        }
-
-        if (!Id.IsNullOrEmpty(message.Header.CorrelationId))
-            headers.Add(HeaderNames.CORRELATION_ID, message.Header.CorrelationId.Value);
-
-        if (!string.IsNullOrEmpty(message.Header.TraceParent?.Value))
-            headers.Add(HeaderNames.CLOUD_EVENTS_TRACE_PARENT, message.Header.TraceParent?.Value!);
-
-        if (!string.IsNullOrEmpty(message.Header.TraceState?.Value))
-        {
-            headers.Add(HeaderNames.CLOUD_EVENTS_TRACE_STATE, message.Header.TraceState?.Value!);
-#pragma warning disable CS0618 // Type or member is obsolete
-            headers.Add(HeaderNames.CLOUD_EVENTS_TRACE_STATE_DEPRECATED, message.Header.TraceState?.Value!);
-#pragma warning restore CS0618 // Type or member is obsolete
-        }
-
-        if (message.Header.Baggage.Any())
-            headers.Add(HeaderNames.W3C_BAGGAGE, message.Header.Baggage.ToString());
-        return headers;
+        return delay > TimeSpan.Zero && _connection.Exchange!.SupportDelay
+            ? RmqDelayedRequeue.ExchangeName(_connection)
+            : string.Empty;
     }
 
-    private static void AddDeliveryHeaders(TimeSpan? delay, string? deliveryTag, Dictionary<string, object?> headers)
+    private static void AddDeliveryHeaders(TimeSpan? delay, string? deliveryTag, IDictionary<string, object?> headers)
     {
+        headers.Remove(HeaderNames.DELIVERY_TAG);
         if (!string.IsNullOrEmpty(deliveryTag))
         {
             headers[HeaderNames.DELIVERY_TAG] = deliveryTag!;
         }
 
+        headers.Remove(HeaderNames.DELAY_MILLISECONDS);
         if (delay > TimeSpan.Zero)
         {
             headers[HeaderNames.DELAY_MILLISECONDS] = delay.Value.TotalMilliseconds;
         }
     }
 
-    private static void AddOriginalMessageIdOnRepublish(Message message, Dictionary<string, object?> headers)
+    private static void AddOriginalMessageIdOnRepublish(Message message, IDictionary<string, object?> headers)
     {
-        if (!message.Header.Bag.Any(h => h.Key.Equals(HeaderNames.ORIGINAL_MESSAGE_ID, StringComparison.CurrentCultureIgnoreCase)))
+        var originalMessageId = message.Header.Bag.FirstOrDefault(h =>
+            h.Key.Equals(HeaderNames.ORIGINAL_MESSAGE_ID, StringComparison.OrdinalIgnoreCase));
+        foreach (var headerName in headers.Keys.Where(key =>
+                     key.Equals(HeaderNames.ORIGINAL_MESSAGE_ID, StringComparison.OrdinalIgnoreCase)).ToArray())
+        {
+            headers.Remove(headerName);
+        }
+
+        if (originalMessageId.Key is null)
         {
             headers[HeaderNames.ORIGINAL_MESSAGE_ID] = message.Id.Value;
         }
-    }
-
-    private static void AddUserDefinedHeaders(Message message, Dictionary<string, object?> headers)
-    {
-        message.Header.Bag.Each(header =>
+        else
         {
-            if (!_headersToReset.Contains(header.Key) && !MessageHeader.IsLocalHeader(header.Key))
-            {
-                headers[header.Key] = header.Value;
-            }
-        });
-    }
-
-    private static BasicProperties CreateBasicProperties(
-        string id,
-        DateTimeOffset timeStamp,
-        string type,
-        string contentType,
-        string replyTo,
-        bool persistMessage,
-        IDictionary<string, object?>? headers = null)
-    {
-        var basicProperties = new BasicProperties
-        {
-            DeliveryMode =
-                persistMessage
-                    ? DeliveryModes.Persistent
-                    : DeliveryModes.Transient, // delivery mode set to 2 if message is persistent or 1 if non-persistent
-            ContentType = contentType,
-            Type = type,
-            MessageId = id,
-            Timestamp = new AmqpTimestamp(UnixTimestamp.GetUnixTimestampSeconds(timeStamp.DateTime))
-        };
-
-        if (!string.IsNullOrEmpty(replyTo))
-        {
-            basicProperties.ReplyTo = replyTo;
+            headers[originalMessageId.Key] = originalMessageId.Value;
         }
-
-        if (headers is not null)
-        {
-            foreach (var header in headers)
-            {
-                if (header.Value is not null && !IsAnAmqpType(header.Value))
-                {
-                    throw new ConfigurationException(
-                        $"The value {header.Value} is type {header.Value.GetType()} for header {header.Key} value only supports the AMQP 0-8/0-9 standard entry types S, I, D, T and F, as well as the QPid-0-8 specific b, d, f, l, s, t, x and V types and the AMQP 0-9-1 A type.");
-                }
-            }
-
-            basicProperties.Headers = headers;
-        }
-
-        return basicProperties;
-    }
-
-    /// <summary>
-    /// Supports the AMQP 0-8/0-9 standard entry types S, I, D, T
-    /// and F, as well as the QPid-0-8 specific b, d, f, l, s, t
-    /// x and V types and the AMQP 0-9-1 A type.
-    /// </summary>
-    /// <param name="value"></param>
-    /// <returns></returns>
-    private static bool IsAnAmqpType(object value)
-    {
-        return value switch
-        {
-            null or string _ or byte[] _ or int _ or uint _ or decimal _ or AmqpTimestamp _ or IDictionary _ or IList _
-                or byte _ or sbyte _ or double _ or float _ or long _ or short _ or bool _ => true,
-            _ => false
-        };
     }
 
     private static partial class Log
