@@ -145,4 +145,7 @@ Identity is the `id` (filename stem), not the leading number — numbers may rep
 | `0089-mssql-explicit-subscriber-queues` | MS SQL explicit subscriber queues | Proposed | messaging, mssql | Opt in to atomic fan-out through explicit producer-side subscriber queues while retaining the existing SQL queue schema. |
 | `0089-distributed-outbox-circuit-breaker` | Distributed outbox circuit breaker with elapsed-time cooldown | Accepted | circuit-breaker, outbox, resilience, observability | Every outbox circuit-breaker trip now ends after a fixed elapsed time. Phase 1 gives InMemoryOutboxCircuitBreaker a 5-minute MaximumTripDuration on an injected TimeProvider. Phase 2 adds an opt-in DistributedOutboxCircuitBreaker that shares trips through a provisioned table beside the outbox (MsSql, PostgreSql and MySql first), ends each trip one trip length (a 50-second CooldownDuration plus an optional ClockSkewLeeway) after its latest stamp, coalesces writes per dispatch call, falls back to its own view when the store fails, and is refreshed by every running sweeper, without changing IAmAnOutboxCircuitBreaker. |
 
-_131 ADRs indexed._
+| `0090-configurable-wire-message-writers` | Configure wire message writers per endpoint | Proposed | transports, message-mapping, api-design | Select a typed writer through a shared generic contract, compose default serialization, and keep delivery operations in the gateway. |
+| `0091-configurable-wire-message-readers` | Configure wire message readers per subscription | Proposed | transports, message-mapping, api-design | Select native message readers per subscription, expose default parsing for composition, and retain delivery ownership at the consumer boundary. |
+
+_133 ADRs indexed._
